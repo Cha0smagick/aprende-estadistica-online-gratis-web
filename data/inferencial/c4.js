@@ -1,0 +1,97 @@
+export default {
+  id: "C4", slug: "pruebas-para-medias",
+  title: { es: "C4 — Pruebas para medias", en: "C4 — Tests for means" },
+  summary: { es: "z, t, dos muestras y pareadas.", en: "z, t, two-sample and paired." },
+  lessons: [
+    { id:"C4-L1", slug:"prueba-z", minutes:11,
+      title:{es:"Prueba z para la media",en:"z-test for the mean"},
+      hook:{es:"Cuando conoces σ y n es grande, la prueba z es la más simple. Es el primer test que se enseña.",en:"When you know σ and n is large, the z-test is the simplest. The first test taught."},
+      theory:{es:"**Prueba z** (σ conocida):\n$$z = \\frac{\\bar x - \\mu_0}{\\sigma/\\sqrt{n}}$$\n\nSe compara con el valor crítico $z_{\\alpha}$ (unilateral) o $\\pm z_{\\alpha/2}$ (bilateral). O se calcula el p-valor.\n\nSupuestos: σ conocida, datos normales o n grande (TCL).",en:"**z-test** (σ known):\n$$z = \\frac{\\bar x - \\mu_0}{\\sigma/\\sqrt{n}}$$\n\nCompare with critical value $z_{\\alpha}$ (one-tailed) or $\\pm z_{\\alpha/2}$ (two-tailed). Or compute p-value.\n\nAssumptions: σ known, normal data or large n (CLT)."},
+      formulas:[{latex:"$z = \\frac{\\bar x - \\mu_0}{\\sigma/\\sqrt{n}}$",name:{es:"Estadístico z",en:"z statistic"}}],
+      example:{es:"H0: μ=100, σ=10, n=25, x̄=105. z = (105-100)/(10/5) = 5/2 = 2,5. Para α=0,05 bilateral, crítico ±1,96. 2,5 > 1,96 → rechaza H0.",en:"H0: μ=100, σ=10, n=25, x̄=105. z = (105-100)/(10/5) = 5/2 = 2.5. For α=0.05 two-tailed, critical ±1.96. 2.5 > 1.96 → reject H0."},
+      blueprint:[{prompt:{es:"El estadístico z mide cuántas SE está x̄ de...",en:"The z statistic measures how many SE x̄ is from..."},answer:["μ0","mu0","mu_0","el valor hipotético"],hint:{es:"μ0.",en:"μ0."},solution:{es:"μ0 (valor hipotético).",en:"μ0 (hypothesized value)."}},
+        {prompt:{es:"Si σ es desconocida, se usa...",en:"If σ is unknown, use..."},answer:["t de Student","t","Student"],hint:{es:"t.",en:"t."},solution:{es:"t de Student.",en:"Student's t."}},
+        {prompt:{es:"La prueba z requiere σ...",en:"The z-test requires σ..."},answer:["conocida","known"],hint:{es:"Conocida.",en:"Known."},solution:{es:"Conocida.",en:"Known."}}],
+      misconceptions:[{es:"**Error común:** usar la prueba z cuando σ es desconocida. Con σ desconocida, usa la t.",en:"**Common mistake:** using z-test when σ is unknown. With unknown σ, use t."}],
+      exercises:[
+        {id:"C4-L1-E1",type:"numeric",prompt:{es:"z: x̄=105, μ0=100, σ=10, n=25.",en:"z: x̄=105, μ0=100, σ=10, n=25."},answer:2.5,tol:0.001,hint:{es:"(105-100)/(10/5).",en:"(105-100)/(10/5)."},solution:{es:"2,5.",en:"2.5."},xp:10},
+        {id:"C4-L1-E2",type:"mcq",prompt:{es:"La prueba z requiere:",en:"z-test requires:"},choices:[{es:"σ desconocida",en:"σ unknown"},{es:"σ conocida",en:"σ known"},{es:"n pequeño",en:"Small n"},{es:"Datos no normales",en:"Non-normal data"}],answer:1,hint:{es:"σ conocida.",en:"σ known."},solution:{es:"σ conocida.",en:"σ known."},xp:10},
+        {id:"C4-L1-E3",type:"truefalse",prompt:{es:"Si σ es desconocida, usa la prueba z.",en:"If σ unknown, use z-test."},answer:false,hint:{es:"No: usa t.",en:"No: use t."},solution:{es:"Falso: usa t.",en:"False: use t."},xp:10},
+        {id:"C4-L1-E4",type:"mcq",prompt:{es:"El estadístico z mide:",en:"z statistic measures:"},choices:[{es:"La media",en:"The mean"},{es:"Cuántas SE está x̄ de μ0",en:"How many SE x̄ is from μ0"},{es:"La varianza",en:"Variance"},{es:"El p-valor",en:"p-value"}],answer:1,hint:{es:"SE.",en:"SE."},solution:{es:"Cuántas SE está x̄ de μ0.",en:"How many SE x̄ is from μ0."},xp:10},
+        {id:"C4-L1-E5",type:"truefalse",prompt:{es:"La prueba z es válida con n grande (TCL) aunque los datos no sean normales.",en:"z-test is valid with large n (CLT) even if data aren't normal."},answer:true,hint:{es:"Sí.",en:"Yes."},solution:{es:"Verdadero.",en:"True."},xp:10}
+      ]
+    },
+    { id:"C4-L2", slug:"prueba-t", minutes:12,
+      title:{es:"Prueba t para la media",en:"t-test for the mean"},
+      hook:{es:"El caso real: σ desconocida. La t de Student es la prueba más usada en la práctica.",en:"The real case: σ unknown. Student's t is the most used test in practice."},
+      theory:{es:"**Prueba t** (σ desconocida):\n$$t = \\frac{\\bar x - \\mu_0}{s/\\sqrt{n}}$$\ncon $gl = n-1$ grados de libertad.\n\nSe compara con $t_{\\alpha, gl}$ (unilateral) o $\\pm t_{\\alpha/2, gl}$ (bilateral). O se calcula el p-valor con la distribución t.\n\nSupuestos: datos normales (o n grande) y muestreo aleatorio.",en:"**t-test** (σ unknown):\n$$t = \\frac{\\bar x - \\mu_0}{s/\\sqrt{n}}$$\nwith $df = n-1$ degrees of freedom.\n\nCompare with $t_{\\alpha, df}$ (one-tailed) or $\\pm t_{\\alpha/2, df}$ (two-tailed). Or compute p-value from t distribution.\n\nAssumptions: normal data (or large n) and random sampling."},
+      formulas:[{latex:"$t = \\frac{\\bar x - \\mu_0}{s/\\sqrt{n}}$",name:{es:"Estadístico t",en:"t statistic"}},{latex:"$gl = n-1$",name:{es:"Grados de libertad",en:"Degrees of freedom"}}],
+      example:{es:"H0: μ=100, n=10, x̄=105, s=10. t = (105-100)/(10/√10) = 5/3,16 = 1,58. gl=9. Para α=0,05 bilateral, crítico ±2,262. 1,58 < 2,262 → no rechaza H0.",en:"H0: μ=100, n=10, x̄=105, s=10. t = (105-100)/(10/√10) = 5/3.16 = 1.58. df=9. For α=0.05 two-tailed, critical ±2.262. 1.58 < 2.262 → don't reject H0."},
+      blueprint:[{prompt:{es:"Grados de libertad para prueba t de una muestra:",en:"Degrees of freedom for one-sample t:"},answer:["n-1","n - 1"],hint:{es:"n-1.",en:"n-1."},solution:{es:"n-1.",en:"n-1."}},
+        {prompt:{es:"Si n es grande, la t se aproxima a...",en:"If n is large, t approximates..."},answer:["z","normal"],hint:{es:"z.",en:"z."},solution:{es:"z (normal).",en:"z (normal)."}},
+        {prompt:{es:"La prueba t requiere datos...",en:"The t-test requires data..."},answer:["normales","normal","o n grande","or large n"],hint:{es:"Normales (o n grande).",en:"Normal (or large n)."},solution:{es:"Normales (o n grande).",en:"Normal (or large n)."}}],
+      misconceptions:[{es:"**Error común:** usar la t con datos fuertemente no normales y n pequeño. La t es robusta, pero no milagrosa.",en:"**Common mistake:** using t with strongly non-normal data and small n. t is robust, but not miraculous."}],
+      exercises:[
+        {id:"C4-L2-E1",type:"numeric",prompt:{es:"t: x̄=102, μ0=100, s=4, n=16.",en:"t: x̄=102, μ0=100, s=4, n=16."},answer:2,tol:0.001,hint:{es:"(102-100)/(4/4).",en:"(102-100)/(4/4)."},solution:{es:"2·4/4 = 2.",en:"2·4/4 = 2."},xp:10},
+        {id:"C4-L2-E2",type:"numeric",prompt:{es:"gl si n=20.",en:"df if n=20."},answer:19,tol:0.001,hint:{es:"n-1.",en:"n-1."},solution:{es:"19.",en:"19."},xp:10},
+        {id:"C4-L2-E3",type:"mcq",prompt:{es:"La prueba t se usa cuando:",en:"t-test is used when:"},choices:[{es:"σ conocida",en:"σ known"},{es:"σ desconocida",en:"σ unknown"},{es:"n=1",en:"n=1"},{es:"Datos categóricos",en:"Categorical data"}],answer:1,hint:{es:"σ desconocida.",en:"σ unknown."},solution:{es:"σ desconocida.",en:"σ unknown."},xp:10},
+        {id:"C4-L2-E4",type:"truefalse",prompt:{es:"Con n grande, t ≈ z.",en:"With large n, t ≈ z."},answer:true,hint:{es:"Sí.",en:"Yes."},solution:{es:"Verdadero.",en:"True."},xp:10},
+        {id:"C4-L2-E5",type:"mcq",prompt:{es:"Grados de libertad para prueba t de una muestra:",en:"Degrees of freedom for one-sample t:"},choices:[{es:"n",en:"n"},{es:"n-1",en:"n-1"},{es:"n-2",en:"n-2"},{es:"n+1",en:"n+1"}],answer:1,hint:{es:"n-1.",en:"n-1."},solution:{es:"n-1.",en:"n-1."},xp:10}
+      ]
+    },
+    { id:"C4-L3", slug:"prueba-dos-muestras", minutes:12,
+      title:{es:"Prueba t de dos muestras",en:"Two-sample t-test"},
+      hook:{es:"'¿Es la media del grupo A mayor que la del B?' La prueba t de dos muestras responde comparando dos grupos independientes.",en:"'Is group A's mean greater than B's?' The two-sample t-test answers by comparing two independent groups."},
+      theory:{es:"**Dos muestras independientes**:\n$$t = \\frac{\\bar x_1 - \\bar x_2}{\\sqrt{s_1^2/n_1 + s_2^2/n_2}}$$\n\n**Welch** (varianzas distintas): grados de libertad aproximados por Welch-Satterthwaite.\n**Pooled** (varianzas iguales): $s_p^2 = \\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}$, $gl = n_1+n_2-2$.\n\nEn la práctica, usa Welch (más robusto) salvo que tengas razón para asumir varianzas iguales.",en:"**Two independent samples**:\n$$t = \\frac{\\bar x_1 - \\bar x_2}{\\sqrt{s_1^2/n_1 + s_2^2/n_2}}$$\n\n**Welch** (unequal variances): df approximated by Welch-Satterthwaite.\n**Pooled** (equal variances): $s_p^2 = \\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}$, $df = n_1+n_2-2$.\n\nIn practice, use Welch (more robust) unless you have reason to assume equal variances."},
+      formulas:[{latex:"$t = \\frac{\\bar x_1-\\bar x_2}{\\sqrt{s_1^2/n_1+s_2^2/n_2}}$",name:{es:"t de dos muestras",en:"Two-sample t"}}],
+      example:{es:"Grupo A (n=30, x̄=80, s=10) vs B (n=30, x̄=75, s=12). t = (80-75)/√(100/30+144/30) = 5/√8,13 = 5/2,85 = 1,75. Si |t| > crítico, diferencia significativa.",en:"Group A (n=30, x̄=80, s=10) vs B (n=30, x̄=75, s=12). t = (80-75)/√(100/30+144/30) = 5/√8.13 = 5/2.85 = 1.75. If |t| > critical, significant difference."},
+      blueprint:[{prompt:{es:"Si las varianzas son distintas, usa...",en:"If variances differ, use..."},answer:["Welch","Welch-Satterthwaite"],hint:{es:"Welch.",en:"Welch."},solution:{es:"Welch (más robusto).",en:"Welch (more robust)."}},
+        {prompt:{es:"Si las varianzas son iguales, usa pooled con gl =",en:"If variances equal, use pooled with df ="},answer:["n1+n2-2","n1 + n2 - 2"],hint:{es:"n1+n2-2.",en:"n1+n2-2."},solution:{es:"n1+n2-2.",en:"n1+n2-2."}},
+        {prompt:{es:"En la práctica, mejor usar...",en:"In practice, better use..."},answer:["Welch","Welch"],hint:{es:"Welch.",en:"Welch."},solution:{es:"Welch (más robusto).",en:"Welch (more robust)."}}],
+      misconceptions:[{es:"**Error común:** asumir varianzas iguales sin verificar. Usa Welch por defecto; es más robusto.",en:"**Common mistake:** assuming equal variances without checking. Use Welch by default; it's more robust."}],
+      exercises:[
+        {id:"C4-L3-E1",type:"mcq",prompt:{es:"Si las varianzas son distintas, mejor usar:",en:"If variances differ, better use:"},choices:[{es:"Pooled",en:"Pooled"},{es:"Welch",en:"Welch"},{es:"z",en:"z"},{es:"ANOVA",en:"ANOVA"}],answer:1,hint:{es:"Welch.",en:"Welch."},solution:{es:"Welch.",en:"Welch."},xp:10},
+        {id:"C4-L3-E2",type:"mcq",prompt:{es:"gl para pooled (varianzas iguales):",en:"df for pooled (equal variances):"},choices:[{es:"n1+n2",en:"n1+n2"},{es:"n1+n2-1",en:"n1+n2-1"},{es:"n1+n2-2",en:"n1+n2-2"},{es:"n1-n2",en:"n1-n2"}],answer:2,hint:{es:"n1+n2-2.",en:"n1+n2-2."},solution:{es:"n1+n2-2.",en:"n1+n2-2."},xp:10},
+        {id:"C4-L3-E3",type:"truefalse",prompt:{es:"En la práctica, Welch es preferible a pooled.",en:"In practice, Welch is preferred over pooled."},answer:true,hint:{es:"Sí.",en:"Yes."},solution:{es:"Verdadero.",en:"True."},xp:10},
+        {id:"C4-L3-E4",type:"mcq",prompt:{es:"La prueba t de dos muestras compara:",en:"Two-sample t-test compares:"},choices:[{es:"Una muestra con un valor",en:"One sample with a value"},{es:"Dos grupos independientes",en:"Two independent groups"},{es:"Datos pareados",en:"Paired data"},{es:"Más de dos grupos",en:"More than two groups"}],answer:1,hint:{es:"Dos grupos independientes.",en:"Two independent groups."},solution:{es:"Dos grupos independientes.",en:"Two independent groups."},xp:10},
+        {id:"C4-L3-E5",type:"truefalse",prompt:{es:"Los grupos deben ser independientes.",en:"Groups must be independent."},answer:true,hint:{es:"Sí.",en:"Yes."},solution:{es:"Verdadero.",en:"True."},xp:10}
+      ]
+    },
+    { id:"C4-L4", slug:"prueba-pareada", minutes:11,
+      title:{es:"Prueba t pareada",en:"Paired t-test"},
+      hook:{es:"'Antes y después' del mismo sujeto. La prueba pareada analiza las diferencias, no los grupos.",en:"'Before and after' the same subject. The paired test analyzes the differences, not the groups."},
+      theory:{es:"**Prueba pareada**: para datos emparejados (antes/después, gemelos, mismo sujeto dos condiciones). Se calculan las diferencias $d_i = x_{i,1} - x_{i,2}$ y se hace una prueba t de una muestra sobre las $d_i$.\n\n$$t = \\frac{\\bar d - \\mu_d}{s_d/\\sqrt{n}}$$\n\n$gl = n-1$ (donde n = nº de pares).\n\nMás potente que la prueba de dos muestras independientes cuando hay emparejamiento.",en:"**Paired test**: for paired data (before/after, twins, same subject two conditions). Compute differences $d_i = x_{i,1} - x_{i,2}$ and run a one-sample t on the $d_i$.\n\n$$t = \\frac{\\bar d - \\mu_d}{s_d/\\sqrt{n}}$$\n\n$df = n-1$ (where n = number of pairs).\n\nMore powerful than independent two-sample test when there's pairing."},
+      formulas:[{latex:"$t = \\frac{\\bar d - \\mu_d}{s_d/\\sqrt{n}}$",name:{es:"t pareada",en:"Paired t"}}],
+      example:{es:"Presión antes y después de un fármaco en 10 pacientes. Calcula d = antes - después para cada uno, luego x̄_d y s_d. Prueba si μ_d ≠ 0.",en:"Blood pressure before and after a drug in 10 patients. Compute d = before - after for each, then x̄_d and s_d. Test if μ_d ≠ 0."},
+      blueprint:[{prompt:{es:"La prueba pareada analiza las...",en:"The paired test analyzes the..."},answer:["diferencias","differences"],hint:{es:"Diferencias.",en:"Differences."},solution:{es:"Diferencias d_i.",en:"Differences d_i."}},
+        {prompt:{es:"Los datos pareados son...",en:"Paired data are..."},answer:["emparejados","matched","before/after","antes/después"],hint:{es:"Emparejados.",en:"Matched."},solution:{es:"Emparejados (antes/después, mismo sujeto).",en:"Matched (before/after, same subject)."}},
+        {prompt:{es:"gl para prueba pareada:",en:"df for paired test:"},answer:["n-1","n - 1"],hint:{es:"n-1 (nº de pares).",en:"n-1 (number of pairs)."},solution:{es:"n-1 (nº de pares).",en:"n-1 (number of pairs)."}}],
+      misconceptions:[{es:"**Error común:** usar la prueba de dos muestras independientes para datos pareados. Pierdes potencia y puedes llegar a conclusiones erróneas.",en:"**Common mistake:** using independent two-sample test for paired data. You lose power and may reach wrong conclusions."}],
+      exercises:[
+        {id:"C4-L4-E1",type:"mcq",prompt:{es:"La prueba pareada se usa para:",en:"Paired test is used for:"},choices:[{es:"Dos grupos independientes",en:"Two independent groups"},{es:"Datos emparejados (antes/después",en:"Paired data (before/after)"},{es:"Más de dos grupos",en:"More than two groups"},{es:"Datos categóricos",en:"Categorical data"}],answer:1,hint:{es:"Emparejados.",en:"Paired."},solution:{es:"Datos emparejados.",en:"Paired data."},xp:10},
+        {id:"C4-L4-E2",type:"mcq",prompt:{es:"La prueba pareada analiza:",en:"Paired test analyzes:"},choices:[{es:"Los grupos originales",en:"Original groups"},{es:"Las diferencias",en:"Differences"},{es:"Las medias",en:"Means"},{es:"Las varianzas",en:"Variances"}],answer:1,hint:{es:"Diferencias.",en:"Differences."},solution:{es:"Las diferencias.",en:"Differences."},xp:10},
+        {id:"C4-L4-E3",type:"truefalse",prompt:{es:"La prueba pareada es más potente que la de dos muestras independientes con emparejamiento.",en:"Paired test is more powerful than independent two-sample with pairing."},answer:true,hint:{es:"Sí.",en:"Yes."},solution:{es:"Verdadero.",en:"True."},xp:10},
+        {id:"C4-L4-E4",type:"mcq",prompt:{es:"gl para prueba pareada (n pares):",en:"df for paired test (n pairs):"},choices:[{es:"n",en:"n"},{es:"n-1",en:"n-1"},{es:"n-2",en:"n-2"},{es:"2n-1",en:"2n-1"}],answer:1,hint:{es:"n-1.",en:"n-1."},solution:{es:"n-1.",en:"n-1."},xp:10},
+        {id:"C4-L4-E5",type:"truefalse",prompt:{es:"Usar prueba de dos muestras independientes para datos pareados es un error.",en:"Using independent two-sample test for paired data is an error."},answer:true,hint:{es:"Sí.",en:"Yes."},solution:{es:"Verdadero.",en:"True."},xp:10}
+      ]
+    },
+    { id:"C4-L5", slug:"tamaño-del-efecto", minutes:10,
+      title:{es:"Tamaño del efecto",en:"Effect size"},
+      hook:{es:"Un p-valor pequeño no significa un efecto grande. El tamaño del efecto te dice cuán importante es la diferencia.",en:"A small p-value doesn't mean a large effect. Effect size tells you how important the difference is."},
+      theory:{es:"**Tamaño del efecto** (d de Cohen): $d = \\frac{\\bar x_1 - \\bar x_2}{s_p}$ (para dos grupos).\n\nInterpretación (Cohen):\n- $d \\approx 0,2$: pequeño.\n- $d \\approx 0,5$: mediano.\n- $d \\approx 0,8$: grande.\n\nCon n grande, incluso diferencias triviales son significativas. El tamaño del efecto complementa el p-valor.",en:"**Effect size** (Cohen's d): $d = \\frac{\\bar x_1 - \\bar x_2}{s_p}$ (for two groups).\n\nInterpretation (Cohen):\n- $d \\approx 0.2$: small.\n- $d \\approx 0.5$: medium.\n- $d \\approx 0.8$: large.\n\nWith large n, even trivial differences are significant. Effect size complements the p-value."},
+      formulas:[{latex:"$d = \\frac{\\bar x_1 - \\bar x_2}{s_p}$",name:{es:"d de Cohen",en:"Cohen's d"}}],
+      example:{es:"Diferencia de 2 puntos, sd=10 → d=0,2 (pequeño). Con n=1000, p puede ser <0,05, pero el efecto es trivial.",en:"Difference of 2 points, sd=10 → d=0.2 (small). With n=1000, p may be <0.05, but the effect is trivial."},
+      blueprint:[{prompt:{es:"d de Cohen mide el tamaño del...",en:"Cohen's d measures effect..."},answer:["efecto","effect"],hint:{es:"Efecto.",en:"Effect."},solution:{es:"Efecto.",en:"Effect."}},
+        {prompt:{es:"d ≈ 0,2 es un efecto...",en:"d ≈ 0.2 is a ... effect."},answer:["pequeño","small"],hint:{es:"Pequeño.",en:"Small."},solution:{es:"Pequeño.",en:"Small."}},
+        {prompt:{es:"d ≈ 0,8 es un efecto...",en:"d ≈ 0.8 is a ... effect."},answer:["grande","large"],hint:{es:"Grande.",en:"Large."},solution:{es:"Grande.",en:"Large."}}],
+      misconceptions:[{es:"**Error común:** confundir significancia estadística con importancia práctica. Un p-valor pequeño no significa un efecto importante.",en:"**Common mistake:** confusing statistical significance with practical importance. A small p-value doesn't mean an important effect."}],
+      exercises:[
+        {id:"C4-L5-E1",type:"numeric",prompt:{es:"d de Cohen: diferencia=4, sp=2.",en:"Cohen's d: difference=4, sp=2."},answer:2,tol:0.001,hint:{es:"4/2.",en:"4/2."},solution:{es:"2 (grande).",en:"2 (large)."},xp:10},
+        {id:"C4-L5-E2",type:"mcq",prompt:{es:"d ≈ 0,2 es:",en:"d ≈ 0.2 is:"},choices:[{es:"Grande",en:"Large"},{es:"Mediano",en:"Medium"},{es:"Pequeño",en:"Small"},{es:"Nulo",en:"Null"}],answer:2,hint:{es:"Pequeño.",en:"Small."},solution:{es:"Pequeño.",en:"Small."},xp:10},
+        {id:"C4-L5-E3",type:"mcq",prompt:{es:"d ≈ 0,8 es:",en:"d ≈ 0.8 is:"},choices:[{es:"Pequeño",en:"Small"},{es:"Mediano",en:"Medium"},{es:"Grande",en:"Large"},{es:"Nulo",en:"Null"}],answer:2,hint:{es:"Grande.",en:"Large."},solution:{es:"Grande.",en:"Large."},xp:10},
+        {id:"C4-L5-E4",type:"truefalse",prompt:{es:"Un p-valor pequeño garantiza un efecto importante.",en:"A small p-value guarantees an important effect."},answer:false,hint:{es:"No.",en:"No."},solution:{es:"Falso.",en:"False."},xp:10},
+        {id:"C4-L5-E5",type:"mcq",prompt:{es:"El tamaño del efecto complementa:",en:"Effect size complements:"},choices:[{es:"El p-valor",en:"The p-value"},{es:"La media",en:"The mean"},{es:"La varianza",en:"Variance"},{es:"La moda",en:"The mode"}],answer:0,hint:{es:"El p-valor.",en:"The p-value."},solution:{es:"El p-valor.",en:"The p-value."},xp:10}
+      ]
+    }
+  ]
+};

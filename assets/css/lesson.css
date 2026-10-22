@@ -1,0 +1,80 @@
+/* === Lesson layout === */
+.lesson-wrap{display:grid;grid-template-columns:260px 1fr;gap:30px;max-width:var(--max);margin:0 auto;padding:24px var(--gutter) 60px}
+@media (max-width:900px){.lesson-wrap{grid-template-columns:1fr}}
+.toc{position:sticky;top:70px;height:fit-content;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.toc h4{margin:0 0 8px;font-size:.85rem;text-transform:uppercase;color:var(--muted)}
+.toc ul{list-style:none;padding:0;margin:0}
+.toc li{padding:6px 0;border-bottom:1px solid var(--line)}
+.toc li:last-child{border-bottom:none}
+.toc a{color:var(--text);font-size:.9rem}
+.toc a.active{color:var(--accent);font-weight:700}
+
+.lesson-main h1{margin-bottom:6px}
+.lesson-meta{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+.block{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:18px}
+.block h2{font-size:1.15rem;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:12px}
+.block .label{display:inline-block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px}
+
+/* === Prose / LaTeX === */
+.prose p{margin:0 0 1em}
+.prose ul,.prose ol{margin:0 0 1em}
+.formula{display:block;background:var(--panel-2);border-left:3px solid var(--accent);padding:12px 16px;margin:12px 0;border-radius:0 var(--radius-sm) var(--radius-sm) 0;overflow-x:auto;font-family:var(--mono)}
+.formula .name{color:var(--muted);font-size:.85rem;margin-bottom:4px;display:block}
+
+/* === Blueprint === */
+.blueprint{counter-reset:step}
+.bp-step{display:grid;grid-template-columns:32px 1fr 120px;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}
+.bp-step:last-child{border-bottom:none}
+.bp-num{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#000;font-weight:900;display:grid;place-items:center}
+.bp-prompt{font-weight:600;margin-bottom:6px}
+.bp-hint{color:var(--muted);font-size:.85rem;font-style:italic;margin-top:4px}
+.bp-input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-family:var(--mono)}
+.bp-input.ok{border-color:var(--ok)}
+.bp-input.bad{border-color:var(--bad)}
+.bp-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+
+/* === Quiz === */
+.quiz-item{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px}
+.quiz-item .q-prompt{font-weight:700;margin-bottom:10px}
+.quiz-item .q-latex{margin-bottom:10px;overflow-x:auto}
+.choices{display:flex;flex-direction:column;gap:8px}
+.choice{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);cursor:pointer;background:var(--panel)}
+.choice:hover{border-color:var(--accent)}
+.choice input{accent-color:var(--accent)}
+.choice.correct{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,transparent)}
+.choice.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,transparent)}
+.choice.locked{pointer-events:none;opacity:.9}
+.numeric-input{display:flex;gap:8px;align-items:center}
+.numeric-input input{flex:1;padding:10px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-family:var(--mono)}
+.feedback{margin-top:10px;padding:10px 12px;border-radius:var(--radius-sm);font-size:.9rem}
+.feedback.ok{background:color-mix(in srgb,var(--ok) 15%,transparent);border:1px solid var(--ok);color:var(--ok)}
+.feedback.bad{background:color-mix(in srgb,var(--bad) 15%,transparent);border:1px solid var(--bad);color:var(--bad)}
+.feedback .sol{margin-top:6px;color:var(--text);font-size:.88rem}
+.quiz-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;align-items:center}
+.score-line{font-weight:700;color:var(--accent)}
+
+/* === Gamification visuals === */
+.jackpot{animation:shake .4s ease-in-out 2}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.confetti-canvas{position:fixed;inset:0;pointer-events:none;z-index:9999}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:var(--panel-2);border:1px solid var(--line);font-size:.8rem;margin:4px}
+.badge.earned{background:var(--accent);color:#000;border-color:var(--accent)}
+.level-banner{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#000;padding:12px 18px;border-radius:var(--radius);font-weight:800;margin-bottom:14px}
+
+/* === Charts (SVG) === */
+.chart{width:100%;max-width:480px;margin:8px auto;display:block}
+.chart text{fill:var(--text);font-size:11px;font-family:var(--font)}
+.chart .axis{stroke:var(--muted);stroke-width:1}
+.chart .bar{fill:var(--accent)}
+.chart .curve{stroke:var(--accent);stroke-width:2;fill:none}
+.chart .point{fill:var(--accent)}
+
+/* === Misc === */
+.trap{background:color-mix(in srgb,var(--bad) 12%,transparent);border:1px solid var(--bad);border-radius:var(--radius);padding:14px 18px}
+.trap h3{color:var(--bad);margin:0 0 6px}
+.review-box{background:var(--bg-soft);border:1px dashed var(--line);border-radius:var(--radius);padding:14px 18px}
+.review-box h3{font-size:1rem;margin:0 0 8px}
+.breadcrumb{color:var(--muted);font-size:.85rem;margin-bottom:10px}
+.breadcrumb a{color:var(--muted)}
+.next-lesson{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);margin-top:18px}
+.next-lesson a{font-weight:700}
