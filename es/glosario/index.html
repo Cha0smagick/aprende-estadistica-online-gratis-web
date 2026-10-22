@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded",()=>{
   const lang=window.SITE_LANG;
   const table=document.createElement("table");
   table.style.width="100%"; table.style.borderCollapse="collapse";
-  let html="<thead><tr><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>Símbolo</th><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>Nombre</th><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>Descripción</th></tr></thead><tbody>";
+  let html="<thead><tr><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>Símbolo</th><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>Nombre</th><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>LaTeX</th><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>Descripción</th></tr></thead><tbody>";
   for(const sym in dict){
     const info=dict[sym];
-    html+=`<tr><td style='padding:8px;border-bottom:1px solid var(--line);font-size:1.4rem;color:var(--accent)'>${sym}</td><td style='padding:8px;border-bottom:1px solid var(--line)'>${info.name[lang]||info.name.es}</td><td style='padding:8px;border-bottom:1px solid var(--line);color:var(--muted)'>${info.desc[lang]||info.desc.es}</td></tr>`;
+    html+=`<tr><td style='padding:8px;border-bottom:1px solid var(--line);font-size:1.4rem;color:var(--accent)'>${sym}</td><td style='padding:8px;border-bottom:1px solid var(--line)'>${info.name[lang]||info.name.es}</td><td style='padding:8px;border-bottom:1px solid var(--line);font-family:var(--mono);color:var(--accent);font-size:.85rem'>${info.latex}</td><td style='padding:8px;border-bottom:1px solid var(--line);color:var(--muted)'>${info.desc[lang]||info.desc.es}</td></tr>`;
   }
   html+="</tbody>";
   table.innerHTML=html;
