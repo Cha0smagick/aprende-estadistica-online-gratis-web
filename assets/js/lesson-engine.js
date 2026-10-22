@@ -83,12 +83,11 @@
           <div class="bp-num">${i+1}</div>
           <div>
             <div class="bp-prompt">${t(s.prompt)}</div>
+            ${s.choices?`<div class="choices" data-bp="${i}">${s.choices.map((ch,idx)=>`<label class="choice"><input type="radio" name="bp-${i}" value="${idx}"> ${t(ch)}</label>`).join("")}</div>`:`<input class="bp-input" data-idx="${i}" placeholder="?">`}
             ${s.hint?`<div class="bp-hint" id="hint-${i}" style="display:none">${t(s.hint)}</div>`:""}
             ${s.solution?`<div class="bp-hint" id="sol-${i}" style="display:none"><strong>${window.t("solution")}:</strong> ${t(s.solution)}</div>`:""}
           </div>
-          <input class="bp-input" data-idx="${i}" placeholder="?">
         </div>`).join("");
-      // check button
       const actions=document.getElementById("blueprint-actions");
       if(actions){
         const btnC=document.createElement("button"); btnC.className="btn btn-primary btn-sm"; btnC.textContent=window.t("check");
@@ -97,13 +96,23 @@
         btnC.addEventListener("click",()=>{
           let allOk=true;
           (L.blueprint||[]).forEach((s,i)=>{
-            const inp=document.querySelector(`.bp-input[data-idx="${i}"]`);
-            const val=inp.value; let ok=false;
-            if(typeof s.answer==="number"){ ok=Math.abs(parseFloat(String(val).replace(",","."))-s.answer)<=(s.tol||0.01); }
-            else if(Array.isArray(s.answer)){ ok=s.answer.map(x=>String(x).toLowerCase()).includes(String(val).trim().toLowerCase()); }
-            else { ok=String(val).trim().toLowerCase()===String(s.answer).trim().toLowerCase(); }
-            inp.classList.remove("ok","bad"); inp.classList.add(ok?"ok":"bad");
-            if(!ok) allOk=false;
+            if(s.choices){
+              const sel=document.querySelector(`input[name="bp-${i}"]:checked`);
+              const val=sel?parseInt(sel.value,10):-1;
+              const ok=val===s.answer;
+              const step=document.querySelector(`.bp-step[data-idx="${i}"]`);
+              step.querySelectorAll(".choice").forEach((c,idx)=>{ c.classList.remove("correct","wrong"); if(ok && idx===val) c.classList.add("correct"); if(!ok && idx===val) c.classList.add("wrong"); });
+              if(!ok) allOk=false;
+            } else {
+              const inp=document.querySelector(`.bp-input[data-idx="${i}"]`);
+              if(!inp) return;
+              const val=inp.value; let ok=false;
+              if(typeof s.answer==="number"){ ok=Math.abs(parseFloat(String(val).replace(",","."))-s.answer)<=(s.tol||0.01); }
+              else if(Array.isArray(s.answer)){ ok=s.answer.map(x=>String(x).toLowerCase()).includes(String(val).trim().toLowerCase()); }
+              else { ok=String(val).trim().toLowerCase()===String(s.answer).trim().toLowerCase(); }
+              inp.classList.remove("ok","bad"); inp.classList.add(ok?"ok":"bad");
+              if(!ok) allOk=false;
+            }
           });
           if(window.Sound){ if(allOk) window.Sound.correct(); else window.Sound.wrong(); }
         });
