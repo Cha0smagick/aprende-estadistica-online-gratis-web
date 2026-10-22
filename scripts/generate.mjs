@@ -106,6 +106,9 @@ async function main(){
   }
   await copyDir(path.join(ROOT,"assets"), path.join(SITE,"assets"));
   if(await exists(path.join(ROOT,"vendor"))) await copyDir(path.join(ROOT,"vendor"), path.join(SITE,"vendor"));
+  // copy hand-written source pages (lab, etc.) into generated tree
+  await copyDir(path.join(ROOT,"es"), path.join(SITE,"es"));
+  await copyDir(path.join(ROOT,"en"), path.join(SITE,"en"));
 
   console.log("Generated site in", SITE);
 }

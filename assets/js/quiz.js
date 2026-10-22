@@ -1,7 +1,7 @@
 /* Renders a list of exercises, checks answers, awards XP/chips, updates SRS. */
 (function(){
   const el=(t,a={},c=[])=>{const e=document.createElement(t);Object.entries(a).forEach(([k,v])=>{if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else e.setAttribute(k,v);});[].concat(c).forEach(x=>{if(x!=null)e.appendChild(typeof x==="string"?document.createTextNode(x):x);});return e;};
-  function renderMath(root){ if(window.katex && window.renderMathInElement){ try{ window.renderMathInElement(root,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});}catch(e){} } }
+  function renderMath(root){ if(window.katex && window.renderMathInElement){ try{ window.renderMathInElement(root,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],throwOnError:false});}catch(e){} } }
   function checkNumeric(user,answer,tol=0.01){ const u=parseFloat(String(user).replace(",",".")); if(isNaN(u)) return false; return Math.abs(u-answer)<=tol; }
 
   window.Quiz = {
@@ -40,7 +40,6 @@
           inputWrap.appendChild(inp);
           item.appendChild(inputWrap);
         } else if(q.type==="order"){
-          // simple ordered selection via numbered inputs
           const wrap=el("div");
           q.choices.forEach((ch,idx)=>{
             const row=el("div",{class:"numeric-input"});
@@ -75,16 +74,17 @@
           return false;
         }
         btnCheck.addEventListener("click",()=>{
+          if(btnCheck.disabled) return;
+          btnCheck.disabled=true;
           const ans=collectAnswer();
           const ok=isCorrect(ans);
           fb.classList.remove("hidden","ok","bad");
           if(ok){
-            fb.classList.add("ok"); fb.innerHTML=`${window.t("correct")} (+${q.xp||10} XP)`;
+            fb.classList.add("ok"); fb.innerHTML=`${window.t("correct")}`;
             item.querySelectorAll(".choice").forEach(c=>c.classList.add("locked"));
             results.correct++;
-            const r=window.Game.onCorrect({jackpot:!!q.jackpot});
-            window.Progress.addXp(q.xp||10);
-            fb.innerHTML+=` <span class="score-line">+${q.xp||10} XP · +${r.gained} fichas${r.jackpot?" · "+window.t("jackpot"):""}</span>`;
+            const r=window.Game.onCorrect({jackpot:!!q.jackpot, base: q.xp||10});
+            fb.innerHTML+=` <span class="score-line">+${r.gained} XP · +${r.gained} fichas${r.jackpot?" · "+window.t("jackpot"):""}</span>`;
             if(r.jackpot){ item.classList.add("jackpot"); window.Game.confetti(); }
             window.Progress.markSrs(q.id,1);
             window.Game.badgeCheck({perfect: results.correct===results.total && results.total>0});
@@ -107,7 +107,6 @@
         });
       });
       renderMath(container);
-      // summary
       const summary=el("div",{class:"block"});
       summary.appendChild(el("p",{class:"score-line"},[`Score: ${results.correct}/${results.total}`]));
       container.appendChild(summary);

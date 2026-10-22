@@ -35,6 +35,7 @@ function nav({lang,base,courseTitle}){
   <a class="brand" href="${home}"><span class="brand-chip">♠</span> Jackpot Estadístico</a>
   <nav class="nav-links">
     ${courseTitle?`<span class="muted">${esc(courseTitle)}</span>`:""}
+    <a class="btn btn-ghost btn-sm" href="${b}${lang}/lab/">🔬 Lab</a>
     <div class="lang-switch">
       <a class="btn btn-ghost btn-sm" href="${b}${other}/">${other.toUpperCase()}</a>
     </div>
@@ -52,7 +53,8 @@ function footer({lang,base}){
 <script src="${b}assets/js/progress.js"></script>
 <script src="${b}assets/js/charts.js"></script>
 <script src="${b}assets/js/gamification.js"></script>
-<script src="${b}assets/js/quiz.js"></script>`;
+<script src="${b}assets/js/quiz.js"></script>
+<script src="${b}assets/js/diploma.js"></script>`;
 }
 
 export function indexPage({lang,base,courses}){
@@ -73,6 +75,8 @@ export function indexPage({lang,base,courses}){
       <a class="btn btn-primary" href="${url}">${lang==="es"?"Entrar":"Enter"}</a>
     </article>`;
   }
+  const compact = courses.map(c=>({id:c.id, title:c.title, modules:c.modules.map(m=>({id:m.id,lessons:m.lessons.map(l=>l.id)}))}));
+  const embed = JSON.stringify(compact);
   return `${head({lang,title,desc,canonical:home,altEs:b+"es/",altEn:b+"en/",jsonLd:JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":[lang]}),base:b})}
 <body class="landing">
 ${nav({lang,base})}
@@ -86,9 +90,32 @@ ${nav({lang,base})}
     </div>
   </section>
   <section class="cards" aria-label="Cursos">${cards}</section>
+  <div id="mega-banner" style="max-width:var(--max);margin:0 auto;padding:0 var(--gutter) 40px"></div>
 </main>
 ${footer({lang,base})}
+<script>window.COURSES_COMPACT=${embed};</script>
 <script src="${b}assets/js/lesson-engine.js"></script>
+<script src="${b}assets/js/diploma.js"></script>
+<script>
+(function(){
+  if(!window.COURSES_COMPACT) return;
+  const courses=window.COURSES_COMPACT;
+  const allIds=[]; for(const c of courses) for(const m of c.modules) for(const id of m.lessons) allIds.push(id);
+  const g=window.Progress.get();
+  const done=allIds.filter(id=>!!g.completed[id]).length;
+  const total=allIds.length;
+  const banner=document.getElementById("mega-banner");
+  if(banner && done>0){
+    banner.innerHTML="<div class='level-banner'>Progreso global: "+done+"/"+total+" lecciones ("+Math.round(done/total*100)+"%)</div><div class='progress-bar'><div class='progress-fill' style='width:"+Math.round(done/total*100)+"%'></div></div>";
+    if(done===total && window.Diploma){
+      banner.innerHTML+="<div style='margin-top:8px'><button class='btn btn-primary' id='btn-mega'>🏆 Descargar MEGADIPLOMA</button></div>";
+      const b=document.getElementById("btn-mega");
+      if(b) b.addEventListener("click",()=>window.Diploma.megaDiploma(courses));
+    }
+  }
+  if(window.Diploma) window.Diploma.checkAndOffer(courses);
+})();
+</script>
 </body></html>`;
 }
 
@@ -111,6 +138,7 @@ export function coursePage({lang,base,course}){
       <ul>${lessons}</ul>
     </section>`;
   }
+  const embedCourse = JSON.stringify(course);
   return `${head({lang,title,desc,canonical:url,altEs:b+"es/"+course.slug+"/",altEn:b+"en/"+course.slug+"/",jsonLd,base:b})}
 <body>
 ${nav({lang,base,courseTitle:t(course.title,lang)})}
@@ -119,10 +147,35 @@ ${nav({lang,base,courseTitle:t(course.title,lang)})}
   <h1>${esc(t(course.title,lang))}</h1>
   <p class="lead">${esc(t(course.tagline,lang))}</p>
   <p>${esc(desc)}</p>
+  <div id="diploma-banner" style="display:none;margin:14px 0"></div>
   ${modulesHtml}
 </main>
 ${footer({lang,base:b})}
+<script>window.COURSE_DATA=${embedCourse};</script>
 <script src="${b}assets/js/lesson-engine.js"></script>
+<script src="${b}assets/js/diploma.js"></script>
+<script>
+(function(){
+  if(!window.COURSE_DATA) return;
+  const c=window.COURSE_DATA;
+  function allL(){const o=[];for(const m of c.modules) for(const l of m.lessons) o.push(l.id);return o;}
+  const g=window.Progress.get();
+  const done=allL().filter(id=>!!g.completed[id]).length;
+  const total=allL().length;
+  // progress ring text
+  const banner=document.getElementById("diploma-banner");
+  if(banner){
+    banner.style.display="block";
+    banner.innerHTML="<div class='level-banner'>Progreso del curso: "+done+"/"+total+" lecciones ("+Math.round(done/total*100)+"%)</div><div class='progress-bar'><div class='progress-fill' style='width:"+Math.round(done/total*100)+"%'></div></div>";
+    if(done===total){
+      banner.innerHTML+="<div style='margin-top:8px'><button class='btn btn-primary' id='btn-diploma'>🎓 Descargar diploma honorífico</button></div>";
+      const bd=document.getElementById("btn-diploma");
+      if(bd) bd.addEventListener("click",()=>window.Diploma.courseDiploma(c));
+    }
+  }
+  if(window.Diploma) window.Diploma.checkAndOffer([c]);
+})();
+</script>
 </body></html>`;
 }
 

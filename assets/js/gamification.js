@@ -2,7 +2,7 @@
 window.Game = {
   LEVEL_NAMES: ["Novato","Aprendiz de Crupier","Contador de Cartas","Tiburón de Datos","Ballena Estadística","High Roller del Azar"],
   onCorrect(opts={}){
-    const g=window.Progress.get(); const base=10; let mult=1;
+    const g=window.Progress.get(); const base=opts.base||10; let mult=1;
     if(g.streak>=3) mult=1.5; if(g.streak>=6) mult=2; if(g.streak>=10) mult=3;
     let gained=Math.round(base*mult);
     let jackpot=false;

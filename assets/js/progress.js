@@ -2,7 +2,7 @@
 (function(){
   const KEY = "jackpot-progress-v1";
   const defaults = { xp:0, chips:0, streak:0, bestStreak:0, level:1,
-    badges:[], srs:{}, completed:{}, lastDay:null, answers:{} };
+    badges:[], srs:{}, completed:{}, diplomas:[], lastDay:null, answers:{} };
   function load(){ try{ const r=localStorage.getItem(KEY); return r? Object.assign({},defaults,JSON.parse(r)): {...defaults}; }catch(e){ return {...defaults}; } }
   function save(s){ try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} }
   const S = load();
