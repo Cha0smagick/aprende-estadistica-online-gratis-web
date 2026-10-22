@@ -61,7 +61,8 @@ function footer({lang,base}){
 <script>document.addEventListener("DOMContentLoaded",function(){if(window.Sound&&document.getElementById("sound-toggle"))window.Sound.initToggle(document.getElementById("sound-toggle"));});</script>
 <script src="${b}assets/js/quiz.js"></script>
 <script src="${b}assets/js/diploma.js"></script>
-<script src="${b}assets/js/symbols.js"></script>`;
+<script src="${b}assets/js/symbols.js"></script>
+<script src="${b}assets/js/casino-bg.js"></script>`;
 }
 
 export function indexPage({lang,base,courses}){
