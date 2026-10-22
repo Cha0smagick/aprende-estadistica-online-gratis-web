@@ -247,6 +247,24 @@
     container.appendChild(box);
   }
 
+  function histogramExplorer(container){
+    const data=[12,15,14,13,16,11,15,14,12,13,14,15,13,12,16,11,14,15,13,12];
+    const formula=document.createElement("div"); formula.className="formula"; formula.innerHTML="$$\\bar x = \\frac{1}{n}\\sum x_i,\\quad s = \\sqrt{\\frac{\\sum(x_i-\\bar x)^2}{n-1}}$$";
+    container.appendChild(formula);
+    const chart=document.createElement("div"); container.appendChild(chart);
+    const readout=document.createElement("p"); readout.className="score-line"; container.appendChild(readout);
+    let bins=6;
+    function redraw(){
+      const mean=data.reduce((a,b)=>a+b,0)/data.length;
+      const sd=Math.sqrt(data.reduce((a,b)=>a+Math.pow(b-mean,2),0)/(data.length-1));
+      chart.innerHTML=""; if(window.Charts) window.Charts.histogram(chart,data,{w:560,h:260,bins:bins});
+      readout.innerHTML=`n=${data.length}, x̄=${mean.toFixed(2)}, s=${sd.toFixed(2)} · bins=${bins} → cambia los bins para ver cómo cambia la forma`;
+      if(window.katex && window.renderMathInElement) window.renderMathInElement(formula,{delimiters:[{left:"$$",right:"$$",display:true}],throwOnError:false});
+    }
+    container.appendChild(mkSlider("bins","número de bins", 3, 12, 1, bins, v=>{bins=Math.round(v);redraw();grantXP();}));
+    redraw();
+  }
+
   let xpGranted=false;
   function grantXP(){ if(xpGranted) return; xpGranted=true; if(window.Progress){ window.Progress.addXp(5); window.Progress.addChips(5); } }
 
@@ -259,7 +277,8 @@
     ci: "📐 Intervalo de Confianza — Margen de error visual",
     ttest: "🧪 Prueba t Pareada — ¿Hay diferencia significativa?",
     bayes: "🎰 Teorema de Bayes — De prior a posterior",
-    entropy: "🌀 Entropía de Shannon — Incertidumbre en bits"
+    entropy: "🌀 Entropía de Shannon — Incertidumbre en bits",
+    histogram: "📊 Histograma — Bins, forma y distribución"
   };
   const DESCS = {
     discovery: "Observa los datos, adivina la media y revela la fórmula.",
@@ -270,9 +289,10 @@
     ci: "Cambia n, x̄, s y confianza. El intervalo se estira o encoge visualmente.",
     ttest: "Cambia n, d̄ y s_d. La línea t se mueve; rojo = significativo, verde = no.",
     bayes: "Cambia prior, sensibilidad y especificidad. El VPP se actualiza en tiempo real.",
-    entropy: "Mueve p para ver cómo la entropía alcanza su máximo en p=0.5 (máxima incertidumbre)."
+    entropy: "Mueve p para ver cómo la entropía alcanza su máximo en p=0.5 (máxima incertidumbre).",
+    histogram: "Cambia el número de bins y observa cómo cambia la forma de la distribución. Los números sobre las barras son las frecuencias."
   };
-  const builders = {normal:normalExplorer, z:zExplorer, binomial:binomialExplorer, entropy:entropyExplorer, regression:regressionExplorer, ci:ciExplorer, ttest:ttestExplorer, bayes:bayesExplorer, discovery:discovery};
+  const builders = {normal:normalExplorer, z:zExplorer, binomial:binomialExplorer, entropy:entropyExplorer, regression:regressionExplorer, ci:ciExplorer, ttest:ttestExplorer, bayes:bayesExplorer, discovery:discovery, histogram:histogramExplorer};
   window.FormulaLab = {
     mount(container, which){
       const b=builders[which];
