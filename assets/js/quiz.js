@@ -85,11 +85,13 @@
             results.correct++;
             const r=window.Game.onCorrect({jackpot:!!q.jackpot, base: q.xp||10});
             fb.innerHTML+=` <span class="score-line">+${r.gained} XP · +${r.gained} fichas${r.jackpot?" · "+window.t("jackpot"):""}</span>`;
-            if(r.jackpot){ item.classList.add("jackpot"); window.Game.confetti(); }
+            if(r.jackpot){ item.classList.add("jackpot"); window.Game.confetti(); if(window.Sound) window.Sound.jackpot(); }
+            else { if(window.Sound) window.Sound.correct(); }
             window.Progress.markSrs(q.id,1);
             window.Game.badgeCheck({perfect: results.correct===results.total && results.total>0});
           } else {
             fb.classList.add("bad"); fb.innerHTML=window.t("wrong");
+            if(window.Sound) window.Sound.wrong();
             window.Game.onWrong();
             window.Progress.markSrs(q.id,1);
           }

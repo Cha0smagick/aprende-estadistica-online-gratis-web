@@ -41,6 +41,7 @@ function nav({lang,base,courseTitle}){
       <a class="btn btn-ghost btn-sm" href="${b}${other}/">${other.toUpperCase()}</a>
     </div>
     <div id="progress-chip" class="progress-chip"></div>
+    <button id="sound-toggle" class="btn btn-ghost btn-sm" aria-label="Sound" type="button">🔊</button>
   </nav>
 </header>`;
 }
@@ -54,6 +55,8 @@ function footer({lang,base}){
 <script src="${b}assets/js/progress.js"></script>
 <script src="${b}assets/js/charts.js"></script>
 <script src="${b}assets/js/gamification.js"></script>
+<script src="${b}assets/js/sound.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){if(window.Sound&&document.getElementById("sound-toggle"))window.Sound.initToggle(document.getElementById("sound-toggle"));});</script>
 <script src="${b}assets/js/quiz.js"></script>
 <script src="${b}assets/js/diploma.js"></script>
 <script src="${b}assets/js/symbols.js"></script>`;

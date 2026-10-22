@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const courseFiles = ["descriptiva.js","probabilidad.js","inferencial.js"];
+const courseFiles = ["introduccion.js","descriptiva.js","probabilidad.js","inferencial.js"];
 
 const TYPES = new Set(["mcq","numeric","truefalse","order"]);
 const LANGS = ["es","en"];

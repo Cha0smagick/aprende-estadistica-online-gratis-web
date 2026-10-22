@@ -95,6 +95,7 @@
         const btnH=document.createElement("button"); btnH.className="btn btn-ghost btn-sm"; btnH.textContent=window.t("hint");
         actions.appendChild(btnC); actions.appendChild(btnH);
         btnC.addEventListener("click",()=>{
+          let allOk=true;
           (L.blueprint||[]).forEach((s,i)=>{
             const inp=document.querySelector(`.bp-input[data-idx="${i}"]`);
             const val=inp.value; let ok=false;
@@ -102,7 +103,9 @@
             else if(Array.isArray(s.answer)){ ok=s.answer.map(x=>String(x).toLowerCase()).includes(String(val).trim().toLowerCase()); }
             else { ok=String(val).trim().toLowerCase()===String(s.answer).trim().toLowerCase(); }
             inp.classList.remove("ok","bad"); inp.classList.add(ok?"ok":"bad");
+            if(!ok) allOk=false;
           });
+          if(window.Sound){ if(allOk) window.Sound.correct(); else window.Sound.wrong(); }
         });
         btnH.addEventListener("click",()=>{
           (L.blueprint||[]).forEach((s,i)=>{ const h=document.getElementById("hint-"+i); if(h) h.style.display="block"; });
@@ -133,6 +136,7 @@
         window.Progress.completeLesson(L.id);
         window.Game.badgeCheck({});
         window.Game.confetti();
+        if(window.Sound) window.Sound.complete();
         doneBtn.textContent="✓ "+window.t("done");
         doneBtn.disabled=true;
         refreshChip();
