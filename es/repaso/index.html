@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repaso espaciado · Jackpot Estadístico</title>
+<meta name="description" content="Repaso espaciado de lo aprendido.">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/lesson.css">
+<script>window.SITE_BASE="../../";window.SITE_LANG="es";</script>
+</head>
+<body>
+<header class="site-nav">
+  <a class="brand" href="../../es/"><span class="brand-chip">♠</span> Jackpot Estadístico</a>
+  <nav class="nav-links"><a class="btn btn-ghost btn-sm" href="../../es/lab/">🔬 Lab</a><a class="btn btn-ghost btn-sm" href="../../es/glosario/">∑ Símbolos</a><div id="progress-chip" class="progress-chip"></div></nav>
+</header>
+<main class="container" style="padding-top:24px">
+  <h1>🧠 Repaso espaciado</h1>
+  <p class="lead">Las preguntas que debes repasar hoy según tu calendario de repetición espaciada (cajas de Leitner).</p>
+  <div id="review-status" class="block"></div>
+  <div id="review-quiz" class="block"></div>
+</main>
+<footer class="site-foot"><p>Jackpot Estadístico</p><p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz (<a href="https://www.linkedin.com/in/alejandroquinteroruiz/" target="_blank" rel="noopener">LinkedIn</a>).</p></footer>
+<script src="../../assets/js/i18n.js"></script>
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/charts.js"></script>
+<script src="../../assets/js/gamification.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/diploma.js"></script>
+<script src="../../assets/js/symbols.js"></script>
+<script src="../../assets/js/casino-bg.js"></script>
+<script src="../../exercises-index.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const status=document.getElementById("review-status");
+  const quiz=document.getElementById("review-quiz");
+  const due=window.Progress.dueSrs();
+  const items=due.map(id=>window.EXERCISES && window.EXERCISES[id]).filter(Boolean);
+  if(items.length===0){
+    status.innerHTML="<p class='score-line'>¡No hay repasos pendientes hoy! Vuelve mañana o completa más lecciones.</p>";
+    return;
+  }
+  status.innerHTML="<p class='score-line'>Tienes <strong>"+items.length+"</strong> pregunta(s) para repasar hoy.</p>";
+  window.Quiz.render(quiz, items);
+});
+</script>
+</body>
+</html>

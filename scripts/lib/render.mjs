@@ -37,6 +37,7 @@ function nav({lang,base,courseTitle}){
     ${courseTitle?`<span class="muted">${esc(courseTitle)}</span>`:""}
     <a class="btn btn-ghost btn-sm" href="${b}${lang}/lab/">🔬 Lab</a>
     <a class="btn btn-ghost btn-sm" href="${b}${lang}/glosario/">∑ Símbolos</a>
+    <a class="btn btn-ghost btn-sm" href="${b}${lang}/repaso/">🧠 Repaso <span id="review-badge" style="background:var(--bad);color:#fff;border-radius:999px;padding:1px 6px;font-size:.7rem;margin-left:4px;display:none">0</span></a>
     <div class="lang-switch">
       <a class="btn btn-ghost btn-sm" href="${b}${other}/">${other.toUpperCase()}</a>
     </div>
@@ -62,7 +63,10 @@ function footer({lang,base}){
 <script src="${b}assets/js/quiz.js"></script>
 <script src="${b}assets/js/diploma.js"></script>
 <script src="${b}assets/js/symbols.js"></script>
-<script src="${b}assets/js/casino-bg.js"></script>`;
+<script src="${b}assets/js/casino-bg.js"></script>
+<script>
+(function(){function upd(){var b=document.getElementById("review-badge");if(!b||!window.Progress)return;var n=window.Progress.dueSrs().length;if(n>0){b.textContent=n;b.style.display="inline";}else b.style.display="none";}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>setTimeout(upd,300));else setTimeout(upd,300);})();
+</script>`;
 }
 
 export function indexPage({lang,base,courses}){

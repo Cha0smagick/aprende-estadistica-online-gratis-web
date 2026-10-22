@@ -188,9 +188,23 @@
       b(container);
     }
   };
-  document.addEventListener("DOMContentLoaded",()=>{
-    document.querySelectorAll("[data-lab]").forEach(el=>{
-      if(window.FormulaLab) window.FormulaLab.mount(el, el.getAttribute("data-lab"));
-    });
-  });
+  function ensureKatex(cb){
+    if(window.katex && window.renderMathInElement){ cb(); return; }
+    const s=document.createElement("script");
+    s.src = window.SITE_BASE+"vendor/katex/katex.min.js";
+    s.onload=()=>{
+      const a=document.createElement("script"); a.src=window.SITE_BASE+"vendor/katex/contrib/auto-render.min.js";
+      a.onload=cb; a.onerror=()=>loadCdn(cb); document.head.appendChild(a);
+    };
+    s.onerror=()=>loadCdn(cb);
+    document.head.appendChild(s);
+  }
+  function loadCdn(cb){
+    const l=document.createElement("link"); l.rel="stylesheet"; l.href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"; document.head.appendChild(l);
+    const s=document.createElement("script"); s.src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js";
+    s.onload=()=>{ const a=document.createElement("script"); a.src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"; a.onload=cb; document.head.appendChild(a); };
+    document.head.appendChild(s);
+  }
+  function mountAll(){ document.querySelectorAll("[data-lab]").forEach(el=>{ if(window.FormulaLab && !el.dataset.mounted){ el.dataset.mounted="1"; window.FormulaLab.mount(el, el.getAttribute("data-lab")); } }); if(window.Symbols && window.Symbols.wrap) window.Symbols.wrap(document.body); }
+  ensureKatex(()=>{ if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",()=>setTimeout(mountAll,100)); else setTimeout(mountAll,100); });
 })();

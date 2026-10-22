@@ -89,6 +89,19 @@ async function main(){
     }
   }
 
+  // exercises index for spaced-repetition review
+  const exIndex={};
+  for(const course of courses){
+    for(const m of course.modules){
+      for(const l of m.lessons){
+        for(const q of (l.exercises||[])){
+          exIndex[q.id]={id:q.id,type:q.type,prompt:q.prompt,choices:q.choices,answer:q.answer,tol:q.tol,hint:q.hint,solution:q.solution,xp:q.xp||10,jackpot:!!q.jackpot,course:course.id,lesson:l.id};
+        }
+      }
+    }
+  }
+  await writeFile(path.join(SITE,"exercises-index.js"), "window.EXERCISES="+JSON.stringify(exIndex)+";");
+
   // sitemap
   const urls=[];
   for(const lang of langs){

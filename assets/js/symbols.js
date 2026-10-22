@@ -122,13 +122,27 @@
       const parent=node.parentElement;
       if(!parent || parent.classList.contains("sym") || parent.tagName==="SCRIPT" || parent.tagName==="STYLE" || parent.tagName==="CODE") continue;
       const txt=node.nodeValue;
+      // determine if we are inside a math/formula context (KaTeX rendered or raw formula)
+      let inMath=false; let el=node.parentElement;
+      while(el){ if(el.classList && (el.classList.contains("formula")||el.classList.contains("katex")||el.classList.contains("q-latex")||el.classList.contains("mord")||el.classList.contains("mbin"))) { inMath=true; break; } el=el.parentElement; }
+      const isLatin = c => /[a-zA-Z]/.test(c);
+      // single Latin letters that are also math symbols
+      const latinSyms = new Set(["d","e","i","n","p","r","s","t","x","P","E","Z","F","N","X","Y","I","Q"]);
       let changed=false; let html="";
       for(let i=0;i<txt.length;i++){
         const two=txt.substring(i,i+2);
         const one=txt[i];
-        if(S[two]){ html+=`<span class="sym" data-sym="${two}">${two}</span>`; i+=1; changed=true; }
-        else if(S[one]){ html+=`<span class="sym" data-sym="${one}">${one}</span>`; changed=true; }
-        else html+=one.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+        const sym = S[two] ? two : (S[one] ? one : null);
+        if(!sym){ html+=one.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); continue; }
+        // skip single Latin letters in prose unless standalone word (surrounded by spaces/punctuation)
+        if(!inMath && isLatin(sym) && sym.length===1 && latinSyms.has(sym)){
+          const prev=txt[i-1], next=txt[i+1];
+          const standalone = (!prev || /[^a-zA-Záéíóúñ]/.test(prev)) && (!next || /[^a-zA-Záéíóúñ]/.test(next));
+          if(!standalone){ html+=sym.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); continue; }
+        }
+        // skip single Latin letters in prose entirely for common words (d is the worst offender)
+        if(!inMath && sym==="d"){ html+=sym; continue; }
+        html+=`<span class="sym" data-sym="${sym}">${sym}</span>`; if(sym.length===2) i+=1; changed=true;
       }
       if(changed){
         const span=document.createElement("span");
@@ -147,6 +161,6 @@
   window.Symbols = { dict:S, wrap, show, hide };
 
   function init(){ const main=document.querySelector(".lesson-main, .container, main"); if(main) wrap(main); }
-  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",()=>setTimeout(init,400));
-  else setTimeout(init,400);
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",()=>setTimeout(init,600));
+  else setTimeout(init,600);
 })();

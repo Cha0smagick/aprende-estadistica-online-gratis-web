@@ -154,7 +154,8 @@
     refreshChip();
     renderMath(document.body);
     // KaTeX re-render after quiz render (quiz may contain latex in prompts)
-    setTimeout(()=>renderMath(document.body),50);
+    setTimeout(()=>{ renderMath(document.body); if(window.Symbols && window.Symbols.wrap) window.Symbols.wrap(document.body); },50);
+    setTimeout(()=>{ if(window.Symbols && window.Symbols.wrap) window.Symbols.wrap(document.body); },600);
   }
 
   // KaTeX load then render
