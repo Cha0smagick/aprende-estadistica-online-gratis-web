@@ -250,11 +250,35 @@
   let xpGranted=false;
   function grantXP(){ if(xpGranted) return; xpGranted=true; if(window.Progress){ window.Progress.addXp(5); window.Progress.addChips(5); } }
 
+  const TITLES = {
+    discovery: "🔍 Modo descubrimiento — Adivina la media",
+    normal: "📊 Distribución Normal — Explora μ y σ",
+    z: "📏 Puntuación Z — ¿Cuán inusual es un valor?",
+    binomial: "🎲 Distribución Binomial — n ensayos, probabilidad p",
+    regression: "📈 Regresión Lineal — Recta, residuos y correlación",
+    ci: "📐 Intervalo de Confianza — Margen de error visual",
+    ttest: "🧪 Prueba t Pareada — ¿Hay diferencia significativa?",
+    bayes: "🎰 Teorema de Bayes — De prior a posterior",
+    entropy: "🌀 Entropía de Shannon — Incertidumbre en bits"
+  };
+  const DESCS = {
+    discovery: "Observa los datos, adivina la media y revela la fórmula.",
+    normal: "Mueve μ para desplazar la curva y σ para ensancharla/estrecharla. La línea vertical marca X=10.",
+    z: "Mueve x, μ y σ para ver cómo cambia z. Rojo = inusual (|z|>2), verde = típico.",
+    binomial: "Cambia n (número de ensayos) y p (probabilidad de éxito). Las barras muestran P(X=k).",
+    regression: "Cambia la pendiente, intercepto y ruido. La recta y los residuos se actualizan en tiempo real.",
+    ci: "Cambia n, x̄, s y confianza. El intervalo se estira o encoge visualmente.",
+    ttest: "Cambia n, d̄ y s_d. La línea t se mueve; rojo = significativo, verde = no.",
+    bayes: "Cambia prior, sensibilidad y especificidad. El VPP se actualiza en tiempo real.",
+    entropy: "Mueve p para ver cómo la entropía alcanza su máximo en p=0.5 (máxima incertidumbre)."
+  };
+  const builders = {normal:normalExplorer, z:zExplorer, binomial:binomialExplorer, entropy:entropyExplorer, regression:regressionExplorer, ci:ciExplorer, ttest:ttestExplorer, bayes:bayesExplorer, discovery:discovery};
   window.FormulaLab = {
     mount(container, which){
-      const builders={normal:normalExplorer, z:zExplorer, binomial:binomialExplorer, entropy:entropyExplorer, regression:regressionExplorer, ci:ciExplorer, ttest:ttestExplorer, bayes:bayesExplorer, discovery:discovery};
       const b=builders[which];
       if(!b){ container.textContent="Widget no disponible."; return; }
+      const t=document.createElement("h3"); t.textContent=TITLES[which]||which; t.style.color="var(--accent)"; t.style.marginBottom="4px"; container.appendChild(t);
+      const d=document.createElement("p"); d.textContent=DESCS[which]||""; d.style.color="var(--muted)"; d.style.fontSize=".9rem"; d.style.marginBottom="10px"; container.appendChild(d);
       b(container);
     }
   };
