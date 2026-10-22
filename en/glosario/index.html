@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Symbol Glossary · Jackpot Statistical</title>
+<meta name="description" content="Interactive glossary of mathematical and statistical symbols.">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/lesson.css">
+<script>window.SITE_BASE="../../";window.SITE_LANG="en";</script>
+</head>
+<body>
+<header class="site-nav">
+  <a class="brand" href="../../en/"><span class="brand-chip">♠</span> Jackpot Statistical</a>
+  <nav class="nav-links"><a class="btn btn-ghost btn-sm" href="../../en/lab/">🔬 Lab</a><div id="progress-chip" class="progress-chip"></div></nav>
+</header>
+<main class="container" style="padding-top:24px">
+  <h1>∑ Symbol Glossary</h1>
+  <p class="lead">Hover over any symbol in the lessons to see its meaning. Here is the full list.</p>
+  <div id="glossary"></div>
+</main>
+<footer class="site-foot"><p>Jackpot Statistical</p></footer>
+<script src="../../assets/js/i18n.js"></script>
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/charts.js"></script>
+<script src="../../assets/js/gamification.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/diploma.js"></script>
+<script src="../../assets/js/symbols.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const g=document.getElementById("glossary");
+  const dict=window.Symbols.dict;
+  const lang=window.SITE_LANG;
+  const table=document.createElement("table");
+  table.style.width="100%"; table.style.borderCollapse="collapse";
+  let html="<thead><tr><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>Symbol</th><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>Name</th><th style='text-align:left;padding:8px;border-bottom:1px solid var(--line)'>Description</th></tr></thead><tbody>";
+  for(const sym in dict){
+    const info=dict[sym];
+    html+=`<tr><td style='padding:8px;border-bottom:1px solid var(--line);font-size:1.4rem;color:var(--accent)'>${sym}</td><td style='padding:8px;border-bottom:1px solid var(--line)'>${info.name[lang]||info.name.es}</td><td style='padding:8px;border-bottom:1px solid var(--line);color:var(--muted)'>${info.desc[lang]||info.desc.es}</td></tr>`;
+  }
+  html+="</tbody>";
+  table.innerHTML=html;
+  g.appendChild(table);
+});
+</script>
+</body>
+</html>

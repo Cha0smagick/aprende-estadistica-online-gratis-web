@@ -36,6 +36,7 @@ function nav({lang,base,courseTitle}){
   <nav class="nav-links">
     ${courseTitle?`<span class="muted">${esc(courseTitle)}</span>`:""}
     <a class="btn btn-ghost btn-sm" href="${b}${lang}/lab/">🔬 Lab</a>
+    <a class="btn btn-ghost btn-sm" href="${b}${lang}/glosario/">∑ Símbolos</a>
     <div class="lang-switch">
       <a class="btn btn-ghost btn-sm" href="${b}${other}/">${other.toUpperCase()}</a>
     </div>
@@ -54,7 +55,8 @@ function footer({lang,base}){
 <script src="${b}assets/js/charts.js"></script>
 <script src="${b}assets/js/gamification.js"></script>
 <script src="${b}assets/js/quiz.js"></script>
-<script src="${b}assets/js/diploma.js"></script>`;
+<script src="${b}assets/js/diploma.js"></script>
+<script src="${b}assets/js/symbols.js"></script>`;
 }
 
 export function indexPage({lang,base,courses}){
