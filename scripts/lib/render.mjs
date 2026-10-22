@@ -49,6 +49,8 @@ function footer({lang,base}){
   const b=base||"";
   return `<footer class="site-foot">
   <p>Jackpot Estadístico — aprende estadística gratis. <a href="${b}es/">ES</a> · <a href="${b}en/">EN</a></p>
+  <p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz · Ing. de Sistemas · Antropólogo · Estadístico
+    (<a href="https://www.linkedin.com/in/alejandroquinteroruiz/" target="_blank" rel="noopener">LinkedIn</a>).</p>
   <p class="fineprint">Juego responsable: aquí solo se apuesta conocimiento. Las fichas no valen dinero.</p>
 </footer>
 <script src="${b}assets/js/i18n.js"></script>
