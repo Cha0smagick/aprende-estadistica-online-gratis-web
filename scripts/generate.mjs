@@ -20,7 +20,7 @@ async function copyDir(s,d){
   }
 }
 
-const courseFiles = ["introduccion.js","descriptiva.js","probabilidad.js","inferencial.js"];
+const courseFiles = ["fundamentos.js","descriptiva.js","probabilidad.js","inferencial.js"];
 const langs = ["es","en"];
 
 function flatLessons(course){ const out=[]; for(const m of course.modules) for(const l of m.lessons) out.push({module:m,lesson:l}); return out; }

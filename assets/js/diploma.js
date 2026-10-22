@@ -58,6 +58,7 @@
   }
 
   const COURSE_META_DIP={
+    fundamentos:{title:"Fundamentos e Historia", subtitle:"De dónde viene la estadística · Curso completo", badge:"📜", stats:"2 módulos · 11 lecciones · De los censos a la IA"},
     descriptiva:{title:"Estadística Descriptiva", subtitle:"El Contador de Fichas · Curso completo", badge:"📊", stats:"7 módulos · 42 lecciones · De cero a hero"},
     probabilidad:{title:"Probabilidad y Estadística", subtitle:"La Casa Siempre Gana · Curso completo", badge:"🎲", stats:"10 módulos · 48 lecciones · El casino siempre gana (y tú también sabes por qué)"},
     inferencial:{title:"Estadística Inferencial", subtitle:"Contando Cartas · Curso completo", badge:"🃏", stats:"10 módulos · 43 lecciones · Decide con datos"}
