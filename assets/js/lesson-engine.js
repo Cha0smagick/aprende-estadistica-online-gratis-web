@@ -132,7 +132,7 @@
       window.Quiz.render(exBox, L.exercises);
     }
     // review
-    const revBox=document.getElementById("review-box");
+    const revBox=document.getElementById("review");
     if(revBox && window.REVIEW_ITEMS && window.REVIEW_ITEMS.length){
       revBox.querySelector("h3").textContent=window.t("review");
       const c=revBox.querySelector(".review-content"); if(c) window.Quiz.render(c, window.REVIEW_ITEMS);
