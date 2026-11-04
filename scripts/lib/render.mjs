@@ -269,8 +269,8 @@ ${footer({lang,base:b})}
 
 function windowT(lang,key){
   const dict={
-    es:{theory:"Teoría",blueprint:"Blueprint (paso a paso)",exercises:"Ejercicios",review:"Repaso",back:"Volver al curso"},
-    en:{theory:"Theory",blueprint:"Blueprint (step by step)",exercises:"Exercises",review:"Review",back:"Back to course"}
+    es:{theory:"Teoría",blueprint:"Blueprint (paso a paso)",exercises:"Ejercicios",review:"Repaso",back:"Volver al curso",example:"Ejemplo",done:"Lección completada"},
+    en:{theory:"Theory",blueprint:"Blueprint (step by step)",exercises:"Exercises",review:"Review",back:"Back to course",example:"Example",done:"Lesson complete"}
   };
   return (dict[lang]||dict.es)[key]||key;
 }
