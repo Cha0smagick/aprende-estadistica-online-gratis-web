@@ -87,13 +87,16 @@
             fb.innerHTML+=` <span class="score-line">+${r.gained} XP · +${r.gained} fichas${r.jackpot?" · "+window.t("jackpot"):""}</span>`;
             if(r.jackpot){ item.classList.add("jackpot"); window.Game.confetti(); if(window.Sound) window.Sound.jackpot(); }
             else { if(window.Sound) window.Sound.correct(); }
-            window.Progress.markSrs(q.id,1);
+            // SRS Leitner: acierto sube de caja (1/3/7/21 dias)
+            const prev=(window.Progress.srsInfo(q.id)||{}).days||0;
+            window.Progress.markSrs(q.id, prev<1?1 : prev<3?3 : prev<7?7 : 21);
             window.Game.badgeCheck({perfect: results.correct===results.total && results.total>0});
           } else {
             fb.classList.add("bad"); fb.innerHTML=window.t("wrong");
             if(window.Sound) window.Sound.wrong();
             window.Game.onWrong();
-            window.Progress.markSrs(q.id,1);
+            // fallo: vuelve a vencer hoy para reintento inmediato
+            window.Progress.markSrs(q.id,0);
           }
           renderMath(fb);
         });
