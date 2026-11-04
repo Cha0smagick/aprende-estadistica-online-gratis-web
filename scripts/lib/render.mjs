@@ -1,6 +1,27 @@
 import fs from "node:fs/promises";
 
 function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+// markdown minimo para prerender: mantener en sync con assets/js/lesson-engine.js md()/inline()
+function mdInline(s){
+  s=esc(s);
+  return s.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>").replace(/`(.+?)`/g,"<code>$1</code>");
+}
+function md(text){
+  if(!text) return "";
+  let out="", inList=false;
+  for(const raw of String(text).split("\n")){
+    const line=raw.trim();
+    if(/^[-*]\s+/.test(line)){
+      if(!inList){ out+="<ul>"; inList=true; }
+      out+="<li>"+mdInline(line.replace(/^[-*]\s+/,""))+"</li>";
+    } else {
+      if(inList){ out+="</ul>"; inList=false; }
+      if(line!=="") out+="<p>"+mdInline(line)+"</p>";
+    }
+  }
+  if(inList) out+="</ul>";
+  return out;
+}
 function t(obj,lang){ if(obj==null) return ""; if(typeof obj==="string") return obj; return obj[lang]||obj.es||obj.en||""; }
 function basePrefix(base){ return base||""; }
 
@@ -222,20 +243,20 @@ ${nav({lang,base,courseTitle:t(course.title,lang)})}
   </aside>
   <div class="lesson-main">
     <p class="breadcrumb"><a href="${b}${lang}/">${lang==="es"?"Inicio":"Home"}</a> › <a href="${courseUrl}">${esc(t(course.title,lang))}</a> › ${esc(t(module.title,lang))}</p>
-    <h1 id="lesson-title"></h1>
-    <p class="lesson-meta" id="lesson-meta"></p>
+    <h1 id="lesson-title">${esc(t(lesson.title,lang))}</h1>
+    <p class="lesson-meta" id="lesson-meta">${esc(t(course.title,lang))} · ${lesson.minutes||0} min</p>
     <div class="block">
       <span class="label">${lang==="es"?"Gancho":"Hook"}</span>
-      <div id="lesson-hook" class="prose"></div>
+      <div id="lesson-hook" class="prose">${md(t(lesson.hook,lang))}</div>
     </div>
     <div class="block" id="theory">
       <h2>${windowT(lang,"theory")}</h2>
-      <div id="theory-body" class="prose"></div>
+      <div id="theory-body" class="prose">${md(t(lesson.theory,lang))}</div>
       <div id="formulas-box"></div>
     </div>
     <div class="block">
       <h2>${windowT(lang,"example")}</h2>
-      <div id="example-body" class="prose"></div>
+      <div id="example-body" class="prose">${md(t(lesson.example,lang))}</div>
     </div>
     <div class="block" id="blueprint">
       <h2>${windowT(lang,"blueprint")}</h2>
