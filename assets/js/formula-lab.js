@@ -174,13 +174,24 @@
     redraw();
   }
 
+  // t critico dos colas alpha=0.05: df 4..30 exactos, 31..59 interpolado (error <0.001)
+  const T_CRIT=[2.776,2.571,2.447,2.365,2.306,2.262,2.228,2.201,2.179,2.160,2.145,2.131,2.120,2.110,2.101,2.093,2.086,2.080,2.074,2.069,2.064,2.060,2.056,2.052,2.048,2.045,2.042];
+  function tCrit(df){
+    if(df<4) df=4;
+    if(df<=30) return T_CRIT[df-4];
+    if(df>=60) return 2.000;
+    const lo=Math.floor(df/5)*5;
+    const anchors={30:2.042,35:2.030,40:2.021,45:2.014,50:2.009,55:2.004};
+    return anchors[lo]+(anchors[lo+5]-anchors[lo])*(df-lo)/5;
+  }
+
   function ttestExplorer(container){
     let n=20, d=2, sd=5;
     const formula=clickableFormula(container, "$$t=\\frac{\\bar d}{s_d/\\sqrt{n}}$$", {"d̄":"d","s_d":"sd","n":"n"});
     const chart=document.createElement("div"); container.appendChild(chart);
     const readout=document.createElement("p"); readout.className="score-line"; container.appendChild(readout);
     function redraw(){
-      const t=d/(sd/Math.sqrt(n)); const crit=2.093; const sig=Math.abs(t)>crit;
+      const df=n-1; const t=d/(sd/Math.sqrt(n)); const crit=tCrit(df); const sig=Math.abs(t)>crit;
       // draw a simple t-distribution sketch with critical region
       chart.innerHTML=""; if(window.Charts) window.Charts.normalCurve(chart,{mean:0,sd:1,w:560,h:200});
       const svg=chart.querySelector("svg"); if(svg){
@@ -195,7 +206,7 @@
         lbl.setAttribute("x",tx); lbl.setAttribute("y",pad-4); lbl.setAttribute("text-anchor","middle"); lbl.setAttribute("fill",sig?"var(--bad)":"var(--ok)"); lbl.setAttribute("font-size","12");
         lbl.textContent="t="+t.toFixed(2); svg.appendChild(lbl);
       }
-      readout.innerHTML=`n=${n} pares, d̄=${d}, s_d=${sd} → <strong style="color:${sig?"var(--ok)":"var(--bad)"}">t = ${t.toFixed(2)}</strong> · ${sig?"✅ significativo (p<0.05)":"❌ no significativo"} (crit≈±2.09)`;
+      readout.innerHTML=`n=${n} pares, d̄=${d}, s_d=${sd} → <strong style="color:${sig?"var(--ok)":"var(--bad)"}">t = ${t.toFixed(2)}</strong> · ${sig?"✅ significativo (p<0.05)":"❌ no significativo"} (t crítico=${crit.toFixed(2)}, df=${df})`;
       if(window.katex && window.renderMathInElement) window.renderMathInElement(formula,{delimiters:[{left:"$$",right:"$$",display:true}],throwOnError:false});
     }
     container.appendChild(mkSlider("n","n (pares)", 5, 60, 1, n, v=>{n=Math.round(v);redraw();grantXP();}));
