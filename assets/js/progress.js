@@ -12,7 +12,7 @@
     addXp(n){ S.xp+=n; this.recalcLevel(); save(S); },
     addChips(n){ S.chips+=n; save(S); },
     incStreak(){ const today=new Date().toDateString(); if(S.lastDay!==today){ S.streak=(S.lastDay===new Date(Date.now()-86400000).toDateString())? S.streak+1:1; S.lastDay=today; if(S.streak>S.bestStreak) S.bestStreak=S.streak; } save(S); },
-    breakStreak(){ S.streak=0; save(S); },
+    breakStreak(){ S.streak=0; S.lastDay=null; save(S); },
     recalcLevel(){ const thresholds=[0,100,260,500,900,1500,2400,3800,6000]; let L=1; for(let i=0;i<thresholds.length;i++){ if(S.xp>=thresholds[i]) L=i+1; } S.level=L; },
     completeLesson(id){ S.completed[id]=Date.now(); save(S); },
     isCompleted(id){ return !!S.completed[id]; },
