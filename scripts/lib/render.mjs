@@ -58,7 +58,7 @@ function nav({lang,base,courseTitle}){
     ${courseTitle?`<span class="muted">${esc(courseTitle)}</span>`:""}
     <a class="btn btn-ghost btn-sm" href="${b}${lang}/lab/">🔬 Lab</a>
     <a class="btn btn-ghost btn-sm" href="${b}${lang}/glosario/">∑ Símbolos</a>
-    <a class="btn btn-ghost btn-sm" href="${b}${lang}/repaso/">🧠 Repaso <span id="review-badge" style="background:var(--bad);color:#fff;border-radius:999px;padding:1px 6px;font-size:.7rem;margin-left:4px;display:none">0</span></a>
+    <a class="btn btn-ghost btn-sm" href="${b}${lang}/repaso/">🧠 Repaso <span id="review-badge" style="background:var(--bad);color:#0b0d12;border-radius:999px;padding:1px 6px;font-size:.7rem;margin-left:4px;display:none">0</span></a>
     <div class="lang-switch">
       <a class="btn btn-ghost btn-sm" href="${b}${other}/">${other.toUpperCase()}</a>
     </div>

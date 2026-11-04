@@ -52,7 +52,7 @@
           item.appendChild(wrap);
           item._orderInputs=wrap.querySelectorAll("input");
         }
-        const fb=el("div",{class:"feedback hidden"});
+        const fb=el("div",{class:"feedback hidden","aria-live":"polite"});
         item.appendChild(fb);
         const actions=el("div",{class:"quiz-actions"});
         const btnCheck=el("button",{class:"btn btn-primary btn-sm"},[window.t("check")]);
