@@ -5,6 +5,7 @@ import render from "./lib/render.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = path.join(ROOT, "_site");
+const SITE_URL = "https://cha0smagick.github.io/aprende-estadistica-online-gratis-web";
 
 async function exists(p){ try{ await fs.access(p); return true;}catch{return false;} }
 async function rm(p){ await fs.rm(p,{recursive:true,force:true}); }
@@ -102,16 +103,17 @@ async function main(){
   }
   await writeFile(path.join(SITE,"exercises-index.js"), "window.EXERCISES="+JSON.stringify(exIndex)+";");
 
-  // sitemap
-  const urls=[];
+  // sitemap (URLs absolutas: el protocolo exige dominio completo; incluye home y paginas manuales)
+  const urls=["/"];
   for(const lang of langs){
     urls.push(`/${lang}/`);
+    for(const p of ["lab","glosario","repaso"]) urls.push(`/${lang}/${p}/`);
     for(const course of courses){
       urls.push(`/${lang}/${course.slug}/`);
       for(const m of course.modules) for(const l of m.lessons) urls.push(`/${lang}/${course.slug}/${m.slug}/${l.slug}/`);
     }
   }
-  await writeFile(path.join(SITE,"sitemap.xml"), render.sitemap(urls));
+  await writeFile(path.join(SITE,"sitemap.xml"), render.sitemap(urls.map(u=>SITE_URL+u)));
 
   // copy static assets
   for(const f of ["index.html","404.html","robots.txt",".nojekyll"]){
