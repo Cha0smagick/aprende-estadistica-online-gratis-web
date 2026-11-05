@@ -1,0 +1,264 @@
+# PLAN-DEEPDIVE — Contenido profundo y nota 95+
+
+**Objetivo:** que cada una de las 115 lecciones tenga un *deep dive* real de **≥2.500 palabras por idioma** (ES y EN), y que la auditoría pedagógica pase de **56/100** a **≥95/100**.
+
+**Estado base (2026-11-05):** 115 lecciones · 50 palabras de teoría por lección · 481/481 ejercicios MCQ · 35% de acierto por azar · feedback correcto/incorrecto · certificado por clics · auditoría 56/100.
+
+**Realidad de esfuerzo:** 115 × 2.500 × 2 = **575.000 palabras**. Es un plan multi-sesión. Cada lote de contenido es una unidad de commit; no se publica una lección por debajo del umbral. No habrá relleno, párrafos repetidos ni “texto de relleno para llegar al número”: si una sección no aporta, se ajusta la estructura, no se infla.
+
+---
+
+## 0. Contrato de calidad
+
+Una lección está **terminada** solo si cumple todo:
+
+- [ ] `content/es/<lessonId>.md` existe y tiene **≥2.500 palabras** de prosa real.
+- [ ] `content/en/<lessonId>.md` existe y tiene **≥2.500 palabras**.
+- [ ] Contiene las 9 secciones obligatorias (ver §2).
+- [ ] Incluye al menos **3 ejemplos resueltos con números** y **1 ejemplo con datos reales o verosímiles**.
+- [ ] Incluye al menos **1 derivación paso a paso** y **1 comparación con un método alternativo**.
+- [ ] Incluye **5 trampas conceptuales** y **5 preguntas de autoevaluación con respuesta razonada**.
+- [ ] No contiene afirmaciones estadísticas falsas, citas inventadas ni fórmulas mal escritas.
+- [ ] `node scripts/validate-content.mjs` la marca como OK.
+- [ ] La página generada muestra el bloque “Contenido completo” y el `h1`/teoría siguen funcionando.
+- [ ] Commit atómico con mensaje `content: <ID> deep dive (ES/EN) — <n> palabras`.
+
+**Regla de no regresión:** ninguna lección puede volver a quedar por debajo del umbral. El validador se ejecuta en cada lote y, cuando esté 115/115, se añade a CI como bloqueante.
+
+---
+
+## 1. Diagnóstico que justifica el plan
+
+| Dimensión auditada | Nota base | Qué falta para 95 |
+|---|---:|---|
+| Exactitud estadística | 90 | Mantener; añadir matices y supuestos |
+| Profundidad conceptual | 50 | **Deep dive de 2.500+ palabras** |
+| Cobertura | 55 | Potencia, bootstrap, no paramétricos, causalidad, datos reales |
+| Práctica de recuperación | 38 | Ejercicios de producción, no solo MCQ |
+| Feedback | 35 | Explicación del error, reintento, marcador vivo |
+| Evaluación sumativa | 25 | Examen final, proyecto evaluado, rúbrica |
+| Certificación | 20 | Diploma condicionado a evidencia |
+| SRS / retención | 62 | IDs resolubles, badge, panel, intercalado |
+| Metacognición | 34 | Panel de dominio, autoevaluación, diario de errores |
+| Motivación | 55 | Racha que premia intentos, no solo aciertos |
+| UX / lengua / a11y | 64-70 | Enlaces, tildes, fieldset, alternativas de gráficos |
+
+---
+
+## 2. Arquitectura de contenido
+
+### 2.1 Fuente de verdad
+
+El contenido profundo **no** se mete dentro de `data/*.js` (ya son 1 MB de JSON bilingüe). Se crea:
+
+```
+content/
+  README.md
+  es/
+    A3-L1.md
+    A3-L2.md
+    ...
+  en/
+    A3-L1.md
+    A3-L2.md
+    ...
+```
+
+- Un archivo por lección e idioma, nombrado con `lesson.id`.
+- Markdown con LaTeX (`$...$`, `$$...$$`), encabezados `##`/`###`, listas, tablas y blockquotes.
+- `scripts/generate.mjs` los carga en build-time y los inyecta en la página.
+- No se copian a `_site`; no aumentan el JS de cliente.
+
+### 2.2 Plantilla obligatoria (9 secciones, ~2.500-3.000 palabras)
+
+| # | Sección | Palabras objetivo | Qué debe contener |
+|---|---|---:|---|
+| 1 | Objetivos y prerrequisitos | 150-200 | Qué sabrás hacer, qué necesitas antes, errores de entrada |
+| 2 | Por qué importa | 200-250 | Contexto real, consecuencia de hacerlo mal, conexión con el curso |
+| 3 | Intuición | 350-450 | Metáfora, imagen mental, caso extremo, por qué la fórmula tiene esa forma |
+| 4 | Definición y notación | 350-450 | Definición formal, símbolos, unidades, población vs muestra, casos límite |
+| 5 | Derivación paso a paso | 350-450 | De la idea a la fórmula; propiedades; qué se pierde en cada supuesto |
+| 6 | Ejemplos resueltos | 550-700 | 3+ ejemplos numéricos, uno con frecuencias/datos reales, uno con trampa |
+| 7 | Errores y malinterpretaciones | 250-350 | 5 trampas, por qué ocurren, cómo detectarlas, corrección |
+| 8 | Conexiones y transferencia | 200-250 | Con otras lecciones, con inferencia, con decisiones reales |
+| 9 | Práctica y resumen | 300-400 | 5 preguntas con solución razonada, autochequeo, mapa de 5 ideas |
+
+**Total:** ~2.500-3.000 palabras. Si una lección no llega, se profundiza en ejemplos y derivación; nunca se rellena con frases vacías.
+
+### 2.3 Render
+
+- `scripts/lib/render.mjs`: nuevo `mdDeep()` con encabezados, listas, tablas, blockquotes y `hr`.
+- `lessonPage()`: bloque `#deep-dive` después del ejemplo, con TOC “Contenido completo”.
+- `windowT`: claves `deep` en ES/EN.
+- CSS: estilos de tabla, blockquote, `hr` y jerarquía dentro de `.prose`.
+
+### 2.4 Validación
+
+`scripts/validate-content.mjs` comprobará:
+
+- Existencia de `content/<lang>/<lessonId>.md`.
+- ≥2.500 palabras (conteo de prosa, sin marcas Markdown).
+- 9 encabezados obligatorios.
+- Al menos 3 bloques de ejemplo y 5 preguntas.
+- Paridad ES/EN (ambos ≥2.500).
+- Salida legible por lección y resumen por curso.
+
+Durante la transición el script **reporta** pero no bloquea CI. Cuando esté 115/115, se añade a `.github/workflows/deploy.yml` como paso bloqueante.
+
+---
+
+## 3. Fases atómicas
+
+### Fase 0 — Guardrails y quick wins (esta sesión)
+
+- [x] **P0.1** Crear `PLAN-DEEPDIVE.md` con contrato, plantilla y scorecard.
+- [x] **P0.2** Crear `content/README.md` + plantilla de lección.
+- [x] **P0.3** Implementar `mdDeep()` y el bloque `#deep-dive` en `render.mjs`.
+- [x] **P0.4** Cargar `content/` en `generate.mjs` y pasar `deepDive` a `lessonPage`.
+- [x] **P0.5** Crear `scripts/validate-content.mjs` y contar palabras/secciones.
+- [x] **P0.6** Escribir la lección piloto `A3-L1` (ES) con ≥2.500 palabras.
+- [x] **P0.7** Escribir la lección piloto `A3-L1` (EN) con ≥2.500 palabras.
+- [x] **P0.8** `node scripts/generate.mjs` + `node scripts/validate-content.mjs` + spot-check de la página.
+- [ ] **P0.9** Commit `content: A3-L1 deep dive (ES/EN) + pipeline de contenido`.
+- [ ] **P0.10** Arreglar el marcador del quiz (`Score: 0/N` → vivo).
+- [ ] **P0.11** Permitir reintento tras fallo y desbloquear “Solución” solo tras intento.
+- [ ] **P0.12** Corregir IDs `*-rev` del SRS para que `/repaso/` los resuelva.
+- [ ] **P0.13** Actualizar el badge de repaso con `dueSrs().length`.
+- [ ] **P0.14** Arreglar la tarjeta 00 rota de la portada y el copy “Tres/Cuatro cursos”.
+- [ ] **P0.15** Quitar el ID duplicado en los `h2` de módulo (`C0 · C0 — ...`).
+- [ ] **P0.16** Commit de quick wins y push.
+
+### Fase 1 — Contenido: curso Descriptiva (42 lecciones)
+
+Orden: A3 → A4 → A5 → A6 → A2 → A1 → A0.
+
+- [ ] **A3** (6): media, mediana, moda, medias ponderada/geométrica/armónica, cuándo usar cada una, relación media-mediana.
+- [ ] **A4** (5): rango/IQR, varianza/desviación, CV, MAD, poblacional vs muestral.
+- [ ] **A5** (5): cuartiles/percentiles, z, asimetría/curtosis, regla empírica, boxplots.
+- [ ] **A6** (6): covarianza, Pearson, Spearman, regresión simple, correlación≠causalidad, ajuste/bondad.
+- [ ] **A2** (6): frecuencias, histogramas/bins, series temporales, Pareto, gráficos engañosos, bivariados.
+- [ ] **A1** (6): población/muestra, tipos de variables, escalas, fuentes, hoja limpia, representatividad.
+- [ ] **A0** (8): número, fracciones/porcentajes, notación científica, redondeo, medias ponderadas, tablas, tasas, unidades.
+
+Cada módulo es un lote: ES → validar → EN → validar → generate → spot-check → commit → push.
+
+### Fase 2 — Contenido: Probabilidad (30 lecciones)
+
+- [ ] B0 (1), B1 (2), B2 (3), B3 (2), B4 (2), B5 (4), B6 (4), B7 (3), B8 (5), B9 (4).
+- [ ] Añadir en las lecciones que correspondan: simulación, ley de los grandes números, varianza de la suma, aproximaciones, RTP y ruina.
+
+### Fase 3 — Contenido: Inferencial (33 lecciones)
+
+- [ ] C0 (4), C1 (3), C2 (3), C3 (3), C4 (5), C5 (2), C6 (2), C7 (4), C8 (4), C9 (3).
+- [ ] Añadir: potencia y tamaño de muestra, bootstrap, no paramétricos, causalidad, datos faltantes, regresión múltiple con diagnóstico.
+
+### Fase 4 — Contenido: Fundamentos (10 lecciones)
+
+- [ ] F0 (5), F1 (5).
+- [ ] Convertir la historia en historia *conectada* a los métodos, no en trivia.
+
+### Fase 5 — Evaluación y feedback (transversal)
+
+- [ ] **E1** Convertir ≥50% de los 481 ejercicios a producción: numérico, ordenar, respuesta corta, interpretar output.
+- [ ] **E2** Añadir explicación del error a cada ejercicio (mín. 40 palabras) y solución razonada (mín. 60).
+- [ ] **E3** Eliminar pistas que contienen la respuesta; sustituir por pistas graduadas.
+- [ ] **E4** Marcador vivo, reintento, registro de primer intento vs intento final.
+- [ ] **E5** Umbral de maestría por lección (≥80%) para marcar “completada”.
+- [ ] **E6** Examen final por curso y banco de preguntas.
+
+### Fase 6 — Retención y metacognición
+
+- [ ] **R1** SRS con IDs resolubles, panel de vencimientos y badge.
+- [ ] **R2** Intercalado real: mezclar cursos y tipos, no solo las 3 lecciones previas.
+- [ ] **R3** Panel “qué dominas / qué revisar” por concepto.
+- [ ] **R4** Diario de errores y autoevaluación de confianza.
+
+### Fase 7 — Motivación, UX, lengua y accesibilidad
+
+- [ ] **M1** Racha que premia intentos/correcciones; no resetear por un fallo.
+- [ ] **M2** Badges alcanzables (sin pistas, constancia, recuperación).
+- [ ] **M3** Enlaces rotos, tarjeta 00, copy “3/4 cursos”, “9/10 módulos”, Squid Game.
+- [ ] **M4** Tildes y typos en títulos/summaries; “Origines” → “Orígenes”.
+- [ ] **M5** `fieldset/legend` en MCQ, alternativas textuales de gráficos, skip link, orden de encabezados.
+- [ ] **M6** Cambio de idioma que preserve la página actual, no que vuelva a la home.
+
+### Fase 8 — Certificación y auditoría final
+
+- [ ] **C1** Proyecto final con entrega, rúbrica y evaluación.
+- [ ] **C2** Diploma solo con examen + proyecto aprobados.
+- [ ] **C3** Re-auditoría con la misma rúbrica de 25 dimensiones.
+- [ ] **C4** Objetivo: ≥95/100 global; ninguna dimensión <85 salvo las estructurales justificadas.
+
+---
+
+## 4. Scorecard objetivo
+
+| Dimensión | Base | Objetivo | Cómo se consigue |
+|---|---:|---:|---|
+| Exactitud estadística | 90 | 96 | Deep dive + revisión de supuestos |
+| Cobertura | 55 | 95 | Temas faltantes + datos reales |
+| Profundidad | 50 | 96 | 2.500+ palabras/lección |
+| Ejemplos | 70 | 95 | 3+ resueltos + caso real |
+| Datos/herramientas | 40 | 90 | Datasets + R/Python/Excel |
+| Resultados/prerrequisitos | 52 | 95 | Outcomes y diagnóstico |
+| Secuencia | 80 | 95 | Mapa de prerrequisitos |
+| Carga cognitiva | 68 | 90 | Deep dive segmentado |
+| Andamiaje | 58 | 95 | Worked examples + fading |
+| Retrieval | 38 | 95 | Producción, no reconocimiento |
+| Feedback | 35 | 95 | Explicación + reintento |
+| Espaciado | 62 | 95 | SRS corregido y visible |
+| Intercalado | 48 | 90 | Mezcla de cursos/tipos |
+| Metacognición | 34 | 90 | Panel de dominio + diario |
+| Formativa | 55 | 95 | Blueprint + rúbricas |
+| Sumativa | 25 | 95 | Examen final |
+| Certificación | 20 | 95 | Evidencia + proyecto |
+| UX | 70 | 95 | Enlaces/copy/navegación |
+| Accesibilidad | 65 | 95 | WCAG AA + alternativas |
+| Lengua ES | 64 | 98 | Tildes/typos/estilo |
+| Bilingüe | 78 | 95 | Paridad 2.500/2.500 |
+| Motivación | 55 | 90 | Racha y badges bien diseñados |
+| Técnica | 82 | 95 | CI + validadores |
+| Autonomía | 88 | 95 | Mantener gratis/sin registro |
+| Acompañamiento | 30 | 70 | Guía de estudio y recordatorios |
+
+**Nota global objetivo:** ≥95. No se declara hasta que la re-auditoría con la misma rúbrica lo confirme.
+
+---
+
+## 5. Reglas de producción
+
+1. **Una lección, un archivo, un commit.** No se mezclan 10 lecciones en un commit ilegible.
+2. **ES primero, EN después.** La traducción no es copia literal: adapta ejemplos y unidades.
+3. **Números verificables.** Todo cálculo debe poder reproducirse a mano.
+4. **Sin citas inventadas.** Si se menciona un autor/resultado, debe ser verificable o formularse como ejemplo.
+5. **Sin relleno.** Si faltan 200 palabras, se añade un ejemplo o una derivación; no una frase motivacional.
+6. **No romper el runtime.** El contenido profundo es estático; el JS actual sigue funcionando.
+7. **Medir antes de commitear.** `validate-content` + `generate` + spot-check de la página.
+
+---
+
+## 6. Riesgos y decisiones
+
+- **Riesgo:** 575.000 palabras es un proyecto editorial, no un sprint. **Decisión:** lotes por módulo, commits atómicos, sin prometer una fecha única.
+- **Riesgo:** el contenido generado automáticamente suene a plantilla. **Decisión:** plantilla obligatoria, pero cada sección exige ejemplos y números específicos; el validador no premia relleno.
+- **Riesgo:** duplicar teoría y deep dive. **Decisión:** la teoría breve queda como “Resumen”; el deep dive es “Contenido completo”. No se elimina el resumen porque ayuda al repaso rápido.
+- **Riesgo:** EN queda desactualizado. **Decisión:** el validador exige paridad 2.500/2.500 antes de marcar una lección como terminada.
+- **Riesgo:** el deep dive rompe el render. **Decisión:** `mdDeep()` limitado a Markdown seguro; se prueba con la lección piloto antes de escalar.
+
+---
+
+## 7. Progreso
+
+| Fecha | Hito | Estado |
+|---|---|---|
+| 2026-11-05 | Plan creado | ✅ |
+| 2026-11-05 | Pipeline de contenido + A3-L1 piloto | ⏳ |
+| — | Descriptiva 42/42 | ⏳ |
+| — | Probabilidad 30/30 | ⏳ |
+| — | Inferencial 33/33 | ⏳ |
+| — | Fundamentos 10/10 | ⏳ |
+| — | Evaluación/feedback | ⏳ |
+| — | Certificación | ⏳ |
+| — | Re-auditoría ≥95 | ⏳ |
+
+**Siguiente paso inmediato:** P0.2-P0.9 (pipeline + A3-L1 ES/EN). Luego P0.10-P0.16 (quick wins de evaluación/UX) y el resto de A3.

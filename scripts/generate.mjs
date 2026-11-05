@@ -22,6 +22,13 @@ async function copyDir(s,d){
 
 const courseFiles = ["fundamentos.js","descriptiva.js","probabilidad.js","inferencial.js"];
 const langs = ["es","en"];
+const CONTENT = path.join(ROOT,"content");
+
+// deep dive opcional: content/<lang>/<lessonId>.md
+async function loadDeepDive(lang,id){
+  try{ return await fs.readFile(path.join(CONTENT,lang,id+".md"),"utf8"); }
+  catch{ return null; }
+}
 
 function flatLessons(course){ const out=[]; for(const m of course.modules) for(const l of m.lessons) out.push({module:m,lesson:l}); return out; }
 
@@ -73,9 +80,10 @@ async function main(){
           courseUrl: `${lang}/${course.slug}/`
         };
         const review = pickReview(course,i);
+        const deepDive = await loadDeepDive(lang, lesson.id);
         const page = render.lessonPage({
           lang, base:b, lesson, course, module,
-          navInfo: navObj, reviewItems: review
+          navInfo: navObj, reviewItems: review, deepDive
         });
         await writeFile(path.join(SITE,lang,course.slug,module.slug,lesson.slug,"index.html"), page);
       }

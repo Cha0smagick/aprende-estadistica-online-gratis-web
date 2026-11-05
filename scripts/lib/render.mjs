@@ -216,7 +216,72 @@ ${footer({lang,base:b})}
 </body></html>`;
 }
 
-export function lessonPage({lang,base,lesson,course,module,navInfo,reviewItems}){
+// --- deep dive markdown: content/<lang>/<lessonId>.md ---
+function slugify(s){
+  return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,64);
+}
+function tableCells(line){
+  return line.trim().replace(/^\|/,"").replace(/\|$/,"").split("|").map(c=>c.trim());
+}
+function mdDeep(src){
+  if(!src) return "";
+  const lines=String(src).replace(/\r\n/g,"\n").split("\n");
+  const out=[]; let i=0;
+  while(i<lines.length){
+    const line=lines[i].trim();
+    if(!line){ i++; continue; }
+    if(/^```/.test(line)){
+      const codeLang=line.slice(3).trim(); const buf=[]; i++;
+      while(i<lines.length && !/^```/.test(lines[i].trim())){ buf.push(lines[i]); i++; }
+      i++;
+      out.push(`<pre class="code-block"><code>${esc(buf.join("\n"))}</code></pre>`);
+      continue;
+    }
+    const h=/^(#{2,4})\s+(.*)$/.exec(line);
+    if(h){
+      const lvl=h[1].length;
+      out.push(`<h${lvl} id="${slugify(h[2])}">${mdInline(h[2])}</h${lvl}>`);
+      i++; continue;
+    }
+    if(/^(-{3,}|\*{3,})$/.test(line)){ out.push("<hr>"); i++; continue; }
+    if(line.startsWith("|") && lines[i+1] && /^\|[\s:|-]+\|$/.test(lines[i+1].trim())){
+      const head=tableCells(line); i+=2; const rows=[];
+      while(i<lines.length && lines[i].trim().startsWith("|")){ rows.push(tableCells(lines[i])); i++; }
+      out.push(`<div class="table-wrap"><table><thead><tr>${head.map(c=>`<th>${mdInline(c)}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${mdInline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`);
+      continue;
+    }
+    if(/^>\s?/.test(line)){
+      const buf=[];
+      while(i<lines.length && /^>\s?/.test(lines[i].trim())){ buf.push(lines[i].trim().replace(/^>\s?/,"")); i++; }
+      out.push(`<blockquote>${mdDeep(buf.join("\n"))}</blockquote>`);
+      continue;
+    }
+    if(/^\d+\.\s+/.test(line)){
+      const buf=[];
+      while(i<lines.length && /^\d+\.\s+/.test(lines[i].trim())){ buf.push(lines[i].trim().replace(/^\d+\.\s+/,"")); i++; }
+      out.push(`<ol>${buf.map(x=>`<li>${mdInline(x)}</li>`).join("")}</ol>`);
+      continue;
+    }
+    if(/^[-*]\s+/.test(line)){
+      const buf=[];
+      while(i<lines.length && /^[-*]\s+/.test(lines[i].trim())){ buf.push(lines[i].trim().replace(/^[-*]\s+/,"")); i++; }
+      out.push(`<ul>${buf.map(x=>`<li>${mdInline(x)}</li>`).join("")}</ul>`);
+      continue;
+    }
+    const buf=[line]; i++;
+    while(i<lines.length){
+      const t2=lines[i].trim();
+      if(!t2){ i++; break; }
+      if(/^(#{2,4})\s/.test(t2)||/^```/.test(t2)||/^[-*]\s+/.test(t2)||/^\d+\.\s+/.test(t2)||/^>\s?/.test(t2)||/^-{3,}$/.test(t2)||t2.startsWith("|")) break;
+      buf.push(t2); i++;
+    }
+    out.push(`<p>${mdInline(buf.join(" "))}</p>`);
+  }
+  return out.join("\n");
+}
+
+export function lessonPage({lang,base,lesson,course,module,navInfo,reviewItems,deepDive}){
   const b=base||"";
   const title = `${t(lesson.title,lang)} — ${t(course.title,lang)}`;
   const desc = t(lesson.hook,lang).replace(/<[^>]+>/g,"").slice(0,160);
@@ -237,6 +302,7 @@ ${nav({lang,base,courseTitle:t(course.title,lang)})}
     <h4>${lang==="es"?"Esta lección":"This lesson"}</h4>
     <ul>
       <li><a href="#theory">${windowT(lang,"theory")}</a></li>
+      ${deepDive?`<li><a href="#deep-dive">${windowT(lang,"deep")}</a></li>`:""}
       <li><a href="#blueprint">${windowT(lang,"blueprint")}</a></li>
       <li><a href="#exercises">${windowT(lang,"exercises")}</a></li>
       <li><a href="#review">${windowT(lang,"review")}</a></li>
@@ -262,6 +328,10 @@ ${nav({lang,base,courseTitle:t(course.title,lang)})}
       <h2>${windowT(lang,"example")}</h2>
       <div id="example-body" class="prose">${md(t(lesson.example,lang))}</div>
     </div>
+    ${deepDive?`<div class="block deep-dive" id="deep-dive">
+      <h2>${windowT(lang,"deep")}</h2>
+      <div class="prose prose-deep" id="deep-dive-body">${mdDeep(deepDive)}</div>
+    </div>`:""}
     <div class="block" id="blueprint">
       <h2>${windowT(lang,"blueprint")}</h2>
       <div id="blueprint-body"></div>
@@ -294,8 +364,8 @@ ${footer({lang,base:b})}
 
 function windowT(lang,key){
   const dict={
-    es:{theory:"Teoría",blueprint:"Blueprint (paso a paso)",exercises:"Ejercicios",review:"Repaso",back:"Volver al curso",example:"Ejemplo",done:"Lección completada"},
-    en:{theory:"Theory",blueprint:"Blueprint (step by step)",exercises:"Exercises",review:"Review",back:"Back to course",example:"Example",done:"Lesson complete"}
+    es:{theory:"Teoría",blueprint:"Blueprint (paso a paso)",exercises:"Ejercicios",review:"Repaso",back:"Volver al curso",example:"Ejemplo",done:"Lección completada",deep:"Contenido completo"},
+    en:{theory:"Theory",blueprint:"Blueprint (step by step)",exercises:"Exercises",review:"Review",back:"Back to course",example:"Example",done:"Lesson complete",deep:"Full lesson"}
   };
   return (dict[lang]||dict.es)[key]||key;
 }
