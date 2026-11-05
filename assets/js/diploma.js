@@ -48,8 +48,10 @@
       doc.setTextColor(154,163,178); doc.setFontSize(9);
       doc.text("Adeptus Vinictus II · Jackpot Estadístico", W/2, 118, {align:"center"});
       // badge
-      doc.setTextColor(255,183,3); doc.setFontSize(40);
-      doc.text(opts.badge, W/2, 145, {align:"center"});
+      // badge: marcador vectorial (los emoji no existen en las fuentes estandar de jsPDF y salen corruptos)
+      doc.setFillColor(255,183,3);
+      doc.circle(W/2, 143, 9, "F");
+      doc.setDrawColor(251,133,0); doc.setLineWidth(1.5); doc.circle(W/2, 143, 11, "S");
       doc.setTextColor(154,163,178); doc.setFontSize(8);
       doc.text("Juego responsable: aquí solo se apuesta conocimiento. Las fichas no valen dinero.", W/2, H-12, {align:"center"});
       doc.save(opts.filename||"diploma.pdf");

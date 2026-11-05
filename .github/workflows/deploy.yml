@@ -28,7 +28,6 @@ jobs:
         run: |
           mkdir -p vendor/katex
           cp -r node_modules/katex/dist/* vendor/katex/
-          cp -r node_modules/katex/dist/contrib vendor/katex/ 2>/dev/null || true
       - name: Validate content
         run: node scripts/validate.mjs
       - name: Generate site

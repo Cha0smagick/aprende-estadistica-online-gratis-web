@@ -14,6 +14,8 @@
   --line:#dfe3ed; --text:#1b1f2a; --muted:#5a6476; --shadow:0 10px 30px rgba(0,0,0,.08);
 }
 @media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){ --bg:#f6f7fb;--bg-soft:#fff;--panel:#fff;--panel-2:#f0f2f8;--line:#dfe3ed;--text:#1b1f2a;--muted:#5a6476;--shadow:0 10px 30px rgba(0,0,0,.08);} }
+/* foco visible consistente sobre tema oscuro (el default del navegador casi no se ve) */
+:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:4px; }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}

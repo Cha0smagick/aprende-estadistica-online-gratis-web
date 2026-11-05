@@ -91,7 +91,7 @@ window.Charts = {
     const py1=h-pad-(y1v-ymin)/yr*(h-2*pad);
     this.line(s,px0,py0,px1,py1,"curve","#ffb703");
     this.line(s,pad,h-pad,w-pad,h-pad); this.line(s,pad,pad,pad,h-pad);
-    const r=num/Math.sqrt(den*pts.reduce((a,p)=>a+(p.y-my)*(p.y-my),0));
+    const Syy=pts.reduce((a,p)=>a+(p.y-my)*(p.y-my),0); const r=(den&&Syy)?num/Math.sqrt(den*Syy):0;
     container.appendChild(s);
     const info=document.createElement("p"); info.className="score-line"; info.innerHTML=`ŷ = ${b0.toFixed(2)} + ${b1.toFixed(2)}x · r = ${r.toFixed(3)} · r² = ${(r*r).toFixed(3)}`;
     container.appendChild(info);

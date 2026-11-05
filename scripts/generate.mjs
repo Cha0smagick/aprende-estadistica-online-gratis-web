@@ -42,18 +42,11 @@ function pickReview(course, idx){
   } : null).filter(Boolean);
 }
 
-function navFor(course, i){
-  const flat=flatLessons(course);
-  const prev = i>0 ? flat[i-1] : null;
-  const next = i<flat.length-1 ? flat[i+1] : null;
-  return {
-    prev: prev ? { url:`${flat[i].lesson===flat[i].lesson? "": ""}${course.slug}/${prev.module.slug}/${prev.lesson.slug}/`.replace(course.slug+"/",""), title: prev.lesson.title } : null,
-    // build proper relative-ish path segments; generate.mjs will prefix base+lang
-  };
-}
-
 async function main(){
   await rm(SITE); await mkdir(SITE);
+  // copiar paginas manuales (lab, glosario, repaso) ANTES de generar: si hubiera colision futura, gana el generado
+  await copyDir(path.join(ROOT,"es"), path.join(SITE,"es"));
+  await copyDir(path.join(ROOT,"en"), path.join(SITE,"en"));
   const courses=[];
   for(const f of courseFiles){
     const mod = await import(pathToFileURL(path.join(ROOT,"data",f)).href);
@@ -120,9 +113,6 @@ async function main(){
   }
   await copyDir(path.join(ROOT,"assets"), path.join(SITE,"assets"));
   if(await exists(path.join(ROOT,"vendor"))) await copyDir(path.join(ROOT,"vendor"), path.join(SITE,"vendor"));
-  // copy hand-written source pages (lab, etc.) into generated tree
-  await copyDir(path.join(ROOT,"es"), path.join(SITE,"es"));
-  await copyDir(path.join(ROOT,"en"), path.join(SITE,"en"));
 
   console.log("Generated site in", SITE);
 }
