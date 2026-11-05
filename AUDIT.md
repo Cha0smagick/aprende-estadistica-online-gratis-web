@@ -169,3 +169,38 @@
 | 13-16 | importJSON, order, validador, safeJson | ~15 líneas | `progress.js`, `quiz.js`, `validate.mjs`, `render.mjs` |
 | 17-19 | README, XP, og/canonical | docs + 4 líneas | `README.md`, `generate.mjs`, `render.mjs` |
 | 20 | Limaduras | −10 líneas | varios |
+
+---
+
+## ✅ Estado tras corrección (2026-11-05)
+
+Los 20 hallazgos están resueltos y desplegados. Cada fila es un commit atómico, validado con `node scripts/validate.mjs` (0 errores) y `node scripts/generate.mjs` antes de pushear.
+
+| # | Estado | Commit |
+|---|--------|--------|
+| 4 | ✅ Resuelto — `getElementById("review")` | `4cf8ee3` |
+| 3 | ✅ Resuelto — keys `example`/`done` en `windowT` | `c2cccf6` |
+| 10 | ✅ Resuelto — `breakStreak()` resetea `lastDay` | `7b9cc18` |
+| 1 | ✅ Resuelto — sitemap/robots absolutos, 247 URLs (home + 6 manuales + 240 índices/lecciones), sin huérfanas | `1998be2` |
+| 5 | ✅ Resuelto — 404 con rutas absolutas bajo subruta | `7285a5a` |
+| 12 | ✅ Resuelto — `tCrit(df)` exacto df 4–30, interpolado 31–59 | `a4b86ce` |
+| 2 | ✅ Resuelto — prerender de `h1`, hook, teoría y ejemplo en las 230 lecciones | `9727c7b` |
+| 8 | ✅ Resuelto — Leitner 1→3→7→21; fallo vence hoy | `e32d89b` |
+| 9 | ✅ Resuelto — fechas en calendario local (sin `toISOString`) | `e32d89b` |
+| 6 | ✅ Resuelto — `aria-live="polite"` en el feedback del quiz | `ddfd2af` |
+| 7 | ✅ Resuelto — badge con texto `#0b0d12` sobre `--bad` ≈ 6.8:1 | `ddfd2af` |
+| 11 | ✅ Resuelto — sliders con `data-key` y selector por atributo | `72d7a6b` |
+| 13 | ✅ Resuelto — `importJSON` valida campo a campo | `c244a24` |
+| 14 | ✅ Resuelto — `order` exige permutación completa y única | `c244a24` |
+| 15 | ✅ Resuelto — validador: IDs globales únicos, `tol` numérico, permutación | `c244a24` |
+| 16 | ✅ Resuelto — `J()` escapa `<` en todo JSON embebido | `c244a24` |
+| 17 | ✅ Resuelto — README: 4 cursos, 29 módulos, 115 lecciones, B9 y Fundamentos | `f3d1bdb` |
+| 18 | ✅ Resuelto — XP por defecto unificada en 10 | `f3d1bdb` |
+| 19 | ✅ Resuelto — canonical/`og:url`/hreflang absolutos con `SITE_URL` exportado. ⚠️ `og:image` **no** emitido: exige un asset diseñado 1200×630; un placeholder sería peor que ausente | `f3d1bdb` |
+| 20 | ✅ Resuelto — `navFor` borrado, guard `r` NaN, badge PDF vectorial, `cp` redundante fuera, copiado manual antes de generar, `:focus-visible` | `f2e0d96` |
+
+**Verificación final:**
+- `source _site`: 230 lecciones, **0** con `prose` vacío, **0** con `h1` vacío, **0** canonicals relativos.
+- CI: run #33 (`f2e0d96`) → `conclusion: success`.
+- Producción: sitemap sirve URLs absolutas con home y páginas manuales; una lección real devuelve título, gancho, teoría y ejemplo en el HTML estático, con «Ejemplo» y «Lección completada» traducidos (sin keys crudas).
+- Pendiente consciente: `og:image` (necesita diseño, no código).
