@@ -1,11 +1,10 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import render from "./lib/render.mjs";
+import render, { SITE_URL } from "./lib/render.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = path.join(ROOT, "_site");
-const SITE_URL = "https://cha0smagick.github.io/aprende-estadistica-online-gratis-web";
 
 async function exists(p){ try{ await fs.access(p); return true;}catch{return false;} }
 async function rm(p){ await fs.rm(p,{recursive:true,force:true}); }
@@ -38,7 +37,7 @@ function pickReview(course, idx){
     tol: x.lesson.exercises[0].tol,
     hint: x.lesson.exercises[0].hint,
     solution: x.lesson.exercises[0].solution,
-    xp: x.lesson.exercises[0].xp||5,
+    xp: x.lesson.exercises[0].xp||10,
     jackpot:false
   } : null).filter(Boolean);
 }

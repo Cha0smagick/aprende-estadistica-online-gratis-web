@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 
 function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+export const SITE_URL="https://cha0smagick.github.io/aprende-estadistica-online-gratis-web";
 // markdown minimo para prerender: mantener en sync con assets/js/lesson-engine.js md()/inline()
 function mdInline(s){
   s=esc(s);
@@ -37,6 +38,7 @@ function head({lang,title,desc,canonical,altEs,altEn,jsonLd,base}){
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${esc(canonical)}">
+<meta property="og:url" content="${esc(canonical)}">
 <link rel="alternate" hreflang="es" href="${esc(altEs)}">
 <link rel="alternate" hreflang="en" href="${esc(altEn)}">
 <link rel="alternate" hreflang="x-default" href="${esc(altEs)}">
@@ -112,7 +114,7 @@ export function indexPage({lang,base,courses}){
   }
   const compact = courses.map(c=>({id:c.id, title:c.title, modules:c.modules.map(m=>({id:m.id,lessons:m.lessons.map(l=>l.id)}))}));
   const embed=J(compact);
-  return `${head({lang,title,desc,canonical:home,altEs:b+"es/",altEn:b+"en/",jsonLd:J({"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":[lang]}),base:b})}
+  return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/",altEs:SITE_URL+"/es/",altEn:SITE_URL+"/en/",jsonLd:J({"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":[lang]}),base:b})}
 <body class="landing">
 ${nav({lang,base})}
 <main>
@@ -174,7 +176,7 @@ export function coursePage({lang,base,course}){
     </section>`;
   }
   const embedCourse=J(course);
-  return `${head({lang,title,desc,canonical:url,altEs:b+"es/"+course.slug+"/",altEn:b+"en/"+course.slug+"/",jsonLd,base:b})}
+  return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/"+course.slug+"/",altEs:SITE_URL+"/es/"+course.slug+"/",altEn:SITE_URL+"/en/"+course.slug+"/",jsonLd,base:b})}
 <body>
 ${nav({lang,base,courseTitle:t(course.title,lang)})}
 <main class="container" style="padding-top:24px">
@@ -227,7 +229,7 @@ export function lessonPage({lang,base,lesson,course,module,navInfo,reviewItems})
   const embedCourse=J({id:course.id,title:course.title,slug:course.slug});
   const embedNav=J({prev,next,courseUrl: (navInfo&&navInfo.courseUrl)? navInfo.courseUrl : `${lang}/${course.slug}/`});
   const embedReview=J(reviewItems||[]);
-  return `${head({lang,title,desc,canonical:url,altEs:b+"es/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",altEn:b+"en/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",jsonLd,base:b})}
+  return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",altEs:SITE_URL+"/es/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",altEn:SITE_URL+"/en/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",jsonLd,base:b})}
 <body>
 ${nav({lang,base,courseTitle:t(course.title,lang)})}
 <main class="lesson-wrap">

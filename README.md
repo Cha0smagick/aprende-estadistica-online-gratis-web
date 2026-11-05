@@ -3,8 +3,9 @@
 > **Gratis · Sin registro · Sin cookies · Español e Inglés · Interactivo**
 
 Web educativa de estadística y probabilidad que lleva al alumno desde *«¿qué es un número?»* hasta
-estadística inferencial con datos continuos. Tres cursos independientes y progresivos:
+estadística inferencial con datos continuos. Cuatro cursos independientes y progresivos:
 
+0. **Fundamentos e Historia** — *¿De dónde sale esto?*
 1. **Estadística Descriptiva** — *El Contador de Fichas*
 2. **Probabilidad y Estadística** — *La Casa Siempre Gana* (edición casino)
 3. **Estadística Inferencial** — *Contando Cartas*
@@ -27,7 +28,7 @@ y la teoría del casino, pero **aquí solo se apuesta conocimiento: las fichas n
 
 ## ✨ Características
 
-- **Tres cursos completos** (24 módulos · ~120 lecciones) con todas las fórmulas en LaTeX.
+- **Cuatro cursos completos** (29 módulos · 115 lecciones) con todas las fórmulas en LaTeX.
 - **Interactivo**: quizzes calificados, blueprints con pistas que se desvanecen, gráficos SVG.
 - **Bilingüe real** ES/EN con un solo origen de contenido.
 - **Privado por diseño**: progreso en `localStorage`, sin cuenta, sin cookies (exento de GDPR).
@@ -60,8 +61,9 @@ y la teoría del casino, pero **aquí solo se apuesta conocimiento: las fichas n
 ├── .github/workflows/   # deploy.yml + validate.yml
 ├── assets/              # css, js (engine, quiz, gamification, charts), img
 ├── data/                # única fuente de contenido (un archivo por módulo)
+│   ├── fundamentos.js   # compone el curso (2 módulos)
 │   ├── descriptiva.js   # compone el curso (7 módulos)
-│   ├── probabilidad.js  # compone el curso (9 módulos)
+│   ├── probabilidad.js  # compone el curso (10 módulos)
 │   └── inferencial.js   # compone el curso (10 módulos)
 ├── scripts/
 │   ├── generate.mjs     # data/*.js → /es/** y /en/** HTML estático + sitemap
@@ -139,13 +141,17 @@ Sin `vendor/`, el engine cae automáticamente a CDN (perfecto para desarrollo).
 
 ## 📊 Currículo
 
+### Curso 0 — Fundamentos e Historia
+I Introducción a la estadística (qué es, mitos, tipos de estudios) · H Historia (origenes, Gauss y Laplace, Fisher, Bayes, Big Data y ML)
+
 ### Curso 1 — Estadística Descriptiva (El Contador de Fichas)
 A0 Aritmética mínima vital · A1 Datos y variables · A2 Tablas y gráficos · A3 Tendencia central ·
 A4 Dispersión · A5 Posición y forma · A6 Dos variables
 
 ### Curso 2 — Probabilidad y Estadística (La Casa Siempre Gana)
 B0 Azar desde cero · B1 Reglas · B2 Conteo y póker · B3 Condicional · B4 Bayes · B5 V.A. discretas ·
-B6 Distribuciones discretas · B7 Distribuciones continuas · B8 Casino avanzado
+B6 Distribuciones discretas · B7 Distribuciones continuas · B8 Casino avanzado ·
+B9 Psicología y entropía
 
 ### Curso 3 — Estadística Inferencial (Contando Cartas)
 C0 Muestras y sesgos · C1 Distribuciones muestrales · C2 Intervalos de confianza · C3 Pruebas de hipótesis ·
