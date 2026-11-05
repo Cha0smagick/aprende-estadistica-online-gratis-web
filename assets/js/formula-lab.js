@@ -6,7 +6,7 @@
     const wrap=document.createElement("div"); wrap.className="lab-slider"; wrap.style.display="flex"; wrap.style.alignItems="center"; wrap.style.gap="8px"; wrap.style.margin="6px 0";
     const dot=document.createElement("span"); dot.style.width="12px"; dot.style.height="12px"; dot.style.borderRadius="50%"; dot.style.background=PARAM_COLORS[key]||"var(--accent)"; dot.style.boxShadow="0 0 10px "+(PARAM_COLORS[key]||"var(--accent)"); dot.style.flexShrink="0";
     const lab=document.createElement("label"); lab.textContent=label; lab.style.fontWeight="600"; lab.style.minWidth="140px"; lab.style.fontSize=".88rem";
-    const inp=document.createElement("input"); inp.type="range"; inp.min=min; inp.max=max; inp.step=step; inp.value=val; inp.style.flex="1"; inp.style.accentColor=PARAM_COLORS[key]||"var(--accent)"; inp.style.height="6px";
+    const inp=document.createElement("input"); inp.type="range"; inp.min=min; inp.max=max; inp.step=step; inp.value=val; inp.style.flex="1"; inp.style.accentColor=PARAM_COLORS[key]||"var(--accent)"; inp.style.height="6px"; inp.dataset.key=key;
     const out=document.createElement("span"); out.textContent=val; out.style.minWidth="52px"; out.style.textAlign="right"; out.style.color=PARAM_COLORS[key]||"var(--accent)"; out.style.fontFamily="var(--mono)"; out.style.fontWeight="700"; out.style.fontSize=".9rem";
     inp.addEventListener("input",()=>{ out.textContent=inp.value; onChange(parseFloat(inp.value)); });
     wrap.appendChild(dot); wrap.appendChild(lab); wrap.appendChild(inp); wrap.appendChild(out);
@@ -28,7 +28,7 @@
             if(html!==node.nodeValue){
               const sp=document.createElement("span"); sp.innerHTML=html;
               sp.querySelectorAll(".fparam").forEach(el=>{
-                el.addEventListener("click",()=>{ const slider=container.querySelector(`input[style*="${PARAM_COLORS[key]}"]`); if(slider){ slider.focus(); const wrap=slider.closest(".lab-slider"); if(wrap){ wrap.style.boxShadow="0 0 12px "+PARAM_COLORS[key]; wrap.style.borderRadius="8px"; setTimeout(()=>wrap.style.boxShadow="",700); } slider.scrollIntoView({behavior:"smooth",block:"nearest"}); } });
+                el.addEventListener("click",()=>{ const slider=container.querySelector('input[data-key="'+key+'"]'); if(slider){ slider.focus(); const wrap=slider.closest(".lab-slider"); if(wrap){ wrap.style.boxShadow="0 0 12px "+PARAM_COLORS[key]; wrap.style.borderRadius="8px"; setTimeout(()=>wrap.style.boxShadow="",700); } slider.scrollIntoView({behavior:"smooth",block:"nearest"}); } });
               });
               node.parentNode.replaceChild(sp,node);
             }
