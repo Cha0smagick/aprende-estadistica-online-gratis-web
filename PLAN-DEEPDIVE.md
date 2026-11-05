@@ -120,13 +120,13 @@ Durante la transición el script **reporta** pero no bloquea CI. Cuando esté 11
 - [x] **P0.7** Escribir la lección piloto `A3-L1` (EN) con ≥2.500 palabras.
 - [x] **P0.8** `node scripts/generate.mjs` + `node scripts/validate-content.mjs` + spot-check de la página.
 - [ ] **P0.9** Commit `content: A3-L1 deep dive (ES/EN) + pipeline de contenido`.
-- [ ] **P0.10** Arreglar el marcador del quiz (`Score: 0/N` → vivo).
-- [ ] **P0.11** Permitir reintento tras fallo y desbloquear “Solución” solo tras intento.
-- [ ] **P0.12** Corregir IDs `*-rev` del SRS para que `/repaso/` los resuelva.
-- [ ] **P0.13** Actualizar el badge de repaso con `dueSrs().length`.
-- [ ] **P0.14** Arreglar la tarjeta 00 rota de la portada y el copy “Tres/Cuatro cursos”.
-- [ ] **P0.15** Quitar el ID duplicado en los `h2` de módulo (`C0 · C0 — ...`).
-- [ ] **P0.16** Commit de quick wins y push.
+- [x] **P0.10** Arreglar el marcador del quiz (`Score: 0/N` → vivo).
+- [x] **P0.11** Permitir reintento tras fallo y desbloquear “Solución” solo tras intento.
+- [x] **P0.12** Corregir IDs `*-rev` del SRS para que `/repaso/` los resuelva.
+- [x] **P0.13** Actualizar el badge de repaso con `dueSrs().length`.
+- [x] **P0.14** Arreglar la tarjeta 00 rota de la portada y el copy “Tres/Cuatro cursos”.
+- [x] **P0.15** Quitar el ID duplicado en los `h2` de módulo (`C0 · C0 — ...`).
+- [x] **P0.16** Commit de quick wins y push.
 
 ### Fase 1 — Contenido: curso Descriptiva (42 lecciones)
 
@@ -252,7 +252,8 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 | Fecha | Hito | Estado |
 |---|---|---|
 | 2026-11-05 | Plan creado | ✅ |
-| 2026-11-05 | Pipeline de contenido + A3-L1 piloto | ⏳ |
+| 2026-11-05 | Pipeline de contenido + A3-L1 piloto (5156/4864 palabras) | ✅ |
+| 2026-11-05 | Quick wins: marcador, reintento, SRS, badge, portada, h2 | ✅ |
 | — | Descriptiva 42/42 | ⏳ |
 | — | Probabilidad 30/30 | ⏳ |
 | — | Inferencial 33/33 | ⏳ |

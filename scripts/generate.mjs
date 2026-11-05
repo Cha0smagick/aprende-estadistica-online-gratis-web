@@ -37,7 +37,7 @@ function pickReview(course, idx){
   const prev=flat.slice(0,idx).slice(-3);
   // take first exercise of each previous lesson (compact)
   return prev.map(x=> (x.lesson.exercises&&x.lesson.exercises[0]) ? {
-    id: x.lesson.id+"-rev", type: x.lesson.exercises[0].type,
+    id: x.lesson.exercises[0].id, type: x.lesson.exercises[0].type,
     prompt: x.lesson.exercises[0].prompt,
     choices: x.lesson.exercises[0].choices,
     answer: x.lesson.exercises[0].answer,

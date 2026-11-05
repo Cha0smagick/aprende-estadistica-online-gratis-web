@@ -97,7 +97,7 @@ function footer({lang,base}){
 export function indexPage({lang,base,courses}){
   const b=base||""; const other=lang==="es"?"en":"es";
   const title = lang==="es"?"Jackpot Estadístico — Cursos":"Jackpot Statistical — Courses";
-  const desc = lang==="es"?"Tres cursos interactivos de estadística de cero a hero.":"Three interactive statistics courses from zero to hero.";
+  const desc = lang==="es"?`${courses.length} cursos interactivos de estadística de cero a hero.`:`${courses.length} interactive statistics courses from zero to hero.`;
   const home = b+lang+"/";
   let cards="";
   for(const c of courses){
@@ -121,7 +121,7 @@ ${nav({lang,base})}
   <section class="hero">
     <p class="kicker">${lang==="es"?"Gratis · Sin registro · Sin cookies · Español e Inglés":"Free · No signup · No cookies · Spanish & English"}</p>
     <h1>${lang==="es"?"Aprende estadística<br><span class=\"accent\">de cero a hero</span>":"Learn statistics<br><span class=\"accent\">from zero to hero</span>"}</h1>
-    <p class="lead">${lang==="es"?"Tres cursos interactivos que te llevan desde «¿qué es un número?» hasta la inferencia con datos continuos. Teoría clara, fórmulas en LaTeX, ejercicios online y un casino donde solo se apuesta conocimiento.":"Three interactive courses taking you from \"what is a number?\" to inference with continuous data. Clear theory, real LaTeX formulas, online exercises and a casino where only knowledge is wagered."}</p>
+    <p class="lead">${lang==="es"?`${courses.length} cursos interactivos que te llevan desde «¿qué es un número?» hasta la inferencia con datos continuos. Teoría clara, fórmulas en LaTeX, ejercicios online y un casino donde solo se apuesta conocimiento.`:`${courses.length} interactive courses taking you from "what is a number?" to inference with continuous data. Clear theory, real LaTeX formulas, online exercises and a casino where only knowledge is wagered.`}</p>
     <div class="hero-cta">
       <a class="btn btn-primary btn-lg" href="${b}${other}/">${lang==="es"?"English":"Español"}</a>
     </div>
@@ -165,12 +165,15 @@ export function coursePage({lang,base,course}){
   let modulesHtml="";
   for(const m of course.modules){
     let lessons="";
+    // el titulo puede traer ya el id delante ("A3 — Tendencia central"): no duplicarlo
+    const rawTitle=t(m.title,lang);
+    const moduleTitle=rawTitle.startsWith(m.id) ? rawTitle.slice(m.id.length).replace(/^\s*[—–-]\s*/,"") : rawTitle;
     for(const ls of m.lessons){
       const u=`${b}${lang}/${course.slug}/${m.slug}/${ls.slug}/`;
       lessons+=`<li><a href="${u}">${esc(t(ls.title,lang))}</a> <span class="muted">· ${ls.minutes} min</span></li>`;
     }
     modulesHtml+=`<section class="block" id="${m.id}">
-      <h2>${esc(m.id)} · ${esc(t(m.title,lang))}</h2>
+      <h2>${esc(m.id)} · ${esc(moduleTitle)}</h2>
       <p>${esc(t(m.summary,lang))}</p>
       <ul>${lessons}</ul>
     </section>`;

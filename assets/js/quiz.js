@@ -7,7 +7,13 @@
   window.Quiz = {
     render(container, exercises, opts={}){
       container.innerHTML="";
-      const results={correct:0,total:exercises.length};
+      const results={correct:0,total:exercises.length,wrong:0};
+      let usedHelp=false;
+      const summary=el("div",{class:"block"});
+      const scoreLine=el("p",{class:"score-line"});
+      summary.appendChild(scoreLine);
+      const updateScore=()=>{ scoreLine.textContent=`${window.t("score")}: ${results.correct}/${results.total}`; };
+      updateScore();
       exercises.forEach((q,i)=>{
         const item=el("div",{class:"quiz-item"});
         item.appendChild(el("div",{class:"q-prompt"},[`${i+1}. `+ (window.SITE_LANG==="en"?q.prompt.en:q.prompt.es)]));
@@ -58,6 +64,7 @@
         const btnCheck=el("button",{class:"btn btn-primary btn-sm"},[window.t("check")]);
         const btnHint=el("button",{class:"btn btn-ghost btn-sm"},[window.t("hint")]);
         const btnSol=el("button",{class:"btn btn-ghost btn-sm"},[window.t("solution")]);
+        btnHint.disabled=true; btnSol.disabled=true; // ayuda solo tras intentarlo
         actions.appendChild(btnCheck); actions.appendChild(btnHint); actions.appendChild(btnSol);
         item.appendChild(actions);
         container.appendChild(item);
@@ -75,12 +82,12 @@
         }
         btnCheck.addEventListener("click",()=>{
           if(btnCheck.disabled) return;
-          btnCheck.disabled=true;
           const ans=collectAnswer();
           const ok=isCorrect(ans);
           fb.classList.remove("hidden","ok","bad");
           if(ok){
             fb.classList.add("ok"); fb.innerHTML=`${window.t("correct")}`;
+            btnCheck.disabled=true; btnHint.disabled=true; btnSol.disabled=true;
             item.querySelectorAll(".choice").forEach(c=>c.classList.add("locked"));
             results.correct++;
             const r=window.Game.onCorrect({jackpot:!!q.jackpot, base: q.xp||10});
@@ -90,30 +97,36 @@
             // SRS Leitner: acierto sube de caja (1/3/7/21 dias)
             const prev=(window.Progress.srsInfo(q.id)||{}).days||0;
             window.Progress.markSrs(q.id, prev<1?1 : prev<3?3 : prev<7?7 : 21);
-            window.Game.badgeCheck({perfect: results.correct===results.total && results.total>0});
+            window.Game.badgeCheck({
+              perfect: results.correct===results.total && results.total>0 && results.wrong===0 && !usedHelp,
+              noHints: !usedHelp
+            });
+            updateScore();
           } else {
             fb.classList.add("bad"); fb.innerHTML=window.t("wrong");
             if(window.Sound) window.Sound.wrong();
-            window.Game.onWrong();
-            // fallo: vuelve a vencer hoy para reintento inmediato
+            // un fallo no encadena penalizaciones: la racha se rompe una vez por ejercicio
+            if(!item.dataset.wrongOnce){ item.dataset.wrongOnce="1"; results.wrong++; window.Game.onWrong(); }
+            // fallo: vuelve a vencer hoy para reintento inmediato; el boton sigue activo
             window.Progress.markSrs(q.id,0);
+            btnHint.disabled=false; btnSol.disabled=false;
           }
           renderMath(fb);
         });
         btnHint.addEventListener("click",()=>{
-          fb.classList.remove("hidden"); fb.classList.add("bad");
+          usedHelp=true;
+          fb.classList.remove("hidden","bad","ok");
           fb.innerHTML=`<em>${window.t("hint")}:</em> ${window.SITE_LANG==="en"?q.hint.en:q.hint.es}`;
           renderMath(fb);
         });
         btnSol.addEventListener("click",()=>{
-          fb.classList.remove("hidden"); fb.classList.add("bad");
+          usedHelp=true;
+          fb.classList.remove("hidden","bad","ok");
           fb.innerHTML=`<em>${window.t("solutionShown")}:</em> ${window.SITE_LANG==="en"?q.solution.en:q.solution.es}`;
           renderMath(fb);
         });
       });
       renderMath(container);
-      const summary=el("div",{class:"block"});
-      summary.appendChild(el("p",{class:"score-line"},[`Score: ${results.correct}/${results.total}`]));
       container.appendChild(summary);
     }
   };

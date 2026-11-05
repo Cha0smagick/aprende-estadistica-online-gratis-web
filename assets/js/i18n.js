@@ -2,6 +2,7 @@
 window.I18N = {
   es: {
     check:"Comprobar", hint:"Pista", solution:"Ver solución", next:"Siguiente",
+    score:"Aciertos",
     correct:"¡Correcto!", wrong:"No exactamente. Intenta otra vez.",
     jackpot:"¡JACKPOT! ×10 fichas", streak:"Racha", chips:"Fichas", xp:"XP",
     level:"Nivel", review:"Repaso", blueprint:"Blueprint (paso a paso)",
@@ -15,6 +16,7 @@ window.I18N = {
   },
   en: {
     check:"Check", hint:"Hint", solution:"Show solution", next:"Next",
+    score:"Score",
     correct:"Correct!", wrong:"Not quite. Try again.",
     jackpot:"JACKPOT! ×10 chips", streak:"Streak", chips:"Chips", xp:"XP",
     level:"Level", review:"Review", blueprint:"Blueprint (step by step)",

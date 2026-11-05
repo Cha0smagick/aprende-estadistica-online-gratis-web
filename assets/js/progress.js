@@ -20,7 +20,7 @@
     isCompleted(id){ return !!S.completed[id]; },
     markSrs(id,days){ const d=new Date(); d.setDate(d.getDate()+(days||0)); S.srs[id]={due:localDate(d),days:days||0}; save(S); },
     srsInfo(id){ return S.srs[id]||null; },
-    dueSrs(){ const today=localDate(new Date()); return Object.keys(S.srs).filter(k=>{ const v=S.srs[k]; return (typeof v==="string"?v:v.due)<=today; }); },
+    dueSrs(){ const today=localDate(new Date()); return Object.keys(S.srs).filter(k=>{ if(k.endsWith("-rev")) return false; const v=S.srs[k]; return (typeof v==="string"?v:v.due)<=today; }); },
     earnBadge(id){ if(!S.badges.includes(id)){ S.badges.push(id); save(S); return true;} return false; },
     exportJSON(){ const b=new Blob([JSON.stringify(S,null,2)],{type:"application/json"}); const u=URL.createObjectURL(b); const a=document.createElement("a"); a.href=u; a.download="jackpot-progress.json"; a.click(); URL.revokeObjectURL(u); },
     importJSON(file){ const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result);
@@ -33,4 +33,16 @@
     reset(){ if(confirm("¿Borrar todo el progreso? / Reset all progress?")){ localStorage.removeItem(KEY); location.reload(); } }
   };
   window.Progress.recalcLevel();
+
+  // badge de repaso: visible solo si hay preguntas vencidas hoy
+  function updateReviewBadge(){
+    const b=document.getElementById("review-badge");
+    if(!b) return;
+    const n=window.Progress.dueSrs().length;
+    b.textContent=n;
+    b.style.display=n?"inline":"none";
+    b.setAttribute("aria-label", n+(document.documentElement.lang==="en"?" reviews due today":" repasos pendientes hoy"));
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",updateReviewBadge);
+  else updateReviewBadge();
 })();
