@@ -30,6 +30,8 @@ jobs:
           cp -r node_modules/katex/dist/* vendor/katex/
       - name: Validate content
         run: node scripts/validate.mjs
+      - name: Validate deep dive content
+        run: node scripts/validate-content.mjs
       - name: Generate site
         run: node scripts/generate.mjs
       - name: Upload artifact

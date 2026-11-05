@@ -132,8 +132,8 @@ Durante la transición el script **reporta** pero no bloquea CI. Cuando esté 11
 
 Orden: A3 → A4 → A5 → A6 → A2 → A1 → A0.
 
-- [ ] **A3** (6): media, mediana, moda, medias ponderada/geométrica/armónica, cuándo usar cada una, relación media-mediana.
-- [ ] **A4** (5): rango/IQR, varianza/desviación, CV, MAD, poblacional vs muestral.
+- [x] **A3** (6): media, mediana, moda, medias ponderada/geométrica/armónica, cuándo usar cada una, relación media-mediana.
+- [x] **A4** (5): rango/IQR, varianza/desviación, CV, MAD, poblacional vs muestral.
 - [ ] **A5** (5): cuartiles/percentiles, z, asimetría/curtosis, regla empírica, boxplots.
 - [ ] **A6** (6): covarianza, Pearson, Spearman, regresión simple, correlación≠causalidad, ajuste/bondad.
 - [ ] **A2** (6): frecuencias, histogramas/bins, series temporales, Pareto, gráficos engañosos, bivariados.
@@ -253,7 +253,8 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 |---|---|---|
 | 2026-11-05 | Plan creado | ✅ |
 | 2026-11-05 | Pipeline de contenido + A3-L1 piloto (5156/4864 palabras) | ✅ |
-| 2026-11-05 | Quick wins: marcador, reintento, SRS, badge, portada, h2 | ✅ |
+| 2026-11-05 | Módulo A3 completo (6/6 lecciones deep dive ES/EN) | ✅ |
+| 2026-11-05 | Módulo A4 (dispersión) en curso | ⏳ |
 | — | Descriptiva 42/42 | ⏳ |
 | — | Probabilidad 30/30 | ⏳ |
 | — | Inferencial 33/33 | ⏳ |
