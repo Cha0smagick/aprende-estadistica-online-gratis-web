@@ -8,12 +8,15 @@ const courseFiles = ["fundamentos.js","descriptiva.js","probabilidad.js","infere
 const TYPES = new Set(["mcq","numeric","truefalse","order"]);
 const LANGS = ["es","en"];
 let errors=[]; let warnings=[];
+const seenIds=new Map(); // ids de ejercicio únicos en todo el repo (exercises-index.js indexa por id)
 function err(msg){ errors.push(msg); }
 function warn(msg){ warnings.push(msg); }
 function isText(v){ return v && typeof v==="object" && typeof v.es==="string" && typeof v.en==="string"; }
 function checkText(obj,path){ if(!isText(obj)) err(`${path}: esperado {es,en} strings`); }
 function checkExercise(q,loc){
   if(!q.id) err(`${loc}: falta id`);
+  else if(seenIds.has(q.id)) err(`${loc}: id de ejercicio duplicado '${q.id}' (ya en ${seenIds.get(q.id)})`);
+  else seenIds.set(q.id,loc);
   if(!TYPES.has(q.type)) err(`${loc}: tipo inválido '${q.type}'`);
   checkText(q.prompt, `${loc}.prompt`);
   if(q.hint) checkText(q.hint, `${loc}.hint`);
@@ -25,7 +28,12 @@ function checkExercise(q,loc){
   }
   if(q.type==="truefalse" && typeof q.answer!=="boolean") err(`${loc}: answer debe ser boolean`);
   if(q.type==="numeric" && typeof q.answer!=="number") err(`${loc}: answer debe ser number`);
+  if(q.type==="numeric" && (q.tol===undefined || typeof q.tol!=="number")) err(`${loc}: falta tol numérico`);
   if(q.type==="order" && !Array.isArray(q.answer)) err(`${loc}: answer debe ser array de índices`);
+  if(q.type==="order" && Array.isArray(q.answer)){
+    const n=q.choices?q.choices.length:0;
+    if(q.answer.length!==n || new Set(q.answer).size!==n || q.answer.some(i=>!Number.isInteger(i)||i<0||i>=n)) err(`${loc}: answer no es una permutación válida`);
+  }
   // control chars check (catches bad backslash escapes like \b,\f)
   const blob=JSON.stringify(q);
   if(/[\x00-\x08\x0b\x0c\x0e-\x1f]/.test(blob)) err(`${loc}: caracteres de control (escape mal formado)`);

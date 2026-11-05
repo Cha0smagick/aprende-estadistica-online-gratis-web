@@ -70,7 +70,7 @@
         function isCorrect(ans){
           if(q.type==="mcq"||q.type==="truefalse") return ans===q.answer;
           if(q.type==="numeric") return checkNumeric(ans,q.answer,q.tol||0.01);
-          if(q.type==="order"){ if(!ans.every(n=>!isNaN(n))) return false; const order=ans.map((n,i)=>({n,i})).sort((a,b)=>a.n-b.n).map(x=>x.i); return JSON.stringify(order)===JSON.stringify(q.answer); }
+          if(q.type==="order"){ if(!ans.every(n=>Number.isInteger(n)&&n>=1&&n<=q.choices.length)) return false; if(new Set(ans).size!==ans.length) return false; const order=ans.map((n,i)=>({n,i})).sort((a,b)=>a.n-b.n).map(x=>x.i); return JSON.stringify(order)===JSON.stringify(q.answer); }
           return false;
         }
         btnCheck.addEventListener("click",()=>{

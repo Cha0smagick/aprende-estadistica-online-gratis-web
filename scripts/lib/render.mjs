@@ -22,6 +22,8 @@ function md(text){
   if(inList) out+="</ul>";
   return out;
 }
+// JSON para <script> inline: escapar < evita romper el script si el contenido trae </script>
+const J=o=>JSON.stringify(o).replace(/</g,"\\u003c");
 function t(obj,lang){ if(obj==null) return ""; if(typeof obj==="string") return obj; return obj[lang]||obj.es||obj.en||""; }
 function basePrefix(base){ return base||""; }
 
@@ -109,8 +111,8 @@ export function indexPage({lang,base,courses}){
     </article>`;
   }
   const compact = courses.map(c=>({id:c.id, title:c.title, modules:c.modules.map(m=>({id:m.id,lessons:m.lessons.map(l=>l.id)}))}));
-  const embed = JSON.stringify(compact);
-  return `${head({lang,title,desc,canonical:home,altEs:b+"es/",altEn:b+"en/",jsonLd:JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":[lang]}),base:b})}
+  const embed=J(compact);
+  return `${head({lang,title,desc,canonical:home,altEs:b+"es/",altEn:b+"en/",jsonLd:J({"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":[lang]}),base:b})}
 <body class="landing">
 ${nav({lang,base})}
 <main>
@@ -157,7 +159,7 @@ export function coursePage({lang,base,course}){
   const title = `${t(course.title,lang)} — Jackpot Estadístico`;
   const desc = t(course.description,lang);
   const url = `${b}${lang}/${course.slug}/`;
-  const jsonLd = JSON.stringify({"@context":"https://schema.org","@type":"Course","name":t(course.title,lang),"description":desc,"inLanguage":lang,"provider":{"@type":"Organization","name":"Jackpot Estadístico"}});
+  const jsonLd = J({"@context":"https://schema.org","@type":"Course","name":t(course.title,lang),"description":desc,"inLanguage":lang,"provider":{"@type":"Organization","name":"Jackpot Estadístico"}});
   let modulesHtml="";
   for(const m of course.modules){
     let lessons="";
@@ -171,7 +173,7 @@ export function coursePage({lang,base,course}){
       <ul>${lessons}</ul>
     </section>`;
   }
-  const embedCourse = JSON.stringify(course);
+  const embedCourse=J(course);
   return `${head({lang,title,desc,canonical:url,altEs:b+"es/"+course.slug+"/",altEn:b+"en/"+course.slug+"/",jsonLd,base:b})}
 <body>
 ${nav({lang,base,courseTitle:t(course.title,lang)})}
@@ -217,14 +219,14 @@ export function lessonPage({lang,base,lesson,course,module,navInfo,reviewItems})
   const title = `${t(lesson.title,lang)} — ${t(course.title,lang)}`;
   const desc = t(lesson.hook,lang).replace(/<[^>]+>/g,"").slice(0,160);
   const url = `${b}${lang}/${course.slug}/${module.slug}/${lesson.slug}/`;
-  const jsonLd = JSON.stringify({"@context":"https://schema.org","@type":"LearningResource","name":t(lesson.title,lang),"inLanguage":lang,"educationalLevel":"beginner","isPartOf":{"@type":"Course","name":t(course.title,lang)}});
+  const jsonLd = J({"@context":"https://schema.org","@type":"LearningResource","name":t(lesson.title,lang),"inLanguage":lang,"educationalLevel":"beginner","isPartOf":{"@type":"Course","name":t(course.title,lang)}});
   const prev = (navInfo&&navInfo.prev) ? {url:`${b}${navInfo.prev.url}`, title:t(navInfo.prev.title,lang)} : null;
   const next = (navInfo&&navInfo.next) ? {url:`${b}${navInfo.next.url}`, title:t(navInfo.next.title,lang)} : null;
   const courseUrl = `${b}${lang}/${course.slug}/`;
-  const embedLesson = JSON.stringify(lesson);
-  const embedCourse = JSON.stringify({id:course.id,title:course.title,slug:course.slug});
-  const embedNav = JSON.stringify({prev,next,courseUrl: (navInfo&&navInfo.courseUrl)? navInfo.courseUrl : `${lang}/${course.slug}/`});
-  const embedReview = JSON.stringify(reviewItems||[]);
+  const embedLesson=J(lesson);
+  const embedCourse=J({id:course.id,title:course.title,slug:course.slug});
+  const embedNav=J({prev,next,courseUrl: (navInfo&&navInfo.courseUrl)? navInfo.courseUrl : `${lang}/${course.slug}/`});
+  const embedReview=J(reviewItems||[]);
   return `${head({lang,title,desc,canonical:url,altEs:b+"es/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",altEn:b+"en/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",jsonLd,base:b})}
 <body>
 ${nav({lang,base,courseTitle:t(course.title,lang)})}

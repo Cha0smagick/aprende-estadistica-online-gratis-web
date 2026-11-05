@@ -23,7 +23,13 @@
     dueSrs(){ const today=localDate(new Date()); return Object.keys(S.srs).filter(k=>{ const v=S.srs[k]; return (typeof v==="string"?v:v.due)<=today; }); },
     earnBadge(id){ if(!S.badges.includes(id)){ S.badges.push(id); save(S); return true;} return false; },
     exportJSON(){ const b=new Blob([JSON.stringify(S,null,2)],{type:"application/json"}); const u=URL.createObjectURL(b); const a=document.createElement("a"); a.href=u; a.download="jackpot-progress.json"; a.click(); URL.revokeObjectURL(u); },
-    importJSON(file){ const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); Object.assign(S,d); save(S); location.reload(); }catch(e){ alert("Archivo inválido"); } }; r.readAsText(file); },
+    importJSON(file){ const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result);
+      // validar campo a campo: un JSON roto no debe corruptir el estado persistente
+      ["xp","chips","streak","bestStreak","level"].forEach(k=>{ if(typeof d[k]==="number"&&isFinite(d[k])) S[k]=d[k]; });
+      ["badges","diplomas"].forEach(k=>{ if(Array.isArray(d[k])) S[k]=d[k]; });
+      ["srs","completed","answers"].forEach(k=>{ if(d[k]&&typeof d[k]==="object"&&!Array.isArray(d[k])) S[k]=d[k]; });
+      if(typeof d.lastDay==="string"||d.lastDay===null) S.lastDay=d.lastDay;
+      window.Progress.recalcLevel(); save(S); location.reload(); }catch(e){ alert("Archivo inválido"); } }; r.readAsText(file); },
     reset(){ if(confirm("¿Borrar todo el progreso? / Reset all progress?")){ localStorage.removeItem(KEY); location.reload(); } }
   };
   window.Progress.recalcLevel();
