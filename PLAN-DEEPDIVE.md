@@ -253,9 +253,13 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 |---|---|---|
 | 2026-11-05 | Plan creado | ✅ |
 | 2026-11-05 | Pipeline de contenido + A3-L1 piloto (5156/4864 palabras) | ✅ |
-| 2026-11-05 | Módulo A3 completo (6/6 lecciones deep dive ES/EN) | ✅ |
-| 2026-11-05 | Módulo A4 (dispersión) en curso | ⏳ |
-| — | Descriptiva 42/42 | ⏳ |
+| 2026-11-05 | Módulo A3 completo (6/6) | ✅ |
+| 2026-11-05 | Módulo A4 completo (5/5) | ✅ |
+| 2026-11-05 | Módulo A5 completo (5/5) | ✅ |
+| 2026-11-05 | Módulo A6 completo (6/6) | ✅ |
+| 2026-11-05 | **Descriptiva completa: 22/22 lecciones** | ✅ |
+| 2026-11-05 | A7-L1 ES/EN escritas (EN pendiente de expansión a 2500 palabras) | ⏳ |
+| — | Descriptiva 42/42 | ✅ |
 | — | Probabilidad 30/30 | ⏳ |
 | — | Inferencial 33/33 | ⏳ |
 | — | Fundamentos 10/10 | ⏳ |
