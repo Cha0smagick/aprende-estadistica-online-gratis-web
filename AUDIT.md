@@ -281,6 +281,7 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-08 | B2 — Conteo | B2-L1, B2-L2, B2-L3 | 2.925 / 2.524 / 2.509 | ✅ validado |
 | 2026-11-08 | B3 — Probabilidad condicional | B3-L1, B3-L2 | 2.504 / 2.546 | ✅ validado |
 | 2026-11-08 | B4 — Bayes y tests | B4-L1, B4-L2 | 2.586 / 2.555 | ✅ validado |
+| 2026-11-08 | B5 — Variables aleatorias discretas | B5-L2, B5-L3, B5-L4 | 2.507 / 2.507 / 2.508 | ✅ validado |
 
-Acumulado: **33/115** deep dives (22 descriptiva + 11 probabilidad). Pendientes: B5 (3), B6 (4), B7 (3), B8 (5), B9 (4), A0–A2 (20), C0–C9 (33), F0–F1 (10).
+Acumulado: **36/115** deep dives (22 descriptiva + 14 probabilidad). Pendientes: B6 (4), B7 (3), B8 (5), B9 (4), A0–A2 (20), C0–C9 (33), F0–F1 (10).
 
