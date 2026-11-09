@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Valida el contenido profundo de content/<lang>/<lessonId>.md.
+// Valida el contenido profundo en español de content/es/<lessonId>.md.
 // Uso: node scripts/validate-content.mjs [--all]
 //   sin --all: las lecciones sin contenido se reportan como pendientes y no fallan.
 //   con --all: cualquier lección sin contenido (o por debajo del umbral) falla. Para CI.
@@ -10,7 +10,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CONTENT = path.join(ROOT, "content");
 const LANG_FILES = { es: "fundamentos.js", en: "fundamentos.js" };
-const LANGS = ["es", "en"];
+const LANGS = ["es"];
 const MIN_WORDS = 2500;
 const STRICT = process.argv.includes("--all");
 
@@ -89,16 +89,14 @@ for (const lesson of lessons) {
     res.words[lang] = r.words;
     for (const p of r.problems) res.problems.push(`${lang}: ${p}`);
   }
-  const both = res.words.es > 0 && res.words.en > 0;
-  const any = res.words.es > 0 || res.words.en > 0;
+  const any = res.words.es > 0;
   if (!any) {
     pending++;
     res.status = "pending";
-  } else if (both && res.problems.length === 0) {
+  } else if (res.problems.length === 0) {
     ok++;
     res.status = "ok";
   } else {
-    if (!both) res.problems.push(`paridad: es=${res.words.es} en=${res.words.en} (faltan archivos o palabras)`);
     failed++;
     res.status = "FAIL";
   }
@@ -110,14 +108,14 @@ for (const lesson of lessons) {
 
 for (const r of rows) {
   const mark = r.status === "ok" ? "OK  " : r.status === "FAIL" ? "FAIL" : "----";
-  const w = `${String(r.words.es).padStart(5)} / ${String(r.words.en).padStart(5)}`;
+  const w = `${String(r.words.es).padStart(5)}`;
   console.log(`${mark} ${r.id.padEnd(8)} ${w}`);
   for (const p of r.problems) console.log(`       · ${p}`);
 }
 
 console.log("\n=== Resumen por curso ===");
 for (const [c, v] of Object.entries(byCourse)) console.log(`${c.padEnd(14)} ${v.ok}/${v.total} lecciones completas`);
-console.log(`\nTotal: ${ok} completas · ${pending} pendientes · ${failed} con errores · umbral ${MIN_WORDS} palabras/idioma`);
+console.log(`\nTotal: ${ok} completas · ${pending} pendientes · ${failed} con errores · umbral ${MIN_WORDS} palabras`);
 
 if (failed > 0) process.exit(1);
 if (STRICT && pending > 0) {

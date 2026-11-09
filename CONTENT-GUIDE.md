@@ -14,7 +14,7 @@ Fuente de verdad: `PLAN.md` §2 y §4. Este documento es el checklist operativo.
 
 ## Definition of Done
 
-- [ ] `title`, `hook`, `theory`, `example` en ES y EN.
+- [ ] `title`, `hook`, `theory`, `example` en español (los campos `en` de `data/` son legado).
 - [ ] ≥1 fórmula en LaTeX en `theory` o `formulas`.
 - [ ] ≥1 visual (SVG) cuando tenga sentido.
 - [ ] ≥8 ejercicios, ≥2 tipos distintos.

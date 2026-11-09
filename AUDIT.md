@@ -269,3 +269,7 @@ Declaraba 22/115 y «A7-L1 pendiente de expandir» cuando A7 ya no existía y ha
 - `og:image` (requiere asset 1200×630).
 - Prueba en navegador real y con lector de pantalla.
 
+### Cambio de alcance (2026-11-08, posterior a esta reauditoría)
+
+El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo demanda**; se deja de generar `/en/` y de exigir paridad ES/EN. Verificado tras el cambio: `validate.mjs` 0 errores; `validate-content.mjs` 24/115 solo ES; `_site/en` inexistente; sitemap con **124 URLs**; sin `hreflang`; `assets/js/translate.js` no descarga nada de Google hasta que el usuario pulsa «Traducir». El plan editorial baja de 575.000 a **287.500 palabras**. Riesgos asumidos: la traducción automática no iguala una versión escrita y el widget de Google introduce una petición a un tercero cuando se usa.
+

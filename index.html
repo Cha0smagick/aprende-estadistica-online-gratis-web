@@ -4,18 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jackpot Estadístico — Aprende estadística de cero a hero, gratis</title>
-<meta name="description" content="Aprende estadística y probabilidad de cero a inferencial, gratis y en español e inglés. Cursos interactivos, ejercicios online y gamificación. La única web donde se apuesta conocimiento, no dinero.">
+<meta name="description" content="Aprende estadística y probabilidad de cero a inferencial, gratis y en español, con traducción automática. Cursos interactivos, ejercicios online y gamificación. La única web donde se apuesta conocimiento, no dinero.">
 <link rel="canonical" href="https://cha0smagick.github.io/aprende-estadistica-online-gratis-web/">
-<link rel="alternate" hreflang="es" href="https://cha0smagick.github.io/aprende-estadistica-online-gratis-web/es/">
-<link rel="alternate" hreflang="en" href="https://cha0smagick.github.io/aprende-estadistica-online-gratis-web/en/">
-<link rel="alternate" hreflang="x-default" href="https://cha0smagick.github.io/aprende-estadistica-online-gratis-web/es/">
 <meta property="og:url" content="https://cha0smagick.github.io/aprende-estadistica-online-gratis-web/">
 <meta property="og:title" content="Jackpot Estadístico">
-<meta property="og:description" content="Aprende estadística y probabilidad de cero a inferencial. Gratis, bilingüe, interactivo.">
+<meta property="og:description" content="Aprende estadística y probabilidad de cero a inferencial. Gratis, en español y con traducción automática.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/css/main.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":["es","en"],
+{"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":["es"],
 "description":"Cursos interactivos de estadística descriptiva, probabilidad e inferencia, de cero a hero."}
 </script>
 </head>
@@ -24,23 +21,23 @@
   <a class="brand" href="./"><span class="brand-chip">♠</span> Jackpot Estadístico</a>
   <nav class="lang-switch">
     <a href="./es/" class="btn btn-primary">Español</a>
-    <a href="./en/" class="btn btn-ghost">English</a>
     <a href="./es/lab/" class="btn btn-ghost">🔬 Lab</a>
     <a href="./es/glosario/" class="btn btn-ghost">∑ Símbolos</a>
     <a href="./es/repaso/" class="btn btn-ghost">🧠 Repaso</a>
+    <button id="translate-toggle" class="btn btn-ghost" type="button" aria-expanded="false" aria-controls="google_translate_element">🌐 Traducir</button>
+    <div id="google_translate_element" style="display:none"></div>
   </nav>
 </header>
 
 <main>
   <section class="hero">
-    <p class="kicker">Gratis · Sin registro · Sin cookies · Español e Inglés</p>
+    <p class="kicker">Gratis · Sin registro · Español · Traducción automática</p>
     <h1>Aprende estadística<br><span class="accent">de cero a hero</span></h1>
     <p class="lead">Cuatro cursos interactivos que te llevan desde <em>«¿qué es un número?»</em> hasta la
       inferencia con datos continuos. Teoría clara, fórmulas en LaTeX, ejercicios online y un casino
       donde solo se apuesta <strong>conocimiento</strong>.</p>
     <div class="hero-cta">
       <a class="btn btn-primary btn-lg" href="./es/">Empezar en Español</a>
-      <a class="btn btn-ghost btn-lg" href="./en/">Start in English</a>
     </div>
     <p class="fineprint">«La estadística no es suerte. Aunque aquí te la damos.»</p>
   <p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz · Ing. de Sistemas · Antropólogo · Estadístico
@@ -95,9 +92,10 @@
 </main>
 
 <footer class="site-foot">
-  <p>Jackpot Estadístico — aprende estadística gratis. <a href="./es/">ES</a> · <a href="./en/">EN</a></p>
+  <p>Jackpot Estadístico — aprende estadística gratis. <a href="./es/">ES</a></p>
   <p class="fineprint">Juego responsable: aquí solo se apuesta conocimiento. Las fichas no valen dinero.</p>
 </footer>
 <script src="assets/js/casino-bg.js"></script>
+<script src="assets/js/translate.js"></script>
 </body>
 </html>

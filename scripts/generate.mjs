@@ -21,7 +21,7 @@ async function copyDir(s,d){
 }
 
 const courseFiles = ["fundamentos.js","descriptiva.js","probabilidad.js","inferencial.js"];
-const langs = ["es","en"];
+const langs = ["es"];
 const CONTENT = path.join(ROOT,"content");
 
 // deep dive opcional: content/<lang>/<lessonId>.md
@@ -53,7 +53,6 @@ async function main(){
   await rm(SITE); await mkdir(SITE);
   // copiar paginas manuales (lab, glosario, repaso) ANTES de generar: si hubiera colision futura, gana el generado
   await copyDir(path.join(ROOT,"es"), path.join(SITE,"es"));
-  await copyDir(path.join(ROOT,"en"), path.join(SITE,"en"));
   const courses=[];
   for(const f of courseFiles){
     const mod = await import(pathToFileURL(path.join(ROOT,"data",f)).href);

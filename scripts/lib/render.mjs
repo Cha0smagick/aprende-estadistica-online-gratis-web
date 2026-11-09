@@ -28,7 +28,7 @@ const J=o=>JSON.stringify(o).replace(/</g,"\\u003c");
 function t(obj,lang){ if(obj==null) return ""; if(typeof obj==="string") return obj; return obj[lang]||obj.es||obj.en||""; }
 function basePrefix(base){ return base||""; }
 
-function head({lang,title,desc,canonical,altEs,altEn,jsonLd,base}){
+function head({lang,title,desc,canonical,jsonLd,base}){
   const b=base||"";
   return `<!doctype html>
 <html lang="${lang}">
@@ -39,9 +39,6 @@ function head({lang,title,desc,canonical,altEs,altEn,jsonLd,base}){
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${esc(canonical)}">
 <meta property="og:url" content="${esc(canonical)}">
-<link rel="alternate" hreflang="es" href="${esc(altEs)}">
-<link rel="alternate" hreflang="en" href="${esc(altEn)}">
-<link rel="alternate" hreflang="x-default" href="${esc(altEs)}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:type" content="article">
@@ -54,7 +51,6 @@ ${jsonLd?`<script type="application/ld+json">${jsonLd}</script>`:""}
 }
 function nav({lang,base,courseTitle}){
   const b=base||"";
-  const other = lang==="es"?"en":"es";
   const home = b+(lang==="es"?"es/":"en/");
   return `<header class="site-nav">
   <a class="brand" href="${home}"><span class="brand-chip">♠</span> Jackpot Estadístico</a>
@@ -63,9 +59,8 @@ function nav({lang,base,courseTitle}){
     <a class="btn btn-ghost btn-sm" href="${b}${lang}/lab/">🔬 Lab</a>
     <a class="btn btn-ghost btn-sm" href="${b}${lang}/glosario/">∑ Símbolos</a>
     <a class="btn btn-ghost btn-sm" href="${b}${lang}/repaso/">🧠 Repaso <span id="review-badge" style="background:var(--bad);color:#0b0d12;border-radius:999px;padding:1px 6px;font-size:.7rem;margin-left:4px;display:none">0</span></a>
-    <div class="lang-switch">
-      <a class="btn btn-ghost btn-sm" href="${b}${other}/">${other.toUpperCase()}</a>
-    </div>
+    <button id="translate-toggle" class="btn btn-ghost btn-sm" type="button" aria-expanded="false" aria-controls="google_translate_element">🌐 Traducir</button>
+    <div id="google_translate_element" style="display:none"></div>
     <div id="progress-chip" class="progress-chip"></div>
     <button id="sound-toggle" class="btn btn-ghost btn-sm" aria-label="Sound" type="button">🔊</button>
   </nav>
@@ -74,7 +69,7 @@ function nav({lang,base,courseTitle}){
 function footer({lang,base}){
   const b=base||"";
   return `<footer class="site-foot">
-  <p>Jackpot Estadístico — aprende estadística gratis. <a href="${b}es/">ES</a> · <a href="${b}en/">EN</a></p>
+  <p>Jackpot Estadístico — aprende estadística gratis. <a href="${b}es/">ES</a></p>
   <p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz · Ing. de Sistemas · Antropólogo · Estadístico
     (<a href="https://www.linkedin.com/in/alejandroquinteroruiz/" target="_blank" rel="noopener">LinkedIn</a>).</p>
   <p class="fineprint">Juego responsable: aquí solo se apuesta conocimiento. Las fichas no valen dinero.</p>
@@ -89,13 +84,14 @@ function footer({lang,base}){
 <script src="${b}assets/js/diploma.js"></script>
 <script src="${b}assets/js/symbols.js"></script>
 <script src="${b}assets/js/casino-bg.js"></script>
+<script src="${b}assets/js/translate.js"></script>
 <script>
 (function(){function upd(){var b=document.getElementById("review-badge");if(!b||!window.Progress)return;var n=window.Progress.dueSrs().length;if(n>0){b.textContent=n;b.style.display="inline";}else b.style.display="none";}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>setTimeout(upd,300));else setTimeout(upd,300);})();
 </script>`;
 }
 
 export function indexPage({lang,base,courses}){
-  const b=base||""; const other=lang==="es"?"en":"es";
+  const b=base||"";
   const title = lang==="es"?"Jackpot Estadístico — Cursos":"Jackpot Statistical — Courses";
   const desc = lang==="es"?`${courses.length} cursos interactivos de estadística de cero a hero.`:`${courses.length} interactive statistics courses from zero to hero.`;
   const home = b+lang+"/";
@@ -114,16 +110,16 @@ export function indexPage({lang,base,courses}){
   }
   const compact = courses.map(c=>({id:c.id, title:c.title, modules:c.modules.map(m=>({id:m.id,lessons:m.lessons.map(l=>l.id)}))}));
   const embed=J(compact);
-  return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/",altEs:SITE_URL+"/es/",altEn:SITE_URL+"/en/",jsonLd:J({"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":[lang]}),base:b})}
+  return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/",jsonLd:J({"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":[lang]}),base:b})}
 <body class="landing">
 ${nav({lang,base})}
 <main>
   <section class="hero">
-    <p class="kicker">${lang==="es"?"Gratis · Sin registro · Sin cookies · Español e Inglés":"Free · No signup · No cookies · Spanish & English"}</p>
+    <p class="kicker">${lang==="es"?"Gratis · Sin registro · Español · Traducción automática":"Free · No signup · Spanish · Automatic translation"}</p>
     <h1>${lang==="es"?"Aprende estadística<br><span class=\"accent\">de cero a hero</span>":"Learn statistics<br><span class=\"accent\">from zero to hero</span>"}</h1>
     <p class="lead">${lang==="es"?`${courses.length} cursos interactivos que te llevan desde «¿qué es un número?» hasta la inferencia con datos continuos. Teoría clara, fórmulas en LaTeX, ejercicios online y un casino donde solo se apuesta conocimiento.`:`${courses.length} interactive courses taking you from "what is a number?" to inference with continuous data. Clear theory, real LaTeX formulas, online exercises and a casino where only knowledge is wagered.`}</p>
     <div class="hero-cta">
-      <a class="btn btn-primary btn-lg" href="${b}${other}/">${lang==="es"?"English":"Español"}</a>
+      <a class="btn btn-primary btn-lg" href="${b}${lang}/${courses[0].slug}/">${lang==="es"?"Empezar por Fundamentos":"Start with Foundations"}</a>
     </div>
   </section>
   <section class="cards" aria-label="Cursos">${cards}</section>
@@ -179,7 +175,7 @@ export function coursePage({lang,base,course}){
     </section>`;
   }
   const embedCourse=J(course);
-  return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/"+course.slug+"/",altEs:SITE_URL+"/es/"+course.slug+"/",altEn:SITE_URL+"/en/"+course.slug+"/",jsonLd,base:b})}
+  return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/"+course.slug+"/",jsonLd,base:b})}
 <body>
 ${nav({lang,base,courseTitle:t(course.title,lang)})}
 <main class="container" style="padding-top:24px">
@@ -297,7 +293,7 @@ export function lessonPage({lang,base,lesson,course,module,navInfo,reviewItems,d
   const embedCourse=J({id:course.id,title:course.title,slug:course.slug});
   const embedNav=J({prev,next,courseUrl: (navInfo&&navInfo.courseUrl)? navInfo.courseUrl : `${lang}/${course.slug}/`});
   const embedReview=J(reviewItems||[]);
-  return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",altEs:SITE_URL+"/es/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",altEn:SITE_URL+"/en/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",jsonLd,base:b})}
+  return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",jsonLd,base:b})}
 <body>
 ${nav({lang,base,courseTitle:t(course.title,lang)})}
 <main class="lesson-wrap">

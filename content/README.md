@@ -1,7 +1,8 @@
 # Contenido profundo — reglas de producción
 
-Un archivo por lección e idioma: `content/es/<lessonId>.md` y `content/en/<lessonId>.md`.
+Un archivo por lección, en español: `content/es/<lessonId>.md`.
 El `lessonId` es el `id` de la lección en `data/*.js` (por ejemplo `A3-L1`).
+`content/en/` queda como legado: no se publica ni se valida.
 
 El generador los inyecta en build-time en el bloque **Contenido completo** de la página.
 No se copian a `_site` ni se envían al cliente como JS.
@@ -10,11 +11,11 @@ No se copian a `_site` ni se envían al cliente como JS.
 
 Una lección está terminada solo si:
 
-- Tiene **≥2.500 palabras de prosa** por idioma (el validador descuenta fórmulas y bloques de código).
+- Tiene **≥2.500 palabras de prosa** en español (el validador descuenta fórmulas y bloques de código).
 - Contiene las **9 secciones numeradas**, en orden: `## 1.` … `## 9.`.
 - Tiene al menos 6 subsecciones `###`, 1 tabla de datos y 1 fórmula en bloque `$$...$$`.
 - La sección 9 incluye **5 preguntas numeradas con respuesta razonada**.
-- ES y EN están ambos completos: no se publica una lección con un solo idioma.
+- El texto está en español; los demás idiomas se cubren con el traductor de Google.
 - Todo número es reproducible a mano. Nada de citas inventadas.
 
 Se comprueba con:

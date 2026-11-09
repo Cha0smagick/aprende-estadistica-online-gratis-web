@@ -1,6 +1,6 @@
 # 🎰 Jackpot Estadístico — Aprende estadística de cero a hero
 
-> **Gratis · Sin registro · Sin cookies · Español e Inglés · Interactivo**
+> **Gratis · Sin registro · Español · Traducción automática · Interactivo**
 
 Web educativa de estadística y probabilidad que lleva al alumno desde *«¿qué es un número?»* hasta
 estadística inferencial con datos continuos. Cuatro cursos independientes y progresivos:
@@ -30,10 +30,10 @@ y la teoría del casino, pero **aquí solo se apuesta conocimiento: las fichas n
 
 - **Cuatro cursos completos** (29 módulos · 115 lecciones) con todas las fórmulas en LaTeX.
 - **Interactivo**: quizzes calificados, blueprints con pistas que se desvanecen, gráficos SVG.
-- **Bilingüe real** ES/EN con un solo origen de contenido.
-- **Privado por diseño**: progreso en `localStorage`, sin cuenta, sin cookies (exento de GDPR).
+- **Español**, con traductor de Google bajo demanda para leerlo en cualquier idioma.
+- **Privado por diseño**: progreso en `localStorage`, sin cuenta y sin cookies propias. El traductor de Google solo se carga si el usuario lo pulsa y se rige por su política.
 - **Gamificación**: fichas, rachas, jackpots (recompensa variable), niveles casino, insignias, SRS (Leitner).
-- **SEO**: HTML estático prerenderizado, sitemap, schema JSON-LD (`Course`, `Quiz`, `FAQPage`), hreflang.
+- **SEO**: HTML estático prerenderizado, sitemap, schema JSON-LD (`Course`, `Quiz`, `FAQPage`), canonical absoluto.
 - **Accesible**: contraste, foco visible, `aria-live` en feedback, `prefers-reduced-motion` y paleta segura para daltonismo (auditoría WCAG 2.1 AA completa pendiente: `fieldset/legend`, skip link).
 - **CI/CD**: GitHub Actions valida el contenido y despliega a Pages en cada push a `main`.
 
@@ -46,7 +46,7 @@ y la teoría del casino, pero **aquí solo se apuesta conocimiento: las fichas n
 | Hosting | GitHub Pages |
 | CI/CD | GitHub Actions |
 | Frontend | JS vainilla + ES modules (sin framework) |
-| Datos | `data/*.js` (un solo origen bilingüe) |
+| Datos | `data/*.js` (un solo origen; se publica el texto ES) |
 | Matemáticas | KaTeX (self-host, fallback CDN) |
 | Gráficos | SVG propio (`assets/js/charts.js`) |
 | Progreso | `localStorage` + export/import JSON |
@@ -67,7 +67,7 @@ y la teoría del casino, pero **aquí solo se apuesta conocimiento: las fichas n
 │   └── inferencial.js   # compone el curso (10 módulos)
 ├── scripts/
 │   ├── generate.mjs     # data/*.js → /es/** y /en/** HTML estático + sitemap
-│   ├── validate.mjs     # valida schema, respuestas, bilingüe, enlaces
+│   ├── validate.mjs     # valida schema, respuestas, enlaces
 │   └── lib/render.mjs   # plantillas HTML
 ├── index.html           # selector de idioma / landing
 ├── 404.html             # página 404 temática
@@ -122,7 +122,7 @@ Sin `vendor/`, el engine cae automáticamente a CDN (perfecto para desarrollo).
 - **Slugs**: minúsculas con guiones, sin acentos.
 - **LaTeX en JS**: duplica cada barra invertida (`\\frac`, `\\sum`).
 - **Ejercicios**: tipos `mcq`, `numeric` (con `tol`), `truefalse`, `order`. `xp: 10` por defecto.
-- **Bilingüe**: cada campo de texto es `{es, en}`.
+- **Texto**: los campos siguen siendo `{es, en}` en `data/`, pero solo se publica `es`; el inglés queda como legado. El contenido profundo se escribe en `content/es/`.
 
 ---
 
@@ -161,9 +161,9 @@ C4 Pruebas para medias · C5 Proporciones · C6 Chi-cuadrada · C7 ANOVA · C8 R
 
 ## 🔐 Privacidad
 
-- Sin cookies, sin cuentas, sin tracking.
+- Sin cookies propias, sin cuentas, sin tracking.
 - Progreso en `localStorage` con exportar/importar JSON como copia de seguridad.
-- Exento de fricción GDPR.
+- El traductor de Google no se carga hasta que el usuario lo pide; a partir de ahí se aplica la política de privacidad de Google.
 
 ---
 

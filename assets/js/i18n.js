@@ -1,4 +1,4 @@
-/* UI strings for the interactive layer. Page-level text is prerendered in ES/EN. */
+/* UI strings for the interactive layer. Page-level text is prerendered in Spanish. */
 window.I18N = {
   es: {
     check:"Comprobar", hint:"Pista", solution:"Ver solución", next:"Siguiente",

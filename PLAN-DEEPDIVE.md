@@ -1,10 +1,10 @@
 # PLAN-DEEPDIVE — Contenido profundo y nota 95+
 
-**Objetivo:** que cada una de las 115 lecciones tenga un *deep dive* real de **≥2.500 palabras por idioma** (ES y EN), y que la auditoría pedagógica pase de **56/100** a **≥95/100**.
+**Objetivo:** que cada una de las 115 lecciones tenga un *deep dive* real de **≥2.500 palabras en español**, y que la auditoría pedagógica pase de **56/100** a **≥95/100**. El resto de idiomas se cubre con el traductor de Google bajo demanda; no se duplica la autoría en inglés.
 
 **Estado base (2026-11-05):** 115 lecciones · 50 palabras de teoría por lección · 481/481 ejercicios MCQ · 35% de acierto por azar · feedback correcto/incorrecto · certificado por clics · auditoría 56/100.
 
-**Realidad de esfuerzo:** 115 × 2.500 × 2 = **575.000 palabras**. Es un plan multi-sesión. Cada lote de contenido es una unidad de commit; no se publica una lección por debajo del umbral. No habrá relleno, párrafos repetidos ni “texto de relleno para llegar al número”: si una sección no aporta, se ajusta la estructura, no se infla.
+**Realidad de esfuerzo:** 115 × 2.500 = **287.500 palabras**. Es un plan multi-sesión. Cada lote de contenido es una unidad de commit; no se publica una lección por debajo del umbral. No habrá relleno, párrafos repetidos ni “texto de relleno para llegar al número”: si una sección no aporta, se ajusta la estructura, no se infla.
 
 ---
 
@@ -13,7 +13,6 @@
 Una lección está **terminada** solo si cumple todo:
 
 - [ ] `content/es/<lessonId>.md` existe y tiene **≥2.500 palabras** de prosa real.
-- [ ] `content/en/<lessonId>.md` existe y tiene **≥2.500 palabras**.
 - [ ] Contiene las 9 secciones obligatorias (ver §2).
 - [ ] Incluye al menos **3 ejemplos resueltos con números** y **1 ejemplo con datos reales o verosímiles**.
 - [ ] Incluye al menos **1 derivación paso a paso** y **1 comparación con un método alternativo**.
@@ -21,7 +20,7 @@ Una lección está **terminada** solo si cumple todo:
 - [ ] No contiene afirmaciones estadísticas falsas, citas inventadas ni fórmulas mal escritas.
 - [ ] `node scripts/validate-content.mjs` la marca como OK.
 - [ ] La página generada muestra el bloque “Contenido completo” y el `h1`/teoría siguen funcionando.
-- [ ] Commit atómico con mensaje `content: <ID> deep dive (ES/EN) — <n> palabras`.
+- [ ] Commit atómico con mensaje `content: <ID> deep dive (ES) — <n> palabras`.
 
 **Regla de no regresión:** ninguna lección puede volver a quedar por debajo del umbral. El validador se ejecuta en cada lote y, cuando esté 115/115, se añade a CI como bloqueante.
 
@@ -49,7 +48,7 @@ Una lección está **terminada** solo si cumple todo:
 
 ### 2.1 Fuente de verdad
 
-El contenido profundo **no** se mete dentro de `data/*.js` (ya son 1 MB de JSON bilingüe). Se crea:
+El contenido profundo **no** se mete dentro de `data/*.js` (ya son 1 MB de JSON). Se crea:
 
 ```
 content/
@@ -58,16 +57,13 @@ content/
     A3-L1.md
     A3-L2.md
     ...
-  en/
-    A3-L1.md
-    A3-L2.md
-    ...
 ```
 
-- Un archivo por lección e idioma, nombrado con `lesson.id`.
+- Un archivo por lección, nombrado con `lesson.id`, siempre en `content/es/`.
 - Markdown con LaTeX (`$...$`, `$$...$$`), encabezados `##`/`###`, listas, tablas y blockquotes.
 - `scripts/generate.mjs` los carga en build-time y los inyecta en la página.
 - No se copian a `_site`; no aumentan el JS de cliente.
+- `content/en/` es legado: no se publica ni se valida.
 
 ### 2.2 Plantilla obligatoria (9 secciones, ~2.500-3.000 palabras)
 
@@ -96,11 +92,11 @@ content/
 
 `scripts/validate-content.mjs` comprobará:
 
-- Existencia de `content/<lang>/<lessonId>.md`.
+- Existencia de `content/es/<lessonId>.md`.
 - ≥2.500 palabras (conteo de prosa, sin marcas Markdown).
 - 9 encabezados obligatorios.
 - Al menos 3 bloques de ejemplo y 5 preguntas.
-- Paridad ES/EN (ambos ≥2.500).
+- Cero archivos huérfanos (todo `.md` debe corresponder a una lección de `data/`).
 - Salida legible por lección y resumen por curso.
 
 Durante la transición el script **reporta** pero no bloquea CI. Cuando esté 115/115, se añade a `.github/workflows/deploy.yml` como paso bloqueante.
@@ -215,7 +211,7 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 | UX | 70 | 95 | Enlaces/copy/navegación |
 | Accesibilidad | 65 | 95 | WCAG AA + alternativas |
 | Lengua ES | 64 | 98 | Tildes/typos/estilo |
-| Bilingüe | 78 | 95 | Paridad 2.500/2.500 |
+| Idioma | 78 | 90 | Español claro + traductor automático |
 | Motivación | 55 | 90 | Racha y badges bien diseñados |
 | Técnica | 82 | 95 | CI + validadores |
 | Autonomía | 88 | 95 | Mantener gratis/sin registro |
@@ -228,7 +224,7 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 ## 5. Reglas de producción
 
 1. **Una lección, un archivo, un commit.** No se mezclan 10 lecciones en un commit ilegible.
-2. **ES primero, EN después.** La traducción no es copia literal: adapta ejemplos y unidades.
+2. **Solo español.** No se escribe versión EN; el traductor de Google cubre la lectura en otros idiomas.
 3. **Números verificables.** Todo cálculo debe poder reproducirse a mano.
 4. **Sin citas inventadas.** Si se menciona un autor/resultado, debe ser verificable o formularse como ejemplo.
 5. **Sin relleno.** Si faltan 200 palabras, se añade un ejemplo o una derivación; no una frase motivacional.
@@ -239,10 +235,10 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 
 ## 6. Riesgos y decisiones
 
-- **Riesgo:** 575.000 palabras es un proyecto editorial, no un sprint. **Decisión:** lotes por módulo, commits atómicos, sin prometer una fecha única.
+- **Riesgo:** 287.500 palabras es un proyecto editorial, no un sprint. **Decisión:** lotes por módulo, commits atómicos, sin prometer una fecha única.
 - **Riesgo:** el contenido generado automáticamente suene a plantilla. **Decisión:** plantilla obligatoria, pero cada sección exige ejemplos y números específicos; el validador no premia relleno.
 - **Riesgo:** duplicar teoría y deep dive. **Decisión:** la teoría breve queda como “Resumen”; el deep dive es “Contenido completo”. No se elimina el resumen porque ayuda al repaso rápido.
-- **Riesgo:** EN queda desactualizado. **Decisión:** el validador exige paridad 2.500/2.500 antes de marcar una lección como terminada.
+- **Riesgo:** la traducción automática no alcanza la calidad de una versión escrita. **Decisión:** se asume como coste de reducir el alcance a la mitad; el texto fuente es el español y el traductor es opcional.
 - **Riesgo:** el deep dive rompe el render. **Decisión:** `mdDeep()` limitado a Markdown seguro; se prueba con la lección piloto antes de escalar.
 
 ---
@@ -258,7 +254,8 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 | 2026-11-05 | Módulo A5 completo (5/5) | ✅ |
 | 2026-11-05 | Módulo A6 completo (6/6) | ✅ |
 | 2026-11-05 | **Descriptiva completa: 22/22 lecciones** | ✅ |
-| 2026-11-05 | A7-L1 ES/EN escritas (EN pendiente de expansión a 2500 palabras) | ⏳ |
+| 2026-11-05 | A7-L1/L2 escritas (luego remapeadas a B0-L1/B5-L1) | ✅ |
+| 2026-11-08 | Alcance reducido a español + traductor; validador sin paridad | ✅ |
 | — | Descriptiva 42/42 | ✅ |
 | — | Probabilidad 30/30 | ⏳ |
 | — | Inferencial 33/33 | ⏳ |
@@ -267,4 +264,4 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 | — | Certificación | ⏳ |
 | — | Re-auditoría ≥95 | ⏳ |
 
-**Siguiente paso inmediato:** P0.2-P0.9 (pipeline + A3-L1 ES/EN). Luego P0.10-P0.16 (quick wins de evaluación/UX) y el resto de A3.
+**Siguiente paso inmediato:** terminar el deep dive de probabilidad (B1→B9), luego A0–A2, inferencial C0–C9 y fundamentos F0–F1, un módulo por commit.

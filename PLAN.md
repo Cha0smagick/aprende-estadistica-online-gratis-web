@@ -1,11 +1,13 @@
 # PLAN MAESTRO — **Jackpot Estadístico**
 
 > *Aprende estadística de cero a hero, gratis, en español e inglés, apostando neuronas.*
-> Bilingüe · Interactivo · Sin registro · Sin cookies · GitHub Pages + Actions.
+> Español · Interactivo · Sin registro · GitHub Pages + Actions.
 
 Proyecto: `Aprende-estadistica-online-gratis`
 Estado: **M0–M4 desplegados — 4 cursos, 29 módulos, 115 lecciones publicadas; contenido profundo 24/115 (ver `PLAN-DEEPDIVE.md` y `ESTADO-DEEPDIVE.md`).**
 Este documento es la fuente única de verdad. Todo el repositorio se genera desde aquí.
+
+> **Decisión de producto (2026-11-08):** el sitio se publica **solo en español**. Se retira la generación del árbol `/en/` y la autoría duplicada en inglés; en su lugar, cada página ofrece **Google Translate bajo demanda** (se carga solo al pulsar «Traducir»). Los campos `en` de `data/` y los archivos `content/en/` quedan como legado y no se publican.
 
 ---
 
@@ -30,7 +32,7 @@ La teoría del aprendizaje (práctica de recuperación, repetición espaciada, e
 
 ### 1.1 Propuesta de valor
 
-> **La única web donde aprendes estadística de verdad —de cero a inferencial— apostando fichas, no dinero. Gratis, bilingüe y sin crear cuenta.**
+> **La única web donde aprendes estadística de verdad —de cero a inferencial— apostando fichas, no dinero. Gratis, en español y traducible a cualquier idioma sin crear cuenta.**
 
 **North Star Metric (métrica estrella):** *lecciones completadas con ≥80 % de acierto por visitante/semana.* Mide aprendizaje real, no páginas vistas.
 
@@ -47,7 +49,7 @@ La teoría del aprendizaje (práctica de recuperación, repetición espaciada, e
 
 1. **Progresión garantizada** *cero → 100 %*, numerada y sin huecos.
 2. **Casino como pedagogía**, no como adorno (esperanza matemática, house edge y ruina del jugador se *enseñan*, no se decoran).
-3. **Bilingüe real** ES/EN con un solo origen de contenido.
+3. **Español con traducción automática** bajo demanda (Google Translate), sin autoría duplicada.
 4. **Privado por diseño:** progreso en `localStorage`, sin cuenta, sin cookies → exento de fricción GDPR.
 5. **Cultura pop contemporánea y perdurable:** loot boxes, Spotify Wrapped, penales, Squid Game, cripto. *(Regla: referencias *evergreen*, revisión anual de memes.)*
 6. **LaTeX de verdad** (KaTeX self-host) en cada fórmula.
@@ -83,7 +85,7 @@ SEO / redes  →  Landing de curso  →  Lección 1 (sin registro)
 
 - **KPIs:** tasa de finalización por lección, racha media, acierto en quiz, retención semanal.
 - **Schema (JSON-LD):** `Course`, `Quiz`/`Question`, `FAQPage`, `BreadcrumbList`.
-- **On-page:** `<title>` por lección (`Media aritmética — Descriptiva | Jackpot Estadístico`), meta description bilingüe, `canonical` + `hreflang` es/en, OG image por curso.
+- **On-page:** `<title>` por lección (`Media aritmética — Descriptiva | Jackpot Estadístico`), meta description, `canonical` absoluto, OG image por curso.
 
 ---
 
@@ -333,7 +335,7 @@ export const course = {
 
 ### 5.4 Internacionalización
 
-Un **solo origen** por lección; cada campo de texto es `{es, en}`. `i18n.js` resuelve la UI; el generador emite dos árboles (`/es/`, `/en/`) con `hreflang` cruzado. El símbolo `→` de los ejercicios numéricos se localiza (decimal `.` vs `,`) con entrada tolerante.
+Un **solo origen** por lección; cada campo de texto sigue siendo `{es, en}` en `data/`, pero el generador emite **solo el árbol `/es/`** y publica el texto español. El inglés queda como legado. La lectura en otros idiomas se resuelve con el traductor de Google bajo demanda (`assets/js/translate.js`). El símbolo `→` de los ejercicios numéricos se localiza (decimal `.` vs `,`) con entrada tolerante.
 
 ### 5.5 Progreso y gamificación
 
@@ -350,11 +352,11 @@ Un **solo origen** por lección; cada campo de texto es `{es, en}`. `i18n.js` re
 2. setup-node (20)
 3. npm i katex   → copiar dist a vendor/katex
 4. node scripts/validate.mjs   # falla el build si el contenido está mal
-5. node scripts/generate.mjs   # data → /es, /en, sitemap.xml
+5. node scripts/generate.mjs   # data → /es, sitemap.xml
 6. actions/configure-pages → upload-pages-artifact (path: _site) → deploy-pages
 ```
 
-*Decisiones:* el **generador estático en CI** (no render en cliente) da SEO real y garantiza ES/EN sincronizados. `validate.mjs` es la puerta de calidad: sin respuestas, sin par bilingüe o con enlaces rotos → **no despliega**.
+*Decisiones:* el **generador estático en CI** (no render en cliente) da SEO real y garantiza el español publicado. `validate.mjs` es la puerta de calidad: sin respuestas o con enlaces rotos → **no despliega**.
 
 ### 6.2 `validate.yml` (PRs)
 
@@ -366,7 +368,7 @@ Solo pasos 3–4: bloquea merges con contenido inválido.
 
 *Aplico método de `biz/content-marketer` (auditoría de contenido, pillar pages, distribución multicanal, medición).*
 
-- **Técnico:** HTML estático prerenderizado, `sitemap.xml`, `robots.txt`, `canonical`, `hreflang` es/en, `404.html`, lazy de KaTeX, OG/Twitter cards por curso.
+- **Técnico:** HTML estático prerenderizado, `sitemap.xml`, `robots.txt`, `canonical` absoluto, `404.html`, lazy de KaTeX, OG/Twitter cards por curso.
 - **Rich results:** `Course`, `Quiz`, `FAQPage`, `BreadcrumbList` inyectados en `templates/base.html`.
 - **Enlazado interno:** cada landing de curso enlaza sus módulos; cada keyword long-tail enlaza su lección; «siguiente lección» siempre señalada.
 - **Contenido imán (lead magnets sin formulario):** hoja de fórmulas imprimible (PDF generado en CI), «tarjeta de progreso» compartible (canvas → PNG).
@@ -382,7 +384,7 @@ Solo pasos 3–4: bloquea merges con contenido inválido.
 - `prefers-reduced-motion` desactiva confeti/animaciones; se respeta `prefers-color-scheme`.
 - Paleta segura para daltonismo; la corrección nunca depende solo del color (icono + texto).
 - **Rendimiento:** sin framework, sin fuentes web externas (system stack + KaTeX local), JS pequeño, imágenes SVG.
-- **Privacidad:** sin cookies, sin cuentas → sin banner GDPR.
+- **Privacidad:** sin cookies propias, sin cuentas → sin banner GDPR. El traductor de Google se carga solo si el usuario lo pide.
 
 ---
 
@@ -390,8 +392,8 @@ Solo pasos 3–4: bloquea merges con contenido inválido.
 
 | M | Entrega | Contenido | Criterio de salida |
 |---|---|---|---|
-| **M0** | Scaffolding + motor | 0 lecciones de contenido | Repo, workflows, generador, engine de quiz, 1 lección de muestra ES/EN **en vivo** en Pages |
-| **M0.5** | Curso Fundamentos completo | F0–F1 (10 lec) | 10 lecciones publicadas, ES/EN |
+| **M0** | Scaffolding + motor | 0 lecciones de contenido | Repo, workflows, generador, engine de quiz, 1 lección de muestra **en vivo** en Pages |
+| **M0.5** | Curso Fundamentos completo | F0–F1 (10 lec) | 10 lecciones publicadas |
 | **M1** | Curso A completo | A0–A6 (42 lec) | 100 % lecciones con DoD, validación verde |
 | **M2** | Curso B completo | B0–B9 (30 lec) | Módulo Casino (B8) auditable con EV real |
 | **M3** | Curso C completo | C0–C9 (33 lec) | Proyecto final funcional |
@@ -423,6 +425,6 @@ Solo pasos 3–4: bloquea merges con contenido inválido.
 
 ## Próximo paso
 
-**M0 — Scaffolding:** crear la estructura de árbol, `deploy.yml`+`validate.yml`, `generate.mjs`, `validate.mjs`, `templates/`, motor de quiz, y publicar **una lección de muestra** (A0-L1 «¿Qué es un número?») en ES/EN viva en GitHub Pages. Todo dentro de `D:\Paginas web\Aprende-estadistica-online-gratis`.
+**M0 — Scaffolding:** crear la estructura de árbol, `deploy.yml`+`validate.yml`, `generate.mjs`, `validate.mjs`, `templates/`, motor de quiz, y publicar **una lección de muestra** (A0-L1 «¿Qué es un número?») en español, viva en GitHub Pages. Todo dentro de `D:\Paginas web\Aprende-estadistica-online-gratis`.
 
 *Este documento es el contrato. Cambiar el contrato se hace cambiando este archivo.*
