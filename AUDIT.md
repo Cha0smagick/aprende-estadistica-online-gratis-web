@@ -283,6 +283,7 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-08 | B4 — Bayes y tests | B4-L1, B4-L2 | 2.586 / 2.555 | ✅ validado |
 | 2026-11-08 | B5 — Variables aleatorias discretas | B5-L2, B5-L3, B5-L4 | 2.507 / 2.507 / 2.508 | ✅ validado |
 | 2026-11-08 | B6 — Distribuciones discretas | B6-L1, B6-L2, B6-L3, B6-L4 | 2.510 / 2.500 / 2.500 / 2.504 | ✅ validado |
+| 2026-11-08 | B7 — Distribuciones continuas | B7-L1, B7-L2, B7-L3 | 2.504 / 2.500 / 2.500 | ✅ validado |
 
-Acumulado: **40/115** deep dives (22 descriptiva + 18 probabilidad). Pendientes: B7 (3), B8 (5), B9 (4), A0–A2 (20), C0–C9 (33), F0–F1 (10).
+Acumulado: **43/115** deep dives (22 descriptiva + 21 probabilidad). Pendientes: B8 (5), B9 (4), A0–A2 (20), C0–C9 (33), F0–F1 (10).
 
