@@ -204,3 +204,68 @@ Los 20 hallazgos están resueltos y desplegados. Cada fila es un commit atómico
 - CI: run #33 (`f2e0d96`) → `conclusion: success`.
 - Producción: sitemap sirve URLs absolutas con home y páginas manuales; una lección real devuelve título, gancho, teoría y ejemplo en el HTML estático, con «Ejemplo» y «Lección completada» traducidos (sin keys crudas).
 - Pendiente consciente: `og:image` (necesita diseño, no código).
+
+---
+
+## 🔁 Re-auditoría (2026-11-08)
+
+**Método:** lectura directa de los archivos citados en la auditoría original, ejecución real de `validate.mjs`, `validate-content.mjs` y `generate.mjs`, e inspección del HTML generado en `_site/`. Sin navegador real (igual que la auditoría original): los hallazgos de runtime se verifican por markup + selector, no por clic.
+
+### Los 20 hallazgos originales: verificados
+
+| # | Verificación en código/output | Estado |
+|---|---|---|
+| 1 | `SITE_URL` en sitemap/robots; 247 `<loc>` absolutos (home + 6 manuales + 240 índices/lecciones) | ✅ |
+| 2 | 0 lecciones con `h1` o `prose` vacíos en `_site`; título, gancho, teoría y ejemplo estáticos | ✅ |
+| 3 | 0 `<h2>example</h2>` crudos; «Ejemplo»/«Lección completada» en su lugar | ✅ |
+| 4 | `lesson-engine.js` busca `getElementById("review")` | ✅ |
+| 5 | `404.html` con CSS y enlaces absolutos bajo `/aprende-estadistica-online-gratis-web/` | ✅ |
+| 6 | `aria-live="polite"` en el feedback del quiz | ✅ |
+| 7 | Badge con `color:#0b0d12` sobre `--bad` | ✅ |
+| 8 | Leitner real 1→3→7→21; fallo `markSrs(id,0)` | ✅ |
+| 9 | Fechas con `getFullYear/getMonth/getDate` locales; sin `toISOString` | ✅ |
+| 10 | `breakStreak()` resetea `lastDay` | ✅ |
+| 11 | Sliders con `data-key` y selector `input[data-key="…"]` | ✅ |
+| 12 | `tCrit(df)` con tabla 4–30 e interpolación 31–59 | ✅ |
+| 13 | `importJSON` valida números, arrays y objetos campo a campo | ✅ |
+| 14 | `order` exige enteros 1..n, únicos y completos | ✅ |
+| 15 | Validador: IDs globales únicos, `tol` numérico, permutación de `order` | ✅ |
+| 16 | Helper `J()` escapa `<` en todo JSON embebido | ✅ |
+| 17 | README con 4 cursos/29 módulos/115 lecciones, Fundamentos y B9 | ✅ |
+| 18 | XP por defecto = 10 en generador y repaso | ✅ |
+| 19 | Canonical/og:url/hreflang absolutos en páginas generadas. `og:image` sigue ausente (consciente: requiere diseño) | ⚠️ parcial |
+| 20 | `navFor` ausente, guard `r` NaN, badge PDF vectorial, `cp` único, copiado manual antes de generar, `:focus-visible` | ✅ |
+
+### Hallazgos nuevos de esta re-auditoría
+
+**N1. El enlace «Siguiente lección» estaba muerto en las 230 lecciones (🔴 MUST, corregido).**
+El template emitía `<div class="next-lesson"><a href="#" class="next-title">—</a></div>`, pero el engine buscaba `getElementById("next-lesson")` y asignaba `href` al `div`, no al `<a>`. Resultado: texto «—», `href="#"`, salto al inicio. **Fix:** el template renderiza ya el `href` y el título reales (`next.url`/`next.title`), y el engine refuerza sobre `.next-lesson .next-title`. Eliminadas las dos líneas muertas de `#back-course`.
+
+**N2. La home raíz seguía sin canonical ni og:url (🟠 SHOULD, corregido).**
+El hallazgo #19 se cerró solo para páginas generadas; `index.html` es estático y conservaba `hreflang` relativos y ningún canonical. **Fix:** canonical, `og:url` y `alternate hreflang` absolutos con el mismo `SITE_URL`.
+
+**N3. Contenido huérfano y validador ciego a él (🔴 MUST, corregido).**
+`content/{es,en}/A7-L1.md` y `A7-L2.md` existían, pero **no hay módulo A7**: probabilidad usa `B0–B9`. Eran 4 archivos (≈10.000 palabras) que nunca se renderizaban y no aparecían en el resumen del validador. **Fix:** remapeados a las lecciones que cubren —`A7-L1 → B0-L1`, `A7-L2 → B5-L1`— y `validate-content.mjs` ahora **falla** ante cualquier `.md` sin lección en `data/`. Además, la sección 9 de B0-L1 ES tenía 8 preguntas en formato mixto (solo 3 detectables); normalizada a lista 1–8.
+
+**N4. Metadatos de diploma con cifras falsas (🟡 NICE, corregido).**
+`diploma.js` declaraba Fundamentos 11 lecciones (son 10), Probabilidad 48 (son 30), Inferencial 43 (son 33) y «Los 3 cursos completados» (son 4). Eran campos muertos (`generate()` nunca los usaba), pero el subtítulo del MEGADIPLOMA sí se imprimía. **Fix:** eliminados los campos muertos; subtítulo del MEGADIPLOMA ahora `${courses.length} cursos completados`.
+
+**N5. `PLAN.md` contradecía al producto (🟠 SHOULD, corregido).**
+Seguía en «Fase 0 — pendiente de scaffolding», con «tres cursos · 24 módulos · ~131 lecciones · ~262 páginas». **Fix:** estado real, cuatro cursos, 29 módulos, 115 lecciones/230 páginas, Fundamentos en el currículo y nota de que las tablas de módulos son el diseño original.
+
+**N6. `ESTADO-DEEPDIVE.md` desactualizado (🟡 NICE, corregido).**
+Declaraba 22/115 y «A7-L1 pendiente de expandir» cuando A7 ya no existía y había dos lecciones más. **Fix:** 24/115, desglose por curso y reconciliación documentada.
+
+### Verificación ejecutada tras los fixes
+
+- `node scripts/validate.mjs` → **0 errores, 0 avisos**.
+- `node scripts/validate-content.mjs` → **24 completas · 91 pendientes · 0 con errores**; B0-L1 2627/3057, B5-L1 2566/2541.
+- `node scripts/generate.mjs` → OK; `_site` con 247 URLs; HTML de lección con `h1`, teoría, ejemplo, deep dive y `<a class="next-title" href="../../../../es/…">` real.
+
+### Fuera de alcance (no ejecutado, no declarado)
+
+- 91 deep dives restantes (proyecto editorial de ~455.000 palabras; ver `PLAN-DEEPDIVE.md`).
+- Fases 5–8 del plan: ejercicios de producción, feedback ampliado, examen final, certificación condicionada, panel de dominio, `fieldset/legend`, skip link y cambio de idioma preservando la página.
+- `og:image` (requiere asset 1200×630).
+- Prueba en navegador real y con lector de pantalla.
+

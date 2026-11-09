@@ -34,7 +34,7 @@ y la teoría del casino, pero **aquí solo se apuesta conocimiento: las fichas n
 - **Privado por diseño**: progreso en `localStorage`, sin cuenta, sin cookies (exento de GDPR).
 - **Gamificación**: fichas, rachas, jackpots (recompensa variable), niveles casino, insignias, SRS (Leitner).
 - **SEO**: HTML estático prerenderizado, sitemap, schema JSON-LD (`Course`, `Quiz`, `FAQPage`), hreflang.
-- **Accesible**: WCAG 2.1 AA, teclado, `prefers-reduced-motion`, paleta segura para daltonismo.
+- **Accesible**: contraste, foco visible, `aria-live` en feedback, `prefers-reduced-motion` y paleta segura para daltonismo (auditoría WCAG 2.1 AA completa pendiente: `fieldset/legend`, skip link).
 - **CI/CD**: GitHub Actions valida el contenido y despliega a Pages en cada push a `main`.
 
 ---

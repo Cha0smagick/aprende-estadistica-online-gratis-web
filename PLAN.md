@@ -4,14 +4,16 @@
 > Bilingüe · Interactivo · Sin registro · Sin cookies · GitHub Pages + Actions.
 
 Proyecto: `Aprende-estadistica-online-gratis`
-Estado: **Fase 0 — Plano aprobado, pendiente de scaffolding.**
+Estado: **M0–M4 desplegados — 4 cursos, 29 módulos, 115 lecciones publicadas; contenido profundo 24/115 (ver `PLAN-DEEPDIVE.md` y `ESTADO-DEEPDIVE.md`).**
 Este documento es la fuente única de verdad. Todo el repositorio se genera desde aquí.
 
 ---
 
 ## 0. Resumen ejecutivo
 
-Construimos un sitio estático (HTML/CSS/JS vainilla, cero backend) publicado en GitHub Pages mediante GitHub Actions. Tres cursos independientes y progresivos que llevan al alumno desde *«¿qué es un número?»* hasta *estadística inferencial con datos continuos*:
+Construimos un sitio estático (HTML/CSS/JS vainilla, cero backend) publicado en GitHub Pages mediante GitHub Actions. Cuatro cursos independientes y progresivos que llevan al alumno desde *«¿qué es un número?»* hasta *estadística inferencial con datos continuos*:
+
+1. **Fundamentos e Historia** — *¿De dónde sale esto?*
 
 1. **Estadística Descriptiva** — *El Contador de Fichas*
 2. **Probabilidad y Estadística** — *La Casa Siempre Gana* (edición casino)
@@ -19,7 +21,7 @@ Construimos un sitio estático (HTML/CSS/JS vainilla, cero backend) publicado en
 
 La teoría del aprendizaje (práctica de recuperación, repetición espaciada, entrelazado, andamiaje) y la teoría del casino (recompensa variable, rachas, pérdida-aversión, jackpots) están **mapeadas feature por feature** (§2 y §3). No hay azar decorativo: cada mecánica de juego tiene una razón pedagógica citada.
 
-**El contenido es el camino crítico, no el código.** El motor es pequeño; las ~130 lecciones × 2 idiomas son la obra real. Por eso el contenido vive en datos (`data/*.js`) con un único origen, y un generador de Node produce el HTML estático en CI (§6). Autor una vez, renderizar en dos idiomas, indexar en Google.
+**El contenido es el camino crítico, no el código.** El motor es pequeño; las 115 lecciones × 2 idiomas son la obra real. Por eso el contenido vive en datos (`data/*.js`) con un único origen, y un generador de Node produce el HTML estático en CI (§6). Autor una vez, renderizar en dos idiomas, indexar en Google.
 
 ---
 
@@ -139,7 +141,9 @@ SEO / redes  →  Landing de curso  →  Lección 1 (sin registro)
 
 ## 4. Currículo completo — cero a 100 %
 
-**Total: 3 cursos · 24 módulos · ~131 lecciones · ES+EN = ~262 páginas.** El «camino crítico» del proyecto (§9).
+**Total: 4 cursos · 29 módulos · 115 lecciones · ES+EN = 230 páginas de lección (+ 8 índices y 3 páginas manuales por idioma; 247 URLs en el sitemap).** El «camino crítico» del proyecto (§9).
+
+> Nota de mantenimiento: las tablas de módulos de esta sección son el diseño original. El currículo implementado —con los conteos reales por módulo— vive en `data/<curso>/*.js` y se refleja en `README.md`.
 
 ### Curso A — **Estadística Descriptiva** *(El Contador de Fichas)*
 
@@ -388,9 +392,10 @@ Solo pasos 3–4: bloquea merges con contenido inválido.
 | M | Entrega | Contenido | Criterio de salida |
 |---|---|---|---|
 | **M0** | Scaffolding + motor | 0 lecciones de contenido | Repo, workflows, generador, engine de quiz, 1 lección de muestra ES/EN **en vivo** en Pages |
-| **M1** | Curso A completo | A0–A6 (~44 lec) | 100 % lecciones con DoD, validación verde |
-| **M2** | Curso B completo | B0–B8 (~44 lec) | Módulo Casino (B8) auditable con EV real |
-| **M3** | Curso C completo | C0–C9 (~44 lec) | Proyecto final funcional |
+| **M0.5** | Curso Fundamentos completo | F0–F1 (10 lec) | 10 lecciones publicadas, ES/EN |
+| **M1** | Curso A completo | A0–A6 (42 lec) | 100 % lecciones con DoD, validación verde |
+| **M2** | Curso B completo | B0–B9 (30 lec) | Módulo Casino (B8) auditable con EV real |
+| **M3** | Curso C completo | C0–C9 (33 lec) | Proyecto final funcional |
 | **M4** | Pulido + SEO + lanzamiento | glosario, PDF, OG, landings | Lighthouse ≥95, auditoría a11y, lanzamiento |
 | **M5** | Iteración | analítica, revisión memes anual, comunidad | KPIs medidos, backlog priorizado por RICE |
 
@@ -409,7 +414,7 @@ Solo pasos 3–4: bloquea merges con contenido inválido.
 | 5 | **M3 prerender** | ya incluido desde M0 (generador) | hecho |
 
 **Riesgos y mitigación:**
-- 🟥 **Volumen de contenido** (262 páginas): el riesgo #1. *Mitigación:* un origen por lección, autor por curso en milestones, DoD claro, validación automática. Cadencia de ~10 lecciones/semana.
+- 🟥 **Volumen de contenido** (230 páginas): el riesgo #1. *Mitigación:* un origen por lección, autor por curso en milestones, DoD claro, validación automática. Cadencia de ~10 lecciones/semana.
 - 🟧 **Pérdida de progreso local:** export/import JSON + aviso claro.
 - 🟧 **Referencias pop que envejecen:** elegir *evergreen*; revisión anual (M5).
 - 🟧 **Render math en navegadores viejos:** KaTeX self-host + fallback CDN.
