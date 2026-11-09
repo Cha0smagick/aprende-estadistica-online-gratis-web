@@ -21,6 +21,19 @@ for (const f of ["fundamentos.js", "descriptiva.js", "probabilidad.js", "inferen
 const lessons = [];
 for (const c of courses) for (const m of c.modules) for (const l of m.lessons) lessons.push({ ...l, course: c.id });
 
+// contenido huérfano: un .md cuyo id no existe en data/ nunca se renderiza y falsea el progreso
+const lessonIds = new Set(lessons.map((l) => l.id));
+const orphans = [];
+for (const lang of LANGS) {
+  let files = [];
+  try { files = await fs.readdir(path.join(CONTENT, lang)); } catch { continue; }
+  for (const f of files) if (f.endsWith(".md") && !lessonIds.has(f.slice(0, -3))) orphans.push(`${lang}/${f}`);
+}
+if (orphans.length) {
+  console.error(`Contenido huérfano (no corresponde a ninguna lección de data/):\n  ${orphans.join("\n  ")}`);
+  process.exit(1);
+}
+
 // Prosa real: fuera bloques de codigo y formulas; fuera marcas de Markdown.
 function proseWords(md) {
   const plain = md
