@@ -60,24 +60,24 @@
   }
 
   const COURSE_META_DIP={
-    fundamentos:{title:"Fundamentos e Historia", subtitle:"De dónde viene la estadística · Curso completo", badge:"📜", stats:"2 módulos · 11 lecciones · De los censos a la IA"},
-    descriptiva:{title:"Estadística Descriptiva", subtitle:"El Contador de Fichas · Curso completo", badge:"📊", stats:"7 módulos · 42 lecciones · De cero a hero"},
-    probabilidad:{title:"Probabilidad y Estadística", subtitle:"La Casa Siempre Gana · Curso completo", badge:"🎲", stats:"10 módulos · 48 lecciones · El casino siempre gana (y tú también sabes por qué)"},
-    inferencial:{title:"Estadística Inferencial", subtitle:"Contando Cartas · Curso completo", badge:"🃏", stats:"10 módulos · 43 lecciones · Decide con datos"}
+    fundamentos:{title:"Fundamentos e Historia", subtitle:"De dónde viene la estadística · Curso completo"},
+    descriptiva:{title:"Estadística Descriptiva", subtitle:"El Contador de Fichas · Curso completo"},
+    probabilidad:{title:"Probabilidad y Estadística", subtitle:"La Casa Siempre Gana · Curso completo"},
+    inferencial:{title:"Estadística Inferencial", subtitle:"Contando Cartas · Curso completo"}
   };
 
   window.Diploma = {
     isComplete, allCoursesComplete,
     courseDiploma(course){
-      const m=COURSE_META_DIP[course.id]||{title:course.id,subtitle:"Curso completo",badge:"🎓",stats:""};
+      const m=COURSE_META_DIP[course.id]||{title:course.id,subtitle:"Curso completo"};
       const g=window.Progress.get();
       const done=allLessons(course).filter(id=>!!g.completed[id]).length;
       const total=allLessons(course).length;
-      generate({title:m.title, subtitle:m.subtitle, badge:m.badge, stats:`${done}/${total} lecciones · Nivel ${g.level} · ${g.xp} XP`, filename:`diploma-${course.id}.pdf`});
+      generate({title:m.title, subtitle:m.subtitle, stats:`${done}/${total} lecciones · Nivel ${g.level} · ${g.xp} XP`, filename:`diploma-${course.id}.pdf`});
     },
     megaDiploma(courses){
       const g=window.Progress.get();
-      generate({title:"MEGADIPLOMA ESTADÍSTICO", subtitle:"Los 3 cursos completados · De cero a hero", badge:"🏆", stats:`${courses.length} cursos · ${Object.keys(g.completed).length} lecciones · ${g.xp} XP · Nivel ${g.level}`, filename:"megadiploma.pdf"});
+      generate({title:"MEGADIPLOMA ESTADÍSTICO", subtitle:`${courses.length} cursos completados · De cero a hero`, stats:`${courses.length} cursos · ${Object.keys(g.completed).length} lecciones · ${g.xp} XP · Nivel ${g.level}`, filename:"megadiploma.pdf"});
     },
     checkAndOffer(courses){
       for(const c of courses){
