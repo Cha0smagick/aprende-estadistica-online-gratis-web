@@ -263,6 +263,7 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 | 2026-11-08 | Módulo B5 completo (4/4, ES) | ✅ |
 | 2026-11-08 | Módulo B6 completo (4/4, ES) | ✅ |
 | 2026-11-08 | Módulo B7 completo (3/3, ES) | ✅ |
+| 2026-11-09 | Módulo B8 completo (5/5, ES) | ✅ |
 | — | Descriptiva 42/42 | ✅ |
 | — | Probabilidad 30/30 | ⏳ |
 | — | Inferencial 33/33 | ⏳ |
