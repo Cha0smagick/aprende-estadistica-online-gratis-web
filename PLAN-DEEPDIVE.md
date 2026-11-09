@@ -256,6 +256,8 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 | 2026-11-05 | **Descriptiva completa: 22/22 lecciones** | ✅ |
 | 2026-11-05 | A7-L1/L2 escritas (luego remapeadas a B0-L1/B5-L1) | ✅ |
 | 2026-11-08 | Alcance reducido a español + traductor; validador sin paridad | ✅ |
+| 2026-11-08 | Módulo B1 completo (2/2, ES) | ✅ |
+| 2026-11-08 | Módulo B2 completo (3/3, ES) | ✅ |
 | — | Descriptiva 42/42 | ✅ |
 | — | Probabilidad 30/30 | ⏳ |
 | — | Inferencial 33/33 | ⏳ |
