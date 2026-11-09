@@ -286,6 +286,7 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-08 | B7 — Distribuciones continuas | B7-L1, B7-L2, B7-L3 | 2.504 / 2.500 / 2.500 | ✅ validado |
 | 2026-11-09 | B8 — Casino avanzado | B8-L1, B8-L2, B8-L3, B8-L4, B8-L5 | 2.501 / 2.505 / 2.508 / 2.501 / 2.500 | ✅ validado |
 | 2026-11-09 | B9 — Psicología y entropía | B9-L1, B9-L2, B9-L3, B9-L4 | 2.502 / 2.500 / 2.500 / 2.500 | ✅ validado |
+| 2026-11-09 | A0 — Aritmética mínima (en curso) | A0-L1, A0-L2, A0-L3 | 2.500 / 2.500 / 2.501 | ✅ validado |
 
-Acumulado: **52/115** deep dives (22 descriptiva + 30 probabilidad). **Probabilidad 30/30 completa.** Pendientes: A0–A2 (20), C0–C9 (33), F0–F1 (10).
+Acumulado: **55/115** deep dives (25 descriptiva + 30 probabilidad). **Probabilidad 30/30 completa.** A0 en curso (3/8). Pendientes: A0 (5), A1 (6), A2 (6), C0–C9 (33), F0–F1 (10).
 
