@@ -14,10 +14,9 @@ Este documento es la fuente única de verdad. Todo el repositorio se genera desd
 Construimos un sitio estático (HTML/CSS/JS vainilla, cero backend) publicado en GitHub Pages mediante GitHub Actions. Cuatro cursos independientes y progresivos que llevan al alumno desde *«¿qué es un número?»* hasta *estadística inferencial con datos continuos*:
 
 1. **Fundamentos e Historia** — *¿De dónde sale esto?*
-
-1. **Estadística Descriptiva** — *El Contador de Fichas*
-2. **Probabilidad y Estadística** — *La Casa Siempre Gana* (edición casino)
-3. **Estadística Inferencial** — *Contando Cartas*
+2. **Estadística Descriptiva** — *El Contador de Fichas*
+3. **Probabilidad y Estadística** — *La Casa Siempre Gana* (edición casino)
+4. **Estadística Inferencial** — *Contando Cartas*
 
 La teoría del aprendizaje (práctica de recuperación, repetición espaciada, entrelazado, andamiaje) y la teoría del casino (recompensa variable, rachas, pérdida-aversión, jackpots) están **mapeadas feature por feature** (§2 y §3). No hay azar decorativo: cada mecánica de juego tiene una razón pedagógica citada.
 
