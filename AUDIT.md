@@ -273,3 +273,14 @@ Declaraba 22/115 y «A7-L1 pendiente de expandir» cuando A7 ya no existía y ha
 
 El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo demanda**; se deja de generar `/en/` y de exigir paridad ES/EN. Verificado tras el cambio: `validate.mjs` 0 errores; `validate-content.mjs` 24/115 solo ES; `_site/en` inexistente; sitemap con **124 URLs**; sin `hreflang`; `assets/js/translate.js` no descarga nada de Google hasta que el usuario pulsa «Traducir». El plan editorial baja de 575.000 a **287.500 palabras**. Riesgos asumidos: la traducción automática no iguala una versión escrita y el widget de Google introduce una petición a un tercero cuando se usa.
 
+### Registro de ejecución de contenido (ES)
+
+| Fecha | Módulo | Lecciones | Palabras | Estado |
+|---|---|---|---:|---|
+| 2026-11-08 | B1 — Reglas de probabilidad | B1-L1, B1-L2 | 3.379 / 3.062 | ✅ validado |
+| 2026-11-08 | B2 — Conteo | B2-L1, B2-L2, B2-L3 | 2.925 / 2.524 / 2.509 | ✅ validado |
+| 2026-11-08 | B3 — Probabilidad condicional | B3-L1, B3-L2 | 2.504 / 2.546 | ✅ validado |
+| 2026-11-08 | B4 — Bayes y tests | B4-L1, B4-L2 | 2.586 / 2.555 | ✅ validado |
+
+Acumulado: **33/115** deep dives (22 descriptiva + 11 probabilidad). Pendientes: B5 (3), B6 (4), B7 (3), B8 (5), B9 (4), A0–A2 (20), C0–C9 (33), F0–F1 (10).
+
