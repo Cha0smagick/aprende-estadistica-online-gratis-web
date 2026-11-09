@@ -154,11 +154,11 @@
     }
     // next lesson link
     const tt2=(o)=> (o && typeof o==="object") ? (o[lang]||o.es||o.en||"") : (o||"");
-    const next=document.getElementById("next-lesson");
-    if(next && NAV.next){ next.href=window.SITE_BASE+NAV.next.url; const nt=next.querySelector(".next-title"); if(nt) nt.textContent=tt2(NAV.next.title); }
-    else if(next){ next.style.display="none"; }
-    const back=document.getElementById("back-course");
-    if(back && NAV.courseUrl) back.href=window.SITE_BASE+NAV.courseUrl;
+    // el template emite <div class="next-lesson"><a class="next-title">; el enlace es el <a>, no el div
+    const nextBox=document.querySelector(".next-lesson");
+    const nextA=nextBox&&nextBox.querySelector(".next-title");
+    if(nextBox && nextA && NAV.next){ nextA.href=window.SITE_BASE+NAV.next.url; nextA.textContent=tt2(NAV.next.title); }
+    else if(nextBox){ nextBox.style.display="none"; }
 
     refreshChip();
     renderMath(document.body);

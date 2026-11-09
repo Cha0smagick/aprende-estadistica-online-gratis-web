@@ -353,10 +353,10 @@ ${nav({lang,base,courseTitle:t(course.title,lang)})}
       <span>${windowT(lang,"done")}</span>
       <button id="btn-complete" class="btn btn-primary btn-sm">${windowT(lang,"done")}</button>
     </div>
-    <div class="next-lesson">
+    ${next?`<div class="next-lesson">
       <span>${lang==="es"?"Siguiente:":"Next:"}</span>
-      <a href="#" class="next-title">${lang==="es"?"—":"—"}</a>
-    </div>
+      <a href="${esc(next.url)}" class="next-title">${esc(next.title)}</a>
+    </div>`:""}
   </div>
 </main>
 ${footer({lang,base:b})}
