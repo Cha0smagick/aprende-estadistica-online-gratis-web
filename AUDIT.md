@@ -293,6 +293,7 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-09 | A1 en curso | A1-L3 | 2.501 | ✅ validado |
 | 2026-11-09 | A1 en curso | A1-L4 | 2.500 | ✅ validado |
 | 2026-11-09 | A1 en curso | A1-L5 | 2.502 | ✅ validado |
+| 2026-11-09 | **A1 completo (6/6)** | A1-L6 | 2.500 | ✅ validado |
 
-Acumulado: **65/115** deep dives (35 descriptiva + 30 probabilidad). **Probabilidad 30/30 y A0 8/8 completos.** A1 en curso (5/6). Pendientes: A1 (1), A2 (6), C0–C9 (33), F0–F1 (10).
+Acumulado: **66/115** deep dives (36 descriptiva + 30 probabilidad). **Probabilidad 30/30, A0 8/8 y A1 6/6 completos.** Pendientes: A2 (6), C0–C9 (33), F0–F1 (10).
 
