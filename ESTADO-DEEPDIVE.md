@@ -1,11 +1,11 @@
 # Estado del proyecto — Deep Dive Content
 
-**Actualizado:** 2026-11-08
+**Actualizado:** 2026-11-10
 
 ## Progreso actual
 
-- **68/115 lecciones completas** con deep dive ≥2.500 palabras en español, validadas por `validate-content.mjs`.
-- **Descriptiva:** 38/42 (A0: 8/8, A1: 6/6, A3–A6: 22/22; A2: 2/6 en curso; pendientes A2: 4).
+- **72/115 lecciones completas** con deep dive ≥2.500 palabras en español, validadas por `validate-content.mjs`.
+- **Descriptiva: 42/42 — curso completo** (A0: 8/8, A1: 6/6, A2: 6/6, A3–A6: 22/22).
 - **Probabilidad:** 30/30 — **curso completo** (B0–B9).
 - **Inferencial:** 0/33 · **Fundamentos:** 0/10.
 - Pipeline completo: mdDeep(), validate-content.mjs (≥2.500 palabras, 9 secciones, ###, tablas, $$, preguntas, detección de contenido huérfano). El inglés ya no se exige ni se publica.
@@ -29,12 +29,11 @@
 
 ## Próximos pasos (por prioridad)
 
-1. Completar A2: L3–L6 (4 lecciones).
-2. Escribir A0, A1, A2 (descriptiva — 20 lecciones restantes).
-3. Continuar inferencial (C0–C9, 33 lecciones).
-4. Continuar fundamentos (F0–F1, 10 lecciones).
-5. Activar `validate-content.mjs --all` en CI cuando esté 115/115.
-6. Re-auditoría pedagógica con la rúbrica de 25 dimensiones (objetivo ≥95/100).
+1. Curso Descriptiva cerrado (42/42). Sin pendientes.
+2. Continuar inferencial (C0–C9, 33 lecciones).
+3. Continuar fundamentos (F0–F1, 10 lecciones).
+4. Activar `validate-content.mjs --all` en CI cuando esté 115/115.
+5. Re-auditoría pedagógica con la rúbrica de 25 dimensiones (objetivo ≥95/100).
 
 ## Comando de validación
 
