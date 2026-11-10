@@ -147,7 +147,8 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 
 - [x] C0 (4): censo vs muestra, sesgos, tipos de muestreo, tamaño de muestra. — **completo (4/4)**
 - [x] C1 (3): estadístico vs parámetro, TCL, error estándar. — **completo (3/3)**
-- [ ] C2 (3), C3 (3), C4 (5), C5 (2), C6 (2), C7 (4), C8 (4), C9 (3).
+- [x] C2 (3): concepto de IC, IC para la media, IC para una proporción. — **completo (3/3)**
+- [ ] C3 (3), C4 (5), C5 (2), C6 (2), C7 (4), C8 (4), C9 (3).
 - [ ] Añadir: potencia y tamaño de muestra, bootstrap, no paramétricos, causalidad, datos faltantes, regresión múltiple con diagnóstico.
 
 ### Fase 4 — Contenido: Fundamentos (10 lecciones)
