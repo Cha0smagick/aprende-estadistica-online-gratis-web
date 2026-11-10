@@ -1,0 +1,140 @@
+{
+  "module": "data/descriptiva/a4.js",
+  "items": {
+    "A4-L1-E1": {
+      "hint": "Resta el menor valor al mayor.",
+      "solution": "El máximo es 15 y el mínimo 3, así que el rango es 12. Es la medida de dispersión más simple y también la más sensible a los extremos.",
+      "explain": "Si respondiste 8 o 5, has restado valores intermedios. El rango usa solo los dos extremos: máximo menos mínimo. Por eso dos conjuntos con el mismo rango pueden tener dispersiones muy distintas, y por eso conviene acompañarlo de otras medidas."
+    },
+    "A4-L1-E2": {
+      "hint": "Resta el primer cuartil al tercero.",
+      "solution": "El rango intercuartílico es 8 menos 2, es decir, 6. Contiene el 50 % central de los datos y por eso no se ve afectado por los valores extremos.",
+      "explain": "Si respondiste 10, has sumado en lugar de restar. El IQR mide la anchura del bloque central: desde el cuartil uno hasta el tres. Su utilidad es que ignora las colas, y esa propiedad lo hace robusto frente a outliers."
+    },
+    "A4-L1-E3": {
+      "hint": "Suma al tercer cuartil una vez y media el IQR.",
+      "solution": "El límite es 12 más 1,5 por 5, es decir, 12 más 7,5, que da 19,5. Los valores por encima de esa valla se consideran candidatos a atípicos.",
+      "explain": "Si respondiste 14,5, sumaste solo medio IQR. La regla de Tukey usa 1,5 veces el rango intercuartílico por encima del tercer cuartil y por debajo del primero. Es una convención, no una prueba: señala candidatos que conviene revisar."
+    },
+    "A4-L1-E4": {
+      "hint": "Piensa qué parte de los datos usa el IQR.",
+      "solution": "Verdadero: el IQR es robusto a los outliers porque se calcula con los cuartiles y no con los extremos. Mover un valor muy alto apenas cambia los cuartiles.",
+      "explain": "Si respondiste «falso», conviene compararlo con el rango. El rango depende solo del máximo y del mínimo, así que un dato extremo lo dispara. El IQR mira el centro de la distribución y por eso resiste mejor esos valores."
+    },
+    "A4-L1-E5": {
+      "type": "short",
+      "answers": ["los outliers", "outliers", "valores atipicos", "los valores atipicos"],
+      "hint": "Su cálculo depende solo de los dos valores extremos.",
+      "solution": "El rango es sensible a los valores atípicos porque se calcula con el máximo y el mínimo: basta un dato extremo para que cambie por completo.",
+      "explain": "Si respondiste «la mediana», has elegido una medida robusta por definición. El rango no usa el centro sino los extremos, de modo que cualquier valor alejado lo altera. Esa fragilidad explica por qué se reporta junto al IQR y no en solitario."
+    },
+    "A4-L2-E1": {
+      "hint": "Calcula la media, resta, eleva al cuadrado y divide entre n menos uno.",
+      "solution": "La media es 3; las desviaciones son menos 2, 0 y 2; sus cuadrados suman 8. Dividido entre 2 (n menos uno) da 4, que es la varianza muestral.",
+      "explain": "Si dividiste entre 3, has calculado la varianza poblacional. Con una muestra, el divisor es n menos uno para corregir el sesgo que introduce estimar la media con los mismos datos. La diferencia importa con muestras pequeñas y se vuelve despreciable con muchas observaciones."
+    },
+    "A4-L2-E2": {
+      "hint": "La desviación es la raíz cuadrada de la varianza.",
+      "solution": "La raíz cuadrada de 16 es 4, así que la desviación estándar es 4. Esa cifra vuelve a la escala original de los datos.",
+      "explain": "Si respondiste 256, has elevado al cuadrado en lugar de extraer la raíz. La varianza está en unidades al cuadrado y la desviación la devuelve a las unidades originales. Por eso la desviación es más fácil de interpretar y se reporta junto a la media."
+    },
+    "A4-L2-E3": {
+      "type": "short",
+      "answers": ["las mismas unidades que los datos", "mismas unidades", "las mismas unidades"],
+      "hint": "Es la raíz de una cantidad con unidades al cuadrado.",
+      "solution": "La desviación estándar tiene las mismas unidades que los datos, porque es la raíz cuadrada de la varianza. Esa propiedad permite compararla directamente con la media.",
+      "explain": "Si respondiste «unidades al cuadrado», has descrito la varianza. Elevar al cuadrado es un paso intermedio que facilita los cálculos, pero deja la medida en una escala que no se puede comparar con los datos. La raíz deshace ese cambio y devuelve la interpretación."
+    },
+    "A4-L2-E4": {
+      "hint": "Piensa en la corrección de Bessel.",
+      "solution": "Verdadero: en una muestra se divide entre n menos uno para obtener un estimador insesgado de la varianza poblacional. El divisor n produciría una subestimación sistemática.",
+      "explain": "Si respondiste «falso», conviene recordar que la media muestral se calcula con los mismos datos, así que las desviaciones respecto a ella son algo menores que respecto a la media real. Dividir entre n menos uno compensa esa reducción y elimina el sesgo."
+    },
+    "A4-L2-E5": {
+      "hint": "Si todos los valores coinciden, no hay desviación.",
+      "solution": "La varianza es 0 porque todas las observaciones son iguales a la media y no hay desviaciones. Una dispersión nula indica ausencia total de variabilidad.",
+      "explain": "Si dudaste, comprueba las desviaciones: 10 menos 10 es cero en los tres casos. Al elevar al cuadrado y sumar, el total es cero, y cero dividido entre cualquier divisor sigue siendo cero. Es el único caso en que la varianza se anula."
+    },
+    "A4-L3-E1": {
+      "hint": "Divide la desviación entre la media.",
+      "solution": "6 entre 30 es 0,20, así que el coeficiente de variación es 0,20, equivalente al 20 %. Es una medida relativa y no tiene unidades.",
+      "explain": "Si respondiste 5, has restado en lugar de dividir. El CV es un cociente: expresa la desviación como fracción de la media. Al no tener unidades, permite comparar la variabilidad de variables medidas en escalas distintas, como peso y altura."
+    },
+    "A4-L3-E2": {
+      "hint": "Calcula el cociente y multiplica por cien.",
+      "solution": "5 entre 25 es 0,20, y multiplicado por 100 da 20 %. El CV indica que la desviación equivale al 20 % de la media.",
+      "explain": "Si respondiste 0,2, has dado el coeficiente en escala unitaria. Ambas formas son correctas si se declara la escala; el porcentaje se lee mejor en informes. Lo que no cambia es la interpretación: una quinta parte de la media."
+    },
+    "A4-L3-E3": {
+      "hint": "Piensa qué ocurre con las unidades al dividir.",
+      "solution": "Verdadero: el CV permite comparar dispersión entre variables con distintas unidades porque es adimensional. Al dividir dos magnitudes con la misma unidad, el resultado no tiene unidad.",
+      "explain": "Si respondiste «falso», conviene ver un ejemplo: comparar la dispersión de pesos en kilos con la de alturas en centímetros es imposible con desviaciones, pero posible con CV. Esa propiedad lo hace útil, siempre que la media sea positiva y no cercana a cero."
+    },
+    "A4-L3-E4": {
+      "type": "short",
+      "answers": ["mas variabilidad relativa", "variabilidad relativa", "mayor variabilidad relativa"],
+      "hint": "El coeficiente compara la desviación con la media.",
+      "solution": "Un CV alto indica más variabilidad relativa: la desviación es grande en proporción a la media. Eso sugiere un conjunto menos homogéneo en términos relativos.",
+      "explain": "Si respondiste «homogeneidad», has invertido la lectura. Un CV bajo indica homogeneidad; uno alto, dispersión. Como es una medida relativa, un CV alto en una variable muy estable puede deberse a una media pequeña, así que conviene mirar también los valores absolutos."
+    },
+    "A4-L3-E5": {
+      "hint": "Despeja la desviación de la fórmula del coeficiente.",
+      "solution": "Si el CV es 0,05 y la media 100, la desviación es 5, porque el coeficiente es la desviación dividida entre la media. La variabilidad relativa es del 5 %.",
+      "explain": "Si respondiste 2000, has multiplicado al revés. El CV se define como desviación entre media, así que para recuperar la desviación se multiplica el coeficiente por la media. Esa operación inversa sirve para traducir un indicador relativo a la escala original."
+    },
+    "A4-L4-E1": {
+      "hint": "Piensa qué medida central usa como referencia.",
+      "solution": "La MAD es robusta a los outliers porque se calcula alrededor de la mediana y usa desviaciones absolutas. Un valor extremo apenas la modifica.",
+      "explain": "Si respondiste «la media», has confundido la referencia con la propiedad. La MAD toma la mediana como centro y mide distancias absolutas, sin elevar al cuadrado. Esa combinación la hace resistente a valores alejados, a diferencia de la desviación estándar."
+    },
+    "A4-L4-E2": {
+      "hint": "Su nombre lo indica: desviación absoluta mediana.",
+      "solution": "Verdadero: la MAD se calcula tomando la mediana de las desviaciones absolutas respecto a la mediana. Esa doble referencia a la mediana es lo que le da robustez.",
+      "explain": "Si respondiste «falso», conviene revisar el procedimiento: primero se obtiene la mediana, luego se calculan las distancias de cada dato a esa mediana, y finalmente se toma la mediana de esas distancias. Cualquier paso intermedio con medias arruinaría la propiedad de robustez."
+    },
+    "A4-L4-E3": {
+      "type": "short",
+      "answers": ["absolutas", "desviaciones absolutas"],
+      "hint": "No se elevan al cuadrado ni se elevan a otra potencia.",
+      "solution": "La MAD usa desviaciones absolutas, es decir, el valor de cada distancia sin signo. Por eso no amplifica los valores extremos como hace el cuadrado en la varianza.",
+      "explain": "Si respondiste «al cuadrado», has descrito la varianza. Elevar al cuadrado da más peso a las desviaciones grandes, lo que hace la medida sensible a los atípicos. La MAD evita ese efecto tomando el valor absoluto, y por eso es la opción robusta."
+    },
+    "A4-L4-E4": {
+      "hint": "Calcula la mediana de las tres distancias absolutas.",
+      "solution": "Las distancias a la mediana son 1, 0 y 1; ordenadas son 0, 1 y 1, y su mediana es 1. Por tanto, la MAD es 1.",
+      "explain": "Si respondiste 0, has tomado el dato central en lugar de la mediana de las desviaciones. La MAD no es la desviación del valor central: es la mediana de todas las distancias. Ese detalle cambia el resultado y es la fuente habitual de error."
+    },
+    "A4-L4-E5": {
+      "hint": "Compara con el caso de una distribución normal.",
+      "solution": "Falso: la MAD suele ser menor que la desviación estándar, porque no eleva al cuadrado las desviaciones grandes. En una normal, la MAD es aproximadamente 0,67 veces la desviación.",
+      "explain": "Si respondiste «verdadero», has supuesto que una medida robusta debe ser mayor. Ocurre al contrario: al no amplificar los valores extremos, la MAD queda por debajo de la desviación estándar en la mayoría de las distribuciones. Comparar ambas cifras es una forma rápida de detectar valores atípicos."
+    },
+    "A4-L5-E1": {
+      "hint": "Si tienes todos los casos, no hay que estimar nada.",
+      "solution": "Con todos los datos de la población, el divisor es N, porque no se estima la media: se calcula exactamente. No hace falta la corrección de Bessel.",
+      "explain": "Si respondiste n menos uno, has aplicado la corrección de muestra a una población completa. El divisor n menos uno compensa el sesgo de estimar la media; cuando la media es la real, ese sesgo no existe y la fórmula poblacional es la correcta."
+    },
+    "A4-L5-E2": {
+      "type": "short",
+      "answers": ["n-1", "n menos 1", "29"],
+      "hint": "Es una muestra: hay que estimar la media con los mismos datos.",
+      "solution": "Con una muestra de 30, el divisor es n menos uno, es decir, 29. Esa corrección hace que la varianza muestral sea un estimador insesgado de la poblacional.",
+      "explain": "Si respondiste 30, has usado el divisor poblacional. En una muestra, la media se estima con los mismos datos y las desviaciones quedan algo reducidas; dividir entre 29 compensa ese efecto. La diferencia es pequeña con muestras grandes, pero importa con muestras pequeñas."
+    },
+    "A4-L5-E3": {
+      "hint": "Piensa qué pasaría si se dividiera entre n.",
+      "solution": "Verdadero: la corrección n menos uno reduce el sesgo de la varianza muestral, que con divisor n subestima sistemáticamente la varianza poblacional.",
+      "explain": "Si respondiste «falso», conviene ver el mecanismo: al usar la media muestral, las desviaciones son menores que respecto a la media real, así que el promedio de sus cuadrados queda corto. Dividir entre n menos uno agranda ligeramente el resultado y elimina ese sesgo."
+    },
+    "A4-L5-E4": {
+      "hint": "Compara 200 con 199, o 10 000 con 9999.",
+      "solution": "Si el tamaño es grande, la diferencia entre dividir entre n y entre n menos uno es despreciable. La corrección solo resulta relevante en muestras pequeñas.",
+      "explain": "Si respondiste «enorme», has sobreestimado el efecto de la corrección. Con 10 000 observaciones, la diferencia entre ambos divisores es de una diezmilésima. Por eso los manuales usan la fórmula muestral siempre: se aproxima a la poblacional cuando el tamaño crece."
+    },
+    "A4-L5-E5": {
+      "hint": "Para la población completa no se estima la media.",
+      "solution": "Falso: para una población completa se divide entre N, no entre n menos uno. La corrección solo se aplica cuando los datos son una muestra y la media se estima.",
+      "explain": "Si respondiste «verdadero», has generalizado la fórmula muestral. La distinción no es un capricho: con todos los datos, la media calculada es la real y no hay sesgo que corregir. Aplicar n menos uno en una población da una varianza ligeramente mayor que la verdadera."
+    }
+  }
+}

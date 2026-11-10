@@ -1,0 +1,8 @@
+{
+  "module": "data/descriptiva/a4.js",
+  "items": {
+    "A4-L1-E3": "Conviene dibujar el diagrama de caja para ver esos candidatos en su contexto.",
+    "A4-L1-E4": "Es la medida preferida cuando la distribución tiene colas o valores extremos.",
+    "A4-L3-E2": "Declarar la escala evita comparar un coeficiente unitario con un porcentaje."
+  }
+}
