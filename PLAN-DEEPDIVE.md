@@ -266,7 +266,7 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 | 2026-11-09 | Módulo B8 completo (5/5, ES) | ✅ |
 | 2026-11-09 | Módulo B9 completo (4/4, ES) — **probabilidad 30/30** | ✅ |
 | 2026-11-09 | **Módulo A0 completo (8/8, ES)** | ✅ |
-| 2026-11-09 | A1 en curso: A1-L1–L4 (4/6, ES) | ⏳ |
+| 2026-11-09 | A1 en curso: A1-L1–L5 (5/6, ES) | ⏳ |
 | 2026-11-09 | **Estado global: 62/115 deep dives (53,9%)** | ⏳ |
 | — | Descriptiva 32/42 (76,2%) | ⏳ |
 | — | Probabilidad 30/30 (100%) | ✅ |
