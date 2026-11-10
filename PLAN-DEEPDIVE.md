@@ -132,7 +132,7 @@ Orden: A3 → A4 → A5 → A6 → A2 → A1 → A0.
 - [x] **A4** (5): rango/IQR, varianza/desviación, CV, MAD, poblacional vs muestral.
 - [x] **A5** (5): cuartiles/percentiles, z, asimetría/curtosis, regla empírica, boxplots.
 - [x] **A6** (6): covarianza, Pearson, Spearman, regresión simple, correlación≠causalidad, ajuste/bondad.
-- [ ] **A2** (6): frecuencias, histogramas/bins, series temporales, Pareto, gráficos engañosos, bivariados.
+- [ ] **A2** (6): frecuencias, histogramas/bins, series temporales, Pareto, gráficos engañosos, bivariados. — **en curso: 1/6 (L1)**
 - [ ] **A1** (6): población/muestra, tipos de variables, escalas, fuentes, hoja limpia, representatividad. — **en curso: 2/6 (L1–L2)**
 - [x] **A0** (8): número, fracciones/porcentajes, notación científica, redondeo, medias ponderadas, tablas, tasas, unidades.
 
@@ -267,6 +267,7 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 | 2026-11-09 | Módulo B9 completo (4/4, ES) — **probabilidad 30/30** | ✅ |
 | 2026-11-09 | **Módulo A0 completo (8/8, ES)** | ✅ |
 | 2026-11-09 | **Módulo A1 completo (6/6, ES)** | ✅ |
+| 2026-11-09 | A2 en curso: A2-L1 (1/6, ES) | ⏳ |
 | 2026-11-09 | **Estado global: 62/115 deep dives (53,9%)** | ⏳ |
 | — | Descriptiva 32/42 (76,2%) | ⏳ |
 | — | Probabilidad 30/30 (100%) | ✅ |
