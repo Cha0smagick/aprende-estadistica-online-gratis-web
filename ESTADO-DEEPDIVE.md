@@ -4,8 +4,8 @@
 
 ## Progreso actual
 
-- **55/115 lecciones completas** con deep dive ≥2.500 palabras en español, validadas por `validate-content.mjs`.
-- **Descriptiva:** 25/42 (A3–A6: 22/22; A0: 3/8 en curso; pendientes A0: 5, A1: 6, A2: 6).
+- **57/115 lecciones completas** con deep dive ≥2.500 palabras en español, validadas por `validate-content.mjs`.
+- **Descriptiva:** 27/42 (A3–A6: 22/22; A0: 5/8 en curso; pendientes A0: 3, A1: 6, A2: 6).
 - **Probabilidad:** 30/30 — **curso completo** (B0–B9).
 - **Inferencial:** 0/33 · **Fundamentos:** 0/10.
 - Pipeline completo: mdDeep(), validate-content.mjs (≥2.500 palabras, 9 secciones, ###, tablas, $$, preguntas, detección de contenido huérfano). El inglés ya no se exige ni se publica.
@@ -29,7 +29,7 @@
 
 ## Próximos pasos (por prioridad)
 
-1. Completar A0: L4–L8 (5 lecciones), luego A1 (6) y A2 (6).
+1. Completar A0: L6–L8 (3 lecciones), luego A1 (6) y A2 (6).
 2. Escribir A0, A1, A2 (descriptiva — 20 lecciones restantes).
 3. Continuar inferencial (C0–C9, 33 lecciones).
 4. Continuar fundamentos (F0–F1, 10 lecciones).
