@@ -3,6 +3,8 @@ name: Validate content
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
 
 jobs:
   validate:
@@ -13,3 +15,5 @@ jobs:
         with:
           node-version: 20
       - run: node scripts/validate.mjs
+      # bloqueante desde 115/115 deep dives (2026-11-10)
+      - run: node scripts/validate-content.mjs --all
