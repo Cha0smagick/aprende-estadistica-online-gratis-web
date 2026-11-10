@@ -1,0 +1,105 @@
+{
+  "module": "data/descriptiva/a0.js",
+  "items": {
+    "A0-L5-E1": {
+      "hint": "Suma los cuatro valores en orden.",
+      "solution": "12 más 15 son 27; más 18 son 45; más 21 son 66. La suma conserva la unidad de los sumandos y no cambia porque el orden se altere.",
+      "explain": "Si obtuviste otro total, revisa el acarreo al pasar de 45 a 66: sumar 21 exige añadir dos decenas y una unidad. Un error frecuente es olvidar una de las cuatro cantidades o sumar dos veces la misma."
+    },
+    "A0-L5-E2": {
+      "hint": "Suma los valores y divide entre cuatro.",
+      "solution": "La suma es 20 y hay cuatro valores, así que la media es 20 dividido entre 4, es decir, 5. La media simple reparte el total en partes iguales.",
+      "explain": "Si respondiste 20, has dado la suma en lugar de la media. La media exige dividir entre el número de observaciones; sin esa división, el resultado depende del tamaño del conjunto y no es comparable."
+    },
+    "A0-L5-E3": {
+      "hint": "Multiplica cada valor por su peso antes de dividir.",
+      "solution": "Los productos son 10, 40 y 30; suman 80. Los pesos suman 4, así que la media ponderada es 80 entre 4, es decir, 20. El valor 20 pesa el doble y arrastra el resultado.",
+      "explain": "Si promediaste los valores sin pesos, obtendrías 20 por casualidad en este caso, pero el método sería incorrecto. La media ponderada exige multiplicar cada valor por su peso y dividir entre la suma de los pesos."
+    },
+    "A0-L5-E4": {
+      "hint": "Prueba con pesos 2, 2 y 2 y simplifica.",
+      "solution": "Cuando todos los pesos son iguales, la media ponderada coincide con la media simple, porque el factor común se cancela en el numerador y en el denominador. La ponderación solo cambia el resultado si los pesos difieren.",
+      "explain": "Si pensaste que la ponderada siempre es mayor, confundes ponderar con dar más importancia a los valores altos. Ponderar es asignar pesos, y si todos son iguales no se favorece a ningún valor."
+    },
+    "A0-L5-E5": {
+      "hint": "Pondera cada nota por el número de alumnos.",
+      "solution": "Veinte alumnos con 6 aportan 120 puntos y diez con 9 aportan 90; el total es 210 sobre 30 alumnos, es decir, 7. La nota media queda más cerca de 6 porque ese grupo es el doble de numeroso.",
+      "explain": "Si promediaste 6 y 9 y obtuviste 7,5, ignoraste los tamaños de los grupos. La media correcta pondera por número de alumnos, y como hay el doble con nota 6, el resultado se desplaza hacia ese valor."
+    },
+    "A0-L6-E1": {
+      "hint": "Piensa en una fila de datos frente a una columna de datos.",
+      "solution": "En una tabla de datos, las columnas suelen representar variables y las filas, observaciones. Esa convención permite leer cada columna como una serie de valores de la misma característica medida en unidades distintas.",
+      "explain": "Si respondiste observaciones, has intercambiado filas y columnas. La confusión es habitual porque algunas tablas se transponen; lo importante es identificar qué representa cada eje antes de calcular."
+    },
+    "A0-L6-E2": {
+      "hint": "Divide la celda entre el total de su columna.",
+      "solution": "45 sobre 150 es 0,3, que equivale al 30 % de la columna. El porcentaje se calcula siempre sobre el total correspondiente, en este caso el de la columna, no el de la tabla completa.",
+      "explain": "Si dividiste entre el total de la tabla, el porcentaje sería otro. Cada porcentaje tiene un denominador, y confundirlo es el error más frecuente al leer tablas: hay que preguntar siempre porcentaje de qué."
+    },
+    "A0-L6-E3": {
+      "hint": "Pregunta quién falta cuando hay valores vacíos.",
+      "solution": "Falso: ignorar los valores faltantes puede sesgar el resultado si quienes faltan difieren sistemáticamente de quienes están. Antes de excluirlos hay que analizar cuántos son y qué características tienen.",
+      "explain": "Si respondiste que pueden ignorarse, has supuesto que la ausencia es aleatoria, y eso rara vez se cumple. Los datos faltantes suelen concentrarse en ciertos perfiles, y excluirlos cambia la composición de la muestra."
+    },
+    "A0-L6-E4": {
+      "hint": "Sin saber qué mide cada columna, cualquier cálculo es una conjetura.",
+      "solution": "Antes de calcular hay que leer el título, las unidades y la definición de cada columna, porque determinan qué se puede sumar y qué no. Sumar magnitudes incompatibles produce números sin significado.",
+      "explain": "Si empezaste sumando, el cálculo puede ser aritméticamente correcto y conceptualmente inútil. Comprender la tabla es parte del análisis, no un trámite previo: define qué operaciones tienen sentido."
+    },
+    "A0-L6-E5": {
+      "hint": "Divide la celda entre el total de su fila.",
+      "solution": "50 sobre 200 es 0,25, es decir, el 25 % de la fila. La celda representa una cuarta parte de esa fila, y el porcentaje se interpreta respecto al total de la fila indicada.",
+      "explain": "Si dividiste entre otro total, el porcentaje no corresponde a la fila. En una tabla hay varios denominadores posibles y cada uno responde a una pregunta distinta; hay que declarar cuál se usa."
+    },
+    "A0-L7-E1": {
+      "hint": "Divide el número de zurdos entre el total de personas.",
+      "solution": "20 entre 80 es 0,25, así que la proporción de zurdos es 0,25, equivalente al 25 %. Una proporción es un cociente entre una parte y el total y siempre queda entre cero y uno.",
+      "explain": "Si respondiste 25, has dado el porcentaje en lugar de la proporción. Ambas cifras describen lo mismo, pero en escalas distintas: la proporción va de 0 a 1 y el porcentaje, de 0 a 100."
+    },
+    "A0-L7-E2": {
+      "hint": "Multiplica por cien y añade el símbolo.",
+      "solution": "0,08 multiplicado por 100 es 8, así que equivale al 8 %. El porcentaje expresa la misma proporción tomando cien como referencia, y por eso se obtiene desplazando la coma dos lugares.",
+      "explain": "Si respondiste 0,8 %, has desplazado la coma una sola posición. Multiplicar por cien mueve la coma dos lugares a la derecha: 0,08 pasa a 8, no a 0,8."
+    },
+    "A0-L7-E3": {
+      "hint": "Divide las victorias entre las partidas jugadas.",
+      "solution": "36 entre 120 es 0,30, de modo que la tasa de victoria es 0,30 por partida, equivalente al 30 %. La tasa es una proporción y se interpreta como la fracción de partidas ganadas.",
+      "explain": "Si respondiste 3,3, has dividido al revés. La tasa se calcula con las victorias en el numerador y el total en el denominador; invertir los términos produce un número mayor que uno, imposible para una proporción."
+    },
+    "A0-L7-E4": {
+      "hint": "Es una parte dividida por un total mayor o igual.",
+      "solution": "Una proporción está siempre entre 0 y 1, porque el numerador es una parte del total y nunca lo supera. Multiplicada por cien se expresa como porcentaje entre 0 y 100.",
+      "explain": "Si elegiste el intervalo de menos uno a uno, estás pensando en una correlación. Las proporciones no pueden ser negativas ni superar la unidad, y esa restricción es clave para detectar cálculos imposibles."
+    },
+    "A0-L7-E5": {
+      "hint": "Multiplica la proporción por el total.",
+      "solution": "0,4 por 50 es 20, así que hay 20 casos. La operación invierte el cálculo de la proporción: si se conoce la fracción y el total, se recupera la parte multiplicando.",
+      "explain": "Si dividiste 50 entre 0,4, obtendrías 125, un número mayor que el total, lo cual es imposible. La parte se obtiene multiplicando la proporción por el total, no dividiendo."
+    },
+    "A0-L8-E1": {
+      "hint": "Un kilómetro son mil metros.",
+      "solution": "3,2 kilómetros equivalen a 3200 metros, porque cada kilómetro contiene mil metros. La cantidad física es la misma; solo cambia la unidad y, con ella, el número que la expresa.",
+      "explain": "Si respondiste 320, has multiplicado por cien. El prefijo kilo significa mil, no cien; confundirlo con hecto produce errores de un factor diez que después se arrastran en todos los cálculos."
+    },
+    "A0-L8-E2": {
+      "hint": "Compara la cifra con el peso razonable de una persona.",
+      "solution": "Una media de 650 kg por alumno es imposible, así que lo más probable es que falte un decimal y la media real sea de 65,0 kg. La comprobación de sentido común detecta el error de escala.",
+      "explain": "Si aceptaste el dato, has confiado en el número sin contrastarlo con la realidad. Estimar el orden de magnitud esperado es una comprobación barata que detecta errores de unidad, de coma o de transcripción."
+    },
+    "A0-L8-E3": {
+      "hint": "Redondea ambos factores y multiplica.",
+      "solution": "199 por 51 se aproxima a 200 por 50, que da 10 000. La estimación es algo mayor que el valor real, porque ambos factores se redondearon al alza, pero sirve para comprobar el orden de magnitud.",
+      "explain": "Si calculaste 10 000 y te parece exacto, recuerda que es una estimación. Redondear 199 a 200 y 51 a 50 introduce un error pequeño que conviene declarar cuando el resultado se usa para decidir."
+    },
+    "A0-L8-E4": {
+      "hint": "La distancia recorrida no depende de la regla con que se mida.",
+      "solution": "Falso: cambiar de metros a centímetros no altera la cantidad física, solo el número que la representa. La unidad es una convención de medida y no modifica la realidad que se está describiendo.",
+      "explain": "Si respondiste que sí cambia, has confundido la medida con la magnitud. La longitud es la misma; lo que cambia es cuántas veces cabe la unidad elegida, y por eso el número se multiplica por cien."
+    },
+    "A0-L8-E5": {
+      "hint": "Un kilogramo son mil gramos.",
+      "solution": "4500 gramos equivalen a 4,5 kilogramos, porque se divide entre mil. La cantidad de masa es la misma y solo cambia la unidad empleada para expresarla.",
+      "explain": "Si respondiste 450, has dividido entre diez. El factor entre gramo y kilogramo es mil, así que hay que desplazar la coma tres lugares; un error de factor diez es frecuente al cambiar de prefijo."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "module": "data/descriptiva/a0.js",
+  "items": {
+    "A0-L5-E1": "Ese total será la base de la media y de cualquier comprobación posterior.",
+    "A0-L5-E2": "La media es sensible a los valores extremos, aunque aquí todos los datos son pequeños y regulares.",
+    "A0-L5-E3": "Si los pesos suman otro total, el cálculo cambia aunque los valores sean los mismos.",
+    "A0-L5-E4": "La ponderación solo altera el resultado cuando reparte importancia de forma desigual.",
+    "A0-L5-E5": "Este ejemplo muestra por qué promediar medias de grupos desiguales da un resultado engañoso.",
+    "A0-L6-E1": "Identificar filas y columnas evita sumar magnitudes que no son comparables entre sí.",
+    "A0-L6-E2": "Declarar el denominador convierte un porcentaje ambiguo en una cifra interpretable.",
+    "A0-L6-E3": "Comparar a quienes faltan con quienes están es el primer paso de cualquier análisis de datos incompletos.",
+    "A0-L6-E4": "Las unidades indican qué operaciones tienen sentido y cuáles producen resultados absurdos.",
+    "A0-L6-E5": "El mismo número puede ser un porcentaje de fila o de columna, y solo el contexto lo decide.",
+    "A0-L7-E1": "Escribir 0,25 y 25 % es equivalente, pero conviene no mezclar las dos escalas en un mismo informe.",
+    "A0-L7-E2": "La conversión inversa, de porcentaje a proporción, se hace dividiendo entre cien.",
+    "A0-L7-E3": "Una tasa de 0,30 indica que tres de cada diez partidas terminaron en victoria.",
+    "A0-L7-E4": "Esa restricción permite detectar de inmediato un cociente mal planteado.",
+    "A0-L7-E5": "Comprobar que la parte no supera el total es una verificación rápida y eficaz.",
+    "A0-L8-E1": "Expresar el resultado en metros facilita compararlo con otras distancias cotidianas.",
+    "A0-L8-E2": "Ese contraste entre el dato y la expectativa es la base del control de sentido común.",
+    "A0-L8-E3": "La estimación sirve para detectar errores de coma en el cálculo exacto, no para sustituirlo.",
+    "A0-L8-E4": "La unidad correcta depende del contexto, y el número se ajusta a ella sin alterar la realidad.",
+    "A0-L8-E5": "Elegir la unidad adecuada mejora la legibilidad y reduce los errores de escala."
+  }
+}

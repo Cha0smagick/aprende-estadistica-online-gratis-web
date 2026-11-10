@@ -304,13 +304,13 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 | Ítem | Antes | Ahora | Objetivo |
 |---|---:|---:|---:|
 | Ejercicios en formato producción | 0 | 45 | ≥241 |
-| Con `explain` ≥40 palabras | 0 | 50 | 481 |
-| Con solución ≥60 caracteres | 1 | 50 | 481 |
+| Con `explain` ≥40 palabras | 0 | 70 | 481 |
+| Con solución ≥60 caracteres | 1 | 70 | 481 |
 | Pistas que filtran la respuesta | 20 | 20 | 0 |
 
 **Fundamentos cerrado** (F0 y F1): 30/30 con explicación y solución razonada, 20/30 en formato producción, 0 pistas filtradas.
 
-**A0 en curso**: L1–L4 con feedback completo (20/40); faltan L5–L8.
+**A0 cerrado**: 40/40 con explicación y solución; 25/40 en formato producción (62 %).
 
 Motor: tipo `short`, explicación al fallar, registro de primer intento y maestría ≥80 % para completar la lección. Herramientas: `audit-exercises.mjs`, `validate-feedback.mjs` (informativo; `--strict` para el final), `apply-feedback.mjs` + `append-explain.mjs` con parches en `scripts/patches/`, y `sync-module.mjs`.
 

@@ -1243,12 +1243,13 @@ export default {
               "answer": 66,
               "tol": 0.01,
               "hint": {
-                "es": "12+15+18+21.",
-                "en": "12+15+18+21."
+                "es": "Suma los cuatro valores en orden."
               },
               "solution": {
-                "es": "66.",
-                "en": "66."
+                "es": "12 más 15 son 27; más 18 son 45; más 21 son 66. La suma conserva la unidad de los sumandos y no cambia porque el orden se altere."
+              },
+              "explain": {
+                "es": "Si obtuviste otro total, revisa el acarreo al pasar de 45 a 66: sumar 21 exige añadir dos decenas y una unidad. Un error frecuente es olvidar una de las cuatro cantidades o sumar dos veces la misma. Ese total será la base de la media y de cualquier comprobación posterior."
               },
               "xp": 10
             },
@@ -1262,12 +1263,13 @@ export default {
               "answer": 5,
               "tol": 0.01,
               "hint": {
-                "es": "(2+4+6+8)/4.",
-                "en": "(2+4+6+8)/4."
+                "es": "Suma los valores y divide entre cuatro."
               },
               "solution": {
-                "es": "5.",
-                "en": "5."
+                "es": "La suma es 20 y hay cuatro valores, así que la media es 20 dividido entre 4, es decir, 5. La media simple reparte el total en partes iguales."
+              },
+              "explain": {
+                "es": "Si respondiste 20, has dado la suma en lugar de la media. La media exige dividir entre el número de observaciones; sin esa división, el resultado depende del tamaño del conjunto y no es comparable. La media es sensible a los valores extremos, aunque aquí todos los datos son pequeños y regulares."
               },
               "xp": 10
             },
@@ -1281,12 +1283,13 @@ export default {
               "answer": 20,
               "tol": 0.01,
               "hint": {
-                "es": "(1·10+2·20+1·30)/(1+2+1).",
-                "en": "(1·10+2·20+1·30)/(1+2+1)."
+                "es": "Multiplica cada valor por su peso antes de dividir."
               },
               "solution": {
-                "es": "(10+40+30)/4 = 80/4 = 20.",
-                "en": "(10+40+30)/4 = 80/4 = 20."
+                "es": "Los productos son 10, 40 y 30; suman 80. Los pesos suman 4, así que la media ponderada es 80 entre 4, es decir, 20. El valor 20 pesa el doble y arrastra el resultado."
+              },
+              "explain": {
+                "es": "Si promediaste los valores sin pesos, obtendrías 20 por casualidad en este caso, pero el método sería incorrecto. La media ponderada exige multiplicar cada valor por su peso y dividir entre la suma de los pesos. Si los pesos suman otro total, el cálculo cambia aunque los valores sean los mismos."
               },
               "xp": 10
             },
@@ -1317,12 +1320,13 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Pesos iguales → cancelan.",
-                "en": "Equal weights cancel."
+                "es": "Prueba con pesos 2, 2 y 2 y simplifica."
               },
               "solution": {
-                "es": "Coincide con la simple.",
-                "en": "Equals the simple."
+                "es": "Cuando todos los pesos son iguales, la media ponderada coincide con la media simple, porque el factor común se cancela en el numerador y en el denominador. La ponderación solo cambia el resultado si los pesos difieren."
+              },
+              "explain": {
+                "es": "Si pensaste que la ponderada siempre es mayor, confundes ponderar con dar más importancia a los valores altos. Ponderar es asignar pesos, y si todos son iguales no se favorece a ningún valor. La ponderación solo altera el resultado cuando reparte importancia de forma desigual."
               },
               "xp": 10
             },
@@ -1336,12 +1340,13 @@ export default {
               "answer": 7,
               "tol": 0.01,
               "hint": {
-                "es": "(20·6+10·9)/30.",
-                "en": "(20·6+10·9)/30."
+                "es": "Pondera cada nota por el número de alumnos."
               },
               "solution": {
-                "es": "(120+90)/30 = 7.",
-                "en": "(120+90)/30 = 7."
+                "es": "Veinte alumnos con 6 aportan 120 puntos y diez con 9 aportan 90; el total es 210 sobre 30 alumnos, es decir, 7. La nota media queda más cerca de 6 porque ese grupo es el doble de numeroso."
+              },
+              "explain": {
+                "es": "Si promediaste 6 y 9 y obtuviste 7,5, ignoraste los tamaños de los grupos. La media correcta pondera por número de alumnos, y como hay el doble con nota 6, el resultado se desplaza hacia ese valor. Este ejemplo muestra por qué promediar medias de grupos desiguales da un resultado engañoso."
               },
               "xp": 10
             }
@@ -1504,12 +1509,13 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Columna = variable.",
-                "en": "Column = variable."
+                "es": "Piensa en una fila de datos frente a una columna de datos."
               },
               "solution": {
-                "es": "Variables.",
-                "en": "Variables."
+                "es": "En una tabla de datos, las columnas suelen representar variables y las filas, observaciones. Esa convención permite leer cada columna como una serie de valores de la misma característica medida en unidades distintas."
+              },
+              "explain": {
+                "es": "Si respondiste observaciones, has intercambiado filas y columnas. La confusión es habitual porque algunas tablas se transponen; lo importante es identificar qué representa cada eje antes de calcular. Identificar filas y columnas evita sumar magnitudes que no son comparables entre sí."
               },
               "xp": 10
             },
@@ -1523,12 +1529,13 @@ export default {
               "answer": 30,
               "tol": 0.01,
               "hint": {
-                "es": "45/150 × 100.",
-                "en": "45/150 × 100."
+                "es": "Divide la celda entre el total de su columna."
               },
               "solution": {
-                "es": "30 %.",
-                "en": "30%."
+                "es": "45 sobre 150 es 0,3, que equivale al 30 % de la columna. El porcentaje se calcula siempre sobre el total correspondiente, en este caso el de la columna, no el de la tabla completa."
+              },
+              "explain": {
+                "es": "Si dividiste entre el total de la tabla, el porcentaje sería otro. Cada porcentaje tiene un denominador, y confundirlo es el error más frecuente al leer tablas: hay que preguntar siempre porcentaje de qué. Declarar el denominador convierte un porcentaje ambiguo en una cifra interpretable."
               },
               "xp": 10
             },
@@ -1541,12 +1548,13 @@ export default {
               },
               "answer": false,
               "hint": {
-                "es": "Ignorarlos sesga resultados.",
-                "en": "Ignoring them biases results."
+                "es": "Pregunta quién falta cuando hay valores vacíos."
               },
               "solution": {
-                "es": "Falso: pueden sesgar.",
-                "en": "False: they can bias."
+                "es": "Falso: ignorar los valores faltantes puede sesgar el resultado si quienes faltan difieren sistemáticamente de quienes están. Antes de excluirlos hay que analizar cuántos son y qué características tienen."
+              },
+              "explain": {
+                "es": "Si respondiste que pueden ignorarse, has supuesto que la ausencia es aleatoria, y eso rara vez se cumple. Los datos faltantes suelen concentrarse en ciertos perfiles, y excluirlos cambia la composición de la muestra. Comparar a quienes faltan con quienes están es el primer paso de cualquier análisis de datos incompletos."
               },
               "xp": 10
             },
@@ -1577,12 +1585,13 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Entender antes de calcular.",
-                "en": "Understand before calculating."
+                "es": "Sin saber qué mide cada columna, cualquier cálculo es una conjetura."
               },
               "solution": {
-                "es": "Leer título y unidades.",
-                "en": "Read title and units."
+                "es": "Antes de calcular hay que leer el título, las unidades y la definición de cada columna, porque determinan qué se puede sumar y qué no. Sumar magnitudes incompatibles produce números sin significado."
+              },
+              "explain": {
+                "es": "Si empezaste sumando, el cálculo puede ser aritméticamente correcto y conceptualmente inútil. Comprender la tabla es parte del análisis, no un trámite previo: define qué operaciones tienen sentido. Las unidades indican qué operaciones tienen sentido y cuáles producen resultados absurdos."
               },
               "xp": 10
             },
@@ -1596,12 +1605,13 @@ export default {
               "answer": 25,
               "tol": 0.01,
               "hint": {
-                "es": "50/200 × 100.",
-                "en": "50/200 × 100."
+                "es": "Divide la celda entre el total de su fila."
               },
               "solution": {
-                "es": "25 %.",
-                "en": "25%."
+                "es": "50 sobre 200 es 0,25, es decir, el 25 % de la fila. La celda representa una cuarta parte de esa fila, y el porcentaje se interpreta respecto al total de la fila indicada."
+              },
+              "explain": {
+                "es": "Si dividiste entre otro total, el porcentaje no corresponde a la fila. En una tabla hay varios denominadores posibles y cada uno responde a una pregunta distinta; hay que declarar cuál se usa. El mismo número puede ser un porcentaje de fila o de columna, y solo el contexto lo decide."
               },
               "xp": 10
             }
@@ -1757,12 +1767,13 @@ export default {
               "answer": 0.25,
               "tol": 0.001,
               "hint": {
-                "es": "20/80.",
-                "en": "20/80."
+                "es": "Divide el número de zurdos entre el total de personas."
               },
               "solution": {
-                "es": "0,25.",
-                "en": "0.25."
+                "es": "20 entre 80 es 0,25, así que la proporción de zurdos es 0,25, equivalente al 25 %. Una proporción es un cociente entre una parte y el total y siempre queda entre cero y uno."
+              },
+              "explain": {
+                "es": "Si respondiste 25, has dado el porcentaje en lugar de la proporción. Ambas cifras describen lo mismo, pero en escalas distintas: la proporción va de 0 a 1 y el porcentaje, de 0 a 100. Escribir 0,25 y 25 % es equivalente, pero conviene no mezclar las dos escalas en un mismo informe."
               },
               "xp": 10
             },
@@ -1776,12 +1787,13 @@ export default {
               "answer": 8,
               "tol": 0.01,
               "hint": {
-                "es": "×100.",
-                "en": "×100."
+                "es": "Multiplica por cien y añade el símbolo."
               },
               "solution": {
-                "es": "8 %.",
-                "en": "8%."
+                "es": "0,08 multiplicado por 100 es 8, así que equivale al 8 %. El porcentaje expresa la misma proporción tomando cien como referencia, y por eso se obtiene desplazando la coma dos lugares."
+              },
+              "explain": {
+                "es": "Si respondiste 0,8 %, has desplazado la coma una sola posición. Multiplicar por cien mueve la coma dos lugares a la derecha: 0,08 pasa a 8, no a 0,8. La conversión inversa, de porcentaje a proporción, se hace dividiendo entre cien."
               },
               "xp": 10
             },
@@ -1795,12 +1807,13 @@ export default {
               "answer": 0.3,
               "tol": 0.001,
               "hint": {
-                "es": "36/120.",
-                "en": "36/120."
+                "es": "Divide las victorias entre las partidas jugadas."
               },
               "solution": {
-                "es": "0,30.",
-                "en": "0.30."
+                "es": "36 entre 120 es 0,30, de modo que la tasa de victoria es 0,30 por partida, equivalente al 30 %. La tasa es una proporción y se interpreta como la fracción de partidas ganadas."
+              },
+              "explain": {
+                "es": "Si respondiste 3,3, has dividido al revés. La tasa se calcula con las victorias en el numerador y el total en el denominador; invertir los términos produce un número mayor que uno, imposible para una proporción. Una tasa de 0,30 indica que tres de cada diez partidas terminaron en victoria."
               },
               "xp": 10
             },
@@ -1831,12 +1844,13 @@ export default {
               ],
               "answer": 0,
               "hint": {
-                "es": "Parte/total.",
-                "en": "Part/total."
+                "es": "Es una parte dividida por un total mayor o igual."
               },
               "solution": {
-                "es": "Entre 0 y 1.",
-                "en": "Between 0 and 1."
+                "es": "Una proporción está siempre entre 0 y 1, porque el numerador es una parte del total y nunca lo supera. Multiplicada por cien se expresa como porcentaje entre 0 y 100."
+              },
+              "explain": {
+                "es": "Si elegiste el intervalo de menos uno a uno, estás pensando en una correlación. Las proporciones no pueden ser negativas ni superar la unidad, y esa restricción es clave para detectar cálculos imposibles. Esa restricción permite detectar de inmediato un cociente mal planteado."
               },
               "xp": 10
             },
@@ -1850,12 +1864,13 @@ export default {
               "answer": 20,
               "tol": 0.01,
               "hint": {
-                "es": "0,4 × 50.",
-                "en": "0.4 × 50."
+                "es": "Multiplica la proporción por el total."
               },
               "solution": {
-                "es": "20.",
-                "en": "20."
+                "es": "0,4 por 50 es 20, así que hay 20 casos. La operación invierte el cálculo de la proporción: si se conoce la fracción y el total, se recupera la parte multiplicando."
+              },
+              "explain": {
+                "es": "Si dividiste 50 entre 0,4, obtendrías 125, un número mayor que el total, lo cual es imposible. La parte se obtiene multiplicando la proporción por el total, no dividiendo. Comprobar que la parte no supera el total es una verificación rápida y eficaz."
               },
               "xp": 10
             }
@@ -2001,12 +2016,13 @@ export default {
               "answer": 3200,
               "tol": 0.01,
               "hint": {
-                "es": "× 1000.",
-                "en": "× 1000."
+                "es": "Un kilómetro son mil metros."
               },
               "solution": {
-                "es": "3200 m.",
-                "en": "3200 m."
+                "es": "3,2 kilómetros equivalen a 3200 metros, porque cada kilómetro contiene mil metros. La cantidad física es la misma; solo cambia la unidad y, con ella, el número que la expresa."
+              },
+              "explain": {
+                "es": "Si respondiste 320, has multiplicado por cien. El prefijo kilo significa mil, no cien; confundirlo con hecto produce errores de un factor diez que después se arrastran en todos los cálculos. Expresar el resultado en metros facilita compararlo con otras distancias cotidianas."
               },
               "xp": 10
             },
@@ -2037,12 +2053,13 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Un humano pesa ~65 kg.",
-                "en": "A human weighs ~65 kg."
+                "es": "Compara la cifra con el peso razonable de una persona."
               },
               "solution": {
-                "es": "Falta un decimal.",
-                "en": "Missing a decimal."
+                "es": "Una media de 650 kg por alumno es imposible, así que lo más probable es que falte un decimal y la media real sea de 65,0 kg. La comprobación de sentido común detecta el error de escala."
+              },
+              "explain": {
+                "es": "Si aceptaste el dato, has confiado en el número sin contrastarlo con la realidad. Estimar el orden de magnitud esperado es una comprobación barata que detecta errores de unidad, de coma o de transcripción. Ese contraste entre el dato y la expectativa es la base del control de sentido común."
               },
               "xp": 10
             },
@@ -2056,12 +2073,13 @@ export default {
               "answer": 10000,
               "tol": 0.01,
               "hint": {
-                "es": "200 × 50.",
-                "en": "200 × 50."
+                "es": "Redondea ambos factores y multiplica."
               },
               "solution": {
-                "es": "≈ 10 000.",
-                "en": "≈ 10,000."
+                "es": "199 por 51 se aproxima a 200 por 50, que da 10 000. La estimación es algo mayor que el valor real, porque ambos factores se redondearon al alza, pero sirve para comprobar el orden de magnitud."
+              },
+              "explain": {
+                "es": "Si calculaste 10 000 y te parece exacto, recuerda que es una estimación. Redondear 199 a 200 y 51 a 50 introduce un error pequeño que conviene declarar cuando el resultado se usa para decidir. La estimación sirve para detectar errores de coma en el cálculo exacto, no para sustituirlo."
               },
               "xp": 10
             },
@@ -2074,12 +2092,13 @@ export default {
               },
               "answer": false,
               "hint": {
-                "es": "Cambia el número, no la realidad.",
-                "en": "Changes the number, not reality."
+                "es": "La distancia recorrida no depende de la regla con que se mida."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: cambiar de metros a centímetros no altera la cantidad física, solo el número que la representa. La unidad es una convención de medida y no modifica la realidad que se está describiendo."
+              },
+              "explain": {
+                "es": "Si respondiste que sí cambia, has confundido la medida con la magnitud. La longitud es la misma; lo que cambia es cuántas veces cabe la unidad elegida, y por eso el número se multiplica por cien. La unidad correcta depende del contexto, y el número se ajusta a ella sin alterar la realidad."
               },
               "xp": 10
             },
@@ -2093,12 +2112,13 @@ export default {
               "answer": 4.5,
               "tol": 0.01,
               "hint": {
-                "es": "÷ 1000.",
-                "en": "÷ 1000."
+                "es": "Un kilogramo son mil gramos."
               },
               "solution": {
-                "es": "4,5 kg.",
-                "en": "4.5 kg."
+                "es": "4500 gramos equivalen a 4,5 kilogramos, porque se divide entre mil. La cantidad de masa es la misma y solo cambia la unidad empleada para expresarla."
+              },
+              "explain": {
+                "es": "Si respondiste 450, has dividido entre diez. El factor entre gramo y kilogramo es mil, así que hay que desplazar la coma tres lugares; un error de factor diez es frecuente al cambiar de prefijo. Elegir la unidad adecuada mejora la legibilidad y reduce los errores de escala."
               },
               "xp": 10
             }
