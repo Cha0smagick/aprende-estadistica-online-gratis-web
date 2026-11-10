@@ -148,12 +148,13 @@ export default {
               },
               "answer": false,
               "hint": {
-                "es": "No: esta en todos lados.",
-                "en": "No: it is everywhere."
+                "es": "Piensa en las noticias, en el trabajo y en el médico."
               },
               "solution": {
-                "es": "Falso: esta en todos lados.",
-                "en": "False: it is everywhere."
+                "es": "Falso: la estadística se usa en ciencia, pero también en publicidad, deportes, finanzas, medicina y decisiones cotidianas. Su alcance no se limita a la investigación académica."
+              },
+              "explain": {
+                "es": "Si respondiste «verdadero», estás pensando solo en su uso científico. La estadística es una herramienta de decisión que aparece en cualquier contexto donde haya datos y consecuencias, incluidos los más cotidianos. Por eso la alfabetización estadística es una habilidad general y no un conocimiento reservado a especialistas."
               },
               "xp": 10
             }
@@ -275,12 +276,13 @@ export default {
               },
               "answer": false,
               "hint": {
-                "es": "No: son complementarias.",
-                "en": "No: they are complementary."
+                "es": "Una es la base de la otra."
               },
               "solution": {
-                "es": "Falso: son complementarias.",
-                "en": "False: they are complementary."
+                "es": "Falso: la probabilidad y la estadística no son independientes, son complementarias. La primera permite calcular qué esperar de un modelo; la segunda usa esos cálculos para inferir el modelo desde los datos."
+              },
+              "explain": {
+                "es": "Si respondiste «verdadero», has separado dos disciplinas que trabajan juntas. La inferencia estadística se construye con probabilidad: sin ella no habría intervalos, ni contrastes, ni márgenes de error. Entender esa dependencia explica por qué los cursos de estadística empiezan siempre por la probabilidad."
               },
               "xp": 10
             }
@@ -413,12 +415,13 @@ export default {
               },
               "answer": true,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Cambia si se elige otra muestra del mismo tamaño."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: el estadístico depende de la muestra y, por tanto, es una variable aleatoria. Si se repite el estudio con otra muestra, su valor cambia; el parámetro poblacional, en cambio, permanece fijo."
+              },
+              "explain": {
+                "es": "Si respondiste «falso», conviene distinguir los dos conceptos: el parámetro es un número fijo y desconocido; el estadístico se calcula con los datos y varía de muestra a muestra por puro azar del muestreo. Esa distinción es la que justifica que se hable de error de muestreo y de margen al reportar un resultado."
               },
               "xp": 10
             }
@@ -543,12 +546,13 @@ export default {
               },
               "answer": false,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Piensa en el helado y los ahogamientos: ambos suben en verano."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: la correlación no implica causalidad. Dos variables pueden asociarse por un confusor común, por causalidad inversa o por simple coincidencia, y el diseño del estudio es lo que permite distinguir esos casos."
+              },
+              "explain": {
+                "es": "Si respondiste «verdadero», has comprado el error más repetido de la estadística. Una asociación observada puede deberse a una tercera variable, y sin un diseño adecuado no hay forma de saberlo. El diseño es lo que convierte una asociación en una hipótesis causal defendible o la descarta."
               },
               "xp": 10
             }
@@ -671,12 +675,13 @@ export default {
               },
               "answer": false,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "El helado y los ahogamientos suben juntos en verano."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: la correlación no implica causalidad. Puede existir un confusor, como el calor, que explique ambas variables; también puede haber causalidad inversa o una coincidencia sin mecanismo."
+              },
+              "explain": {
+                "es": "Si respondiste «verdadero», el ejemplo del helado y los ahogamientos lo desmiente: ambos aumentan en verano por una causa común, y ninguna de las dos variables causa la otra, aunque la correlación sea altísima. Buscar el mecanismo y controlar confusores es lo único que permite pasar de la asociación a la causa."
               },
               "xp": 10
             }
@@ -761,87 +766,70 @@ export default {
           "exercises": [
             {
               "id": "F1-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La probabilidad nacio de:",
                 "en": "Probability was born from:"
               },
-              "choices": [
-                {
-                  "es": "Los censos",
-                  "en": "Censuses"
-                },
-                {
-                  "es": "Los juegos de azar",
-                  "en": "Games of chance"
-                }
+              "answers": [
+                "juegos de azar",
+                "los juegos de azar",
+                "juegos",
+                "apuestas"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Juegos.",
-                "en": "Games."
+                "es": "Piensa en mesas de dados y apuestas, no en registros de población."
               },
               "solution": {
-                "es": "Los juegos de azar.",
-                "en": "Games of chance."
+                "es": "La probabilidad nació de los juegos de azar: los problemas de apuestas del siglo XVII obligaron a calcular lo que aún no había ocurrido. Los censos son el otro origen, el de la estadística descriptiva."
+              },
+              "explain": {
+                "es": "Si respondiste «los censos», has señalado el origen de la estadística, no de la probabilidad. Los censos servían para contar poblaciones; el cálculo de probabilidades surgió de preguntas sobre dados, cartas y repartos de premios. El azar de los dados era el laboratorio perfecto: barato, repetible y con resultados fáciles de contar."
               },
               "xp": 10
             },
             {
               "id": "F1-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Pascal y Fermat resolvieron:",
                 "en": "Pascal and Fermat solved:"
               },
-              "choices": [
-                {
-                  "es": "El censo romano",
-                  "en": "The Roman census"
-                },
-                {
-                  "es": "El problema de los puntos",
-                  "en": "The problem of points"
-                }
+              "answers": [
+                "el problema de los puntos",
+                "problema de los puntos",
+                "reparto de apuestas",
+                "los puntos"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Problema de los puntos.",
-                "en": "Problem of points."
+                "es": "Se trataba de repartir un premio cuando el juego se interrumpía."
               },
               "solution": {
-                "es": "El problema de los puntos (1654).",
-                "en": "The problem of points (1654)."
+                "es": "Pascal y Fermat resolvieron en 1654 el problema de los puntos: cómo repartir las apuestas de un juego interrumpido. Su correspondencia sentó las bases del cálculo de probabilidades y del concepto de esperanza."
+              },
+              "explain": {
+                "es": "Si respondiste «el censo romano», has mezclado las dos tradiciones. El censo es una práctica administrativa antigua; el problema de los puntos es una pregunta matemática concreta sobre apuestas y probabilidades. Repartir un premio exige valorar lo que todavía no ha ocurrido, y esa es precisamente la esencia del cálculo de probabilidades."
               },
               "xp": 10
             },
             {
               "id": "F1-L1-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Los censos son anteriores a la probabilidad.",
                 "en": "Censuses predate probability."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "La probabilidad es muy posterior a los primeros recuentos de población."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los censos y registros existen desde la Antigüedad, mientras que el cálculo de probabilidades se desarrolla en el siglo XVII. La estadística descriptiva es, por tanto, anterior a la teoría del azar."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene ordenar la cronología: primero se cuenta la población con fines fiscales y militares, y solo muchos siglos después se plantea cómo cuantificar la incertidumbre de un juego. Los recuentos de población existen desde Egipto y Roma; la teoría del azar no aparece hasta el siglo XVII."
+              },
+              "xp": 10
             }
           ]
         },
@@ -918,87 +906,72 @@ export default {
           "exercises": [
             {
               "id": "F1-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Gauss desarrollo:",
                 "en": "Gauss developed:"
               },
-              "choices": [
-                {
-                  "es": "La probabilidad",
-                  "en": "Probability"
-                },
-                {
-                  "es": "Minimos cuadrados y la normal",
-                  "en": "Least squares and the normal"
-                }
+              "answers": [
+                "minimos cuadrados",
+                "mínimos cuadrados",
+                "la normal",
+                "minimos cuadrados y la normal",
+                "distribucion normal"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Minimos cuadrados.",
-                "en": "Least squares."
+                "es": "Una técnica para ajustar datos ruidosos y una curva con forma de campana."
               },
               "solution": {
-                "es": "Minimos cuadrados y la distribucion normal.",
-                "en": "Least squares and the normal distribution."
+                "es": "Gauss desarrolló el método de mínimos cuadrados y usó la distribución normal para modelar errores de medición. Su cálculo de la órbita de Ceres con pocos datos mostró el poder del método."
+              },
+              "explain": {
+                "es": "Si respondiste «la probabilidad», la respuesta es demasiado amplia. Gauss aportó herramientas concretas: el ajuste por mínimos cuadrados y el modelo normal para los errores, que después se aplicaron a toda la ciencia. La órbita de Ceres se predijo con pocas observaciones ruidosas, y el método se convirtió en estándar científico."
               },
               "xp": 10
             },
             {
               "id": "F1-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Laplace demostro:",
                 "en": "Laplace proved:"
               },
-              "choices": [
-                {
-                  "es": "El TCL",
-                  "en": "The CLT"
-                },
-                {
-                  "es": "La regla de Bayes",
-                  "en": "Bayes' rule"
-                }
+              "answers": [
+                "el tcl",
+                "tcl",
+                "teorema central del limite",
+                "teorema central del límite",
+                "el teorema central del limite"
               ],
-              "answer": 0,
               "hint": {
-                "es": "TCL.",
-                "en": "CLT."
+                "es": "Explica por qué la media se distribuye en campana."
               },
               "solution": {
-                "es": "El Teorema Central del Limite.",
-                "en": "The Central Limit Theorem."
+                "es": "Laplace demostró el teorema central del límite: la suma o media de muchas variables independientes tiende a distribuirse como una normal. Ese resultado, publicado en su tratado de 1812, dio a la campana alcance general."
+              },
+              "explain": {
+                "es": "Si respondiste «la regla de Bayes», has confundido dos aportaciones distintas. Laplace también trabajó en probabilidad inversa, pero el resultado que explica la ubicuidad de la campana es el teorema central del límite. Con ese resultado, la campana dejó de ser una curiosidad algebraica y pasó a ser una herramienta general de análisis."
               },
               "xp": 10
             },
             {
               "id": "F1-L2-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La normal se invento para medir errores de astronomia.",
                 "en": "The normal was invented to measure astronomy errors."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Piensa en las medidas repetidas de los astrónomos."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la distribución normal se usó para describir los errores de medición en astronomía, donde las observaciones repetidas se agrupaban alrededor de un valor central. De ahí pasó a la teoría del error y a la estadística."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar el contexto: los astrónomos necesitaban combinar observaciones ruidosas, y la campana describía bien cómo se repartían los errores alrededor del valor verdadero. De ahí que durante décadas se la conociera como ley de los errores antes que como distribución normal."
+              },
+              "xp": 10
             }
           ]
         },
@@ -1075,87 +1048,71 @@ export default {
           "exercises": [
             {
               "id": "F1-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Fisher invento:",
                 "en": "Fisher invented:"
               },
-              "choices": [
-                {
-                  "es": "La probabilidad",
-                  "en": "Probability"
-                },
-                {
-                  "es": "El p-valor y el ANOVA",
-                  "en": "The p-value and ANOVA"
-                }
+              "answers": [
+                "el p-valor y el anova",
+                "p-valor",
+                "el valor p",
+                "anova",
+                "el p-valor y el analisis de la varianza"
               ],
-              "answer": 1,
               "hint": {
-                "es": "p-valor y ANOVA.",
-                "en": "p-value and ANOVA."
+                "es": "Una medida de evidencia y una técnica para comparar varios grupos."
               },
               "solution": {
-                "es": "El p-valor y el ANOVA.",
-                "en": "The p-value and ANOVA."
+                "es": "Fisher introdujo el valor p, el análisis de la varianza y los principios del diseño experimental. Su trabajo en Rothamsted y su libro de 1925 transformaron la forma de contrastar hipótesis con datos."
+              },
+              "explain": {
+                "es": "Si respondiste «la probabilidad», la respuesta es demasiado general. Fisher no inventó la probabilidad: aportó herramientas de inferencia aplicada, como el valor p, la ANOVA y la aleatorización en el diseño. Su manual de 1925 puso esos métodos al alcance de investigadores de cualquier disciplina con datos disponibles."
               },
               "xp": 10
             },
             {
               "id": "F1-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Neyman y Pearson desarrollaron:",
                 "en": "Neyman and Pearson developed:"
               },
-              "choices": [
-                {
-                  "es": "El diseno experimental",
-                  "en": "Experimental design"
-                },
-                {
-                  "es": "El marco de pruebas de hipotesis",
-                  "en": "The hypothesis testing framework"
-                }
+              "answers": [
+                "el marco de pruebas de hipotesis",
+                "pruebas de hipotesis",
+                "contrastes de hipotesis",
+                "hipotesis alternativa y potencia"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Pruebas de hipotesis.",
-                "en": "Hypothesis testing."
+                "es": "Añadieron la hipótesis alternativa y los dos tipos de error."
               },
               "solution": {
-                "es": "El marco de pruebas de hipotesis (H0/H1, errores, potencia).",
-                "en": "The hypothesis testing framework (H0/H1, errors, power)."
+                "es": "Neyman y Pearson desarrollaron el marco de pruebas de hipótesis: hipótesis nula y alternativa, errores de tipo I y II, y potencia. Ese marco permitió planificar estudios y decidir con riesgos conocidos."
+              },
+              "explain": {
+                "es": "Si respondiste «el diseño experimental», esa es la aportación de Fisher. Neyman y Pearson se centraron en la decisión estadística: fijar un nivel, declarar una alternativa y controlar la probabilidad de equivocarse. Sin hipótesis alternativa no hay potencia, y sin potencia no se puede planificar un estudio con antelación."
               },
               "xp": 10
             },
             {
               "id": "F1-L3-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Fisher trabajo en la estacion experimental de Rothamsted.",
                 "en": "Fisher worked at the Rothamsted experimental station."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Allí estudiaba el rendimiento de cultivos y los abonos."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: Fisher trabajó en la estación experimental de Rothamsted, donde desarrolló el análisis de la varianza y los principios de diseño aplicados a la agricultura. De ese contexto práctico surgieron muchos de sus métodos."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», el error es de contexto: el laboratorio agrícola fue precisamente el lugar donde los problemas de fertilizantes y parcelas exigieron comparar grupos con rigor y diseñar experimentos. Allí comparó abonos y variedades de cultivo, y de ese trabajo práctico salió el análisis de la varianza."
+              },
+              "xp": 10
             }
           ]
         },
@@ -1232,87 +1189,73 @@ export default {
           "exercises": [
             {
               "id": "F1-L4-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Thomas Bayes publico su teorema:",
                 "en": "Thomas Bayes published his theorem:"
               },
-              "choices": [
-                {
-                  "es": "En vida",
-                  "en": "In his lifetime"
-                },
-                {
-                  "es": "Postumamente (1763)",
-                  "en": "Posthumously (1763)"
-                }
+              "answers": [
+                "postumamente",
+                "póstumamente",
+                "postumamente 1763",
+                "despues de su muerte",
+                "1763"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Postumamente.",
-                "en": "Posthumously."
+                "es": "No vio publicado su resultado."
               },
               "solution": {
-                "es": "Postumamente (1763, por Richard Price).",
-                "en": "Posthumously (1763, by Richard Price)."
+                "es": "El ensayo de Bayes se publicó póstumamente en 1763, editado por Richard Price. Laplace llegó a resultados equivalentes de forma independiente, y el método quedó en segundo plano hasta el auge computacional del siglo XX."
+              },
+              "explain": {
+                "es": "Si respondiste «en vida», el dato es incorrecto: Bayes no publicó su teorema en vida. El manuscrito apareció tras su muerte gracias al trabajo editorial de Richard Price. El editor Richard Price ordenó y publicó el manuscrito dos años después de la muerte de su autor."
               },
               "xp": 10
             },
             {
               "id": "F1-L4-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Bayes se usa hoy en:",
                 "en": "Bayes is used today in:"
               },
-              "choices": [
-                {
-                  "es": "Solo en teoria",
-                  "en": "Only in theory"
-                },
-                {
-                  "es": "Spam, diagnostico, LLMs",
-                  "en": "Spam, diagnosis, LLMs"
-                }
+              "answers": [
+                "spam diagnostico llms",
+                "spam",
+                "diagnostico",
+                "filtros de spam",
+                "diagnostico medico",
+                "llms"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Spam, diagnostico, LLMs.",
-                "en": "Spam, diagnosis, LLMs."
+                "es": "Piensa en correos no deseados y en modelos de lenguaje."
               },
               "solution": {
-                "es": "Spam, diagnostico medico, LLMs.",
-                "en": "Spam, medical diagnosis, LLMs."
+                "es": "El enfoque bayesiano se usa hoy en filtros de spam, diagnóstico médico, modelos de lenguaje y sistemas de recomendación. La actualización de probabilidades con evidencia nueva es la base común de esas aplicaciones."
+              },
+              "explain": {
+                "es": "Si respondiste «solo en teoría», la respuesta subestima su presencia: cualquier sistema que actualiza una probabilidad con cada dato nuevo está aplicando, con otro nombre, la lógica de Bayes. Cada correo clasificado y cada diagnóstico asistido actualizan probabilidades aplicando esa misma lógica."
               },
               "xp": 10
             },
             {
               "id": "F1-L4-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La revolucion bayesiana fue posible por el poder computacional.",
                 "en": "The Bayesian revolution was made possible by computing power."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Calcular una posterior para miles de parámetros exige máquinas."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la revolución bayesiana fue posible por el poder computacional. Los métodos de simulación permitieron calcular posteriores que antes eran inabarcables, y eso llevó el enfoque a la práctica cotidiana."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene distinguir teoría de práctica: la regla de Bayes es del siglo XVIII, pero su uso masivo llegó cuando la computación permitió resolver las integrales que antes bloqueaban su aplicación. Sin ordenadores, la posterior era una integral imposible de resolver a mano para modelos realistas."
+              },
+              "xp": 10
             }
           ]
         },
@@ -1381,87 +1324,69 @@ export default {
           "exercises": [
             {
               "id": "F1-L5-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Lo que NO cambio con el big data:",
                 "en": "What did NOT change with big data:"
               },
-              "choices": [
-                {
-                  "es": "El volumen de datos",
-                  "en": "Data volume"
-                },
-                {
-                  "es": "La necesidad de razonamiento",
-                  "en": "The need for reasoning"
-                }
+              "answers": [
+                "la necesidad de razonamiento",
+                "razonamiento",
+                "el razonamiento",
+                "la necesidad de razonar"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Razonamiento.",
-                "en": "Reasoning."
+                "es": "Lo que cambia es la cantidad de datos, no la lógica para decidir."
               },
               "solution": {
-                "es": "La necesidad de razonamiento, incertidumbre y causalidad.",
-                "en": "The need for reasoning, uncertainty and causation."
+                "es": "Lo que no cambió es la necesidad de razonamiento: definir la pregunta, elegir la muestra, distinguir asociación de causa y declarar la incertidumbre. El volumen de datos cambió; el criterio, no."
+              },
+              "explain": {
+                "es": "Si respondiste «el volumen de datos», has señalado lo que sí cambió. La lección del big data es que la tecnología multiplica la información disponible, pero no sustituye el juicio sobre qué medir y qué concluir. Sin esa disciplina, el volumen de información produce confianza y no conocimiento verificable."
               },
               "xp": 10
             },
             {
               "id": "F1-L5-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Un riesgo del big data es:",
                 "en": "A risk of big data is:"
               },
-              "choices": [
-                {
-                  "es": "Falta de datos",
-                  "en": "Lack of data"
-                },
-                {
-                  "es": "Correlaciones espurias",
-                  "en": "Spurious correlations"
-                }
+              "answers": [
+                "correlaciones espurias",
+                "correlacion espuria",
+                "correlaciones falsas"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Correlaciones espurias.",
-                "en": "Spurious correlations."
+                "es": "Con muchos datos, el azar produce asociaciones que no existen."
               },
               "solution": {
-                "es": "Correlaciones espurias en datasets enormes.",
-                "en": "Spurious correlations in huge datasets."
+                "es": "Un riesgo del big data es encontrar correlaciones espurias: con muchos datos y muchas variables, algunas asociaciones aparecen por azar. La defensa es el diseño, la validación y la búsqueda activa de explicaciones alternativas."
+              },
+              "explain": {
+                "es": "Si respondiste «falta de datos», el problema es el contrario: la abundancia multiplica las comparaciones y, con ellas, la probabilidad de que alguna parezca significativa sin serlo. Cuantas más variables se comparan, más probable es encontrar una coincidencia llamativa sin significado real."
               },
               "xp": 10
             },
             {
               "id": "F1-L5-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "El big data elimina la necesidad de estadistica.",
                 "en": "Big data eliminates the need for statistics."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Sin criterio, más datos solo producen más ruido."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: el big data no elimina la necesidad de estadística, la aumenta. Sin diseño, validación e interpretación, los datos masivos producen correlaciones espurias y conclusiones frágiles con apariencia de solidez."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido volumen con conocimiento. La estadística aporta precisamente lo que el volumen no da: criterios para distinguir señal de ruido y para saber qué se puede concluir. La estadística es el filtro que separa el patrón genuino del artefacto producido por el azar."
+              },
+              "xp": 10
             }
           ]
         }

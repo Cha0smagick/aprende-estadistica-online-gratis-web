@@ -1,0 +1,10 @@
+{
+  "module": "data/fundamentos/f0.js",
+  "items": {
+    "F0-L1-E3": "Por eso la alfabetización estadística es una habilidad general y no un conocimiento reservado a especialistas.",
+    "F0-L2-E3": "Entender esa dependencia explica por qué los cursos de estadística empiezan siempre por la probabilidad.",
+    "F0-L3-E3": "Esa distinción es la que justifica que se hable de error de muestreo y de margen al reportar un resultado.",
+    "F0-L4-E3": "El diseño es lo que convierte una asociación en una hipótesis causal defendible o la descarta.",
+    "F0-L5-E3": "Buscar el mecanismo y controlar confusores es lo único que permite pasar de la asociación a la causa."
+  }
+}

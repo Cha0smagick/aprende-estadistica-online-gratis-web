@@ -1,0 +1,30 @@
+{
+  "module": "data/fundamentos/f0.js",
+  "items": {
+    "F0-L1-E3": {
+      "hint": "Piensa en las noticias, en el trabajo y en el médico.",
+      "solution": "Falso: la estadística se usa en ciencia, pero también en publicidad, deportes, finanzas, medicina y decisiones cotidianas. Su alcance no se limita a la investigación académica.",
+      "explain": "Si respondiste «verdadero», estás pensando solo en su uso científico. La estadística es una herramienta de decisión que aparece en cualquier contexto donde haya datos y consecuencias, incluidos los más cotidianos."
+    },
+    "F0-L2-E3": {
+      "hint": "Una es la base de la otra.",
+      "solution": "Falso: la probabilidad y la estadística no son independientes, son complementarias. La primera permite calcular qué esperar de un modelo; la segunda usa esos cálculos para inferir el modelo desde los datos.",
+      "explain": "Si respondiste «verdadero», has separado dos disciplinas que trabajan juntas. La inferencia estadística se construye con probabilidad: sin ella no habría intervalos, ni contrastes, ni márgenes de error."
+    },
+    "F0-L3-E3": {
+      "hint": "Cambia si se elige otra muestra del mismo tamaño.",
+      "solution": "Verdadero: el estadístico depende de la muestra y, por tanto, es una variable aleatoria. Si se repite el estudio con otra muestra, su valor cambia; el parámetro poblacional, en cambio, permanece fijo.",
+      "explain": "Si respondiste «falso», conviene distinguir los dos conceptos: el parámetro es un número fijo y desconocido; el estadístico se calcula con los datos y varía de muestra a muestra por puro azar del muestreo."
+    },
+    "F0-L4-E3": {
+      "hint": "Piensa en el helado y los ahogamientos: ambos suben en verano.",
+      "solution": "Falso: la correlación no implica causalidad. Dos variables pueden asociarse por un confusor común, por causalidad inversa o por simple coincidencia, y el diseño del estudio es lo que permite distinguir esos casos.",
+      "explain": "Si respondiste «verdadero», has comprado el error más repetido de la estadística. Una asociación observada puede deberse a una tercera variable, y sin un diseño adecuado no hay forma de saberlo."
+    },
+    "F0-L5-E3": {
+      "hint": "El helado y los ahogamientos suben juntos en verano.",
+      "solution": "Falso: la correlación no implica causalidad. Puede existir un confusor, como el calor, que explique ambas variables; también puede haber causalidad inversa o una coincidencia sin mecanismo.",
+      "explain": "Si respondiste «verdadero», el ejemplo del helado y los ahogamientos lo desmiente: ambos aumentan en verano por una causa común, y ninguna de las dos variables causa la otra, aunque la correlación sea altísima."
+    }
+  }
+}

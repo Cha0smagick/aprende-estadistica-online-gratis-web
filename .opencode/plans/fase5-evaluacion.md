@@ -63,7 +63,14 @@ Hecho:
 
 Hallazgo importante: el sitio consume **`data/<curso>.js` (bundle)**, no los archivos de `data/<curso>/`. Los módulos son fuentes y pueden divergir. Se añadió `scripts/sync-module.mjs <curso> <archivo> <ID>` para sincronizar ejercicios; todo cambio de contenido debe pasar por ahí.
 
-Pendiente (etapas 2–3): 466 ejercicios por convertir, 471 sin `explain`, 470 con solución corta, 20 pistas que filtran, examen final por curso.
+Pendiente (etapas 2–3): 451 ejercicios por convertir, 451 sin `explain`, 451 con solución corta, 20 pistas que filtran, examen final por curso.
+
+## Progreso etapa 2 (2026-11-10)
+
+- F0 cerrado: 15/15 con explicación y solución; 10 a `short`.
+- F1 cerrado: 15/15 con explicación y solución; 10 a `short`.
+- Acumulado: 30/481 con feedback completo (6,2 %), 20/481 en producción (4,2 %), 0 pistas filtradas en fundamentos.
+- Ritmo observado: ~2.000 palabras de feedback por módulo de 15 ejercicios. Quedan 30 módulos (~451 ejercicios).
 
 ## Criterio de aceptación
 

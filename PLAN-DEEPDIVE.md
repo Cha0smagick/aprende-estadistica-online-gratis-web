@@ -303,12 +303,14 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 
 | Ítem | Antes | Ahora | Objetivo |
 |---|---:|---:|---:|
-| Ejercicios en formato producción | 0 | 10 | ≥241 |
-| Con `explain` ≥40 palabras | 0 | 10 | 481 |
-| Con solución ≥60 caracteres | 1 | 11 | 481 |
+| Ejercicios en formato producción | 0 | 20 | ≥241 |
+| Con `explain` ≥40 palabras | 0 | 30 | 481 |
+| Con solución ≥60 caracteres | 1 | 30 | 481 |
 | Pistas que filtran la respuesta | 20 | 20 | 0 |
 
-Motor: tipo `short`, explicación al fallar, registro de primer intento y maestría ≥80 % para completar la lección. Pilot: módulo F0 (15 ejercicios, 10 convertidos). Plan: `.opencode/plans/fase5-evaluacion.md`.
+**Fundamentos cerrado** (F0 y F1): 30/30 con explicación y solución razonada, 20/30 en formato producción, 0 pistas filtradas en esos módulos.
+
+Motor: tipo `short`, explicación al fallar, registro de primer intento y maestría ≥80 % para completar la lección. Herramientas: `audit-exercises.mjs`, `validate-feedback.mjs` (informativo; `--strict` para el final), `apply-feedback.mjs` + `append-explain.mjs` con parches en `scripts/patches/`, y `sync-module.mjs`.
 
 Nota técnica: el sitio consume el bundle `data/<curso>.js`; los módulos de `data/<curso>/` son fuentes. Sincronizar con `node scripts/sync-module.mjs <curso> <archivo> <ID>`.
 

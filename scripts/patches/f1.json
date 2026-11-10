@@ -1,0 +1,100 @@
+{
+  "module": "data/fundamentos/f1.js",
+  "items": {
+    "F1-L1-E1": {
+      "type": "short",
+      "answers": ["juegos de azar", "los juegos de azar", "juegos", "apuestas"],
+      "hint": "Piensa en mesas de dados y apuestas, no en registros de población.",
+      "solution": "La probabilidad nació de los juegos de azar: los problemas de apuestas del siglo XVII obligaron a calcular lo que aún no había ocurrido. Los censos son el otro origen, el de la estadística descriptiva.",
+      "explain": "Si respondiste «los censos», has señalado el origen de la estadística, no de la probabilidad. Los censos servían para contar poblaciones; el cálculo de probabilidades surgió de preguntas sobre dados, cartas y repartos de premios."
+    },
+    "F1-L1-E2": {
+      "type": "short",
+      "answers": ["el problema de los puntos", "problema de los puntos", "reparto de apuestas", "los puntos"],
+      "hint": "Se trataba de repartir un premio cuando el juego se interrumpía.",
+      "solution": "Pascal y Fermat resolvieron en 1654 el problema de los puntos: cómo repartir las apuestas de un juego interrumpido. Su correspondencia sentó las bases del cálculo de probabilidades y del concepto de esperanza.",
+      "explain": "Si respondiste «el censo romano», has mezclado las dos tradiciones. El censo es una práctica administrativa antigua; el problema de los puntos es una pregunta matemática concreta sobre apuestas y probabilidades."
+    },
+    "F1-L1-E3": {
+      "hint": "La probabilidad es muy posterior a los primeros recuentos de población.",
+      "solution": "Verdadero: los censos y registros existen desde la Antigüedad, mientras que el cálculo de probabilidades se desarrolla en el siglo XVII. La estadística descriptiva es, por tanto, anterior a la teoría del azar.",
+      "explain": "Si respondiste «falso», conviene ordenar la cronología: primero se cuenta la población con fines fiscales y militares, y solo muchos siglos después se plantea cómo cuantificar la incertidumbre de un juego."
+    },
+    "F1-L2-E1": {
+      "type": "short",
+      "answers": ["minimos cuadrados", "mínimos cuadrados", "la normal", "minimos cuadrados y la normal", "distribucion normal"],
+      "hint": "Una técnica para ajustar datos ruidosos y una curva con forma de campana.",
+      "solution": "Gauss desarrolló el método de mínimos cuadrados y usó la distribución normal para modelar errores de medición. Su cálculo de la órbita de Ceres con pocos datos mostró el poder del método.",
+      "explain": "Si respondiste «la probabilidad», la respuesta es demasiado amplia. Gauss aportó herramientas concretas: el ajuste por mínimos cuadrados y el modelo normal para los errores, que después se aplicaron a toda la ciencia."
+    },
+    "F1-L2-E2": {
+      "type": "short",
+      "answers": ["el tcl", "tcl", "teorema central del limite", "teorema central del límite", "el teorema central del limite"],
+      "hint": "Explica por qué la media se distribuye en campana.",
+      "solution": "Laplace demostró el teorema central del límite: la suma o media de muchas variables independientes tiende a distribuirse como una normal. Ese resultado, publicado en su tratado de 1812, dio a la campana alcance general.",
+      "explain": "Si respondiste «la regla de Bayes», has confundido dos aportaciones distintas. Laplace también trabajó en probabilidad inversa, pero el resultado que explica la ubicuidad de la campana es el teorema central del límite."
+    },
+    "F1-L2-E3": {
+      "hint": "Piensa en las medidas repetidas de los astrónomos.",
+      "solution": "Verdadero: la distribución normal se usó para describir los errores de medición en astronomía, donde las observaciones repetidas se agrupaban alrededor de un valor central. De ahí pasó a la teoría del error y a la estadística.",
+      "explain": "Si respondiste «falso», conviene recordar el contexto: los astrónomos necesitaban combinar observaciones ruidosas, y la campana describía bien cómo se repartían los errores alrededor del valor verdadero."
+    },
+    "F1-L3-E1": {
+      "type": "short",
+      "answers": ["el p-valor y el anova", "p-valor", "el valor p", "anova", "el p-valor y el analisis de la varianza"],
+      "hint": "Una medida de evidencia y una técnica para comparar varios grupos.",
+      "solution": "Fisher introdujo el valor p, el análisis de la varianza y los principios del diseño experimental. Su trabajo en Rothamsted y su libro de 1925 transformaron la forma de contrastar hipótesis con datos.",
+      "explain": "Si respondiste «la probabilidad», la respuesta es demasiado general. Fisher no inventó la probabilidad: aportó herramientas de inferencia aplicada, como el valor p, la ANOVA y la aleatorización en el diseño."
+    },
+    "F1-L3-E2": {
+      "type": "short",
+      "answers": ["el marco de pruebas de hipotesis", "pruebas de hipotesis", "contrastes de hipotesis", "hipotesis alternativa y potencia"],
+      "hint": "Añadieron la hipótesis alternativa y los dos tipos de error.",
+      "solution": "Neyman y Pearson desarrollaron el marco de pruebas de hipótesis: hipótesis nula y alternativa, errores de tipo I y II, y potencia. Ese marco permitió planificar estudios y decidir con riesgos conocidos.",
+      "explain": "Si respondiste «el diseño experimental», esa es la aportación de Fisher. Neyman y Pearson se centraron en la decisión estadística: fijar un nivel, declarar una alternativa y controlar la probabilidad de equivocarse."
+    },
+    "F1-L3-E3": {
+      "hint": "Allí estudiaba el rendimiento de cultivos y los abonos.",
+      "solution": "Verdadero: Fisher trabajó en la estación experimental de Rothamsted, donde desarrolló el análisis de la varianza y los principios de diseño aplicados a la agricultura. De ese contexto práctico surgieron muchos de sus métodos.",
+      "explain": "Si respondiste «falso», el error es de contexto: el laboratorio agrícola fue precisamente el lugar donde los problemas de fertilizantes y parcelas exigieron comparar grupos con rigor y diseñar experimentos."
+    },
+    "F1-L4-E1": {
+      "type": "short",
+      "answers": ["postumamente", "póstumamente", "postumamente 1763", "despues de su muerte", "1763"],
+      "hint": "No vio publicado su resultado.",
+      "solution": "El ensayo de Bayes se publicó póstumamente en 1763, editado por Richard Price. Laplace llegó a resultados equivalentes de forma independiente, y el método quedó en segundo plano hasta el auge computacional del siglo XX.",
+      "explain": "Si respondiste «en vida», el dato es incorrecto: Bayes no publicó su teorema en vida. El manuscrito apareció tras su muerte gracias al trabajo editorial de Richard Price."
+    },
+    "F1-L4-E2": {
+      "type": "short",
+      "answers": ["spam diagnostico llms", "spam", "diagnostico", "filtros de spam", "diagnostico medico", "llms"],
+      "hint": "Piensa en correos no deseados y en modelos de lenguaje.",
+      "solution": "El enfoque bayesiano se usa hoy en filtros de spam, diagnóstico médico, modelos de lenguaje y sistemas de recomendación. La actualización de probabilidades con evidencia nueva es la base común de esas aplicaciones.",
+      "explain": "Si respondiste «solo en teoría», la respuesta subestima su presencia: cualquier sistema que actualiza una probabilidad con cada dato nuevo está aplicando, con otro nombre, la lógica de Bayes."
+    },
+    "F1-L4-E3": {
+      "hint": "Calcular una posterior para miles de parámetros exige máquinas.",
+      "solution": "Verdadero: la revolución bayesiana fue posible por el poder computacional. Los métodos de simulación permitieron calcular posteriores que antes eran inabarcables, y eso llevó el enfoque a la práctica cotidiana.",
+      "explain": "Si respondiste «falso», conviene distinguir teoría de práctica: la regla de Bayes es del siglo XVIII, pero su uso masivo llegó cuando la computación permitió resolver las integrales que antes bloqueaban su aplicación."
+    },
+    "F1-L5-E1": {
+      "type": "short",
+      "answers": ["la necesidad de razonamiento", "razonamiento", "el razonamiento", "la necesidad de razonar"],
+      "hint": "Lo que cambia es la cantidad de datos, no la lógica para decidir.",
+      "solution": "Lo que no cambió es la necesidad de razonamiento: definir la pregunta, elegir la muestra, distinguir asociación de causa y declarar la incertidumbre. El volumen de datos cambió; el criterio, no.",
+      "explain": "Si respondiste «el volumen de datos», has señalado lo que sí cambió. La lección del big data es que la tecnología multiplica la información disponible, pero no sustituye el juicio sobre qué medir y qué concluir."
+    },
+    "F1-L5-E2": {
+      "type": "short",
+      "answers": ["correlaciones espurias", "correlacion espuria", "correlaciones falsas"],
+      "hint": "Con muchos datos, el azar produce asociaciones que no existen.",
+      "solution": "Un riesgo del big data es encontrar correlaciones espurias: con muchos datos y muchas variables, algunas asociaciones aparecen por azar. La defensa es el diseño, la validación y la búsqueda activa de explicaciones alternativas.",
+      "explain": "Si respondiste «falta de datos», el problema es el contrario: la abundancia multiplica las comparaciones y, con ellas, la probabilidad de que alguna parezca significativa sin serlo."
+    },
+    "F1-L5-E3": {
+      "hint": "Sin criterio, más datos solo producen más ruido.",
+      "solution": "Falso: el big data no elimina la necesidad de estadística, la aumenta. Sin diseño, validación e interpretación, los datos masivos producen correlaciones espurias y conclusiones frágiles con apariencia de solidez.",
+      "explain": "Si respondiste «verdadero», has confundido volumen con conocimiento. La estadística aporta precisamente lo que el volumen no da: criterios para distinguir señal de ruido y para saber qué se puede concluir."
+    }
+  }
+}

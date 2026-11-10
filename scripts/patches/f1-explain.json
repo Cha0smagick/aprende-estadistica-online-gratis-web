@@ -1,0 +1,20 @@
+{
+  "module": "data/fundamentos/f1.js",
+  "items": {
+    "F1-L1-E1": "El azar de los dados era el laboratorio perfecto: barato, repetible y con resultados fáciles de contar.",
+    "F1-L1-E2": "Repartir un premio exige valorar lo que todavía no ha ocurrido, y esa es precisamente la esencia del cálculo de probabilidades.",
+    "F1-L1-E3": "Los recuentos de población existen desde Egipto y Roma; la teoría del azar no aparece hasta el siglo XVII.",
+    "F1-L2-E1": "La órbita de Ceres se predijo con pocas observaciones ruidosas, y el método se convirtió en estándar científico.",
+    "F1-L2-E2": "Con ese resultado, la campana dejó de ser una curiosidad algebraica y pasó a ser una herramienta general de análisis.",
+    "F1-L2-E3": "De ahí que durante décadas se la conociera como ley de los errores antes que como distribución normal.",
+    "F1-L3-E1": "Su manual de 1925 puso esos métodos al alcance de investigadores de cualquier disciplina con datos disponibles.",
+    "F1-L3-E2": "Sin hipótesis alternativa no hay potencia, y sin potencia no se puede planificar un estudio con antelación.",
+    "F1-L3-E3": "Allí comparó abonos y variedades de cultivo, y de ese trabajo práctico salió el análisis de la varianza.",
+    "F1-L4-E1": "El editor Richard Price ordenó y publicó el manuscrito dos años después de la muerte de su autor.",
+    "F1-L4-E2": "Cada correo clasificado y cada diagnóstico asistido actualizan probabilidades aplicando esa misma lógica.",
+    "F1-L4-E3": "Sin ordenadores, la posterior era una integral imposible de resolver a mano para modelos realistas.",
+    "F1-L5-E1": "Sin esa disciplina, el volumen de información produce confianza y no conocimiento verificable.",
+    "F1-L5-E2": "Cuantas más variables se comparan, más probable es encontrar una coincidencia llamativa sin significado real.",
+    "F1-L5-E3": "La estadística es el filtro que separa el patrón genuino del artefacto producido por el azar."
+  }
+}
