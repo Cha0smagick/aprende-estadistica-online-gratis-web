@@ -334,6 +334,10 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-10 | Inferencial C9 | C9-L2 | 2.501 | ✅ validado |
 | 2026-11-10 | **C9 completo (3/3) — Inferencial 33/33** | C9-L3 | 2.500 | ✅ validado |
 | 2026-11-10 | Fundamentos F0 | F0-L1 | 2.502 | ✅ validado |
+| 2026-11-10 | Fundamentos F0 | F0-L2 | 2.501 | ✅ validado |
+| 2026-11-10 | Fundamentos F0 | F0-L3 | 2.534 | ✅ validado |
+| 2026-11-10 | Fundamentos F0 | F0-L4 | 2.500 | ✅ validado |
+| 2026-11-10 | **F0 completo (5/5)** | F0-L5 | 2.500 | ✅ validado |
 
-Acumulado: **106/115** deep dives (42 descriptiva + 30 probabilidad + 33 inferencial + 1 fundamentos). **Tres cursos completos; F0 en curso (1/5).** Pendientes: F0-L2–L5 y F1 (9).
+Acumulado: **110/115** deep dives (42 descriptiva + 30 probabilidad + 33 inferencial + 5 fundamentos). **Tres cursos completos y F0 cerrado.** Pendientes: F1 (5).
 
