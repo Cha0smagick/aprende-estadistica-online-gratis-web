@@ -115,7 +115,7 @@ Durante la transición el script **reporta** pero no bloquea CI. Cuando esté 11
 - [x] **P0.6** Escribir la lección piloto `A3-L1` (ES) con ≥2.500 palabras.
 - [x] **P0.7** Escribir la lección piloto `A3-L1` (EN) con ≥2.500 palabras.
 - [x] **P0.8** `node scripts/generate.mjs` + `node scripts/validate-content.mjs` + spot-check de la página.
-- [ ] **P0.9** Commit `content: A3-L1 deep dive (ES/EN) + pipeline de contenido`.
+- [x] **P0.9** Commit `content: A3-L1 deep dive (ES/EN) + pipeline de contenido`.
 - [x] **P0.10** Arreglar el marcador del quiz (`Score: 0/N` → vivo).
 - [x] **P0.11** Permitir reintento tras fallo y desbloquear “Solución” solo tras intento.
 - [x] **P0.12** Corregir IDs `*-rev` del SRS para que `/repaso/` los resuelva.
@@ -130,18 +130,18 @@ Orden: A3 → A4 → A5 → A6 → A2 → A1 → A0.
 
 - [x] **A3** (6): media, mediana, moda, medias ponderada/geométrica/armónica, cuándo usar cada una, relación media-mediana.
 - [x] **A4** (5): rango/IQR, varianza/desviación, CV, MAD, poblacional vs muestral.
-- [ ] **A5** (5): cuartiles/percentiles, z, asimetría/curtosis, regla empírica, boxplots.
-- [ ] **A6** (6): covarianza, Pearson, Spearman, regresión simple, correlación≠causalidad, ajuste/bondad.
+- [x] **A5** (5): cuartiles/percentiles, z, asimetría/curtosis, regla empírica, boxplots.
+- [x] **A6** (6): covarianza, Pearson, Spearman, regresión simple, correlación≠causalidad, ajuste/bondad.
 - [ ] **A2** (6): frecuencias, histogramas/bins, series temporales, Pareto, gráficos engañosos, bivariados.
-- [ ] **A1** (6): población/muestra, tipos de variables, escalas, fuentes, hoja limpia, representatividad.
-- [ ] **A0** (8): número, fracciones/porcentajes, notación científica, redondeo, medias ponderadas, tablas, tasas, unidades.
+- [ ] **A1** (6): población/muestra, tipos de variables, escalas, fuentes, hoja limpia, representatividad. — **en curso: 2/6 (L1–L2)**
+- [x] **A0** (8): número, fracciones/porcentajes, notación científica, redondeo, medias ponderadas, tablas, tasas, unidades.
 
-Cada módulo es un lote: ES → validar → EN → validar → generate → spot-check → commit → push.
+Cada módulo es un lote: ES → validar → generate → spot-check → commit → push (alcance ES-only desde 2026-11-08).
 
 ### Fase 2 — Contenido: Probabilidad (30 lecciones)
 
-- [ ] B0 (1), B1 (2), B2 (3), B3 (2), B4 (2), B5 (4), B6 (4), B7 (3), B8 (5), B9 (4).
-- [ ] Añadir en las lecciones que correspondan: simulación, ley de los grandes números, varianza de la suma, aproximaciones, RTP y ruina.
+- [x] B0 (1), B1 (2), B2 (3), B3 (2), B4 (2), B5 (4), B6 (4), B7 (3), B8 (5), B9 (4). — **30/30 completas**
+- [ ] Añadir en las lecciones que correspondan: simulación, ley de los grandes números, varianza de la suma, aproximaciones, RTP y ruina. *(RTP y ruina cubiertos en B8; simulación/LGN parcialmente en B5–B7.)*
 
 ### Fase 3 — Contenido: Inferencial (33 lecciones)
 
@@ -253,7 +253,7 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 | 2026-11-05 | Módulo A4 completo (5/5) | ✅ |
 | 2026-11-05 | Módulo A5 completo (5/5) | ✅ |
 | 2026-11-05 | Módulo A6 completo (6/6) | ✅ |
-| 2026-11-05 | **Descriptiva completa: 22/22 lecciones** | ✅ |
+| 2026-11-05 | Módulos A3–A6 completos (22/22) | ✅ |
 | 2026-11-05 | A7-L1/L2 escritas (luego remapeadas a B0-L1/B5-L1) | ✅ |
 | 2026-11-08 | Alcance reducido a español + traductor; validador sin paridad | ✅ |
 | 2026-11-08 | Módulo B1 completo (2/2, ES) | ✅ |
@@ -267,12 +267,13 @@ Cada módulo es un lote: ES → validar → EN → validar → generate → spot
 | 2026-11-09 | Módulo B9 completo (4/4, ES) — **probabilidad 30/30** | ✅ |
 | 2026-11-09 | **Módulo A0 completo (8/8, ES)** | ✅ |
 | 2026-11-09 | A1 en curso: A1-L1–L2 (2/6, ES) | ⏳ |
-| — | Descriptiva 42/42 | ✅ |
-| — | Probabilidad 30/30 | ⏳ |
-| — | Inferencial 33/33 | ⏳ |
-| — | Fundamentos 10/10 | ⏳ |
-| — | Evaluación/feedback | ⏳ |
-| — | Certificación | ⏳ |
-| — | Re-auditoría ≥95 | ⏳ |
+| 2026-11-09 | **Estado global: 62/115 deep dives (53,9%)** | ⏳ |
+| — | Descriptiva 32/42 (76,2%) | ⏳ |
+| — | Probabilidad 30/30 (100%) | ✅ |
+| — | Inferencial 0/33 (0%) | ⏳ |
+| — | Fundamentos 0/10 (0%) | ⏳ |
+| — | Fases 5–8: evaluación, retención, UX y certificación | ⏳ |
 
-**Siguiente paso inmediato:** terminar el deep dive de probabilidad (B1→B9), luego A0–A2, inferencial C0–C9 y fundamentos F0–F1, un módulo por commit.
+**Avance de contenido: 62/115 lecciones = 53,9 %.** Quedan 53 deep dives (46,1 %). El plan completo es menor que ese 53,9 % porque las Fases 5–8 (evaluación, retención, motivación/UX y certificación) no han comenzado.
+
+**Siguiente paso inmediato:** completar A1 (L3–L6), luego A2 (6), inferencial C0–C9 (33) y fundamentos F0–F1 (10), un módulo por commit.
