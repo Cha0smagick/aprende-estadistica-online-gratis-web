@@ -300,6 +300,10 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-10 | A2 en curso | A2-L4 | 2.500 | ✅ validado |
 | 2026-11-10 | A2 en curso | A2-L5 | 2.530 | ✅ validado |
 | 2026-11-10 | **A2 completo (6/6) — Descriptiva 42/42** | A2-L6 | 2.523 | ✅ validado |
+| 2026-11-10 | Inferencial C0 | C0-L1 | 2.807 | ✅ validado |
+| 2026-11-10 | Inferencial C0 | C0-L2 | 2.737 | ✅ validado |
+| 2026-11-10 | Inferencial C0 | C0-L3 | 2.548 | ✅ validado |
+| 2026-11-10 | **C0 completo (4/4)** | C0-L4 | 2.500 | ✅ validado |
 
-Acumulado: **72/115** deep dives (42 descriptiva + 30 probabilidad). **Descriptiva 42/42 y Probabilidad 30/30 completos.** Pendientes: C0–C9 (33) y F0–F1 (10).
+Acumulado: **76/115** deep dives (42 descriptiva + 30 probabilidad + 4 inferencial). **Descriptiva 42/42 y Probabilidad 30/30 completos; C0 4/4.** Pendientes: C1–C9 (29) y F0–F1 (10).
 
