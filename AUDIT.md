@@ -288,6 +288,7 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-09 | B9 — Psicología y entropía | B9-L1, B9-L2, B9-L3, B9-L4 | 2.502 / 2.500 / 2.500 / 2.500 | ✅ validado |
 | 2026-11-09 | A0 — Aritmética mínima (en curso) | A0-L1, A0-L2, A0-L3 | 2.500 / 2.500 / 2.501 | ✅ validado |
 | 2026-11-09 | A0 — Aritmética mínima (en curso) | A0-L4, A0-L5 | 2.501 / 2.501 | ✅ validado |
+| 2026-11-09 | **A0 completo (8/8)** | A0-L6, A0-L7, A0-L8 | 2.501 / 2.501 / 2.500 | ✅ validado |
 
-Acumulado: **57/115** deep dives (27 descriptiva + 30 probabilidad). **Probabilidad 30/30 completa.** A0 en curso (5/8). Pendientes: A0 (3), A1 (6), A2 (6), C0–C9 (33), F0–F1 (10).
+Acumulado: **60/115** deep dives (30 descriptiva + 30 probabilidad). **Probabilidad 30/30 y A0 8/8 completos.** Pendientes: A1 (6), A2 (6), C0–C9 (33), F0–F1 (10).
 
