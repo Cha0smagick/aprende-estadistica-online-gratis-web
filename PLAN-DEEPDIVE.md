@@ -151,7 +151,8 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 - [x] C3 (3): H0/H1, p-valor, errores tipo I y II. — **completo (3/3)**
 - [x] C4 (5): prueba z, prueba t, t de dos muestras, t pareada, tamaño del efecto. — **completo (5/5)**
 - [x] C5 (2): prueba z de una proporción, prueba z de dos proporciones. — **completo (2/2)**
-- [ ] C6 (2), C7 (4), C8 (4), C9 (3).
+- [x] C6 (2): chi-cuadrado de bondad de ajuste e independencia. — **completo (2/2)**
+- [ ] C7 (4), C8 (4), C9 (3).
 - [ ] Añadir: potencia y tamaño de muestra, bootstrap, no paramétricos, causalidad, datos faltantes, regresión múltiple con diagnóstico.
 
 ### Fase 4 — Contenido: Fundamentos (10 lecciones)

@@ -320,6 +320,8 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-10 | **C4 completo (5/5)** | C4-L5 | 2.526 | ✅ validado |
 | 2026-11-10 | Inferencial C5 | C5-L1 | 2.503 | ✅ validado |
 | 2026-11-10 | **C5 completo (2/2)** | C5-L2 | 2.503 | ✅ validado |
+| 2026-11-10 | Inferencial C6 | C6-L1 | 2.503 | ✅ validado |
+| 2026-11-10 | **C6 completo (2/2)** | C6-L2 | 2.503 | ✅ validado |
 
-Acumulado: **92/115** deep dives (42 descriptiva + 30 probabilidad + 20 inferencial). **C0–C5 completos.** Pendientes: C6–C9 (13) y F0–F1 (10).
+Acumulado: **94/115** deep dives (42 descriptiva + 30 probabilidad + 22 inferencial). **C0–C6 completos.** Pendientes: C7–C9 (11) y F0–F1 (10).
 
