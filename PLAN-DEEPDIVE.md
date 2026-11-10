@@ -133,7 +133,7 @@ Orden: A3 → A4 → A5 → A6 → A2 → A1 → A0.
 - [x] **A5** (5): cuartiles/percentiles, z, asimetría/curtosis, regla empírica, boxplots.
 - [x] **A6** (6): covarianza, Pearson, Spearman, regresión simple, correlación≠causalidad, ajuste/bondad.
 - [ ] **A2** (6): frecuencias, histogramas/bins, series temporales, Pareto, gráficos engañosos, bivariados. — **en curso: 2/6 (L1–L2)**
-- [ ] **A1** (6): población/muestra, tipos de variables, escalas, fuentes, hoja limpia, representatividad. — **en curso: 2/6 (L1–L2)**
+- [x] **A1** (6): población/muestra, tipos de variables, escalas, fuentes, hoja limpia, representatividad.
 - [x] **A0** (8): número, fracciones/porcentajes, notación científica, redondeo, medias ponderadas, tablas, tasas, unidades.
 
 Cada módulo es un lote: ES → validar → generate → spot-check → commit → push (alcance ES-only desde 2026-11-08).
@@ -268,13 +268,17 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 | 2026-11-09 | **Módulo A0 completo (8/8, ES)** | ✅ |
 | 2026-11-09 | **Módulo A1 completo (6/6, ES)** | ✅ |
 | 2026-11-09 | A2 en curso: A2-L1–L2 (2/6, ES) | ⏳ |
-| 2026-11-09 | **Estado global: 62/115 deep dives (53,9%)** | ⏳ |
-| — | Descriptiva 32/42 (76,2%) | ⏳ |
+| 2026-11-09 | **Estado global: 68/115 deep dives (59,1%)** | ⏳ |
+| — | Descriptiva 38/42 (90,5%) | ⏳ |
 | — | Probabilidad 30/30 (100%) | ✅ |
 | — | Inferencial 0/33 (0%) | ⏳ |
 | — | Fundamentos 0/10 (0%) | ⏳ |
 | — | Fases 5–8: evaluación, retención, UX y certificación | ⏳ |
 
-**Avance de contenido: 62/115 lecciones = 53,9 %.** Quedan 53 deep dives (46,1 %). El plan completo es menor que ese 53,9 % porque las Fases 5–8 (evaluación, retención, motivación/UX y certificación) no han comenzado.
+**Avance de contenido: 68/115 lecciones = 59,1 %.** Quedan 47 deep dives (40,9 %). El plan completo es menor que ese 59,1 % porque las Fases 5–8 (evaluación, retención, motivación/UX y certificación) no han comenzado.
 
-**Siguiente paso inmediato:** completar A1 (L3–L6), luego A2 (6), inferencial C0–C9 (33) y fundamentos F0–F1 (10), un módulo por commit.
+**Avance por módulos: 16 de 29 módulos completos = 55,2 %.** Completos: A0, A1, A3, A4, A5, A6 y B0–B9. En curso: A2 (2/6). Pendientes: C0–C9 (10 módulos) y F0–F1 (2 módulos).
+
+**Lectura del 100 %:** no hay un único porcentaje global fiable porque el plan mezcla contenido (115 deep dives) con fases transversales sin peso definido. La cifra medible es **59,1 % del contenido**; si se contaran las 9 fases por igual, el avance sería ~32 %, pero esa ponderación es arbitraria y no se usa como KPI.
+
+**Siguiente paso inmediato:** completar A2 (L3–L6), luego inferencial C0–C9 (33) y fundamentos F0–F1 (10), un módulo por commit.
