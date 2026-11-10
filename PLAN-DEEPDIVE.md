@@ -157,7 +157,9 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 - [x] C9 (3): plan maestro, proyecto final, certificado. — **completo (3/3)** · **Inferencial 33/33 cerrado**
 - [ ] Añadir: potencia y tamaño de muestra, bootstrap, no paramétricos, causalidad, datos faltantes, regresión múltiple con diagnóstico.
 
-### Fase 4 — Contenido: Fundamentos (10 lecciones)
+### Fase 4 - Contenido: Fundamentos (10 lecciones)
+
+- [ ] F0 (5), F1 (5). — **F0 en curso: 1/5 (L1)**
 
 - [ ] F0 (5), F1 (5).
 - [ ] Convertir la historia en historia *conectada* a los métodos, no en trivia.

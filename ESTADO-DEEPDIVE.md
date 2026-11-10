@@ -4,10 +4,11 @@
 
 ## Progreso actual
 
-- **105/115 lecciones completas** con deep dive ≥2.500 palabras en español, validadas por `validate-content.mjs`.
+- **106/115 lecciones completas** con deep dive ≥2.500 palabras en español, validadas por `validate-content.mjs`.
 - **Descriptiva: 42/42 — curso completo** (A0: 8/8, A1: 6/6, A2: 6/6, A3–A6: 22/22).
 - **Probabilidad:** 30/30 — **curso completo** (B0–B9).
-- **Inferencial: 33/33 — curso completo** (C0–C9) · **Fundamentos:** 0/10.
+- **Inferencial: 33/33 — curso completo** (C0–C9).
+- **Fundamentos: 1/10** (F0 1/5) — último curso pendiente.
 - Pipeline completo: mdDeep(), validate-content.mjs (≥2.500 palabras, 9 secciones, ###, tablas, $$, preguntas, detección de contenido huérfano). El inglés ya no se exige ni se publica.
 
 ## Reconciliación 2026-11-08
