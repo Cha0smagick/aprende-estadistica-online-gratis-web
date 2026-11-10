@@ -1,0 +1,18 @@
+{
+  "module": "data/descriptiva/a6.js",
+  "items": {
+    "A6-L1-E3": "Un diagrama de dispersión lo muestra de inmediato y evita esa conclusión errónea.",
+    "A6-L2-E1": "Es la razón por la que se reporta junto a la correlación y no en su lugar.",
+    "A6-L2-E4": "Si un cálculo ofrece 1,3, hay un error de fórmula o de datos.",
+    "A6-L3-E1": "Además, permite comparar variables medidas en escalas muy distintas sin transformarlas.",
+    "A6-L3-E3": "Por eso se usa con variables ordinales o con relaciones crecientes pero curvadas.",
+    "A6-L3-E4": "En escalas ordinales, suponer distancias iguales entre categorías es una decisión fuerte.",
+    "A6-L4-E3": "Cuanto más lejos del rango, mayor es la incertidumbre y menos defendible la predicción.",
+    "A6-L4-E5": "Leer bien esa cifra evita prometer una capacidad predictiva que el modelo no tiene.",
+    "A6-L5-E1": "La fuerza de la asociación no aporta información sobre la dirección del mecanismo.",
+    "A6-L5-E3": "Controlar ese factor exige medirlo y ajustarlo, o bien aleatorizar la exposición.",
+    "A6-L5-E4": "Por eso conviene preguntar siempre qué variable común podría explicar ambas cosas.",
+    "A6-L5-E5": "Cuando no es posible aleatorizar, el diseño observacional debe justificarse con más cuidado.",
+    "A6-L6-E3": "Por eso el diagnóstico se hace con gráficos y no solo con el coeficiente de determinación."
+  }
+}

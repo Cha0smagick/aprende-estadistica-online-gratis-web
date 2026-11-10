@@ -41,8 +41,9 @@ for (const [id, c] of Object.entries(patch.items)) {
   } else {
     const cm = line.match(/choices:\s*(\[.*?\]),\s*answer:/);
     const am = line.match(/answer:\s*(\d+)/);
-    if (!cm || !am) { skipped.push(id + " (choices/answer)"); continue; }
-    body = `{ id:"${id}", type:"mcq", prompt: ${prompt}, choices: ${cm[1]}, answer:${am[1]}, hint:{es:${q(c.hint)}}, solution:{es:${q(c.solution)}}, explain:{es:${q(c.explain)}}, xp:10 }`;
+    if ((!cm && !c.choicesEs) || !am) { skipped.push(id + " (choices/answer)"); continue; }
+    const choicesLit = c.choicesEs ? "[" + c.choicesEs.map((s) => `{es:${q(s)}}`).join(",") + "]" : cm[1];
+    body = `{ id:"${id}", type:"mcq", prompt: ${prompt}, choices: ${choicesLit}, answer:${am[1]}, hint:{es:${q(c.hint)}}, solution:{es:${q(c.solution)}}, explain:{es:${q(c.explain)}}, xp:10 }`;
   }
 
   text = text.replace(re, () => indent + body + (trailingComma ? "," : ""));

@@ -9432,37 +9432,24 @@ export default {
           "exercises": [
             {
               "id": "A6-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Covarianza positiva indica:",
                 "en": "Positive covariance indicates:"
               },
-              "choices": [
-                {
-                  "es": "Relación inversa",
-                  "en": "Inverse relation"
-                },
-                {
-                  "es": "Relación directa",
-                  "en": "Direct relation"
-                },
-                {
-                  "es": "Sin relación",
-                  "en": "No relation"
-                },
-                {
-                  "es": "Causalidad",
-                  "en": "Causation"
-                }
+              "answers": [
+                "relacion directa",
+                "directa",
+                "positiva"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Directa.",
-                "en": "Direct."
+                "es": "Cuando una crece, la otra también tiende a crecer."
               },
               "solution": {
-                "es": "Relación directa.",
-                "en": "Direct relation."
+                "es": "Una covarianza positiva indica relación directa: cuando una variable aumenta, la otra tiende a aumentar. Su magnitud no es interpretable porque depende de las unidades."
+              },
+              "explain": {
+                "es": "Si respondiste «relación inversa», has invertido el signo. La covarianza positiva suma productos de desviaciones del mismo signo, y eso ocurre cuando ambas variables se mueven en la misma dirección. El signo informa de la dirección; la fuerza requiere normalizar y usar correlación."
               },
               "xp": 10
             },
@@ -9493,42 +9480,34 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Unidades.",
-                "en": "Units."
+                "es": "Piensa qué pasa al cambiar de metros a centímetros."
               },
               "solution": {
-                "es": "Depende de las unidades.",
-                "en": "Depends on units."
+                "es": "El principal problema de la covarianza es que depende de las unidades: cambiar la escala de una variable multiplica su valor. Por eso no sirve para comparar fuerzas entre pares de variables distintos."
+              },
+              "explain": {
+                "es": "Si respondiste «que es siempre positiva», la covarianza puede ser negativa. El problema real es la escala: la misma relación medida en kilos y en gramos produce covarianzas distintas. La correlación resuelve ese problema al dividir por las desviaciones y quedar adimensional."
               },
               "xp": 10
             },
             {
               "id": "A6-L1-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Covarianza cero implica independencia.",
                 "en": "Zero covariance implies independence."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Solo lineal; puede haber relación no lineal.",
-                "en": "Only linear; nonlinear relation possible."
+                "es": "Cero covarianza solo descarta relación lineal."
               },
               "solution": {
-                "es": "Falso: puede haber relación no lineal.",
-                "en": "False: nonlinear relation possible."
+                "es": "Falso: covarianza cero no implica independencia, porque puede existir una relación no lineal. Una relación en forma de U puede tener covarianza nula y dependencia clara."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido ausencia de relación lineal con ausencia de relación. La covarianza mide solo la parte lineal; otras formas de dependencia quedan invisibles. Por eso conviene mirar siempre el diagrama de dispersión antes de concluir. Un diagrama de dispersión lo muestra de inmediato y evita esa conclusión errónea."
+              },
+              "xp": 10
             },
             {
               "id": "A6-L1-E4",
@@ -9557,48 +9536,34 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Correlación.",
-                "en": "Correlation."
+                "es": "Necesitas una medida que no dependa de las unidades."
               },
               "solution": {
-                "es": "La correlación.",
-                "en": "Correlation."
+                "es": "Para comparar la fuerza de una relación se usa la correlación, porque está acotada entre menos uno y uno y no depende de las unidades. La covarianza solo informa de la dirección."
+              },
+              "explain": {
+                "es": "Si respondiste «la covarianza», has elegido una medida cuya magnitud no es comparable entre pares de variables. La correlación normaliza por las desviaciones y permite decir si una relación es fuerte o débil. Esa normalización supone relación lineal, así que también tiene límites."
               },
               "xp": 10
             },
             {
               "id": "A6-L1-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Si X e Y se mueven en direcciones opuestas, la covarianza es:",
                 "en": "If X and Y move in opposite directions, covariance is:"
               },
-              "choices": [
-                {
-                  "es": "Positiva",
-                  "en": "Positive"
-                },
-                {
-                  "es": "Negativa",
-                  "en": "Negative"
-                },
-                {
-                  "es": "Cero",
-                  "en": "Zero"
-                },
-                {
-                  "es": "Infinita",
-                  "en": "Infinite"
-                }
+              "answers": [
+                "negativa"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Negativa.",
-                "en": "Negative."
+                "es": "Los productos de desviaciones tienen signos opuestos."
               },
               "solution": {
-                "es": "Negativa.",
-                "en": "Negative."
+                "es": "Si X e Y se mueven en direcciones opuestas, la covarianza es negativa, porque los productos de sus desviaciones tienden a ser negativos. El signo resume la dirección de la relación."
+              },
+              "explain": {
+                "es": "Si respondiste «positiva», has invertido la lógica del producto. Cuando una variable está por encima de su media y la otra por debajo, el producto de las desviaciones es negativo. Esa acumulación de productos negativos desplaza la covarianza hacia abajo."
               },
               "xp": 10
             }
@@ -9751,174 +9716,108 @@ export default {
           "exercises": [
             {
               "id": "A6-L2-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Si r=0,6, r² =",
                 "en": "If r=0.6, r² ="
               },
-              "answer": 2,
+              "answer": 0.36,
               "tol": 0.001,
               "hint": {
-                "es": "0,6².",
-                "en": "0.6²."
+                "es": "Eleva la correlación al cuadrado."
               },
               "solution": {
-                "es": "0,36 (36 %).",
-                "en": "0.36 (36%)."
+                "es": "0,6 al cuadrado es 0,36, así que la correlación explica el 36 % de la varianza. El resto queda en factores no medidos o en ruido."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "1.36",
-                  "en": "1.36"
-                },
-                {
-                  "es": "-0.64",
-                  "en": "-0.64"
-                },
-                {
-                  "es": "0.36",
-                  "en": "0.36"
-                },
-                {
-                  "es": "0.72",
-                  "en": "0.72"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 0,6, has dejado la correlación sin elevar. El cuadrado convierte una medida de asociación en proporción de variabilidad explicada, y esa transformación es la que permite decir cuánto aporta una variable a la predicción de la otra. Es la razón por la que se reporta junto a la correlación y no en su lugar."
+              },
+              "xp": 10
             },
             {
               "id": "A6-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "r=-0,9 indica:",
                 "en": "r=-0.9 indicates:"
               },
-              "choices": [
-                {
-                  "es": "Relación positiva fuerte",
-                  "en": "Strong positive"
-                },
-                {
-                  "es": "Relación negativa fuerte",
-                  "en": "Strong negative"
-                },
-                {
-                  "es": "Sin relación",
-                  "en": "No relation"
-                },
-                {
-                  "es": "Relación débil",
-                  "en": "Weak relation"
-                }
+              "answers": [
+                "relacion negativa fuerte",
+                "negativa fuerte",
+                "fuerte negativa"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Negativa fuerte.",
-                "en": "Strong negative."
+                "es": "El signo indica la dirección y el valor absoluto la fuerza."
               },
               "solution": {
-                "es": "Negativa fuerte.",
-                "en": "Strong negative."
+                "es": "Una correlación de menos 0,9 indica una relación negativa fuerte: las variables se mueven en direcciones opuestas y los puntos se ajustan mucho a una recta descendente."
+              },
+              "explain": {
+                "es": "Si respondiste «relación positiva fuerte», has leído el valor absoluto e ignorado el signo. La fuerza depende de la distancia a cero y la dirección del signo. Un menos 0,9 es tan fuerte como un 0,9, pero apunta en sentido contrario."
               },
               "xp": 10
             },
             {
               "id": "A6-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "r=0,2 se considera:",
                 "en": "r=0.2 is considered:"
               },
-              "choices": [
-                {
-                  "es": "Fuerte",
-                  "en": "Strong"
-                },
-                {
-                  "es": "Moderada",
-                  "en": "Moderate"
-                },
-                {
-                  "es": "Débil",
-                  "en": "Weak"
-                },
-                {
-                  "es": "Perfecta",
-                  "en": "Perfect"
-                }
+              "answers": [
+                "debil",
+                "relacion debil"
               ],
-              "answer": 2,
               "hint": {
-                "es": "<0,3.",
-                "en": "<0.3."
+                "es": "Está lejos de uno y cerca de cero."
               },
               "solution": {
-                "es": "Débil.",
-                "en": "Weak."
+                "es": "Una correlación de 0,2 se considera débil, porque explica solo el 4 % de la varianza. Existe una asociación positiva, pero es demasiado pequeña para predecir con precisión."
+              },
+              "explain": {
+                "es": "Si respondiste «moderada», has sobreestimado su fuerza. Las convenciones habituales consideran débil por debajo de 0,3, moderada hasta 0,7 y fuerte por encima. Esas etiquetas son orientativas y dependen del campo, pero el orden de magnitud ayuda a no exagerar."
               },
               "xp": 10
             },
             {
               "id": "A6-L2-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "r siempre está entre -1 y 1.",
                 "en": "r is always between -1 and 1."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Por construcción.",
-                "en": "By construction."
+                "es": "Es una versión normalizada de la covarianza."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la correlación de Pearson siempre está entre menos uno y uno, porque la covarianza se divide por el producto de las desviaciones. Los extremos corresponden a una relación lineal perfecta."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar la desigualdad de Cauchy-Schwarz, que garantiza ese rango. Un valor fuera del intervalo indica un error de cálculo. Los extremos solo se alcanzan cuando todos los puntos están exactamente sobre una recta. Si un cálculo ofrece 1,3, hay un error de fórmula o de datos."
+              },
+              "xp": 10
             },
             {
               "id": "A6-L2-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "r² representa:",
                 "en": "r² represents:"
               },
-              "choices": [
-                {
-                  "es": "La pendiente",
-                  "en": "The slope"
-                },
-                {
-                  "es": "La varianza explicada",
-                  "en": "Explained variance"
-                },
-                {
-                  "es": "El intercepto",
-                  "en": "The intercept"
-                },
-                {
-                  "es": "El error",
-                  "en": "The error"
-                }
+              "answers": [
+                "la varianza explicada",
+                "varianza explicada",
+                "proporcion de varianza explicada"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Varianza explicada.",
-                "en": "Explained variance."
+                "es": "Es la proporción de variabilidad de Y que la recta recoge."
               },
               "solution": {
-                "es": "Varianza explicada.",
-                "en": "Explained variance."
+                "es": "El coeficiente de determinación representa la proporción de varianza de la respuesta explicada por el predictor. Con una sola variable, equivale al cuadrado de la correlación."
+              },
+              "explain": {
+                "es": "Si respondiste «la pendiente», has confundido una medida de ajuste con una de cambio. La pendiente dice cuánto cambia Y por unidad de X; el coeficiente de determinación dice qué parte de la variabilidad queda explicada. Son conceptos distintos y pueden moverse en direcciones diferentes."
               },
               "xp": 10
             }
@@ -10063,137 +9962,84 @@ export default {
           "exercises": [
             {
               "id": "A6-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Spearman se basa en:",
                 "en": "Spearman is based on:"
               },
-              "choices": [
-                {
-                  "es": "Valores originales",
-                  "en": "Original values"
-                },
-                {
-                  "es": "Rangos",
-                  "en": "Ranks"
-                },
-                {
-                  "es": "Medias",
-                  "en": "Means"
-                },
-                {
-                  "es": "Varianzas",
-                  "en": "Variances"
-                }
+              "answers": [
+                "rangos"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Rangos.",
-                "en": "Ranks."
+                "es": "Sustituye cada valor por su posición ordenada."
               },
               "solution": {
-                "es": "Rangos.",
-                "en": "Ranks."
+                "es": "La correlación de Spearman se basa en los rangos: sustituye cada valor por su posición y calcula la correlación sobre esas posiciones. Así reduce el peso de los valores extremos."
+              },
+              "explain": {
+                "es": "Si respondiste «valores originales», has descrito Pearson. Spearman transforma primero los datos en rangos, y esa transformación explica sus dos propiedades: resiste a los atípicos y capta relaciones monótonas aunque no sean lineales. Además, permite comparar variables medidas en escalas muy distintas sin transformarlas."
               },
               "xp": 10
             },
             {
               "id": "A6-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Con outliers, mejor usar:",
                 "en": "With outliers, better use:"
               },
-              "choices": [
-                {
-                  "es": "Pearson",
-                  "en": "Pearson"
-                },
-                {
-                  "es": "Spearman",
-                  "en": "Spearman"
-                },
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "La varianza",
-                  "en": "Variance"
-                }
+              "answers": [
+                "spearman"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Spearman.",
-                "en": "Spearman."
+                "es": "Necesitas una medida que no se deje arrastrar por un punto extremo."
               },
               "solution": {
-                "es": "Spearman.",
-                "en": "Spearman."
+                "es": "Con valores atípicos conviene Spearman, porque trabaja con rangos y un punto extremo solo ocupa la primera o la última posición, sin arrastrar el coeficiente."
+              },
+              "explain": {
+                "es": "Si respondiste «Pearson», has elegido la medida sensible a los extremos. Un solo valor alejado puede cambiar la correlación lineal de fuerte a moderada. Spearman conserva la información de orden y reduce ese efecto, a costa de perder la magnitud exacta."
               },
               "xp": 10
             },
             {
               "id": "A6-L3-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Spearman captura relaciones monótonas no lineales.",
                 "en": "Spearman captures monotonic nonlinear relations."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Solo exige que la relación sea creciente o decreciente, no recta."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: Spearman captura relaciones monótonas no lineales, porque se basa en el orden y no en la forma exacta. Si al aumentar X, Y siempre aumenta, la correlación de rangos será alta aunque la curva no sea recta."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», has pensado en la linealidad de Pearson. Spearman detecta cualquier tendencia consistente, incluida una curva suave, porque solo compara posiciones. Su límite es distinto: no mide la forma ni la magnitud del cambio. Por eso se usa con variables ordinales o con relaciones crecientes pero curvadas."
+              },
+              "xp": 10
             },
             {
               "id": "A6-L3-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para datos ordinales, la correlación adecuada es:",
                 "en": "For ordinal data, appropriate correlation is:"
               },
-              "choices": [
-                {
-                  "es": "Pearson",
-                  "en": "Pearson"
-                },
-                {
-                  "es": "Spearman",
-                  "en": "Spearman"
-                },
-                {
-                  "es": "Covarianza",
-                  "en": "Covariance"
-                },
-                {
-                  "es": "r²",
-                  "en": "r²"
-                }
+              "answers": [
+                "spearman",
+                "correlacion de spearman"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Spearman.",
-                "en": "Spearman."
+                "es": "Los datos ordinales solo permiten ordenar."
               },
               "solution": {
-                "es": "Spearman.",
-                "en": "Spearman."
+                "es": "Para datos ordinales la correlación adecuada es Spearman, porque solo requiere el orden de las observaciones y no supone distancias iguales entre categorías."
+              },
+              "explain": {
+                "es": "Si respondiste «Pearson», has supuesto una escala numérica que los datos ordinales no garantizan. Con categorías ordenadas se sabe qué es mayor, pero no cuánto. Spearman respeta esa información limitada y evita atribuir diferencias que no se han medido. En escalas ordinales, suponer distancias iguales entre categorías es una decisión fuerte."
               },
               "xp": 10
             },
@@ -10224,12 +10070,13 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Por rangos.",
-                "en": "Rank-based."
+                "es": "Como Spearman, pero basada en concordancia de pares."
               },
               "solution": {
-                "es": "Otra correlación por rangos.",
-                "en": "Another rank correlation."
+                "es": "Kendall es otra correlación por rangos: mide la concordancia entre pares de observaciones ordenadas. Suele dar valores algo menores que Spearman y se interpreta de forma similar."
+              },
+              "explain": {
+                "es": "Si respondiste «una media», has confundido una medida de asociación con un resumen de tendencia central. Kendall compara pares concordantes y discordantes, y su valor también va de menos uno a uno. La elección entre Spearman y Kendall depende del contexto y de la tradición de cada campo."
               },
               "xp": 10
             }
@@ -10381,37 +10228,24 @@ export default {
           "exercises": [
             {
               "id": "A6-L4-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La pendiente b1 representa:",
                 "en": "Slope b1 represents:"
               },
-              "choices": [
-                {
-                  "es": "El valor de Y cuando X=0",
-                  "en": "Y value when X=0"
-                },
-                {
-                  "es": "El cambio en Y por unidad de X",
-                  "en": "Change in Y per unit of X"
-                },
-                {
-                  "es": "El error",
-                  "en": "The error"
-                },
-                {
-                  "es": "La correlación",
-                  "en": "Correlation"
-                }
+              "answers": [
+                "el cambio en y por unidad de x",
+                "cambio en y por unidad de x",
+                "cambio por unidad"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Cambio por unidad.",
-                "en": "Change per unit."
+                "es": "Es la inclinación de la recta, con unidades de Y por unidad de X."
               },
               "solution": {
-                "es": "Cambio en Y por unidad de X.",
-                "en": "Change in Y per unit of X."
+                "es": "La pendiente representa el cambio medio en Y por cada unidad de aumento en X. Sus unidades son las de Y divididas entre las de X, y por eso no es comparable entre escalas distintas."
+              },
+              "explain": {
+                "es": "Si respondiste «el valor de Y cuando X es cero», has descrito el intercepto. La pendiente mide variación, no nivel. Confundirlos lleva a interpretar el punto de partida como ritmo de cambio, y ese error se propaga a cualquier predicción."
               },
               "xp": 10
             },
@@ -10442,112 +10276,88 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "X=0.",
-                "en": "X=0."
+                "es": "Es donde la recta corta el eje vertical."
               },
               "solution": {
-                "es": "Y cuando X=0.",
-                "en": "Y when X=0."
+                "es": "El intercepto es el valor esperado de Y cuando X vale cero. Puede tener sentido físico o ser una extrapolación sin significado, según el rango de datos."
+              },
+              "explain": {
+                "es": "Si respondiste «el cambio en Y por unidad de X», has descrito la pendiente. El intercepto indica el nivel de partida, no la tasa de cambio. Cuando cero está fuera del rango observado, su interpretación es aritmética y no sustantiva."
               },
               "xp": 10
             },
             {
               "id": "A6-L4-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Extrapolar la regresión fuera del rango de datos es seguro.",
                 "en": "Extrapolating regression beyond data range is safe."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Piensa qué ocurre si la relación cambia fuera del rango observado."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: extrapolar la regresión fuera del rango de datos no es seguro, porque la relación puede cambiar de forma y el modelo no tiene información para saberlo."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has confiado en la recta más allá de donde fue estimada. La pendiente describe el tramo observado; fuera de él, el mecanismo puede ser distinto. Extrapolar es una hipótesis, no una predicción respaldada por los datos. Cuanto más lejos del rango, mayor es la incertidumbre y menos defendible la predicción."
+              },
+              "xp": 10
             },
             {
               "id": "A6-L4-E4",
               "type": "mcq",
               "prompt": {
-                "es": "El residuo es:",
-                "en": "The residual is:"
+                "es": "El residuo de una observación es:"
               },
               "choices": [
                 {
-                  "es": "y - ŷ",
-                  "en": "y - ŷ"
+                  "es": "Observado menos predicho (y − ŷ)"
                 },
                 {
-                  "es": "ŷ - y",
-                  "en": "ŷ - y"
+                  "es": "Predicho menos observado (ŷ − y)"
                 },
                 {
-                  "es": "x - y",
-                  "en": "x - y"
+                  "es": "x menos y"
                 },
                 {
-                  "es": "La media",
-                  "en": "The mean"
+                  "es": "La media de los residuos"
                 }
               ],
               "answer": 0,
               "hint": {
-                "es": "Observado - predicho.",
-                "en": "Observed - predicted."
+                "es": "Se calcula con el valor real y el que la recta pronostica."
               },
               "solution": {
-                "es": "y - ŷ.",
-                "en": "y - ŷ."
+                "es": "El residuo es la diferencia entre el valor observado y el predicho por el modelo (y menos ŷ). Su signo indica si el modelo se queda corto o se pasa."
+              },
+              "explain": {
+                "es": "Si respondiste «predicho menos observado», has invertido el signo: el residuo se define como observado menos predicho. Esa convención importa porque los residuos positivos indican que la recta subestima. Cambiar el orden cambia el signo de todos los residuos y, con él, la lectura del diagnóstico."
               },
               "xp": 10
             },
             {
               "id": "A6-L4-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "R² = 0,81 significa:",
                 "en": "R² = 0.81 means:"
               },
-              "choices": [
-                {
-                  "es": "Correlación 0,81",
-                  "en": "Correlation 0.81"
-                },
-                {
-                  "es": "81 % de varianza explicada",
-                  "en": "81% variance explained"
-                },
-                {
-                  "es": "Error del 19 %",
-                  "en": "19% error"
-                },
-                {
-                  "es": "Pendiente 0,81",
-                  "en": "Slope 0.81"
-                }
+              "answers": [
+                "81 % de varianza explicada",
+                "81 de varianza explicada",
+                "81% varianza explicada",
+                "el 81 % de la varianza"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Varianza explicada.",
-                "en": "Explained variance."
+                "es": "El coeficiente de determinación se lee como porcentaje de variabilidad recogida."
               },
               "solution": {
-                "es": "81 % de varianza explicada.",
-                "en": "81% variance explained."
+                "es": "Un coeficiente de determinación de 0,81 significa que el 81 % de la varianza de Y queda explicada por X. El 19 % restante se debe a otros factores o al azar."
+              },
+              "explain": {
+                "es": "Si respondiste «correlación 0,81», has confundido el cuadrado con la correlación. La raíz de 0,81 es 0,9, así que la correlación sería 0,9. Confundir ambas cifras subestima la asociación y es un error frecuente al leer salidas de software. Leer bien esa cifra evita prometer una capacidad predictiva que el modelo no tiene."
               },
               "xp": 10
             }
@@ -10709,78 +10519,57 @@ export default {
               ],
               "answer": 2,
               "hint": {
-                "es": "No necesariamente.",
-                "en": "Not necessarily."
+                "es": "Piensa en una tercera variable que influya en ambas."
               },
               "solution": {
-                "es": "No necesariamente.",
-                "en": "Not necessarily."
+                "es": "La correlación no implica causalidad necesariamente: puede deberse a un confusor, a causalidad inversa o a coincidencia. Solo un diseño adecuado permite hablar de causa."
+              },
+              "explain": {
+                "es": "Si respondiste «siempre», has repetido el error clásico. La correlación es una condición necesaria para la causalidad, pero no suficiente: dos variables pueden moverse juntas porque una tercera las empuja. La dirección y el mecanismo requieren evidencia adicional. La fuerza de la asociación no aporta información sobre la dirección del mecanismo."
               },
               "xp": 10
             },
             {
               "id": "A6-L5-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Una tercera variable que causa ambas se llama:",
                 "en": "A third variable causing both is called:"
               },
-              "choices": [
-                {
-                  "es": "Outlier",
-                  "en": "Outlier"
-                },
-                {
-                  "es": "Confusor",
-                  "en": "Confounder"
-                },
-                {
-                  "es": "Residuo",
-                  "en": "Residual"
-                },
-                {
-                  "es": "Mediana",
-                  "en": "Median"
-                }
+              "answers": [
+                "confusor",
+                "variable confusora",
+                "factor de confusion"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Confusor.",
-                "en": "Confounder."
+                "es": "Influye en las dos variables y crea la apariencia de relación."
               },
               "solution": {
-                "es": "Confusor.",
-                "en": "Confounder."
+                "es": "Una tercera variable que causa ambas se llama confusor, porque confunde la lectura de la asociación. Controlarlo es condición para acercarse a una interpretación causal."
+              },
+              "explain": {
+                "es": "Si respondiste «outlier», has descrito un valor extremo, no un mecanismo. El confusor actúa sobre todo el conjunto y genera una asociación sistemática. En el ejemplo del helado y los ahogamientos, el calor es el confusor: sube ambos y crea la apariencia de causa."
               },
               "xp": 10
             },
             {
               "id": "A6-L5-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Para establecer causalidad basta con una correlación fuerte.",
                 "en": "A strong correlation suffices to establish causation."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Una asociación fuerte puede deberse a un tercer factor."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: una correlación fuerte no basta para establecer causalidad, porque puede existir un confusor o una relación inversa. Se necesita un diseño que descarte explicaciones alternativas."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido intensidad con dirección. Una correlación de 0,95 puede desaparecer al controlar una tercera variable. La fuerza mide ajuste, no mecanismo; la causalidad exige evidencia sobre cómo se genera el efecto. Controlar ese factor exige medirlo y ajustarlo, o bien aleatorizar la exposición."
+              },
+              "xp": 10
             },
             {
               "id": "A6-L5-E4",
@@ -10809,48 +10598,37 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "El calor.",
-                "en": "Heat."
+                "es": "Busca qué variable aumenta ambas cosas en verano."
               },
               "solution": {
-                "es": "Confusor: el calor.",
-                "en": "Confounder: heat."
+                "es": "Los helados y los ahogamientos correlacionan por un confusor: el calor. El aumento de temperatura eleva el consumo de helado y también los baños, y con ellos el riesgo de ahogamiento."
+              },
+              "explain": {
+                "es": "Si respondiste «causalidad directa», has leído la asociación como mecanismo. Comer helado no provoca ahogamientos; ambas variables comparten una causa común. Este ejemplo es el estándar para explicar por qué la correlación no basta. Por eso conviene preguntar siempre qué variable común podría explicar ambas cosas."
               },
               "xp": 10
             },
             {
               "id": "A6-L5-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para establecer causalidad se prefiere:",
                 "en": "To establish causation prefer:"
               },
-              "choices": [
-                {
-                  "es": "Observación",
-                  "en": "Observation"
-                },
-                {
-                  "es": "Experimento aleatorizado",
-                  "en": "Randomized experiment"
-                },
-                {
-                  "es": "Correlación",
-                  "en": "Correlation"
-                },
-                {
-                  "es": "Regresión",
-                  "en": "Regression"
-                }
+              "answers": [
+                "experimento aleatorizado",
+                "experimento",
+                "un experimento aleatorizado",
+                "ensayo aleatorizado"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Experimento.",
-                "en": "Experiment."
+                "es": "La asignación al azar reparte los factores no medidos."
               },
               "solution": {
-                "es": "Experimento aleatorizado.",
-                "en": "Randomized experiment."
+                "es": "Para establecer causalidad se prefiere un experimento aleatorizado, porque la asignación al azar hace comparables los grupos y permite atribuir la diferencia al tratamiento."
+              },
+              "explain": {
+                "es": "Si respondiste «observación», has elegido el diseño que no controla confusores. La observación puede sugerir hipótesis, pero no aislar el efecto. La aleatorización distribuye las diferencias no medidas y convierte la comparación en algo defendible. Cuando no es posible aleatorizar, el diseño observacional debe justificarse con más cuidado."
               },
               "xp": 10
             }
@@ -10995,167 +10773,109 @@ export default {
           "exercises": [
             {
               "id": "A6-L6-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Residuos con patrón en U indican:",
                 "en": "U-shaped residuals indicate:"
               },
-              "choices": [
-                {
-                  "es": "Buen ajuste lineal",
-                  "en": "Good linear fit"
-                },
-                {
-                  "es": "Relación no lineal",
-                  "en": "Nonlinear relation"
-                },
-                {
-                  "es": "Outliers",
-                  "en": "Outliers"
-                },
-                {
-                  "es": "Error de cálculo",
-                  "en": "Calculation error"
-                }
+              "answers": [
+                "relacion no lineal",
+                "no lineal",
+                "falta de linealidad"
               ],
-              "answer": 1,
               "hint": {
-                "es": "No lineal.",
-                "en": "Nonlinear."
+                "es": "El modelo recto se equivoca siempre en el centro o en los extremos."
               },
               "solution": {
-                "es": "Relación no lineal.",
-                "en": "Nonlinear relation."
+                "es": "Los residuos con patrón en U indican relación no lineal: la recta se desvía de forma sistemática en el centro y en los extremos. Añadir un término cuadrático o transformar suele corregirlo."
+              },
+              "explain": {
+                "es": "Si respondiste «buen ajuste», has interpretado un patrón como ausencia de problema. Los residuos ideales son aleatorios; cuando dibujan una curva, el modelo se equivoca de forma predecible. Ese patrón es la señal más clara de que la forma supuesta no corresponde a los datos."
               },
               "xp": 10
             },
             {
               "id": "A6-L6-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "R² cercano a 1 indica:",
                 "en": "R² near 1 indicates:"
               },
-              "choices": [
-                {
-                  "es": "Mal ajuste",
-                  "en": "Poor fit"
-                },
-                {
-                  "es": "Buen ajuste",
-                  "en": "Good fit"
-                },
-                {
-                  "es": "Sin relación",
-                  "en": "No relation"
-                },
-                {
-                  "es": "Error",
-                  "en": "Error"
-                }
+              "answers": [
+                "buen ajuste",
+                "buen ajuste lineal"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Buen ajuste.",
-                "en": "Good fit."
+                "es": "Casi toda la variabilidad queda recogida por la recta."
               },
               "solution": {
-                "es": "Buen ajuste.",
-                "en": "Good fit."
+                "es": "Un coeficiente de determinación cercano a uno indica buen ajuste lineal: la recta explica casi toda la variabilidad de la respuesta. Aun así, conviene revisar los residuos y el rango."
+              },
+              "explain": {
+                "es": "Si respondiste «mal ajuste», has invertido la escala. El coeficiente mide proporción de varianza explicada, y uno significa explicación completa. Pero un ajuste alto no garantiza un modelo correcto: puede haber valores influyentes o una relación curva que la recta aproxima bien solo en el tramo observado."
               },
               "xp": 10
             },
             {
               "id": "A6-L6-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Los residuos ideales son aleatorios.",
                 "en": "Ideal residuals are random."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Lo que el modelo no explica debe parecer ruido."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los residuos ideales son aleatorios, sin patrón, con dispersión constante y centrados en cero. Cualquier estructura en ellos sugiere que el modelo deja algo sin explicar."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar el principio del diagnóstico: si los residuos cuentan una historia, el modelo no ha capturado toda la estructura. Un patrón en U indica no linealidad; un embudo, varianza cambiante; una tendencia, dependencia temporal. Por eso el diagnóstico se hace con gráficos y no solo con el coeficiente de determinación."
+              },
+              "xp": 10
             },
             {
               "id": "A6-L6-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El error estándar de estimación se basa en:",
                 "en": "Standard error of estimate is based on:"
               },
-              "choices": [
-                {
-                  "es": "Los residuos",
-                  "en": "Residuals"
-                },
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "La mediana",
-                  "en": "The median"
-                },
-                {
-                  "es": "La moda",
-                  "en": "The mode"
-                }
+              "answers": [
+                "los residuos",
+                "residuos",
+                "en los residuos"
               ],
-              "answer": 0,
               "hint": {
-                "es": "Residuos.",
-                "en": "Residuals."
+                "es": "Es la dispersión de lo que el modelo no explica."
               },
               "solution": {
-                "es": "Los residuos.",
-                "en": "Residuals."
+                "es": "El error estándar de estimación se basa en los residuos: mide la dispersión de las diferencias entre observado y predicho. Es la escala del error típico de una predicción."
+              },
+              "explain": {
+                "es": "Si respondiste «la media», has elegido un resumen del nivel, no del error. El error estándar de estimación se calcula con la suma de cuadrados de los residuos y sus grados de libertad. Su valor se interpreta en las unidades de la respuesta."
               },
               "xp": 10
             },
             {
               "id": "A6-L6-E5",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Un R² alto garantiza un buen modelo.",
                 "en": "A high R² guarantees a good model."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Revisa residuos.",
-                "en": "Check residuals."
+                "es": "Un ajuste alto puede esconder un modelo equivocado."
               },
               "solution": {
-                "es": "Falso: revisa residuos.",
-                "en": "False: check residuals."
+                "es": "Falso: un coeficiente de determinación alto no garantiza un buen modelo, porque puede ocultar no linealidad, valores influyentes o variables omitidas. Hay que revisar los residuos y el diseño."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has confiado en una sola cifra. Un modelo con ajuste alto puede predecir mal fuera de la muestra o depender de un único punto. El diagnóstico de residuos y la validación son los que confirman si el ajuste representa la estructura real."
+              },
+              "xp": 10
             }
           ]
         }

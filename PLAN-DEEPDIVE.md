@@ -303,12 +303,12 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 
 | Ítem | Antes | Ahora | Objetivo |
 |---|---:|---:|---:|
-| Ejercicios en formato producción | 0 | 127 | ≥241 |
-| Con `explain` ≥40 palabras | 0 | 210 | 481 |
-| Con solución ≥60 caracteres | 1 | 210 | 481 |
-| Pistas que filtran la respuesta | 20 | 19 | 0 |
+| Ejercicios en formato producción | 0 | 143 | ≥241 |
+| Con `explain` ≥40 palabras | 0 | 240 | 481 |
+| Con solución ≥60 caracteres | 1 | 240 | 481 |
+| Pistas que filtran la respuesta | 20 | 16 | 0 |
 
-Cerrados: **Fundamentos** (30/30, 20 producción), **A0** (40/40, 25), **A1** (30/30, 16), **A2** (30/30, 18), **A3** (30/30, 20), **A4** (25/25, 15) y **A5** (25/25, 13).
+**Curso de Descriptiva cerrado en fase 5**: 210/210 ejercicios con explicación y solución; 123 en formato producción; 0 pistas filtradas. Fundamentos: 30/30. Quedan Probabilidad (102) e Inferencial (139).
 
 Motor: tipo `short`, explicación al fallar, registro de primer intento y maestría ≥80 % para completar la lección. Herramientas: `audit-exercises.mjs`, `validate-feedback.mjs` (informativo; `--strict` para el final), `apply-feedback.mjs` + `append-explain.mjs` con parches en `scripts/patches/`, y `sync-module.mjs`.
 
