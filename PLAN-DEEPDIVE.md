@@ -153,7 +153,8 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 - [x] C5 (2): prueba z de una proporción, prueba z de dos proporciones. — **completo (2/2)**
 - [x] C6 (2): chi-cuadrado de bondad de ajuste e independencia. — **completo (2/2)**
 - [x] C7 (4): concepto de ANOVA, estadístico F, supuestos, comparaciones post-hoc. — **completo (4/4)**
-- [ ] C8 (4), C9 (3).
+- [x] C8 (4): inferencia sobre la pendiente, intervalos de predicción, supuestos, regresión múltiple. — **completo (4/4)**
+- [ ] C9 (3).
 - [ ] Añadir: potencia y tamaño de muestra, bootstrap, no paramétricos, causalidad, datos faltantes, regresión múltiple con diagnóstico.
 
 ### Fase 4 — Contenido: Fundamentos (10 lecciones)
