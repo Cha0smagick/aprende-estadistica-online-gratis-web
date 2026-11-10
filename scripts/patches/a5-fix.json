@@ -1,0 +1,8 @@
+{
+  "module": "data/descriptiva/a5.js",
+  "items": {
+    "A5-L1-E5": "Un cuartil mal calculado arrastra el IQR y, con él, toda la detección de atípicos.",
+    "A5-L4-E1": "Conviene recordarla junto a la desviación típica al describir cualquier variable aproximadamente normal.",
+    "A5-L4-E5": "En control de calidad, ese 0,3 % justifica los límites de aviso de los gráficos de control."
+  }
+}

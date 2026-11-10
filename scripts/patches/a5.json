@@ -1,0 +1,142 @@
+{
+  "module": "data/descriptiva/a5.js",
+  "items": {
+    "A5-L1-E1": {
+      "type": "short",
+      "answers": ["la mediana", "mediana"],
+      "hint": "Divide los datos en dos mitades iguales.",
+      "solution": "El segundo cuartil coincide con la mediana, porque ambos dejan el 50 % de los datos por debajo. Los cuartiles dividen la distribución en cuatro partes y el segundo es el punto medio.",
+      "explain": "Si respondiste «la media», has confundido el centro de posición con el centro de gravedad. La mediana depende del orden y la media de la suma; solo coinciden cuando la distribución es simétrica. En una distribución asimétrica, el segundo cuartil sigue siendo la mediana, no la media."
+    },
+    "A5-L1-E2": {
+      "type": "short",
+      "answers": ["q1", "primer cuartil", "el primer cuartil"],
+      "hint": "Deja una cuarta parte por debajo.",
+      "solution": "El percentil 25 es el primer cuartil, porque deja el 25 % de los datos por debajo. Percentiles y cuartiles son dos formas de nombrar los mismos puntos de corte.",
+      "explain": "Si respondiste Q2, has confundido la cuarta parte con la mitad. El percentil 25 corta al 25 %, el 50 corta a la mitad y el 75 al 75 %. Identificar esa correspondencia evita errores al leer tablas que usan ambas notaciones."
+    },
+    "A5-L1-E3": {
+      "hint": "Piensa qué elementos quedan fuera de los bigotes.",
+      "solution": "Verdadero: un boxplot muestra los valores atípicos como puntos individuales situados más allá de los bigotes. Esos puntos se identifican con la regla de Tukey.",
+      "explain": "Si respondiste «falso», conviene recordar que el boxplot resume cinco posiciones y deja fuera los extremos anómalos. Precisamente por eso los dibuja aparte: para que el lector vea que existen sin que deformen la caja. Esa es una de sus ventajas frente al histograma."
+    },
+    "A5-L1-E4": {
+      "hint": "Es el punto que deja la mitad de los datos a cada lado.",
+      "solution": "El percentil 50 es la mediana, porque deja el 50 % de las observaciones por debajo. Coincide también con el segundo cuartil.",
+      "explain": "Si respondiste Q1 o Q3, has elegido un cuarto en lugar de la mitad. La equivalencia entre percentil 50, segundo cuartil y mediana es una de las pocas que conviene memorizar: aparece en casi todos los informes y en las etiquetas de los gráficos."
+    },
+    "A5-L1-E5": {
+      "hint": "Resta el primer cuartil al tercero.",
+      "solution": "El rango intercuartílico es 20 menos 10, es decir, 10. Contiene el 50 % central de los datos y sirve para construir los límites de Tukey.",
+      "explain": "Si respondiste 30, has sumado en lugar de restar. El IQR mide la anchura del bloque central y siempre es positivo; si sale negativo, los cuartiles están invertidos. Esa comprobación de signo detecta errores de cálculo de inmediato."
+    },
+    "A5-L2-E1": {
+      "hint": "Resta la media y divide entre la desviación.",
+      "solution": "50 menos 40 es 10, y 10 entre 5 es 2. La puntuación z indica que el valor está dos desviaciones por encima de la media.",
+      "explain": "Si respondiste 10, has dado la diferencia sin estandarizar. La z mide distancias en unidades de desviación, y por eso permite comparar valores de escalas distintas. Un z de 2 significa lo mismo en una prueba de 100 puntos que en una de 10."
+    },
+    "A5-L2-E2": {
+      "hint": "El valor está por debajo de la media.",
+      "solution": "30 menos 40 es menos 10, y menos 10 entre 5 es menos 2. El signo negativo indica que el valor está dos desviaciones por debajo de la media.",
+      "explain": "Si respondiste 2, has perdido el signo. La z conserva la dirección: positiva por encima de la media y negativa por debajo. Ese signo es información, no un detalle, porque indica en qué lado de la distribución se sitúa el valor."
+    },
+    "A5-L2-E3": {
+      "type": "short",
+      "answers": ["valor inusual", "inusual", "un valor inusual"],
+      "hint": "En una normal, estar tan lejos es poco frecuente, pero posible.",
+      "solution": "Un valor con z mayor que 2 en valor absoluto suele considerarse inusual, porque se aleja más de dos desviaciones de la media. No es necesariamente un error ni un atípico confirmado.",
+      "explain": "Si respondiste «outlier seguro», has convertido una señal en un veredicto. En una distribución normal, aproximadamente el 5 % de los valores supera ese umbral por puro azar. El z avisa de que conviene revisar el dato, no de que haya que eliminarlo."
+    },
+    "A5-L2-E4": {
+      "hint": "Piensa qué ocurre al restar la media y dividir por la desviación.",
+      "solution": "Verdadero: la estandarización transforma los datos a una escala con media 0 y desviación 1. Esa operación permite comparar valores de variables distintas.",
+      "explain": "Si respondiste «falso», conviene comprobar el efecto: restar la media centra la distribución en cero, y dividir por la desviación la escala a una unidad. La forma se conserva, así que una distribución asimétrica sigue siendo asimétrica después de estandarizar."
+    },
+    "A5-L2-E5": {
+      "hint": "Despeja el valor original de la fórmula de z.",
+      "solution": "El valor es 60 más 1,5 por 8, es decir, 60 más 12, que da 72. La operación invierte la estandarización y devuelve el valor a su escala original.",
+      "explain": "Si respondiste 61,5, has sumado la z sin multiplicarla por la desviación. La z está en unidades de desviación, así que hay que multiplicarla por s antes de sumarla a la media. Ese paso es el que traduce la posición relativa a la escala del problema."
+    },
+    "A5-L3-E1": {
+      "type": "short",
+      "answers": ["derecha", "a la derecha", "la derecha"],
+      "hint": "La cola larga apunta hacia los valores altos.",
+      "solution": "La asimetría positiva tiene la cola hacia la derecha, porque hay pocos valores muy altos que estiran la distribución en esa dirección. La media queda por encima de la mediana.",
+      "explain": "Si respondiste «izquierda», has invertido el signo. La convención es clara: asimetría positiva significa cola derecha, y negativa, cola izquierda. Una forma de recordarlo es que la cola tira de la media hacia su lado, de modo que media mayor que mediana indica cola derecha."
+    },
+    "A5-L3-E2": {
+      "hint": "El exceso de curtosis compara las colas con la normal.",
+      "solution": "Una curtosis positiva, medida como exceso, indica colas más pesadas que la normal: hay más probabilidad de valores extremos. La distribución tiene un pico más alto y colas largas.",
+      "explain": "Si respondiste «colas ligeras», has invertido la relación. La curtosis describe el peso de las colas más que la altura del pico: una distribución leptocúrtica concentra más casos en el centro y también más en los extremos. Ese detalle importa al evaluar riesgos."
+    },
+    "A5-L3-E3": {
+      "hint": "Es la distribución de referencia para ambas medidas.",
+      "solution": "Verdadero: la normal tiene asimetría 0 y curtosis en exceso 0, porque es simétrica y sus colas se toman como referencia. Por eso el exceso de curtosis se mide respecto a ella.",
+      "explain": "Si respondiste «falso», conviene recordar que la curtosis bruta de una normal vale 3. Al restar 3 se obtiene el exceso, que vale 0. Esa convención permite decir de inmediato si una distribución tiene colas más pesadas o más ligeras que la normal."
+    },
+    "A5-L3-E4": {
+      "hint": "Piensa dónde está el límite superior de los ingresos.",
+      "solution": "Los ingresos suelen tener asimetría positiva, porque la mayoría se concentra en valores medios y bajos mientras unos pocos muy altos forman una cola larga a la derecha.",
+      "explain": "Si respondiste «negativa», has imaginado una cola de ingresos extremadamente bajos. En la práctica el mínimo está acotado y el máximo no, de modo que la cola se extiende hacia arriba. Esa forma explica por qué la mediana describe mejor el ingreso típico."
+    },
+    "A5-L3-E5": {
+      "hint": "Dos distribuciones con el mismo pico pueden diferir en los extremos.",
+      "solution": "La curtosis mide principalmente el peso de las colas, es decir, la probabilidad de valores extremos, más que la altura del pico. Un pico alto suele acompañarse de colas pesadas, pero no siempre.",
+      "explain": "Si respondiste «el pico», has recogido la interpretación popular pero imprecisa. Dos distribuciones pueden tener picos parecidos y colas muy distintas, y esa diferencia es la que importa en riesgo y en valores atípicos. Por eso los textos modernos describen la curtosis como una medida de colas."
+    },
+    "A5-L4-E1": {
+      "hint": "Es el porcentaje clásico de la regla empírica para una desviación.",
+      "solution": "Aproximadamente el 68 % de los valores cae dentro de una desviación estándar de la media en una distribución normal. Es el primer tramo de la regla empírica.",
+      "explain": "Si respondiste 95, has saltado al segundo tramo. La regla empírica escalona la cobertura: 68 % a una desviación, 95 % a dos y 99,7 % a tres. Memorizar esa escalera permite estimar proporciones sin calcular integrales."
+    },
+    "A5-L4-E2": {
+      "hint": "Es el segundo tramo de la regla empírica.",
+      "solution": "Alrededor del 95 % de los valores cae dentro de dos desviaciones estándar de la media en una normal. Es el tramo que se usa para intervalos aproximados.",
+      "explain": "Si respondiste 68, has usado una desviación en lugar de dos. La relación no es lineal: pasar de una a dos desviaciones añade mucho más que duplicar la cobertura, porque la campana se concentra en el centro. Esa acumulación explica por qué tres desviaciones ya cubren casi todo."
+    },
+    "A5-L4-E3": {
+      "hint": "Es el último tramo, casi la totalidad.",
+      "solution": "Aproximadamente el 99,7 % de los valores cae dentro de tres desviaciones estándar de la media. Solo un 0,3 % queda fuera de ese rango.",
+      "explain": "Si respondiste 100, has redondeado una aproximación a una certeza. La normal tiene colas infinitas, así que ningún rango finito cubre el 100 % de los casos, aunque la probabilidad fuera de tres desviaciones sea muy pequeña. Esa distinción importa en gestión de riesgo."
+    },
+    "A5-L4-E4": {
+      "hint": "Los porcentajes 68-95-99,7 salen de una distribución concreta.",
+      "solution": "Verdadero: la regla empírica solo vale para distribuciones normales, porque los porcentajes 68, 95 y 99,7 se derivan de esa forma. En otras distribuciones los porcentajes son distintos.",
+      "explain": "Si respondiste «falso», conviene probarlo con una distribución asimétrica: en los ingresos, dos desviaciones por encima de la media pueden abarcar mucho más o menos del 95 %. Aplicar la regla sin comprobar la forma es una fuente habitual de estimaciones equivocadas."
+    },
+    "A5-L4-E5": {
+      "hint": "Es el complemento del 99,7 %.",
+      "solution": "Fuera de tres desviaciones queda aproximadamente el 0,3 % de los valores, porque dentro cae el 99,7 %. Es una probabilidad muy baja, aunque no nula.",
+      "explain": "Si respondiste 5 %, has mezclado el tramo de dos desviaciones. Fuera de dos desviaciones queda alrededor del 5 %; fuera de tres, solo tres décimas. Confundir ambos umbrales cambia por completo la evaluación de un suceso extremo."
+    },
+    "A5-L5-E1": {
+      "type": "short",
+      "answers": ["q1 a q3", "de q1 a q3", "primer y tercer cuartil", "entre q1 y q3"],
+      "hint": "Contiene la mitad central de los datos.",
+      "solution": "La caja del boxplot va del primer al tercer cuartil, es decir, cubre el 50 % central de los datos. Su altura o anchura refleja el rango intercuartílico.",
+      "explain": "Si respondiste «mínimo a máximo», has descrito el rango completo, no la caja. El boxplot separa el bloque central de los extremos: la caja contiene la mitad de los datos y los bigotes se extienden hasta los valores no atípicos. Esa separación permite comparar grupos sin que los extremos dominen."
+    },
+    "A5-L5-E2": {
+      "type": "short",
+      "answers": ["la mediana", "mediana"],
+      "hint": "Divide el conjunto en dos mitades.",
+      "solution": "La línea dentro de la caja representa la mediana, que divide los datos en dos mitades. Algunos boxplots añaden una marca para la media, pero la línea central es la mediana.",
+      "explain": "Si respondiste «la media», has confundido las dos marcas. La mediana es la referencia habitual porque es robusta, y el boxplot se construye con cuartiles, no con medias. En distribuciones asimétricas, la distancia entre la mediana y la media se ve como un desplazamiento de la línea respecto al centro de la caja."
+    },
+    "A5-L5-E3": {
+      "hint": "Piensa en varios boxplots uno al lado del otro.",
+      "solution": "Verdadero: los boxplots son buenos para comparar grupos porque alinean medianas, cuartiles y atípicos en un espacio compacto. Permiten ver de un vistazo qué grupo es más alto y cuál más disperso.",
+      "explain": "Si respondiste «falso», conviene imaginar tres tratamientos representados lado a lado: el desplazamiento de las cajas y la longitud de los bigotes comunican diferencias que una tabla numérica tarda en mostrar. Su límite es la pérdida de detalle de la forma de la distribución."
+    },
+    "A5-L5-E4": {
+      "hint": "Se detienen antes de los valores atípicos.",
+      "solution": "Los bigotes llegan hasta el último valor que queda dentro de los límites de Tukey, no hasta el mínimo y el máximo absolutos. Los valores que superan esos límites se dibujan como puntos.",
+      "explain": "Si respondiste «mínimo y máximo siempre», has descrito un gráfico de rango, no un boxplot estándar. La convención de Tukey protege la lectura: si los bigotes llegaran siempre a los extremos, un solo valor anómalo estiraría el gráfico y aplastaría la caja."
+    },
+    "A5-L5-E5": {
+      "hint": "Cuenta qué proporción queda entre Q1 y Q3.",
+      "solution": "Verdadero: la caja cubre el 50 % central de los datos, desde el primer cuartil hasta el tercero. Un cuarto queda por debajo y otro cuarto por encima, repartidos en los bigotes y los atípicos.",
+      "explain": "Si respondiste «falso», conviene recordar la definición de los cuartiles: cada uno deja un 25 % a un lado. Entre el primero y el tercero quedan dos cuartos, es decir, la mitad central. Esa es la razón por la que la caja es el elemento más informativo del gráfico."
+    }
+  }
+}

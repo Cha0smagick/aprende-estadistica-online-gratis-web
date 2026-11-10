@@ -74,8 +74,9 @@ Pendiente (etapas 2–3): 451 ejercicios por convertir, 451 sin `explain`, 451 c
 - A2 cerrado: 30/30 con explicación y solución; 18 en producción.
 - A3 cerrado: 30/30 con explicación y solución; 20 en producción. Corregido un error de contenido: la teoría afirmaba «armónica = geométrica = aritmética» cuando la relación correcta es H ≤ G ≤ A (igualdad solo si todos los valores coinciden).
 - A4 cerrado: 25/25 con explicación y solución; 15 en producción. Corregido el enunciado de A4-L5-E4 (comparaba N con n−1 en lugar de n con n−1).
-- Acumulado: 185/481 con feedback completo (38,5 %), 114/481 en producción (23,7 %).
-- Ritmo observado: ~2.000 palabras de feedback por módulo de 15 ejercicios. Quedan 17 módulos (~296 ejercicios).
+- A5 cerrado: 25/25 con explicación y solución; 13 en producción. Verificados cuartiles, z, asimetría/curtosis, regla empírica y boxplot.
+- Acumulado: 210/481 con feedback completo (43,7 %), 127/481 en producción (26,4 %).
+- Ritmo observado: ~2.000 palabras de feedback por módulo de 15 ejercicios. Quedan 13 módulos (~271 ejercicios).
 
 ### Lección de proceso
 

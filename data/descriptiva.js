@@ -8107,103 +8107,67 @@ export default {
           "exercises": [
             {
               "id": "A5-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Q2 coincide con:",
                 "en": "Q2 equals:"
               },
-              "choices": [
-                {
-                  "es": "Q1",
-                  "en": "Q1"
-                },
-                {
-                  "es": "La mediana",
-                  "en": "The median"
-                },
-                {
-                  "es": "Q3",
-                  "en": "Q3"
-                },
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                }
+              "answers": [
+                "la mediana",
+                "mediana"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Mediana.",
-                "en": "Median."
+                "es": "Divide los datos en dos mitades iguales."
               },
               "solution": {
-                "es": "La mediana.",
-                "en": "The median."
+                "es": "El segundo cuartil coincide con la mediana, porque ambos dejan el 50 % de los datos por debajo. Los cuartiles dividen la distribución en cuatro partes y el segundo es el punto medio."
+              },
+              "explain": {
+                "es": "Si respondiste «la media», has confundido el centro de posición con el centro de gravedad. La mediana depende del orden y la media de la suma; solo coinciden cuando la distribución es simétrica. En una distribución asimétrica, el segundo cuartil sigue siendo la mediana, no la media."
               },
               "xp": 10
             },
             {
               "id": "A5-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El percentil 25 es:",
                 "en": "The 25th percentile is:"
               },
-              "choices": [
-                {
-                  "es": "Q1",
-                  "en": "Q1"
-                },
-                {
-                  "es": "Q2",
-                  "en": "Q2"
-                },
-                {
-                  "es": "Q3",
-                  "en": "Q3"
-                },
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                }
+              "answers": [
+                "q1",
+                "primer cuartil",
+                "el primer cuartil"
               ],
-              "answer": 0,
               "hint": {
-                "es": "Q1.",
-                "en": "Q1."
+                "es": "Deja una cuarta parte por debajo."
               },
               "solution": {
-                "es": "Q1.",
-                "en": "Q1."
+                "es": "El percentil 25 es el primer cuartil, porque deja el 25 % de los datos por debajo. Percentiles y cuartiles son dos formas de nombrar los mismos puntos de corte."
+              },
+              "explain": {
+                "es": "Si respondiste Q2, has confundido la cuarta parte con la mitad. El percentil 25 corta al 25 %, el 50 corta a la mitad y el 75 al 75 %. Identificar esa correspondencia evita errores al leer tablas que usan ambas notaciones."
               },
               "xp": 10
             },
             {
               "id": "A5-L1-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Un boxplot muestra outliers como puntos.",
                 "en": "A boxplot shows outliers as points."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Piensa qué elementos quedan fuera de los bigotes."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: un boxplot muestra los valores atípicos como puntos individuales situados más allá de los bigotes. Esos puntos se identifican con la regla de Tukey."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que el boxplot resume cinco posiciones y deja fuera los extremos anómalos. Precisamente por eso los dibuja aparte: para que el lector vea que existen sin que deformen la caja. Esa es una de sus ventajas frente al histograma."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L1-E4",
@@ -8232,51 +8196,35 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Mediana.",
-                "en": "Median."
+                "es": "Es el punto que deja la mitad de los datos a cada lado."
               },
               "solution": {
-                "es": "La mediana.",
-                "en": "The median."
+                "es": "El percentil 50 es la mediana, porque deja el 50 % de las observaciones por debajo. Coincide también con el segundo cuartil."
+              },
+              "explain": {
+                "es": "Si respondiste Q1 o Q3, has elegido un cuarto en lugar de la mitad. La equivalencia entre percentil 50, segundo cuartil y mediana es una de las pocas que conviene memorizar: aparece en casi todos los informes y en las etiquetas de los gráficos."
               },
               "xp": 10
             },
             {
               "id": "A5-L1-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Si Q1=10 y Q3=20, IQR.",
                 "en": "If Q1=10 and Q3=20, IQR."
               },
-              "answer": 0,
+              "answer": 10,
               "tol": 0.01,
               "hint": {
-                "es": "20-10.",
-                "en": "20-10."
+                "es": "Resta el primer cuartil al tercero."
               },
               "solution": {
-                "es": "10.",
-                "en": "10."
+                "es": "El rango intercuartílico es 20 menos 10, es decir, 10. Contiene el 50 % central de los datos y sirve para construir los límites de Tukey."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "10",
-                  "en": "10"
-                },
-                {
-                  "es": "20",
-                  "en": "20"
-                },
-                {
-                  "es": "9",
-                  "en": "9"
-                },
-                {
-                  "es": "11",
-                  "en": "11"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 30, has sumado en lugar de restar. El IQR mide la anchura del bloque central y siempre es positivo; si sale negativo, los cuartiles están invertidos. Esa comprobación de signo detecta errores de cálculo de inmediato. Un cuartil mal calculado arrastra el IQR y, con él, toda la detección de atípicos."
+              },
+              "xp": 10
             }
           ]
         },
@@ -8420,178 +8368,105 @@ export default {
           "exercises": [
             {
               "id": "A5-L2-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "x=50, μ=40, σ=5: z.",
                 "en": "x=50, μ=40, σ=5: z."
               },
-              "answer": 0,
+              "answer": 2,
               "tol": 0.01,
               "hint": {
-                "es": "(50-40)/5.",
-                "en": "(50-40)/5."
+                "es": "Resta la media y divide entre la desviación."
               },
               "solution": {
-                "es": "2.",
-                "en": "2."
+                "es": "50 menos 40 es 10, y 10 entre 5 es 2. La puntuación z indica que el valor está dos desviaciones por encima de la media."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "2",
-                  "en": "2"
-                },
-                {
-                  "es": "1",
-                  "en": "1"
-                },
-                {
-                  "es": "4",
-                  "en": "4"
-                },
-                {
-                  "es": "3",
-                  "en": "3"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 10, has dado la diferencia sin estandarizar. La z mide distancias en unidades de desviación, y por eso permite comparar valores de escalas distintas. Un z de 2 significa lo mismo en una prueba de 100 puntos que en una de 10."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L2-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "x=30, μ=40, σ=5: z.",
                 "en": "x=30, μ=40, σ=5: z."
               },
-              "answer": 3,
+              "answer": -2,
               "tol": 0.01,
               "hint": {
-                "es": "(30-40)/5.",
-                "en": "(30-40)/5."
+                "es": "El valor está por debajo de la media."
               },
               "solution": {
-                "es": "-2.",
-                "en": "-2."
+                "es": "30 menos 40 es menos 10, y menos 10 entre 5 es menos 2. El signo negativo indica que el valor está dos desviaciones por debajo de la media."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "-3",
-                  "en": "-3"
-                },
-                {
-                  "es": "-4",
-                  "en": "-4"
-                },
-                {
-                  "es": "-1",
-                  "en": "-1"
-                },
-                {
-                  "es": "-2",
-                  "en": "-2"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 2, has perdido el signo. La z conserva la dirección: positiva por encima de la media y negativa por debajo. Ese signo es información, no un detalle, porque indica en qué lado de la distribución se sitúa el valor."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "|z|>2 suele indicar:",
                 "en": "|z|>2 usually indicates:"
               },
-              "choices": [
-                {
-                  "es": "Valor típico",
-                  "en": "Typical value"
-                },
-                {
-                  "es": "Valor inusual",
-                  "en": "Unusual value"
-                },
-                {
-                  "es": "Error",
-                  "en": "Error"
-                },
-                {
-                  "es": "Outlier seguro",
-                  "en": "Definite outlier"
-                }
+              "answers": [
+                "valor inusual",
+                "inusual",
+                "un valor inusual"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Inusual.",
-                "en": "Unusual."
+                "es": "En una normal, estar tan lejos es poco frecuente, pero posible."
               },
               "solution": {
-                "es": "Valor inusual.",
-                "en": "Unusual value."
+                "es": "Un valor con z mayor que 2 en valor absoluto suele considerarse inusual, porque se aleja más de dos desviaciones de la media. No es necesariamente un error ni un atípico confirmado."
+              },
+              "explain": {
+                "es": "Si respondiste «outlier seguro», has convertido una señal en un veredicto. En una distribución normal, aproximadamente el 5 % de los valores supera ese umbral por puro azar. El z avisa de que conviene revisar el dato, no de que haya que eliminarlo."
               },
               "xp": 10
             },
             {
               "id": "A5-L2-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La z-score estandariza a media 0 y sd 1.",
                 "en": "Z-score standardizes to mean 0 and sd 1."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Piensa qué ocurre al restar la media y dividir por la desviación."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la estandarización transforma los datos a una escala con media 0 y desviación 1. Esa operación permite comparar valores de variables distintas."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene comprobar el efecto: restar la media centra la distribución en cero, y dividir por la desviación la escala a una unidad. La forma se conserva, así que una distribución asimétrica sigue siendo asimétrica después de estandarizar."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L2-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Si z=1,5, μ=60, σ=8: x.",
                 "en": "If z=1.5, μ=60, σ=8: x."
               },
-              "answer": 1,
+              "answer": 72,
               "tol": 0.01,
               "hint": {
-                "es": "x = μ + z·σ.",
-                "en": "x = μ + z·σ."
+                "es": "Despeja el valor original de la fórmula de z."
               },
               "solution": {
-                "es": "60 + 1,5·8 = 72.",
-                "en": "60 + 1.5·8 = 72."
+                "es": "El valor es 60 más 1,5 por 8, es decir, 60 más 12, que da 72. La operación invierte la estandarización y devuelve el valor a su escala original."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "71",
-                  "en": "71"
-                },
-                {
-                  "es": "72",
-                  "en": "72"
-                },
-                {
-                  "es": "73",
-                  "en": "73"
-                },
-                {
-                  "es": "144",
-                  "en": "144"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 61,5, has sumado la z sin multiplicarla por la desviación. La z está en unidades de desviación, así que hay que multiplicarla por s antes de sumarla a la media. Ese paso es el que traduce la posición relativa a la escala del problema."
+              },
+              "xp": 10
             }
           ]
         },
@@ -8741,37 +8616,24 @@ export default {
           "exercises": [
             {
               "id": "A5-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Asimetría positiva: cola a la:",
                 "en": "Positive skewness: tail to the:"
               },
-              "choices": [
-                {
-                  "es": "Izquierda",
-                  "en": "Left"
-                },
-                {
-                  "es": "Derecha",
-                  "en": "Right"
-                },
-                {
-                  "es": "Ambos lados",
-                  "en": "Both sides"
-                },
-                {
-                  "es": "No hay cola",
-                  "en": "No tail"
-                }
+              "answers": [
+                "derecha",
+                "a la derecha",
+                "la derecha"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Derecha.",
-                "en": "Right."
+                "es": "La cola larga apunta hacia los valores altos."
               },
               "solution": {
-                "es": "Derecha.",
-                "en": "Right."
+                "es": "La asimetría positiva tiene la cola hacia la derecha, porque hay pocos valores muy altos que estiran la distribución en esa dirección. La media queda por encima de la mediana."
+              },
+              "explain": {
+                "es": "Si respondiste «izquierda», has invertido el signo. La convención es clara: asimetría positiva significa cola derecha, y negativa, cola izquierda. Una forma de recordarlo es que la cola tira de la media hacia su lado, de modo que media mayor que mediana indica cola derecha."
               },
               "xp": 10
             },
@@ -8802,42 +8664,34 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Pesadas.",
-                "en": "Heavy."
+                "es": "El exceso de curtosis compara las colas con la normal."
               },
               "solution": {
-                "es": "Colas pesadas.",
-                "en": "Heavy tails."
+                "es": "Una curtosis positiva, medida como exceso, indica colas más pesadas que la normal: hay más probabilidad de valores extremos. La distribución tiene un pico más alto y colas largas."
+              },
+              "explain": {
+                "es": "Si respondiste «colas ligeras», has invertido la relación. La curtosis describe el peso de las colas más que la altura del pico: una distribución leptocúrtica concentra más casos en el centro y también más en los extremos. Ese detalle importa al evaluar riesgos."
               },
               "xp": 10
             },
             {
               "id": "A5-L3-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La distribución normal tiene asimetría 0 y curtosis (exceso) 0.",
                 "en": "Normal distribution has skewness 0 and kurtosis (excess) 0."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Es la distribución de referencia para ambas medidas."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la normal tiene asimetría 0 y curtosis en exceso 0, porque es simétrica y sus colas se toman como referencia. Por eso el exceso de curtosis se mide respecto a ella."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que la curtosis bruta de una normal vale 3. Al restar 3 se obtiene el exceso, que vale 0. Esa convención permite decir de inmediato si una distribución tiene colas más pesadas o más ligeras que la normal."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L3-E4",
@@ -8866,12 +8720,13 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Cola de ricos.",
-                "en": "Rich tail."
+                "es": "Piensa dónde está el límite superior de los ingresos."
               },
               "solution": {
-                "es": "Positiva.",
-                "en": "Positive."
+                "es": "Los ingresos suelen tener asimetría positiva, porque la mayoría se concentra en valores medios y bajos mientras unos pocos muy altos forman una cola larga a la derecha."
+              },
+              "explain": {
+                "es": "Si respondiste «negativa», has imaginado una cola de ingresos extremadamente bajos. En la práctica el mínimo está acotado y el máximo no, de modo que la cola se extiende hacia arriba. Esa forma explica por qué la mediana describe mejor el ingreso típico."
               },
               "xp": 10
             },
@@ -8902,12 +8757,13 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Colas.",
-                "en": "Tails."
+                "es": "Dos distribuciones con el mismo pico pueden diferir en los extremos."
               },
               "solution": {
-                "es": "Las colas.",
-                "en": "The tails."
+                "es": "La curtosis mide principalmente el peso de las colas, es decir, la probabilidad de valores extremos, más que la altura del pico. Un pico alto suele acompañarse de colas pesadas, pero no siempre."
+              },
+              "explain": {
+                "es": "Si respondiste «el pico», has recogido la interpretación popular pero imprecisa. Dos distribuciones pueden tener picos parecidos y colas muy distintas, y esa diferencia es la que importa en riesgo y en valores atípicos. Por eso los textos modernos describen la curtosis como una medida de colas."
               },
               "xp": 10
             }
@@ -9055,142 +8911,82 @@ export default {
           "exercises": [
             {
               "id": "A5-L4-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "% dentro de ±1σ en una normal.",
                 "en": "% within ±1σ in a normal."
               },
-              "answer": 1,
+              "answer": 68,
               "tol": 1,
               "hint": {
-                "es": "68 %.",
-                "en": "68%."
+                "es": "Es el porcentaje clásico de la regla empírica para una desviación."
               },
               "solution": {
-                "es": "≈ 68 %.",
-                "en": "≈ 68%."
+                "es": "Aproximadamente el 68 % de los valores cae dentro de una desviación estándar de la media en una distribución normal. Es el primer tramo de la regla empírica."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "67",
-                  "en": "67"
-                },
-                {
-                  "es": "68",
-                  "en": "68"
-                },
-                {
-                  "es": "136",
-                  "en": "136"
-                },
-                {
-                  "es": "69",
-                  "en": "69"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 95, has saltado al segundo tramo. La regla empírica escalona la cobertura: 68 % a una desviación, 95 % a dos y 99,7 % a tres. Memorizar esa escalera permite estimar proporciones sin calcular integrales. Conviene recordarla junto a la desviación típica al describir cualquier variable aproximadamente normal."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L4-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "% dentro de ±2σ en una normal.",
                 "en": "% within ±2σ in a normal."
               },
-              "answer": 3,
+              "answer": 95,
               "tol": 1,
               "hint": {
-                "es": "95 %.",
-                "en": "95%."
+                "es": "Es el segundo tramo de la regla empírica."
               },
               "solution": {
-                "es": "≈ 95 %.",
-                "en": "≈ 95%."
+                "es": "Alrededor del 95 % de los valores cae dentro de dos desviaciones estándar de la media en una normal. Es el tramo que se usa para intervalos aproximados."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "96",
-                  "en": "96"
-                },
-                {
-                  "es": "94",
-                  "en": "94"
-                },
-                {
-                  "es": "190",
-                  "en": "190"
-                },
-                {
-                  "es": "95",
-                  "en": "95"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 68, has usado una desviación en lugar de dos. La relación no es lineal: pasar de una a dos desviaciones añade mucho más que duplicar la cobertura, porque la campana se concentra en el centro. Esa acumulación explica por qué tres desviaciones ya cubren casi todo."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L4-E3",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "% dentro de ±3σ en una normal.",
                 "en": "% within ±3σ in a normal."
               },
-              "answer": 1,
+              "answer": 99.7,
               "tol": 0.5,
               "hint": {
-                "es": "99,7 %.",
-                "en": "99.7%."
+                "es": "Es el último tramo, casi la totalidad."
               },
               "solution": {
-                "es": "≈ 99,7 %.",
-                "en": "≈ 99.7%."
+                "es": "Aproximadamente el 99,7 % de los valores cae dentro de tres desviaciones estándar de la media. Solo un 0,3 % queda fuera de ese rango."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "199.4",
-                  "en": "199.4"
-                },
-                {
-                  "es": "99.7",
-                  "en": "99.7"
-                },
-                {
-                  "es": "98.7",
-                  "en": "98.7"
-                },
-                {
-                  "es": "100.7",
-                  "en": "100.7"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 100, has redondeado una aproximación a una certeza. La normal tiene colas infinitas, así que ningún rango finito cubre el 100 % de los casos, aunque la probabilidad fuera de tres desviaciones sea muy pequeña. Esa distinción importa en gestión de riesgo."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L4-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La regla empírica solo vale para distribuciones normales.",
                 "en": "The empirical rule only holds for normal distributions."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Los porcentajes 68-95-99,7 salen de una distribución concreta."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la regla empírica solo vale para distribuciones normales, porque los porcentajes 68, 95 y 99,7 se derivan de esa forma. En otras distribuciones los porcentajes son distintos."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene probarlo con una distribución asimétrica: en los ingresos, dos desviaciones por encima de la media pueden abarcar mucho más o menos del 95 %. Aplicar la regla sin comprobar la forma es una fuente habitual de estimaciones equivocadas."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L4-E5",
@@ -9219,12 +9015,13 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "0,3 %.",
-                "en": "0.3%."
+                "es": "Es el complemento del 99,7 %."
               },
               "solution": {
-                "es": "≈ 0,3 %.",
-                "en": "≈ 0.3%."
+                "es": "Fuera de tres desviaciones queda aproximadamente el 0,3 % de los valores, porque dentro cae el 99,7 %. Es una probabilidad muy baja, aunque no nula."
+              },
+              "explain": {
+                "es": "Si respondiste 5 %, has mezclado el tramo de dos desviaciones. Fuera de dos desviaciones queda alrededor del 5 %; fuera de tres, solo tres décimas. Confundir ambos umbrales cambia por completo la evaluación de un suceso extremo. En control de calidad, ese 0,3 % justifica los límites de aviso de los gráficos de control."
               },
               "xp": 10
             }
@@ -9361,103 +9158,68 @@ export default {
           "exercises": [
             {
               "id": "A5-L5-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La caja del boxplot va de:",
                 "en": "The boxplot box goes from:"
               },
-              "choices": [
-                {
-                  "es": "Min a max",
-                  "en": "Min to max"
-                },
-                {
-                  "es": "Q1 a Q3",
-                  "en": "Q1 to Q3"
-                },
-                {
-                  "es": "Media ± 1sd",
-                  "en": "Mean ± 1sd"
-                },
-                {
-                  "es": "0 a 1",
-                  "en": "0 to 1"
-                }
+              "answers": [
+                "q1 a q3",
+                "de q1 a q3",
+                "primer y tercer cuartil",
+                "entre q1 y q3"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Q1-Q3.",
-                "en": "Q1-Q3."
+                "es": "Contiene la mitad central de los datos."
               },
               "solution": {
-                "es": "Q1 a Q3.",
-                "en": "Q1 to Q3."
+                "es": "La caja del boxplot va del primer al tercer cuartil, es decir, cubre el 50 % central de los datos. Su altura o anchura refleja el rango intercuartílico."
+              },
+              "explain": {
+                "es": "Si respondiste «mínimo a máximo», has descrito el rango completo, no la caja. El boxplot separa el bloque central de los extremos: la caja contiene la mitad de los datos y los bigotes se extienden hasta los valores no atípicos. Esa separación permite comparar grupos sin que los extremos dominen."
               },
               "xp": 10
             },
             {
               "id": "A5-L5-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La línea dentro de la caja es:",
                 "en": "The line inside the box is:"
               },
-              "choices": [
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "La mediana",
-                  "en": "The median"
-                },
-                {
-                  "es": "La moda",
-                  "en": "The mode"
-                },
-                {
-                  "es": "El máximo",
-                  "en": "The max"
-                }
+              "answers": [
+                "la mediana",
+                "mediana"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Mediana.",
-                "en": "Median."
+                "es": "Divide el conjunto en dos mitades."
               },
               "solution": {
-                "es": "La mediana.",
-                "en": "The median."
+                "es": "La línea dentro de la caja representa la mediana, que divide los datos en dos mitades. Algunos boxplots añaden una marca para la media, pero la línea central es la mediana."
+              },
+              "explain": {
+                "es": "Si respondiste «la media», has confundido las dos marcas. La mediana es la referencia habitual porque es robusta, y el boxplot se construye con cuartiles, no con medias. En distribuciones asimétricas, la distancia entre la mediana y la media se ve como un desplazamiento de la línea respecto al centro de la caja."
               },
               "xp": 10
             },
             {
               "id": "A5-L5-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Los boxplots son buenos para comparar grupos.",
                 "en": "Boxplots are good for comparing groups."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Piensa en varios boxplots uno al lado del otro."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los boxplots son buenos para comparar grupos porque alinean medianas, cuartiles y atípicos en un espacio compacto. Permiten ver de un vistazo qué grupo es más alto y cuál más disperso."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene imaginar tres tratamientos representados lado a lado: el desplazamiento de las cajas y la longitud de los bigotes comunican diferencias que una tabla numérica tarda en mostrar. Su límite es la pérdida de detalle de la forma de la distribución."
+              },
+              "xp": 10
             },
             {
               "id": "A5-L5-E4",
@@ -9486,42 +9248,34 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Tukey.",
-                "en": "Tukey."
+                "es": "Se detienen antes de los valores atípicos."
               },
               "solution": {
-                "es": "Últimos valores dentro de Tukey.",
-                "en": "Last values within Tukey."
+                "es": "Los bigotes llegan hasta el último valor que queda dentro de los límites de Tukey, no hasta el mínimo y el máximo absolutos. Los valores que superan esos límites se dibujan como puntos."
+              },
+              "explain": {
+                "es": "Si respondiste «mínimo y máximo siempre», has descrito un gráfico de rango, no un boxplot estándar. La convención de Tukey protege la lectura: si los bigotes llegaran siempre a los extremos, un solo valor anómalo estiraría el gráfico y aplastaría la caja."
               },
               "xp": 10
             },
             {
               "id": "A5-L5-E5",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La caja cubre el 50 % central de los datos.",
                 "en": "The box covers the central 50% of data."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Q1 a Q3.",
-                "en": "Q1 to Q3."
+                "es": "Cuenta qué proporción queda entre Q1 y Q3."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la caja cubre el 50 % central de los datos, desde el primer cuartil hasta el tercero. Un cuarto queda por debajo y otro cuarto por encima, repartidos en los bigotes y los atípicos."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar la definición de los cuartiles: cada uno deja un 25 % a un lado. Entre el primero y el tercero quedan dos cuartos, es decir, la mitad central. Esa es la razón por la que la caja es el elemento más informativo del gráfico."
+              },
+              "xp": 10
             }
           ]
         }
