@@ -1,0 +1,10 @@
+{
+  "module": "data/descriptiva/a1.js",
+  "items": {
+    "A1-L2-E1": "Por eso los códigos se tratan como etiquetas y nunca como cantidades sumables.",
+    "A1-L2-E4": "La precisión del instrumento decide cuántos decimales se registran, no la naturaleza de la variable.",
+    "A1-L2-E5": "Esa diferencia guía el gráfico: barras para recuentos, histograma para medidas.",
+    "A1-L3-E1": "Reconocer la escala nominal evita promedios y diferencias que no significan nada.",
+    "A1-L3-E5": "Distinguir ambas escalas es lo que permite comparar magnitudes sin cometer errores de interpretación."
+  }
+}

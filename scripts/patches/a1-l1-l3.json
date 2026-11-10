@@ -1,0 +1,98 @@
+{
+  "module": "data/descriptiva/a1.js",
+  "items": {
+    "A1-L1-E1": {
+      "type": "short",
+      "answers": ["el conjunto completo de interes", "conjunto completo de interes", "la poblacion", "toda la poblacion", "el conjunto completo"],
+      "hint": "Es el todo sobre el que se quiere concluir, no la parte medida.",
+      "solution": "La población es el conjunto completo de unidades sobre el que se quiere concluir, con sus criterios de inclusión y exclusión. La muestra es el subconjunto que se observa para estimar características de esa población.",
+      "explain": "Si respondiste «el subconjunto observado», has descrito la muestra y no la población. La distinción importa porque las conclusiones se refieren a la población, mientras que los datos proceden siempre de la muestra. Confundirlas lleva a presentar un dato muestral como si describiera a todo el colectivo."
+    },
+    "A1-L1-E2": {
+      "hint": "Piensa qué conjunto describe cada palabra y con qué letra se simboliza.",
+      "solution": "Falso: el parámetro describe la población y suele ser desconocido; el estadístico describe la muestra y se calcula con los datos. El parámetro se estima, el estadístico se obtiene.",
+      "explain": "Si respondiste «verdadero», has invertido los términos. El parámetro es un número fijo de la población, como la media real de todos los usuarios; el estadístico es el valor que sale de la muestra y cambia si se repite el estudio. Esa diferencia es la base de toda la inferencia."
+    },
+    "A1-L1-E3": {
+      "type": "short",
+      "answers": ["aleatoria y sin sesgo", "que sea aleatoria", "aleatoria", "sin sesgo", "aleatoriedad"],
+      "hint": "Un millón de voluntarios sigue siendo una muestra de voluntarios.",
+      "solution": "Lo que más importa es que la muestra sea aleatoria y sin sesgo, porque la representatividad depende del procedimiento de selección y no del tamaño. Una muestra grande mal elegida reproduce el sesgo con más precisión.",
+      "explain": "Si respondiste «que sea grande», has confundido precisión con representatividad. El tamaño reduce la variabilidad del estimador, pero no corrige un sesgo de selección: una encuesta voluntaria de un millón de personas sigue describiendo solo a los voluntarios. La aleatoriedad es la condición que permite generalizar."
+    },
+    "A1-L1-E4": {
+      "hint": "El tamaño de muestra es el número de unidades observadas.",
+      "solution": "El tamaño de muestra es 1000, porque se observan 1000 personas. Ese valor se denota con n y es la base para calcular el error estándar y el margen de error.",
+      "explain": "Si dudaste, la clave es distinguir el tamaño de la muestra del tamaño de la población: n es lo que se mide y N es el total al que se quiere generalizar. Aquí solo se observan 1000 personas, así que n vale 1000. El margen de error dependerá de ese número."
+    },
+    "A1-L1-E5": {
+      "hint": "Recuerda qué se estima y con qué se estima.",
+      "solution": "Verdadero: la inferencia usa el estadístico calculado en la muestra para estimar el parámetro poblacional, añadiendo un margen que cuantifica la incertidumbre del muestreo.",
+      "explain": "Si respondiste «falso», conviene repasar la dirección del razonamiento: el estadístico es lo que se conoce y el parámetro lo que se quiere conocer. La inferencia recorre ese camino con herramientas como el error estándar y los intervalos de confianza."
+    },
+    "A1-L2-E1": {
+      "type": "short",
+      "answers": ["cualitativa nominal", "nominal", "cualitativa"],
+      "hint": "Identifica una etiqueta sin orden ni magnitud.",
+      "solution": "El código postal es una variable cualitativa nominal: identifica una zona mediante una etiqueta, sin orden ni distancia significativa entre códigos. Sumarlos o promediarlos no tiene sentido.",
+      "explain": "Si respondiste «cuantitativa», has confundido un número con una cantidad. Aunque el código se escriba con dígitos, no mide magnitud: es una etiqueta que identifica. Esa distinción evita calcular medias de teléfonos, códigos o dorsales, operaciones sin significado."
+    },
+    "A1-L2-E2": {
+      "type": "short",
+      "answers": ["ordinal", "cualitativa ordinal"],
+      "hint": "Las categorías se pueden ordenar de mejor a peor.",
+      "solution": "La nota A/B/C/D es una variable cualitativa ordinal, porque sus categorías tienen un orden natural de mejor a peor, aunque la distancia entre categorías no sea necesariamente igual.",
+      "explain": "Si respondiste «nominal», has ignorado el orden. La diferencia es práctica: con una ordinal se puede hablar de mediana y de posición, mientras que con una nominal solo se pueden contar frecuencias. Aun así, no conviene tratarla como una escala numérica sin justificarlo."
+    },
+    "A1-L2-E3": {
+      "hint": "Piensa si el resultado de promediar códigos describe algo real.",
+      "solution": "Falso: la media de códigos postales no tiene sentido porque son etiquetas nominales, no cantidades. Promediarlas produce un número sin interpretación posible.",
+      "explain": "Si respondiste «verdadero», has aplicado una operación aritmética a una etiqueta. La media exige que los valores representen magnitudes y que las diferencias sean comparables; en un código postal, la diferencia entre dos números no describe ninguna distancia real. El tipo de variable determina qué operaciones son válidas."
+    },
+    "A1-L2-E4": {
+      "type": "short",
+      "answers": ["continua", "cuantitativa continua"],
+      "hint": "Entre dos alturas siempre cabe otra medida.",
+      "solution": "La altura en centímetros es una variable cuantitativa continua, porque puede tomar cualquier valor dentro de un rango y entre dos medidas siempre cabe otra. Se modela con números reales.",
+      "explain": "Si respondiste «discreta», has supuesto que solo existen valores separados. La altura se mide, no se cuenta, y la precisión del instrumento decide cuántos decimales se registran. Esa diferencia importa al elegir gráficos y modelos."
+    },
+    "A1-L2-E5": {
+      "type": "short",
+      "answers": ["discreta", "cuantitativa discreta"],
+      "hint": "Se cuenta, no se mide con decimales.",
+      "solution": "El número de bajas en una partida es una variable cuantitativa discreta, porque se cuenta y solo admite valores enteros. Entre dos valores consecutivos no existe un valor intermedio posible.",
+      "explain": "Si respondiste «continua», has tratado un recuento como una medida. Las variables discretas toman valores separados y se representan con barras; las continuas admiten cualquier valor intermedio y se representan con histogramas. La distinción guía el análisis."
+    },
+    "A1-L3-E1": {
+      "type": "short",
+      "answers": ["nominal", "escala nominal"],
+      "hint": "Las categorías no tienen orden jerárquico.",
+      "solution": "El género se mide en escala nominal: sus categorías identifican grupos sin orden ni distancia. Solo permiten contar frecuencias y comparar proporciones entre categorías.",
+      "explain": "Si respondiste «ordinal», has atribuido un orden que las categorías no tienen. La escala nominal es la más débil: no admite ordenaciones ni operaciones aritméticas, solo recuentos y porcentajes. Reconocerla evita interpretaciones sin sentido."
+    },
+    "A1-L3-E2": {
+      "type": "short",
+      "answers": ["intervalo", "escala de intervalo", "de intervalo"],
+      "hint": "El año cero es una convención, no una ausencia de tiempo.",
+      "solution": "El año de nacimiento se mide en escala de intervalo: las diferencias son interpretables, pero el cero es arbitrario. Por eso se puede decir que hay veinte años de diferencia, pero no que una fecha sea el doble de otra.",
+      "explain": "Si respondiste «razón», has supuesto un cero absoluto que no existe en el calendario. En una escala de intervalo, las distancias tienen sentido y los cocientes no: la diferencia entre 1980 y 2000 es de veinte años, pero 2000 no es el doble de 1000 en ningún sentido físico."
+    },
+    "A1-L3-E3": {
+      "type": "short",
+      "answers": ["razon", "escala de razon", "de razon"],
+      "hint": "El cero indica ausencia real de peso.",
+      "solution": "El peso en kilogramos se mide en escala de razón: tiene un cero verdadero que significa ausencia de masa, y por eso los cocientes son interpretables. Veinte kilos son el doble de diez kilos.",
+      "explain": "Si respondiste «intervalo», has dudado del cero. En el peso, el cero no es una convención: significa que no hay masa. Esa propiedad es la que permite decir que un objeto pesa el doble que otro, algo que no se puede afirmar con temperaturas en grados Celsius."
+    },
+    "A1-L3-E4": {
+      "hint": "Compara el cero de la escala Celsius con la ausencia de temperatura.",
+      "solution": "Falso: en grados Celsius, 20 no es el doble de 10 porque el cero es arbitrario y no indica ausencia de temperatura. Para comparar cocientes hay que usar una escala con cero absoluto, como Kelvin.",
+      "explain": "Si respondiste «verdadero», has aplicado una razón a una escala de intervalo. El cero Celsius se eligió por conveniencia histórica y no representa ausencia de energía térmica. Convertir a Kelvin muestra que la relación entre esas temperaturas no es de dos a uno."
+    },
+    "A1-L3-E5": {
+      "hint": "El cero de masa significa ausencia de masa.",
+      "solution": "Verdadero: 20 kilogramos son el doble de 10 kilogramos, porque la escala tiene un cero verdadero y los cocientes son interpretables. Esa propiedad distingue las escalas de razón de las de intervalo.",
+      "explain": "Si respondiste «falso», has generalizado el caso de la temperatura. Cada escala tiene sus propiedades: en masa, longitud y tiempo el cero indica ausencia y los cocientes tienen sentido. Confundir escalas lleva a comparaciones incorrectas entre magnitudes distintas."
+    }
+  }
+}

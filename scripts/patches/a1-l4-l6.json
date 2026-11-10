@@ -1,0 +1,92 @@
+{
+  "module": "data/descriptiva/a1.js",
+  "items": {
+    "A1-L4-E1": {
+      "type": "short",
+      "answers": ["secundarios", "datos secundarios"],
+      "hint": "Ya estaban recogidos antes de tu estudio.",
+      "solution": "Los datos del INE son secundarios: los recoge y publica otra institución, y el analista los reutiliza. Los primarios serían los que el propio investigador obtiene con su diseño y sus instrumentos.",
+      "explain": "Si respondiste «primarios», has confundido la fuente con el uso. El criterio no es quién los analiza, sino quién los recoge: si ya existían antes del estudio, son secundarios. Esa distinción importa porque el analista no controla su definición, su cobertura ni su calidad."
+    },
+    "A1-L4-E2": {
+      "type": "short",
+      "answers": ["seleccion", "sesgo de seleccion"],
+      "hint": "El grupo observado se eligió por una característica relacionada con lo que se mide.",
+      "solution": "Es sesgo de selección: la muestra se forma solo con quienes compraron, y ese grupo no representa a todos los clientes. La satisfacción de los compradores suele ser distinta de la de quienes no compraron.",
+      "explain": "Si respondiste «no respuesta», has descrito otro mecanismo. La no respuesta ocurre cuando algunos invitados no contestan; aquí el problema es anterior, porque el marco excluye por diseño a un grupo entero. El sesgo de selección se corrige ampliando el marco, no insistiendo a los mismos."
+    },
+    "A1-L4-E3": {
+      "hint": "Pregunta qué parte de la realidad queda fuera de esos datos.",
+      "solution": "Falso: los datos masivos no son automáticamente representativos, porque reflejan a quienes los generan. Si un servicio registra solo a sus usuarios, el conjunto puede ser enorme y describir únicamente a ese grupo.",
+      "explain": "Si respondiste «verdadero», has confundido volumen con representatividad. Un registro con millones de filas puede tener un sesgo de cobertura enorme si excluye a quienes no usan el sistema. La representatividad depende de cómo se genera el dato, no de cuántos registros contiene."
+    },
+    "A1-L4-E4": {
+      "hint": "Responde quien quiere, no quien es elegido.",
+      "solution": "Una encuesta online voluntaria sufre sobre todo de sesgo de selección, porque participan quienes se sienten motivados por el tema. Ese grupo suele tener opiniones más intensas que la población general.",
+      "explain": "Si respondiste «error de cálculo», el problema no está en la aritmética sino en quién entra. La autoselección hace que la muestra dependa de la motivación, y la motivación se relaciona con la opinión medida. Aumentar el número de respuestas no corrige ese mecanismo."
+    },
+    "A1-L4-E5": {
+      "hint": "Piensa en el origen del dato, no en su análisis.",
+      "solution": "Verdadero: los datos primarios los recoge el investigador para su propio estudio, con instrumentos y definiciones que controla. Los secundarios proceden de fuentes ya existentes.",
+      "explain": "Si respondiste «falso», conviene recordar el criterio: primario no significa mejor, sino recogido por quien investiga. La ventaja es el control sobre el diseño; la desventaja, el coste. Los secundarios son más baratos y suelen tener definiciones que no se pueden cambiar."
+    },
+    "A1-L5-E1": {
+      "type": "short",
+      "answers": ["un solo valor", "un valor", "solo un valor"],
+      "hint": "Si hay dos datos en una celda, algo se ha mezclado.",
+      "solution": "En datos ordenados, cada celda contiene un solo valor. Esa regla permite que cada columna sea una variable y cada fila una observación, y es la condición para poder agrupar, filtrar y calcular sin ambigüedad.",
+      "explain": "Si respondiste «varias variables», has descrito una hoja de cálculo desordenada. Cuando una celda mezcla dos datos, el software no puede interpretarla como número ni como categoría. La disciplina de un valor por celda parece formal, pero evita la mayor parte de los errores de análisis."
+    },
+    "A1-L5-E2": {
+      "hint": "Piensa qué ocurre al calcular una media con ese valor.",
+      "solution": "Falso: codificar los faltantes como cero es mala práctica porque cero es un valor posible y arrastra la media hacia abajo. Los faltantes deben marcarse como ausentes y tratarse explícitamente.",
+      "explain": "Si respondiste «verdadero», has convertido una ausencia en un dato. Un peso de cero kilos o una temperatura de cero grados son valores reales, y confundirlos con «no medido» distorsiona todos los resúmenes. Lo correcto es usar un código de ausencia y declarar su tratamiento."
+    },
+    "A1-L5-E3": {
+      "type": "short",
+      "answers": ["un valor por celda", "un solo valor por celda", "un valor"],
+      "hint": "Dos datos conviven en el mismo campo.",
+      "solution": "La columna «ciudad,temperatura» viola la regla de un valor por celda, porque mezcla dos variables en un mismo campo. Separarlas en dos columnas permite analizarlas y evita errores de interpretación.",
+      "explain": "Si respondiste «una columna = una variable», estás cerca: la regla violada es la que exige un valor por celda, y de ella se deriva que cada columna contenga una sola variable. Al separar los datos, ambas condiciones se cumplen y el análisis se vuelve posible."
+    },
+    "A1-L5-E4": {
+      "hint": "Piensa en cómo se selecciona una columna para filtrar.",
+      "solution": "Verdadero: los datos ordenados facilitan agrupar y filtrar porque cada columna tiene una sola variable y un tipo homogéneo. Esa estructura permite operar sin conversiones manuales.",
+      "explain": "Si respondiste «falso», conviene imaginar el caso contrario: una columna con texto y números mezclados obliga a limpiar antes de cualquier operación. La estructura ordenada no es estética, es la condición práctica para que las herramientas funcionen."
+    },
+    "A1-L5-E5": {
+      "hint": "La mayor parte del trabajo ocurre antes del análisis.",
+      "solution": "La limpieza de datos consume la mayor parte del tiempo de un analista, muy por encima del modelado o la presentación. Detectar duplicados, unificar formatos y tratar faltantes es trabajo previo imprescindible.",
+      "explain": "Si respondiste «modelar», has idealizado el oficio. En la práctica, los datos llegan incompletos y con definiciones inconsistentes, y sin limpieza cualquier modelo produce resultados engañosos. Reconocerlo ayuda a planificar el tiempo real de un proyecto."
+    },
+    "A1-L6-E1": {
+      "type": "short",
+      "answers": ["igual probabilidad", "igual probabilidad para cada individuo", "la misma probabilidad"],
+      "hint": "No promete representación perfecta: define cómo se elige.",
+      "solution": "El muestreo aleatorio simple garantiza que cada individuo tenga la misma probabilidad de ser elegido, no que la muestra sea perfectamente representativa. La representatividad es probable, no segura.",
+      "explain": "Si respondiste «representatividad perfecta», has convertido una garantía probabilística en una certeza. Incluso con sorteo, una muestra concreta puede desviarse por azar. Lo que el método asegura es el procedimiento, y de él se derivan los márgenes de error conocidos."
+    },
+    "A1-L6-E2": {
+      "type": "short",
+      "answers": ["estratificado", "muestreo estratificado"],
+      "hint": "Divide la población en grupos homogéneos y muestrea en cada uno.",
+      "solution": "Para mejorar la precisión por subgrupos conviene el muestreo estratificado, que divide la población en estratos y toma muestra de cada uno. Así se garantiza representación de todos los grupos relevantes.",
+      "explain": "Si respondiste «conglomerados», has elegido la opción que abarata el trabajo de campo, no la que mejora la precisión. El estratificado exige conocer los estratos y muestrear dentro de todos; su ventaja es que reduce la variabilidad cuando los grupos difieren entre sí."
+    },
+    "A1-L6-E3": {
+      "hint": "Piensa en el coste de desplazarse frente a medir unidades dispersas.",
+      "solution": "Verdadero: el muestreo por conglomerados suele ser más barato porque concentra el trabajo de campo en grupos enteros, aunque pierde precisión por la correlación dentro del grupo.",
+      "explain": "Si respondiste «falso», has ignorado el coste logístico. Visitar veinte barrios y medir a todos sus habitantes es más barato que localizar a la misma cantidad de personas dispersas. El precio estadístico es el efecto de diseño, que aumenta el error estándar."
+    },
+    "A1-L6-E4": {
+      "hint": "Si el intervalo coincide con un ciclo de la lista, la muestra se sesga.",
+      "solution": "El muestreo sistemático puede fallar si la lista tiene un patrón periódico, porque el intervalo de selección puede coincidir con el ciclo y elegir siempre el mismo tipo de unidad. Ordenar al azar evita ese problema.",
+      "explain": "Si respondiste «nombres ordenados alfabéticamente», el orden alfabético no genera periodicidad relevante. El riesgo aparece cuando la lista sigue un ciclo, como turnos que se repiten cada tres filas. En ese caso, el sistema selecciona siempre el mismo turno."
+    },
+    "A1-L6-E5": {
+      "hint": "Compara un sesgo sistemático con un error aleatorio.",
+      "solution": "Verdadero: una muestra de 10 000 mal elegida puede ser menos representativa que una de 500 bien elegida, porque el sesgo no se corrige con tamaño. La segunda tiene margen de error; la primera, un sesgo que no desaparece.",
+      "explain": "Si respondiste «falso», has confiado en el volumen. El tamaño reduce la variabilidad aleatoria, pero un sesgo de selección persiste y se reproduce con más precisión al crecer la muestra. Por eso la calidad del procedimiento manda sobre la cantidad de casos."
+    }
+  }
+}

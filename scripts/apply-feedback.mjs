@@ -1,5 +1,5 @@
-// Aplica un parche de feedback (fase 5) a las líneas de ejercicios de un módulo fuente.
-// Admite id:"X" e id: "X", y tipos short/numeric/truefalse/mcq.
+﻿// Aplica un parche de feedback (fase 5) a las líneas de ejercicios de un módulo fuente.
+// Acepta id:"X" e id: "X"; conserva tipo y campos (choices/answer/tol) y añade hint/solution/explain.
 // Uso: node scripts/apply-feedback.mjs scripts/patches/<archivo>.json
 import fs from "node:fs";
 
@@ -13,7 +13,7 @@ const skipped = [];
 const q = (s) => JSON.stringify(s);
 
 for (const [id, c] of Object.entries(patch.items)) {
-  const re = new RegExp(`^([ \\t]*)\\{ id:\\s*"${id}".*$`, "m");
+  const re = new RegExp("^([ \\t]*)\\{\\s*id:\\s*\"" + id + "\".*$", "m");
   const m = text.match(re);
   if (!m) { skipped.push(id); continue; }
   const indent = m[1];
@@ -44,7 +44,7 @@ for (const [id, c] of Object.entries(patch.items)) {
     body = `{ id:"${id}", type:"mcq", prompt: ${prompt}, choices: ${cm[1]}, answer:${am[1]}, hint:{es:${q(c.hint)}}, solution:{es:${q(c.solution)}}, explain:{es:${q(c.explain)}}, xp:10 }`;
   }
 
-  text = text.replace(re, indent + body + (trailingComma ? "," : ""));
+  text = text.replace(re, () => indent + body + (trailingComma ? "," : ""));
   changed++;
 }
 

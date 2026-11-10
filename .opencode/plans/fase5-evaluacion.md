@@ -69,8 +69,14 @@ Pendiente (etapas 2–3): 451 ejercicios por convertir, 451 sin `explain`, 451 c
 
 - F0 cerrado: 15/15 con explicación y solución; 10 a `short`.
 - F1 cerrado: 15/15 con explicación y solución; 10 a `short`.
-- Acumulado: 30/481 con feedback completo (6,2 %), 20/481 en producción (4,2 %), 0 pistas filtradas en fundamentos.
-- Ritmo observado: ~2.000 palabras de feedback por módulo de 15 ejercicios. Quedan 30 módulos (~451 ejercicios).
+- A0 cerrado: 40/40 con explicación y solución; 25 `numeric`.
+- A1 cerrado: 30/30 con explicación y solución; 16 a `short`.
+- Acumulado: 100/481 con feedback completo (20,8 %), 61/481 en producción (12,7 %).
+- Ritmo observado: ~2.000 palabras de feedback por módulo de 15 ejercicios. Quedan 27 módulos (~381 ejercicios).
+
+### Lección de proceso
+
+Las explicaciones escritas «a ojo» salen de ~35 palabras. Regla fija: cuatro frases (qué falló, por qué, ejemplo, consecuencia) y verificar con `validate-feedback.mjs` antes de seguir.
 
 ## Criterio de aceptación
 

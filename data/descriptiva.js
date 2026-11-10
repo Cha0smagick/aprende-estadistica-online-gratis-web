@@ -2277,168 +2277,111 @@ export default {
           "exercises": [
             {
               "id": "A1-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La población es:",
                 "en": "The population is:"
               },
-              "choices": [
-                {
-                  "es": "El subconjunto observado",
-                  "en": "The observed subset"
-                },
-                {
-                  "es": "El conjunto completo de interés",
-                  "en": "The whole set of interest"
-                },
-                {
-                  "es": "La media muestral",
-                  "en": "The sample mean"
-                },
-                {
-                  "es": "El error estándar",
-                  "en": "The standard error"
-                }
+              "answers": [
+                "el conjunto completo de interes",
+                "conjunto completo de interes",
+                "la poblacion",
+                "toda la poblacion",
+                "el conjunto completo"
               ],
-              "answer": 1,
               "hint": {
-                "es": "El todo.",
-                "en": "The whole."
+                "es": "Es el todo sobre el que se quiere concluir, no la parte medida."
               },
               "solution": {
-                "es": "El conjunto completo de interés.",
-                "en": "The whole set of interest."
+                "es": "La población es el conjunto completo de unidades sobre el que se quiere concluir, con sus criterios de inclusión y exclusión. La muestra es el subconjunto que se observa para estimar características de esa población."
+              },
+              "explain": {
+                "es": "Si respondiste «el subconjunto observado», has descrito la muestra y no la población. La distinción importa porque las conclusiones se refieren a la población, mientras que los datos proceden siempre de la muestra. Confundirlas lleva a presentar un dato muestral como si describiera a todo el colectivo."
               },
               "xp": 10
             },
             {
               "id": "A1-L1-E2",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Un parámetro describe la muestra.",
                 "en": "A parameter describes the sample."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Parámetro = población.",
-                "en": "Parameter = population."
+                "es": "Piensa qué conjunto describe cada palabra y con qué letra se simboliza."
               },
               "solution": {
-                "es": "Falso: parámetro describe la población.",
-                "en": "False: parameter describes population."
+                "es": "Falso: el parámetro describe la población y suele ser desconocido; el estadístico describe la muestra y se calcula con los datos. El parámetro se estima, el estadístico se obtiene."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has invertido los términos. El parámetro es un número fijo de la población, como la media real de todos los usuarios; el estadístico es el valor que sale de la muestra y cambia si se repite el estudio. Esa diferencia es la base de toda la inferencia."
+              },
+              "xp": 10
             },
             {
               "id": "A1-L1-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "¿Qué importa más para una buena muestra?",
                 "en": "What matters most for a good sample?"
               },
-              "choices": [
-                {
-                  "es": "Que sea grande",
-                  "en": "Being large"
-                },
-                {
-                  "es": "Que sea aleatoria y sin sesgo",
-                  "en": "Being random and unbiased"
-                },
-                {
-                  "es": "Que sea barata",
-                  "en": "Being cheap"
-                },
-                {
-                  "es": "Que sea rápida",
-                  "en": "Being fast"
-                }
+              "answers": [
+                "aleatoria y sin sesgo",
+                "que sea aleatoria",
+                "aleatoria",
+                "sin sesgo",
+                "aleatoriedad"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Aleatoriedad > tamaño.",
-                "en": "Randomness > size."
+                "es": "Un millón de voluntarios sigue siendo una muestra de voluntarios."
               },
               "solution": {
-                "es": "Aleatoria y sin sesgo.",
-                "en": "Random and unbiased."
+                "es": "Lo que más importa es que la muestra sea aleatoria y sin sesgo, porque la representatividad depende del procedimiento de selección y no del tamaño. Una muestra grande mal elegida reproduce el sesgo con más precisión."
+              },
+              "explain": {
+                "es": "Si respondiste «que sea grande», has confundido precisión con representatividad. El tamaño reduce la variabilidad del estimador, pero no corrige un sesgo de selección: una encuesta voluntaria de un millón de personas sigue describiendo solo a los voluntarios. La aleatoriedad es la condición que permite generalizar."
               },
               "xp": 10
             },
             {
               "id": "A1-L1-E4",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Encuestas a 1000 personas elegidas al azar: ¿tamaño de muestra?",
                 "en": "Survey 1000 randomly chosen people: sample size?"
               },
-              "answer": 2,
+              "answer": 1000,
               "tol": 0.01,
               "hint": {
-                "es": "n = 1000.",
-                "en": "n = 1000."
+                "es": "El tamaño de muestra es el número de unidades observadas."
               },
               "solution": {
-                "es": "n = 1000.",
-                "en": "n = 1000."
+                "es": "El tamaño de muestra es 1000, porque se observan 1000 personas. Ese valor se denota con n y es la base para calcular el error estándar y el margen de error."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "2000",
-                  "en": "2000"
-                },
-                {
-                  "es": "1001",
-                  "en": "1001"
-                },
-                {
-                  "es": "1000",
-                  "en": "1000"
-                },
-                {
-                  "es": "999",
-                  "en": "999"
-                }
-              ]
+              "explain": {
+                "es": "Si dudaste, la clave es distinguir el tamaño de la muestra del tamaño de la población: n es lo que se mide y N es el total al que se quiere generalizar. Aquí solo se observan 1000 personas, así que n vale 1000. El margen de error dependerá de ese número."
+              },
+              "xp": 10
             },
             {
               "id": "A1-L1-E5",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La inferencia usa el estadístico para estimar el parámetro.",
                 "en": "Inference uses the statistic to estimate the parameter."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Esa es la idea central.",
-                "en": "That's the core idea."
+                "es": "Recuerda qué se estima y con qué se estima."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la inferencia usa el estadístico calculado en la muestra para estimar el parámetro poblacional, añadiendo un margen que cuantifica la incertidumbre del muestreo."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene repasar la dirección del razonamiento: el estadístico es lo que se conoce y el parámetro lo que se quiere conocer. La inferencia recorre ese camino con herramientas como el error estándar y los intervalos de confianza."
+              },
+              "xp": 10
             }
           ]
         },
@@ -2573,173 +2516,109 @@ export default {
           "exercises": [
             {
               "id": "A1-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "'Código postal' es:",
                 "en": "'ZIP code' is:"
               },
-              "choices": [
-                {
-                  "es": "Cuantitativa",
-                  "en": "Quantitative"
-                },
-                {
-                  "es": "Cualitativa nominal",
-                  "en": "Qualitative nominal"
-                },
-                {
-                  "es": "Cualitativa ordinal",
-                  "en": "Qualitative ordinal"
-                },
-                {
-                  "es": "Continua",
-                  "en": "Continuous"
-                }
+              "answers": [
+                "cualitativa nominal",
+                "nominal",
+                "cualitativa"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Es una etiqueta.",
-                "en": "It's a label."
+                "es": "Identifica una etiqueta sin orden ni magnitud."
               },
               "solution": {
-                "es": "Cualitativa nominal.",
-                "en": "Qualitative nominal."
+                "es": "El código postal es una variable cualitativa nominal: identifica una zona mediante una etiqueta, sin orden ni distancia significativa entre códigos. Sumarlos o promediarlos no tiene sentido."
+              },
+              "explain": {
+                "es": "Si respondiste «cuantitativa», has confundido un número con una cantidad. Aunque el código se escriba con dígitos, no mide magnitud: es una etiqueta que identifica. Esa distinción evita calcular medias de teléfonos, códigos o dorsales, operaciones sin significado. Por eso los códigos se tratan como etiquetas y nunca como cantidades sumables."
               },
               "xp": 10
             },
             {
               "id": "A1-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "'Nota A/B/C/D' es:",
                 "en": "'Grade A/B/C/D' is:"
               },
-              "choices": [
-                {
-                  "es": "Nominal",
-                  "en": "Nominal"
-                },
-                {
-                  "es": "Ordinal",
-                  "en": "Ordinal"
-                },
-                {
-                  "es": "Discreta",
-                  "en": "Discrete"
-                },
-                {
-                  "es": "Continua",
-                  "en": "Continuous"
-                }
+              "answers": [
+                "ordinal",
+                "cualitativa ordinal"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Hay orden.",
-                "en": "There is order."
+                "es": "Las categorías se pueden ordenar de mejor a peor."
               },
               "solution": {
-                "es": "Ordinal.",
-                "en": "Ordinal."
+                "es": "La nota A/B/C/D es una variable cualitativa ordinal, porque sus categorías tienen un orden natural de mejor a peor, aunque la distancia entre categorías no sea necesariamente igual."
+              },
+              "explain": {
+                "es": "Si respondiste «nominal», has ignorado el orden. La diferencia es práctica: con una ordinal se puede hablar de mediana y de posición, mientras que con una nominal solo se pueden contar frecuencias. Aun así, no conviene tratarla como una escala numérica sin justificarlo."
               },
               "xp": 10
             },
             {
               "id": "A1-L2-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La media de códigos postales tiene sentido.",
                 "en": "The mean of ZIP codes makes sense."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Código = etiqueta.",
-                "en": "Code = label."
+                "es": "Piensa si el resultado de promediar códigos describe algo real."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: la media de códigos postales no tiene sentido porque son etiquetas nominales, no cantidades. Promediarlas produce un número sin interpretación posible."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has aplicado una operación aritmética a una etiqueta. La media exige que los valores representen magnitudes y que las diferencias sean comparables; en un código postal, la diferencia entre dos números no describe ninguna distancia real. El tipo de variable determina qué operaciones son válidas."
+              },
+              "xp": 10
             },
             {
               "id": "A1-L2-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "'Altura en cm' es:",
                 "en": "'Height in cm' is:"
               },
-              "choices": [
-                {
-                  "es": "Discreta",
-                  "en": "Discrete"
-                },
-                {
-                  "es": "Continua",
-                  "en": "Continuous"
-                },
-                {
-                  "es": "Nominal",
-                  "en": "Nominal"
-                },
-                {
-                  "es": "Ordinal",
-                  "en": "Ordinal"
-                }
+              "answers": [
+                "continua",
+                "cuantitativa continua"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Medible.",
-                "en": "Measurable."
+                "es": "Entre dos alturas siempre cabe otra medida."
               },
               "solution": {
-                "es": "Continua.",
-                "en": "Continuous."
+                "es": "La altura en centímetros es una variable cuantitativa continua, porque puede tomar cualquier valor dentro de un rango y entre dos medidas siempre cabe otra. Se modela con números reales."
+              },
+              "explain": {
+                "es": "Si respondiste «discreta», has supuesto que solo existen valores separados. La altura se mide, no se cuenta, y la precisión del instrumento decide cuántos decimales se registran. Esa diferencia importa al elegir gráficos y modelos. La precisión del instrumento decide cuántos decimales se registran, no la naturaleza de la variable."
               },
               "xp": 10
             },
             {
               "id": "A1-L2-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "'Nº de kills en una partida' es:",
                 "en": "'Kills in a match' is:"
               },
-              "choices": [
-                {
-                  "es": "Continua",
-                  "en": "Continuous"
-                },
-                {
-                  "es": "Discreta",
-                  "en": "Discrete"
-                },
-                {
-                  "es": "Ordinal",
-                  "en": "Ordinal"
-                },
-                {
-                  "es": "Nominal",
-                  "en": "Nominal"
-                }
+              "answers": [
+                "discreta",
+                "cuantitativa discreta"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Contable.",
-                "en": "Countable."
+                "es": "Se cuenta, no se mide con decimales."
               },
               "solution": {
-                "es": "Discreta.",
-                "en": "Discrete."
+                "es": "El número de bajas en una partida es una variable cuantitativa discreta, porque se cuenta y solo admite valores enteros. Entre dos valores consecutivos no existe un valor intermedio posible."
+              },
+              "explain": {
+                "es": "Si respondiste «continua», has tratado un recuento como una medida. Las variables discretas toman valores separados y se representan con barras; las continuas admiten cualquier valor intermedio y se representan con histogramas. La distinción guía el análisis. Esa diferencia guía el gráfico: barras para recuentos, histograma para medidas."
               },
               "xp": 10
             }
@@ -2876,167 +2755,109 @@ export default {
           "exercises": [
             {
               "id": "A1-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "'Género' es escala:",
                 "en": "'Gender' is scale:"
               },
-              "choices": [
-                {
-                  "es": "Nominal",
-                  "en": "Nominal"
-                },
-                {
-                  "es": "Ordinal",
-                  "en": "Ordinal"
-                },
-                {
-                  "es": "Intervalo",
-                  "en": "Interval"
-                },
-                {
-                  "es": "Razón",
-                  "en": "Ratio"
-                }
+              "answers": [
+                "nominal",
+                "escala nominal"
               ],
-              "answer": 0,
               "hint": {
-                "es": "Sin orden.",
-                "en": "No order."
+                "es": "Las categorías no tienen orden jerárquico."
               },
               "solution": {
-                "es": "Nominal.",
-                "en": "Nominal."
+                "es": "El género se mide en escala nominal: sus categorías identifican grupos sin orden ni distancia. Solo permiten contar frecuencias y comparar proporciones entre categorías."
+              },
+              "explain": {
+                "es": "Si respondiste «ordinal», has atribuido un orden que las categorías no tienen. La escala nominal es la más débil: no admite ordenaciones ni operaciones aritméticas, solo recuentos y porcentajes. Reconocerla evita interpretaciones sin sentido. Reconocer la escala nominal evita promedios y diferencias que no significan nada."
               },
               "xp": 10
             },
             {
               "id": "A1-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "'Año de nacimiento' es escala:",
                 "en": "'Birth year' is scale:"
               },
-              "choices": [
-                {
-                  "es": "Nominal",
-                  "en": "Nominal"
-                },
-                {
-                  "es": "Ordinal",
-                  "en": "Ordinal"
-                },
-                {
-                  "es": "Intervalo",
-                  "en": "Interval"
-                },
-                {
-                  "es": "Razón",
-                  "en": "Ratio"
-                }
+              "answers": [
+                "intervalo",
+                "escala de intervalo",
+                "de intervalo"
               ],
-              "answer": 2,
               "hint": {
-                "es": "Cero arbitrario (año 0).",
-                "en": "Arbitrary zero (year 0)."
+                "es": "El año cero es una convención, no una ausencia de tiempo."
               },
               "solution": {
-                "es": "Intervalo.",
-                "en": "Interval."
+                "es": "El año de nacimiento se mide en escala de intervalo: las diferencias son interpretables, pero el cero es arbitrario. Por eso se puede decir que hay veinte años de diferencia, pero no que una fecha sea el doble de otra."
+              },
+              "explain": {
+                "es": "Si respondiste «razón», has supuesto un cero absoluto que no existe en el calendario. En una escala de intervalo, las distancias tienen sentido y los cocientes no: la diferencia entre 1980 y 2000 es de veinte años, pero 2000 no es el doble de 1000 en ningún sentido físico."
               },
               "xp": 10
             },
             {
               "id": "A1-L3-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "'Peso en kg' es escala:",
                 "en": "'Weight in kg' is scale:"
               },
-              "choices": [
-                {
-                  "es": "Nominal",
-                  "en": "Nominal"
-                },
-                {
-                  "es": "Ordinal",
-                  "en": "Ordinal"
-                },
-                {
-                  "es": "Intervalo",
-                  "en": "Interval"
-                },
-                {
-                  "es": "Razón",
-                  "en": "Ratio"
-                }
+              "answers": [
+                "razon",
+                "escala de razon",
+                "de razon"
               ],
-              "answer": 3,
               "hint": {
-                "es": "Cero verdadero.",
-                "en": "True zero."
+                "es": "El cero indica ausencia real de peso."
               },
               "solution": {
-                "es": "Razón.",
-                "en": "Ratio."
+                "es": "El peso en kilogramos se mide en escala de razón: tiene un cero verdadero que significa ausencia de masa, y por eso los cocientes son interpretables. Veinte kilos son el doble de diez kilos."
+              },
+              "explain": {
+                "es": "Si respondiste «intervalo», has dudado del cero. En el peso, el cero no es una convención: significa que no hay masa. Esa propiedad es la que permite decir que un objeto pesa el doble que otro, algo que no se puede afirmar con temperaturas en grados Celsius."
               },
               "xp": 10
             },
             {
               "id": "A1-L3-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "20 °C es el doble de 10 °C.",
                 "en": "20 °C is twice 10 °C."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "En Celsius el cero es arbitrario.",
-                "en": "In Celsius zero is arbitrary."
+                "es": "Compara el cero de la escala Celsius con la ausencia de temperatura."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: en grados Celsius, 20 no es el doble de 10 porque el cero es arbitrario y no indica ausencia de temperatura. Para comparar cocientes hay que usar una escala con cero absoluto, como Kelvin."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has aplicado una razón a una escala de intervalo. El cero Celsius se eligió por conveniencia histórica y no representa ausencia de energía térmica. Convertir a Kelvin muestra que la relación entre esas temperaturas no es de dos a uno."
+              },
+              "xp": 10
             },
             {
               "id": "A1-L3-E5",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "20 kg es el doble de 10 kg.",
                 "en": "20 kg is twice 10 kg."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Cero verdadero.",
-                "en": "True zero."
+                "es": "El cero de masa significa ausencia de masa."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: 20 kilogramos son el doble de 10 kilogramos, porque la escala tiene un cero verdadero y los cocientes son interpretables. Esa propiedad distingue las escalas de razón de las de intervalo."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», has generalizado el caso de la temperatura. Cada escala tiene sus propiedades: en masa, longitud y tiempo el cero indica ausencia y los cocientes tienen sentido. Confundir escalas lleva a comparaciones incorrectas entre magnitudes distintas. Distinguir ambas escalas es lo que permite comparar magnitudes sin cometer errores de interpretación."
+              },
+              "xp": 10
             }
           ]
         },
@@ -3171,103 +2992,66 @@ export default {
           "exercises": [
             {
               "id": "A1-L4-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Los datos del INE son:",
                 "en": "INE data are:"
               },
-              "choices": [
-                {
-                  "es": "Primarios",
-                  "en": "Primary"
-                },
-                {
-                  "es": "Secundarios",
-                  "en": "Secondary"
-                },
-                {
-                  "es": "Experimentales",
-                  "en": "Experimental"
-                },
-                {
-                  "es": "Sesgados",
-                  "en": "Biased"
-                }
+              "answers": [
+                "secundarios",
+                "datos secundarios"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Ya existen.",
-                "en": "Already exist."
+                "es": "Ya estaban recogidos antes de tu estudio."
               },
               "solution": {
-                "es": "Secundarios.",
-                "en": "Secondary."
+                "es": "Los datos del INE son secundarios: los recoge y publica otra institución, y el analista los reutiliza. Los primarios serían los que el propio investigador obtiene con su diseño y sus instrumentos."
+              },
+              "explain": {
+                "es": "Si respondiste «primarios», has confundido la fuente con el uso. El criterio no es quién los analiza, sino quién los recoge: si ya existían antes del estudio, son secundarios. Esa distinción importa porque el analista no controla su definición, su cobertura ni su calidad."
               },
               "xp": 10
             },
             {
               "id": "A1-L4-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Estudiar solo a los que compraron un producto para medir satisfacción general es sesgo de:",
                 "en": "Studying only buyers to measure general satisfaction is bias of:"
               },
-              "choices": [
-                {
-                  "es": "No respuesta",
-                  "en": "Non-response"
-                },
-                {
-                  "es": "Selección",
-                  "en": "Selection"
-                },
-                {
-                  "es": "Superviviente",
-                  "en": "Survivorship"
-                },
-                {
-                  "es": "Recuerdo",
-                  "en": "Recall"
-                }
+              "answers": [
+                "seleccion",
+                "sesgo de seleccion"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Muestra no representativa.",
-                "en": "Non-representative sample."
+                "es": "El grupo observado se eligió por una característica relacionada con lo que se mide."
               },
               "solution": {
-                "es": "Selección.",
-                "en": "Selection."
+                "es": "Es sesgo de selección: la muestra se forma solo con quienes compraron, y ese grupo no representa a todos los clientes. La satisfacción de los compradores suele ser distinta de la de quienes no compraron."
+              },
+              "explain": {
+                "es": "Si respondiste «no respuesta», has descrito otro mecanismo. La no respuesta ocurre cuando algunos invitados no contestan; aquí el problema es anterior, porque el marco excluye por diseño a un grupo entero. El sesgo de selección se corrige ampliando el marco, no insistiendo a los mismos."
               },
               "xp": 10
             },
             {
               "id": "A1-L4-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Los datos masivos son automáticamente representativos.",
                 "en": "Big data are automatically representative."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Depende de quién los genera.",
-                "en": "Depends on who generates them."
+                "es": "Pregunta qué parte de la realidad queda fuera de esos datos."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: los datos masivos no son automáticamente representativos, porque reflejan a quienes los generan. Si un servicio registra solo a sus usuarios, el conjunto puede ser enorme y describir únicamente a ese grupo."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido volumen con representatividad. Un registro con millones de filas puede tener un sesgo de cobertura enorme si excluye a quienes no usan el sistema. La representatividad depende de cómo se genera el dato, no de cuántos registros contiene."
+              },
+              "xp": 10
             },
             {
               "id": "A1-L4-E4",
@@ -3296,42 +3080,34 @@ export default {
               ],
               "answer": 0,
               "hint": {
-                "es": "Solo responden los motivados.",
-                "en": "Only motivated respond."
+                "es": "Responde quien quiere, no quien es elegido."
               },
               "solution": {
-                "es": "Selección.",
-                "en": "Selection."
+                "es": "Una encuesta online voluntaria sufre sobre todo de sesgo de selección, porque participan quienes se sienten motivados por el tema. Ese grupo suele tener opiniones más intensas que la población general."
+              },
+              "explain": {
+                "es": "Si respondiste «error de cálculo», el problema no está en la aritmética sino en quién entra. La autoselección hace que la muestra dependa de la motivación, y la motivación se relaciona con la opinión medida. Aumentar el número de respuestas no corrige ese mecanismo."
               },
               "xp": 10
             },
             {
               "id": "A1-L4-E5",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Los datos primarios los recoge el investigador.",
                 "en": "Primary data are collected by the researcher."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Definición.",
-                "en": "Definition."
+                "es": "Piensa en el origen del dato, no en su análisis."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los datos primarios los recoge el investigador para su propio estudio, con instrumentos y definiciones que controla. Los secundarios proceden de fuentes ya existentes."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar el criterio: primario no significa mejor, sino recogido por quien investiga. La ventaja es el control sobre el diseño; la desventaja, el coste. Los secundarios son más baratos y suelen tener definiciones que no se pueden cambiar."
+              },
+              "xp": 10
             }
           ]
         },
@@ -3466,131 +3242,87 @@ export default {
           "exercises": [
             {
               "id": "A1-L5-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "En datos ordenados, cada celda contiene:",
                 "en": "In tidy data, each cell contains:"
               },
-              "choices": [
-                {
-                  "es": "Varias variables",
-                  "en": "Multiple variables"
-                },
-                {
-                  "es": "Un solo valor",
-                  "en": "A single value"
-                },
-                {
-                  "es": "Un total",
-                  "en": "A total"
-                },
-                {
-                  "es": "Un comentario",
-                  "en": "A comment"
-                }
+              "answers": [
+                "un solo valor",
+                "un valor",
+                "solo un valor"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Un valor.",
-                "en": "One value."
+                "es": "Si hay dos datos en una celda, algo se ha mezclado."
               },
               "solution": {
-                "es": "Un solo valor.",
-                "en": "A single value."
+                "es": "En datos ordenados, cada celda contiene un solo valor. Esa regla permite que cada columna sea una variable y cada fila una observación, y es la condición para poder agrupar, filtrar y calcular sin ambigüedad."
+              },
+              "explain": {
+                "es": "Si respondiste «varias variables», has descrito una hoja de cálculo desordenada. Cuando una celda mezcla dos datos, el software no puede interpretarla como número ni como categoría. La disciplina de un valor por celda parece formal, pero evita la mayor parte de los errores de análisis."
               },
               "xp": 10
             },
             {
               "id": "A1-L5-E2",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Codificar los faltantes como 0 es buena práctica.",
                 "en": "Coding missing values as 0 is good practice."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "0 parece dato real.",
-                "en": "0 looks like real data."
+                "es": "Piensa qué ocurre al calcular una media con ese valor."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: codificar los faltantes como cero es mala práctica porque cero es un valor posible y arrastra la media hacia abajo. Los faltantes deben marcarse como ausentes y tratarse explícitamente."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has convertido una ausencia en un dato. Un peso de cero kilos o una temperatura de cero grados son valores reales, y confundirlos con «no medido» distorsiona todos los resúmenes. Lo correcto es usar un código de ausencia y declarar su tratamiento."
+              },
+              "xp": 10
             },
             {
               "id": "A1-L5-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "'ciudad,temperatura' en una sola columna viola:",
                 "en": "'city,temperature' in one column violates:"
               },
-              "choices": [
-                {
-                  "es": "Una fila = una observación",
-                  "en": "One row = one observation"
-                },
-                {
-                  "es": "Una columna = una variable",
-                  "en": "One column = one variable"
-                },
-                {
-                  "es": "Un valor por celda",
-                  "en": "One value per cell"
-                },
-                {
-                  "es": "Nada",
-                  "en": "Nothing"
-                }
+              "answers": [
+                "un valor por celda",
+                "un solo valor por celda",
+                "un valor"
               ],
-              "answer": 2,
               "hint": {
-                "es": "Dos valores en una celda.",
-                "en": "Two values in one cell."
+                "es": "Dos datos conviven en el mismo campo."
               },
               "solution": {
-                "es": "Un valor por celda.",
-                "en": "One value per cell."
+                "es": "La columna «ciudad,temperatura» viola la regla de un valor por celda, porque mezcla dos variables en un mismo campo. Separarlas en dos columnas permite analizarlas y evita errores de interpretación."
+              },
+              "explain": {
+                "es": "Si respondiste «una columna = una variable», estás cerca: la regla violada es la que exige un valor por celda, y de ella se deriva que cada columna contenga una sola variable. Al separar los datos, ambas condiciones se cumplen y el análisis se vuelve posible."
               },
               "xp": 10
             },
             {
               "id": "A1-L5-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Datos ordenados facilitan agrupar y filtrar.",
                 "en": "Tidy data makes grouping and filtering easier."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Definición.",
-                "en": "Definition."
+                "es": "Piensa en cómo se selecciona una columna para filtrar."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los datos ordenados facilitan agrupar y filtrar porque cada columna tiene una sola variable y un tipo homogéneo. Esa estructura permite operar sin conversiones manuales."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene imaginar el caso contrario: una columna con texto y números mezclados obliga a limpiar antes de cualquier operación. La estructura ordenada no es estética, es la condición práctica para que las herramientas funcionen. Ordenar no es un lujo: es lo que permite que una herramienta entienda los datos sin instrucciones adicionales."
+              },
+              "xp": 10
             },
             {
               "id": "A1-L5-E5",
@@ -3619,12 +3351,13 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Limpieza.",
-                "en": "Cleaning."
+                "es": "La mayor parte del trabajo ocurre antes del análisis."
               },
               "solution": {
-                "es": "Limpiar datos.",
-                "en": "Cleaning data."
+                "es": "La limpieza de datos consume la mayor parte del tiempo de un analista, muy por encima del modelado o la presentación. Detectar duplicados, unificar formatos y tratar faltantes es trabajo previo imprescindible."
+              },
+              "explain": {
+                "es": "Si respondiste «modelar», has idealizado el oficio. En la práctica, los datos llegan incompletos y con definiciones inconsistentes, y sin limpieza cualquier modelo produce resultados engañosos. Reconocerlo ayuda a planificar el tiempo real de un proyecto. Planificar ese trabajo previo evita prometer plazos que la calidad del dato no permite cumplir."
               },
               "xp": 10
             }
@@ -3761,103 +3494,67 @@ export default {
           "exercises": [
             {
               "id": "A1-L6-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El muestreo aleatorio simple garantiza:",
                 "en": "Simple random sampling guarantees:"
               },
-              "choices": [
-                {
-                  "es": "Representatividad perfecta",
-                  "en": "Perfect representativeness"
-                },
-                {
-                  "es": "Igual probabilidad para cada individuo",
-                  "en": "Equal probability for each individual"
-                },
-                {
-                  "es": "Cero error",
-                  "en": "Zero error"
-                },
-                {
-                  "es": "Muestra grande",
-                  "en": "Large sample"
-                }
+              "answers": [
+                "igual probabilidad",
+                "igual probabilidad para cada individuo",
+                "la misma probabilidad"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Definición.",
-                "en": "Definition."
+                "es": "No promete representación perfecta: define cómo se elige."
               },
               "solution": {
-                "es": "Igual probabilidad.",
-                "en": "Equal probability."
+                "es": "El muestreo aleatorio simple garantiza que cada individuo tenga la misma probabilidad de ser elegido, no que la muestra sea perfectamente representativa. La representatividad es probable, no segura."
+              },
+              "explain": {
+                "es": "Si respondiste «representatividad perfecta», has convertido una garantía probabilística en una certeza. Incluso con sorteo, una muestra concreta puede desviarse por azar. Lo que el método asegura es el procedimiento, y de él se derivan los márgenes de error conocidos."
               },
               "xp": 10
             },
             {
               "id": "A1-L6-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para mejorar precisión por subgrupos, usa:",
                 "en": "To improve precision by subgroups, use:"
               },
-              "choices": [
-                {
-                  "es": "Conglomerados",
-                  "en": "Clusters"
-                },
-                {
-                  "es": "Estratificado",
-                  "en": "Stratified"
-                },
-                {
-                  "es": "Sistemático",
-                  "en": "Systematic"
-                },
-                {
-                  "es": "Conveniencia",
-                  "en": "Convenience"
-                }
+              "answers": [
+                "estratificado",
+                "muestreo estratificado"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Estratos.",
-                "en": "Strata."
+                "es": "Divide la población en grupos homogéneos y muestrea en cada uno."
               },
               "solution": {
-                "es": "Estratificado.",
-                "en": "Stratified."
+                "es": "Para mejorar la precisión por subgrupos conviene el muestreo estratificado, que divide la población en estratos y toma muestra de cada uno. Así se garantiza representación de todos los grupos relevantes."
+              },
+              "explain": {
+                "es": "Si respondiste «conglomerados», has elegido la opción que abarata el trabajo de campo, no la que mejora la precisión. El estratificado exige conocer los estratos y muestrear dentro de todos; su ventaja es que reduce la variabilidad cuando los grupos difieren entre sí."
               },
               "xp": 10
             },
             {
               "id": "A1-L6-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Un muestreo por conglomerados es más barato que uno simple del mismo tamaño.",
                 "en": "Cluster sampling is cheaper than simple random of the same size."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Se mide a grupos enteros.",
-                "en": "Whole groups measured."
+                "es": "Piensa en el coste de desplazarse frente a medir unidades dispersas."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: el muestreo por conglomerados suele ser más barato porque concentra el trabajo de campo en grupos enteros, aunque pierde precisión por la correlación dentro del grupo."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», has ignorado el coste logístico. Visitar veinte barrios y medir a todos sus habitantes es más barato que localizar a la misma cantidad de personas dispersas. El precio estadístico es el efecto de diseño, que aumenta el error estándar."
+              },
+              "xp": 10
             },
             {
               "id": "A1-L6-E4",
@@ -3886,42 +3583,34 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Periodicidad.",
-                "en": "Periodicity."
+                "es": "Si el intervalo coincide con un ciclo de la lista, la muestra se sesga."
               },
               "solution": {
-                "es": "Patrón periódico.",
-                "en": "Periodic pattern."
+                "es": "El muestreo sistemático puede fallar si la lista tiene un patrón periódico, porque el intervalo de selección puede coincidir con el ciclo y elegir siempre el mismo tipo de unidad. Ordenar al azar evita ese problema."
+              },
+              "explain": {
+                "es": "Si respondiste «nombres ordenados alfabéticamente», el orden alfabético no genera periodicidad relevante. El riesgo aparece cuando la lista sigue un ciclo, como turnos que se repiten cada tres filas. En ese caso, el sistema selecciona siempre el mismo turno. Reordenar la lista al azar o cambiar el intervalo son las dos soluciones habituales a ese problema."
               },
               "xp": 10
             },
             {
               "id": "A1-L6-E5",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Una muestra de 10 000 mal elegida puede ser menos representativa que una de 500 bien elegida.",
                 "en": "A poorly chosen 10,000 sample can be less representative than a well-chosen 500."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Calidad > tamaño.",
-                "en": "Quality > size."
+                "es": "Compara un sesgo sistemático con un error aleatorio."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: una muestra de 10 000 mal elegida puede ser menos representativa que una de 500 bien elegida, porque el sesgo no se corrige con tamaño. La segunda tiene margen de error; la primera, un sesgo que no desaparece."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», has confiado en el volumen. El tamaño reduce la variabilidad aleatoria, pero un sesgo de selección persiste y se reproduce con más precisión al crecer la muestra. Por eso la calidad del procedimiento manda sobre la cantidad de casos."
+              },
+              "xp": 10
             }
           ]
         }
