@@ -13,6 +13,8 @@ window.I18N = {
     lessonComplete:"¡Lección completada!", congrats:"Has ganado",
     back:"Volver al curso", nextLesson:"Siguiente lección",
     reducedMotion:"Animaciones reducidas",
+    mastery:"Maestría", whyWrong:"Por qué", shortPlaceholder:"Escribe la respuesta",
+    masteryReached:"Maestría alcanzada",
   },
   en: {
     check:"Check", hint:"Hint", solution:"Show solution", next:"Next",
@@ -27,6 +29,8 @@ window.I18N = {
     lessonComplete:"Lesson complete!", congrats:"You earned",
     back:"Back to course", nextLesson:"Next lesson",
     reducedMotion:"Reduced motion",
+    mastery:"Mastery", whyWrong:"Why", shortPlaceholder:"Type your answer",
+    masteryReached:"Mastery reached",
   }
 };
 window.t = (key) => (window.I18N[window.SITE_LANG]||window.I18N.es)[key] || key;

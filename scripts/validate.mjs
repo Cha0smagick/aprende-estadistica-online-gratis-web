@@ -5,13 +5,13 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const courseFiles = ["fundamentos.js","descriptiva.js","probabilidad.js","inferencial.js"];
 
-const TYPES = new Set(["mcq","numeric","truefalse","order"]);
+const TYPES = new Set(["mcq","numeric","truefalse","order","short"]);
 const LANGS = ["es","en"];
 let errors=[]; let warnings=[];
 const seenIds=new Map(); // ids de ejercicio únicos en todo el repo (exercises-index.js indexa por id)
 function err(msg){ errors.push(msg); }
 function warn(msg){ warnings.push(msg); }
-function isText(v){ return v && typeof v==="object" && typeof v.es==="string" && typeof v.en==="string"; }
+function isText(v){ return v && typeof v==="object" && typeof v.es==="string"; } // ES-only desde 2026-11-08
 function checkText(obj,path){ if(!isText(obj)) err(`${path}: esperado {es,en} strings`); }
 function checkExercise(q,loc){
   if(!q.id) err(`${loc}: falta id`);
@@ -29,6 +29,11 @@ function checkExercise(q,loc){
   if(q.type==="truefalse" && typeof q.answer!=="boolean") err(`${loc}: answer debe ser boolean`);
   if(q.type==="numeric" && typeof q.answer!=="number") err(`${loc}: answer debe ser number`);
   if(q.type==="numeric" && (q.tol===undefined || typeof q.tol!=="number")) err(`${loc}: falta tol numérico`);
+  if(q.type==="short"){
+    const ans=q.answers||q.answer;
+    const ok=Array.isArray(ans)? ans.length>0 && ans.every(a=>typeof a==="string"&&a.trim()) : (typeof ans==="string"&&ans.trim());
+    if(!ok) err(`${loc}: short requiere answers (array de strings) o answer string`);
+  }
   if(q.type==="order" && !Array.isArray(q.answer)) err(`${loc}: answer debe ser array de índices`);
   if(q.type==="order" && Array.isArray(q.answer)){
     const n=q.choices?q.choices.length:0;

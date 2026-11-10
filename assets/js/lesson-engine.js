@@ -129,7 +129,20 @@
     // exercises
     const exBox=document.getElementById("exercises-box");
     if(exBox && L.exercises && L.exercises.length){
-      window.Quiz.render(exBox, L.exercises);
+      window.Quiz.render(exBox, L.exercises, {
+        onFinish(m){
+          if(!m || !m.total) return;
+          const pct=Math.round(m.value*100);
+          const doneBtn=document.getElementById("btn-complete");
+          if(m.value>=0.8 && window.Progress && !window.Progress.isCompleted(L.id)){
+            window.Progress.completeLesson(L.id);
+            window.Game.badgeCheck({});
+            if(doneBtn){ doneBtn.textContent="✓ "+window.t("done"); doneBtn.disabled=true; }
+            if(exBox){ const p=document.createElement("p"); p.className="score-line mastery-ok"; p.textContent=`${window.t("masteryReached")}: ${pct}%`; exBox.appendChild(p); }
+            refreshChip();
+          }
+        }
+      });
     }
     // review
     const revBox=document.getElementById("review");

@@ -97,68 +97,56 @@ export default {
           "exercises": [
             {
               "id": "F0-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La estadistica es:",
                 "en": "Statistics is:"
               },
-              "choices": [
-                {
-                  "es": "Solo hacer cuentas",
-                  "en": "Just doing math"
-                },
-                {
-                  "es": "Razonamiento con datos",
-                  "en": "Reasoning with data"
-                }
+              "answers": [
+                "razonamiento con datos",
+                "datos"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Razonamiento.",
-                "en": "Reasoning."
+                "es": "Piensa en qué hace con la información, no en las cuentas."
               },
               "solution": {
-                "es": "Razonamiento con datos.",
-                "en": "Reasoning with data."
+                "es": "La estadística es razonamiento con datos: recoge, organiza y analiza información para decidir. No es solo calcular, porque la decisión y la interpretación son parte del método."
+              },
+              "explain": {
+                "es": "Si respondiste «solo hacer cuentas», estás viendo la herramienta y no el propósito: las cuentas son el medio, y lo que define a la disciplina es razonar con datos para decidir bajo incertidumbre. En resumen: la disciplina empieza por una pregunta y termina en una decisión informada."
               },
               "xp": 10
             },
             {
               "id": "F0-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La estadistica cuantifica:",
                 "en": "Statistics quantifies:"
               },
-              "choices": [
-                {
-                  "es": "La certeza",
-                  "en": "Certainty"
-                },
-                {
-                  "es": "La incertidumbre",
-                  "en": "Uncertainty"
-                }
+              "answers": [
+                "incertidumbre",
+                "la incertidumbre"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Incertidumbre.",
-                "en": "Uncertainty."
+                "es": "No es la certeza; es lo contrario."
               },
               "solution": {
-                "es": "La incertidumbre.",
-                "en": "Uncertainty."
+                "es": "La estadística cuantifica la incertidumbre: expresa con un margen cuánto puede desviarse una conclusión. Por eso un resultado se acompaña de un intervalo y no se presenta como una certeza absoluta."
+              },
+              "explain": {
+                "es": "Si respondiste «la certeza», conviene recordar que ningún método elimina el error por completo: la estadística mide cuánta incertidumbre queda y la declara, en lugar de ocultarla. La incertidumbre cuantificada permite decidir con un riesgo conocido en lugar de decidir a ciegas."
               },
               "xp": 10
             },
             {
               "id": "F0-L1-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La estadistica solo sirve para la ciencia.",
                 "en": "Statistics is only useful for science."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
                 "es": "No: esta en todos lados.",
                 "en": "No: it is everywhere."
@@ -167,17 +155,7 @@ export default {
                 "es": "Falso: esta en todos lados.",
                 "en": "False: it is everywhere."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "xp": 10
             }
           ]
         },
@@ -246,68 +224,56 @@ export default {
           "exercises": [
             {
               "id": "F0-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Probabilidad va de:",
                 "en": "Probability goes from:"
               },
-              "choices": [
-                {
-                  "es": "Datos a modelo",
-                  "en": "Data to model"
-                },
-                {
-                  "es": "Modelo a datos",
-                  "en": "Model to data"
-                }
+              "answers": [
+                "modelo a datos",
+                "del modelo a los datos"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Modelo a datos.",
-                "en": "Model to data."
+                "es": "Se parte de una suposición y se calcula qué pasaría."
               },
               "solution": {
-                "es": "Modelo a datos.",
-                "en": "Model to data."
+                "es": "La probabilidad va del modelo a los datos: se supone una distribución conocida y se deduce la probabilidad de un resultado. Es un razonamiento deductivo, porque la conclusión se sigue de las premisas."
+              },
+              "explain": {
+                "es": "Si respondiste «datos a modelo», has descrito la estadística. La probabilidad parte de una regla conocida y calcula consecuencias; la estadística parte de las consecuencias observadas y conjetura la regla. La clave es la dirección: primero la regla, después el resultado probable."
               },
               "xp": 10
             },
             {
               "id": "F0-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Estadistica va de:",
                 "en": "Statistics goes from:"
               },
-              "choices": [
-                {
-                  "es": "Modelo a datos",
-                  "en": "Model to data"
-                },
-                {
-                  "es": "Datos a modelo",
-                  "en": "Data to model"
-                }
+              "answers": [
+                "datos a modelo",
+                "de los datos al modelo"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Datos a modelo.",
-                "en": "Data to model."
+                "es": "Se observa y se conjetura la regla."
               },
               "solution": {
-                "es": "Datos a modelo.",
-                "en": "Data to model."
+                "es": "La estadística va de los datos al modelo: con una muestra se infiere qué distribución o qué parámetro pudo generarla, siempre con un margen de error. Es un razonamiento inductivo."
+              },
+              "explain": {
+                "es": "Si respondiste «modelo a datos», has invertido la dirección. La estadística no deduce resultados de una regla: propone una regla a partir de resultados y cuantifica la incertidumbre de esa propuesta. La clave es la dirección inversa: primero la observación, después la regla con su margen."
               },
               "xp": 10
             },
             {
               "id": "F0-L2-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Probabilidad y estadistica son independientes.",
                 "en": "Probability and statistics are independent."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
                 "es": "No: son complementarias.",
                 "en": "No: they are complementary."
@@ -316,17 +282,7 @@ export default {
                 "es": "Falso: son complementarias.",
                 "en": "False: they are complementary."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "xp": 10
             }
           ]
         },
@@ -403,68 +359,59 @@ export default {
           "exercises": [
             {
               "id": "F0-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La poblacion es:",
                 "en": "The population is:"
               },
-              "choices": [
-                {
-                  "es": "El subconjunto observado",
-                  "en": "The observed subset"
-                },
-                {
-                  "es": "El conjunto completo de interes",
-                  "en": "The whole set of interest"
-                }
+              "answers": [
+                "conjunto completo",
+                "el conjunto completo",
+                "toda la poblacion",
+                "poblacion"
               ],
-              "answer": 1,
               "hint": {
-                "es": "El todo.",
-                "en": "The whole."
+                "es": "Es el todo, no la parte que se mide."
               },
               "solution": {
-                "es": "El conjunto completo de interes.",
-                "en": "The whole set of interest."
+                "es": "La población es el conjunto completo de unidades sobre el que se quiere concluir. Su definición incluye criterios de inclusión y exclusión, porque de ella depende el alcance de cualquier conclusión posterior."
+              },
+              "explain": {
+                "es": "Si respondiste «el subconjunto observado», has descrito la muestra. La población es el todo inaccesible o caro de medir; la muestra es la parte que se observa para inferir sobre ese todo. Por eso definir la población es una decisión que debe declararse antes de medir nada."
               },
               "xp": 10
             },
             {
               "id": "F0-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Un parametro describe:",
                 "en": "A parameter describes:"
               },
-              "choices": [
-                {
-                  "es": "La muestra",
-                  "en": "The sample"
-                },
-                {
-                  "es": "La poblacion",
-                  "en": "The population"
-                }
+              "answers": [
+                "la poblacion",
+                "poblacion",
+                "el conjunto completo"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Poblacion.",
-                "en": "Population."
+                "es": "Se denota con letras griegas y no cambia al repetir el estudio."
               },
               "solution": {
-                "es": "La poblacion.",
-                "en": "The population."
+                "es": "Un parámetro describe la población y es fijo, aunque casi nunca se conoce. La media poblacional, la proporción y la desviación poblacional son parámetros; se estiman con estadísticos calculados en la muestra."
+              },
+              "explain": {
+                "es": "Si respondiste «la muestra», has confundido parámetro con estadístico. El estadístico describe la muestra y varía de una muestra a otra; el parámetro describe la población y no varía al repetir el estudio. Esa diferencia explica por qué el parámetro se estima y el estadístico se calcula."
               },
               "xp": 10
             },
             {
               "id": "F0-L3-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "El estadistico es aleatorio (depende de la muestra).",
                 "en": "The statistic is random (depends on the sample)."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
                 "es": "Si.",
                 "en": "Yes."
@@ -473,17 +420,7 @@ export default {
                 "es": "Verdadero.",
                 "en": "True."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "xp": 10
             }
           ]
         },
@@ -552,68 +489,59 @@ export default {
           "exercises": [
             {
               "id": "F0-L4-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Un estudio observacional:",
                 "en": "An observational study:"
               },
-              "choices": [
-                {
-                  "es": "Manipula variables",
-                  "en": "Manipulates variables"
-                },
-                {
-                  "es": "Observa sin intervenir",
-                  "en": "Observes without intervening"
-                }
+              "answers": [
+                "observa sin intervenir",
+                "sin intervenir",
+                "observacion"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Observa.",
-                "en": "Observes."
+                "es": "No manipula la exposición: solo registra lo que ocurre."
               },
               "solution": {
-                "es": "Observa sin intervenir.",
-                "en": "Observes without intervening."
+                "es": "Un estudio observacional registra lo que ocurre sin asignar tratamientos ni manipular la exposición. Permite describir asociaciones, pero no atribuir causalidad sin un argumento adicional sobre el diseño."
+              },
+              "explain": {
+                "es": "Si respondiste «manipula variables», has descrito un experimento. La diferencia es decisiva: sin asignación, las diferencias entre grupos pueden deberse a otras características que no se han medido. Sin asignación aleatoria, la asociación observada puede reflejar otras diferencias entre los grupos."
               },
               "xp": 10
             },
             {
               "id": "F0-L4-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para establecer causalidad se necesita:",
                 "en": "To establish causation you need:"
               },
-              "choices": [
-                {
-                  "es": "Un estudio observacional grande",
-                  "en": "A large observational study"
-                },
-                {
-                  "es": "Un experimento aleatorizado",
-                  "en": "A randomized experiment"
-                }
+              "answers": [
+                "experimento aleatorizado",
+                "experimento",
+                "ensayo aleatorizado",
+                "aleatorizado"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Experimento.",
-                "en": "Experiment."
+                "es": "Requiere asignar al azar quién recibe qué."
               },
               "solution": {
-                "es": "Un experimento aleatorizado.",
-                "en": "A randomized experiment."
+                "es": "Para establecer causalidad se necesita un experimento, preferiblemente aleatorizado: la asignación al azar reparte las características no observadas y permite atribuir la diferencia al tratamiento con un margen de error."
+              },
+              "explain": {
+                "es": "Si respondiste «un estudio observacional grande», el tamaño no resuelve el problema: una muestra enorme reduce la variabilidad, pero no elimina los confusores que diferencian a los grupos. La aleatorización distribuye esas diferencias y hace comparable lo que no se puede medir."
               },
               "xp": 10
             },
             {
               "id": "F0-L4-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La correlacion implica causalidad.",
                 "en": "Correlation implies causation."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
                 "es": "No.",
                 "en": "No."
@@ -622,17 +550,7 @@ export default {
                 "es": "Falso.",
                 "en": "False."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "xp": 10
             }
           ]
         },
@@ -701,68 +619,57 @@ export default {
           "exercises": [
             {
               "id": "F0-L5-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "p < 0.05 prueba que algo es verdad:",
                 "en": "p < 0.05 proves something is true:"
               },
-              "choices": [
-                {
-                  "es": "Si",
-                  "en": "Yes"
-                },
-                {
-                  "es": "No",
-                  "en": "No"
-                }
+              "answers": [
+                "no",
+                "falso",
+                "nunca"
               ],
-              "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Un valor pequeño indica incompatibilidad, no demostración."
               },
               "solution": {
-                "es": "No: solo evidencia.",
-                "en": "No: only evidence."
+                "es": "Un valor p menor que 0,05 no prueba que una afirmación sea verdadera: indica que los datos son poco compatibles con la hipótesis nula. Puede haber sesgos, multiplicidad o un modelo inadecuado detrás del resultado."
+              },
+              "explain": {
+                "es": "Si respondiste «sí», has leído el valor p como una prueba de verdad. En realidad mide la probabilidad de un resultado así bajo la nula, no la probabilidad de que la hipótesis alternativa sea cierta. El umbral es una convención, y confundirlo con una prueba de verdad es el error más frecuente."
               },
               "xp": 10
             },
             {
               "id": "F0-L5-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Con n grande, diferencias triviales pueden ser:",
                 "en": "With large n, trivial differences can be:"
               },
-              "choices": [
-                {
-                  "es": "No significativas",
-                  "en": "Not significant"
-                },
-                {
-                  "es": "Significativas",
-                  "en": "Significant"
-                }
+              "answers": [
+                "significativas",
+                "significativa"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Significativas.",
-                "en": "Significant."
+                "es": "La precisión crece con el tamaño; la magnitud no."
               },
               "solution": {
-                "es": "Significativas (pero triviales). Mira el tamaño del efecto.",
-                "en": "Significant (but trivial). Look at effect size."
+                "es": "Con una muestra grande, diferencias triviales pueden resultar estadísticamente significativas, porque el error estándar se reduce. Por eso hay que reportar el tamaño del efecto y valorar su relevancia práctica."
+              },
+              "explain": {
+                "es": "Si respondiste «no significativas», has supuesto que el tamaño hace más exigente la prueba. Ocurre lo contrario: con más datos, el mismo efecto produce un valor p menor, aunque siga siendo irrelevante en la práctica. Precisión estadística y relevancia práctica son dimensiones distintas y deben reportarse juntas."
               },
               "xp": 10
             },
             {
               "id": "F0-L5-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La correlacion implica causalidad.",
                 "en": "Correlation implies causation."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
                 "es": "No.",
                 "en": "No."
@@ -771,17 +678,7 @@ export default {
                 "es": "Falso.",
                 "en": "False."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "xp": 10
             }
           ]
         }

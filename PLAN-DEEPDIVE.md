@@ -299,4 +299,17 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 
 **Siguiente paso inmediato:** Fase 5 (evaluación y feedback), empezando por E1: convertir al menos la mitad de los 481 ejercicios a formato de producción.
 
+## 8. Fase 5 — estado de ejecución (2026-11-10)
+
+| Ítem | Antes | Ahora | Objetivo |
+|---|---:|---:|---:|
+| Ejercicios en formato producción | 0 | 10 | ≥241 |
+| Con `explain` ≥40 palabras | 0 | 10 | 481 |
+| Con solución ≥60 caracteres | 1 | 11 | 481 |
+| Pistas que filtran la respuesta | 20 | 20 | 0 |
+
+Motor: tipo `short`, explicación al fallar, registro de primer intento y maestría ≥80 % para completar la lección. Pilot: módulo F0 (15 ejercicios, 10 convertidos). Plan: `.opencode/plans/fase5-evaluacion.md`.
+
+Nota técnica: el sitio consume el bundle `data/<curso>.js`; los módulos de `data/<curso>/` son fuentes. Sincronizar con `node scripts/sync-module.mjs <curso> <archivo> <ID>`.
+
 **Siguiente paso inmediato:** inferencial C0–C9 (33) y fundamentos F0–F1 (10), un módulo por commit.

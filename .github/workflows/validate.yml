@@ -17,3 +17,6 @@ jobs:
       - run: node scripts/validate.mjs
       # bloqueante desde 115/115 deep dives (2026-11-10)
       - run: node scripts/validate-content.mjs --all
+      # fase 5: informativo mientras la cobertura de feedback sea parcial
+      - run: node scripts/validate-feedback.mjs
+      - run: node scripts/audit-exercises.mjs

@@ -20,6 +20,12 @@
     isCompleted(id){ return !!S.completed[id]; },
     markSrs(id,days){ const d=new Date(); d.setDate(d.getDate()+(days||0)); S.srs[id]={due:localDate(d),days:days||0}; save(S); },
     srsInfo(id){ return S.srs[id]||null; },
+    // primer intento vs intentos posteriores (fase 5, E4)
+    recordAttempt(id,ok,first){ S.answers[id]=S.answers[id]||{first:null,last:null,tries:0};
+      const a=S.answers[id]; a.tries++; a.last=!!ok; if(first) a.first=!!ok; save(S); },
+    attemptInfo(id){ return S.answers[id]||null; },
+    // maestría: aciertos al primer intento sobre el total de ejercicios dados
+    mastery(ids){ if(!ids||!ids.length) return 0; const hit=ids.filter(id=>{ const a=S.answers[id]; return a && a.first===true; }).length; return hit/ids.length; },
     dueSrs(){ const today=localDate(new Date()); return Object.keys(S.srs).filter(k=>{ if(k.endsWith("-rev")) return false; const v=S.srs[k]; return (typeof v==="string"?v:v.due)<=today; }); },
     earnBadge(id){ if(!S.badges.includes(id)){ S.badges.push(id); save(S); return true;} return false; },
     exportJSON(){ const b=new Blob([JSON.stringify(S,null,2)],{type:"application/json"}); const u=URL.createObjectURL(b); const a=document.createElement("a"); a.href=u; a.download="jackpot-progress.json"; a.click(); URL.revokeObjectURL(u); },
