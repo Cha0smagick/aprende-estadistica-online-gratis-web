@@ -1,0 +1,92 @@
+{
+  "module": "data/descriptiva/a2.js",
+  "items": {
+    "A2-L1-E1": {
+      "hint": "Divide el recuento entre el total de observaciones.",
+      "solution": "8 entre 40 es 0,20, así que la frecuencia relativa es 0,20, equivalente al 20 %. La frecuencia relativa reparte el total en partes y siempre suma uno.",
+      "explain": "Si respondiste 8, has dado la frecuencia absoluta, no la relativa. La absoluta cuenta cuántas veces aparece un valor; la relativa lo divide entre el total para comparar entre conjuntos de distinto tamaño. Con 40 observaciones, ocho casos representan una quinta parte."
+    },
+    "A2-L1-E2": {
+      "hint": "La acumulada suma las frecuencias relativas hasta ese punto.",
+      "solution": "0,25 más 0,35 es 0,60, así que la frecuencia acumulada hasta ese valor es 0,60. Esa cifra indica que el 60 % de las observaciones son iguales o menores que ese valor.",
+      "explain": "Si restaste en lugar de sumar, has calculado la diferencia entre frecuencias. La acumulada se construye sumando de menor a mayor y termina en uno cuando se recorre toda la tabla. Su interpretación es la de un porcentaje acumulado de casos."
+    },
+    "A2-L1-E3": {
+      "hint": "Piensa qué pasa si divides todos los recuentos entre el total.",
+      "solution": "Verdadero: la suma de las frecuencias relativas es siempre 1, porque cada observación se reparte entre las categorías y no sobra ni falta ninguna. Expresada en porcentaje, suma 100 %.",
+      "explain": "Si respondiste «falso», probablemente pensaste en datos con valores faltantes o en errores de redondeo. En una tabla completa, la suma debe dar uno; si no da, hay una categoría omitida o un error de cálculo. Esa comprobación es un control de calidad básico."
+    },
+    "A2-L1-E4": {
+      "type": "short",
+      "answers": ["el conteo", "conteo", "cuantas veces"],
+      "hint": "Cuenta casos, no proporciones.",
+      "solution": "La frecuencia absoluta es el conteo: cuántas veces aparece cada valor en el conjunto de datos. La relativa divide ese conteo entre el total y la porcentual lo multiplica por cien.",
+      "explain": "Si respondiste «la proporción», has descrito la frecuencia relativa. La absoluta es un número de casos y depende del tamaño de la muestra; la relativa permite comparar entre muestras distintas. Confundirlas lleva a comparar recuentos de conjuntos que no son comparables."
+    },
+    "A2-L1-E5": {
+      "hint": "La acumulada es una proporción: multiplícala por el total.",
+      "solution": "0,7 por 100 es 70, así que hay 70 casos por debajo de ese valor. La frecuencia acumulada se interpreta como la proporción de observaciones que no superan el valor indicado.",
+      "explain": "Si respondiste 30, has calculado el complementario: los casos por encima. La acumulada indica lo que queda por debajo o igual, y su complemento es lo que queda por encima. Distinguir ambos lados evita invertir la interpretación de percentiles y medianas."
+    },
+    "A2-L2-E1": {
+      "hint": "Sustituye n por 100 y calcula el logaritmo decimal.",
+      "solution": "El logaritmo decimal de 100 es 2, así que 1 más 3,322 por 2 da 7,644. La regla de Sturges sugiere unos ocho intervalos para cien observaciones.",
+      "explain": "Si obtuviste 4,644, olvidaste el término inicial. Si obtuviste un número muy distinto, usaste logaritmo natural en lugar de decimal. La regla es una orientación, no una obligación: el número de intervalos se ajusta después según la forma de los datos."
+    },
+    "A2-L2-E2": {
+      "hint": "Calcula la raíz cuadrada del número de observaciones.",
+      "solution": "La raíz cuadrada de 225 es 15, así que la regla sugiere unos 15 intervalos. Es una heurística sencilla que crece con el tamaño de la muestra.",
+      "explain": "Si respondiste 112,5, dividiste entre dos en lugar de sacar la raíz. La regla de la raíz produce un número de intervalos que aumenta lentamente con n, evitando histogramas con demasiadas barras cuando hay muchos datos. Como toda heurística, se ajusta después."
+    },
+    "A2-L2-E3": {
+      "type": "short",
+      "answers": ["contiguas", "barras contiguas", "pegadas"],
+      "hint": "La variable es continua: no hay huecos entre intervalos.",
+      "solution": "En un histograma las barras son contiguas, porque representan intervalos de una variable continua y no deben sugerir huecos entre valores. Las barras separadas se reservan para variables categóricas.",
+      "explain": "Si respondiste «separadas», has aplicado la convención de un gráfico de barras a un histograma. La separación visual implica que entre dos categorías no hay valores intermedios; en una variable continua sí los hay. Esa diferencia es la que distingue ambos gráficos."
+    },
+    "A2-L2-E4": {
+      "hint": "Piensa en el ruido que aparece al dividir demasiado.",
+      "solution": "Falso: demasiados intervalos producen un histograma ruidoso que oculta la forma de la distribución. Pocos intervalos la suavizan en exceso; el equilibrio depende del tamaño y de la dispersión.",
+      "explain": "Si respondiste «verdadero», has confundido detalle con información. Con muchos intervalos, cada barra tiene pocos casos y las fluctuaciones aleatorias dominan el dibujo. El objetivo es ver la forma, y eso exige agrupar lo suficiente para que el ruido no la tape."
+    },
+    "A2-L2-E5": {
+      "type": "short",
+      "answers": ["frecuencia o densidad", "frecuencia", "densidad"],
+      "hint": "Mide cuántos casos caen en cada intervalo.",
+      "solution": "El eje vertical de un histograma representa la frecuencia o la densidad de los intervalos, es decir, cuántos casos caen en cada uno. El eje horizontal contiene la variable agrupada en intervalos.",
+      "explain": "Si respondiste «la variable», has colocado los ejes al revés. La variable continua va en el eje horizontal y el recuento en el vertical. Esa convención permite comparar la forma de la distribución y detectar asimetrías, picos y valores extremos."
+    },
+    "A2-L3-E1": {
+      "type": "short",
+      "answers": ["lineas", "con lineas", "grafico de lineas"],
+      "hint": "El orden temporal importa y debe verse como continuidad.",
+      "solution": "Una serie temporal se representa con líneas, porque el orden cronológico es parte de la información y la línea muestra la continuidad entre periodos. Las barras separadas rompen esa idea de secuencia.",
+      "explain": "Si respondiste «barras», has perdido la noción de continuidad temporal. En una serie, cada punto está condicionado por el anterior y el gráfico debe reflejarlo. El gráfico circular, además, no permite representar el paso del tiempo en absoluto."
+    },
+    "A2-L3-E2": {
+      "hint": "Suma los tres valores y divide entre tres.",
+      "solution": "12 más 15 más 18 son 45, y 45 entre 3 es 15. La media móvil de tres periodos suaviza la serie y se asigna al centro de la ventana o al final, según la convención elegida.",
+      "explain": "Si respondiste 45, has dado la suma sin dividir. La media móvil promedia la ventana para eliminar parte del ruido; sin la división, la cifra crece con el número de periodos y no es comparable entre ventanas. La elección de la ventana cambia el grado de suavizado y el retraso."
+    },
+    "A2-L3-E3": {
+      "type": "short",
+      "answers": ["estacionalidad", "patron estacional"],
+      "hint": "El patrón vuelve con un periodo fijo, como cada año.",
+      "solution": "Un patrón que se repite cada año se llama estacionalidad, porque tiene un periodo fijo y se repite con regularidad. La tendencia, en cambio, es la dirección a largo plazo.",
+      "explain": "Si respondiste «tendencia», has descrito el movimiento general en lugar del ciclo. La estacionalidad se reconoce porque el patrón reaparece en el mismo periodo y se repite; la tendencia puede ser creciente o decreciente sin repetirse. Confundirlas lleva a interpretar una caída estacional como un problema estructural."
+    },
+    "A2-L3-E4": {
+      "hint": "Promediar ventanas reduce las fluctuaciones puntuales.",
+      "solution": "Verdadero: la media móvil suaviza la serie al promediar ventanas consecutivas, lo que reduce los picos y valles de corto plazo. El precio es un cierto retraso en la señal.",
+      "explain": "Si respondiste «falso», conviene distinguir suavizar de eliminar. La media móvil reduce el ruido, pero no lo hace desaparecer ni corrige la estacionalidad si la ventana no cubre el ciclo completo. Además, introduce un retraso que puede confundirse con una caída real."
+    },
+    "A2-L3-E5": {
+      "type": "short",
+      "answers": ["tendencia"],
+      "hint": "Es la dirección general, no el patrón que se repite.",
+      "solution": "Un aumento sostenido a largo plazo se llama tendencia, porque describe la dirección general de la serie sin atender a las fluctuaciones de corto plazo. La estacionalidad sería un patrón que se repite.",
+      "explain": "Si respondiste «estacionalidad», has confundido dirección con repetición. La tendencia indica hacia dónde va la serie en el largo plazo; la estacionalidad indica qué patrón vuelve cada periodo. Distinguirlas permite decidir si una subida es estructural o simplemente parte del ciclo anual."
+    }
+  }
+}

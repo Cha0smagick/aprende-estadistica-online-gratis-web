@@ -3776,178 +3776,105 @@ export default {
           "exercises": [
             {
               "id": "A2-L1-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Total 40, valor aparece 8 veces: frec. relativa.",
                 "en": "Total 40, value appears 8 times: relative freq."
               },
-              "answer": 0,
+              "answer": 0.2,
               "tol": 0.001,
               "hint": {
-                "es": "8/40.",
-                "en": "8/40."
+                "es": "Divide el recuento entre el total de observaciones."
               },
               "solution": {
-                "es": "0,20.",
-                "en": "0.20."
+                "es": "8 entre 40 es 0,20, así que la frecuencia relativa es 0,20, equivalente al 20 %. La frecuencia relativa reparte el total en partes y siempre suma uno."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "0.2",
-                  "en": "0.2"
-                },
-                {
-                  "es": "1.2",
-                  "en": "1.2"
-                },
-                {
-                  "es": "-0.8",
-                  "en": "-0.8"
-                },
-                {
-                  "es": "0.4",
-                  "en": "0.4"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 8, has dado la frecuencia absoluta, no la relativa. La absoluta cuenta cuántas veces aparece un valor; la relativa lo divide entre el total para comparar entre conjuntos de distinto tamaño. Con 40 observaciones, ocho casos representan una quinta parte."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L1-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Frecuencias relativas 0,25 y 0,35: acumulada.",
                 "en": "Relative freqs 0.25 and 0.35: cumulative."
               },
-              "answer": 1,
+              "answer": 0.6,
               "tol": 0.001,
               "hint": {
-                "es": "Suma.",
-                "en": "Sum."
+                "es": "La acumulada suma las frecuencias relativas hasta ese punto."
               },
               "solution": {
-                "es": "0,60.",
-                "en": "0.60."
+                "es": "0,25 más 0,35 es 0,60, así que la frecuencia acumulada hasta ese valor es 0,60. Esa cifra indica que el 60 % de las observaciones son iguales o menores que ese valor."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "1.2",
-                  "en": "1.2"
-                },
-                {
-                  "es": "0.6",
-                  "en": "0.6"
-                },
-                {
-                  "es": "1.6",
-                  "en": "1.6"
-                },
-                {
-                  "es": "-0.4",
-                  "en": "-0.4"
-                }
-              ]
+              "explain": {
+                "es": "Si restaste en lugar de sumar, has calculado la diferencia entre frecuencias. La acumulada se construye sumando de menor a mayor y termina en uno cuando se recorre toda la tabla. Su interpretación es la de un porcentaje acumulado de casos."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L1-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La suma de frecuencias relativas siempre es 1.",
                 "en": "Sum of relative frequencies is always 1."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Por definición.",
-                "en": "By definition."
+                "es": "Piensa qué pasa si divides todos los recuentos entre el total."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la suma de las frecuencias relativas es siempre 1, porque cada observación se reparte entre las categorías y no sobra ni falta ninguna. Expresada en porcentaje, suma 100 %."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», probablemente pensaste en datos con valores faltantes o en errores de redondeo. En una tabla completa, la suma debe dar uno; si no da, hay una categoría omitida o un error de cálculo. Esa comprobación es un control de calidad básico."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L1-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La frecuencia absoluta es:",
                 "en": "Absolute frequency is:"
               },
-              "choices": [
-                {
-                  "es": "La proporción",
-                  "en": "The proportion"
-                },
-                {
-                  "es": "El conteo",
-                  "en": "The count"
-                },
-                {
-                  "es": "El porcentaje",
-                  "en": "The percentage"
-                },
-                {
-                  "es": "La acumulada",
-                  "en": "The cumulative"
-                }
+              "answers": [
+                "el conteo",
+                "conteo",
+                "cuantas veces"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Cuántas veces.",
-                "en": "How many times."
+                "es": "Cuenta casos, no proporciones."
               },
               "solution": {
-                "es": "El conteo.",
-                "en": "The count."
+                "es": "La frecuencia absoluta es el conteo: cuántas veces aparece cada valor en el conjunto de datos. La relativa divide ese conteo entre el total y la porcentual lo multiplica por cien."
+              },
+              "explain": {
+                "es": "Si respondiste «la proporción», has descrito la frecuencia relativa. La absoluta es un número de casos y depende del tamaño de la muestra; la relativa permite comparar entre muestras distintas. Confundirlas lleva a comparar recuentos de conjuntos que no son comparables."
               },
               "xp": 10
             },
             {
               "id": "A2-L1-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Total 100, acumulada hasta X es 0,7: ¿cuántos casos por debajo?",
                 "en": "Total 100, cumulative to X is 0.7: cases below?"
               },
-              "answer": 2,
+              "answer": 70,
               "tol": 0.01,
               "hint": {
-                "es": "0,7 × 100.",
-                "en": "0.7 × 100."
+                "es": "La acumulada es una proporción: multiplícala por el total."
               },
               "solution": {
-                "es": "70 casos.",
-                "en": "70 cases."
+                "es": "0,7 por 100 es 70, así que hay 70 casos por debajo de ese valor. La frecuencia acumulada se interpreta como la proporción de observaciones que no superan el valor indicado."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "71",
-                  "en": "71"
-                },
-                {
-                  "es": "140",
-                  "en": "140"
-                },
-                {
-                  "es": "70",
-                  "en": "70"
-                },
-                {
-                  "es": "69",
-                  "en": "69"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 30, has calculado el complementario: los casos por encima. La acumulada indica lo que queda por debajo o igual, y su complemento es lo que queda por encima. Distinguir ambos lados evita invertir la interpretación de percentiles y medianas."
+              },
+              "xp": 10
             }
           ]
         },
@@ -4092,175 +4019,106 @@ export default {
           "exercises": [
             {
               "id": "A2-L2-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Sturges para n=100: k ≈ (1+3,322·log10(100)).",
                 "en": "Sturges for n=100: k ≈ (1+3.322·log10(100))."
               },
-              "answer": 1,
+              "answer": 7.644,
               "tol": 0.1,
               "hint": {
-                "es": "log10(100)=2.",
-                "en": "log10(100)=2."
+                "es": "Sustituye n por 100 y calcula el logaritmo decimal."
               },
               "solution": {
-                "es": "≈ 7,64.",
-                "en": "≈ 7.64."
+                "es": "El logaritmo decimal de 100 es 2, así que 1 más 3,322 por 2 da 7,644. La regla de Sturges sugiere unos ocho intervalos para cien observaciones."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "15.288",
-                  "en": "15.288"
-                },
-                {
-                  "es": "7.644",
-                  "en": "7.644"
-                },
-                {
-                  "es": "6.644",
-                  "en": "6.644"
-                },
-                {
-                  "es": "8.644",
-                  "en": "8.644"
-                }
-              ]
+              "explain": {
+                "es": "Si obtuviste 4,644, olvidaste el término inicial. Si obtuviste un número muy distinto, usaste logaritmo natural en lugar de decimal. La regla es una orientación, no una obligación: el número de intervalos se ajusta después según la forma de los datos."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L2-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Raíz cuadrada para n=225: k ≈ ?",
                 "en": "Square root for n=225: k ≈ ?"
               },
-              "answer": 3,
+              "answer": 15,
               "tol": 0.5,
               "hint": {
-                "es": "√225.",
-                "en": "√225."
+                "es": "Calcula la raíz cuadrada del número de observaciones."
               },
               "solution": {
-                "es": "15 bins.",
-                "en": "15 bins."
+                "es": "La raíz cuadrada de 225 es 15, así que la regla sugiere unos 15 intervalos. Es una heurística sencilla que crece con el tamaño de la muestra."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "14",
-                  "en": "14"
-                },
-                {
-                  "es": "16",
-                  "en": "16"
-                },
-                {
-                  "es": "30",
-                  "en": "30"
-                },
-                {
-                  "es": "15",
-                  "en": "15"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 112,5, dividiste entre dos en lugar de sacar la raíz. La regla de la raíz produce un número de intervalos que aumenta lentamente con n, evitando histogramas con demasiadas barras cuando hay muchos datos. Como toda heurística, se ajusta después."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "En un histograma, las barras son:",
                 "en": "In a histogram, bars are:"
               },
-              "choices": [
-                {
-                  "es": "Separadas",
-                  "en": "Separated"
-                },
-                {
-                  "es": "Contiguas",
-                  "en": "Contiguous"
-                },
-                {
-                  "es": "De colores distintos",
-                  "en": "Different colors"
-                },
-                {
-                  "es": "Horizontales",
-                  "en": "Horizontal"
-                }
+              "answers": [
+                "contiguas",
+                "barras contiguas",
+                "pegadas"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Continuas.",
-                "en": "Continuous."
+                "es": "La variable es continua: no hay huecos entre intervalos."
               },
               "solution": {
-                "es": "Contiguas.",
-                "en": "Contiguous."
+                "es": "En un histograma las barras son contiguas, porque representan intervalos de una variable continua y no deben sugerir huecos entre valores. Las barras separadas se reservan para variables categóricas."
+              },
+              "explain": {
+                "es": "Si respondiste «separadas», has aplicado la convención de un gráfico de barras a un histograma. La separación visual implica que entre dos categorías no hay valores intermedios; en una variable continua sí los hay. Esa diferencia es la que distingue ambos gráficos."
               },
               "xp": 10
             },
             {
               "id": "A2-L2-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Demasiados bins siempre mejoran el histograma.",
                 "en": "More bins always improve the histogram."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Ruido.",
-                "en": "Noise."
+                "es": "Piensa en el ruido que aparece al dividir demasiado."
               },
               "solution": {
-                "es": "Falso: demasiados bins = ruido.",
-                "en": "False: too many bins = noise."
+                "es": "Falso: demasiados intervalos producen un histograma ruidoso que oculta la forma de la distribución. Pocos intervalos la suavizan en exceso; el equilibrio depende del tamaño y de la dispersión."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido detalle con información. Con muchos intervalos, cada barra tiene pocos casos y las fluctuaciones aleatorias dominan el dibujo. El objetivo es ver la forma, y eso exige agrupar lo suficiente para que el ruido no la tape."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L2-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El eje Y de un histograma suele ser:",
                 "en": "The Y-axis of a histogram is usually:"
               },
-              "choices": [
-                {
-                  "es": "La variable",
-                  "en": "The variable"
-                },
-                {
-                  "es": "Frecuencia o densidad",
-                  "en": "Frequency or density"
-                },
-                {
-                  "es": "El tiempo",
-                  "en": "Time"
-                },
-                {
-                  "es": "La categoría",
-                  "en": "Category"
-                }
+              "answers": [
+                "frecuencia o densidad",
+                "frecuencia",
+                "densidad"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Conteo.",
-                "en": "Count."
+                "es": "Mide cuántos casos caen en cada intervalo."
               },
               "solution": {
-                "es": "Frecuencia o densidad.",
-                "en": "Frequency or density."
+                "es": "El eje vertical de un histograma representa la frecuencia o la densidad de los intervalos, es decir, cuántos casos caen en cada uno. El eje horizontal contiene la variable agrupada en intervalos."
+              },
+              "explain": {
+                "es": "Si respondiste «la variable», has colocado los ejes al revés. La variable continua va en el eje horizontal y el recuento en el vertical. Esa convención permite comparar la forma de la distribución y detectar asimetrías, picos y valores extremos."
               },
               "xp": 10
             }
@@ -4406,174 +4264,106 @@ export default {
           "exercises": [
             {
               "id": "A2-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Una serie temporal se grafica mejor con:",
                 "en": "A time series is best plotted with:"
               },
-              "choices": [
-                {
-                  "es": "Barras",
-                  "en": "Bars"
-                },
-                {
-                  "es": "Líneas",
-                  "en": "Lines"
-                },
-                {
-                  "es": "Circular",
-                  "en": "Pie"
-                },
-                {
-                  "es": "Dispersión",
-                  "en": "Scatter"
-                }
+              "answers": [
+                "lineas",
+                "con lineas",
+                "grafico de lineas"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Líneas muestran continuidad.",
-                "en": "Lines show continuity."
+                "es": "El orden temporal importa y debe verse como continuidad."
               },
               "solution": {
-                "es": "Líneas.",
-                "en": "Lines."
+                "es": "Una serie temporal se representa con líneas, porque el orden cronológico es parte de la información y la línea muestra la continuidad entre periodos. Las barras separadas rompen esa idea de secuencia."
+              },
+              "explain": {
+                "es": "Si respondiste «barras», has perdido la noción de continuidad temporal. En una serie, cada punto está condicionado por el anterior y el gráfico debe reflejarlo. El gráfico circular, además, no permite representar el paso del tiempo en absoluto. Sin continuidad visual, la comparación entre periodos consecutivos se pierde."
               },
               "xp": 10
             },
             {
               "id": "A2-L3-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Media móvil de 3: (12+15+18)/3.",
                 "en": "3-period moving average: (12+15+18)/3."
               },
-              "answer": 1,
+              "answer": 15,
               "tol": 0.01,
               "hint": {
-                "es": "Divide entre 3.",
-                "en": "Divide by 3."
+                "es": "Suma los tres valores y divide entre tres."
               },
               "solution": {
-                "es": "15.",
-                "en": "15."
+                "es": "12 más 15 más 18 son 45, y 45 entre 3 es 15. La media móvil de tres periodos suaviza la serie y se asigna al centro de la ventana o al final, según la convención elegida."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "14",
-                  "en": "14"
-                },
-                {
-                  "es": "15",
-                  "en": "15"
-                },
-                {
-                  "es": "30",
-                  "en": "30"
-                },
-                {
-                  "es": "16",
-                  "en": "16"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 45, has dado la suma sin dividir. La media móvil promedia la ventana para eliminar parte del ruido; sin la división, la cifra crece con el número de periodos y no es comparable entre ventanas. La elección de la ventana cambia el grado de suavizado y el retraso."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L3-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Un patrón que se repite cada año se llama:",
                 "en": "A pattern repeating every year is called:"
               },
-              "choices": [
-                {
-                  "es": "Tendencia",
-                  "en": "Trend"
-                },
-                {
-                  "es": "Estacionalidad",
-                  "en": "Seasonality"
-                },
-                {
-                  "es": "Ruido",
-                  "en": "Noise"
-                },
-                {
-                  "es": "Ciclo",
-                  "en": "Cycle"
-                }
+              "answers": [
+                "estacionalidad",
+                "patron estacional"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Estacional.",
-                "en": "Seasonal."
+                "es": "El patrón vuelve con un periodo fijo, como cada año."
               },
               "solution": {
-                "es": "Estacionalidad.",
-                "en": "Seasonality."
+                "es": "Un patrón que se repite cada año se llama estacionalidad, porque tiene un periodo fijo y se repite con regularidad. La tendencia, en cambio, es la dirección a largo plazo."
+              },
+              "explain": {
+                "es": "Si respondiste «tendencia», has descrito el movimiento general en lugar del ciclo. La estacionalidad se reconoce porque el patrón reaparece en el mismo periodo y se repite; la tendencia puede ser creciente o decreciente sin repetirse. Confundirlas lleva a interpretar una caída estacional como un problema estructural."
               },
               "xp": 10
             },
             {
               "id": "A2-L3-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La media móvil suaviza la serie.",
                 "en": "Moving average smooths the series."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Definición.",
-                "en": "Definition."
+                "es": "Promediar ventanas reduce las fluctuaciones puntuales."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la media móvil suaviza la serie al promediar ventanas consecutivas, lo que reduce los picos y valles de corto plazo. El precio es un cierto retraso en la señal."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene distinguir suavizar de eliminar. La media móvil reduce el ruido, pero no lo hace desaparecer ni corrige la estacionalidad si la ventana no cubre el ciclo completo. Además, introduce un retraso que puede confundirse con una caída real."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L3-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Un aumento a largo plazo se llama:",
                 "en": "A long-term increase is called:"
               },
-              "choices": [
-                {
-                  "es": "Estacionalidad",
-                  "en": "Seasonality"
-                },
-                {
-                  "es": "Tendencia",
-                  "en": "Trend"
-                },
-                {
-                  "es": "Ruido",
-                  "en": "Noise"
-                },
-                {
-                  "es": "Outlier",
-                  "en": "Outlier"
-                }
+              "answers": [
+                "tendencia"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Tendencia.",
-                "en": "Trend."
+                "es": "Es la dirección general, no el patrón que se repite."
               },
               "solution": {
-                "es": "Tendencia.",
-                "en": "Trend."
+                "es": "Un aumento sostenido a largo plazo se llama tendencia, porque describe la dirección general de la serie sin atender a las fluctuaciones de corto plazo. La estacionalidad sería un patrón que se repite."
+              },
+              "explain": {
+                "es": "Si respondiste «estacionalidad», has confundido dirección con repetición. La tendencia indica hacia dónde va la serie en el largo plazo; la estacionalidad indica qué patrón vuelve cada periodo. Distinguirlas permite decidir si una subida es estructural o simplemente parte del ciclo anual."
               },
               "xp": 10
             }
@@ -4710,101 +4500,65 @@ export default {
           "exercises": [
             {
               "id": "A2-L4-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Un Pareto ordena las barras de:",
                 "en": "A Pareto sorts bars from:"
               },
-              "choices": [
-                {
-                  "es": "Menor a mayor",
-                  "en": "Lowest to highest"
-                },
-                {
-                  "es": "Mayor a menor",
-                  "en": "Highest to lowest"
-                },
-                {
-                  "es": "Alfabético",
-                  "en": "Alphabetical"
-                },
-                {
-                  "es": "Aleatorio",
-                  "en": "Random"
-                }
+              "answers": [
+                "mayor a menor",
+                "de mayor a menor"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Mayor primero.",
-                "en": "Largest first."
+                "es": "El gráfico empieza por la categoría que más pesa."
               },
               "solution": {
-                "es": "Mayor a menor.",
-                "en": "Highest to lowest."
+                "es": "Un Pareto ordena las barras de mayor a menor frecuencia, para que la concentración se vea de inmediato. Si se ordenan de otra forma, el gráfico deja de ser un Pareto y se convierte en un diagrama de barras cualquiera."
+              },
+              "explain": {
+                "es": "Si respondiste «menor a mayor», has invertido el orden que da sentido al gráfico. La lectura del Pareto depende de que la primera barra sea la mayor: así la línea acumulada sube rápido al principio y muestra cuántas pocas categorías concentran el total. Con otro orden, esa interpretación se pierde."
               },
               "xp": 10
             },
             {
               "id": "A2-L4-E2",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La regla 80/20 es una ley física exacta.",
                 "en": "The 80/20 rule is an exact physical law."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Heurística.",
-                "en": "Heuristic."
+                "es": "Piensa si siempre se cumple el 80/20 exacto."
               },
               "solution": {
-                "es": "Falso: es heurística.",
-                "en": "False: it's a heuristic."
+                "es": "Falso: la regla 80/20 es una heurística, no una ley física. En algunos casos tres categorías concentran el 85 %, y en otros hacen falta diez para llegar al 80 %. Lo importante es identificar dónde se aplana la curva."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has convertido una orientación en una obligación. Forzar el corte para que cuadre con la regla es un error frecuente: el gráfico debe mostrar la concentración real, sea 70/30, 90/10 o cualquier otra. La regla ayuda a esperar, no a concluir."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L4-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La línea del Pareto representa:",
                 "en": "The Pareto line represents:"
               },
-              "choices": [
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "La frecuencia acumulada",
-                  "en": "Cumulative frequency"
-                },
-                {
-                  "es": "La mediana",
-                  "en": "The median"
-                },
-                {
-                  "es": "El máximo",
-                  "en": "The max"
-                }
+              "answers": [
+                "la frecuencia acumulada",
+                "frecuencia acumulada",
+                "acumulada"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Acumulado.",
-                "en": "Cumulative."
+                "es": "Sube de izquierda a derecha y termina en el total."
               },
               "solution": {
-                "es": "Frecuencia acumulada.",
-                "en": "Cumulative frequency."
+                "es": "La línea del Pareto representa la frecuencia acumulada: suma las frecuencias relativas de izquierda a derecha y permite ver cuántas categorías hacen falta para alcanzar un porcentaje del total."
+              },
+              "explain": {
+                "es": "Si respondiste «la media», has confundido un gráfico de concentración con un resumen de tendencia central. La línea acumulada responde a la pregunta de cuántas categorías concentran qué proporción, y su punto de aplanamiento indica dónde termina el grupo de categorías relevantes."
               },
               "xp": 10
             },
@@ -4835,42 +4589,34 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Priorizar.",
-                "en": "Prioritize."
+                "es": "El gráfico responde a la pregunta de qué atacar primero."
               },
               "solution": {
-                "es": "Priorizar.",
-                "en": "Prioritize."
+                "es": "El Pareto se usa para priorizar: identifica las pocas categorías que concentran la mayor parte del problema o del valor. No explica causas ni predice, pero ordena el esfuerzo donde más pesa."
+              },
+              "explain": {
+                "es": "Si respondiste «predecir», has pedido al gráfico algo que no puede dar. El Pareto describe la concentración actual de unas categorías y sirve para decidir dónde intervenir primero. La explicación causal exige otro análisis, y la predicción requiere un modelo con datos históricos y supuestos."
               },
               "xp": 10
             },
             {
               "id": "A2-L4-E5",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "En Pareto, las pocas categorías vitales pesan más que las muchas triviales.",
                 "en": "In Pareto, the vital few outweigh the trivial many."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Definición.",
-                "en": "Definition."
+                "es": "Contrasta el peso acumulado de la cabeza con el de la cola."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: en un Pareto, pocas categorías concentran la mayor parte del total y muchas aportan poco. Esa asimetría es la que justifica priorizar la cabeza y no repartir el esfuerzo por igual."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene mirar la curva acumulada: sube rápido en las primeras barras y se aplana después. Esa forma muestra que las categorías vitales pesan más que las triviales. Cuando la curva es casi recta, no hay concentración y el principio no se aplica."
+              },
+              "xp": 10
             }
           ]
         },
@@ -5030,76 +4776,56 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Exagera.",
-                "en": "Exaggerates."
+                "es": "Compara una subida de cinco puntos con un eje completo y con uno recortado."
               },
               "solution": {
-                "es": "Las diferencias parecen mayores.",
-                "en": "Differences look larger."
+                "es": "Un eje truncado hace que las diferencias parezcan mayores, porque el rango visible es más pequeño y cualquier variación ocupa una porción grande del gráfico. Los datos no cambian; cambia la impresión."
+              },
+              "explain": {
+                "es": "Si respondiste que las diferencias parecen menores, has invertido el efecto. Al empezar el eje en 50, una subida de 50 a 55 ocupa todo el alto del gráfico, cuando en realidad es un aumento del 10 %. El truncamiento no miente en las cifras, pero exagera la pendiente visual."
               },
               "xp": 10
             },
             {
               "id": "A2-L5-E2",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Un gráfico con datos verdaderos puede engañar.",
                 "en": "A graph with true data can deceive."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Presentación.",
-                "en": "Presentation."
+                "es": "Piensa en el eje, el periodo y la escala."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: un gráfico con datos verdaderos puede engañar por la presentación, por ejemplo con un eje truncado, una escala logarítmica no declarada o un periodo elegido para exagerar un cambio."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», has supuesto que la veracidad de los datos garantiza la del mensaje. La forma de representar también comunica: recortar el eje, cambiar la escala u ocultar el periodo altera la lectura sin falsificar ninguna cifra. Por eso la defensa es revisar ejes, unidades y contexto."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L5-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para defenderse, lo primero es mirar:",
                 "en": "To defend yourself, first look at:"
               },
-              "choices": [
-                {
-                  "es": "Los colores",
-                  "en": "Colors"
-                },
-                {
-                  "es": "Los ejes y unidades",
-                  "en": "Axes and units"
-                },
-                {
-                  "es": "El título",
-                  "en": "Title"
-                },
-                {
-                  "es": "La fuente",
-                  "en": "Source"
-                }
+              "answers": [
+                "los ejes y unidades",
+                "ejes y unidades",
+                "los ejes",
+                "ejes"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Ejes.",
-                "en": "Axes."
+                "es": "Sin ellos no se sabe qué se está comparando."
               },
               "solution": {
-                "es": "Ejes y unidades.",
-                "en": "Axes and units."
+                "es": "Lo primero es mirar los ejes y las unidades, porque determinan qué se está representando y en qué escala. Después conviene revisar el periodo, la fuente y el rango, pero sin ejes claros la lectura es provisional."
+              },
+              "explain": {
+                "es": "Si respondiste «los colores» o «el título», has empezado por lo accesorio. Los colores y el título orientan, pero no permiten reconstruir la magnitud. Los ejes y las unidades son la información mínima para saber si una diferencia es grande o pequeña en la escala real."
               },
               "xp": 10
             },
@@ -5130,42 +4856,34 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Áreas.",
-                "en": "Areas."
+                "es": "Piensa en cómo crece el volumen al duplicar una dimensión."
               },
               "solution": {
-                "es": "Distorsionan áreas.",
-                "en": "They distort areas."
+                "es": "Las barras 3D son problemáticas porque distorsionan áreas y volúmenes: un valor el doble de alto no debería parecer mucho más grande. La percepción compara volumen, no solo altura, y la etiqueta no corrige esa impresión."
+              },
+              "explain": {
+                "es": "Si respondiste que son bonitas, has descrito el motivo por el que se usan, no el problema. El 3D añade una dimensión que no existe en los datos y hace que las diferencias parezcan mayores de lo que son. La solución es usar barras planas con longitudes proporcionales."
               },
               "xp": 10
             },
             {
               "id": "A2-L5-E5",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Un gráfico circular con 12 categorías es fácil de leer.",
                 "en": "A pie chart with 12 categories is easy to read."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Demasiadas categorías.",
-                "en": "Too many categories."
+                "es": "Cuenta cuántas porciones tendrías que comparar a ojo."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: un gráfico circular con doce categorías es difícil de leer porque las porciones son pequeñas y similares, y el ojo no compara ángulos con precisión. Las barras ordenadas comunican mejor en ese caso."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has confiado en la familiaridad del gráfico. El problema no es el diseño sino la percepción: comparar doce ángulos es mucho más difícil que comparar doce longitudes. Cuando hay muchas categorías, el gráfico circular deja de informar y se convierte en decoración."
+              },
+              "xp": 10
             }
           ]
         },
@@ -5300,167 +5018,110 @@ export default {
           "exercises": [
             {
               "id": "A2-L6-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Altura vs peso se grafica con:",
                 "en": "Height vs weight is plotted with:"
               },
-              "choices": [
-                {
-                  "es": "Circular",
-                  "en": "Pie"
-                },
-                {
-                  "es": "Scatter",
-                  "en": "Scatter"
-                },
-                {
-                  "es": "Barras",
-                  "en": "Bars"
-                },
-                {
-                  "es": "Líneas",
-                  "en": "Lines"
-                }
+              "answers": [
+                "dispersion",
+                "diagrama de dispersion",
+                "scatter",
+                "nube de puntos"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Dos cuantitativas.",
-                "en": "Two quantitative."
+                "es": "Dos variables cuantitativas piden puntos en un plano."
               },
               "solution": {
-                "es": "Scatter.",
-                "en": "Scatter."
+                "es": "Altura y peso se representan con un diagrama de dispersión, porque son dos variables cuantitativas y cada persona aporta un punto con dos coordenadas. El gráfico muestra dirección, forma y fuerza de la relación."
+              },
+              "explain": {
+                "es": "Si respondiste «barras», has tratado una variable cuantitativa como categoría. Las barras comparan categorías; la dispersión muestra cómo se mueven juntas dos magnitudes. Elegir mal el gráfico oculta la relación o inventa una que no existe. Además, el gráfico permite detectar valores atípicos y grupos ocultos que un resumen numérico pasaría por alto."
               },
               "xp": 10
             },
             {
               "id": "A2-L6-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Género vs fumador/no se resume en:",
                 "en": "Gender vs smoker/non is summarized in:"
               },
-              "choices": [
-                {
-                  "es": "Scatter",
-                  "en": "Scatter"
-                },
-                {
-                  "es": "Histograma",
-                  "en": "Histogram"
-                },
-                {
-                  "es": "Tabla de contingencia",
-                  "en": "Contingency table"
-                },
-                {
-                  "es": "Serie temporal",
-                  "en": "Time series"
-                }
+              "answers": [
+                "tabla de contingencia",
+                "contingencia",
+                "tabla de doble entrada"
               ],
-              "answer": 2,
               "hint": {
-                "es": "Dos categóricas.",
-                "en": "Two categorical."
+                "es": "Dos variables categóricas se cruzan en una tabla."
               },
               "solution": {
-                "es": "Tabla de contingencia.",
-                "en": "Contingency table."
+                "es": "Género y hábito de fumar se resumen en una tabla de contingencia, que cruza las categorías de ambas variables y muestra el recuento de cada combinación. Después se comparan las proporciones por fila o por columna."
+              },
+              "explain": {
+                "es": "Si respondiste «dispersión», has aplicado un gráfico para variables cuantitativas a dos categóricas. Los puntos no tienen coordenadas numéricas con sentido, así que el gráfico no informa. La tabla de contingencia es la herramienta correcta y permite calcular proporciones condicionadas."
               },
               "xp": 10
             },
             {
               "id": "A2-L6-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Correlación implica causalidad.",
                 "en": "Correlation implies causation."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Confusores.",
-                "en": "Confounders."
+                "es": "Piensa en el helado y los ahogamientos."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: la correlación no implica causalidad, porque puede existir un confusor que explique ambas variables, causalidad inversa o simple coincidencia. El diseño del estudio es lo que permite distinguir esos casos."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has repetido el error más común del análisis de datos. Dos variables pueden moverse juntas porque una tercera influye en ambas, como el calor en el helado y los ahogamientos. Sin un diseño adecuado, la asociación es una pista, no una explicación."
+              },
+              "xp": 10
             },
             {
               "id": "A2-L6-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "En un scatter, los puntos que suben a la derecha indican correlación:",
                 "en": "In a scatter, points rising to the right indicate correlation:"
               },
-              "choices": [
-                {
-                  "es": "Negativa",
-                  "en": "Negative"
-                },
-                {
-                  "es": "Positiva",
-                  "en": "Positive"
-                },
-                {
-                  "es": "Nula",
-                  "en": "None"
-                },
-                {
-                  "es": "Perfecta",
-                  "en": "Perfect"
-                }
+              "answers": [
+                "positiva",
+                "correlacion positiva"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Positiva.",
-                "en": "Positive."
+                "es": "Al crecer X, crece Y."
               },
               "solution": {
-                "es": "Positiva.",
-                "en": "Positive."
+                "es": "Si los puntos suben hacia la derecha, la correlación es positiva: al aumentar una variable, la otra tiende a aumentar. La dirección se lee de izquierda a derecha, y la fuerza depende de cuánto se estreche la nube."
+              },
+              "explain": {
+                "es": "Si respondiste «negativa», has invertido la lectura: una correlación negativa dibuja la nube bajando hacia la derecha. La dirección indica el signo de la relación, no su fuerza; una nube muy dispersa puede ser positiva y apenas informar sobre el valor de la otra variable."
               },
               "xp": 10
             },
             {
               "id": "A2-L6-E5",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Siempre se deben etiquetar los ejes con unidades.",
                 "en": "Axes should always be labeled with units."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Buena práctica.",
-                "en": "Good practice."
+                "es": "Sin unidades, un número del eje no se puede interpretar."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los ejes deben etiquetarse con sus unidades, porque un valor sin unidad no es interpretable. La misma cifra puede significar metros, kilómetros o euros, y la conclusión cambia con la escala."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene imaginar un eje con valores de 0 a 100 sin decir de qué. No se puede saber si es una puntuación, un porcentaje o una temperatura. La etiqueta y la unidad son parte del dato, no un adorno del gráfico."
+              },
+              "xp": 10
             }
           ]
         }

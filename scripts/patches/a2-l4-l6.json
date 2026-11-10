@@ -1,0 +1,92 @@
+{
+  "module": "data/descriptiva/a2.js",
+  "items": {
+    "A2-L4-E1": {
+      "type": "short",
+      "answers": ["mayor a menor", "de mayor a menor"],
+      "hint": "El gráfico empieza por la categoría que más pesa.",
+      "solution": "Un Pareto ordena las barras de mayor a menor frecuencia, para que la concentración se vea de inmediato. Si se ordenan de otra forma, el gráfico deja de ser un Pareto y se convierte en un diagrama de barras cualquiera.",
+      "explain": "Si respondiste «menor a mayor», has invertido el orden que da sentido al gráfico. La lectura del Pareto depende de que la primera barra sea la mayor: así la línea acumulada sube rápido al principio y muestra cuántas pocas categorías concentran el total. Con otro orden, esa interpretación se pierde."
+    },
+    "A2-L4-E2": {
+      "hint": "Piensa si siempre se cumple el 80/20 exacto.",
+      "solution": "Falso: la regla 80/20 es una heurística, no una ley física. En algunos casos tres categorías concentran el 85 %, y en otros hacen falta diez para llegar al 80 %. Lo importante es identificar dónde se aplana la curva.",
+      "explain": "Si respondiste «verdadero», has convertido una orientación en una obligación. Forzar el corte para que cuadre con la regla es un error frecuente: el gráfico debe mostrar la concentración real, sea 70/30, 90/10 o cualquier otra. La regla ayuda a esperar, no a concluir."
+    },
+    "A2-L4-E3": {
+      "type": "short",
+      "answers": ["la frecuencia acumulada", "frecuencia acumulada", "acumulada"],
+      "hint": "Sube de izquierda a derecha y termina en el total.",
+      "solution": "La línea del Pareto representa la frecuencia acumulada: suma las frecuencias relativas de izquierda a derecha y permite ver cuántas categorías hacen falta para alcanzar un porcentaje del total.",
+      "explain": "Si respondiste «la media», has confundido un gráfico de concentración con un resumen de tendencia central. La línea acumulada responde a la pregunta de cuántas categorías concentran qué proporción, y su punto de aplanamiento indica dónde termina el grupo de categorías relevantes."
+    },
+    "A2-L4-E4": {
+      "hint": "El gráfico responde a la pregunta de qué atacar primero.",
+      "solution": "El Pareto se usa para priorizar: identifica las pocas categorías que concentran la mayor parte del problema o del valor. No explica causas ni predice, pero ordena el esfuerzo donde más pesa.",
+      "explain": "Si respondiste «predecir», has pedido al gráfico algo que no puede dar. El Pareto describe la concentración actual de unas categorías y sirve para decidir dónde intervenir primero. La explicación causal exige otro análisis, y la predicción requiere un modelo con datos históricos y supuestos."
+    },
+    "A2-L4-E5": {
+      "hint": "Contrasta el peso acumulado de la cabeza con el de la cola.",
+      "solution": "Verdadero: en un Pareto, pocas categorías concentran la mayor parte del total y muchas aportan poco. Esa asimetría es la que justifica priorizar la cabeza y no repartir el esfuerzo por igual.",
+      "explain": "Si respondiste «falso», conviene mirar la curva acumulada: sube rápido en las primeras barras y se aplana después. Esa forma muestra que las categorías vitales pesan más que las triviales. Cuando la curva es casi recta, no hay concentración y el principio no se aplica."
+    },
+    "A2-L5-E1": {
+      "hint": "Compara una subida de cinco puntos con un eje completo y con uno recortado.",
+      "solution": "Un eje truncado hace que las diferencias parezcan mayores, porque el rango visible es más pequeño y cualquier variación ocupa una porción grande del gráfico. Los datos no cambian; cambia la impresión.",
+      "explain": "Si respondiste que las diferencias parecen menores, has invertido el efecto. Al empezar el eje en 50, una subida de 50 a 55 ocupa todo el alto del gráfico, cuando en realidad es un aumento del 10 %. El truncamiento no miente en las cifras, pero exagera la pendiente visual."
+    },
+    "A2-L5-E2": {
+      "hint": "Piensa en el eje, el periodo y la escala.",
+      "solution": "Verdadero: un gráfico con datos verdaderos puede engañar por la presentación, por ejemplo con un eje truncado, una escala logarítmica no declarada o un periodo elegido para exagerar un cambio.",
+      "explain": "Si respondiste «falso», has supuesto que la veracidad de los datos garantiza la del mensaje. La forma de representar también comunica: recortar el eje, cambiar la escala u ocultar el periodo altera la lectura sin falsificar ninguna cifra. Por eso la defensa es revisar ejes, unidades y contexto."
+    },
+    "A2-L5-E3": {
+      "type": "short",
+      "answers": ["los ejes y unidades", "ejes y unidades", "los ejes", "ejes"],
+      "hint": "Sin ellos no se sabe qué se está comparando.",
+      "solution": "Lo primero es mirar los ejes y las unidades, porque determinan qué se está representando y en qué escala. Después conviene revisar el periodo, la fuente y el rango, pero sin ejes claros la lectura es provisional.",
+      "explain": "Si respondiste «los colores» o «el título», has empezado por lo accesorio. Los colores y el título orientan, pero no permiten reconstruir la magnitud. Los ejes y las unidades son la información mínima para saber si una diferencia es grande o pequeña en la escala real."
+    },
+    "A2-L5-E4": {
+      "hint": "Piensa en cómo crece el volumen al duplicar una dimensión.",
+      "solution": "Las barras 3D son problemáticas porque distorsionan áreas y volúmenes: un valor el doble de alto no debería parecer mucho más grande. La percepción compara volumen, no solo altura, y la etiqueta no corrige esa impresión.",
+      "explain": "Si respondiste que son bonitas, has descrito el motivo por el que se usan, no el problema. El 3D añade una dimensión que no existe en los datos y hace que las diferencias parezcan mayores de lo que son. La solución es usar barras planas con longitudes proporcionales."
+    },
+    "A2-L5-E5": {
+      "hint": "Cuenta cuántas porciones tendrías que comparar a ojo.",
+      "solution": "Falso: un gráfico circular con doce categorías es difícil de leer porque las porciones son pequeñas y similares, y el ojo no compara ángulos con precisión. Las barras ordenadas comunican mejor en ese caso.",
+      "explain": "Si respondiste «verdadero», has confiado en la familiaridad del gráfico. El problema no es el diseño sino la percepción: comparar doce ángulos es mucho más difícil que comparar doce longitudes. Cuando hay muchas categorías, el gráfico circular deja de informar y se convierte en decoración."
+    },
+    "A2-L6-E1": {
+      "type": "short",
+      "answers": ["dispersion", "diagrama de dispersion", "scatter", "nube de puntos"],
+      "hint": "Dos variables cuantitativas piden puntos en un plano.",
+      "solution": "Altura y peso se representan con un diagrama de dispersión, porque son dos variables cuantitativas y cada persona aporta un punto con dos coordenadas. El gráfico muestra dirección, forma y fuerza de la relación.",
+      "explain": "Si respondiste «barras», has tratado una variable cuantitativa como categoría. Las barras comparan categorías; la dispersión muestra cómo se mueven juntas dos magnitudes. Elegir mal el gráfico oculta la relación o inventa una que no existe."
+    },
+    "A2-L6-E2": {
+      "type": "short",
+      "answers": ["tabla de contingencia", "contingencia", "tabla de doble entrada"],
+      "hint": "Dos variables categóricas se cruzan en una tabla.",
+      "solution": "Género y hábito de fumar se resumen en una tabla de contingencia, que cruza las categorías de ambas variables y muestra el recuento de cada combinación. Después se comparan las proporciones por fila o por columna.",
+      "explain": "Si respondiste «dispersión», has aplicado un gráfico para variables cuantitativas a dos categóricas. Los puntos no tienen coordenadas numéricas con sentido, así que el gráfico no informa. La tabla de contingencia es la herramienta correcta y permite calcular proporciones condicionadas."
+    },
+    "A2-L6-E3": {
+      "hint": "Piensa en el helado y los ahogamientos.",
+      "solution": "Falso: la correlación no implica causalidad, porque puede existir un confusor que explique ambas variables, causalidad inversa o simple coincidencia. El diseño del estudio es lo que permite distinguir esos casos.",
+      "explain": "Si respondiste «verdadero», has repetido el error más común del análisis de datos. Dos variables pueden moverse juntas porque una tercera influye en ambas, como el calor en el helado y los ahogamientos. Sin un diseño adecuado, la asociación es una pista, no una explicación."
+    },
+    "A2-L6-E4": {
+      "type": "short",
+      "answers": ["positiva", "correlacion positiva"],
+      "hint": "Al crecer X, crece Y.",
+      "solution": "Si los puntos suben hacia la derecha, la correlación es positiva: al aumentar una variable, la otra tiende a aumentar. La dirección se lee de izquierda a derecha, y la fuerza depende de cuánto se estreche la nube.",
+      "explain": "Si respondiste «negativa», has invertido la lectura: una correlación negativa dibuja la nube bajando hacia la derecha. La dirección indica el signo de la relación, no su fuerza; una nube muy dispersa puede ser positiva y apenas informar sobre el valor de la otra variable."
+    },
+    "A2-L6-E5": {
+      "hint": "Sin unidades, un número del eje no se puede interpretar.",
+      "solution": "Verdadero: los ejes deben etiquetarse con sus unidades, porque un valor sin unidad no es interpretable. La misma cifra puede significar metros, kilómetros o euros, y la conclusión cambia con la escala.",
+      "explain": "Si respondiste «falso», conviene imaginar un eje con valores de 0 a 100 sin decir de qué. No se puede saber si es una puntuación, un porcentaje o una temperatura. La etiqueta y la unidad son parte del dato, no un adorno del gráfico."
+    }
+  }
+}
