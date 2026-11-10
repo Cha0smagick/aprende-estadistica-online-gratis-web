@@ -160,7 +160,7 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 ### Fase 4 - Contenido: Fundamentos (10 lecciones)
 
 - [x] F0 (5): qué es la estadística, estadística vs probabilidad, población/muestra/parámetro, tipos de estudios, mitos. — **completo (5/5)**
-- [ ] F1 (5).
+- [ ] F1 (5). — **F1 en curso: 1/5 (L1)**
 
 - [ ] F0 (5), F1 (5).
 - [ ] Convertir la historia en historia *conectada* a los métodos, no en trivia.

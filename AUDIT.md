@@ -338,6 +338,7 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-10 | Fundamentos F0 | F0-L3 | 2.534 | ✅ validado |
 | 2026-11-10 | Fundamentos F0 | F0-L4 | 2.500 | ✅ validado |
 | 2026-11-10 | **F0 completo (5/5)** | F0-L5 | 2.500 | ✅ validado |
+| 2026-11-10 | Fundamentos F1 | F1-L1 | 2.504 | ✅ validado |
 
-Acumulado: **110/115** deep dives (42 descriptiva + 30 probabilidad + 33 inferencial + 5 fundamentos). **Tres cursos completos y F0 cerrado.** Pendientes: F1 (5).
+Acumulado: **111/115** deep dives (42 descriptiva + 30 probabilidad + 33 inferencial + 6 fundamentos). **Tres cursos completos, F0 cerrado, F1 en curso (1/5).** Pendientes: F1-L2–L5 (4).
 
