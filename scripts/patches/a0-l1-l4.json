@@ -1,0 +1,105 @@
+{
+  "module": "data/descriptiva/a0.js",
+  "items": {
+    "A0-L1-E1": {
+      "hint": "Busca una magnitud que se pueda medir y sumar.",
+      "solution": "150 cm de altura es un dato cardinal porque expresa una cantidad medible. El tercer puesto es ordinal (posición) y la nota o el color son categorías, no cantidades.",
+      "explain": "Si elegiste el tercer puesto, has confundido cantidad con posición: el ordinal indica orden, no cuánto hay. Un dato cardinal se puede sumar y promediar; un ordinal solo se puede ordenar."
+    },
+    "A0-L1-E2": {
+      "hint": "Fíjate en el valor, no en cuántos decimales se escriben.",
+      "solution": "Verdadero: 7 y 7,0 representan la misma cantidad. El cero a la derecha no altera el valor, aunque sí puede indicar precisión en un contexto de medición.",
+      "explain": "Si respondiste «falso», has confundido la escritura con el valor. Los ceros a la derecha no cambian la cantidad, pero en metrología pueden comunicar cuántos decimales son fiables."
+    },
+    "A0-L1-E3": {
+      "hint": "Multiplica el número de cajas por los caramelos de cada una.",
+      "solution": "5 cajas por 8 caramelos dan 40 caramelos. La operación es una multiplicación de una razón (caramelos por caja) por un recuento (cajas), y el resultado está en caramelos.",
+      "explain": "Si obtuviste otro número, revisa qué representa cada factor: cinco cuenta cajas y ocho cuenta caramelos por caja. Al multiplicarlos, las cajas se cancelan y quedan caramelos como unidad final."
+    },
+    "A0-L1-E4": {
+      "hint": "La fruta es la misma; lo que cambia es cómo la cuentas.",
+      "solution": "Cambia el número usado para representar la cantidad, no la cantidad real. Contar manzanas y contar kilos son dos formas de medir la misma realidad con unidades distintas.",
+      "explain": "Si respondiste que cambia la cantidad real, has confundido la medida con el objeto. La realidad no depende de la unidad elegida; solo cambia el número que la representa y su escala."
+    },
+    "A0-L1-E5": {
+      "hint": "Cada cofre aporta la misma cantidad de bloques.",
+      "solution": "Tres cofres con 64 bloques cada uno suman 192 bloques. Es una multiplicación de un recuento por una razón constante, y la unidad del resultado son bloques.",
+      "explain": "Si sumaste 64 tres veces y obtuviste 192, el resultado es correcto. El error típico es multiplicar por dos o sumar 64 más 3, que mezclaría el recuento con el tamaño del cofre."
+    },
+    "A0-L2-E1": {
+      "hint": "Divide el numerador entre el denominador.",
+      "solution": "Siete octavos equivalen a 0,875 porque 7 dividido entre 8 da exactamente 0,875. La fracción y el decimal son dos escrituras de la misma cantidad.",
+      "explain": "Si obtuviste 1,142, has dividido al revés. La fracción a/b se convierte en decimal dividiendo a entre b, no b entre a; el resultado debe quedar entre cero y uno cuando el numerador es menor."
+    },
+    "A0-L2-E2": {
+      "hint": "Pasar de decimal a porcentaje es multiplicar por cien.",
+      "solution": "0,04 equivale al 4 % porque se multiplica por 100. El porcentaje es una forma de expresar una proporción tomando como referencia cien partes.",
+      "explain": "Si respondiste 0,4 %, has movido la coma una posición de menos. Multiplicar por cien desplaza la coma dos lugares: 0,04 pasa a 4, y el símbolo % sustituye al factor cien."
+    },
+    "A0-L2-E3": {
+      "hint": "Divide la parte entre el total y multiplica por cien.",
+      "solution": "50 sobre 200 es 0,25, que equivale al 25 %. La parte es la cuarta parte del total, y esa relación se expresa como porcentaje multiplicando por cien.",
+      "explain": "Si respondiste 50 %, has dividido entre cien en lugar de entre el total. El porcentaje se calcula con la parte sobre el total, y aquí el total es 200, no 100."
+    },
+    "A0-L2-E4": {
+      "hint": "Piensa en una fracción cuyo denominador sea una potencia de dos.",
+      "solution": "0,125 equivale a 1/8, porque 1 dividido entre 8 da 0,125. También equivale al 12,5 %, que es la misma cantidad expresada como porcentaje.",
+      "explain": "Si elegiste 1/4, has duplicado el valor: 1/4 es 0,25. La confusión es frecuente porque 0,125 parece cercano a 0,25, pero basta dividir para comprobar que 1/8 es la mitad de 1/4."
+    },
+    "A0-L2-E5": {
+      "hint": "Un descuento del 15 % deja el 85 % del precio.",
+      "solution": "El precio final es 102, porque 120 multiplicado por 0,85 da 102. El descuento es de 18 unidades y el resultado conserva la unidad monetaria del precio original.",
+      "explain": "Si restaste 15 al precio, has confundido puntos porcentuales con unidades monetarias. El 15 % se calcula sobre 120 y son 18, no 15, así que el precio final es 102."
+    },
+    "A0-L3-E1": {
+      "hint": "La mantisa debe estar entre 1 y 10.",
+      "solution": "5,4 por 10 elevado a 6 es la única opción con mantisa entre 1 y 10. Las demás tienen mantisa mayor que 10 o menor que 1, y por tanto no están en forma normalizada.",
+      "explain": "Si elegiste 54 por 10 elevado a 5, el número es equivalente pero no está en notación científica correcta. La forma normalizada exige una mantisa entre 1 y 10 y un exponente entero."
+    },
+    "A0-L3-E2": {
+      "hint": "Desplaza la coma hasta dejar una sola cifra entera.",
+      "solution": "0,0032 se escribe como 3,2 por 10 elevado a menos 3, así que la mantisa es 3,2. El exponente es negativo porque el número original es menor que uno.",
+      "explain": "Si diste 32 o 0,32, la mantisa no está normalizada. Hay que mover la coma tres lugares a la derecha hasta obtener 3,2, y compensar con un exponente de menos tres."
+    },
+    "A0-L3-E3": {
+      "hint": "Escribe el número completo y cuenta los ceros.",
+      "solution": "Un millón se escribe 1 000 000, con seis ceros. El exponente de la potencia de diez coincide con el número de ceros cuando la base es diez.",
+      "explain": "Si contaste cinco, has pensado en cien mil. La regla práctica es que el exponente indica cuántos ceros acompañan a la unidad, y un millón tiene seis."
+    },
+    "A0-L3-E4": {
+      "hint": "Piensa en el exponente, no en el número cien.",
+      "solution": "Verdadero: diez elevado a cero es uno. Cualquier base distinta de cero elevada a cero vale uno, y esa convención mantiene coherentes las reglas de los exponentes.",
+      "explain": "Si respondiste «falso», probablemente leíste cien en lugar de diez elevado a cero. La notación del ejercicio se refiere a una potencia, y toda potencia con exponente cero vale uno."
+    },
+    "A0-L3-E5": {
+      "hint": "Un gigabyte son mil megabytes en la escala decimal.",
+      "solution": "Un GB equivale a 1000 MB en la convención decimal, porque 10 elevado a 9 dividido entre 10 elevado a 6 es 10 elevado a 3. En informática se usa también la base binaria, que da 1024.",
+      "explain": "Si respondiste 1024, has usado la convención binaria de los sistemas operativos. La escala decimal del enunciado usa potencias de diez, y en ella el factor entre gigabyte y megabyte es mil."
+    },
+    "A0-L4-E1": {
+      "hint": "Mira la cuarta cifra decimal para decidir.",
+      "solution": "3,14159 redondeado a tres decimales es 3,142 porque la cuarta cifra es 5, y la convención habitual sube la última cifra conservada cuando la siguiente es cinco o más.",
+      "explain": "Si dejaste 3,141, no aplicaste la regla del cinco. La cifra siguiente al tercer decimal es 5, así que el tercer decimal pasa de 1 a 2 y el resto se descarta."
+    },
+    "A0-L4-E2": {
+      "hint": "La segunda cifra decimal es menor que cinco.",
+      "solution": "7,849 redondeado a un decimal es 7,8 porque la segunda cifra decimal es 4, menor que cinco. En ese caso la cifra conservada no cambia.",
+      "explain": "Si respondiste 7,9, redondeaste hacia arriba sin comprobar la cifra siguiente. La regla solo sube cuando la cifra que se descarta es cinco o mayor, y aquí es cuatro."
+    },
+    "A0-L4-E3": {
+      "hint": "Los ceros iniciales no cuentan; los finales tras la coma sí.",
+      "solution": "0,02030 tiene cuatro cifras significativas: 2, 0, 3 y el cero final. Los ceros iniciales solo marcan la posición de la coma y no se consideran significativos.",
+      "explain": "Si contaste dos, ignoraste los ceros intermedios y finales. Entre las cifras significativas se cuentan las que aportan información sobre la precisión, incluidos los ceros situados entre cifras distintas de cero o al final."
+    },
+    "A0-L4-E4": {
+      "hint": "Cada redondeo intermedio descarta información.",
+      "solution": "Falso: redondear en pasos intermedios acumula error. La práctica correcta es conservar los decimales durante los cálculos y redondear solo el resultado final, indicando la precisión.",
+      "explain": "Si respondiste «verdadero», has supuesto que redondear simplifica sin coste. Cada redondeo elimina información y, repetido, puede desplazar el resultado varias décimas respecto al valor exacto."
+    },
+    "A0-L4-E5": {
+      "hint": "La tercera cifra decimal decide.",
+      "solution": "12,345 redondeado a dos decimales es 12,35 porque la tercera cifra decimal es 5 y se aplica la regla de subir. El resultado conserva dos decimales y no tres.",
+      "explain": "Si dejaste 12,34, no aplicaste la regla del cinco. La cifra que se descarta es 5, de modo que el segundo decimal sube de 4 a 5 y el número queda en 12,35."
+    }
+  }
+}

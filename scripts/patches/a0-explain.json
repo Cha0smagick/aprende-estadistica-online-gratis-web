@@ -1,0 +1,25 @@
+{
+  "module": "data/descriptiva/a0.js",
+  "items": {
+    "A0-L1-E1": "La distinción importa porque solo las cantidades admiten operaciones aritméticas con sentido.",
+    "A0-L1-E2": "En un informe, sin embargo, escribir 7,0 puede indicar que la medición llegó a esa décima.",
+    "A0-L1-E3": "Comprobar las unidades del resultado es la forma más rápida de detectar una operación invertida.",
+    "A0-L1-E4": "Por eso los informes serios declaran siempre la unidad junto al número que la acompaña.",
+    "A0-L1-E5": "La multiplicación sustituye a una suma repetida y evita contar cofre por cofre.",
+    "A0-L2-E1": "Conviene recordar que una fracción propia siempre da un decimal menor que uno.",
+    "A0-L2-E2": "El símbolo de porcentaje equivale a dividir entre cien, y por eso se puede multiplicar directamente.",
+    "A0-L2-E3": "Identificar correctamente el total es el paso que más errores evita en los cálculos de porcentajes.",
+    "A0-L2-E4": "Conocer las equivalencias básicas entre fracciones y decimales ahorra cálculos y errores.",
+    "A0-L2-E5": "Aplicar el descuento sobre el precio original evita el error de acumular porcentajes.",
+    "A0-L3-E1": "La notación científica sirve para comparar magnitudes muy distintas de un vistazo.",
+    "A0-L3-E2": "El exponente negativo indica cuántos lugares se desplazó la coma hacia la derecha.",
+    "A0-L3-E3": "Esa correspondencia permite pasar de la potencia al número completo sin contar a mano.",
+    "A0-L3-E4": "La convención evita contradicciones al dividir potencias de la misma base.",
+    "A0-L3-E5": "La diferencia entre las dos convenciones explica discrepancias de capacidad en discos y memorias.",
+    "A0-L4-E1": "Anotar el número de decimales antes de redondear evita perder precisión sin darse cuenta.",
+    "A0-L4-E2": "Redondear no es aproximar al alza: la dirección depende de la cifra que se descarta.",
+    "A0-L4-E3": "Los ceros finales tras la coma sí cuentan porque indican precisión medida.",
+    "A0-L4-E4": "En cálculos largos, guardar decimales de más cuesta poco y evita desviaciones visibles en el resultado.",
+    "A0-L4-E5": "La regla del cinco es una convención, y conviene declararla cuando la precisión importa."
+  }
+}

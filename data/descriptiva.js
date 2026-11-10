@@ -198,79 +198,54 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Cardinal = cantidad medible.",
-                "en": "Cardinal = measurable quantity."
+                "es": "Busca una magnitud que se pueda medir y sumar."
               },
               "solution": {
-                "es": "150 cm es una cantidad medible.",
-                "en": "150 cm is a measurable quantity."
+                "es": "150 cm de altura es un dato cardinal porque expresa una cantidad medible. El tercer puesto es ordinal (posición) y la nota o el color son categorías, no cantidades."
+              },
+              "explain": {
+                "es": "Si elegiste el tercer puesto, has confundido cantidad con posición: el ordinal indica orden, no cuánto hay. Un dato cardinal se puede sumar y promediar; un ordinal solo se puede ordenar. La distinción importa porque solo las cantidades admiten operaciones aritméticas con sentido."
               },
               "xp": 10
             },
             {
               "id": "A0-L1-E2",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "'7' y '7,0' representan la misma cantidad.",
                 "en": "'7' and '7.0' represent the same quantity."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "El cero a la derecha no cambia el valor.",
-                "en": "Trailing zero doesn't change value."
+                "es": "Fíjate en el valor, no en cuántos decimales se escriben."
               },
               "solution": {
-                "es": "Verdadero: 7 = 7,0.",
-                "en": "True: 7 = 7.0."
+                "es": "Verdadero: 7 y 7,0 representan la misma cantidad. El cero a la derecha no altera el valor, aunque sí puede indicar precisión en un contexto de medición."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», has confundido la escritura con el valor. Los ceros a la derecha no cambian la cantidad, pero en metrología pueden comunicar cuántos decimales son fiables. En un informe, sin embargo, escribir 7,0 puede indicar que la medición llegó a esa décima."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L1-E3",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Tengo 5 cajas con 8 caramelos cada una. ¿Cuántos caramelos en total?",
                 "en": "5 boxes with 8 candies each. Total candies?"
               },
-              "answer": 3,
+              "answer": 40,
               "tol": 0.01,
               "hint": {
-                "es": "5 × 8.",
-                "en": "5 × 8."
+                "es": "Multiplica el número de cajas por los caramelos de cada una."
               },
               "solution": {
-                "es": "5 × 8 = 40.",
-                "en": "5 × 8 = 40."
+                "es": "5 cajas por 8 caramelos dan 40 caramelos. La operación es una multiplicación de una razón (caramelos por caja) por un recuento (cajas), y el resultado está en caramelos."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "39",
-                  "en": "39"
-                },
-                {
-                  "es": "80",
-                  "en": "80"
-                },
-                {
-                  "es": "41",
-                  "en": "41"
-                },
-                {
-                  "es": "40",
-                  "en": "40"
-                }
-              ]
+              "explain": {
+                "es": "Si obtuviste otro número, revisa qué representa cada factor: cinco cuenta cajas y ocho cuenta caramelos por caja. Al multiplicarlos, las cajas se cancelan y quedan caramelos como unidad final. Comprobar las unidades del resultado es la forma más rápida de detectar una operación invertida."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L1-E4",
@@ -299,51 +274,35 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "La realidad no cambia; la unidad sí.",
-                "en": "Reality doesn't change; the unit does."
+                "es": "La fruta es la misma; lo que cambia es cómo la cuentas."
               },
               "solution": {
-                "es": "Cambia el número, no la realidad.",
-                "en": "The number changes, not reality."
+                "es": "Cambia el número usado para representar la cantidad, no la cantidad real. Contar manzanas y contar kilos son dos formas de medir la misma realidad con unidades distintas."
+              },
+              "explain": {
+                "es": "Si respondiste que cambia la cantidad real, has confundido la medida con el objeto. La realidad no depende de la unidad elegida; solo cambia el número que la representa y su escala. Por eso los informes serios declaran siempre la unidad junto al número que la acompaña."
               },
               "xp": 10
             },
             {
               "id": "A0-L1-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Un cofre tiene 64 bloques de piedra. Si vacío 3 cofres iguales, ¿cuántos bloques?",
                 "en": "A chest has 64 stone blocks. Empty 3 identical chests: blocks?"
               },
-              "answer": 1,
+              "answer": 192,
               "tol": 0.01,
               "hint": {
-                "es": "3 × 64.",
-                "en": "3 × 64."
+                "es": "Cada cofre aporta la misma cantidad de bloques."
               },
               "solution": {
-                "es": "3 × 64 = 192.",
-                "en": "3 × 64 = 192."
+                "es": "Tres cofres con 64 bloques cada uno suman 192 bloques. Es una multiplicación de un recuento por una razón constante, y la unidad del resultado son bloques."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "191",
-                  "en": "191"
-                },
-                {
-                  "es": "192",
-                  "en": "192"
-                },
-                {
-                  "es": "384",
-                  "en": "384"
-                },
-                {
-                  "es": "193",
-                  "en": "193"
-                }
-              ]
+              "explain": {
+                "es": "Si sumaste 64 tres veces y obtuviste 192, el resultado es correcto. El error típico es multiplicar por dos o sumar 64 más 3, que mezclaría el recuento con el tamaño del cofre. La multiplicación sustituye a una suma repetida y evita contar cofre por cofre."
+              },
+              "xp": 10
             }
           ]
         },
@@ -496,114 +455,63 @@ export default {
           "exercises": [
             {
               "id": "A0-L2-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Convierte 7/8 a decimal.",
                 "en": "Convert 7/8 to decimal."
               },
-              "answer": 2,
+              "answer": 0.875,
               "tol": 0.001,
               "hint": {
-                "es": "7 ÷ 8.",
-                "en": "7 ÷ 8."
+                "es": "Divide el numerador entre el denominador."
               },
               "solution": {
-                "es": "7 ÷ 8 = 0,875.",
-                "en": "7 ÷ 8 = 0.875."
+                "es": "Siete octavos equivalen a 0,875 porque 7 dividido entre 8 da exactamente 0,875. La fracción y el decimal son dos escrituras de la misma cantidad."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "1.875",
-                  "en": "1.875"
-                },
-                {
-                  "es": "-0.125",
-                  "en": "-0.125"
-                },
-                {
-                  "es": "0.875",
-                  "en": "0.875"
-                },
-                {
-                  "es": "1.75",
-                  "en": "1.75"
-                }
-              ]
+              "explain": {
+                "es": "Si obtuviste 1,142, has dividido al revés. La fracción a/b se convierte en decimal dividiendo a entre b, no b entre a; el resultado debe quedar entre cero y uno cuando el numerador es menor. Conviene recordar que una fracción propia siempre da un decimal menor que uno."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L2-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Convierte 0,04 a porcentaje.",
                 "en": "Convert 0.04 to percentage."
               },
-              "answer": 1,
+              "answer": 4,
               "tol": 0.01,
               "hint": {
-                "es": "× 100.",
-                "en": "× 100."
+                "es": "Pasar de decimal a porcentaje es multiplicar por cien."
               },
               "solution": {
-                "es": "4 %.",
-                "en": "4%."
+                "es": "0,04 equivale al 4 % porque se multiplica por 100. El porcentaje es una forma de expresar una proporción tomando como referencia cien partes."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "3",
-                  "en": "3"
-                },
-                {
-                  "es": "4",
-                  "en": "4"
-                },
-                {
-                  "es": "5",
-                  "en": "5"
-                },
-                {
-                  "es": "8",
-                  "en": "8"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 0,4 %, has movido la coma una posición de menos. Multiplicar por cien desplaza la coma dos lugares: 0,04 pasa a 4, y el símbolo % sustituye al factor cien. El símbolo de porcentaje equivale a dividir entre cien, y por eso se puede multiplicar directamente."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L2-E3",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "¿Qué porcentaje de 200 es 50?",
                 "en": "What percent of 200 is 50?"
               },
-              "answer": 1,
+              "answer": 25,
               "tol": 0.01,
               "hint": {
-                "es": "50/200 × 100.",
-                "en": "50/200 × 100."
+                "es": "Divide la parte entre el total y multiplica por cien."
               },
               "solution": {
-                "es": "25 %.",
-                "en": "25%."
+                "es": "50 sobre 200 es 0,25, que equivale al 25 %. La parte es la cuarta parte del total, y esa relación se expresa como porcentaje multiplicando por cien."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "24",
-                  "en": "24"
-                },
-                {
-                  "es": "25",
-                  "en": "25"
-                },
-                {
-                  "es": "50",
-                  "en": "50"
-                },
-                {
-                  "es": "26",
-                  "en": "26"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 50 %, has dividido entre cien en lugar de entre el total. El porcentaje se calcula con la parte sobre el total, y aquí el total es 200, no 100. Identificar correctamente el total es el paso que más errores evita en los cálculos de porcentajes."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L2-E4",
@@ -632,52 +540,35 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "1/8 = 0,125.",
-                "en": "1/8 = 0.125."
+                "es": "Piensa en una fracción cuyo denominador sea una potencia de dos."
               },
               "solution": {
-                "es": "1/8 = 0,125.",
-                "en": "1/8 = 0.125."
+                "es": "0,125 equivale a 1/8, porque 1 dividido entre 8 da 0,125. También equivale al 12,5 %, que es la misma cantidad expresada como porcentaje."
+              },
+              "explain": {
+                "es": "Si elegiste 1/4, has duplicado el valor: 1/4 es 0,25. La confusión es frecuente porque 0,125 parece cercano a 0,25, pero basta dividir para comprobar que 1/8 es la mitad de 1/4. Conocer las equivalencias básicas entre fracciones y decimales ahorra cálculos y errores."
               },
               "xp": 10
             },
             {
               "id": "A0-L2-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Precio 120 €, descuento 15 %. Precio final.",
                 "en": "Price €120, 15% off. Final price."
               },
-              "answer": 1,
+              "answer": 102,
               "tol": 0.01,
               "hint": {
-                "es": "120 × 0,85.",
-                "en": "120 × 0.85."
+                "es": "Un descuento del 15 % deja el 85 % del precio."
               },
               "solution": {
-                "es": "120 × 0,85 = 102 €.",
-                "en": "120 × 0.85 = €102."
+                "es": "El precio final es 102, porque 120 multiplicado por 0,85 da 102. El descuento es de 18 unidades y el resultado conserva la unidad monetaria del precio original."
               },
-              "xp": 10,
-              "jackpot": true,
-              "choices": [
-                {
-                  "es": "103",
-                  "en": "103"
-                },
-                {
-                  "es": "102",
-                  "en": "102"
-                },
-                {
-                  "es": "204",
-                  "en": "204"
-                },
-                {
-                  "es": "101",
-                  "en": "101"
-                }
-              ]
+              "explain": {
+                "es": "Si restaste 15 al precio, has confundido puntos porcentuales con unidades monetarias. El 15 % se calcula sobre 120 y son 18, no 15, así que el precio final es 102. Aplicar el descuento sobre el precio original evita el error de acumular porcentajes."
+              },
+              "xp": 10
             }
           ]
         },
@@ -846,153 +737,94 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Mantisa entre 1 y 10.",
-                "en": "Mantissa between 1 and 10."
+                "es": "La mantisa debe estar entre 1 y 10."
               },
               "solution": {
-                "es": "5,4 × 10⁶.",
-                "en": "5.4 × 10⁶."
+                "es": "5,4 por 10 elevado a 6 es la única opción con mantisa entre 1 y 10. Las demás tienen mantisa mayor que 10 o menor que 1, y por tanto no están en forma normalizada."
+              },
+              "explain": {
+                "es": "Si elegiste 54 por 10 elevado a 5, el número es equivalente pero no está en notación científica correcta. La forma normalizada exige una mantisa entre 1 y 10 y un exponente entero. La notación científica sirve para comparar magnitudes muy distintas de un vistazo."
               },
               "xp": 10
             },
             {
               "id": "A0-L3-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Escribe 0,0032 en notación científica como a×10ⁿ. Da solo 'a' (mantisa).",
                 "en": "Write 0.0032 in scientific notation a×10ⁿ. Give only 'a'."
               },
-              "answer": 2,
+              "answer": 3.2,
               "tol": 0.01,
               "hint": {
-                "es": "3,2 × 10⁻³.",
-                "en": "3.2 × 10⁻³."
+                "es": "Desplaza la coma hasta dejar una sola cifra entera."
               },
               "solution": {
-                "es": "3,2 × 10⁻³ → a=3,2.",
-                "en": "3.2 × 10⁻³ → a=3.2."
+                "es": "0,0032 se escribe como 3,2 por 10 elevado a menos 3, así que la mantisa es 3,2. El exponente es negativo porque el número original es menor que uno."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "4.2",
-                  "en": "4.2"
-                },
-                {
-                  "es": "6.4",
-                  "en": "6.4"
-                },
-                {
-                  "es": "3.2",
-                  "en": "3.2"
-                },
-                {
-                  "es": "2.2",
-                  "en": "2.2"
-                }
-              ]
+              "explain": {
+                "es": "Si diste 32 o 0,32, la mantisa no está normalizada. Hay que mover la coma tres lugares a la derecha hasta obtener 3,2, y compensar con un exponente de menos tres. El exponente negativo indica cuántos lugares se desplazó la coma hacia la derecha."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L3-E3",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "¿Cuántos ceros tiene un millón (10⁶)?",
                 "en": "How many zeros in a million (10⁶)?"
               },
-              "answer": 3,
+              "answer": 6,
               "tol": 0.01,
               "hint": {
-                "es": "10⁶ = 1 000 000.",
-                "en": "10⁶ = 1,000,000."
+                "es": "Escribe el número completo y cuenta los ceros."
               },
               "solution": {
-                "es": "6 ceros.",
-                "en": "6 zeros."
+                "es": "Un millón se escribe 1 000 000, con seis ceros. El exponente de la potencia de diez coincide con el número de ceros cuando la base es diez."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "5",
-                  "en": "5"
-                },
-                {
-                  "es": "12",
-                  "en": "12"
-                },
-                {
-                  "es": "7",
-                  "en": "7"
-                },
-                {
-                  "es": "6",
-                  "en": "6"
-                }
-              ]
+              "explain": {
+                "es": "Si contaste cinco, has pensado en cien mil. La regla práctica es que el exponente indica cuántos ceros acompañan a la unidad, y un millón tiene seis. Esa correspondencia permite pasar de la potencia al número completo sin contar a mano."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L3-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "10⁰ = 1.",
                 "en": "10⁰ = 1."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Cualquier número elevado a 0 es 1.",
-                "en": "Any number to the power 0 is 1."
+                "es": "Piensa en el exponente, no en el número cien."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: diez elevado a cero es uno. Cualquier base distinta de cero elevada a cero vale uno, y esa convención mantiene coherentes las reglas de los exponentes."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», probablemente leíste cien en lugar de diez elevado a cero. La notación del ejercicio se refiere a una potencia, y toda potencia con exponente cero vale uno. La convención evita contradicciones al dividir potencias de la misma base."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L3-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Un GB son 10⁹ bytes. ¿Cuántos MB (10⁶) es eso?",
                 "en": "1 GB = 10⁹ bytes. How many MB (10⁶) is that?"
               },
-              "answer": 0,
+              "answer": 1000,
               "tol": 0.01,
               "hint": {
-                "es": "10⁹ / 10⁶ = 10³.",
-                "en": "10⁹ / 10⁶ = 10³."
+                "es": "Un gigabyte son mil megabytes en la escala decimal."
               },
               "solution": {
-                "es": "1000 MB.",
-                "en": "1000 MB."
+                "es": "Un GB equivale a 1000 MB en la convención decimal, porque 10 elevado a 9 dividido entre 10 elevado a 6 es 10 elevado a 3. En informática se usa también la base binaria, que da 1024."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "1000",
-                  "en": "1000"
-                },
-                {
-                  "es": "999",
-                  "en": "999"
-                },
-                {
-                  "es": "1001",
-                  "en": "1001"
-                },
-                {
-                  "es": "2000",
-                  "en": "2000"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 1024, has usado la convención binaria de los sistemas operativos. La escala decimal del enunciado usa potencias de diez, y en ella el factor entre gigabyte y megabyte es mil. La diferencia entre las dos convenciones explica discrepancias de capacidad en discos y memorias."
+              },
+              "xp": 10
             }
           ]
         },
@@ -1138,77 +970,43 @@ export default {
           "exercises": [
             {
               "id": "A0-L4-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Redondea 3,14159 a 3 decimales.",
                 "en": "Round 3.14159 to 3 decimals."
               },
-              "answer": 1,
+              "answer": 3.142,
               "tol": 0.001,
               "hint": {
-                "es": "4º decimal 5 → sube.",
-                "en": "4th decimal 5 → round up."
+                "es": "Mira la cuarta cifra decimal para decidir."
               },
               "solution": {
-                "es": "3,142.",
-                "en": "3.142."
+                "es": "3,14159 redondeado a tres decimales es 3,142 porque la cuarta cifra es 5, y la convención habitual sube la última cifra conservada cuando la siguiente es cinco o más."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "6.284",
-                  "en": "6.284"
-                },
-                {
-                  "es": "3.142",
-                  "en": "3.142"
-                },
-                {
-                  "es": "4.142",
-                  "en": "4.142"
-                },
-                {
-                  "es": "2.142",
-                  "en": "2.142"
-                }
-              ]
+              "explain": {
+                "es": "Si dejaste 3,141, no aplicaste la regla del cinco. La cifra siguiente al tercer decimal es 5, así que el tercer decimal pasa de 1 a 2 y el resto se descarta. Anotar el número de decimales antes de redondear evita perder precisión sin darse cuenta."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L4-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Redondea 7,849 a 1 decimal.",
                 "en": "Round 7.849 to 1 decimal."
               },
-              "answer": 2,
+              "answer": 7.8,
               "tol": 0.05,
               "hint": {
-                "es": "2º decimal 4 < 5.",
-                "en": "2nd decimal 4 < 5."
+                "es": "La segunda cifra decimal es menor que cinco."
               },
               "solution": {
-                "es": "7,8.",
-                "en": "7.8."
+                "es": "7,849 redondeado a un decimal es 7,8 porque la segunda cifra decimal es 4, menor que cinco. En ese caso la cifra conservada no cambia."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "6.8",
-                  "en": "6.8"
-                },
-                {
-                  "es": "15.6",
-                  "en": "15.6"
-                },
-                {
-                  "es": "7.8",
-                  "en": "7.8"
-                },
-                {
-                  "es": "8.8",
-                  "en": "8.8"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 7,9, redondeaste hacia arriba sin comprobar la cifra siguiente. La regla solo sube cuando la cifra que se descarta es cinco o mayor, y aquí es cuatro. Redondear no es aproximar al alza: la dirección depende de la cifra que se descarta."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L4-E3",
@@ -1237,79 +1035,54 @@ export default {
               ],
               "answer": 2,
               "hint": {
-                "es": "2,0,3,0 → 4 (ceros iniciales no).",
-                "en": "2,0,3,0 → 4 (leading zeros no)."
+                "es": "Los ceros iniciales no cuentan; los finales tras la coma sí."
               },
               "solution": {
-                "es": "4 cifras significativas.",
-                "en": "4 significant figures."
+                "es": "0,02030 tiene cuatro cifras significativas: 2, 0, 3 y el cero final. Los ceros iniciales solo marcan la posición de la coma y no se consideran significativos."
+              },
+              "explain": {
+                "es": "Si contaste dos, ignoraste los ceros intermedios y finales. Entre las cifras significativas se cuentan las que aportan información sobre la precisión, incluidos los ceros situados entre cifras distintas de cero o al final. Los ceros finales tras la coma sí cuentan porque indican precisión medida."
               },
               "xp": 10
             },
             {
               "id": "A0-L4-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Redondear en cada paso intermedio es buena práctica.",
                 "en": "Rounding at every intermediate step is good practice."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Acumula error de redondeo.",
-                "en": "Accumulates rounding error."
+                "es": "Cada redondeo intermedio descarta información."
               },
               "solution": {
-                "es": "Falso: redondea solo al final.",
-                "en": "False: round only at the end."
+                "es": "Falso: redondear en pasos intermedios acumula error. La práctica correcta es conservar los decimales durante los cálculos y redondear solo el resultado final, indicando la precisión."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has supuesto que redondear simplifica sin coste. Cada redondeo elimina información y, repetido, puede desplazar el resultado varias décimas respecto al valor exacto. En cálculos largos, guardar decimales de más cuesta poco y evita desviaciones visibles en el resultado."
+              },
+              "xp": 10
             },
             {
               "id": "A0-L4-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Redondea 12,345 a 2 decimales.",
                 "en": "Round 12.345 to 2 decimals."
               },
-              "answer": 1,
+              "answer": 12.35,
               "tol": 0.005,
               "hint": {
-                "es": "3er decimal 5 → sube.",
-                "en": "3rd decimal 5 → round up."
+                "es": "La tercera cifra decimal decide."
               },
               "solution": {
-                "es": "12,35.",
-                "en": "12.35."
+                "es": "12,345 redondeado a dos decimales es 12,35 porque la tercera cifra decimal es 5 y se aplica la regla de subir. El resultado conserva dos decimales y no tres."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "24.7",
-                  "en": "24.7"
-                },
-                {
-                  "es": "12.35",
-                  "en": "12.35"
-                },
-                {
-                  "es": "11.35",
-                  "en": "11.35"
-                },
-                {
-                  "es": "13.35",
-                  "en": "13.35"
-                }
-              ]
+              "explain": {
+                "es": "Si dejaste 12,34, no aplicaste la regla del cinco. La cifra que se descarta es 5, de modo que el segundo decimal sube de 4 a 5 y el número queda en 12,35. La regla del cinco es una convención, y conviene declararla cuando la precisión importa."
+              },
+              "xp": 10
             }
           ]
         },
@@ -1462,12 +1235,12 @@ export default {
           "exercises": [
             {
               "id": "A0-L5-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Suma de 12, 15, 18, 21.",
                 "en": "Sum of 12, 15, 18, 21."
               },
-              "answer": 1,
+              "answer": 66,
               "tol": 0.01,
               "hint": {
                 "es": "12+15+18+21.",
@@ -1477,34 +1250,16 @@ export default {
                 "es": "66.",
                 "en": "66."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "65",
-                  "en": "65"
-                },
-                {
-                  "es": "66",
-                  "en": "66"
-                },
-                {
-                  "es": "67",
-                  "en": "67"
-                },
-                {
-                  "es": "132",
-                  "en": "132"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L5-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Media simple de 2, 4, 6, 8.",
                 "en": "Simple mean of 2, 4, 6, 8."
               },
-              "answer": 2,
+              "answer": 5,
               "tol": 0.01,
               "hint": {
                 "es": "(2+4+6+8)/4.",
@@ -1514,34 +1269,16 @@ export default {
                 "es": "5.",
                 "en": "5."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "4",
-                  "en": "4"
-                },
-                {
-                  "es": "6",
-                  "en": "6"
-                },
-                {
-                  "es": "5",
-                  "en": "5"
-                },
-                {
-                  "es": "10",
-                  "en": "10"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L5-E3",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Pesos 1,2,1 para valores 10,20,30: media ponderada.",
                 "en": "Weights 1,2,1 for values 10,20,30: weighted mean."
               },
-              "answer": 0,
+              "answer": 20,
               "tol": 0.01,
               "hint": {
                 "es": "(1·10+2·20+1·30)/(1+2+1).",
@@ -1551,25 +1288,7 @@ export default {
                 "es": "(10+40+30)/4 = 80/4 = 20.",
                 "en": "(10+40+30)/4 = 80/4 = 20."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "20",
-                  "en": "20"
-                },
-                {
-                  "es": "40",
-                  "en": "40"
-                },
-                {
-                  "es": "21",
-                  "en": "21"
-                },
-                {
-                  "es": "19",
-                  "en": "19"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L5-E4",
@@ -1609,12 +1328,12 @@ export default {
             },
             {
               "id": "A0-L5-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Curso: 20 alumnos nota 6, 10 alumnos nota 9. Media final.",
                 "en": "Class: 20 students grade 6, 10 students grade 9. Final mean."
               },
-              "answer": 0,
+              "answer": 7,
               "tol": 0.01,
               "hint": {
                 "es": "(20·6+10·9)/30.",
@@ -1624,25 +1343,7 @@ export default {
                 "es": "(120+90)/30 = 7.",
                 "en": "(120+90)/30 = 7."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "7",
-                  "en": "7"
-                },
-                {
-                  "es": "8",
-                  "en": "8"
-                },
-                {
-                  "es": "14",
-                  "en": "14"
-                },
-                {
-                  "es": "6",
-                  "en": "6"
-                }
-              ]
+              "xp": 10
             }
           ]
         },
@@ -1814,12 +1515,12 @@ export default {
             },
             {
               "id": "A0-L6-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Celda 45, total de columna 150: ¿% de la columna?",
                 "en": "Cell 45, column total 150: % of column?"
               },
-              "answer": 1,
+              "answer": 30,
               "tol": 0.01,
               "hint": {
                 "es": "45/150 × 100.",
@@ -1829,34 +1530,16 @@ export default {
                 "es": "30 %.",
                 "en": "30%."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "31",
-                  "en": "31"
-                },
-                {
-                  "es": "30",
-                  "en": "30"
-                },
-                {
-                  "es": "29",
-                  "en": "29"
-                },
-                {
-                  "es": "60",
-                  "en": "60"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L6-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Los valores faltantes (NA) pueden ignorarse sin consecuencias.",
                 "en": "Missing values (NA) can be ignored without consequences."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
                 "es": "Ignorarlos sesga resultados.",
                 "en": "Ignoring them biases results."
@@ -1865,17 +1548,7 @@ export default {
                 "es": "Falso: pueden sesgar.",
                 "en": "False: they can bias."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L6-E4",
@@ -1915,12 +1588,12 @@ export default {
             },
             {
               "id": "A0-L6-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Fila total 200, celda 50: ¿% de la fila?",
                 "en": "Row total 200, cell 50: % of row?"
               },
-              "answer": 3,
+              "answer": 25,
               "tol": 0.01,
               "hint": {
                 "es": "50/200 × 100.",
@@ -1930,25 +1603,7 @@ export default {
                 "es": "25 %.",
                 "en": "25%."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "24",
-                  "en": "24"
-                },
-                {
-                  "es": "50",
-                  "en": "50"
-                },
-                {
-                  "es": "26",
-                  "en": "26"
-                },
-                {
-                  "es": "25",
-                  "en": "25"
-                }
-              ]
+              "xp": 10
             }
           ]
         },
@@ -2094,12 +1749,12 @@ export default {
           "exercises": [
             {
               "id": "A0-L7-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "De 80 personas, 20 son zurdas. Proporción de zurdos.",
                 "en": "Of 80 people, 20 are left-handed. Proportion."
               },
-              "answer": 1,
+              "answer": 0.25,
               "tol": 0.001,
               "hint": {
                 "es": "20/80.",
@@ -2109,34 +1764,16 @@ export default {
                 "es": "0,25.",
                 "en": "0.25."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "-0.75",
-                  "en": "-0.75"
-                },
-                {
-                  "es": "0.25",
-                  "en": "0.25"
-                },
-                {
-                  "es": "1.25",
-                  "en": "1.25"
-                },
-                {
-                  "es": "0.5",
-                  "en": "0.5"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L7-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Convierte 0,08 a porcentaje.",
                 "en": "Convert 0.08 to percentage."
               },
-              "answer": 2,
+              "answer": 8,
               "tol": 0.01,
               "hint": {
                 "es": "×100.",
@@ -2146,34 +1783,16 @@ export default {
                 "es": "8 %.",
                 "en": "8%."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "9",
-                  "en": "9"
-                },
-                {
-                  "es": "16",
-                  "en": "16"
-                },
-                {
-                  "es": "8",
-                  "en": "8"
-                },
-                {
-                  "es": "7",
-                  "en": "7"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L7-E3",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "En 120 partidas gané 36. Tasa de victoria por partida.",
                 "en": "In 120 games I won 36. Win rate per game."
               },
-              "answer": 2,
+              "answer": 0.3,
               "tol": 0.001,
               "hint": {
                 "es": "36/120.",
@@ -2183,25 +1802,7 @@ export default {
                 "es": "0,30.",
                 "en": "0.30."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "0.6",
-                  "en": "0.6"
-                },
-                {
-                  "es": "-0.7",
-                  "en": "-0.7"
-                },
-                {
-                  "es": "0.3",
-                  "en": "0.3"
-                },
-                {
-                  "es": "1.3",
-                  "en": "1.3"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L7-E4",
@@ -2241,12 +1842,12 @@ export default {
             },
             {
               "id": "A0-L7-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Si la proporción es 0,4 y el total es 50, ¿cuántos casos?",
                 "en": "If proportion is 0.4 and total is 50, how many cases?"
               },
-              "answer": 1,
+              "answer": 20,
               "tol": 0.01,
               "hint": {
                 "es": "0,4 × 50.",
@@ -2256,25 +1857,7 @@ export default {
                 "es": "20.",
                 "en": "20."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "19",
-                  "en": "19"
-                },
-                {
-                  "es": "20",
-                  "en": "20"
-                },
-                {
-                  "es": "40",
-                  "en": "40"
-                },
-                {
-                  "es": "21",
-                  "en": "21"
-                }
-              ]
+              "xp": 10
             }
           ]
         },
@@ -2410,12 +1993,12 @@ export default {
           "exercises": [
             {
               "id": "A0-L8-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Convierte 3,2 km a metros.",
                 "en": "Convert 3.2 km to meters."
               },
-              "answer": 1,
+              "answer": 3200,
               "tol": 0.01,
               "hint": {
                 "es": "× 1000.",
@@ -2425,25 +2008,7 @@ export default {
                 "es": "3200 m.",
                 "en": "3200 m."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "3201",
-                  "en": "3201"
-                },
-                {
-                  "es": "3200",
-                  "en": "3200"
-                },
-                {
-                  "es": "3199",
-                  "en": "3199"
-                },
-                {
-                  "es": "6400",
-                  "en": "6400"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L8-E2",
@@ -2483,12 +2048,12 @@ export default {
             },
             {
               "id": "A0-L8-E3",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Estima 199 × 51 (redondea a 200 × 50).",
                 "en": "Estimate 199 × 51 (round to 200 × 50)."
               },
-              "answer": 0,
+              "answer": 10000,
               "tol": 0.01,
               "hint": {
                 "es": "200 × 50.",
@@ -2498,34 +2063,16 @@ export default {
                 "es": "≈ 10 000.",
                 "en": "≈ 10,000."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "10000",
-                  "en": "10000"
-                },
-                {
-                  "es": "10001",
-                  "en": "10001"
-                },
-                {
-                  "es": "9999",
-                  "en": "9999"
-                },
-                {
-                  "es": "20000",
-                  "en": "20000"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L8-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Cambiar de metros a centímetros cambia la cantidad física.",
                 "en": "Changing from meters to centimeters changes the physical quantity."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
                 "es": "Cambia el número, no la realidad.",
                 "en": "Changes the number, not reality."
@@ -2534,26 +2081,16 @@ export default {
                 "es": "Falso.",
                 "en": "False."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "xp": 10
             },
             {
               "id": "A0-L8-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Convierte 4500 g a kg.",
                 "en": "Convert 4500 g to kg."
               },
-              "answer": 3,
+              "answer": 4.5,
               "tol": 0.01,
               "hint": {
                 "es": "÷ 1000.",
@@ -2563,25 +2100,7 @@ export default {
                 "es": "4,5 kg.",
                 "en": "4.5 kg."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "5.5",
-                  "en": "5.5"
-                },
-                {
-                  "es": "3.5",
-                  "en": "3.5"
-                },
-                {
-                  "es": "9",
-                  "en": "9"
-                },
-                {
-                  "es": "4.5",
-                  "en": "4.5"
-                }
-              ]
+              "xp": 10
             }
           ]
         }
