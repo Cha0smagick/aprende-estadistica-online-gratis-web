@@ -330,6 +330,9 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-10 | Inferencial C8 | C8-L2 | 2.514 | ✅ validado |
 | 2026-11-10 | Inferencial C8 | C8-L3 | 2.509 | ✅ validado |
 | 2026-11-10 | **C8 completo (4/4)** | C8-L4 | 2.500 | ✅ validado |
+| 2026-11-10 | Inferencial C9 | C9-L1 | 2.540 | ✅ validado |
+| 2026-11-10 | Inferencial C9 | C9-L2 | 2.501 | ✅ validado |
+| 2026-11-10 | **C9 completo (3/3) — Inferencial 33/33** | C9-L3 | 2.500 | ✅ validado |
 
-Acumulado: **102/115** deep dives (42 descriptiva + 30 probabilidad + 30 inferencial). **C0–C8 completos.** Pendientes: C9 (3) y F0–F1 (10).
+Acumulado: **105/115** deep dives (42 descriptiva + 30 probabilidad + 33 inferencial). **Descriptiva, Probabilidad e Inferencial completos.** Pendientes: F0–F1 (10).
 
