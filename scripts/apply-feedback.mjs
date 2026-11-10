@@ -20,7 +20,8 @@ for (const [id, c] of Object.entries(patch.items)) {
   const line = m[0];
   const pm = line.match(/prompt:\s*(\{[^}]*\})/);
   if (!pm) { skipped.push(id + " (prompt)"); continue; }
-  const prompt = pm[1];
+  let prompt = pm[1];
+  if (c.prompt) prompt = `{es:${q(c.prompt)}}`;
   const trailingComma = line.trimEnd().endsWith(",");
 
   const type = c.type || (line.match(/type:\s*"([a-z]+)"/) || [])[1] || "mcq";

@@ -72,8 +72,9 @@ Pendiente (etapas 2–3): 451 ejercicios por convertir, 451 sin `explain`, 451 c
 - A0 cerrado: 40/40 con explicación y solución; 25 `numeric`.
 - A1 cerrado: 30/30 con explicación y solución; 16 a `short`.
 - A2 cerrado: 30/30 con explicación y solución; 18 en producción.
-- Acumulado: 130/481 con feedback completo (27,0 %), 79/481 en producción (16,4 %).
-- Ritmo observado: ~2.000 palabras de feedback por módulo de 15 ejercicios. Quedan 24 módulos (~351 ejercicios).
+- A3 cerrado: 30/30 con explicación y solución; 20 en producción. Corregido un error de contenido: la teoría afirmaba «armónica = geométrica = aritmética» cuando la relación correcta es H ≤ G ≤ A (igualdad solo si todos los valores coinciden).
+- Acumulado: 160/481 con feedback completo (33,3 %), 99/481 en producción (20,6 %).
+- Ritmo observado: ~2.000 palabras de feedback por módulo de 15 ejercicios. Quedan 21 módulos (~321 ejercicios).
 
 ### Lección de proceso
 

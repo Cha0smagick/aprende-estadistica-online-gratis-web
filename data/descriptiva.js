@@ -5280,176 +5280,104 @@ export default {
           "exercises": [
             {
               "id": "A3-L1-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Media de 5, 10, 15.",
                 "en": "Mean of 5, 10, 15."
               },
-              "answer": 0,
+              "answer": 10,
               "tol": 0.01,
               "hint": {
-                "es": "(5+10+15)/3.",
-                "en": "(5+10+15)/3."
+                "es": "Suma los tres valores y divide entre tres."
               },
               "solution": {
-                "es": "10.",
-                "en": "10."
+                "es": "5 más 10 más 15 son 30, y 30 entre 3 es 10. La media aritmética reparte el total en partes iguales y coincide con el valor central porque los datos son simétricos."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "10",
-                  "en": "10"
-                },
-                {
-                  "es": "9",
-                  "en": "9"
-                },
-                {
-                  "es": "20",
-                  "en": "20"
-                },
-                {
-                  "es": "11",
-                  "en": "11"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 30, has dado la suma sin dividir. La media siempre divide entre el número de observaciones; sin esa división, el resultado crece con el tamaño del conjunto y no permite comparar. Aquí la simetría hace que la media coincida con el dato central."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L1-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Media de 2, 4, 6, 8, 10.",
                 "en": "Mean of 2, 4, 6, 8, 10."
               },
-              "answer": 0,
+              "answer": 6,
               "tol": 0.01,
               "hint": {
-                "es": "Suma/5.",
-                "en": "Sum/5."
+                "es": "Suma los cinco valores y divide entre cinco."
               },
               "solution": {
-                "es": "6.",
-                "en": "6."
+                "es": "La suma es 30 y hay cinco valores, así que la media es 6. Al ser una progresión simétrica, la media coincide con el valor central de la serie."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "6",
-                  "en": "6"
-                },
-                {
-                  "es": "12",
-                  "en": "12"
-                },
-                {
-                  "es": "7",
-                  "en": "7"
-                },
-                {
-                  "es": "5",
-                  "en": "5"
-                }
-              ]
+              "explain": {
+                "es": "Si obtuviste 30, has dejado la suma sin dividir. Con cinco datos, el divisor es cinco: la media de una progresión aritmética siempre es su término central. Ese atajo sirve para comprobar el cálculo, no para sustituirlo en casos generales."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L1-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La media es sensible a outliers.",
                 "en": "The mean is sensitive to outliers."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Propiedad.",
-                "en": "Property."
+                "es": "Piensa qué ocurre al añadir un valor muy grande."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la media es sensible a los valores atípicos, porque suma todos los datos y un valor extremo desplaza el total. La mediana, en cambio, apenas cambia ante un outlier."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver el efecto con un ejemplo: en 1, 2, 3 la media es 2; si se añade 100, la media pasa a 26,5 aunque tres de los cuatro datos siguen siendo pequeños. Esa sensibilidad explica por qué los sueldos y los ingresos se resumen con la mediana."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L1-E4",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Datos 10, 20, 30: ¿qué valor x hace que la media sea 25?",
                 "en": "Data 10, 20, 30: what x makes mean 25?"
               },
-              "answer": 3,
+              "answer": 45,
               "tol": 0.01,
               "hint": {
-                "es": "(10+20+30+x)/4 = 25.",
-                "en": "(10+20+30+x)/4 = 25."
+                "es": "Plantea la media de los cuatro valores e iguala a 25."
               },
               "solution": {
-                "es": "x = 45.",
-                "en": "x = 45."
+                "es": "La suma debe ser 100 para que la media de cuatro datos sea 25. Los tres conocidos suman 60, así que x vale 40."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "46",
-                  "en": "46"
-                },
-                {
-                  "es": "90",
-                  "en": "90"
-                },
-                {
-                  "es": "44",
-                  "en": "44"
-                },
-                {
-                  "es": "45",
-                  "en": "45"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 25, has confundido la media con el valor que falta. Con cuatro datos, la media de 25 implica una suma total de 100; restando los 60 ya conocidos quedan 40. Ese razonamiento inverso se usa para reconstruir totales a partir de medias."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L1-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La media minimiza:",
                 "en": "The mean minimizes:"
               },
-              "choices": [
-                {
-                  "es": "La suma de desviaciones",
-                  "en": "Sum of deviations"
-                },
-                {
-                  "es": "La suma de cuadrados de desviaciones",
-                  "en": "Sum of squared deviations"
-                },
-                {
-                  "es": "El máximo",
-                  "en": "The maximum"
-                },
-                {
-                  "es": "El rango",
-                  "en": "The range"
-                }
+              "answers": [
+                "la suma de cuadrados de las desviaciones",
+                "suma de cuadrados de desviaciones",
+                "la suma de cuadrados",
+                "suma de cuadrados"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Mínimos cuadrados.",
-                "en": "Least squares."
+                "es": "Es la misma cantidad que minimiza la recta de mínimos cuadrados."
               },
               "solution": {
-                "es": "Suma de cuadrados.",
-                "en": "Sum of squares."
+                "es": "La media minimiza la suma de cuadrados de las desviaciones respecto a ella. Esa propiedad la convierte en la base de la varianza y de la recta de mínimos cuadrados."
+              },
+              "explain": {
+                "es": "Si respondiste «la suma de desviaciones», esa suma es cero para cualquier valor central, así que no permite elegir. Al elevar al cuadrado, las desviaciones no se cancelan y la media resulta ser el valor que minimiza el total. La mediana, en cambio, minimiza la suma de distancias absolutas."
               },
               "xp": 10
             }
@@ -5596,178 +5524,104 @@ export default {
           "exercises": [
             {
               "id": "A3-L2-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Mediana de 1, 3, 5, 7, 9.",
                 "en": "Median of 1, 3, 5, 7, 9."
               },
-              "answer": 3,
+              "answer": 5,
               "tol": 0.01,
               "hint": {
-                "es": "Central.",
-                "en": "Central."
+                "es": "Ordena los datos y busca el central."
               },
               "solution": {
-                "es": "5.",
-                "en": "5."
+                "es": "Con cinco valores ordenados, la mediana es el tercero: 5. Deja dos datos por debajo y dos por encima, con independencia de lo extremos que sean."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "6",
-                  "en": "6"
-                },
-                {
-                  "es": "4",
-                  "en": "4"
-                },
-                {
-                  "es": "10",
-                  "en": "10"
-                },
-                {
-                  "es": "5",
-                  "en": "5"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 5 por intuición, el resultado es correcto, pero el criterio importa: la mediana ocupa la posición central tras ordenar, no la mitad aritmética del rango. Con un número impar de datos siempre es un valor observado, lo que la hace robusta frente a valores extremos."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L2-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Mediana de 10, 20, 30, 40.",
                 "en": "Median of 10, 20, 30, 40."
               },
-              "answer": 2,
+              "answer": 25,
               "tol": 0.01,
               "hint": {
-                "es": "(20+30)/2.",
-                "en": "(20+30)/2."
+                "es": "Con un número par de datos, promedia los dos centrales."
               },
               "solution": {
-                "es": "25.",
-                "en": "25."
+                "es": "Con cuatro valores ordenados, los centrales son 20 y 30; su promedio es 25. La mediana queda entre ambos y puede no coincidir con ningún dato observado."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "50",
-                  "en": "50"
-                },
-                {
-                  "es": "26",
-                  "en": "26"
-                },
-                {
-                  "es": "25",
-                  "en": "25"
-                },
-                {
-                  "es": "24",
-                  "en": "24"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 20 o 30, has elegido uno de los dos centrales en lugar de promediarlos. Con un número par de observaciones no existe un único valor central, así que la convención es promediar los dos del medio. Esa es la razón por la que la mediana puede ser un valor que no aparece en los datos."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L2-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La mediana es robusta a outliers.",
                 "en": "The median is robust to outliers."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Piensa cuánto se mueve la posición central al añadir un valor extremo."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la mediana es robusta a los valores atípicos porque depende de la posición y no de la magnitud. Un dato extremo cambia poco su valor, aunque desplace mucho la media."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», has supuesto que todo resumen se ve afectado por los extremos. La mediana solo mira qué valor ocupa el centro: si se añade un dato gigantesco, la posición central se desplaza como mucho una posición. Por eso se usa en ingresos, precios de vivienda y tiempos de espera."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L2-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para sueldos (asimétricos) se prefiere:",
                 "en": "For salaries (skewed) prefer:"
               },
-              "choices": [
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "La mediana",
-                  "en": "The median"
-                },
-                {
-                  "es": "La moda",
-                  "en": "The mode"
-                },
-                {
-                  "es": "El rango",
-                  "en": "The range"
-                }
+              "answers": [
+                "la mediana",
+                "mediana"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Robusta.",
-                "en": "Robust."
+                "es": "Elige el resumen que no se desplaza con unos pocos sueldos altos."
               },
               "solution": {
-                "es": "La mediana.",
-                "en": "The median."
+                "es": "Para sueldos, que suelen ser asimétricos, se prefiere la mediana porque no se deja arrastrar por los salarios extremos. La media quedaría por encima del sueldo típico de la mayoría."
+              },
+              "explain": {
+                "es": "Si respondiste «la media», has elegido el resumen más sensible a la cola alta. En una distribución de ingresos, unos pocos salarios muy altos elevan la media por encima del valor que separa a la mitad de la población. La mediana describe mejor la situación del trabajador típico."
               },
               "xp": 10
             },
             {
               "id": "A3-L2-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Mediana de 5, 5, 5, 5.",
                 "en": "Median of 5, 5, 5, 5."
               },
-              "answer": 3,
+              "answer": 5,
               "tol": 0.01,
               "hint": {
-                "es": "Central.",
-                "en": "Central."
+                "es": "Todos los valores son idénticos."
               },
               "solution": {
-                "es": "5.",
-                "en": "5."
+                "es": "Si todos los valores son 5, la mediana es 5: cualquier posición central contiene ese valor. La media y la moda también coinciden en este caso."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "6",
-                  "en": "6"
-                },
-                {
-                  "es": "4",
-                  "en": "4"
-                },
-                {
-                  "es": "10",
-                  "en": "10"
-                },
-                {
-                  "es": "5",
-                  "en": "5"
-                }
-              ]
+              "explain": {
+                "es": "Si dudaste, piensa que la mediana no depende de la dispersión sino del orden. Cuando no hay dispersión, todos los resúmenes coinciden. Esa coincidencia es una buena comprobación: si en datos constantes los resúmenes difieren, hay un error de cálculo."
+              },
+              "xp": 10
             }
           ]
         },
@@ -5903,40 +5757,23 @@ export default {
           "exercises": [
             {
               "id": "A3-L3-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Moda de 1, 2, 2, 3, 4.",
                 "en": "Mode of 1, 2, 2, 3, 4."
               },
-              "answer": 3,
+              "answer": 2,
               "tol": 0.01,
               "hint": {
-                "es": "El más repetido.",
-                "en": "Most repeated."
+                "es": "Cuenta cuántas veces aparece cada valor."
               },
               "solution": {
-                "es": "2.",
-                "en": "2."
+                "es": "El valor 2 aparece dos veces y el resto una, así que la moda es 2. La moda es el valor más frecuente y no requiere ordenar los datos."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "4",
-                  "en": "4"
-                },
-                {
-                  "es": "3",
-                  "en": "3"
-                },
-                {
-                  "es": "1",
-                  "en": "1"
-                },
-                {
-                  "es": "2",
-                  "en": "2"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 1 o 4, has elegido un extremo en lugar del más repetido. La moda se define por frecuencia, no por posición ni por magnitud. Es el único resumen aplicable a datos categóricos, donde no existe un orden aritmético que permita calcular medias."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L3-E2",
@@ -5965,42 +5802,34 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Bi = dos.",
-                "en": "Bi = two."
+                "es": "Cuenta cuántos máximos locales tiene la distribución."
               },
               "solution": {
-                "es": "Bimodal.",
-                "en": "Bimodal."
+                "es": "Una distribución con dos picos se llama bimodal, porque presenta dos valores o zonas de máxima frecuencia. La forma sugiere que los datos podrían mezclar dos poblaciones distintas."
+              },
+              "explain": {
+                "es": "Si respondiste «unimodal», has contado un solo pico. La bimodalidad es una pista importante: a menudo indica que se han juntado dos grupos con medias distintas, y analizarlos por separado puede revelar una estructura que el resumen global oculta. Separar los grupos suele ser más informativo que describir la mezcla."
               },
               "xp": 10
             },
             {
               "id": "A3-L3-E3",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La moda se puede usar con datos categóricos.",
                 "en": "The mode can be used with categorical data."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Piensa qué resumen admite categorías sin números."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la moda puede usarse con datos categóricos, porque solo requiere contar frecuencias. Es el único resumen de tendencia central aplicable a variables nominales."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que la media exige sumar y la mediana exige ordenar. Ninguna de las dos tiene sentido con categorías como colores o canales. La moda responde a la pregunta de qué categoría es la más frecuente, y esa pregunta sí tiene sentido."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L3-E4",
@@ -6029,51 +5858,35 @@ export default {
               ],
               "answer": 2,
               "hint": {
-                "es": "No hay moda.",
-                "en": "No mode."
+                "es": "Si todas las frecuencias valen uno, ninguna destaca."
               },
               "solution": {
-                "es": "No existe.",
-                "en": "Doesn't exist."
+                "es": "Si ningún valor se repite, no existe moda, porque no hay un valor más frecuente que los demás. Algunos autores hablan de distribución amodal en ese caso."
+              },
+              "explain": {
+                "es": "Si respondiste 0, has confundido ausencia de moda con un valor numérico. La moda es el valor que más se repite, y si todos aparecen una vez no hay ninguno que destaque. Escribir 0 sería afirmar que el valor cero es el más frecuente, algo que los datos no dicen."
               },
               "xp": 10
             },
             {
               "id": "A3-L3-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Moda de 7, 7, 7, 3, 3.",
                 "en": "Mode of 7, 7, 7, 3, 3."
               },
-              "answer": 2,
+              "answer": 7,
               "tol": 0.01,
               "hint": {
-                "es": "El más repetido.",
-                "en": "Most repeated."
+                "es": "Compara las frecuencias de 7 y de 3."
               },
               "solution": {
-                "es": "7.",
-                "en": "7."
+                "es": "El 7 aparece tres veces y el 3 dos veces, así que la moda es 7. La distribución es bimodal en sentido amplio, pero la moda principal es el valor con mayor frecuencia."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "14",
-                  "en": "14"
-                },
-                {
-                  "es": "6",
-                  "en": "6"
-                },
-                {
-                  "es": "7",
-                  "en": "7"
-                },
-                {
-                  "es": "8",
-                  "en": "8"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 3, has contado mal las repeticiones. La moda principal es siempre el valor con la frecuencia más alta; cuando dos valores empatan, se habla de distribución bimodal. Distinguir la moda principal de las secundarias evita conclusiones ambiguas. Esa distinción es la que evita reportar una moda que representa solo a una parte de los datos."
+              },
+              "xp": 10
             }
           ]
         },
@@ -6090,7 +5903,7 @@ export default {
             "en": "Not every mean is arithmetic. Investment growth is measured with geometric; speeds with harmonic."
           },
           "theory": {
-            "es": "- **Ponderada**: $\\bar x_w = \\frac{\\sum w_i x_i}{\\sum w_i}$ (vista en A0-L5).\n- **Geométrica**: $G = (\\prod x_i)^{1/n}$. Para tasas de crecimiento, rentabilidades compuestas.\n- **Armónica**: $H = \\frac{n}{\\sum 1/x_i}$. Para velocidades, ratios, $/km$.\n\nRelación (para valores positivos): $H \\le G \\le \\bar x$ (media armónica ≤ geométrica ≤ aritmética).",
+            "es": "- **Ponderada**: $\\bar x_w = \\frac{\\sum w_i x_i}{\\sum w_i}$ (vista en A0-L5).\n- **Geométrica**: $G = (\\prod x_i)^{1/n}$. Para tasas de crecimiento, rentabilidades compuestas.\n- **Armónica**: $H = \\frac{n}{\\sum 1/x_i}$. Para velocidades, ratios, $/km$.\n\nRelación (para valores positivos): $H \\le G \\le \\bar x$ (la igualdad solo se da si todos los valores son iguales).",
             "en": "- **Weighted**: $\\bar x_w = \\frac{\\sum w_i x_i}{\\sum w_i}$ (seen in A0-L5).\n- **Geometric**: $G = (\\prod x_i)^{1/n}$. For growth rates, compound returns.\n- **Harmonic**: $H = \\frac{n}{\\sum 1/x_i}$. For speeds, ratios, $/km$.\n\nRelationship (positive values): $H \\le G \\le \\bar x$ (harmonic ≤ geometric ≤ arithmetic)."
           },
           "formulas": [
@@ -6225,178 +6038,104 @@ export default {
           "exercises": [
             {
               "id": "A3-L4-E1",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Media geométrica de 4 y 9.",
                 "en": "Geometric mean of 4 and 9."
               },
-              "answer": 2,
+              "answer": 6,
               "tol": 0.01,
               "hint": {
-                "es": "√(4·9).",
-                "en": "√(4·9)."
+                "es": "Multiplica los dos valores y saca la raíz cuadrada."
               },
               "solution": {
-                "es": "6.",
-                "en": "6."
+                "es": "El producto de 4 y 9 es 36, y su raíz cuadrada es 6. La media geométrica se usa con factores multiplicativos y con tasas de crecimiento."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "7",
-                  "en": "7"
-                },
-                {
-                  "es": "5",
-                  "en": "5"
-                },
-                {
-                  "es": "6",
-                  "en": "6"
-                },
-                {
-                  "es": "12",
-                  "en": "12"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 6,5, has calculado la media aritmética. La geométrica no promedia la suma sino el producto, y por eso es menor o igual que la aritmética cuando los valores son positivos. Su uso correcto aparece con tasas acumuladas, no con magnitudes aditivas."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L4-E2",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Media armónica de 3 y 6.",
                 "en": "Harmonic mean of 3 and 6."
               },
-              "answer": 2,
+              "answer": 4,
               "tol": 0.01,
               "hint": {
-                "es": "2/(1/3+1/6).",
-                "en": "2/(1/3+1/6)."
+                "es": "Suma los inversos, divide el número de datos entre esa suma."
               },
               "solution": {
-                "es": "4.",
-                "en": "4."
+                "es": "Los inversos son un tercio y un sexto, que suman un medio. Dos dividido entre un medio da 4, que es la media armónica de 3 y 6."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "5",
-                  "en": "5"
-                },
-                {
-                  "es": "3",
-                  "en": "3"
-                },
-                {
-                  "es": "4",
-                  "en": "4"
-                },
-                {
-                  "es": "8",
-                  "en": "8"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste 4,5, has promediado de forma aritmética. La armónica aparece cuando se promedian cocientes con denominador variable, como velocidades o rendimientos por unidad de tiempo. Su valor es siempre menor o igual que la geométrica y que la aritmética."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L4-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para velocidades medias usa la media:",
                 "en": "For average speeds use the mean:"
               },
-              "choices": [
-                {
-                  "es": "Aritmética",
-                  "en": "Arithmetic"
-                },
-                {
-                  "es": "Geométrica",
-                  "en": "Geometric"
-                },
-                {
-                  "es": "Armónica",
-                  "en": "Harmonic"
-                },
-                {
-                  "es": "Ponderada",
-                  "en": "Weighted"
-                }
+              "answers": [
+                "armonica",
+                "media armonica",
+                "la armonica"
               ],
-              "answer": 2,
               "hint": {
-                "es": "Armónica.",
-                "en": "Harmonic."
+                "es": "El tiempo total manda, no la distancia total."
               },
               "solution": {
-                "es": "Armónica.",
-                "en": "Harmonic."
+                "es": "Para velocidades medias se usa la media armónica, porque la velocidad es una razón entre distancia y tiempo y los tiempos se acumulan al recorrer tramos iguales."
+              },
+              "explain": {
+                "es": "Si respondiste «aritmética», has promediado velocidades como si fueran magnitudes aditivas. Recorrer dos tramos iguales a 60 y a 40 km/h no da una media de 50, sino de 48: se tarda más en el tramo lento y ese tiempo pesa más en el total. La armónica recoge ese efecto."
               },
               "xp": 10
             },
             {
               "id": "A3-L4-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
-                "es": "Para valores positivos: H ≤ G ≤ media aritmética.",
-                "en": "For positive values: H ≤ G ≤ arithmetic mean."
+                "es": "Para valores positivos, ¿qué relación cumplen las medias armónica, geométrica y aritmética?"
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Desigualdad de medias.",
-                "en": "Mean inequality."
+                "es": "Piensa en el orden de las tres medias, no en una igualdad."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Para valores positivos se cumple que la armónica es menor o igual que la geométrica, y esta menor o igual que la aritmética. La igualdad solo se da cuando todos los valores son idénticos."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "La desigualdad entre medias es una regla matemática, no una coincidencia: la armónica castiga los valores pequeños, la geométrica los compensa multiplicativamente y la aritmética los suma sin más. Por eso la armónica nunca supera a la geométrica, ni esta a la aritmética, salvo cuando todos los datos son iguales."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L4-E5",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Inversión: +20 % y -20 %. Media geométrica (factor).",
                 "en": "Investment: +20% and -20%. Geometric mean (factor)."
               },
-              "answer": 0,
+              "answer": 0.9798,
               "tol": 0.001,
               "hint": {
-                "es": "√(1,2·0,8).",
-                "en": "√(1.2·0.8)."
+                "es": "Convierte las tasas en factores y multiplícalos antes de sacar raíz."
               },
               "solution": {
-                "es": "√0,96 ≈ 0,9798.",
-                "en": "√0.96 ≈ 0.9798."
+                "es": "Los factores son 1,2 y 0,8, cuyo producto es 0,96. La raíz cuadrada de 0,96 es aproximadamente 0,9798, es decir, una pérdida media del 2 % anual."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "0.9798",
-                  "en": "0.9798"
-                },
-                {
-                  "es": "1.9798",
-                  "en": "1.9798"
-                },
-                {
-                  "es": "1.9596",
-                  "en": "1.9596"
-                },
-                {
-                  "es": "-0.0202",
-                  "en": "-0.0202"
-                }
-              ]
+              "explain": {
+                "es": "Si promediaste 20 % y menos 20 % y obtuviste cero, has usado la aritmética. En rentabilidades compuestas los factores se multiplican, y una subida del 20 % seguida de una caída del 20 % deja menos capital que al principio. La media geométrica capta esa asimetría."
+              },
+              "xp": 10
             }
           ]
         },
@@ -6531,37 +6270,25 @@ export default {
           "exercises": [
             {
               "id": "A3-L5-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para datos simétricos sin outliers usa:",
                 "en": "For symmetric data without outliers use:"
               },
-              "choices": [
-                {
-                  "es": "Mediana",
-                  "en": "Median"
-                },
-                {
-                  "es": "Moda",
-                  "en": "Mode"
-                },
-                {
-                  "es": "Media aritmética",
-                  "en": "Arithmetic mean"
-                },
-                {
-                  "es": "Armónica",
-                  "en": "Harmonic"
-                }
+              "answers": [
+                "la media aritmetica",
+                "media aritmetica",
+                "la media",
+                "aritmetica"
               ],
-              "answer": 2,
               "hint": {
-                "es": "Aritmética.",
-                "en": "Arithmetic."
+                "es": "Con datos simétricos, la media no se deja arrastrar."
               },
               "solution": {
-                "es": "Media aritmética.",
-                "en": "Arithmetic mean."
+                "es": "Para datos simétricos sin valores atípicos se usa la media aritmética, porque aprovecha toda la información y coincide aproximadamente con la mediana. Su sensibilidad a los extremos no importa cuando no los hay."
+              },
+              "explain": {
+                "es": "Si respondiste «mediana», has elegido el resumen robusto por precaución innecesaria. Cuando la distribución es simétrica, media y mediana coinciden y la media usa mejor la información disponible. La mediana se prefiere cuando hay asimetría o valores extremos que podrían distorsionar."
               },
               "xp": 10
             },
@@ -6592,112 +6319,77 @@ export default {
               ],
               "answer": 2,
               "hint": {
-                "es": "Armónica.",
-                "en": "Harmonic."
+                "es": "Es la media que aparece al promediar cocientes con tiempos en el denominador."
               },
               "solution": {
-                "es": "Armónica.",
-                "en": "Harmonic."
+                "es": "Para una velocidad media se usa la media armónica, porque la velocidad es una razón entre distancia y tiempo y el tiempo se acumula tramo a tramo."
+              },
+              "explain": {
+                "es": "Si respondiste «aritmética», has tratado las velocidades como si fueran aditivas. La media correcta depende de la estructura del problema: si se recorren distancias iguales, los tiempos desiguales hacen que la armónica describa la velocidad efectiva del trayecto. Por eso el resultado depende de si los tramos son iguales en distancia o en tiempo."
               },
               "xp": 10
             },
             {
               "id": "A3-L5-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para datos categóricos usa:",
                 "en": "For categorical data use:"
               },
-              "choices": [
-                {
-                  "es": "Media",
-                  "en": "Mean"
-                },
-                {
-                  "es": "Mediana",
-                  "en": "Median"
-                },
-                {
-                  "es": "Moda",
-                  "en": "Mode"
-                },
-                {
-                  "es": "Armónica",
-                  "en": "Harmonic"
-                }
+              "answers": [
+                "la moda",
+                "moda"
               ],
-              "answer": 2,
               "hint": {
-                "es": "Moda.",
-                "en": "Mode."
+                "es": "Solo necesita contar frecuencias, sin sumar ni ordenar."
               },
               "solution": {
-                "es": "Moda.",
-                "en": "Mode."
+                "es": "Para datos categóricos se usa la moda, porque es el único resumen que no exige operaciones aritméticas ni un orden entre categorías. Indica la categoría más frecuente."
+              },
+              "explain": {
+                "es": "Si respondiste «media», has aplicado una operación que no tiene sentido con etiquetas. La media exige sumar y la mediana exige ordenar; ninguna de las dos es posible con categorías como canal de compra o color. La moda responde a la pregunta correcta: qué categoría aparece más."
               },
               "xp": 10
             },
             {
               "id": "A3-L5-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "Reportar solo la media puede ocultar asimetría.",
                 "en": "Reporting only the mean can hide skewness."
               },
-              "answer": 0,
+              "answer": true,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Piensa qué información se pierde al reducir una distribución a un número."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: reportar solo la media puede ocultar asimetría, valores atípicos y diferencias entre grupos. Acompañarla de la mediana, la dispersión y un gráfico da una imagen más fiel."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que dos conjuntos muy distintos pueden compartir media. Un informe que solo cita el promedio invita a imaginar una distribución simétrica que puede no existir. La transparencia exige al menos un resumen de dispersión y una idea de la forma."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L5-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para rentabilidades compuestas usa:",
                 "en": "For compound returns use:"
               },
-              "choices": [
-                {
-                  "es": "Aritmética",
-                  "en": "Arithmetic"
-                },
-                {
-                  "es": "Geométrica",
-                  "en": "Geometric"
-                },
-                {
-                  "es": "Armónica",
-                  "en": "Harmonic"
-                },
-                {
-                  "es": "Moda",
-                  "en": "Mode"
-                }
+              "answers": [
+                "geometrica",
+                "media geometrica",
+                "la geometrica"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Geométrica.",
-                "en": "Geometric."
+                "es": "Las rentabilidades se acumulan multiplicando factores."
               },
               "solution": {
-                "es": "Geométrica.",
-                "en": "Geometric."
+                "es": "Para rentabilidades compuestas se usa la media geométrica, porque el capital se multiplica periodo a periodo y la media aritmética sobreestima el rendimiento real."
+              },
+              "explain": {
+                "es": "Si respondiste «aritmética», has promediado tasas como si se sumaran. Una subida del 50 % y una caída del 50 % dan una media aritmética de cero, pero el capital final es un 25 % menor. La geométrica, calculada sobre los factores, refleja la pérdida real."
               },
               "xp": 10
             }
@@ -6843,37 +6535,24 @@ export default {
           "exercises": [
             {
               "id": "A3-L6-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Si media > mediana, la asimetría es:",
                 "en": "If mean > median, skewness is:"
               },
-              "choices": [
-                {
-                  "es": "Izquierda",
-                  "en": "Left"
-                },
-                {
-                  "es": "Derecha",
-                  "en": "Right"
-                },
-                {
-                  "es": "Nula",
-                  "en": "None"
-                },
-                {
-                  "es": "Bimodal",
-                  "en": "Bimodal"
-                }
+              "answers": [
+                "derecha",
+                "a la derecha",
+                "asimetria a la derecha"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Derecha.",
-                "en": "Right."
+                "es": "La cola larga tira de la media hacia arriba."
               },
               "solution": {
-                "es": "A la derecha.",
-                "en": "Right."
+                "es": "Si la media supera a la mediana, la asimetría es hacia la derecha, porque los valores altos estiran la media mientras la mediana permanece en el centro."
+              },
+              "explain": {
+                "es": "Si respondiste «izquierda», has invertido la relación. En una distribución con cola derecha, unos pocos valores muy altos elevan la media por encima de la mediana. La regla práctica es sencilla: la cola tira del lado hacia el que apunta, y la media la sigue."
               },
               "xp": 10
             },
@@ -6904,113 +6583,75 @@ export default {
               ],
               "answer": 2,
               "hint": {
-                "es": "Aproximadamente iguales.",
-                "en": "Approximately equal."
+                "es": "Piensa qué ocurre con los extremos cuando la distribución es simétrica."
               },
               "solution": {
-                "es": "Aproximadamente iguales.",
-                "en": "Approximately equal."
+                "es": "En una distribución simétrica, la media y la mediana coinciden aproximadamente, porque los extremos se compensan a ambos lados. Las diferencias aparecen con la asimetría."
+              },
+              "explain": {
+                "es": "Si respondiste que no se puede saber, conviene recordar la definición de simetría: la mitad izquierda refleja a la derecha, así que el centro de gravedad y el valor central caen en el mismo punto. La igualdad es aproximada en muestras y exacta en distribuciones teóricas simétricas."
               },
               "xp": 10
             },
             {
               "id": "A3-L6-E3",
-              "type": "mcq",
+              "type": "numeric",
               "prompt": {
                 "es": "Pearson: media 12, mediana 10, s=4: g1.",
                 "en": "Pearson: mean 12, median 10, s=4: g1."
               },
-              "answer": 3,
+              "answer": 1.5,
               "tol": 0.01,
               "hint": {
-                "es": "3·(12-10)/4.",
-                "en": "3·(12-10)/4."
+                "es": "Aplica la fórmula de Pearson con la desviación dada."
               },
               "solution": {
-                "es": "3·2/4 = 1,5.",
-                "en": "3·2/4 = 1.5."
+                "es": "La diferencia entre media y mediana es 2, multiplicada por 3 da 6, y dividida entre 4 resulta 1,5. Un valor positivo indica asimetría hacia la derecha."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "2.5",
-                  "en": "2.5"
-                },
-                {
-                  "es": "0.5",
-                  "en": "0.5"
-                },
-                {
-                  "es": "3",
-                  "en": "3"
-                },
-                {
-                  "es": "1.5",
-                  "en": "1.5"
-                }
-              ]
+              "explain": {
+                "es": "Si obtuviste 0,5, olvidaste multiplicar por tres. El coeficiente de Pearson usa el factor tres para aproximar el tercer momento y facilitar la comparación. Su signo es lo más informativo: positivo indica cola derecha y negativo, cola izquierda. Conviene acompañarlo del histograma para confirmar la forma que sugiere el número."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L6-E4",
-              "type": "mcq",
+              "type": "truefalse",
               "prompt": {
                 "es": "La asimetría siempre es 'mala'.",
                 "en": "Skewness is always 'bad'."
               },
-              "answer": 1,
+              "answer": false,
               "hint": {
-                "es": "Es solo una forma.",
-                "en": "Just a shape."
+                "es": "Piensa si una distribución asimétrica es un error o una forma."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: la asimetría no es buena ni mala, es una propiedad de la forma de la distribución. Lo que importa es reconocerla y elegir resúmenes adecuados, no eliminarla."
               },
-              "xp": 10,
-              "choices": [
-                {
-                  "es": "Verdadero",
-                  "en": "True"
-                },
-                {
-                  "es": "Falso",
-                  "en": "False"
-                }
-              ]
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido una característica con un defecto. Los ingresos o los tiempos de espera son asimétricos por naturaleza, y eso no los invalida. El problema aparece cuando se aplican métodos que suponen simetría sin comprobarla. La asimetría se describe y se declara; corregirla exige transformar o cambiar de modelo."
+              },
+              "xp": 10
             },
             {
               "id": "A3-L6-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Sueldos típicamente tienen asimetría:",
                 "en": "Salaries typically have skewness:"
               },
-              "choices": [
-                {
-                  "es": "Izquierda",
-                  "en": "Left"
-                },
-                {
-                  "es": "Derecha",
-                  "en": "Right"
-                },
-                {
-                  "es": "Nula",
-                  "en": "None"
-                },
-                {
-                  "es": "Bimodal",
-                  "en": "Bimodal"
-                }
+              "answers": [
+                "derecha",
+                "a la derecha",
+                "asimetria a la derecha"
               ],
-              "answer": 1,
               "hint": {
-                "es": "Cola de ricos.",
-                "en": "Rich tail."
+                "es": "Hay muchos sueldos medios y unos pocos muy altos."
               },
               "solution": {
-                "es": "A la derecha.",
-                "en": "Right."
+                "es": "Los sueldos suelen tener asimetría hacia la derecha, porque la mayoría se concentra en valores medios y bajos, mientras unos pocos salarios muy altos forman una cola larga."
+              },
+              "explain": {
+                "es": "Si respondiste «izquierda», has imaginado una cola de sueldos muy bajos. En la práctica, el mínimo está acotado por la legislación y el máximo no, así que la cola se extiende hacia arriba. Esa forma explica por qué el sueldo mediano es más representativo que el medio."
               },
               "xp": 10
             }

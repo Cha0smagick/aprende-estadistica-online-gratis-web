@@ -1,0 +1,93 @@
+{
+  "module": "data/descriptiva/a3.js",
+  "items": {
+    "A3-L4-E1": {
+      "hint": "Multiplica los dos valores y saca la raíz cuadrada.",
+      "solution": "El producto de 4 y 9 es 36, y su raíz cuadrada es 6. La media geométrica se usa con factores multiplicativos y con tasas de crecimiento.",
+      "explain": "Si respondiste 6,5, has calculado la media aritmética. La geométrica no promedia la suma sino el producto, y por eso es menor o igual que la aritmética cuando los valores son positivos. Su uso correcto aparece con tasas acumuladas, no con magnitudes aditivas."
+    },
+    "A3-L4-E2": {
+      "hint": "Suma los inversos, divide el número de datos entre esa suma.",
+      "solution": "Los inversos son un tercio y un sexto, que suman un medio. Dos dividido entre un medio da 4, que es la media armónica de 3 y 6.",
+      "explain": "Si respondiste 4,5, has promediado de forma aritmética. La armónica aparece cuando se promedian cocientes con denominador variable, como velocidades o rendimientos por unidad de tiempo. Su valor es siempre menor o igual que la geométrica y que la aritmética."
+    },
+    "A3-L4-E3": {
+      "type": "short",
+      "answers": ["armonica", "media armonica", "la armonica"],
+      "hint": "El tiempo total manda, no la distancia total.",
+      "solution": "Para velocidades medias se usa la media armónica, porque la velocidad es una razón entre distancia y tiempo y los tiempos se acumulan al recorrer tramos iguales.",
+      "explain": "Si respondiste «aritmética», has promediado velocidades como si fueran magnitudes aditivas. Recorrer dos tramos iguales a 60 y a 40 km/h no da una media de 50, sino de 48: se tarda más en el tramo lento y ese tiempo pesa más en el total. La armónica recoge ese efecto."
+    },
+    "A3-L4-E4": {
+      "prompt": "Para valores positivos, ¿qué relación cumplen las medias armónica, geométrica y aritmética?",
+      "hint": "Piensa en el orden de las tres medias, no en una igualdad.",
+      "solution": "Para valores positivos se cumple que la armónica es menor o igual que la geométrica, y esta menor o igual que la aritmética. La igualdad solo se da cuando todos los valores son idénticos.",
+      "explain": "La desigualdad entre medias es una regla matemática, no una coincidencia: la armónica castiga los valores pequeños, la geométrica los compensa multiplicativamente y la aritmética los suma sin más. Por eso la armónica nunca supera a la geométrica, ni esta a la aritmética, salvo cuando todos los datos son iguales."
+    },
+    "A3-L4-E5": {
+      "hint": "Convierte las tasas en factores y multiplícalos antes de sacar raíz.",
+      "solution": "Los factores son 1,2 y 0,8, cuyo producto es 0,96. La raíz cuadrada de 0,96 es aproximadamente 0,9798, es decir, una pérdida media del 2 % anual.",
+      "explain": "Si promediaste 20 % y menos 20 % y obtuviste cero, has usado la aritmética. En rentabilidades compuestas los factores se multiplican, y una subida del 20 % seguida de una caída del 20 % deja menos capital que al principio. La media geométrica capta esa asimetría."
+    },
+    "A3-L5-E1": {
+      "type": "short",
+      "answers": ["la media aritmetica", "media aritmetica", "la media", "aritmetica"],
+      "hint": "Con datos simétricos, la media no se deja arrastrar.",
+      "solution": "Para datos simétricos sin valores atípicos se usa la media aritmética, porque aprovecha toda la información y coincide aproximadamente con la mediana. Su sensibilidad a los extremos no importa cuando no los hay.",
+      "explain": "Si respondiste «mediana», has elegido el resumen robusto por precaución innecesaria. Cuando la distribución es simétrica, media y mediana coinciden y la media usa mejor la información disponible. La mediana se prefiere cuando hay asimetría o valores extremos que podrían distorsionar."
+    },
+    "A3-L5-E2": {
+      "hint": "Es la media que aparece al promediar cocientes con tiempos en el denominador.",
+      "solution": "Para una velocidad media se usa la media armónica, porque la velocidad es una razón entre distancia y tiempo y el tiempo se acumula tramo a tramo.",
+      "explain": "Si respondiste «aritmética», has tratado las velocidades como si fueran aditivas. La media correcta depende de la estructura del problema: si se recorren distancias iguales, los tiempos desiguales hacen que la armónica describa la velocidad efectiva del trayecto."
+    },
+    "A3-L5-E3": {
+      "type": "short",
+      "answers": ["la moda", "moda"],
+      "hint": "Solo necesita contar frecuencias, sin sumar ni ordenar.",
+      "solution": "Para datos categóricos se usa la moda, porque es el único resumen que no exige operaciones aritméticas ni un orden entre categorías. Indica la categoría más frecuente.",
+      "explain": "Si respondiste «media», has aplicado una operación que no tiene sentido con etiquetas. La media exige sumar y la mediana exige ordenar; ninguna de las dos es posible con categorías como canal de compra o color. La moda responde a la pregunta correcta: qué categoría aparece más."
+    },
+    "A3-L5-E4": {
+      "hint": "Piensa qué información se pierde al reducir una distribución a un número.",
+      "solution": "Verdadero: reportar solo la media puede ocultar asimetría, valores atípicos y diferencias entre grupos. Acompañarla de la mediana, la dispersión y un gráfico da una imagen más fiel.",
+      "explain": "Si respondiste «falso», conviene recordar que dos conjuntos muy distintos pueden compartir media. Un informe que solo cita el promedio invita a imaginar una distribución simétrica que puede no existir. La transparencia exige al menos un resumen de dispersión y una idea de la forma."
+    },
+    "A3-L5-E5": {
+      "type": "short",
+      "answers": ["geometrica", "media geometrica", "la geometrica"],
+      "hint": "Las rentabilidades se acumulan multiplicando factores.",
+      "solution": "Para rentabilidades compuestas se usa la media geométrica, porque el capital se multiplica periodo a periodo y la media aritmética sobreestima el rendimiento real.",
+      "explain": "Si respondiste «aritmética», has promediado tasas como si se sumaran. Una subida del 50 % y una caída del 50 % dan una media aritmética de cero, pero el capital final es un 25 % menor. La geométrica, calculada sobre los factores, refleja la pérdida real."
+    },
+    "A3-L6-E1": {
+      "type": "short",
+      "answers": ["derecha", "a la derecha", "asimetria a la derecha"],
+      "hint": "La cola larga tira de la media hacia arriba.",
+      "solution": "Si la media supera a la mediana, la asimetría es hacia la derecha, porque los valores altos estiran la media mientras la mediana permanece en el centro.",
+      "explain": "Si respondiste «izquierda», has invertido la relación. En una distribución con cola derecha, unos pocos valores muy altos elevan la media por encima de la mediana. La regla práctica es sencilla: la cola tira del lado hacia el que apunta, y la media la sigue."
+    },
+    "A3-L6-E2": {
+      "hint": "Piensa qué ocurre con los extremos cuando la distribución es simétrica.",
+      "solution": "En una distribución simétrica, la media y la mediana coinciden aproximadamente, porque los extremos se compensan a ambos lados. Las diferencias aparecen con la asimetría.",
+      "explain": "Si respondiste que no se puede saber, conviene recordar la definición de simetría: la mitad izquierda refleja a la derecha, así que el centro de gravedad y el valor central caen en el mismo punto. La igualdad es aproximada en muestras y exacta en distribuciones teóricas simétricas."
+    },
+    "A3-L6-E3": {
+      "hint": "Aplica la fórmula de Pearson con la desviación dada.",
+      "solution": "La diferencia entre media y mediana es 2, multiplicada por 3 da 6, y dividida entre 4 resulta 1,5. Un valor positivo indica asimetría hacia la derecha.",
+      "explain": "Si obtuviste 0,5, olvidaste multiplicar por tres. El coeficiente de Pearson usa el factor tres para aproximar el tercer momento y facilitar la comparación. Su signo es lo más informativo: positivo indica cola derecha y negativo, cola izquierda."
+    },
+    "A3-L6-E4": {
+      "hint": "Piensa si una distribución asimétrica es un error o una forma.",
+      "solution": "Falso: la asimetría no es buena ni mala, es una propiedad de la forma de la distribución. Lo que importa es reconocerla y elegir resúmenes adecuados, no eliminarla.",
+      "explain": "Si respondiste «verdadero», has confundido una característica con un defecto. Los ingresos o los tiempos de espera son asimétricos por naturaleza, y eso no los invalida. El problema aparece cuando se aplican métodos que suponen simetría sin comprobarla."
+    },
+    "A3-L6-E5": {
+      "type": "short",
+      "answers": ["derecha", "a la derecha", "asimetria a la derecha"],
+      "hint": "Hay muchos sueldos medios y unos pocos muy altos.",
+      "solution": "Los sueldos suelen tener asimetría hacia la derecha, porque la mayoría se concentra en valores medios y bajos, mientras unos pocos salarios muy altos forman una cola larga.",
+      "explain": "Si respondiste «izquierda», has imaginado una cola de sueldos muy bajos. En la práctica, el mínimo está acotado por la legislación y el máximo no, así que la cola se extiende hacia arriba. Esa forma explica por qué el sueldo mediano es más representativo que el medio."
+    }
+  }
+}

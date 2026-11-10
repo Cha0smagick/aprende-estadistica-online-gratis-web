@@ -1,0 +1,84 @@
+{
+  "module": "data/descriptiva/a3.js",
+  "items": {
+    "A3-L1-E1": {
+      "hint": "Suma los tres valores y divide entre tres.",
+      "solution": "5 más 10 más 15 son 30, y 30 entre 3 es 10. La media aritmética reparte el total en partes iguales y coincide con el valor central porque los datos son simétricos.",
+      "explain": "Si respondiste 30, has dado la suma sin dividir. La media siempre divide entre el número de observaciones; sin esa división, el resultado crece con el tamaño del conjunto y no permite comparar. Aquí la simetría hace que la media coincida con el dato central."
+    },
+    "A3-L1-E2": {
+      "hint": "Suma los cinco valores y divide entre cinco.",
+      "solution": "La suma es 30 y hay cinco valores, así que la media es 6. Al ser una progresión simétrica, la media coincide con el valor central de la serie.",
+      "explain": "Si obtuviste 30, has dejado la suma sin dividir. Con cinco datos, el divisor es cinco: la media de una progresión aritmética siempre es su término central. Ese atajo sirve para comprobar el cálculo, no para sustituirlo en casos generales."
+    },
+    "A3-L1-E3": {
+      "hint": "Piensa qué ocurre al añadir un valor muy grande.",
+      "solution": "Verdadero: la media es sensible a los valores atípicos, porque suma todos los datos y un valor extremo desplaza el total. La mediana, en cambio, apenas cambia ante un outlier.",
+      "explain": "Si respondiste «falso», conviene ver el efecto con un ejemplo: en 1, 2, 3 la media es 2; si se añade 100, la media pasa a 26,5 aunque tres de los cuatro datos siguen siendo pequeños. Esa sensibilidad explica por qué los sueldos y los ingresos se resumen con la mediana."
+    },
+    "A3-L1-E4": {
+      "hint": "Plantea la media de los cuatro valores e iguala a 25.",
+      "solution": "La suma debe ser 100 para que la media de cuatro datos sea 25. Los tres conocidos suman 60, así que x vale 40.",
+      "explain": "Si respondiste 25, has confundido la media con el valor que falta. Con cuatro datos, la media de 25 implica una suma total de 100; restando los 60 ya conocidos quedan 40. Ese razonamiento inverso se usa para reconstruir totales a partir de medias."
+    },
+    "A3-L1-E5": {
+      "type": "short",
+      "answers": ["la suma de cuadrados de las desviaciones", "suma de cuadrados de desviaciones", "la suma de cuadrados", "suma de cuadrados"],
+      "hint": "Es la misma cantidad que minimiza la recta de mínimos cuadrados.",
+      "solution": "La media minimiza la suma de cuadrados de las desviaciones respecto a ella. Esa propiedad la convierte en la base de la varianza y de la recta de mínimos cuadrados.",
+      "explain": "Si respondiste «la suma de desviaciones», esa suma es cero para cualquier valor central, así que no permite elegir. Al elevar al cuadrado, las desviaciones no se cancelan y la media resulta ser el valor que minimiza el total. La mediana, en cambio, minimiza la suma de distancias absolutas."
+    },
+    "A3-L2-E1": {
+      "hint": "Ordena los datos y busca el central.",
+      "solution": "Con cinco valores ordenados, la mediana es el tercero: 5. Deja dos datos por debajo y dos por encima, con independencia de lo extremos que sean.",
+      "explain": "Si respondiste 5 por intuición, el resultado es correcto, pero el criterio importa: la mediana ocupa la posición central tras ordenar, no la mitad aritmética del rango. Con un número impar de datos siempre es un valor observado, lo que la hace robusta frente a valores extremos."
+    },
+    "A3-L2-E2": {
+      "hint": "Con un número par de datos, promedia los dos centrales.",
+      "solution": "Con cuatro valores ordenados, los centrales son 20 y 30; su promedio es 25. La mediana queda entre ambos y puede no coincidir con ningún dato observado.",
+      "explain": "Si respondiste 20 o 30, has elegido uno de los dos centrales en lugar de promediarlos. Con un número par de observaciones no existe un único valor central, así que la convención es promediar los dos del medio. Esa es la razón por la que la mediana puede ser un valor que no aparece en los datos."
+    },
+    "A3-L2-E3": {
+      "hint": "Piensa cuánto se mueve la posición central al añadir un valor extremo.",
+      "solution": "Verdadero: la mediana es robusta a los valores atípicos porque depende de la posición y no de la magnitud. Un dato extremo cambia poco su valor, aunque desplace mucho la media.",
+      "explain": "Si respondiste «falso», has supuesto que todo resumen se ve afectado por los extremos. La mediana solo mira qué valor ocupa el centro: si se añade un dato gigantesco, la posición central se desplaza como mucho una posición. Por eso se usa en ingresos, precios de vivienda y tiempos de espera."
+    },
+    "A3-L2-E4": {
+      "type": "short",
+      "answers": ["la mediana", "mediana"],
+      "hint": "Elige el resumen que no se desplaza con unos pocos sueldos altos.",
+      "solution": "Para sueldos, que suelen ser asimétricos, se prefiere la mediana porque no se deja arrastrar por los salarios extremos. La media quedaría por encima del sueldo típico de la mayoría.",
+      "explain": "Si respondiste «la media», has elegido el resumen más sensible a la cola alta. En una distribución de ingresos, unos pocos salarios muy altos elevan la media por encima del valor que separa a la mitad de la población. La mediana describe mejor la situación del trabajador típico."
+    },
+    "A3-L2-E5": {
+      "hint": "Todos los valores son idénticos.",
+      "solution": "Si todos los valores son 5, la mediana es 5: cualquier posición central contiene ese valor. La media y la moda también coinciden en este caso.",
+      "explain": "Si dudaste, piensa que la mediana no depende de la dispersión sino del orden. Cuando no hay dispersión, todos los resúmenes coinciden. Esa coincidencia es una buena comprobación: si en datos constantes los resúmenes difieren, hay un error de cálculo."
+    },
+    "A3-L3-E1": {
+      "hint": "Cuenta cuántas veces aparece cada valor.",
+      "solution": "El valor 2 aparece dos veces y el resto una, así que la moda es 2. La moda es el valor más frecuente y no requiere ordenar los datos.",
+      "explain": "Si respondiste 1 o 4, has elegido un extremo en lugar del más repetido. La moda se define por frecuencia, no por posición ni por magnitud. Es el único resumen aplicable a datos categóricos, donde no existe un orden aritmético que permita calcular medias."
+    },
+    "A3-L3-E2": {
+      "hint": "Cuenta cuántos máximos locales tiene la distribución.",
+      "solution": "Una distribución con dos picos se llama bimodal, porque presenta dos valores o zonas de máxima frecuencia. La forma sugiere que los datos podrían mezclar dos poblaciones distintas.",
+      "explain": "Si respondiste «unimodal», has contado un solo pico. La bimodalidad es una pista importante: a menudo indica que se han juntado dos grupos con medias distintas, y analizarlos por separado puede revelar una estructura que el resumen global oculta."
+    },
+    "A3-L3-E3": {
+      "hint": "Piensa qué resumen admite categorías sin números.",
+      "solution": "Verdadero: la moda puede usarse con datos categóricos, porque solo requiere contar frecuencias. Es el único resumen de tendencia central aplicable a variables nominales.",
+      "explain": "Si respondiste «falso», conviene recordar que la media exige sumar y la mediana exige ordenar. Ninguna de las dos tiene sentido con categorías como colores o canales. La moda responde a la pregunta de qué categoría es la más frecuente, y esa pregunta sí tiene sentido."
+    },
+    "A3-L3-E4": {
+      "hint": "Si todas las frecuencias valen uno, ninguna destaca.",
+      "solution": "Si ningún valor se repite, no existe moda, porque no hay un valor más frecuente que los demás. Algunos autores hablan de distribución amodal en ese caso.",
+      "explain": "Si respondiste 0, has confundido ausencia de moda con un valor numérico. La moda es el valor que más se repite, y si todos aparecen una vez no hay ninguno que destaque. Escribir 0 sería afirmar que el valor cero es el más frecuente, algo que los datos no dicen."
+    },
+    "A3-L3-E5": {
+      "hint": "Compara las frecuencias de 7 y de 3.",
+      "solution": "El 7 aparece tres veces y el 3 dos veces, así que la moda es 7. La distribución es bimodal en sentido amplio, pero la moda principal es el valor con mayor frecuencia.",
+      "explain": "Si respondiste 3, has contado mal las repeticiones. La moda principal es siempre el valor con la frecuencia más alta; cuando dos valores empatan, se habla de distribución bimodal. Distinguir la moda principal de las secundarias evita conclusiones ambiguas."
+    }
+  }
+}
