@@ -50,7 +50,9 @@ function pickReview(course, idx){
 }
 
 async function main(){
-  await rm(SITE); await mkdir(SITE);
+  // fallback: en Windows un handle externo puede bloquear el rmdir; se vacía y se reutiliza la carpeta
+  try { await rm(SITE); } catch { for (const e of await fs.readdir(SITE).catch(()=>[])) await fs.rm(path.join(SITE,e),{recursive:true,force:true}).catch(()=>{}); }
+  await mkdir(SITE,{recursive:true});
   // copiar paginas manuales (lab, glosario, repaso) ANTES de generar: si hubiera colision futura, gana el generado
   await copyDir(path.join(ROOT,"es"), path.join(SITE,"es"));
   const courses=[];
