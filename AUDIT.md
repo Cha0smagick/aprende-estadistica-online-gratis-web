@@ -338,7 +338,8 @@ El sitio pasa a publicarse **solo en español** y ofrece **Google Translate bajo
 | 2026-11-10 | Fundamentos F0 | F0-L3 | 2.534 | ✅ validado |
 | 2026-11-10 | Fundamentos F0 | F0-L4 | 2.500 | ✅ validado |
 | 2026-11-10 | **F0 completo (5/5)** | F0-L5 | 2.500 | ✅ validado |
-| 2026-11-10 | Fundamentos F1 | F1-L1 | 2.504 | ✅ validado |
+| 2026-11-10 | Fundamentos F1 | F1-L4 | 2.501 | ✅ validado |
+| 2026-11-10 | **F1 completo (5/5) — 115/115 deep dives** | F1-L5 | 2.500 | ✅ validado |
 
-Acumulado: **111/115** deep dives (42 descriptiva + 30 probabilidad + 33 inferencial + 6 fundamentos). **Tres cursos completos, F0 cerrado, F1 en curso (1/5).** Pendientes: F1-L2–L5 (4).
+Acumulado: **115/115** deep dives (42 descriptiva + 30 probabilidad + 33 inferencial + 10 fundamentos). **Contenido cerrado al 100 %.** `validate-content.mjs --all` pasa y es bloqueante en CI. Pendiente: fases transversales 5–8.
 

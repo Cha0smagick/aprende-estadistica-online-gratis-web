@@ -4,11 +4,12 @@
 
 ## Progreso actual
 
-- **111/115 lecciones completas** con deep dive ≥2.500 palabras en español, validadas por `validate-content.mjs`.
+- **115/115 lecciones completas** con deep dive ≥2.500 palabras en español, validadas por `validate-content.mjs --all` (bloqueante en CI).
 - **Descriptiva: 42/42 — curso completo** (A0: 8/8, A1: 6/6, A2: 6/6, A3–A6: 22/22).
 - **Probabilidad:** 30/30 — **curso completo** (B0–B9).
 - **Inferencial: 33/33 — curso completo** (C0–C9).
-- **Fundamentos: 6/10** (F0 5/5; F1 1/5) — faltan F1-L2 a F1-L5.
+- **Fundamentos: 10/10 — curso completo** (F0 5/5, F1 5/5).
+- **Contenido cerrado al 100 %.** Quedan las fases transversales 5–8 (evaluación, retención, UX, certificación).
 - Pipeline completo: mdDeep(), validate-content.mjs (≥2.500 palabras, 9 secciones, ###, tablas, $$, preguntas, detección de contenido huérfano). El inglés ya no se exige ni se publica.
 
 ## Reconciliación 2026-11-08
@@ -30,11 +31,11 @@
 
 ## Próximos pasos (por prioridad)
 
-1. Curso Descriptiva cerrado (42/42). Sin pendientes.
-2. Continuar inferencial (C0–C9, 33 lecciones).
-3. Continuar fundamentos (F0–F1, 10 lecciones).
-4. Activar `validate-content.mjs --all` en CI cuando esté 115/115.
-5. Re-auditoría pedagógica con la rúbrica de 25 dimensiones (objetivo ≥95/100).
+1. Contenido cerrado: 115/115 deep dives, validador bloqueante en CI.
+2. Fase 5 — evaluación y feedback (ejercicios a producción, feedback del error, umbral de maestría).
+3. Fase 6 — retención y metacognición (SRS, intercalado, panel de dominio).
+4. Fase 7 — motivación, UX, lengua y accesibilidad.
+5. Fase 8 — certificación y auditoría final (rúbrica ≥95/100).
 
 ## Comando de validación
 

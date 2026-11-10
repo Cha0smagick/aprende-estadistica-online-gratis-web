@@ -22,7 +22,7 @@ Una lección está **terminada** solo si cumple todo:
 - [ ] La página generada muestra el bloque “Contenido completo” y el `h1`/teoría siguen funcionando.
 - [ ] Commit atómico con mensaje `content: <ID> deep dive (ES) — <n> palabras`.
 
-**Regla de no regresión:** ninguna lección puede volver a quedar por debajo del umbral. El validador se ejecuta en cada lote y, cuando esté 115/115, se añade a CI como bloqueante.
+**Regla de no regresión:** ninguna lección puede volver a quedar por debajo del umbral. El validador se ejecuta en cada lote y, desde 115/115 (2026-11-10), es bloqueante en CI.
 
 ---
 
@@ -99,7 +99,7 @@ content/
 - Cero archivos huérfanos (todo `.md` debe corresponder a una lección de `data/`).
 - Salida legible por lección y resumen por curso.
 
-Durante la transición el script **reporta** pero no bloquea CI. Cuando esté 115/115, se añade a `.github/workflows/deploy.yml` como paso bloqueante.
+Durante la transición el script **reportaba** sin bloquear CI. Desde 2026-11-10 (115/115) es un paso bloqueante en `.github/workflows/validate.yml`, con `--all`.
 
 ---
 
@@ -160,7 +160,7 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 ### Fase 4 - Contenido: Fundamentos (10 lecciones)
 
 - [x] F0 (5): qué es la estadística, estadística vs probabilidad, población/muestra/parámetro, tipos de estudios, mitos. — **completo (5/5)**
-- [ ] F1 (5). — **F1 en curso: 1/5 (L1)**
+- [x] F1 (5). — **completo (5/5)** · **Fundamentos 10/10**
 
 - [ ] F0 (5), F1 (5).
 - [ ] Convertir la historia en historia *conectada* a los métodos, no en trivia.
@@ -286,12 +286,17 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 | — | Probabilidad 30/30 (100%) | ✅ |
 | — | Inferencial 0/33 (0%) | ⏳ |
 | — | Fundamentos 0/10 (0%) | ⏳ |
+| 2026-11-10 | **Módulos C0–C9 completos — Inferencial 33/33** | ✅ |
+| 2026-11-10 | **Módulos F0–F1 completos — Fundamentos 10/10** | ✅ |
+| 2026-11-10 | **115/115 deep dives (100%) — validador bloqueante en CI** | ✅ |
 | — | Fases 5–8: evaluación, retención, UX y certificación | ⏳ |
 
-**Avance de contenido: 72/115 lecciones = 62,6 %.** Quedan 43 deep dives (37,4 %). El plan completo es menor que ese 62,6 % porque las Fases 5–8 (evaluación, retención, motivación/UX y certificación) no han comenzado.
+**Avance de contenido: 115/115 lecciones = 100 %.** Todos los deep dives superan el umbral de 2.500 palabras y pasan `validate-content.mjs --all`, que desde 2026-11-10 es bloqueante en CI.
 
-**Avance por módulos: 17 de 29 módulos completos = 58,6 %.** Completos: A0, A1, A2, A3, A4, A5, A6 y B0–B9. Pendientes: C0–C9 (10 módulos) y F0–F1 (2 módulos).
+**Avance por módulos: 29 de 29 módulos completos = 100 %.** Completos: A0–A6, B0–B9, C0–C9 y F0–F1.
 
-**Lectura del 100 %:** no hay un único porcentaje global fiable porque el plan mezcla contenido (115 deep dives) con fases transversales sin peso definido. La cifra medible es **62,6 % del contenido**; si se contaran las 9 fases por igual, el avance sería ~33 %, pero esa ponderación es arbitraria y no se usa como KPI.
+**Lectura del 100 %:** el contenido está cerrado. Lo que queda es transversal: ejercicios a producción, feedback, retención con SRS, accesibilidad y certificación. Esas fases no tienen peso definido y no se incluyen en el KPI de contenido.
+
+**Siguiente paso inmediato:** Fase 5 (evaluación y feedback), empezando por E1: convertir al menos la mitad de los 481 ejercicios a formato de producción.
 
 **Siguiente paso inmediato:** inferencial C0–C9 (33) y fundamentos F0–F1 (10), un módulo por commit.
