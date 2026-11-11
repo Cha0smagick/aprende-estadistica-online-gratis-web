@@ -1,0 +1,89 @@
+{
+  "items": {
+    "B2-L1-E1": {
+      "hint": "Cada elección multiplica las posibilidades de la anterior.",
+      "solution": "El menú tiene 5 por 4 por 3, es decir, 60 combinaciones. La regla del producto se aplica porque las elecciones son sucesivas e independientes entre sí.",
+      "explain": "Si respondiste 12, has sumado las opciones en lugar de multiplicarlas. La suma se usa cuando las alternativas son excluyentes entre sí; aquí se eligen las tres cosas a la vez, y cada entrante se combina con cada principal y cada postre. Esa combinación produce el producto."
+    },
+    "B2-L1-E2": {
+      "hint": "Cada tirada duplica… en realidad, multiplica por seis las posibilidades.",
+      "solution": "Dos tiradas de un dado de seis caras producen 6 por 6, es decir, 36 resultados ordenados. Cada par (primera, segunda) es un resultado distinto.",
+      "explain": "Si respondiste 12, has sumado en lugar de multiplicar. La regla del producto cuenta pares ordenados: (1,2) y (2,1) son resultados diferentes. Esa distinción entre ordenado y no ordenado es la que separa el conteo de permutaciones del de combinaciones."
+    },
+    "B2-L1-E3": {
+      "type": "short",
+      "answers": ["suman", "se suman"],
+      "hint": "Elegir una cosa u otra, nunca ambas.",
+      "solution": "Si las opciones son alternativas, se suman sus posibilidades, porque los casos son excluyentes y no se combinan entre sí. La regla de la suma cuenta alternativas; la del producto, combinaciones.",
+      "explain": "Si respondiste «multiplican», has aplicado la regla del producto a una situación de alternativas. Multiplicar supone que se eligen varias cosas a la vez; sumar supone que se elige una entre varias. Confundir ambas reglas es el error más habitual en los problemas de conteo."
+    },
+    "B2-L2-E1": {
+      "hint": "Multiplica 6 por 5, sin repetir el primero.",
+      "solution": "Las permutaciones de 6 elementos tomados de 2 en 2 son 6 por 5, es decir, 30. Se elige el primero entre seis y el segundo entre los cinco restantes.",
+      "explain": "Si respondiste 36, has permitido repetir el mismo elemento. En una permutación sin repetición, el segundo lugar no puede ocuparlo el primero, y por eso el factor baja a cinco. Esa reducción progresiva es la diferencia entre permutaciones y pares con reemplazo."
+    },
+    "B2-L2-E2": {
+      "hint": "Multiplica todos los enteros desde el 1 hasta el 4.",
+      "solution": "El factorial de 4 es 4 por 3 por 2 por 1, es decir, 24. Cuenta las formas de ordenar cuatro elementos distintos.",
+      "explain": "Si respondiste 12, has multiplicado solo parte de los factores. El factorial incluye todos los enteros hasta uno, porque cada posición reduce en uno las opciones disponibles. El factorial de 0 se define como 1 para que las fórmulas de combinaciones funcionen."
+    },
+    "B2-L2-E3": {
+      "type": "short",
+      "answers": ["el orden importa", "cuando el orden importa", "orden importa", "importa el orden"],
+      "hint": "Cambiar dos elementos produce un resultado distinto.",
+      "solution": "Las permutaciones se usan cuando el orden importa, porque considerar (A,B) distinto de (B,A) genera más resultados que tratarlos como el mismo grupo.",
+      "explain": "Si respondiste «el orden no importa», has descrito las combinaciones. La prueba práctica es preguntar si intercambiar dos elementos produce un resultado distinto: si la respuesta es sí, se trata de permutaciones. Un podio y una mano de cartas son ejemplos de cada caso."
+    },
+    "B2-L3-E1": {
+      "hint": "Usa el factorial del total entre el producto de los factoriales.",
+      "solution": "Las combinaciones de 8 elementos tomados de 2 en 2 son 28. El orden no cuenta, así que se divide el número de permutaciones entre las formas de ordenar la pareja.",
+      "explain": "Si respondiste 56, has calculado permutaciones y olvidado dividir entre 2 factorial. Cada pareja se puede ordenar de dos formas, y como el orden no importa, ambas cuentan una sola vez. Esa división es la que convierte permutaciones en combinaciones."
+    },
+    "B2-L3-E2": {
+      "hint": "Diez factorial entre tres factorial por siete factorial.",
+      "solution": "Las combinaciones de 10 elementos tomados de 3 en 3 son 120. Se obtiene multiplicando 10 por 9 por 8 y dividiendo entre 3 por 2 por 1.",
+      "explain": "Si respondiste 720, has calculado permutaciones. Dividir entre 3 factorial elimina las seis formas de ordenar cada trío, porque todas representan la misma combinación. Ese factor de corrección crece rápido con el tamaño del grupo elegido."
+    },
+    "B2-L3-E3": {
+      "type": "short",
+      "answers": ["el orden no importa", "cuando el orden no importa", "orden no importa", "no importa el orden"],
+      "hint": "Elegir un grupo, no una secuencia.",
+      "solution": "Las combinaciones se usan cuando el orden no importa: elegir tres personas para un comité produce el mismo grupo sea cual sea el orden en que se nombren.",
+      "explain": "Si respondiste «el orden importa», has descrito las permutaciones. La combinación cuenta conjuntos, no secuencias, y por eso divide entre las ordenaciones posibles de cada grupo. La pregunta clave es si dos selecciones con los mismos elementos en distinto orden deben contarse una o dos veces."
+    },
+    "B3-L1-E1": {
+      "hint": "Multiplica la probabilidad del primer paso por la condicional del segundo.",
+      "solution": "0,4 por 0,5 es 0,2, así que la probabilidad conjunta es 0,2. En un árbol, la probabilidad de un camino se obtiene multiplicando las ramas que lo componen.",
+      "explain": "Si respondiste 0,9, has sumado las probabilidades. Sumar corresponde a caminos alternativos; multiplicar, a pasos sucesivos de un mismo camino. La regla del producto refleja que hay que cumplir dos condiciones para llegar al final."
+    },
+    "B3-L1-E2": {
+      "hint": "Desde un nodo se cubren todas las alternativas posibles.",
+      "solution": "Verdadero: las ramas que salen de un nodo representan alternativas exhaustivas y excluyentes, así que sus probabilidades suman uno. Esa comprobación detecta errores al construir el árbol.",
+      "explain": "Si respondiste «falso», conviene pensar en el nodo inicial: desde él se despliegan todos los resultados posibles de la primera etapa, sin solaparse. Si la suma no da uno, falta una rama o alguna probabilidad está mal calculada."
+    },
+    "B3-L1-E3": {
+      "type": "short",
+      "answers": ["multiplicando ramas", "multiplicando", "multiplicando las ramas"],
+      "hint": "Hay que cumplir todos los pasos del camino.",
+      "solution": "La probabilidad de un camino se calcula multiplicando las ramas que lo forman, porque cada paso condiciona al siguiente y deben ocurrir todos.",
+      "explain": "Si respondiste «sumando», has confundido caminos con alternativas. Sumar sirve para acumular la probabilidad de varios caminos que llevan al mismo evento; multiplicar, para recorrer un camino completo. Esa doble operación es la que hace útil el árbol."
+    },
+    "B3-L2-E1": {
+      "hint": "Suma las dos vías que llevan a B, cada una ponderada por su probabilidad.",
+      "solution": "0,6 por 0,2 da 0,12, y 0,4 por 0,5 da 0,20; el total es 0,32. Ese es el teorema de la probabilidad total: se suman los caminos que llevan al suceso.",
+      "explain": "Si respondiste 0,7, has sumado las condicionales sin ponderarlas. Cada vía debe multiplicarse por la probabilidad de su punto de partida, porque no todas son igual de frecuentes. Olvidar ese peso es el error típico al aplicar probabilidad total."
+    },
+    "B3-L2-E2": {
+      "hint": "Sus partes no se solapan y juntas forman el todo.",
+      "solution": "Verdadero: una partición cubre todo el espacio muestral con partes disjuntas entre sí. Esa propiedad es la que permite descomponer la probabilidad total en casos.",
+      "explain": "Si respondiste «falso», conviene recordar la definición: los sucesos de una partición son incompatibles y su unión es el espacio completo. Si falta una parte o se solapan, la suma de probabilidades no da uno y el teorema de la probabilidad total deja de aplicarse."
+    },
+    "B3-L2-E3": {
+      "type": "short",
+      "answers": ["media ponderada", "una media ponderada", "ponderada"],
+      "hint": "Cada condicional pesa según la probabilidad de su grupo.",
+      "solution": "La probabilidad total es una media ponderada de las probabilidades condicionadas, con pesos iguales a la probabilidad de cada grupo. Por eso los grupos frecuentes influyen más en el resultado.",
+      "explain": "Si respondiste «media simple», has ignorado los pesos. Una media simple trataría igual a un grupo que aparece el 90 % de las veces y a otro que aparece el 10 %, lo que distorsionaría el resultado. La ponderación corrige ese efecto y es la esencia del teorema."
+    }
+  }
+}

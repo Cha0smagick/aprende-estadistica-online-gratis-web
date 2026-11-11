@@ -1,0 +1,9 @@
+{
+  "items": {
+    "B2-L3-E2": "Comprobar el orden de magnitud evita confundir combinaciones con permutaciones.",
+    "B3-L1-E1": "El árbol hace visible esa multiplicación paso a paso y reduce los errores de planteamiento.",
+    "B3-L1-E2": "Es la misma comprobación que se hace con las frecuencias de una tabla.",
+    "B3-L1-E3": "Sumar y multiplicar se combinan: se multiplica dentro del camino y se suma entre caminos.",
+    "B3-L2-E1": "Sin los pesos, el resultado describiría una población en la que ambos grupos fueran igual de frecuentes."
+  }
+}

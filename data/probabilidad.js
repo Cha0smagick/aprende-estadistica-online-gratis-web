@@ -180,12 +180,10 @@ export default {
               "answer": 0,
               "tol": 0.01,
               "hint": {
-                "es": "2^3.",
-                "en": "2^3."
+                "es": "Cada moneda duplica las posibilidades de la anterior."
               },
               "solution": {
-                "es": "8.",
-                "en": "8."
+                "es": "Tres monedas producen 2 elevado a 3, es decir, 8 resultados posibles: CCC, CCX, CXC, CXX, XCC, XCX, XXC y XXX. Cada moneda añade un factor dos al espacio muestral."
               },
               "xp": 10,
               "choices": [
@@ -205,35 +203,33 @@ export default {
                   "es": "7",
                   "en": "7"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 9 o 7, has contado mal las combinaciones. El espacio muestral incluye todos los resultados, incluso los que parecen improbables, como tres caras o tres cruces. La regla del producto es la forma rápida de contarlos sin enumerarlos."
+              }
             },
             {
               "id": "B0-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El espacio muestral contiene:",
                 "en": "The sample space contains:"
               },
-              "choices": [
-                {
-                  "es": "Solo los resultados favorables",
-                  "en": "Only favorable outcomes"
-                },
-                {
-                  "es": "Todos los resultados posibles",
-                  "en": "All possible outcomes"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Todos.",
-                "en": "All."
+                "es": "No solo los que te interesan: también los contrarios."
               },
               "solution": {
-                "es": "Todos los resultados posibles.",
-                "en": "All possible outcomes."
+                "es": "El espacio muestral contiene todos los resultados posibles del experimento, no solo los favorables. Los favorables forman un evento, que es un subconjunto del espacio."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "todos los resultados posibles",
+                "todos los posibles",
+                "todos"
+              ],
+              "explain": {
+                "es": "Si respondiste «solo los favorables», has descrito un evento y no el espacio completo. La distinción es fundamental: la probabilidad se calcula comparando un subconjunto con el total, y sin el total no hay denominador. Confundirlos hace imposible calcular cualquier probabilidad."
+              }
             },
             {
               "id": "B0-L1-E3",
@@ -244,12 +240,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Definicion.",
-                "en": "Definition."
+                "es": "Piensa en la definición de evento."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: un evento es un subconjunto del espacio muestral, es decir, una colección de resultados posibles. Puede contener uno, varios o ninguno."
               },
               "xp": 10,
               "choices": [
@@ -261,35 +255,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que los eventos se definen por comprensión sobre el espacio: «sacar par» o «que llueva mañana» son subconjuntos. Esa definición permite usar las operaciones de conjuntos —unión, intersección y complemento— para combinar eventos. Los eventos vacío y total también son subconjuntos, aunque parezcan casos límite."
+              }
             },
             {
               "id": "B0-L1-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Lanzar un dado es un:",
                 "en": "Rolling a die is a:"
               },
-              "choices": [
-                {
-                  "es": "Evento",
-                  "en": "Event"
-                },
-                {
-                  "es": "Experimento aleatorio",
-                  "en": "Random experiment"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Experimento.",
-                "en": "Experiment."
+                "es": "El resultado es incierto, pero las posibilidades se conocen."
               },
               "solution": {
-                "es": "Experimento aleatorio.",
-                "en": "Random experiment."
+                "es": "Lanzar un dado es un experimento aleatorio: no se puede predecir el resultado, pero se conoce el conjunto de resultados posibles. Un evento sería un subconjunto de ese conjunto."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "experimento aleatorio",
+                "un experimento aleatorio",
+                "aleatorio"
+              ],
+              "explain": {
+                "es": "Si respondiste «evento», has nombrado la parte en lugar del proceso. El experimento es la acción que produce el resultado; el evento es lo que se pregunta sobre ella. Distinguirlos es el primer paso para escribir correctamente un espacio muestral."
+              }
             },
             {
               "id": "B0-L1-E5",
@@ -301,12 +293,10 @@ export default {
               "answer": 1,
               "tol": 0.01,
               "hint": {
-                "es": "6x6.",
-                "en": "6x6."
+                "es": "Cada dado aporta seis posibilidades independientes."
               },
               "solution": {
-                "es": "36.",
-                "en": "36."
+                "es": "Dos dados producen 6 por 6, es decir, 36 resultados posibles. Cada par ordenado de resultados es un elemento del espacio muestral."
               },
               "xp": 10,
               "choices": [
@@ -326,7 +316,10 @@ export default {
                   "es": "37",
                   "en": "37"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 12, has sumado en lugar de multiplicar. La regla del producto se aplica cuando cada elección es independiente de la anterior: seis opciones para el primero y seis para el segundo dan 36 combinaciones. Sumar solo contaría los resultados de un dado por separado."
+              }
             }
           ]
         }
@@ -433,12 +426,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "1-0.6.",
-                "en": "1-0.6."
+                "es": "El complemento completa la probabilidad hasta uno."
               },
               "solution": {
-                "es": "0.4.",
-                "en": "0.4."
+                "es": "La probabilidad de no A es 1 menos 0,6, es decir, 0,4. El suceso y su complemento cubren todo el espacio muestral y no se solapan."
               },
               "xp": 10,
               "choices": [
@@ -458,7 +449,10 @@ export default {
                   "es": "-0.6",
                   "en": "-0.6"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,6, has repetido la probabilidad del suceso. La regla del complemento dice que las probabilidades de un evento y su contrario suman uno, porque juntos cubren todos los resultados posibles sin solaparse. Esa relación permite calcular de forma indirecta cuando el complemento es más fácil."
+              }
             },
             {
               "id": "B1-L1-E2",
@@ -470,12 +464,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "0.5+0.4-0.2.",
-                "en": "0.5+0.4-0.2."
+                "es": "Suma y resta la intersección para no contarla dos veces."
               },
               "solution": {
-                "es": "0.7.",
-                "en": "0.7."
+                "es": "0,5 más 0,4 da 0,9, y al restar 0,2 queda 0,7. La resta corrige el doble conteo de los resultados que pertenecen a ambos eventos."
               },
               "xp": 10,
               "choices": [
@@ -495,7 +487,10 @@ export default {
                   "es": "1.4",
                   "en": "1.4"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,9, has contado dos veces la intersección. La fórmula de la unión exige restarla porque esos resultados están incluidos en los dos conjuntos. El error es frecuente y crece con el tamaño de la intersección. Es la regla de inclusión-exclusión aplicada a dos conjuntos."
+              }
             },
             {
               "id": "B1-L1-E3",
@@ -506,12 +501,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "Solo si disjuntos.",
-                "en": "Only if disjoint."
+                "es": "La suma directa solo vale cuando no hay resultados compartidos."
               },
               "solution": {
-                "es": "Falso: solo si disjuntos.",
-                "en": "False: only if disjoint."
+                "es": "Falso: la probabilidad de la unión es la suma de probabilidades solo cuando los eventos son disjuntos. Si se solapan, hay que restar la intersección."
               },
               "xp": 10,
               "choices": [
@@ -523,7 +516,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has omitido la condición de exclusividad. Dos eventos pueden compartir resultados, y en ese caso la suma directa cuenta dos veces lo compartido. La fórmula general incluye la resta precisamente para corregir ese doble conteo. La condición de disjunción no es un detalle: cambia el resultado del cálculo."
+              }
             }
           ]
         },
@@ -609,12 +605,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "0.4x0.25.",
-                "en": "0.4x0.25."
+                "es": "Con independencia, las probabilidades se multiplican."
               },
               "solution": {
-                "es": "0.1.",
-                "en": "0.1."
+                "es": "0,4 por 0,25 es 0,1, así que la probabilidad de la intersección es 0,1. La independencia permite multiplicar porque la ocurrencia de uno no altera la del otro."
               },
               "xp": 10,
               "choices": [
@@ -634,7 +628,10 @@ export default {
                   "es": "0.2",
                   "en": "0.2"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,65, has sumado. La suma corresponde a la unión de eventos disjuntos, no a la intersección de independientes. Para que ocurran ambos sucesos hay que cumplir dos condiciones, y eso reduce la probabilidad en lugar de aumentarla. La multiplicación refleja que ambos sucesos deben cumplirse a la vez."
+              }
             },
             {
               "id": "B1-L2-E2",
@@ -645,12 +642,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Dos eventos disjuntos no pueden ocurrir a la vez."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: disjunto e independiente no son lo mismo. Dos eventos disjuntos no pueden ocurrir simultáneamente, mientras que dos independientes pueden, y conocer uno no cambia la probabilidad del otro."
               },
               "xp": 10,
               "choices": [
@@ -662,35 +657,32 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido exclusión con falta de influencia. De hecho, dos eventos disjuntos con probabilidad positiva son dependientes: si ocurre uno, el otro queda descartado. La independencia describe ausencia de información, no incompatibilidad. De hecho, dos disjuntos con probabilidad positiva son dependientes por definición."
+              }
             },
             {
               "id": "B1-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Si P(A interseccion B)=P(A)P(B), son:",
                 "en": "If P(A intersection B)=P(A)P(B), they are:"
               },
-              "choices": [
-                {
-                  "es": "Disjuntos",
-                  "en": "Disjoint"
-                },
-                {
-                  "es": "Independientes",
-                  "en": "Independent"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Independientes.",
-                "en": "Independent."
+                "es": "La probabilidad conjunta es el producto de las marginales."
               },
               "solution": {
-                "es": "Independientes.",
-                "en": "Independent."
+                "es": "Si la probabilidad de la intersección es el producto de las probabilidades, los eventos son independientes. Esa igualdad es la definición operativa de independencia."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "independientes",
+                "independiente"
+              ],
+              "explain": {
+                "es": "Si respondiste «disjuntos», has aplicado la condición contraria. Dos eventos disjuntos tienen intersección vacía, de probabilidad cero, que solo coincide con el producto si uno de ellos tiene probabilidad nula. La igualdad del enunciado describe independencia, no exclusión. Comprobar esa igualdad es la forma más directa de verificar independencia con datos."
+              }
             }
           ]
         }
@@ -790,12 +782,10 @@ export default {
               "answer": 3,
               "tol": 0.01,
               "hint": {
-                "es": "5x4x3.",
-                "en": "5x4x3."
+                "es": "Cada elección multiplica las posibilidades de la anterior."
               },
               "solution": {
-                "es": "60.",
-                "en": "60."
+                "es": "El menú tiene 5 por 4 por 3, es decir, 60 combinaciones. La regla del producto se aplica porque las elecciones son sucesivas e independientes entre sí."
               },
               "xp": 10,
               "choices": [
@@ -815,7 +805,10 @@ export default {
                   "es": "60",
                   "en": "60"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 12, has sumado las opciones en lugar de multiplicarlas. La suma se usa cuando las alternativas son excluyentes entre sí; aquí se eligen las tres cosas a la vez, y cada entrante se combina con cada principal y cada postre. Esa combinación produce el producto."
+              }
             },
             {
               "id": "B2-L1-E2",
@@ -827,12 +820,10 @@ export default {
               "answer": 3,
               "tol": 0.01,
               "hint": {
-                "es": "6x6.",
-                "en": "6x6."
+                "es": "Cada tirada duplica… en realidad, multiplica por seis las posibilidades."
               },
               "solution": {
-                "es": "36.",
-                "en": "36."
+                "es": "Dos tiradas de un dado de seis caras producen 6 por 6, es decir, 36 resultados ordenados. Cada par (primera, segunda) es un resultado distinto."
               },
               "xp": 10,
               "choices": [
@@ -852,35 +843,32 @@ export default {
                   "es": "36",
                   "en": "36"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 12, has sumado en lugar de multiplicar. La regla del producto cuenta pares ordenados: (1,2) y (2,1) son resultados diferentes. Esa distinción entre ordenado y no ordenado es la que separa el conteo de permutaciones del de combinaciones."
+              }
             },
             {
               "id": "B2-L1-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Si las opciones son alternativas, se:",
                 "en": "If options are alternatives, you:"
               },
-              "choices": [
-                {
-                  "es": "Multiplican",
-                  "en": "Multiply"
-                },
-                {
-                  "es": "Suman",
-                  "en": "Add"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Suma.",
-                "en": "Add."
+                "es": "Elegir una cosa u otra, nunca ambas."
               },
               "solution": {
-                "es": "Suman.",
-                "en": "Add."
+                "es": "Si las opciones son alternativas, se suman sus posibilidades, porque los casos son excluyentes y no se combinan entre sí. La regla de la suma cuenta alternativas; la del producto, combinaciones."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "suman",
+                "se suman"
+              ],
+              "explain": {
+                "es": "Si respondiste «multiplican», has aplicado la regla del producto a una situación de alternativas. Multiplicar supone que se eligen varias cosas a la vez; sumar supone que se elige una entre varias. Confundir ambas reglas es el error más habitual en los problemas de conteo."
+              }
             }
           ]
         },
@@ -966,12 +954,10 @@ export default {
               "answer": 3,
               "tol": 0.01,
               "hint": {
-                "es": "6x5.",
-                "en": "6x5."
+                "es": "Multiplica 6 por 5, sin repetir el primero."
               },
               "solution": {
-                "es": "30.",
-                "en": "30."
+                "es": "Las permutaciones de 6 elementos tomados de 2 en 2 son 6 por 5, es decir, 30. Se elige el primero entre seis y el segundo entre los cinco restantes."
               },
               "xp": 10,
               "choices": [
@@ -991,7 +977,10 @@ export default {
                   "es": "30",
                   "en": "30"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 36, has permitido repetir el mismo elemento. En una permutación sin repetición, el segundo lugar no puede ocuparlo el primero, y por eso el factor baja a cinco. Esa reducción progresiva es la diferencia entre permutaciones y pares con reemplazo."
+              }
             },
             {
               "id": "B2-L2-E2",
@@ -1003,12 +992,10 @@ export default {
               "answer": 1,
               "tol": 0.01,
               "hint": {
-                "es": "4x3x2x1.",
-                "en": "4x3x2x1."
+                "es": "Multiplica todos los enteros desde el 1 hasta el 4."
               },
               "solution": {
-                "es": "24.",
-                "en": "24."
+                "es": "El factorial de 4 es 4 por 3 por 2 por 1, es decir, 24. Cuenta las formas de ordenar cuatro elementos distintos."
               },
               "xp": 10,
               "choices": [
@@ -1028,35 +1015,34 @@ export default {
                   "es": "25",
                   "en": "25"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 12, has multiplicado solo parte de los factores. El factorial incluye todos los enteros hasta uno, porque cada posición reduce en uno las opciones disponibles. El factorial de 0 se define como 1 para que las fórmulas de combinaciones funcionen."
+              }
             },
             {
               "id": "B2-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Las permutaciones se usan cuando:",
                 "en": "Permutations are used when:"
               },
-              "choices": [
-                {
-                  "es": "El orden importa",
-                  "en": "Order matters"
-                },
-                {
-                  "es": "El orden no importa",
-                  "en": "Order does not matter"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "Orden importa.",
-                "en": "Order matters."
+                "es": "Cambiar dos elementos produce un resultado distinto."
               },
               "solution": {
-                "es": "El orden importa.",
-                "en": "Order matters."
+                "es": "Las permutaciones se usan cuando el orden importa, porque considerar (A,B) distinto de (B,A) genera más resultados que tratarlos como el mismo grupo."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "el orden importa",
+                "cuando el orden importa",
+                "orden importa",
+                "importa el orden"
+              ],
+              "explain": {
+                "es": "Si respondiste «el orden no importa», has descrito las combinaciones. La prueba práctica es preguntar si intercambiar dos elementos produce un resultado distinto: si la respuesta es sí, se trata de permutaciones. Un podio y una mano de cartas son ejemplos de cada caso."
+              }
             }
           ]
         },
@@ -1142,12 +1128,10 @@ export default {
               "answer": 3,
               "tol": 0.01,
               "hint": {
-                "es": "8!/(2!6!).",
-                "en": "8!/(2!6!)."
+                "es": "Usa el factorial del total entre el producto de los factoriales."
               },
               "solution": {
-                "es": "28.",
-                "en": "28."
+                "es": "Las combinaciones de 8 elementos tomados de 2 en 2 son 28. El orden no cuenta, así que se divide el número de permutaciones entre las formas de ordenar la pareja."
               },
               "xp": 10,
               "choices": [
@@ -1167,7 +1151,10 @@ export default {
                   "es": "28",
                   "en": "28"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 56, has calculado permutaciones y olvidado dividir entre 2 factorial. Cada pareja se puede ordenar de dos formas, y como el orden no importa, ambas cuentan una sola vez. Esa división es la que convierte permutaciones en combinaciones."
+              }
             },
             {
               "id": "B2-L3-E2",
@@ -1179,12 +1166,10 @@ export default {
               "answer": 3,
               "tol": 0.01,
               "hint": {
-                "es": "10!/(3!7!).",
-                "en": "10!/(3!7!)."
+                "es": "Diez factorial entre tres factorial por siete factorial."
               },
               "solution": {
-                "es": "120.",
-                "en": "120."
+                "es": "Las combinaciones de 10 elementos tomados de 3 en 3 son 120. Se obtiene multiplicando 10 por 9 por 8 y dividiendo entre 3 por 2 por 1."
               },
               "xp": 10,
               "choices": [
@@ -1204,35 +1189,34 @@ export default {
                   "es": "120",
                   "en": "120"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 720, has calculado permutaciones. Dividir entre 3 factorial elimina las seis formas de ordenar cada trío, porque todas representan la misma combinación. Ese factor de corrección crece rápido con el tamaño del grupo elegido. Comprobar el orden de magnitud evita confundir combinaciones con permutaciones."
+              }
             },
             {
               "id": "B2-L3-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Las combinaciones se usan cuando:",
                 "en": "Combinations are used when:"
               },
-              "choices": [
-                {
-                  "es": "El orden importa",
-                  "en": "Order matters"
-                },
-                {
-                  "es": "El orden no importa",
-                  "en": "Order does not matter"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Orden no importa.",
-                "en": "Order does not matter."
+                "es": "Elegir un grupo, no una secuencia."
               },
               "solution": {
-                "es": "El orden no importa.",
-                "en": "Order does not matter."
+                "es": "Las combinaciones se usan cuando el orden no importa: elegir tres personas para un comité produce el mismo grupo sea cual sea el orden en que se nombren."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "el orden no importa",
+                "cuando el orden no importa",
+                "orden no importa",
+                "no importa el orden"
+              ],
+              "explain": {
+                "es": "Si respondiste «el orden importa», has descrito las permutaciones. La combinación cuenta conjuntos, no secuencias, y por eso divide entre las ordenaciones posibles de cada grupo. La pregunta clave es si dos selecciones con los mismos elementos en distinto orden deben contarse una o dos veces."
+              }
             }
           ]
         }
@@ -1331,12 +1315,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "0.4x0.5.",
-                "en": "0.4x0.5."
+                "es": "Multiplica la probabilidad del primer paso por la condicional del segundo."
               },
               "solution": {
-                "es": "0.2.",
-                "en": "0.2."
+                "es": "0,4 por 0,5 es 0,2, así que la probabilidad conjunta es 0,2. En un árbol, la probabilidad de un camino se obtiene multiplicando las ramas que lo componen."
               },
               "xp": 10,
               "choices": [
@@ -1356,7 +1338,10 @@ export default {
                   "es": "-0.8",
                   "en": "-0.8"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,9, has sumado las probabilidades. Sumar corresponde a caminos alternativos; multiplicar, a pasos sucesivos de un mismo camino. La regla del producto refleja que hay que cumplir dos condiciones para llegar al final. El árbol hace visible esa multiplicación paso a paso y reduce los errores de planteamiento."
+              }
             },
             {
               "id": "B3-L1-E2",
@@ -1367,12 +1352,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Desde un nodo se cubren todas las alternativas posibles."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: las ramas que salen de un nodo representan alternativas exhaustivas y excluyentes, así que sus probabilidades suman uno. Esa comprobación detecta errores al construir el árbol."
               },
               "xp": 10,
               "choices": [
@@ -1384,35 +1367,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene pensar en el nodo inicial: desde él se despliegan todos los resultados posibles de la primera etapa, sin solaparse. Si la suma no da uno, falta una rama o alguna probabilidad está mal calculada. Es la misma comprobación que se hace con las frecuencias de una tabla."
+              }
             },
             {
               "id": "B3-L1-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La probabilidad de un camino se calcula:",
                 "en": "Path probability is computed:"
               },
-              "choices": [
-                {
-                  "es": "Sumando ramas",
-                  "en": "Summing branches"
-                },
-                {
-                  "es": "Multiplicando ramas",
-                  "en": "Multiplying branches"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Multiplicando.",
-                "en": "Multiplying."
+                "es": "Hay que cumplir todos los pasos del camino."
               },
               "solution": {
-                "es": "Multiplicando.",
-                "en": "Multiplying."
+                "es": "La probabilidad de un camino se calcula multiplicando las ramas que lo forman, porque cada paso condiciona al siguiente y deben ocurrir todos."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "multiplicando ramas",
+                "multiplicando",
+                "multiplicando las ramas"
+              ],
+              "explain": {
+                "es": "Si respondiste «sumando», has confundido caminos con alternativas. Sumar sirve para acumular la probabilidad de varios caminos que llevan al mismo evento; multiplicar, para recorrer un camino completo. Esa doble operación es la que hace útil el árbol. Sumar y multiplicar se combinan: se multiplica dentro del camino y se suma entre caminos."
+              }
             }
           ]
         },
@@ -1497,12 +1478,10 @@ export default {
               "answer": 3,
               "tol": 0.001,
               "hint": {
-                "es": "0.6x0.2 + 0.4x0.5.",
-                "en": "0.6x0.2 + 0.4x0.5."
+                "es": "Suma las dos vías que llevan a B, cada una ponderada por su probabilidad."
               },
               "solution": {
-                "es": "0.32.",
-                "en": "0.32."
+                "es": "0,6 por 0,2 da 0,12, y 0,4 por 0,5 da 0,20; el total es 0,32. Ese es el teorema de la probabilidad total: se suman los caminos que llevan al suceso."
               },
               "xp": 10,
               "choices": [
@@ -1522,7 +1501,10 @@ export default {
                   "es": "0.32",
                   "en": "0.32"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,7, has sumado las condicionales sin ponderarlas. Cada vía debe multiplicarse por la probabilidad de su punto de partida, porque no todas son igual de frecuentes. Olvidar ese peso es el error típico al aplicar probabilidad total. Sin los pesos, el resultado describiría una población en la que ambos grupos fueran igual de frecuentes."
+              }
             },
             {
               "id": "B3-L2-E2",
@@ -1533,12 +1515,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Sus partes no se solapan y juntas forman el todo."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: una partición cubre todo el espacio muestral con partes disjuntas entre sí. Esa propiedad es la que permite descomponer la probabilidad total en casos."
               },
               "xp": 10,
               "choices": [
@@ -1550,35 +1530,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar la definición: los sucesos de una partición son incompatibles y su unión es el espacio completo. Si falta una parte o se solapan, la suma de probabilidades no da uno y el teorema de la probabilidad total deja de aplicarse."
+              }
             },
             {
               "id": "B3-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La probabilidad total es una:",
                 "en": "Total probability is a:"
               },
-              "choices": [
-                {
-                  "es": "Media simple",
-                  "en": "Simple mean"
-                },
-                {
-                  "es": "Media ponderada",
-                  "en": "Weighted mean"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Ponderada.",
-                "en": "Weighted."
+                "es": "Cada condicional pesa según la probabilidad de su grupo."
               },
               "solution": {
-                "es": "Media ponderada.",
-                "en": "Weighted mean."
+                "es": "La probabilidad total es una media ponderada de las probabilidades condicionadas, con pesos iguales a la probabilidad de cada grupo. Por eso los grupos frecuentes influyen más en el resultado."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "media ponderada",
+                "una media ponderada",
+                "ponderada"
+              ],
+              "explain": {
+                "es": "Si respondiste «media simple», has ignorado los pesos. Una media simple trataría igual a un grupo que aparece el 90 % de las veces y a otro que aparece el 10 %, lo que distorsionaría el resultado. La ponderación corrige ese efecto y es la esencia del teorema."
+              }
             }
           ]
         }

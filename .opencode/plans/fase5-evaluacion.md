@@ -77,8 +77,13 @@ Pendiente (etapas 2–3): 451 ejercicios por convertir, 451 sin `explain`, 451 c
 - A5 cerrado: 25/25 con explicación y solución; 13 en producción. Verificados cuartiles, z, asimetría/curtosis, regla empírica y boxplot.
 - A6 cerrado: 30/30 con explicación y solución; 16 en producción. Corregido A6-L4-E4: las dos primeras opciones eran idénticas (`y - y`) por pérdida de la notación con gorro; ahora son «observado menos predicho» y «predicho menos observado».
 - **Curso de Descriptiva completo en fase 5**: 210/210 con feedback, 123 en producción, 0 pistas filtradas.
-- Acumulado: 240/481 con feedback completo (49,9 %), 143/481 en producción (29,7 %).
-- Quedan Probabilidad (102) e Inferencial (139): 8 módulos.
+- Probabilidad B0–B3 cerrados: 26/26 con explicación y solución; 8 en producción.
+- Acumulado: 266/481 con feedback completo (55,3 %), 151/481 en producción (31,4 %).
+- Quedan B4–B9 (22 lecciones) e Inferencial (139 ejercicios).
+
+### Herramientas para bundles
+
+`data/probabilidad.js` y `data/descriptiva-inferencial` usan formato JSON pretty-printed, distinto del formato compacto de los módulos. Se añadieron `apply-feedback-bundle.mjs` y `append-explain-bundle.mjs`, que operan sobre el bundle y evitan el desajuste entre fuente y bundle (detectado: B0-L1-E1 era `mcq` en el bundle y `numeric` en el módulo).
 
 ### Lección de proceso
 

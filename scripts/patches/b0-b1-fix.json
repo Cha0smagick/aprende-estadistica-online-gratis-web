@@ -1,0 +1,10 @@
+{
+  "items": {
+    "B0-L1-E3": "Los eventos vacío y total también son subconjuntos, aunque parezcan casos límite.",
+    "B1-L1-E2": "Es la regla de inclusión-exclusión aplicada a dos conjuntos.",
+    "B1-L1-E3": "La condición de disjunción no es un detalle: cambia el resultado del cálculo.",
+    "B1-L2-E1": "La multiplicación refleja que ambos sucesos deben cumplirse a la vez.",
+    "B1-L2-E2": "De hecho, dos disjuntos con probabilidad positiva son dependientes por definición.",
+    "B1-L2-E3": "Comprobar esa igualdad es la forma más directa de verificar independencia con datos."
+  }
+}
