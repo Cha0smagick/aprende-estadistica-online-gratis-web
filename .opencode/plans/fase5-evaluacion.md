@@ -78,8 +78,9 @@ Pendiente (etapas 2–3): 451 ejercicios por convertir, 451 sin `explain`, 451 c
 - A6 cerrado: 30/30 con explicación y solución; 16 en producción. Corregido A6-L4-E4: las dos primeras opciones eran idénticas (`y - y`) por pérdida de la notación con gorro; ahora son «observado menos predicho» y «predicho menos observado».
 - **Curso de Descriptiva completo en fase 5**: 210/210 con feedback, 123 en producción, 0 pistas filtradas.
 - Probabilidad B0–B3 cerrados: 26/26 con explicación y solución; 8 en producción.
-- Acumulado: 266/481 con feedback completo (55,3 %), 151/481 en producción (31,4 %).
-- Quedan B4–B9 (22 lecciones) e Inferencial (139 ejercicios).
+- Probabilidad B4–B5 cerrados: 18/18 con explicación y solución; 5 en producción. Verificados Bayes (0,6), sensibilidad/especificidad, VPP y prevalencia, función de probabilidad, esperanza y varianza.
+- Acumulado: 284/481 con feedback completo (59,0 %), 156/481 en producción (32,4 %).
+- Quedan B6–B9 (16 lecciones) e Inferencial (139 ejercicios).
 
 ### Herramientas para bundles
 

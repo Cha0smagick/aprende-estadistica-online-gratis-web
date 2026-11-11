@@ -32,7 +32,7 @@
 ## Próximos pasos (por prioridad)
 
 1. Contenido cerrado: 115/115 deep dives, validador bloqueante en CI.
-2. **Fase 5 — evaluación y feedback (en curso)**: motor con tipo `short`, explicación del error y maestría ≥80 % operativo. Fundamentos y Descriptiva cerrados; Probabilidad B0–B3 cerrados (266/481 con feedback; 151 en producción). Siguen B4–B9 e Inferencial. Plan: `.opencode/plans/fase5-evaluacion.md`.
+2. **Fase 5 — evaluación y feedback (en curso)**: motor con tipo `short`, explicación del error y maestría ≥80 % operativo. Fundamentos y Descriptiva cerrados; Probabilidad B0–B5 cerrados (284/481 con feedback; 156 en producción). Siguen B6–B9 e Inferencial. Plan: `.opencode/plans/fase5-evaluacion.md`.
 3. Fase 6 — retención y metacognición (SRS, intercalado, panel de dominio).
 4. Fase 7 — motivación, UX, lengua y accesibilidad.
 5. Fase 8 — certificación y auditoría final (rúbrica ≥95/100).

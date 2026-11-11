@@ -1655,12 +1655,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "0.8x0.3/0.4.",
-                "en": "0.8x0.3/0.4."
+                "es": "Aplica Bayes: verosimilitud por prior, dividido por la probabilidad del dato."
               },
               "solution": {
-                "es": "0.6.",
-                "en": "0.6."
+                "es": "0,8 por 0,3 es 0,24, y dividido entre 0,4 da 0,6. La probabilidad posterior de A dado B es 0,6."
               },
               "xp": 10,
               "choices": [
@@ -1680,7 +1678,10 @@ export default {
                   "es": "-0.4",
                   "en": "-0.4"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,24, has calculado la intersección y olvidado dividir. El teorema de Bayes normaliza por la probabilidad del dato observado, porque esa es la evidencia que se conoce. Sin esa división, el resultado no es una probabilidad condicionada. La división es la que convierte la intersección en probabilidad condicionada."
+              }
             },
             {
               "id": "B4-L1-E2",
@@ -1691,12 +1692,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "El prior se actualiza con la verosimilitud de los datos."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: Bayes actualiza la creencia inicial con la evidencia observada y produce una creencia posterior. Cada dato nuevo vuelve a actualizar el resultado anterior."
               },
               "xp": 10,
               "choices": [
@@ -1708,35 +1707,34 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar la estructura: prior, verosimilitud y posterior. La evidencia no sustituye la creencia previa, la modifica en proporción a cuán compatible es con cada hipótesis. Esa actualización repetida es lo que hace útil el enfoque en series de datos."
+              }
             },
             {
               "id": "B4-L1-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El prior representa:",
                 "en": "The prior represents:"
               },
-              "choices": [
-                {
-                  "es": "La creencia antes",
-                  "en": "Belief before"
-                },
-                {
-                  "es": "La creencia despues",
-                  "en": "Belief after"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "Antes.",
-                "en": "Before."
+                "es": "Es lo que se sabe antes de observar los datos."
               },
               "solution": {
-                "es": "La creencia antes.",
-                "en": "Belief before."
+                "es": "El prior representa la creencia antes de observar los datos, resumida como una distribución de probabilidad. El posterior es la creencia actualizada tras incorporar la evidencia."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "la creencia antes",
+                "antes",
+                "la creencia previa",
+                "creencia previa"
+              ],
+              "explain": {
+                "es": "Si respondiste «la creencia después», has descrito el posterior. La distinción entre ambos es el eje del enfoque bayesiano: el prior es el punto de partida y el posterior el resultado. Confundirlos invierte por completo la interpretación del análisis. Elegir un prior justificado es la decisión más discutida del enfoque."
+              }
             }
           ]
         },
@@ -1813,59 +1811,51 @@ export default {
           "exercises": [
             {
               "id": "B4-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La sensibilidad es:",
                 "en": "Sensitivity is:"
               },
-              "choices": [
-                {
-                  "es": "P(pos|enf)",
-                  "en": "P(pos|sick)"
-                },
-                {
-                  "es": "P(neg|sano)",
-                  "en": "P(neg|healthy)"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "Verdaderos positivos.",
-                "en": "True positives."
+                "es": "Entre los enfermos, ¿cuántos dan positivo?"
               },
               "solution": {
-                "es": "P(pos|enf).",
-                "en": "P(pos|sick)."
+                "es": "La sensibilidad es la probabilidad de dar positivo entre los enfermos, es decir, la tasa de verdaderos positivos. Mide la capacidad del test para detectar la condición."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "p(pos|enf)",
+                "p positivo dado enfermo",
+                "positivo dado enfermo",
+                "sensibilidad"
+              ],
+              "explain": {
+                "es": "Si respondiste la otra opción, has descrito la especificidad. La sensibilidad condiciona sobre la enfermedad y la especificidad sobre la salud; invertir las condicionales es el error más frecuente en la lectura de pruebas diagnósticas. Cada una responde a una pregunta distinta."
+              }
             },
             {
               "id": "B4-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La especificidad es:",
                 "en": "Specificity is:"
               },
-              "choices": [
-                {
-                  "es": "P(pos|enf)",
-                  "en": "P(pos|sick)"
-                },
-                {
-                  "es": "P(neg|sano)",
-                  "en": "P(neg|healthy)"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Verdaderos negativos.",
-                "en": "True negatives."
+                "es": "Entre los sanos, ¿cuántos dan negativo?"
               },
               "solution": {
-                "es": "P(neg|sano).",
-                "en": "P(neg|healthy)."
+                "es": "La especificidad es la probabilidad de dar negativo entre los sanos, es decir, la tasa de verdaderos negativos. Mide la capacidad del test para descartar la condición."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "p(neg|sano)",
+                "p negativo dado sano",
+                "negativo dado sano",
+                "especificidad"
+              ],
+              "explain": {
+                "es": "Si respondiste la sensibilidad, has condicionado sobre los enfermos. La especificidad se calcula sobre los sanos y su complemento es la tasa de falsos positivos. Esa tasa es la que explica por qué un test muy específico puede dar muchos positivos falsos en poblaciones con prevalencia baja."
+              }
             },
             {
               "id": "B4-L2-E3",
@@ -1876,12 +1866,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Con más enfermos en la población, un positivo es más probablemente verdadero."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: el valor predictivo positivo aumenta con la prevalencia, porque hay más casos reales entre los que dan positivo. La sensibilidad y la especificidad no cambian; el VPP sí."
               },
               "xp": 10,
               "choices": [
@@ -1893,7 +1881,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver el mecanismo: con prevalencia baja, la mayoría de los positivos son falsos positivos. Al aumentar la prevalencia, el mismo test encuentra más casos verdaderos y el VPP sube. Por eso los cribados se dirigen a grupos de riesgo."
+              }
             }
           ]
         }
@@ -1984,59 +1975,49 @@ export default {
           "exercises": [
             {
               "id": "B5-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Una v.a. discreta toma valores:",
                 "en": "A discrete r.v. takes values:"
               },
-              "choices": [
-                {
-                  "es": "En un intervalo",
-                  "en": "In an interval"
-                },
-                {
-                  "es": "Contables",
-                  "en": "Countable"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Contables.",
-                "en": "Countable."
+                "es": "Se puede enumerar uno a uno, aunque sea infinito."
               },
               "solution": {
-                "es": "Contables.",
-                "en": "Countable."
+                "es": "Una variable aleatoria discreta toma valores contables: se pueden enumerar uno a uno, como el número de hijos o de llamadas. Puede ser infinita, pero siempre numerable."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "contables",
+                "valores contables",
+                "un conjunto contable"
+              ],
+              "explain": {
+                "es": "Si respondiste «en un intervalo», has descrito una variable continua. La diferencia práctica está en la función de probabilidad: la discreta asigna probabilidad a cada valor, la continua a intervalos. Confundirlas lleva a sumar donde hay que integrar. Los recuentos son el ejemplo típico: se pueden listar aunque no terminen nunca."
+              }
             },
             {
               "id": "B5-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El tiempo de espera es una v.a.:",
                 "en": "Waiting time is a r.v.:"
               },
-              "choices": [
-                {
-                  "es": "Discreta",
-                  "en": "Discrete"
-                },
-                {
-                  "es": "Continua",
-                  "en": "Continuous"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Continua.",
-                "en": "Continuous."
+                "es": "El tiempo puede tomar cualquier valor dentro de un rango."
               },
               "solution": {
-                "es": "Continua.",
-                "en": "Continuous."
+                "es": "El tiempo de espera es una variable aleatoria continua, porque puede tomar cualquier valor dentro de un intervalo y entre dos medidas siempre cabe otra."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "continua",
+                "variable continua",
+                "v.a. continua"
+              ],
+              "explain": {
+                "es": "Si respondiste «discreta», has tratado una medida como un recuento. El tiempo se mide, no se cuenta: puede ser 3,27 segundos o 3,28, y esa continuidad exige modelos de densidad. La elección del modelo depende de esta distinción. En la práctica, la precisión del instrumento decide cuántos decimales se registran."
+              }
             },
             {
               "id": "B5-L1-E3",
@@ -2047,12 +2028,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Asigna un número a cada resultado del experimento."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: una variable aleatoria es una función que asigna un número real a cada resultado del espacio muestral. Esa traducción permite operar matemáticamente con los resultados."
               },
               "xp": 10,
               "choices": [
@@ -2064,7 +2043,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver un ejemplo: al lanzar dos dados, la suma es una función que lleva cada par a un número. La variable aleatoria no es el resultado, sino la regla que lo convierte en número para poder calcular esperanzas y varianzas."
+              }
             }
           ]
         },
@@ -2157,12 +2139,10 @@ export default {
               "answer": 3,
               "tol": 0.001,
               "hint": {
-                "es": "1-0.3-0.5.",
-                "en": "1-0.3-0.5."
+                "es": "Las probabilidades deben sumar uno."
               },
               "solution": {
-                "es": "0.2.",
-                "en": "0.2."
+                "es": "0,3 más 0,5 es 0,8, así que falta 0,2 para llegar a uno. La probabilidad de 2 es 0,2."
               },
               "xp": 10,
               "choices": [
@@ -2182,7 +2162,10 @@ export default {
                   "es": "0.2",
                   "en": "0.2"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,8, has dado la suma parcial. Toda función de probabilidad debe sumar uno sobre todos los valores posibles, porque el espacio muestral es exhaustivo. Esa comprobación detecta errores en tablas y en modelos. Esa comprobación es el primer control de calidad de cualquier distribución."
+              }
             },
             {
               "id": "B5-L2-E2",
@@ -2193,12 +2176,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Es la misma condición que en una tabla de frecuencias relativas."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la suma de las probabilidades de todos los valores posibles es 1, porque cubren todo el espacio muestral sin solaparse."
               },
               "xp": 10,
               "choices": [
@@ -2210,7 +2191,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que la función de probabilidad reparte una unidad entre los valores posibles. Si la suma no da uno, falta algún valor o hay un error de cálculo. Es la primera comprobación que se hace al construir un modelo discreto."
+              }
             },
             {
               "id": "B5-L2-E3",
@@ -2222,12 +2206,10 @@ export default {
               "answer": 3,
               "tol": 0.001,
               "hint": {
-                "es": "0.25+0.5.",
-                "en": "0.25+0.5."
+                "es": "La función de distribución acumula hasta ese valor."
               },
               "solution": {
-                "es": "0.75.",
-                "en": "0.75."
+                "es": "La función de distribución en 1 es 0,25 más 0,5, es decir, 0,75. Acumula la probabilidad de todos los valores menores o iguales que 1."
               },
               "xp": 10,
               "choices": [
@@ -2247,7 +2229,10 @@ export default {
                   "es": "0.75",
                   "en": "0.75"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,5, has tomado solo la probabilidad de 1. La función de distribución acumula, así que incluye todos los valores anteriores. Esa diferencia explica por qué es no decreciente y termina en uno. La acumulada nunca disminuye y termina valiendo uno en el máximo."
+              }
             }
           ]
         },
@@ -2332,12 +2317,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "1x0.5+2x0.5.",
-                "en": "1x0.5+2x0.5."
+                "es": "Suma cada valor multiplicado por su probabilidad."
               },
               "solution": {
-                "es": "1.5.",
-                "en": "1.5."
+                "es": "1 por 0,5 más 2 por 0,5 da 0,5 más 1, es decir, 1,5. La esperanza es el valor medio ponderado por las probabilidades."
               },
               "xp": 10,
               "choices": [
@@ -2357,7 +2340,10 @@ export default {
                   "es": "0.5",
                   "en": "0.5"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 1,5 por intuición, coincide con el punto medio de la distribución. La esperanza no tiene por qué ser un valor posible: 1,5 no se puede obtener al lanzar una moneda, y sin embargo es el centro de gravedad de la distribución."
+              }
             },
             {
               "id": "B5-L3-E2",
@@ -2369,12 +2355,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "(1+...+6)/6.",
-                "en": "(1+...+6)/6."
+                "es": "Suma las seis caras y divide entre seis."
               },
               "solution": {
-                "es": "3.5.",
-                "en": "3.5."
+                "es": "La suma de 1 a 6 es 21, y dividida entre 6 da 3,5. La esperanza de un dado justo es 3,5, aunque ese valor no esté en las caras."
               },
               "xp": 10,
               "choices": [
@@ -2394,7 +2378,10 @@ export default {
                   "es": "4.5",
                   "en": "4.5"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 3, has elegido la cara central en lugar de promediar. La esperanza es un promedio ponderado, no una moda ni una mediana. Su interpretación es la del valor medio que se obtendría al repetir el experimento muchas veces."
+              }
             },
             {
               "id": "B5-L3-E3",
@@ -2406,12 +2393,10 @@ export default {
               "answer": 3,
               "tol": 0.001,
               "hint": {
-                "es": "2x4+3.",
-                "en": "2x4+3."
+                "es": "La esperanza es lineal: saca constantes y suma términos."
               },
               "solution": {
-                "es": "11.",
-                "en": "11."
+                "es": "2 por 4 más 3 es 11. La linealidad permite transformar la esperanza sin conocer la distribución completa, solo su media."
               },
               "xp": 10,
               "choices": [
@@ -2431,7 +2416,10 @@ export default {
                   "es": "11",
                   "en": "11"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 8, has multiplicado pero olvidado sumar el término constante. La propiedad E(aX+b) = aE(X)+b es una de las más útiles de la esperanza porque no exige independencia ni supuestos sobre la forma de la distribución. Es la propiedad que permite calcular con medias sin manejar la distribución entera."
+              }
             }
           ]
         },
@@ -2516,12 +2504,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "10 - 2^2.",
-                "en": "10 - 2^2."
+                "es": "Resta al momento de orden dos el cuadrado de la media."
               },
               "solution": {
-                "es": "6.",
-                "en": "6."
+                "es": "10 menos 2 al cuadrado, es decir, 10 menos 4, da 6. Esa es la varianza de la variable."
               },
               "xp": 10,
               "choices": [
@@ -2541,7 +2527,10 @@ export default {
                   "es": "12",
                   "en": "12"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 6 pero dudaste del signo, el cálculo es correcto: la varianza siempre es no negativa. Si obtuviste 8, has restado la media en lugar de su cuadrado. La fórmula exige elevar al cuadrado antes de restar. Esa fórmula es la versión computacional de la definición de varianza."
+              }
             },
             {
               "id": "B5-L4-E2",
@@ -2553,12 +2542,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "sqrt(9).",
-                "en": "sqrt(9)."
+                "es": "La desviación es la raíz de la varianza."
               },
               "solution": {
-                "es": "3.",
-                "en": "3."
+                "es": "La raíz cuadrada de 9 es 3, así que la desviación típica es 3. Esa cifra vuelve a las unidades originales de la variable."
               },
               "xp": 10,
               "choices": [
@@ -2578,7 +2565,10 @@ export default {
                   "es": "4",
                   "en": "4"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 81, has elevado al cuadrado en lugar de extraer la raíz. La varianza está en unidades al cuadrado y la desviación la devuelve a la escala de los datos. Por eso se reporta junto a la media y no en su lugar."
+              }
             },
             {
               "id": "B5-L4-E3",
@@ -2589,12 +2579,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "Solo si independientes.",
-                "en": "Only if independent."
+                "es": "Piensa en dos variables que se compensan entre sí."
               },
               "solution": {
-                "es": "Falso: solo si independientes.",
-                "en": "False: only if independent."
+                "es": "Falso: la varianza de la suma es la suma de varianzas solo si las variables son independientes o tienen covarianza nula. En general aparece el término de covarianza."
               },
               "xp": 10,
               "choices": [
@@ -2606,7 +2594,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has olvidado la covarianza. Si dos variables se mueven en direcciones opuestas, la suma puede tener menos varianza que cada una por separado. La fórmula completa incluye el doble de la covarianza, y ese término es esencial en finanzas y en diseños experimentales."
+              }
             }
           ]
         }

@@ -1,0 +1,104 @@
+{
+  "items": {
+    "B4-L1-E1": {
+      "hint": "Aplica Bayes: verosimilitud por prior, dividido por la probabilidad del dato.",
+      "solution": "0,8 por 0,3 es 0,24, y dividido entre 0,4 da 0,6. La probabilidad posterior de A dado B es 0,6.",
+      "explain": "Si respondiste 0,24, has calculado la intersección y olvidado dividir. El teorema de Bayes normaliza por la probabilidad del dato observado, porque esa es la evidencia que se conoce. Sin esa división, el resultado no es una probabilidad condicionada."
+    },
+    "B4-L1-E2": {
+      "hint": "El prior se actualiza con la verosimilitud de los datos.",
+      "solution": "Verdadero: Bayes actualiza la creencia inicial con la evidencia observada y produce una creencia posterior. Cada dato nuevo vuelve a actualizar el resultado anterior.",
+      "explain": "Si respondiste «falso», conviene recordar la estructura: prior, verosimilitud y posterior. La evidencia no sustituye la creencia previa, la modifica en proporción a cuán compatible es con cada hipótesis. Esa actualización repetida es lo que hace útil el enfoque en series de datos."
+    },
+    "B4-L1-E3": {
+      "type": "short",
+      "answers": ["la creencia antes", "antes", "la creencia previa", "creencia previa"],
+      "hint": "Es lo que se sabe antes de observar los datos.",
+      "solution": "El prior representa la creencia antes de observar los datos, resumida como una distribución de probabilidad. El posterior es la creencia actualizada tras incorporar la evidencia.",
+      "explain": "Si respondiste «la creencia después», has descrito el posterior. La distinción entre ambos es el eje del enfoque bayesiano: el prior es el punto de partida y el posterior el resultado. Confundirlos invierte por completo la interpretación del análisis."
+    },
+    "B4-L2-E1": {
+      "type": "short",
+      "answers": ["p(pos|enf)", "p positivo dado enfermo", "positivo dado enfermo", "sensibilidad"],
+      "hint": "Entre los enfermos, ¿cuántos dan positivo?",
+      "solution": "La sensibilidad es la probabilidad de dar positivo entre los enfermos, es decir, la tasa de verdaderos positivos. Mide la capacidad del test para detectar la condición.",
+      "explain": "Si respondiste la otra opción, has descrito la especificidad. La sensibilidad condiciona sobre la enfermedad y la especificidad sobre la salud; invertir las condicionales es el error más frecuente en la lectura de pruebas diagnósticas. Cada una responde a una pregunta distinta."
+    },
+    "B4-L2-E2": {
+      "type": "short",
+      "answers": ["p(neg|sano)", "p negativo dado sano", "negativo dado sano", "especificidad"],
+      "hint": "Entre los sanos, ¿cuántos dan negativo?",
+      "solution": "La especificidad es la probabilidad de dar negativo entre los sanos, es decir, la tasa de verdaderos negativos. Mide la capacidad del test para descartar la condición.",
+      "explain": "Si respondiste la sensibilidad, has condicionado sobre los enfermos. La especificidad se calcula sobre los sanos y su complemento es la tasa de falsos positivos. Esa tasa es la que explica por qué un test muy específico puede dar muchos positivos falsos en poblaciones con prevalencia baja."
+    },
+    "B4-L2-E3": {
+      "hint": "Con más enfermos en la población, un positivo es más probablemente verdadero.",
+      "solution": "Verdadero: el valor predictivo positivo aumenta con la prevalencia, porque hay más casos reales entre los que dan positivo. La sensibilidad y la especificidad no cambian; el VPP sí.",
+      "explain": "Si respondiste «falso», conviene ver el mecanismo: con prevalencia baja, la mayoría de los positivos son falsos positivos. Al aumentar la prevalencia, el mismo test encuentra más casos verdaderos y el VPP sube. Por eso los cribados se dirigen a grupos de riesgo."
+    },
+    "B5-L1-E1": {
+      "type": "short",
+      "answers": ["contables", "valores contables", "un conjunto contable"],
+      "hint": "Se puede enumerar uno a uno, aunque sea infinito.",
+      "solution": "Una variable aleatoria discreta toma valores contables: se pueden enumerar uno a uno, como el número de hijos o de llamadas. Puede ser infinita, pero siempre numerable.",
+      "explain": "Si respondiste «en un intervalo», has descrito una variable continua. La diferencia práctica está en la función de probabilidad: la discreta asigna probabilidad a cada valor, la continua a intervalos. Confundirlas lleva a sumar donde hay que integrar."
+    },
+    "B5-L1-E2": {
+      "type": "short",
+      "answers": ["continua", "variable continua", "v.a. continua"],
+      "hint": "El tiempo puede tomar cualquier valor dentro de un rango.",
+      "solution": "El tiempo de espera es una variable aleatoria continua, porque puede tomar cualquier valor dentro de un intervalo y entre dos medidas siempre cabe otra.",
+      "explain": "Si respondiste «discreta», has tratado una medida como un recuento. El tiempo se mide, no se cuenta: puede ser 3,27 segundos o 3,28, y esa continuidad exige modelos de densidad. La elección del modelo depende de esta distinción."
+    },
+    "B5-L1-E3": {
+      "hint": "Asigna un número a cada resultado del experimento.",
+      "solution": "Verdadero: una variable aleatoria es una función que asigna un número real a cada resultado del espacio muestral. Esa traducción permite operar matemáticamente con los resultados.",
+      "explain": "Si respondiste «falso», conviene ver un ejemplo: al lanzar dos dados, la suma es una función que lleva cada par a un número. La variable aleatoria no es el resultado, sino la regla que lo convierte en número para poder calcular esperanzas y varianzas."
+    },
+    "B5-L2-E1": {
+      "hint": "Las probabilidades deben sumar uno.",
+      "solution": "0,3 más 0,5 es 0,8, así que falta 0,2 para llegar a uno. La probabilidad de 2 es 0,2.",
+      "explain": "Si respondiste 0,8, has dado la suma parcial. Toda función de probabilidad debe sumar uno sobre todos los valores posibles, porque el espacio muestral es exhaustivo. Esa comprobación detecta errores en tablas y en modelos."
+    },
+    "B5-L2-E2": {
+      "hint": "Es la misma condición que en una tabla de frecuencias relativas.",
+      "solution": "Verdadero: la suma de las probabilidades de todos los valores posibles es 1, porque cubren todo el espacio muestral sin solaparse.",
+      "explain": "Si respondiste «falso», conviene recordar que la función de probabilidad reparte una unidad entre los valores posibles. Si la suma no da uno, falta algún valor o hay un error de cálculo. Es la primera comprobación que se hace al construir un modelo discreto."
+    },
+    "B5-L2-E3": {
+      "hint": "La función de distribución acumula hasta ese valor.",
+      "solution": "La función de distribución en 1 es 0,25 más 0,5, es decir, 0,75. Acumula la probabilidad de todos los valores menores o iguales que 1.",
+      "explain": "Si respondiste 0,5, has tomado solo la probabilidad de 1. La función de distribución acumula, así que incluye todos los valores anteriores. Esa diferencia explica por qué es no decreciente y termina en uno."
+    },
+    "B5-L3-E1": {
+      "hint": "Suma cada valor multiplicado por su probabilidad.",
+      "solution": "1 por 0,5 más 2 por 0,5 da 0,5 más 1, es decir, 1,5. La esperanza es el valor medio ponderado por las probabilidades.",
+      "explain": "Si respondiste 1,5 por intuición, coincide con el punto medio de la distribución. La esperanza no tiene por qué ser un valor posible: 1,5 no se puede obtener al lanzar una moneda, y sin embargo es el centro de gravedad de la distribución."
+    },
+    "B5-L3-E2": {
+      "hint": "Suma las seis caras y divide entre seis.",
+      "solution": "La suma de 1 a 6 es 21, y dividida entre 6 da 3,5. La esperanza de un dado justo es 3,5, aunque ese valor no esté en las caras.",
+      "explain": "Si respondiste 3, has elegido la cara central en lugar de promediar. La esperanza es un promedio ponderado, no una moda ni una mediana. Su interpretación es la del valor medio que se obtendría al repetir el experimento muchas veces."
+    },
+    "B5-L3-E3": {
+      "hint": "La esperanza es lineal: saca constantes y suma términos.",
+      "solution": "2 por 4 más 3 es 11. La linealidad permite transformar la esperanza sin conocer la distribución completa, solo su media.",
+      "explain": "Si respondiste 8, has multiplicado pero olvidado sumar el término constante. La propiedad E(aX+b) = aE(X)+b es una de las más útiles de la esperanza porque no exige independencia ni supuestos sobre la forma de la distribución."
+    },
+    "B5-L4-E1": {
+      "hint": "Resta al momento de orden dos el cuadrado de la media.",
+      "solution": "10 menos 2 al cuadrado, es decir, 10 menos 4, da 6. Esa es la varianza de la variable.",
+      "explain": "Si respondiste 6 pero dudaste del signo, el cálculo es correcto: la varianza siempre es no negativa. Si obtuviste 8, has restado la media en lugar de su cuadrado. La fórmula exige elevar al cuadrado antes de restar."
+    },
+    "B5-L4-E2": {
+      "hint": "La desviación es la raíz de la varianza.",
+      "solution": "La raíz cuadrada de 9 es 3, así que la desviación típica es 3. Esa cifra vuelve a las unidades originales de la variable.",
+      "explain": "Si respondiste 81, has elevado al cuadrado en lugar de extraer la raíz. La varianza está en unidades al cuadrado y la desviación la devuelve a la escala de los datos. Por eso se reporta junto a la media y no en su lugar."
+    },
+    "B5-L4-E3": {
+      "hint": "Piensa en dos variables que se compensan entre sí.",
+      "solution": "Falso: la varianza de la suma es la suma de varianzas solo si las variables son independientes o tienen covarianza nula. En general aparece el término de covarianza.",
+      "explain": "Si respondiste «verdadero», has olvidado la covarianza. Si dos variables se mueven en direcciones opuestas, la suma puede tener menos varianza que cada una por separado. La fórmula completa incluye el doble de la covarianza, y ese término es esencial en finanzas y en diseños experimentales."
+    }
+  }
+}

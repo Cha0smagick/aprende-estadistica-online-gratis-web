@@ -1,0 +1,12 @@
+{
+  "items": {
+    "B4-L1-E1": "La división es la que convierte la intersección en probabilidad condicionada.",
+    "B4-L1-E3": "Elegir un prior justificado es la decisión más discutida del enfoque.",
+    "B5-L1-E1": "Los recuentos son el ejemplo típico: se pueden listar aunque no terminen nunca.",
+    "B5-L1-E2": "En la práctica, la precisión del instrumento decide cuántos decimales se registran.",
+    "B5-L2-E1": "Esa comprobación es el primer control de calidad de cualquier distribución.",
+    "B5-L2-E3": "La acumulada nunca disminuye y termina valiendo uno en el máximo.",
+    "B5-L3-E3": "Es la propiedad que permite calcular con medias sin manejar la distribución entera.",
+    "B5-L4-E1": "Esa fórmula es la versión computacional de la definición de varianza."
+  }
+}
