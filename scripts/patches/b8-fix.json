@@ -1,0 +1,12 @@
+{
+  "items": {
+    "B8-L2-E3": "La secuencia de tiradas determina qué suma ayuda y cuál arruina la apuesta.",
+    "B8-L2-E4": "Comparar márgenes es la única forma racional de elegir entre apuestas.",
+    "B8-L2-E5": "Las sumas centrales concentran la probabilidad y las extremas casi no aparecen.",
+    "B8-L3-E1": "La esperanza es lineal: promediar estrategias no cambia el signo de cada jugada.",
+    "B8-L3-E3": "Es el mismo principio que explica por qué la casa no necesita trucos.",
+    "B8-L4-E2": "Esa relación de complemento permite pasar de una cifra a otra sin cálculos.",
+    "B8-L5-E1": "El margen se reparte en cada apuesta y se acumula con el volumen de juego.",
+    "B8-L5-E2": "Cambiar el tamaño de las apuestas no altera la esperanza de cada una."
+  }
+}

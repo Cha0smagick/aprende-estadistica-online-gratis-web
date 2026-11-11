@@ -80,8 +80,9 @@ Pendiente (etapas 2–3): 451 ejercicios por convertir, 451 sin `explain`, 451 c
 - Probabilidad B0–B3 cerrados: 26/26 con explicación y solución; 8 en producción.
 - Probabilidad B4–B5 cerrados: 18/18 con explicación y solución; 5 en producción. Verificados Bayes (0,6), sensibilidad/especificidad, VPP y prevalencia, función de probabilidad, esperanza y varianza.
 - Probabilidad B6–B7 cerrados: 21/21 con explicación y solución; 5 en producción. Verificados Bernoulli, binomial (E=5, Var=2,5), Poisson (E=Var=3, e^-2), hipergeométrica, densidad, normal estándar y exponencial.
-- Acumulado: 305/481 con feedback completo (63,4 %), 161/481 en producción (33,5 %).
-- Quedan B8–B9 (9 lecciones) e Inferencial (139 ejercicios).
+- Probabilidad B8 cerrado: 25/25 con explicación y solución; 6 en producción. Verificados house edge (2,70 % y 5,26 %), P(7)=6/36, martingala (no cambia el EV), RTP y volatilidad, ruina del jugador.
+- Acumulado: 330/481 con feedback completo (68,6 %), 167/481 en producción (34,7 %). Probabilidad sin pistas filtradas.
+- Quedan B9 (12 ejercicios) e Inferencial (139).
 
 ### Herramientas para bundles
 

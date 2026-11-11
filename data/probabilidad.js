@@ -4001,12 +4001,10 @@ export default {
               "answer": 1,
               "tol": 0.1,
               "hint": {
-                "es": "1/37 × 100.",
-                "en": "1/37 × 100."
+                "es": "Divide los números que no pagan entre el total de casillas."
               },
               "solution": {
-                "es": "≈ 2,70 %.",
-                "en": "≈ 2.70%."
+                "es": "La ventaja de la casa en la ruleta europea es 1 entre 37, aproximadamente 2,70 %. Hay 37 casillas y se paga como si hubiera 36."
               },
               "xp": 10,
               "choices": [
@@ -4026,7 +4024,10 @@ export default {
                   "es": "3.7",
                   "en": "3.7"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 1/36, has ignorado el cero. El pago se calcula como si el cero no existiera, pero la bola puede caer en él, y esa casilla extra es la que sostiene la ventaja. Ese pequeño porcentaje repetido en miles de apuestas es el beneficio del casino."
+              }
             },
             {
               "id": "B8-L1-E2",
@@ -4038,12 +4039,10 @@ export default {
               "answer": 0,
               "tol": 0.1,
               "hint": {
-                "es": "2/38 × 100.",
-                "en": "2/38 × 100."
+                "es": "La ruleta americana añade una casilla más."
               },
               "solution": {
-                "es": "≈ 5,26 %.",
-                "en": "≈ 5.26%."
+                "es": "La ventaja en la ruleta americana es 2 entre 38, aproximadamente 5,26 %. El doble cero añade una casilla sin aumentar los pagos."
               },
               "xp": 10,
               "choices": [
@@ -4063,43 +4062,34 @@ export default {
                   "es": "4.26",
                   "en": "4.26"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 2,70, has usado la versión europea. La casilla extra del 00 encarece cada apuesta y casi duplica la ventaja del casino. Comparar ambas versiones es el ejemplo clásico de cómo una regla aparentemente menor cambia el resultado a largo plazo."
+              }
             },
             {
               "id": "B8-L1-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "¿Qué da ventaja al casino en la ruleta?",
                 "en": "What gives the casino its edge in roulette?"
               },
-              "choices": [
-                {
-                  "es": "Los números altos",
-                  "en": "High numbers"
-                },
-                {
-                  "es": "El 0 (y 00)",
-                  "en": "The 0 (and 00)"
-                },
-                {
-                  "es": "Los colores",
-                  "en": "Colors"
-                },
-                {
-                  "es": "Las docenas",
-                  "en": "Dozens"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "El 0.",
-                "en": "The 0."
+                "es": "Es la casilla que no forma parte de las apuestas simples."
               },
               "solution": {
-                "es": "El 0 (y 00 en americana).",
-                "en": "The 0 (and 00 in American)."
+                "es": "La ventaja del casino proviene del cero y, en la versión americana, del doble cero. Esas casillas participan en el sorteo pero no en los pagos, y esa asimetría genera el margen."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "el 0",
+                "el cero",
+                "el 0 y el 00",
+                "el cero y el doble cero"
+              ],
+              "explain": {
+                "es": "Si respondiste «los números altos», has buscado una explicación en el diseño del tablero que no existe. Todos los números tienen la misma probabilidad. La ventaja no está en la numeración sino en la casilla extra que paga como si no estuviera."
+              }
             },
             {
               "id": "B8-L1-E4",
@@ -4110,12 +4100,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí (excepto en prisión).",
-                "en": "Yes (except en prison)."
+                "es": "Todas las apuestas se pagan con las mismas 37 casillas."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: en la ruleta, la ventaja de la casa es prácticamente la misma en todas las apuestas, porque todas se calculan sobre el mismo conjunto de casillas. La excepción es la regla de «prisión» en algunas mesas europeas."
               },
               "xp": 10,
               "choices": [
@@ -4127,43 +4115,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene comparar una apuesta simple y una docena: los pagos cambian, pero la proporción entre lo que se paga y lo que se debería pagar se mantiene. Esa uniformidad es una propiedad matemática del juego, no una coincidencia."
+              }
             },
             {
               "id": "B8-L1-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Mejor ruleta para el jugador:",
                 "en": "Better roulette for the player:"
               },
-              "choices": [
-                {
-                  "es": "Americana",
-                  "en": "American"
-                },
-                {
-                  "es": "Europea",
-                  "en": "European"
-                },
-                {
-                  "es": "Igual",
-                  "en": "Same"
-                },
-                {
-                  "es": "Depende",
-                  "en": "Depends"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Europea.",
-                "en": "European."
+                "es": "Tiene una casilla menos y, por tanto, menor margen."
               },
               "solution": {
-                "es": "Europea.",
-                "en": "European."
+                "es": "La ruleta europea es mejor para el jugador porque tiene una sola casilla de cero y una ventaja de la casa de 2,70 %, frente al 5,26 % de la americana."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "europea",
+                "la europea",
+                "ruleta europea"
+              ],
+              "explain": {
+                "es": "Si respondiste «americana», has elegido la versión con doble cero. La diferencia de 2,56 puntos porcentuales parece pequeña, pero se acumula en cada apuesta. A igualdad de dinero jugado, la esperanza de pérdida en la americana es casi el doble."
+              }
             }
           ]
         },
@@ -4315,12 +4293,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "6/36.",
-                "en": "6/36."
+                "es": "Cuenta cuántas combinaciones suman siete."
               },
               "solution": {
-                "es": "6/36 = 1/6.",
-                "en": "6/36 = 1/6."
+                "es": "Hay seis formas de sumar siete con dos dados, sobre 36 resultados posibles: 6 entre 36, es decir, 1/6 o 0,1667."
               },
               "xp": 10,
               "choices": [
@@ -4340,43 +4316,32 @@ export default {
                   "es": "-0.8333",
                   "en": "-0.8333"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 1/11, has contado sumas distintas en lugar de pares. El siete es el resultado más probable porque se puede formar con más combinaciones: uno y seis, dos y cinco, tres y cuatro, y sus simétricas. Esa abundancia explica su protagonismo en el craps."
+              }
             },
             {
               "id": "B8-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "En come-out, 7 u 11:",
                 "en": "On come-out, 7 or 11:"
               },
-              "choices": [
-                {
-                  "es": "Pierde",
-                  "en": "Lose"
-                },
-                {
-                  "es": "Gana",
-                  "en": "Win"
-                },
-                {
-                  "es": "Punto",
-                  "en": "Point"
-                },
-                {
-                  "es": "Empate",
-                  "en": "Push"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Gana.",
-                "en": "Win."
+                "es": "Es la tirada favorable en el primer lanzamiento."
               },
               "solution": {
-                "es": "Gana.",
-                "en": "Win."
+                "es": "En el come-out, sacar 7 u 11 gana la apuesta de línea de pase de inmediato. Cualquier otro resultado establece un punto que hay que repetir antes de sacar siete."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "gana",
+                "gana el jugador"
+              ],
+              "explain": {
+                "es": "Si respondiste «pierde», has confundido el siete del come-out con el siete posterior. En el primer lanzamiento, el siete es favorable; una vez establecido un punto, el siete hace perder. La misma suma cambia de significado según el momento de la partida."
+              }
             },
             {
               "id": "B8-L2-E3",
@@ -4405,50 +4370,38 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Pierde.",
-                "en": "Lose."
+                "es": "Son los resultados que descartan la apuesta al instante."
               },
               "solution": {
-                "es": "Pierde.",
-                "en": "Lose."
+                "es": "Sacar 2, 3 o 12 en el come-out hace perder la apuesta de línea de pase. Son los resultados perdedores inmediatos del primer lanzamiento."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «gana», has invertido la regla. El craps distingue resultados ganadores, perdedores y neutros según el momento. Memorizar qué sumas ganan y pierden en cada fase es imprescindible para calcular cualquier probabilidad del juego. La secuencia de tiradas determina qué suma ayuda y cuál arruina la apuesta."
+              }
             },
             {
               "id": "B8-L2-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La apuesta con menor house edge en craps:",
                 "en": "Bet with lowest house edge in craps:"
               },
-              "choices": [
-                {
-                  "es": "Any 7",
-                  "en": "Any 7"
-                },
-                {
-                  "es": "Hard ways",
-                  "en": "Hard ways"
-                },
-                {
-                  "es": "Pass line",
-                  "en": "Pass line"
-                },
-                {
-                  "es": "Field",
-                  "en": "Field"
-                }
-              ],
-              "answer": 2,
               "hint": {
-                "es": "Pass line.",
-                "en": "Pass line."
+                "es": "Es la apuesta básica, con margen de aproximadamente 1,4 %."
               },
               "solution": {
-                "es": "Pass line (con odds).",
-                "en": "Pass line (with odds)."
+                "es": "Entre las opciones, la línea de pase es la de menor ventaja de la casa, en torno al 1,4 %. Las apuestas de siete y las duras tienen márgenes mucho mayores."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "pass line",
+                "linea de pase",
+                "pass"
+              ],
+              "explain": {
+                "es": "Si respondiste «hard ways», has elegido una apuesta con pagos llamativos y margen alto. El craps ofrece muchas apuestas, y casi todas son peores que la básica. Comparar márgenes es la forma de decidir, no la emoción del pago. Comparar márgenes es la única forma racional de elegir entre apuestas."
+              }
             },
             {
               "id": "B8-L2-E5",
@@ -4459,12 +4412,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí (6/36).",
-                "en": "Yes (6/36)."
+                "es": "Es la suma con más combinaciones posibles."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: el siete es el resultado más probable con dos dados, porque se puede formar de seis maneras distintas sobre 36 pares posibles."
               },
               "xp": 10,
               "choices": [
@@ -4476,7 +4427,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», probablemente pensaste que todos los resultados son igual de probables. No lo son: la suma de dos dados se concentra en el centro. Esa distribución triangular es la base de todos los cálculos del craps. Las sumas centrales concentran la probabilidad y las extremas casi no aparecen."
+              }
             }
           ]
         },
@@ -4627,12 +4581,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Duplicar la apuesta no cambia la esperanza de cada jugada."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: la martingala no convierte un juego desfavorable en justo, porque cada apuesta mantiene su esperanza negativa. Solo redistribuye los resultados: muchas ganancias pequeñas y alguna pérdida enorme."
               },
               "xp": 10,
               "choices": [
@@ -4644,43 +4596,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido cambiar la secuencia con cambiar la esperanza. La esperanza de la suma es la suma de esperanzas, y todas son negativas. Ninguna estrategia de apuestas puede alterar el valor esperado de un juego individual. La esperanza es lineal: promediar estrategias no cambia el signo de cada jugada."
+              }
             },
             {
               "id": "B8-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La martingala falla por:",
                 "en": "Martingale fails because of:"
               },
-              "choices": [
-                {
-                  "es": "El EV sigue negativo",
-                  "en": "EV remains negative"
-                },
-                {
-                  "es": "Capital infinito requerido",
-                  "en": "Infinite capital required"
-                },
-                {
-                  "es": "Límites de apuesta",
-                  "en": "Betting limits"
-                },
-                {
-                  "es": "Todas las anteriores",
-                  "en": "All of the above"
-                }
-              ],
-              "answer": 3,
               "hint": {
-                "es": "Todas.",
-                "en": "All."
+                "es": "Para soportar una racha larga haría falta una banca ilimitada."
               },
               "solution": {
-                "es": "Todas las anteriores.",
-                "en": "All of the above."
+                "es": "La martingala falla porque exige capital infinito para soportar una racha de pérdidas. Con capital finito, una racha suficientemente larga obliga a abandonar con una pérdida muy superior a las ganancias acumuladas."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "capital infinito requerido",
+                "capital infinito",
+                "falta de capital"
+              ],
+              "explain": {
+                "es": "Si respondiste «el EV sigue negativo», es cierto pero incompleto: ese es el motivo por el que no funciona en el largo plazo, mientras que la falta de capital es el mecanismo que la hace fracasar en la práctica. Ambas razones se complementan."
+              }
             },
             {
               "id": "B8-L3-E3",
@@ -4691,12 +4633,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Una caminata aleatoria con deriva negativa termina en cero."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: con esperanza negativa y capital finito, la ruina es casi segura a largo plazo. La probabilidad de durar indefinidamente es nula."
               },
               "xp": 10,
               "choices": [
@@ -4708,7 +4648,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», has confiado en que una racha favorable puede sostener la banca. La teoría de la ruina del jugador demuestra lo contrario: la deriva negativa acaba imponiéndose. No es una opinión moral, es una consecuencia matemática. Es el mismo principio que explica por qué la casa no necesita trucos."
+              }
             },
             {
               "id": "B8-L3-E4",
@@ -4737,14 +4680,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Muchas pequeñas, pocas grandes.",
-                "en": "Many small, few large."
+                "es": "Ganas poco casi siempre y pierdes todo de golpe."
               },
               "solution": {
-                "es": "Muchas pequeñas ganancias, pocas grandes pérdidas.",
-                "en": "Many small wins, few large losses."
+                "es": "La martingala cambia la distribución: produce muchas ganancias pequeñas y una pérdida rara pero enorme. La esperanza no cambia, pero la forma del resultado sí."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «muchas grandes ganancias», has invertido el patrón. La estrategia está diseñada para ganar cantidades pequeñas con alta frecuencia, y el coste aparece en el evento extremo. Esa asimetría es la que hace que el jugador crea que funciona hasta que deja de hacerlo."
+              }
             },
             {
               "id": "B8-L3-E5",
@@ -4773,14 +4717,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "EV negativo + capital finito.",
-                "en": "Negative EV + finite capital."
+                "es": "Necesita una tendencia que empuje hacia la ruina."
               },
               "solution": {
-                "es": "Juegos con EV negativo y capital finito.",
-                "en": "Negative EV games with finite capital."
+                "es": "La ruina del jugador se aplica a juegos con esperanza negativa y capital finito, donde la deriva lleva a la pérdida total. Con esperanza positiva o capital ilimitado, el resultado cambia."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «juegos con EV positivo», has invertido la condición. En un juego favorable, la ruina no es casi segura: la deriva empuja en sentido contrario. La lección es que el resultado depende de la esperanza y del capital, no de la estrategia de apuestas."
+              }
             }
           ]
         },
@@ -4932,12 +4877,10 @@ export default {
               "answer": 3,
               "tol": 0.01,
               "hint": {
-                "es": "100-96.",
-                "en": "100-96."
+                "es": "La ventaja de la casa es el complemento del retorno."
               },
               "solution": {
-                "es": "4 %.",
-                "en": "4%."
+                "es": "Si el retorno al jugador es 96 %, la ventaja de la casa es 4 %. Ambas cifras suman cien porque describen la misma repartición."
               },
               "xp": 10,
               "choices": [
@@ -4957,7 +4900,10 @@ export default {
                   "es": "4",
                   "en": "4"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 96, has repetido el retorno. El RTP es lo que vuelve al jugador; la ventaja es lo que retiene el casino. Expresar una u otra es una decisión de comunicación, pero no son intercambiables y confundirlas cambia la interpretación del margen."
+              }
             },
             {
               "id": "B8-L4-E2",
@@ -4969,12 +4915,10 @@ export default {
               "answer": 0,
               "tol": 0.01,
               "hint": {
-                "es": "100-3.",
-                "en": "100-3."
+                "es": "Suma la ventaja y el retorno."
               },
               "solution": {
-                "es": "97 %.",
-                "en": "97%."
+                "es": "Con una ventaja de 3 %, el retorno al jugador es 97 %. Es el complemento exacto de la ventaja de la casa."
               },
               "xp": 10,
               "choices": [
@@ -4994,7 +4938,10 @@ export default {
                   "es": "98",
                   "en": "98"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 3, has confundido ambos conceptos. El retorno es siempre mayor que la ventaja en estos juegos, porque la mayor parte del dinero se devuelve. La diferencia entre ambos es el margen que sostiene la operación. Esa relación de complemento permite pasar de una cifra a otra sin cálculos."
+              }
             },
             {
               "id": "B8-L4-E3",
@@ -5023,50 +4970,38 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Largo plazo.",
-                "en": "Long term."
+                "es": "Una sola sesión no permite observar un porcentaje estable."
               },
               "solution": {
-                "es": "Largo plazo (millones de tiradas).",
-                "en": "Long term (millions of spins)."
+                "es": "El RTP se mide a largo plazo, sobre millones de jugadas, porque en pocas tiradas el azar domina. En una sesión, el resultado puede alejarse mucho del valor teórico."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «una sesión», has confundido la esperanza con el resultado observado. La ley de los grandes números hace que la frecuencia se acerque al valor teórico solo con muchas repeticiones. Por eso el RTP no garantiza nada en una noche concreta."
+              }
             },
             {
               "id": "B8-L4-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Volatilidad alta significa:",
                 "en": "High volatility means:"
               },
-              "choices": [
-                {
-                  "es": "Premios frecuentes y pequeños",
-                  "en": "Frequent small payouts"
-                },
-                {
-                  "es": "Premios raros y grandes",
-                  "en": "Rare large payouts"
-                },
-                {
-                  "es": "Sin premios",
-                  "en": "No payouts"
-                },
-                {
-                  "es": "RTP alto",
-                  "en": "High RTP"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Raros y grandes.",
-                "en": "Rare and large."
+                "es": "Poca frecuencia y mucha magnitud por premio."
               },
               "solution": {
-                "es": "Premios raros y grandes.",
-                "en": "Rare large payouts."
+                "es": "Volatilidad alta significa premios poco frecuentes pero de mayor tamaño, con resultados muy variables entre sesiones. La volatilidad baja reparte premios pequeños con más regularidad."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "premios raros y grandes",
+                "raros y grandes",
+                "premios grandes poco frecuentes"
+              ],
+              "explain": {
+                "es": "Si respondiste «premios frecuentes y pequeños», has descrito la volatilidad baja. La distinción importa porque dos juegos con el mismo RTP pueden comportarse de forma muy distinta: uno devuelve poco a poco y el otro concentra el retorno en pocos golpes."
+              }
             },
             {
               "id": "B8-L4-E5",
@@ -5077,12 +5012,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "El retorno es una propiedad del largo plazo."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: un RTP alto no garantiza ganar a corto plazo, porque en pocas jugadas el azar domina el resultado. El retorno describe el comportamiento esperado en millones de tiradas."
               },
               "xp": 10,
               "choices": [
@@ -5094,7 +5027,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has aplicado una propiedad de largo plazo a una sesión corta. Un juego con 99 % de retorno puede hacer perder en una noche, y uno con 90 % puede hacer ganar. La diferencia aparece solo cuando se acumulan muchas jugadas."
+              }
             }
           ]
         },
@@ -5236,12 +5172,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "El margen del casino se construye en las reglas."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: todo juego de casino tiene esperanza negativa para el jugador, porque el margen se incorpora en las reglas y en los pagos. Esa es la fuente de ingresos de la casa."
               },
               "xp": 10,
               "choices": [
@@ -5253,7 +5187,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene pensar en el blackjack con estrategia óptima: incluso allí la ventaja está del lado de la casa, salvo condiciones excepcionales. La excepción no cambia la regla, y reconocerla evita ilusiones sobre ganar a largo plazo. El margen se reparte en cada apuesta y se acumula con el volumen de juego."
+              }
             },
             {
               "id": "B8-L5-E2",
@@ -5264,12 +5201,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Ninguna secuencia de apuestas altera la esperanza de cada jugada."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: la martingala no cambia la esperanza de cada apuesta, solo su distribución. El valor esperado sigue siendo negativo y, con capital finito, la ruina es casi segura."
               },
               "xp": 10,
               "choices": [
@@ -5281,7 +5216,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido cambiar la secuencia con cambiar la probabilidad. La esperanza de una suma es la suma de las esperanzas, y todas las jugadas tienen la misma esperanza negativa. Ninguna estrategia puede transformar eso. Cambiar el tamaño de las apuestas no altera la esperanza de cada una."
+              }
             },
             {
               "id": "B8-L5-E3",
@@ -5310,14 +5248,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Presupuesto y tiempo.",
-                "en": "Budget and time."
+                "es": "Se trata de limitar el daño antes de empezar."
               },
               "solution": {
-                "es": "Establecer presupuesto y límite de tiempo.",
-                "en": "Setting budget and time limit."
+                "es": "El juego responsable incluye fijar un presupuesto y un límite de tiempo antes de jugar, y respetarlos. También implica no perseguir pérdidas y conocer la esperanza negativa del juego."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «perseguir pérdidas», has descrito justo la conducta de riesgo. Perseguir pérdidas aumenta el tiempo de exposición y el dinero en juego, y con esperanza negativa eso agrava el resultado esperado. Los límites funcionan porque se fijan antes, no durante."
+              }
             },
             {
               "id": "B8-L5-E4",
@@ -5346,14 +5285,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "No valen dinero.",
-                "en": "No money value."
+                "es": "Piensa en qué se puede hacer con ellas fuera de la web."
               },
               "solution": {
-                "es": "No valen dinero.",
-                "en": "Have no money value."
+                "es": "En esta web, las fichas no tienen valor monetario: son un recurso del juego educativo y no se pueden canjear por dinero. Esa es la diferencia con una plataforma de apuestas real."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «valen dinero real», has confundido el simulador con un casino. La distinción es clave para entender el propósito del curso: practicar la matemática del azar sin riesgo. Un sistema con dinero real incluye además obligaciones legales y de juego responsable."
+              }
             },
             {
               "id": "B8-L5-E5",
@@ -5364,12 +5304,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "La deriva negativa se impone con muchas repeticiones."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: a largo plazo, en un juego con esperanza negativa, la pérdida es lo esperado. El azar puede dar rachas favorables, pero su efecto se diluye al acumular jugadas."
               },
               "xp": 10,
               "choices": [
@@ -5381,7 +5319,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», has generalizado una racha a una tendencia. La ley de los grandes números hace que la frecuencia se acerque a la probabilidad, y con margen negativo eso significa perder de forma sostenida. La conclusión no depende de la suerte, sino de la estructura del juego."
+              }
             }
           ]
         }
