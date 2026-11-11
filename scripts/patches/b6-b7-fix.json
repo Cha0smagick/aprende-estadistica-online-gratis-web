@@ -1,0 +1,14 @@
+{
+  "items": {
+    "B6-L1-E1": "Esa media simple es la que después se multiplica al sumar ensayos.",
+    "B6-L1-E2": "Por eso la varianza de una proporción se calcula con el mismo producto.",
+    "B6-L2-E2": "Su raíz cuadrada, la desviación, se mide en número de éxitos.",
+    "B6-L3-E1": "Cambiar la unidad de exposición cambia lambda, pero no el modelo.",
+    "B6-L3-E2": "Si en los datos la varianza supera mucho la media, el modelo de Poisson no encaja.",
+    "B7-L1-E3": "Es la misma condición que exige que las probabilidades discretas sumen uno.",
+    "B7-L2-E1": "El resultado estandarizado se busca en la tabla y se traduce después al contexto.",
+    "B7-L2-E2": "Cualquier valor puede compararse tras restar su media y dividir por su desviación.",
+    "B7-L3-E1": "Si lambda se expresa en eventos por hora, la media se expresa en horas por evento.",
+    "B7-L3-E2": "El complemento, uno menos ese valor, es la probabilidad de no superar la unidad."
+  }
+}

@@ -2703,12 +2703,10 @@ export default {
               "answer": 0,
               "tol": 0.001,
               "hint": {
-                "es": "p.",
-                "en": "p."
+                "es": "En una Bernoulli, la media es la probabilidad de éxito."
               },
               "solution": {
-                "es": "0.3.",
-                "en": "0.3."
+                "es": "La esperanza es 0,3, igual a la probabilidad de éxito. Una Bernoulli solo toma los valores 0 y 1, y su media es exactamente p."
               },
               "xp": 10,
               "choices": [
@@ -2728,7 +2726,10 @@ export default {
                   "es": "0.6",
                   "en": "0.6"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,5, has supuesto una moneda justa. La esperanza de una Bernoulli es p, sea cual sea su valor. Esa simplicidad explica por qué la Bernoulli es el ladrillo con el que se construyen modelos más complejos. Esa media simple es la que después se multiplica al sumar ensayos."
+              }
             },
             {
               "id": "B6-L1-E2",
@@ -2740,12 +2741,10 @@ export default {
               "answer": 3,
               "tol": 0.001,
               "hint": {
-                "es": "0.3x0.7.",
-                "en": "0.3x0.7."
+                "es": "Multiplica la probabilidad de éxito por la de fracaso."
               },
               "solution": {
-                "es": "0.21.",
-                "en": "0.21."
+                "es": "La varianza es 0,3 por 0,7, es decir, 0,21. Es máxima cuando p vale 0,5 y se anula en los extremos."
               },
               "xp": 10,
               "choices": [
@@ -2765,7 +2764,10 @@ export default {
                   "es": "0.21",
                   "en": "0.21"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,3, has repetido la media. La varianza de una Bernoulli es p por uno menos p, y esa fórmula muestra por qué los sucesos casi seguros o casi imposibles tienen poca variabilidad: no hay incertidumbre que medir. Por eso la varianza de una proporción se calcula con el mismo producto."
+              }
             },
             {
               "id": "B6-L1-E3",
@@ -2776,12 +2778,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Suma n ensayos con la misma probabilidad de éxito."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: una binomial es la suma de n Bernoullis independientes con la misma probabilidad de éxito. Esa descomposición explica su media y su varianza."
               },
               "xp": 10,
               "choices": [
@@ -2793,7 +2793,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver el mecanismo: cada ensayo aporta un cero o un uno, y la suma cuenta los éxitos. Como las esperanzas y varianzas se suman con independencia, la media resulta n por p y la varianza n por p por uno menos p."
+              }
             }
           ]
         },
@@ -2885,12 +2888,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "10x0.5.",
-                "en": "10x0.5."
+                "es": "Multiplica el número de ensayos por la probabilidad de éxito."
               },
               "solution": {
-                "es": "5.",
-                "en": "5."
+                "es": "La esperanza es 10 por 0,5, es decir, 5. En diez lanzamientos de moneda justa se esperan cinco caras."
               },
               "xp": 10,
               "choices": [
@@ -2910,7 +2911,10 @@ export default {
                   "es": "6",
                   "en": "6"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,5, has dado la probabilidad de un ensayo. La media de la binomial escala con el número de ensayos: si se duplican los lanzamientos, se duplica el número esperado de éxitos. Esa proporcionalidad es la que hace útil el modelo."
+              }
             },
             {
               "id": "B6-L2-E2",
@@ -2922,12 +2926,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "10x0.5x0.5.",
-                "en": "10x0.5x0.5."
+                "es": "Multiplica n por p y por uno menos p."
               },
               "solution": {
-                "es": "2.5.",
-                "en": "2.5."
+                "es": "La varianza es 10 por 0,5 por 0,5, es decir, 2,5. Su raíz, la desviación, es aproximadamente 1,58."
               },
               "xp": 10,
               "choices": [
@@ -2947,35 +2949,33 @@ export default {
                   "es": "5",
                   "en": "5"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 5, has dado la media. La varianza de la binomial alcanza su máximo con p igual a 0,5 y disminuye hacia los extremos. Esa dependencia explica por qué una proporción cercana a cero tiene menos variabilidad. Su raíz cuadrada, la desviación, se mide en número de éxitos."
+              }
             },
             {
               "id": "B6-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La binomial requiere:",
                 "en": "Binomial requires:"
               },
-              "choices": [
-                {
-                  "es": "Ensayos independientes con p constante",
-                  "en": "Independent trials with constant p"
-                },
-                {
-                  "es": "Ensayos dependientes",
-                  "en": "Dependent trials"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "Independientes, p constante.",
-                "en": "Independent, constant p."
+                "es": "Cada ensayo debe repetirse en las mismas condiciones."
               },
               "solution": {
-                "es": "Ensayos independientes con p constante.",
-                "en": "Independent trials with constant p."
+                "es": "La binomial requiere ensayos independientes con probabilidad constante de éxito. Si la probabilidad cambia entre ensayos o hay dependencia, el modelo no corresponde."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "ensayos independientes con p constante",
+                "independientes con p constante",
+                "independencia y p constante"
+              ],
+              "explain": {
+                "es": "Si respondiste que solo requiere un número fijo de ensayos, falta la condición esencial. La independencia y la constancia de p son las que permiten multiplicar probabilidades. Cuando se extrae sin reemplazo, la probabilidad cambia y el modelo correcto es la hipergeométrica."
+              }
             }
           ]
         },
@@ -3067,12 +3067,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "lambda.",
-                "en": "lambda."
+                "es": "En Poisson, la media es el parámetro de tasa."
               },
               "solution": {
-                "es": "3.",
-                "en": "3."
+                "es": "La esperanza es 3, igual a lambda. El parámetro representa la tasa media de eventos por unidad de exposición."
               },
               "xp": 10,
               "choices": [
@@ -3092,7 +3090,10 @@ export default {
                   "es": "4",
                   "en": "4"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 1/3, has confundido con la exponencial. En Poisson, lambda es directamente la media de eventos; en la exponencial, lambda es una tasa cuyo inverso es la media de tiempo. Confundir ambos modelos es frecuente porque comparten letra. Cambiar la unidad de exposición cambia lambda, pero no el modelo."
+              }
             },
             {
               "id": "B6-L3-E2",
@@ -3104,12 +3105,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "lambda.",
-                "en": "lambda."
+                "es": "En Poisson, media y varianza coinciden."
               },
               "solution": {
-                "es": "3.",
-                "en": "3."
+                "es": "La varianza es 3, igual a la media. Esa igualdad es una propiedad característica del modelo de Poisson."
               },
               "xp": 10,
               "choices": [
@@ -3129,7 +3128,10 @@ export default {
                   "es": "2",
                   "en": "2"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 9, has elevado la media al cuadrado. En Poisson no se aplica la relación de otras distribuciones: media y varianza son el mismo número. Esa propiedad permite comprobar si un conjunto de recuentos se ajusta al modelo. Si en los datos la varianza supera mucho la media, el modelo de Poisson no encaja."
+              }
             },
             {
               "id": "B6-L3-E3",
@@ -3141,12 +3143,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "e^{-2}.",
-                "en": "e^{-2}."
+                "es": "Aplica la fórmula de Poisson para cero eventos."
               },
               "solution": {
-                "es": "0.1353.",
-                "en": "0.1353."
+                "es": "La probabilidad de cero eventos con lambda igual a 2 es e elevado a menos 2, aproximadamente 0,1353. Es decir, un 13,5 %."
               },
               "xp": 10,
               "choices": [
@@ -3166,7 +3166,10 @@ export default {
                   "es": "0.2706",
                   "en": "0.2706"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0, has supuesto que cero eventos es imposible. En Poisson, la probabilidad de cero es positiva y decrece a medida que aumenta lambda. Ese valor es la base para calcular la probabilidad de al menos un evento, que es su complemento."
+              }
             }
           ]
         },
@@ -3243,59 +3246,49 @@ export default {
           "exercises": [
             {
               "id": "B6-L4-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La hipergeometrica modela extracciones:",
                 "en": "Hypergeometric models draws:"
               },
-              "choices": [
-                {
-                  "es": "Con reemplazo",
-                  "en": "With replacement"
-                },
-                {
-                  "es": "Sin reemplazo",
-                  "en": "Without replacement"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Sin reemplazo.",
-                "en": "Without replacement."
+                "es": "Al sacar una bola, la composición de la urna cambia."
               },
               "solution": {
-                "es": "Sin reemplazo.",
-                "en": "Without replacement."
+                "es": "La hipergeométrica modela extracciones sin reemplazo, donde la probabilidad de éxito cambia tras cada extracción. Es el modelo adecuado cuando la población es finita y no se devuelve lo extraído."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "sin reemplazo",
+                "extracciones sin reemplazo",
+                "sin reposicion"
+              ],
+              "explain": {
+                "es": "Si respondiste «con reemplazo», has descrito la binomial. La diferencia está en la dependencia: sin reemplazo, cada extracción modifica la composición y las probabilidades dejan de ser constantes. Con poblaciones grandes la diferencia es pequeña, pero con urnas pequeñas es decisiva."
+              }
             },
             {
               "id": "B6-L4-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La diferencia entre binomial e hipergeometrica es:",
                 "en": "Difference between binomial and hypergeometric is:"
               },
-              "choices": [
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "El reemplazo",
-                  "en": "Replacement"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Reemplazo.",
-                "en": "Replacement."
+                "es": "Es lo que mantiene o cambia la probabilidad de éxito."
               },
               "solution": {
-                "es": "Con/sin reemplazo.",
-                "en": "With/without replacement."
+                "es": "La diferencia entre binomial e hipergeométrica es el reemplazo: con reemplazo las extracciones son independientes y la probabilidad se mantiene; sin reemplazo, la población cambia y las extracciones son dependientes."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "el reemplazo",
+                "reemplazo",
+                "con o sin reemplazo"
+              ],
+              "explain": {
+                "es": "Si respondiste «la media», has buscado una diferencia de resultado en lugar de una de diseño. La media cambia como consecuencia, pero la causa está en el procedimiento de extracción. Identificar la causa permite elegir el modelo antes de calcular."
+              }
             },
             {
               "id": "B6-L4-E3",
@@ -3306,12 +3299,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Al no devolver la bola, la composición cambia."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: en la hipergeométrica las extracciones son dependientes, porque cada extracción modifica la composición de la población y, con ella, la probabilidad de la siguiente."
               },
               "xp": 10,
               "choices": [
@@ -3323,7 +3314,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene imaginar una urna con tres bolas rojas y dos azules: la probabilidad de roja en la segunda extracción depende de lo que salió en la primera. Esa dependencia es la que distingue el modelo hipergeométrico del binomial."
+              }
             }
           ]
         }
@@ -3422,12 +3416,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "La probabilidad de un punto aislado es una integral de área cero."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: en una variable continua, la probabilidad de un valor exacto es cero. Solo tienen probabilidad positiva los intervalos, porque el área de un punto es nula."
               },
               "xp": 10,
               "choices": [
@@ -3439,35 +3431,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver la consecuencia práctica: preguntar por la probabilidad de medir exactamente 70,000 kilos no tiene sentido operativo. Se calculan probabilidades de rangos. Esa diferencia con las variables discretas es la razón de usar densidades y no funciones de probabilidad."
+              }
             },
             {
               "id": "B7-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La densidad f(x) es:",
                 "en": "Density f(x) is:"
               },
-              "choices": [
-                {
-                  "es": "Una probabilidad",
-                  "en": "A probability"
-                },
-                {
-                  "es": "Una altura cuya integral da probabilidad",
-                  "en": "A height whose integral gives probability"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Altura.",
-                "en": "Height."
+                "es": "Hay que integrarla para obtener probabilidad."
               },
               "solution": {
-                "es": "Una altura cuya integral da probabilidad.",
-                "en": "A height whose integral gives probability."
+                "es": "La densidad no es una probabilidad: es una altura cuya integral sobre un intervalo da la probabilidad de ese intervalo. Por eso puede superar uno sin contradicción."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "una altura cuya integral da probabilidad",
+                "densidad",
+                "una densidad"
+              ],
+              "explain": {
+                "es": "Si respondiste «una probabilidad», has confundido la función con su integral. Una densidad puede valer 2 en una zona estrecha y seguir siendo válida, porque lo que debe estar entre cero y uno es el área acumulada. Esa distinción es la fuente habitual de errores al leer gráficos de densidad."
+              }
             },
             {
               "id": "B7-L1-E3",
@@ -3478,12 +3468,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Toda la probabilidad se reparte sobre la recta real."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la integral de la densidad sobre toda la recta real es 1, porque cubre todos los resultados posibles sin solaparse."
               },
               "xp": 10,
               "choices": [
@@ -3495,7 +3483,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar la analogía con la función de probabilidad discreta: allí las probabilidades suman uno; aquí la densidad integra uno. Es la misma condición de exhaustividad expresada con integrales en lugar de sumas. Es la misma condición que exige que las probabilidades discretas sumen uno."
+              }
             }
           ]
         },
@@ -3580,12 +3571,10 @@ export default {
               "answer": 3,
               "tol": 0.001,
               "hint": {
-                "es": "(120-100)/10.",
-                "en": "(120-100)/10."
+                "es": "Resta la media y divide entre la desviación."
               },
               "solution": {
-                "es": "2.",
-                "en": "2."
+                "es": "120 menos 100 es 20, y dividido entre 10 da 2. El valor está dos desviaciones por encima de la media."
               },
               "xp": 10,
               "choices": [
@@ -3605,35 +3594,33 @@ export default {
                   "es": "2",
                   "en": "2"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 20, has dado la diferencia sin estandarizar. La estandarización convierte cualquier normal en la normal estándar y permite usar una sola tabla. Sin ese paso, habría que tener una tabla por cada combinación de media y desviación. El resultado estandarizado se busca en la tabla y se traduce después al contexto."
+              }
             },
             {
               "id": "B7-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La normal estandar tiene:",
                 "en": "Standard normal has:"
               },
-              "choices": [
-                {
-                  "es": "mu=0, sigma=1",
-                  "en": "mu=0, sigma=1"
-                },
-                {
-                  "es": "mu=1, sigma=0",
-                  "en": "mu=1, sigma=0"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "mu=0, sigma=1.",
-                "en": "mu=0, sigma=1."
+                "es": "Es la normal centrada en cero y con dispersión unitaria."
               },
               "solution": {
-                "es": "mu=0, sigma=1.",
-                "en": "mu=0, sigma=1."
+                "es": "La normal estándar tiene media 0 y desviación 1. Cualquier normal se transforma en ella mediante la estandarización."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "mu=0, sigma=1",
+                "media 0 y desviacion 1",
+                "mu 0 sigma 1"
+              ],
+              "explain": {
+                "es": "Si respondiste media 1 y desviación 0, has invertido los parámetros. La desviación no puede ser cero, porque la distribución colapsaría en un punto. La normal estándar es la referencia única que permite comparar valores de poblaciones distintas. Cualquier valor puede compararse tras restar su media y dividir por su desviación."
+              }
             },
             {
               "id": "B7-L2-E3",
@@ -3644,12 +3631,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "La tabla acumula de izquierda a derecha."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la tabla Z proporciona la probabilidad acumulada hasta z, es decir, el área a la izquierda. Para colas derechas se usa el complemento."
               },
               "xp": 10,
               "choices": [
@@ -3661,7 +3646,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que la tabla acumulada es la forma estándar de publicar la normal. Para calcular una probabilidad mayor que z hay que restar de uno, y para un intervalo se restan dos acumuladas. Esa mecánica explica la mayoría de los errores de cálculo con tablas."
+              }
             }
           ]
         },
@@ -3753,12 +3741,10 @@ export default {
               "answer": 0,
               "tol": 0.001,
               "hint": {
-                "es": "1/2.",
-                "en": "1/2."
+                "es": "La media es el inverso de la tasa."
               },
               "solution": {
-                "es": "0.5.",
-                "en": "0.5."
+                "es": "La esperanza es 1 dividido entre 2, es decir, 0,5. Si lambda representa eventos por unidad de tiempo, el tiempo medio entre eventos es su inverso."
               },
               "xp": 10,
               "choices": [
@@ -3778,7 +3764,10 @@ export default {
                   "es": "1.5",
                   "en": "1.5"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 2, has dado la tasa en lugar de la media. En la exponencial, lambda mide frecuencia y la media mide tiempo: son magnitudes inversas. Confundirlas cambia por completo la interpretación del resultado. Si lambda se expresa en eventos por hora, la media se expresa en horas por evento."
+              }
             },
             {
               "id": "B7-L3-E2",
@@ -3790,12 +3779,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "e^{-2}.",
-                "en": "e^{-2}."
+                "es": "La supervivencia decae exponencialmente con el tiempo."
               },
               "solution": {
-                "es": "0.1353.",
-                "en": "0.1353."
+                "es": "La probabilidad de superar una unidad de tiempo es e elevado a menos 2, aproximadamente 0,1353. Es decir, un 13,5 %."
               },
               "xp": 10,
               "choices": [
@@ -3815,7 +3802,10 @@ export default {
                   "es": "1.1353",
                   "en": "1.1353"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,5, has usado la media como probabilidad. La media indica el tiempo esperado, no la probabilidad de superar un umbral concreto. La función de supervivencia decae de forma exponencial y su valor depende del tiempo transcurrido. El complemento, uno menos ese valor, es la probabilidad de no superar la unidad."
+              }
             },
             {
               "id": "B7-L3-E3",
@@ -3826,12 +3816,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "El tiempo ya esperado no cambia la espera restante."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la exponencial tiene la propiedad sin memoria, de modo que la probabilidad de esperar más no depende del tiempo ya transcurrido. Esa propiedad la hace adecuada para procesos sin desgaste."
               },
               "xp": 10,
               "choices": [
@@ -3843,7 +3831,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene compararlo con la vida de una persona o de una pieza: allí el desgaste hace que la espera restante dependa de la edad. La exponencial supone ausencia de desgaste, y por eso modela tiempos entre eventos independientes, no duraciones con envejecimiento."
+              }
             }
           ]
         }

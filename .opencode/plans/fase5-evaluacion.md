@@ -79,8 +79,9 @@ Pendiente (etapas 2–3): 451 ejercicios por convertir, 451 sin `explain`, 451 c
 - **Curso de Descriptiva completo en fase 5**: 210/210 con feedback, 123 en producción, 0 pistas filtradas.
 - Probabilidad B0–B3 cerrados: 26/26 con explicación y solución; 8 en producción.
 - Probabilidad B4–B5 cerrados: 18/18 con explicación y solución; 5 en producción. Verificados Bayes (0,6), sensibilidad/especificidad, VPP y prevalencia, función de probabilidad, esperanza y varianza.
-- Acumulado: 284/481 con feedback completo (59,0 %), 156/481 en producción (32,4 %).
-- Quedan B6–B9 (16 lecciones) e Inferencial (139 ejercicios).
+- Probabilidad B6–B7 cerrados: 21/21 con explicación y solución; 5 en producción. Verificados Bernoulli, binomial (E=5, Var=2,5), Poisson (E=Var=3, e^-2), hipergeométrica, densidad, normal estándar y exponencial.
+- Acumulado: 305/481 con feedback completo (63,4 %), 161/481 en producción (33,5 %).
+- Quedan B8–B9 (9 lecciones) e Inferencial (139 ejercicios).
 
 ### Herramientas para bundles
 
