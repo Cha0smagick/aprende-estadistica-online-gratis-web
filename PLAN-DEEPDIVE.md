@@ -195,7 +195,8 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 - [x] **C1** Proyecto final con entrega, rúbrica y evaluación.
 - [x] **C2** Diploma solo con examen + proyecto aprobados.
 - [x] **C3** Re-auditoría con la misma rúbrica de 25 dimensiones.
-- [ ] **C4** Objetivo: ≥95/100 global; ninguna dimensión <85 salvo las estructurales justificadas. — **No alcanzado: 84,4/100** (ver `AUDITORIA-FINAL.md`).
+- [x] **C3b** Módulo de datos (`/es/datos/`): 4 CSV reproducibles, diccionario, 7 ejercicios con respuesta calculada y guía de R/Python/Excel.
+- [ ] **C4** Objetivo: ≥95/100 global; ninguna dimensión <85 salvo las estructurales justificadas. — **No alcanzado: 86,5/100** (ver `AUDITORIA-FINAL.md`).
 
 ---
 

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datos para practicar — Jackpot Estadístico</title>
+<meta name="description" content="Cuatro conjuntos de datos descargables con diccionario y ejercicios guiados, más ejemplos en R, Python y Excel.">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/lesson.css">
+<script>window.SITE_BASE="../../";window.SITE_LANG="es";</script>
+</head>
+<body>
+<header class="site-nav">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <a class="brand" href="../../es/"><span class="brand-chip">♠</span> Jackpot Estadístico</a>
+  <nav class="nav-links"><a class="btn btn-ghost btn-sm" href="../../es/lab/">🔬 Lab</a><a class="btn btn-ghost btn-sm" href="../../es/proyecto/">🎓 Proyecto</a><div id="progress-chip" class="progress-chip"></div></nav>
+</header>
+<main id="main" class="container" style="padding-top:24px">
+  <h1>Datos para practicar</h1>
+  <p class="lead">Cuatro conjuntos listos para analizar. Son <strong>datos simulados</strong>, generados con una semilla fija para que los resultados sean reproducibles: sirven para practicar el método, no para sacar conclusiones sobre el mundo.</p>
+  <p class="muted">Todos los archivos están en CSV con cabecera, separador coma y punto decimal. Se regeneran con <code>node scripts/make-datasets.mjs</code>.</p>
+
+  <section class="block">
+    <h2>1. Ventas por tienda y semana</h2>
+    <p><a href="ventas-tiendas.csv" download>ventas-tiendas.csv</a> · 120 filas</p>
+    <p>Serie temporal con tendencia y estacionalidad, útil para medias móviles, comparaciones entre tiendas y gráficos de líneas.</p>
+    <table>
+      <thead><tr><th>Columna</th><th>Tipo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>tienda</td><td>Categórica nominal</td><td>Centro, Norte, Sur</td></tr>
+        <tr><td>semana</td><td>Discreta</td><td>1 a 40</td></tr>
+        <tr><td>ventas</td><td>Cuantitativa</td><td>Unidades vendidas en la semana</td></tr>
+        <tr><td>clientes</td><td>Cuantitativa</td><td>Personas atendidas</td></tr>
+        <tr><td>ticket_medio</td><td>Cuantitativa</td><td>ventas / clientes</td></tr>
+      </tbody>
+    </table>
+    <details><summary>Ejercicio 1: media móvil de 4 semanas en la tienda Centro</summary>
+      <p>Calcula la media móvil de las semanas 1 a 4. ¿Qué le ocurre al valor si la ventana pasa de 4 a 8 semanas? <strong>Respuesta esperada:</strong> las cuatro primeras semanas de Centro promedian 1001,2 unidades; con ventana de 8, 984,9. La ventana larga suaviza la serie y retrasa la señal: se pierden los picos cortos y se tarda más en detectar un cambio de nivel. Al final del periodo la media de las cuatro últimas semanas es 1170,5.</p>
+    </details>
+    <details><summary>Ejercicio 2: comparación entre tiendas</summary>
+      <p>Compara la media de ventas de las tres tiendas. ¿La diferencia justifica cambiar el surtido? <strong>Respuesta esperada:</strong> Centro 1075,2 · Norte 1197,8 · Sur 1303,4, con desviaciones en torno a 119 y 40 semanas por tienda. El error típico de la diferencia entre dos tiendas ronda 27, así que el intervalo de Centro–Sur (≈228) es ancho pero no incluye el cero: la dirección es clara. Que sea concluyente no significa que la decisión esté tomada; eso depende del coste de cambiar el surtido frente a la ganancia esperada.</p>
+    </details>
+  </section>
+
+  <section class="block">
+    <h2>2. Clientes</h2>
+    <p><a href="clientes.csv" download>clientes.csv</a> · 300 filas</p>
+    <p>Dos variables cuantitativas, una categórica y un resultado binario. Sirve para dispersión, correlación, tablas de contingencia y regresión logística introductoria.</p>
+    <table>
+      <thead><tr><th>Columna</th><th>Tipo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>id</td><td>Identificador</td><td>No usar como variable</td></tr>
+        <tr><td>edad</td><td>Cuantitativa discreta</td><td>18 a 68</td></tr>
+        <tr><td>canal</td><td>Categórica nominal</td><td>organico, ads, email, referido</td></tr>
+        <tr><td>gasto_anual</td><td>Cuantitativa</td><td>Unidades monetarias</td></tr>
+        <tr><td>satisfaccion</td><td>Ordinal (1–10)</td><td>Escala de satisfacción</td></tr>
+        <tr><td>abandono</td><td>Binaria</td><td>1 = se fue, 0 = sigue</td></tr>
+      </tbody>
+    </table>
+    <details><summary>Ejercicio 3: ¿el canal se asocia con el abandono?</summary>
+      <p>Construye una tabla de contingencia canal × abandono y compara proporciones. <strong>Respuesta esperada:</strong> abandona el 29,7 % de los clientes de ads, el 31,6 % de email, el 30,3 % de orgánico y el 25,4 % de referidos. La chi-cuadrado da p ≈ 0,85: <em>no hay evidencia de asociación</em>. Y es el resultado interesante, porque la satisfacción sí cambia por canal. Con 75 casos por canal solo se detectarían diferencias grandes; la ausencia de evidencia no prueba que no exista.</p>
+    </details>
+    <details><summary>Ejercicio 4: gasto frente a satisfacción</summary>
+      <p>Haz un diagrama de dispersión y calcula la correlación. <strong>Respuesta esperada:</strong> r = 0,09 entre gasto anual y satisfacción. La relación es prácticamente inexistente y la nube es ancha; un r bajo no significa que no haya relación, sino que con estos datos el gasto no se explica por la satisfacción. Acompáñalo siempre del gráfico: hay relaciones no lineales con r cercano a cero.</p>
+    </details>
+  </section>
+
+  <section class="block">
+    <h2>3. Piezas</h2>
+    <p><a href="piezas.csv" download>piezas.csv</a> · 225 filas</p>
+    <p>Control de calidad con tres líneas y tres turnos. Diseñado para comparar medias, comprobar homocedasticidad y detectar un turno desplazado.</p>
+    <table>
+      <thead><tr><th>Columna</th><th>Tipo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>pieza</td><td>Identificador</td><td>1 a 225</td></tr>
+        <tr><td>linea</td><td>Categórica</td><td>A, B, C</td></tr>
+        <tr><td>turno</td><td>Categórica</td><td>mañana, tarde, noche</td></tr>
+        <tr><td>diametro_mm</td><td>Cuantitativa continua</td><td>Objetivo 10,00 mm</td></tr>
+        <tr><td>defectuosa</td><td>Binaria</td><td>1 si se aleja más de 0,18 mm</td></tr>
+      </tbody>
+    </table>
+    <details><summary>Ejercicio 5: ANOVA de una vía</summary>
+      <p>Contrasta si el diámetro medio difiere entre líneas. <strong>Respuesta esperada:</strong> A 10,004 mm · B 10,016 · C 10,135, con desviaciones 0,065 / 0,059 / 0,087. El ANOVA da p &lt; 0,001. Antes de fiarte, comprueba supuestos: la línea C tiene más dispersión, así que conviene Welch y, si rechazas, Tukey para ver que el par que difiere es C con las otras dos.</p>
+    </details>
+    <details><summary>Ejercicio 6: proporción de defectuosas</summary>
+      <p>Estima la proporción de piezas defectuosas con su intervalo y compara turnos. <strong>Respuesta esperada:</strong> en total son defectuosas el 10,2 %. Por turno: mañana 9,3 %, tarde 6,7 %, noche 14,7 %. Con 75 piezas por turno cada intervalo ronda ±7 puntos en el peor caso, así que los tres se solapan: la diferencia no es concluyente. Para decidir haría falta más piezas o un contraste con la potencia calculada de antemano.</p>
+    </details>
+  </section>
+
+  <section class="block">
+    <h2>4. Encuesta</h2>
+    <p><a href="encuesta.csv" download>encuesta.csv</a> · 400 filas</p>
+    <p>Nivel de estudios, satisfacción y recomendación. Útil para tablas de contingencia, ordinales y comparación de proporciones.</p>
+    <table>
+      <thead><tr><th>Columna</th><th>Tipo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>id</td><td>Identificador</td><td>1 a 400</td></tr>
+        <tr><td>edad</td><td>Cuantitativa discreta</td><td>18 a 78</td></tr>
+        <tr><td>estudios</td><td>Ordinal</td><td>basica, media, superior</td></tr>
+        <tr><td>satisfaccion</td><td>Ordinal (1–10)</td><td>Escala</td></tr>
+        <tr><td>recomienda</td><td>Binaria</td><td>si / no</td></tr>
+      </tbody>
+    </table>
+    <details><summary>Ejercicio 7: tabla de contingencia</summary>
+      <p>Cruza estudios con recomienda. <strong>Respuesta esperada:</strong> recomienda el 50,0 % de estudios básicos, el 55,5 % de medios y el 71,5 % de superiores (chi-cuadrado p ≈ 0,001). Calcula porcentajes por fila, no por columna, porque la pregunta es «¿qué proporción de cada nivel recomienda?»; con porcentajes por columna responderías a otra cosa.</p>
+    </details>
+  </section>
+
+  <section class="block" id="herramientas">
+    <h2>5. Guías por herramienta</h2>
+    <p>El mismo flujo en las tres: cargar, describir, graficar, contrastar. Con cualquiera de ellas puedes resolver los siete ejercicios de arriba.</p>
+
+    <h3>R</h3>
+    <pre><code>d &lt;- read.csv("clientes.csv")          # cargar
+summary(d)                              # describir
+tapply(d$gasto_anual, d$canal, mean)    # media por grupo
+hist(d$gasto_anual, breaks = 15)        # histograma
+plot(d$edad, d$gasto_anual)             # dispersión
+cor(d$edad, d$gasto_anual)              # correlación
+t.test(gasto_anual ~ abandono, data = d) # contraste de medias</code></pre>
+    <p class="muted">Error típico: usar <code>read.csv2</code> con un archivo de coma y punto decimal; la función espera punto y coma y coma decimal. Si el <code>summary</code> muestra todo como texto, la columna se leyó mal.</p>
+
+    <h3>Python</h3>
+    <pre><code>import pandas as pd, matplotlib.pyplot as plt
+from scipy import stats
+
+d = pd.read_csv("clientes.csv")                       # cargar
+d.describe()                                          # describir
+d.groupby("canal")["gasto_anual"].agg(["mean","std","count"])
+d["gasto_anual"].plot.hist(bins=15)                   # histograma
+plt.scatter(d["edad"], d["gasto_anual"])              # dispersión
+stats.ttest_ind(d.loc[d.abandono==1,"gasto_anual"],
+                d.loc[d.abandono==0,"gasto_anual"])   # contraste</code></pre>
+    <p class="muted">Error típico: <code>groupby</code> descarta los grupos vacíos y las medias salen con distinto <code>count</code>; revisa siempre el conteo antes de comparar.</p>
+
+    <h3>Excel</h3>
+    <ol>
+      <li>Datos → Obtener datos → Desde texto/CSV. Comprueba separador coma y punto decimal.</li>
+      <li>Convierte el rango en tabla (Ctrl+T) para que las fórmulas sigan a los datos.</li>
+      <li>Media por grupo: tabla dinámica con <em>canal</em> en filas y <em>gasto_anual</em> en valores (promedio).</li>
+      <li>Histograma: selecciona la columna → Insertar → Gráfico → Histograma.</li>
+      <li>Contraste: <code>=PRUEBA.T(NRANGO1;NRANGO2;2;2)</code> para dos muestras de varianzas distintas.</li>
+    </ol>
+    <p class="muted">Error típico: la tabla dinámica cuenta en vez de promediar si la columna tiene celdas vacías o texto; revisa el tipo de resumen en «Valores».</p>
+
+    <p>Si trabajas en R o Python, guarda el script junto al CSV: el análisis tiene que poder repetirse con los mismos datos y dar el mismo resultado.</p>
+  </section>
+</main>
+<footer class="site-foot"><p>Jackpot Estadístico</p><p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz (<a href="https://www.linkedin.com/in/alejandroquinteroruiz/" target="_blank" rel="noopener">LinkedIn</a>).</p></footer>
+<script src="../../assets/js/i18n.js"></script>
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/gamification.js"></script>
+</body>
+</html>

@@ -111,7 +111,7 @@ async function main(){
   const urls=["/"];
   for(const lang of langs){
     urls.push(`/${lang}/`);
-    for(const p of ["lab","glosario","repaso"]) urls.push(`/${lang}/${p}/`);
+    for(const p of ["lab","glosario","repaso","proyecto","datos"]) urls.push(`/${lang}/${p}/`);
     for(const course of courses){
       urls.push(`/${lang}/${course.slug}/`);
       for(const m of course.modules) for(const l of m.lessons) urls.push(`/${lang}/${course.slug}/${m.slug}/${l.slug}/`);
