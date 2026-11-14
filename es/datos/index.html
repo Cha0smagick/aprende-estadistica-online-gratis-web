@@ -17,7 +17,7 @@
 </header>
 <main id="main" class="container" style="padding-top:24px">
   <h1>Datos para practicar</h1>
-  <p class="lead">Cuatro conjuntos listos para analizar. Son <strong>datos simulados</strong>, generados con una semilla fija para que los resultados sean reproducibles: sirven para practicar el método, no para sacar conclusiones sobre el mundo.</p>
+  <p class="lead">Cuatro conjuntos simulados para practicar el método y uno real, con su fuente y su licencia, para el proyecto final. Los simulados se generan con una semilla fija y son reproducibles; el real viene del mundo y trae lo que trae: valores faltantes incluidos.</p>
   <p class="muted">Todos los archivos están en CSV con cabecera, separador coma y punto decimal. Se regeneran con <code>node scripts/make-datasets.mjs</code>.</p>
 
   <section class="block">
@@ -106,8 +106,37 @@
     </details>
   </section>
 
+  <section class="block" id="penguins">
+    <h2>5. Pingüinos: datos reales</h2>
+    <p><a href="palmer-penguins.csv" download>palmer-penguins.csv</a> · 344 filas · 8 columnas</p>
+    <p>Medidas de tres especies de pingüinos en tres islas del archipiélago Palmer, tomadas entre 2007 y 2009. Es el conjunto <em>Palmer Penguins</em>, publicado con licencia CC0: se puede usar, copiar y redistribuir sin pedir permiso. Sirve para todo lo que los simulados no pueden enseñar: valores faltantes, grupos desiguales y una relación que se ve a simple vista.</p>
+    <table>
+      <thead><tr><th>Columna</th><th>Tipo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>species</td><td>Categórica</td><td>Adelie, Chinstrap, Gentoo</td></tr>
+        <tr><td>island</td><td>Categórica</td><td>Biscoe, Dream, Torgersen</td></tr>
+        <tr><td>bill_length_mm</td><td>Cuantitativa</td><td>Longitud del pico en milímetros</td></tr>
+        <tr><td>bill_depth_mm</td><td>Cuantitativa</td><td>Profundidad del pico en milímetros</td></tr>
+        <tr><td>flipper_length_mm</td><td>Cuantitativa</td><td>Longitud de la aleta en milímetros</td></tr>
+        <tr><td>body_mass_g</td><td>Cuantitativa</td><td>Masa corporal en gramos</td></tr>
+        <tr><td>sex</td><td>Categórica</td><td>male, female, con 11 valores faltantes</td></tr>
+        <tr><td>year</td><td>Discreta</td><td>2007, 2008, 2009</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">Fuente: Horst, Hill y Gorman (2020), <em>palmerpenguins</em>, CC0. Descargado el 2026-11-14 desde el repositorio del proyecto. Se conserva tal cual, con los valores faltantes marcados como <code>NA</code>.</p>
+    <details><summary>Ejercicio 8: masa media por especie</summary>
+      <p>Compara la masa corporal de las tres especies. <strong>Respuesta esperada:</strong> Adelie 3.700,7 g (151 casos), Chinstrap 3.733,1 g (68) y Gentoo 5.076,0 g (123). Gentoo pesa unos 1.350 g más que las otras dos, que casi no se diferencian entre sí. Un ANOVA de una vía da F = 343,6 y p prácticamente cero, pero la conclusión útil es la del tamaño del efecto, no la del valor p.</p>
+    </details>
+    <details><summary>Ejercicio 9: regresión de la masa sobre la aleta</summary>
+      <p>Ajusta una recta y calcula el coeficiente de determinación. <strong>Respuesta esperada:</strong> con 342 casos completos, la pendiente es 49,7 g por milímetro de aleta, el intercepto −5.780,8 g, r = 0,871 y R² = 0,759. La masa aumenta con la aleta, y la recta explica el 76 % de la variación. Ojo: el intercepto no tiene sentido físico (un pingüino de aleta cero no existe), así que se interpreta la pendiente y no el intercepto.</p>
+    </details>
+    <details><summary>Ejercicio 10: valores faltantes</summary>
+      <p>¿Cuántos datos faltan y qué haces con ellos? <strong>Respuesta esperada:</strong> faltan 2 masas corporales y 11 sexos. Con un 3 % de faltantes, eliminar las filas incompletas sesga poco y es defendible si lo declaras; imputar la media reduce la varianza y no es gratis. Lo que no se puede hacer es ignorar el problema y presentar los conteos como si fueran todos iguales.</p>
+    </details>
+  </section>
+
   <section class="block" id="herramientas">
-    <h2>5. Guías por herramienta</h2>
+    <h2>6. Guías por herramienta</h2>
     <p>El mismo flujo en las tres: cargar, describir, graficar, contrastar. Con cualquiera de ellas puedes resolver los siete ejercicios de arriba.</p>
 
     <h3>R</h3>
@@ -144,9 +173,14 @@ stats.ttest_ind(d.loc[d.abandono==1,"gasto_anual"],
     <p class="muted">Error típico: la tabla dinámica cuenta en vez de promediar si la columna tiene celdas vacías o texto; revisa el tipo de resumen en «Valores».</p>
 
     <p>Si trabajas en R o Python, guarda el script junto al CSV: el análisis tiene que poder repetirse con los mismos datos y dar el mismo resultado.</p>
+
+    <h3>Ejercicio 11: el mismo resultado en las tres</h3>
+    <p>Calcula la masa media de los pingüinos por especie con la herramienta que uses y comprueba que llegas a 3.700,7 · 3.733,1 · 5.076,0. Si tu resultado no coincide, el problema casi siempre es el mismo: se están incluyendo o excluyendo de forma distinta las filas con <code>NA</code>. Declara qué hiciste y por qué.</p>
+  </section>
+
   <section class="block" id="reales">
-    <h2>6. Datos reales</h2>
-    <p>Los cuatro CSV de arriba son simulados. Para el proyecto final conviene un conjunto real: mismas columnas, mismos métodos, pero con las limitaciones que trae el mundo.</p>
+    <h2>7. Más datos reales</h2>
+    <p>Los cuatro primeros CSV son simulados; el de pingüinos es real. Para el proyecto final conviene un conjunto real: mismas columnas, mismos métodos, pero con las limitaciones que trae el mundo.</p>
     <table>
       <thead><tr><th>Fuente</th><th>Qué hay</th><th>Cómo se descarga</th></tr></thead>
       <tbody>

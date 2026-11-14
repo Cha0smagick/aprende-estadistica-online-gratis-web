@@ -62,6 +62,34 @@
     <p><button class="btn btn-primary" id="download-project" type="button">Descargar entrega (.md)</button></p>
     <p class="muted">La autoevaluación no sustituye a una revisión externa: sirve para que llegues a la revisión con el trabajo hecho.</p>
   </section>
+  <section class="block" id="modelo">
+    <h2>6. Informe modelo</h2>
+    <p>Así se ve una entrega que cumple los cuatro criterios, hecha con el conjunto de pingüinos de <a href="../datos/#penguins">la página de datos</a>. Sirve de referencia, no de plantilla: cópiala en estructura, no en contenido.</p>
+    <details><summary>Ver el informe modelo (≈350 palabras)</summary>
+      <p><strong>1. Pregunta y decisión.</strong> ¿La especie determina la masa corporal de un pingüino? La decisión asociada es si, al estimar el peso de un animal a partir de una foto, conviene usar una sola ecuación o una por especie.</p>
+      <p><strong>2. Datos.</strong> Palmer Penguins (Horst, Hill y Gorman, 2020), CC0, 344 pingüinos de tres especies en tres islas, 2007 a 2009. Unidad de análisis: el pingüino. Limitaciones: muestra de conveniencia, dos masas faltantes y once sexos sin registrar.</p>
+      <p><strong>3. Análisis descriptivo.</strong> Masa media: Adelie 3.700,7 g (151 casos), Chinstrap 3.733,1 g (68) y Gentoo 5.076,0 g (123). El histograma por especie muestra dos poblaciones solapadas (Adelie y Chinstrap) y una separada (Gentoo). La correlación entre masa y longitud de aleta es 0,871.</p>
+      <p><strong>4. Inferencia.</strong> ANOVA de una vía sobre la masa por especie: F = 343,6, p menor que 0,001. Supuestos comprobados: tamaños 151, 68 y 123, residuos aproximadamente simétricos, varianzas parecidas salvo en Gentoo, por lo que se repite con Welch y la conclusión no cambia. La recta de masa sobre aleta da 49,7 g por milímetro, con R² = 0,759; el intercepto no se interpreta porque una aleta de cero milímetros no existe.</p>
+      <p><strong>5. Conclusión y límites.</strong> La especie se asocia a la masa con un efecto grande y el intervalo lo sostiene, pero el diseño es observacional: no se puede afirmar que la especie cause la masa. Para predecir el peso de un pingüino concreto con la aleta, el residuo típico es de 394,3 g sobre una masa media de 4.201,8 g: sirve para describir la tendencia, no para sustituir la báscula. Fuera del rango de aletas observado no se extrapola.</p>
+    </details>
+  </section>
+
+  <section class="block" id="revision">
+    <h2>7. Revisión entre pares</h2>
+    <p>Antes de dar el proyecto por cerrado, pide a alguien que lo lea con esta lista. No hace falta que sepa estadística: las seis preguntas se contestan mirando el informe.</p>
+    <ol>
+      <li>¿La pregunta está escrita en una frase y se entiende qué decisión depende de la respuesta?</li>
+      <li>¿Se dice de dónde salen los datos, de cuándo son y qué limitación tienen?</li>
+      <li>¿Los dos gráficos son adecuados al tipo de variable y tienen título y unidades?</li>
+      <li>¿El intervalo o el contraste dice qué supuestos se comprobaron?</li>
+      <li>¿La conclusión distingue lo que se puede afirmar de lo que no?</li>
+      <li>¿Hay alguna frase que afirme causalidad sin un diseño que la sostenga?</li>
+    </ol>
+    <div class="mastery-row">
+      <label for="reviewer" style="min-width:180px">Revisado por</label>
+      <input id="reviewer" type="text" placeholder="Nombre de quien revisa" style="flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text)">
+    </div>
+  </section>
 </main>
 <footer class="site-foot"><p>Jackpot Estadístico</p><p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz (<a href="https://www.linkedin.com/in/alejandroquinteroruiz/" target="_blank" rel="noopener">LinkedIn</a>).</p></footer>
 <script src="../../assets/js/i18n.js"></script>
@@ -99,6 +127,7 @@
       </select>
     </div>`).join("")+`<button class="btn btn-primary" id="save-project" type="button">Guardar autoevaluación</button>`;
 
+  const reviewer=document.getElementById("reviewer");
   function read(){
     const scores={};
     form.querySelectorAll("select[data-crit]").forEach(s=>scores[s.dataset.crit]=Number(s.value));
@@ -106,7 +135,8 @@
     delivery.querySelectorAll("textarea[data-sec]").forEach(t=>texts[t.dataset.sec]=t.value.trim());
     const total=Object.values(scores).reduce((a,b)=>a+b,0);
     const zero=Object.values(scores).some(v=>v===0);
-    return {scores,texts,total,passed: total>=10 && !zero};
+    const rev=(reviewer&&reviewer.value||"").trim();
+    return {scores,texts,reviewer:rev,total,passed: total>=10 && !zero};
   }
   function paint(){
     const r=read();
@@ -118,17 +148,18 @@
     const date=new Date().toISOString().slice(0,10);
     const rows=CRITERIA.map(c=>`| ${c.label} | ${r.scores[c.id]}/3 |`).join("\n");
     const body=SECTIONS.map(s=>`## ${s.title}\n\n${r.texts[s.id]||"_(sin contenido)_"}`).join("\n\n");
-    return `# Proyecto final — Jackpot Estadístico\n\nFecha: ${date}\n\n${body}\n\n## Autoevaluación\n\n| Criterio | Nota |\n|---|---|\n${rows}\n| **Total** | **${r.total}/12** |\n\nResultado: ${r.passed?"cumple el mínimo (10/12 y ningún criterio en 0)":"no cumple el mínimo"}.\n`;
+    const revLine=r.reviewer?`Revisado por: ${r.reviewer}`:"Sin revisión externa: autoevaluación.";
+    return `# Proyecto final — Jackpot Estadístico\n\nFecha: ${date}\n${revLine}\n\n${body}\n\n## Autoevaluación\n\n| Criterio | Nota |\n|---|---|\n${rows}\n| **Total** | **${r.total}/12** |\n\nResultado: ${r.passed?"cumple el mínimo (10/12 y ningún criterio en 0)":"no cumple el mínimo"}.\n`;
   }
   form.querySelector("#save-project").addEventListener("click",()=>{
     const r=read();
-    window.Progress.saveProject({scores:r.scores,texts:r.texts,total:r.total,passed:r.passed,at:Date.now()});
+    window.Progress.saveProject({scores:r.scores,texts:r.texts,reviewer:r.reviewer,total:r.total,passed:r.passed,at:Date.now()});
     if(r.passed && window.Game) window.Game.unlock("proyecto");
     paint();
   });
   document.getElementById("download-project").addEventListener("click",()=>{
     const r=read();
-    window.Progress.saveProject({scores:r.scores,texts:r.texts,total:r.total,passed:r.passed,at:Date.now()});
+    window.Progress.saveProject({scores:r.scores,texts:r.texts,reviewer:r.reviewer,total:r.total,passed:r.passed,at:Date.now()});
     paint();
     const blob=new Blob([markdown(r)],{type:"text/markdown;charset=utf-8"});
     const a=document.createElement("a");

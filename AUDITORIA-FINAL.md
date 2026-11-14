@@ -9,38 +9,38 @@
 
 | # | Dimensión | Nota | Evidencia / límite |
 |---|---|---:|---|
-| 1 | Exactitud estadística | 90 | 3 errores corregidos (A3 H≤G≤A, A4-L5-E4, A6-L4-E4). Texto nuevo revisado aritméticamente al convertir. Sin revisión externa. |
-| 2 | Cobertura | 92 | 115/115 lecciones con deep dive del tema correcto: se detectaron y corrigieron dos lecciones de A6 que mostraban contenido de otro módulo (Spearman enseñaba curtosis; «Ajuste a ojo» era una copia de causalidad). Módulo de datos con 4 conjuntos, diccionario y 7 ejercicios. |
+| 1 | Exactitud estadística | 92 | Errores corregidos y cifras recalculadas contra los CSV publicados (covarianza 186,62; F = 343,6; pendiente 49,7 g/mm; residuo típico 394,3 g). Sin revisión estadística externa. |
+| 2 | Cobertura | 94 | 115/115 alineadas con su lección (`check-alignment.mjs`) y 5 conjuntos de datos, uno real con licencia CC0. |
 | 3 | Profundidad | 95 | ≥2.500 palabras por lección, validado por script. |
-| 4 | Ejemplos | 90 | 3+ ejemplos por lección; las seis lecciones de A6 usan los CSV del curso con números verificados (covarianza 186,62; r 0,252 y ρ 0,246; recta 58,48 + 0,895·edad; SSE 2,819 y residuo típico 0,84). |
-| 5 | Datos/herramientas | 78 | `/es/datos/`: 4 CSV descargables (120/300/225/400 filas), diccionario de variables, 7 ejercicios con respuesta calculada sobre los datos y guía de R/Python/Excel. Snippet de Python ejecutado contra el CSV; R sin verificar (no hay R instalado). |
+| 4 | Ejemplos | 93 | Seis lecciones de A6 con datos del curso, informe modelo con cifras verificadas sobre pingüinos y tres ejercicios con respuesta calculada. |
+| 5 | Datos/herramientas | 86 | Guía de R, Python y Excel con carga, descriptivos, gráfico y contraste, más ejercicio de contraste entre herramientas. Python ejecutado; R no (no instalado). |
 | 6 | Resultados/prerrequisitos | 92 | Cada lección abre con objetivos y prerrequisitos explícitos. |
 | 7 | Secuencia | 90 | Orden A0→A6, B0→B9, C0→C9, F0→F1 con dependencias declaradas. |
-| 8 | Carga cognitiva | 88 | Deep dive segmentado en 9 secciones. |
+| 8 | Carga cognitiva | 90 | Relleno eliminado: ninguna lección termina con repetición mecánica (`lint-filler --strict`). |
 | 9 | Andamiaje | 90 | Blueprint paso a paso en cada lección. |
 | 10 | Retrieval | 95 | 241/481 ejercicios en producción (numérico/texto/orden). |
 | 11 | Feedback | 95 | 481/481 con explicación ≥40 palabras y solución ≥60. |
 | 12 | Espaciado | 90 | SRS Leitner con IDs resolubles, badge y `/repaso/`. |
-| 13 | Intercalado | 85 | Rotación y variedad de tipo en repaso; no mezcla cursos dentro de una lección. |
+| 13 | Intercalado | 92 | El repaso mezcla cursos: cada lección añade dos ejercicios del curso anterior y evita dos tipos iguales seguidos (verificado en el HTML generado). |
 | 14 | Metacognición | 90 | Panel de dominio por módulo + diario de errores. |
-| 15 | Formativa | 90 | Blueprint + rúbrica del proyecto. |
+| 15 | Formativa | 92 | Informe modelo y lista de revisión entre pares de seis puntos, además de la rúbrica. |
 | 16 | Sumativa | 90 | Examen final por curso, 20 preguntas, umbral 80 % (probado: 100/80/75/0). |
-| 17 | Certificación | 80 | Diploma condicionado a curso + examen + proyecto; sin verificación externa de la entrega. |
-| 18 | UX | 88 | 0 enlaces internos rotos (126 páginas); copy corregido. |
-| 19 | Accesibilidad | 90 | `check-a11y.mjs`: 0 incidencias en 127 páginas (lang, un h1, jerarquía, alt, controles con nombre, tabindex, ids únicos). Teclado y árbol AX por CDP en 4 páginas: landmarks `banner/main/navigation/contentinfo`, skip link primero, 14 focos con `:focus-visible`. Falta lector de pantalla real. |
+| 17 | Certificación | 84 | El diploma exige curso, examen y proyecto; la entrega registra quién la revisó. Sin verificación externa del certificado. |
+| 18 | UX | 93 | Contraste AA en tema claro y oscuro, 0 desbordes a 360 px, objetivos táctiles ≥24 px (excepciones inline documentadas). |
+| 19 | Accesibilidad | 94 | 0 incidencias en 127 páginas; contraste medido en navegador en los dos temas; teclado y árbol AX verificados. |
 | 20 | Lengua ES | 88 | `lint-prose.mjs --strict` sobre 314.561 palabras: 0 artefactos de chatbot, 0 muletillas de énfasis, 0 vocabulario de folleto, 0,30 rayas por 1000. `lint-filler.mjs --strict`: 0 relleno. Sin revisión humana. |
 | 21 | Idioma | 85 | Español claro + traductor en línea que conserva la página. |
 | 22 | Motivación | 85 | 16 logros con referencias culturales, racha que resta en vez de reiniciar. |
-| 23 | Técnica | 92 | 4 validadores + CI bloqueante + chequeo de enlaces y de páginas. |
-| 24 | Datos reales | 68 | Los 4 conjuntos son **simulados** (semilla fija, reproducibles) y la página remite a tres fuentes reales verificadas (INE, Eurostat, Banco Mundial) con el método de descarga. Los ejercicios siguen sin usar datos reales. |
-| 25 | Proyecto final | 80 | Enunciado, rúbrica, autoevaluación y entrega descargable en Markdown (probada: `proyecto-final.md`, 521 bytes, con las 5 secciones y la nota). Sin revisión humana. |
+| 23 | Técnica | 94 | Siete scripts de auditoría (contenido, feedback, prosa, relleno, alineación, accesibilidad, UX) y CI bloqueante con seis de ellos. |
+| 24 | Datos reales | 88 | Palmer Penguins (CC0) incluido con fuente, fecha de descarga, diccionario y tres ejercicios con cifras reales. |
+| 25 | Proyecto final | 85 | Entrega descargable, informe modelo, revisión entre pares y campo de revisor. Sin revisión humana obligatoria. |
 
-**Media:** 2196 / 25 = **87,8 / 100**. (La primera pasada decía 84,4; recalculada desde la tabla daba 84,1. Queda corregido: la media se calcula desde las notas de la tabla, no a ojo.)
+**Media:** 2262 / 25 = **90,5 / 100**. (La primera pasada decía 84,4; recalculada desde la tabla daba 84,1. Queda corregido: la media se calcula desde las notas de la tabla, no a ojo.)
 
 ## Veredicto
 
-- **C3:** hecha, con resultado **no alcanzado**: la media queda en 87,8 y cuatro dimensiones bajan de 85 (datos reales 68, datos/herramientas 78, certificación 80, proyecto 80).
-- **C4 (≥95):** **no se cumple.** Subió por el módulo de datos, pero los tres bloques que faltan no se resuelven con código: datos reales citados, entrega real del proyecto con revisión, y auditoría lingüística y de accesibilidad con criterio externo.
+- **C3:** hecha, con resultado **no alcanzado**: la media queda en 90,5 y cinco dimensiones bajan de 88 (datos/herramientas 86, certificación 84, proyecto 85, idioma 85, motivación 85).
+- **C4 (≥95):** **no se cumple.** Faltan revisión humana del contenido, verificación externa de la certificación y prueba con lector de pantalla real; nada de eso lo puede producir un script.
 
 ## Qué haría falta para llegar a 95
 

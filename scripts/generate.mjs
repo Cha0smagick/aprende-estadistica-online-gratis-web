@@ -32,19 +32,31 @@ async function loadDeepDive(lang,id){
 
 function flatLessons(course){ const out=[]; for(const m of course.modules) for(const l of m.lessons) out.push({module:m,lesson:l}); return out; }
 
-function pickReview(course, idx){
+function pickReview(course, idx, prevCourse){
   const flat=flatLessons(course);
   const prev=flat.slice(0,idx).slice(-3);
   // R2: rota el ejercicio elegido dentro de cada lección (no siempre el primero)
   // y evita repetir tipo mientras haya variedad disponible.
+  // R3 (intercalado): añade dos ejercicios del curso anterior para no practicar
+  // siempre el mismo tema seguido.
+  const sources=prev.slice();
+  if(prevCourse){
+    const pf=flatLessons(prevCourse);
+    sources.push(...pf.slice(-2));
+  }
   const used=new Set();
   const picked=[];
-  for(const x of prev){
+  for(const x of sources){
     const exs=(x.lesson.exercises||[]).slice();
     if(!exs.length) continue;
     const fresh=exs.filter(e=>!used.has(e.type));
     const pool=fresh.length?fresh:exs;
-    const ex=pool[idx % pool.length];
+    let ex=pool[idx % pool.length];
+    // evita dos tipos iguales seguidos cuando hay alternativa en la misma lección
+    if(picked.length && ex.type===picked[picked.length-1].type){
+      const alt=exs.find(e=>e.type!==ex.type && !used.has(e.type)) || exs.find(e=>e.type!==ex.type);
+      if(alt) ex=alt;
+    }
     used.add(ex.type);
     picked.push({ id:ex.id, type:ex.type, prompt:ex.prompt, choices:ex.choices, answers:ex.answers,
       answer:ex.answer, tol:ex.tol, hint:ex.hint, solution:ex.solution, explain:ex.explain, xp:ex.xp||10, jackpot:false });
@@ -66,7 +78,7 @@ async function main(){
 
   for(const lang of langs){
     await writeFile(path.join(SITE,lang,"index.html"), render.indexPage({lang,base:"../",courses}));
-    for(const course of courses){
+    for(const [ci,course] of courses.entries()){
       await writeFile(path.join(SITE,lang,course.slug,"index.html"), render.coursePage({lang,base:"../../",course}));
       const flat=flatLessons(course);
       for(let i=0;i<flat.length;i++){
@@ -83,7 +95,7 @@ async function main(){
           next: next ? { url: `${lang}/${course.slug}/${next.module.slug}/${next.lesson.slug}/`, title: next.lesson.title } : null,
           courseUrl: `${lang}/${course.slug}/`
         };
-        const review = pickReview(course,i);
+        const review = pickReview(course,i,courses[ci-1]);
         const deepDive = await loadDeepDive(lang, lesson.id);
         const page = render.lessonPage({
           lang, base:b, lesson, course, module,

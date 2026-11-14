@@ -196,9 +196,10 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 - [x] **C2** Diploma solo con examen + proyecto aprobados.
 - [x] **C3** Re-auditoría con la misma rúbrica de 25 dimensiones.
 - [x] **C3c** Detector de desalineación (`check-alignment.mjs`): 115/115 deep dives hablan de su lección. Encontró dos fallos reales en A6 y se reescribieron Spearman y ajuste a ojo.
+- [x] **C3d** Datos reales (Palmer Penguins, CC0) con diccionario y tres ejercicios con cifras verificadas; repaso intercalado entre cursos; contraste AA medido en tema claro y oscuro; informe modelo y revisión entre pares en el proyecto.
 - [x] **C3a** Auditoría de prosa (`lint-prose.mjs --strict`: P0=0, P1=0, 0,30 rayas/1000) y de accesibilidad (`check-a11y.mjs`: 0 incidencias en 127 páginas; teclado y árbol AX verificados por CDP).
 - [x] **C3b** Módulo de datos (`/es/datos/`): 4 CSV reproducibles, diccionario, 7 ejercicios con respuesta calculada y guía de R/Python/Excel.
-- [ ] **C4** Objetivo: ≥95/100 global; ninguna dimensión <85 salvo las estructurales justificadas. — **No alcanzado: 87,8/100** (ver `AUDITORIA-FINAL.md`).
+- [ ] **C4** Objetivo: ≥95/100 global; ninguna dimensión <85 salvo las estructurales justificadas. — **No alcanzado: 90,5/100** (ver `AUDITORIA-FINAL.md`).
 
 ---
 
