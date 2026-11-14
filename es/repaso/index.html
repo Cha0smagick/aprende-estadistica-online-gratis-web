@@ -18,6 +18,7 @@
   <h1>🧠 Repaso espaciado</h1>
   <p class="lead">Las preguntas que debes repasar hoy según tu calendario de repetición espaciada (cajas de Leitner).</p>
   <div id="review-status" class="block"></div>
+  <div id="error-log" class="block"></div>
   <div id="review-quiz" class="block"></div>
 </main>
 <footer class="site-foot"><p>Jackpot Estadístico</p><p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz (<a href="https://www.linkedin.com/in/alejandroquinteroruiz/" target="_blank" rel="noopener">LinkedIn</a>).</p></footer>
@@ -34,6 +35,23 @@
 document.addEventListener("DOMContentLoaded",()=>{
   const status=document.getElementById("review-status");
   const quiz=document.getElementById("review-quiz");
+  const logBox=document.getElementById("error-log");
+
+  // Diario de errores (R4): últimos fallos guardados, con su enunciado
+  if(logBox){
+    const ids=(window.Progress.errorLog?window.Progress.errorLog():[]).filter(id=>window.EXERCISES&&window.EXERCISES[id]);
+    if(ids.length===0){
+      logBox.innerHTML="<h2>Errores recientes</h2><p class='muted'>Todavía no has fallado ninguna pregunta.</p>";
+    }else{
+      const rows=ids.slice(0,10).map(id=>{
+        const q=window.EXERCISES[id];
+        const txt=(q.prompt&&q.prompt.es)||id;
+        return `<li><span class="muted">${q.course||''} · ${q.lesson||''}</span> — ${txt}</li>`;
+      }).join("");
+      logBox.innerHTML=`<h2>Errores recientes (${ids.length})</h2><ul class="error-log">${rows}</ul>`;
+    }
+  }
+
   const due=window.Progress.dueSrs();
   const items=due.map(id=>window.EXERCISES && window.EXERCISES[id]).filter(Boolean);
   if(items.length===0){

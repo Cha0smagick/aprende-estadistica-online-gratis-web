@@ -53,6 +53,7 @@ function nav({lang,base,courseTitle}){
   const b=base||"";
   const home = b+(lang==="es"?"es/":"en/");
   return `<header class="site-nav">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
   <a class="brand" href="${home}"><span class="brand-chip">♠</span> Jackpot Estadístico</a>
   <nav class="nav-links">
     ${courseTitle?`<span class="muted">${esc(courseTitle)}</span>`:""}
@@ -113,7 +114,7 @@ export function indexPage({lang,base,courses}){
   return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/",jsonLd:J({"@context":"https://schema.org","@type":"WebSite","name":"Jackpot Estadístico","inLanguage":[lang]}),base:b})}
 <body class="landing">
 ${nav({lang,base})}
-<main>
+<main id="main">
   <section class="hero">
     <p class="kicker">${lang==="es"?"Gratis · Sin registro · Español · Traducción automática":"Free · No signup · Spanish · Automatic translation"}</p>
     <h1>${lang==="es"?"Aprende estadística<br><span class=\"accent\">de cero a hero</span>":"Learn statistics<br><span class=\"accent\">from zero to hero</span>"}</h1>
@@ -178,7 +179,7 @@ export function coursePage({lang,base,course}){
   return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/"+course.slug+"/",jsonLd,base:b})}
 <body>
 ${nav({lang,base,courseTitle:t(course.title,lang)})}
-<main class="container" style="padding-top:24px">
+<main id="main" class="container" style="padding-top:24px">
   <p class="breadcrumb"><a href="${b}${lang}/">${lang==="es"?"Inicio":"Home"}</a> › ${esc(t(course.title,lang))}</p>
   <h1>${esc(t(course.title,lang))}</h1>
   <p class="lead">${esc(t(course.tagline,lang))}</p>
@@ -313,7 +314,7 @@ export function lessonPage({lang,base,lesson,course,module,navInfo,reviewItems,d
   return `${head({lang,title,desc,canonical:SITE_URL+"/"+lang+"/"+course.slug+"/"+module.slug+"/"+lesson.slug+"/",jsonLd,base:b})}
 <body>
 ${nav({lang,base,courseTitle:t(course.title,lang)})}
-<main class="lesson-wrap">
+<main id="main" class="lesson-wrap">
   <aside class="toc">
     <h4>${lang==="es"?"Esta lección":"This lesson"}</h4>
     <ul>

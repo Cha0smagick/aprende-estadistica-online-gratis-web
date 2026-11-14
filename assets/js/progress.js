@@ -24,6 +24,9 @@
     recordAttempt(id,ok,first){ S.answers[id]=S.answers[id]||{first:null,last:null,tries:0};
       const a=S.answers[id]; a.tries++; a.last=!!ok; if(first) a.first=!!ok; save(S); },
     attemptInfo(id){ return S.answers[id]||null; },
+    // diario de errores (fase 6, R4): últimos 50 fallos, sin duplicados
+    recordError(id){ S.errors=S.errors||[]; S.errors=S.errors.filter(e=>e!==id); S.errors.unshift(id); S.errors=S.errors.slice(0,50); save(S); },
+    errorLog(){ return S.errors||[]; },
     // maestría: aciertos al primer intento sobre el total de ejercicios dados
     mastery(ids){ if(!ids||!ids.length) return 0; const hit=ids.filter(id=>{ const a=S.answers[id]; return a && a.first===true; }).length; return hit/ids.length; },
     dueSrs(){ const today=localDate(new Date()); return Object.keys(S.srs).filter(k=>{ if(k.endsWith("-rev")) return false; const v=S.srs[k]; return (typeof v==="string"?v:v.due)<=today; }); },

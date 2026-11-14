@@ -706,7 +706,7 @@ export default {
           "slug": "origenes",
           "minutes": 10,
           "title": {
-            "es": "Origines: censos y juegos",
+            "es": "Orígenes: censos y juegos",
             "en": "Origins: censuses and games"
           },
           "hook": {
@@ -714,7 +714,7 @@ export default {
             "en": "Statistics was born from two human obsessions: counting people and winning bets."
           },
           "theory": {
-            "es": "Origines:\n- Censos: los romanos contaban ciudadanos y riqueza (census). El Libro del Dia del Juicio (1086) en Inglaterra.\n- Probabilidad: nacio de los juegos de azar. Cardano (siglo XVI) analizo dados. Pascal y Fermat (1654) resolvieron el problema de los puntos (reparto de apuestas).\n\nLa estadistica moderna nace de la union de estos dos mundos: contar y calcular probabilidades.",
+            "es": "Orígenes:\n- Censos: los romanos contaban ciudadanos y riqueza (census). El Libro del Dia del Juicio (1086) en Inglaterra.\n- Probabilidad: nacio de los juegos de azar. Cardano (siglo XVI) analizo dados. Pascal y Fermat (1654) resolvieron el problema de los puntos (reparto de apuestas).\n\nLa estadistica moderna nace de la union de estos dos mundos: contar y calcular probabilidades.",
             "en": "Origins:\n- Censuses: Romans counted citizens and wealth (census). The Domesday Book (1086) in England.\n- Probability: born from gambling. Cardano (16th century) analyzed dice. Pascal and Fermat (1654) solved the problem of points (splitting bets).\n\nModern statistics arises from the union of these two worlds: counting and computing probabilities."
           },
           "formulas": [],

@@ -1,6 +1,6 @@
 # Estado del proyecto — Deep Dive Content
 
-**Actualizado:** 2026-11-10
+**Actualizado:** 2026-11-14
 
 ## Progreso actual
 
@@ -9,7 +9,7 @@
 - **Probabilidad:** 30/30 — **curso completo** (B0–B9).
 - **Inferencial: 33/33 — curso completo** (C0–C9).
 - **Fundamentos: 10/10 — curso completo** (F0 5/5, F1 5/5).
-- **Contenido cerrado al 100 %.** Quedan las fases transversales 5–8 (evaluación, retención, UX, certificación).
+- **Contenido cerrado al 100 %.** Fases 5 y 6 completas; fase 7 casi completa (M2 y parte de M5 pendientes); fase 8 sin empezar.
 - Pipeline completo: mdDeep(), validate-content.mjs (≥2.500 palabras, 9 secciones, ###, tablas, $$, preguntas, detección de contenido huérfano). El inglés ya no se exige ni se publica.
 
 ## Reconciliación 2026-11-08
@@ -33,9 +33,9 @@
 
 1. Contenido cerrado: 115/115 deep dives, validador bloqueante en CI.
 2. **Fase 5 — evaluación y feedback: completa (E1–E6)**. 481/481 con explicación y solución; 241 en formato producción; 0 pistas; maestría ≥80 %; panel de dominio y examen final por curso. `--strict` bloqueante en CI.
-3. Fase 6 — retención y metacognición (SRS, intercalado, panel de repaso).
-4. Fase 7 — motivación, UX, lengua y accesibilidad.
-5. Fase 8 — certificación y auditoría final (rúbrica ≥95/100).
+3. **Fase 6 — retención y metacognición: completa (R1–R4)**. Repaso con IDs resolubles, intercalado con rotación y variedad de tipo, panel de dominio por módulo y diario de errores en `/repaso/`.
+4. **Fase 7 — casi completa**. M1 (racha que resta uno en vez de reiniciar), M3 (0 enlaces internos rotos), M4 («Orígenes» y tildes) y M6 (traductor en línea) hechos; M5 parcial (skip link y radiogroup sí; falta texto alternativo de gráficos); M2 pendiente (badges nuevos).
+5. Fase 8 — certificación y auditoría final (rúbrica ≥95/100): sin empezar.
 
 ## Comando de validación
 

@@ -176,19 +176,19 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 
 ### Fase 6 — Retención y metacognición
 
-- [ ] **R1** SRS con IDs resolubles, panel de vencimientos y badge.
-- [ ] **R2** Intercalado real: mezclar cursos y tipos, no solo las 3 lecciones previas.
-- [ ] **R3** Panel “qué dominas / qué revisar” por concepto.
-- [ ] **R4** Diario de errores y autoevaluación de confianza.
+- [x] **R1** SRS con IDs resolubles, panel de vencimientos y badge.
+- [x] **R2** Intercalado real: mezclar cursos y tipos, no solo las 3 lecciones previas.
+- [x] **R3** Panel “qué dominas / qué revisar” por concepto.
+- [x] **R4** Diario de errores y autoevaluación de confianza.
 
 ### Fase 7 — Motivación, UX, lengua y accesibilidad
 
-- [ ] **M1** Racha que premia intentos/correcciones; no resetear por un fallo.
+- [x] **M1** Racha que premia intentos/correcciones; no resetear por un fallo.
 - [ ] **M2** Badges alcanzables (sin pistas, constancia, recuperación).
-- [ ] **M3** Enlaces rotos, tarjeta 00, copy “3/4 cursos”, “9/10 módulos”, Squid Game.
-- [ ] **M4** Tildes y typos en títulos/summaries; “Origines” → “Orígenes”.
-- [ ] **M5** `fieldset/legend` en MCQ, alternativas textuales de gráficos, skip link, orden de encabezados.
-- [ ] **M6** Cambio de idioma que preserve la página actual, no que vuelva a la home.
+- [x] **M3** Enlaces rotos, tarjeta 00, copy “3/4 cursos”, “9/10 módulos”, Squid Game.
+- [x] **M4** Tildes y typos en títulos/summaries; “Origines” → “Orígenes”.
+- [~] **M5** `fieldset/legend` en MCQ, alternativas textuales de gráficos, skip link, orden de encabezados. *(Hecho: skip link, `id=main`, radiogroup con aria-labelledby. Falta: texto alternativo de gráficos y revisión de orden de encabezados.)*
+- [x] **M6** Cambio de idioma que preserve la página actual, no que vuelva a la home.
 
 ### Fase 8 — Certificación y auditoría final
 

@@ -11,7 +11,11 @@ window.Game = {
     window.Progress.incStreak();
     return {gained,jackpot,mult};
   },
-  onWrong(){ window.Progress.breakStreak(); },
+  onWrong(){
+    // un fallo no borra la racha: la reduce en uno, sin penalizar el intento
+    const g=window.Progress.get();
+    if(g.streak>0){ g.streak=Math.max(0,g.streak-1); window.Progress.save(); }
+  },
   levelName(){ const L=window.Progress.get().level; return this.LEVEL_NAMES[Math.min(L-1,this.LEVEL_NAMES.length-1)]; },
   badgeCheck(context){
     const g=window.Progress.get(); const earned=[];

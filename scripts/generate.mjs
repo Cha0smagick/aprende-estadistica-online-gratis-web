@@ -35,18 +35,21 @@ function flatLessons(course){ const out=[]; for(const m of course.modules) for(c
 function pickReview(course, idx){
   const flat=flatLessons(course);
   const prev=flat.slice(0,idx).slice(-3);
-  // take first exercise of each previous lesson (compact)
-  return prev.map(x=> (x.lesson.exercises&&x.lesson.exercises[0]) ? {
-    id: x.lesson.exercises[0].id, type: x.lesson.exercises[0].type,
-    prompt: x.lesson.exercises[0].prompt,
-    choices: x.lesson.exercises[0].choices,
-    answer: x.lesson.exercises[0].answer,
-    tol: x.lesson.exercises[0].tol,
-    hint: x.lesson.exercises[0].hint,
-    solution: x.lesson.exercises[0].solution,
-    xp: x.lesson.exercises[0].xp||10,
-    jackpot:false
-  } : null).filter(Boolean);
+  // R2: rota el ejercicio elegido dentro de cada lección (no siempre el primero)
+  // y evita repetir tipo mientras haya variedad disponible.
+  const used=new Set();
+  const picked=[];
+  for(const x of prev){
+    const exs=(x.lesson.exercises||[]).slice();
+    if(!exs.length) continue;
+    const fresh=exs.filter(e=>!used.has(e.type));
+    const pool=fresh.length?fresh:exs;
+    const ex=pool[idx % pool.length];
+    used.add(ex.type);
+    picked.push({ id:ex.id, type:ex.type, prompt:ex.prompt, choices:ex.choices, answers:ex.answers,
+      answer:ex.answer, tol:ex.tol, hint:ex.hint, solution:ex.solution, explain:ex.explain, xp:ex.xp||10, jackpot:false });
+  }
+  return picked;
 }
 
 async function main(){

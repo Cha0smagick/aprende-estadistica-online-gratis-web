@@ -31,11 +31,13 @@
       updateScore(); updateMastery();
       exercises.forEach((q,i)=>{
         const item=el("div",{class:"quiz-item"});
-        item.appendChild(el("div",{class:"q-prompt"},[`${i+1}. `+ (window.SITE_LANG==="en"?q.prompt.en:q.prompt.es)]));
+        const promptId=`prompt-${q.id}`;
+        const promptDiv=el("div",{class:"q-prompt",id:promptId},[`${i+1}. `+ (window.SITE_LANG==="en"?q.prompt.en:q.prompt.es)]);
+        item.appendChild(promptDiv);
         if(q.latex){ const d=el("div",{class:"q-latex"}); d.innerHTML=q.latex; item.appendChild(d); }
         let inputWrap=null, selected=null;
         if(q.type==="mcq"){
-          const choices=el("div",{class:"choices"});
+          const choices=el("div",{class:"choices",role:"radiogroup","aria-labelledby":promptId});
           q.choices.forEach((ch,idx)=>{
             const lab=el("label",{class:"choice"});
             const inp=el("input",{type:"radio",name:q.id,value:idx});
@@ -45,7 +47,7 @@
           });
           item.appendChild(choices);
         } else if(q.type==="truefalse"){
-          const choices=el("div",{class:"choices"});
+          const choices=el("div",{class:"choices",role:"radiogroup","aria-labelledby":promptId});
           [true,false].forEach(v=>{
             const lab=el("label",{class:"choice"});
             const inp=el("input",{type:"radio",name:q.id,value:v});
@@ -110,6 +112,7 @@
           if(state[i].firstOk===null){
             state[i].firstOk=ok;
             if(window.Progress && window.Progress.recordAttempt) window.Progress.recordAttempt(q.id, ok, true);
+            if(!ok && window.Progress && window.Progress.recordError) window.Progress.recordError(q.id);
           } else if(window.Progress && window.Progress.recordAttempt){
             window.Progress.recordAttempt(q.id, ok, false);
           }
