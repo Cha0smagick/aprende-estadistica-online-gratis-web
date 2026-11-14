@@ -1,0 +1,57 @@
+{
+  "items": {
+    "C2-L1-E1": {
+      "type": "short",
+      "answers": ["el 95 % de los intervalos asi construidos contienen el parametro", "el procedimiento acierta el 95 %", "cobertura del 95 %"],
+      "hint": "La probabilidad describe el procedimiento, no este intervalo concreto.",
+      "solution": "La interpretación correcta es que el 95 % de los intervalos construidos con ese procedimiento contienen el parámetro. No es correcto decir que hay un 95 % de probabilidad de que el parámetro esté dentro de este intervalo.",
+      "explain": "Si respondiste que la probabilidad de que el parámetro esté dentro es del 95 %, has asignado probabilidad a un valor fijo. En la interpretación frecuentista, el parámetro no tiene distribución: lo que varía es el intervalo, según la muestra. La confianza describe la tasa de acierto del procedimiento a largo plazo."
+    },
+    "C2-L1-E2": {
+      "hint": "Su valor no cambia al repetir el estudio.",
+      "solution": "Falso: el parámetro es fijo, no aleatorio. Lo que varía de una muestra a otra es el estadístico y, con él, el intervalo que se construye a su alrededor.",
+      "explain": "Si respondiste «verdadero», has trasladado la aleatoriedad del estimador al parámetro. La media poblacional es un número concreto, aunque desconocido; la media muestral cambia. Esa asimetría es la que hace necesario el intervalo: la incertidumbre está en la estimación, no en el valor real."
+    },
+    "C2-L1-E3": {
+      "type": "short",
+      "answers": ["95%", "95 %", "0,95"],
+      "hint": "Es el nivel convencional en la mayoría de los informes.",
+      "solution": "El nivel de confianza típico es el 95 %, que corresponde a un factor de 1,96 en la distribución normal. Niveles más altos producen intervalos más anchos.",
+      "explain": "Si respondiste 50 %, has descrito una apuesta sin utilidad práctica. El 95 % es una convención que equilibra confianza y precisión: subir al 99 % ensancha el intervalo y exige más muestra para el mismo margen. Su valor es histórico y práctico, no una ley matemática."
+    },
+    "C2-L2-E1": {
+      "type": "short",
+      "answers": ["t de student", "t", "la t"],
+      "hint": "Al estimar la desviación aparece una incertidumbre adicional.",
+      "solution": "Si la desviación poblacional es desconocida se usa la t de Student, que tiene colas más gruesas para compensar la estimación de sigma con los mismos datos.",
+      "explain": "Si respondiste «z», has supuesto conocida una desviación que en la práctica se estima. La t añade la incertidumbre de esa estimación, y su efecto es mayor con muestras pequeñas. Con n grande ambas coinciden, y por eso la diferencia pasa desapercibida en muchos informes."
+    },
+    "C2-L2-E2": {
+      "hint": "La corrección pierde importancia al crecer la muestra.",
+      "solution": "Verdadero: con n grande, la t de Student se aproxima a la normal estándar, porque la estimación de la desviación se vuelve muy precisa. La diferencia entre ambas es despreciable a partir de unos cien casos.",
+      "explain": "Si respondiste «falso», conviene recordar que la t tiene colas más gruesas precisamente porque sigma se estima. Al aumentar n, esa estimación mejora y las colas se acercan a las de la normal. La convergencia es gradual: con 10 casos la diferencia importa, con 100 apenas."
+    },
+    "C2-L2-E3": {
+      "hint": "Multiplica el factor por el error estándar.",
+      "solution": "El margen de error es 2 por 3, es decir, 6. Ese valor se suma y se resta a la estimación para construir el intervalo.",
+      "explain": "Si respondiste 1,5, has dividido en lugar de multiplicar. El margen es el producto del factor de cobertura por el error estándar: el factor depende del nivel de confianza y el error estándar de la muestra. Separar ambos componentes ayuda a interpretar de dónde viene el ancho del intervalo."
+    },
+    "C2-L3-E1": {
+      "hint": "Multiplica p por uno menos p y divide entre n.",
+      "solution": "El error estándar es la raíz de 0,25 dividido entre 100, es decir, 0,05. Corresponde al caso de máxima varianza, con p igual a 0,5.",
+      "explain": "Si respondiste 0,005, has olvidado la raíz. La varianza de la proporción es p por uno menos p entre n, y el error estándar es su raíz. Con p igual a 0,5 y cien casos, el margen al 95 % ronda los diez puntos porcentuales."
+    },
+    "C2-L3-E2": {
+      "hint": "La aproximación exige suficientes éxitos y suficientes fracasos esperados.",
+      "solution": "Falso: si n por p hat es menor que 5, la aproximación normal no es válida y conviene usar un método exacto o la corrección de Wilson. La distribución es demasiado asimétrica y discreta.",
+      "explain": "Si respondiste «verdadero», has aplicado una regla sin comprobar su condición. La normal supone simetría, y con pocos éxitos esperados la distribución se concentra cerca de cero. En esos casos el intervalo de Wald puede dar límites imposibles, como proporciones negativas."
+    },
+    "C2-L3-E3": {
+      "type": "short",
+      "answers": ["correccion de wilson", "wilson"],
+      "hint": "Es un intervalo que respeta los límites cero y uno.",
+      "solution": "Para proporciones extremas se usa la corrección de Wilson, que respeta los límites entre cero y uno y mantiene una cobertura adecuada. También es válida la solución exacta de Clopper-Pearson.",
+      "explain": "Si respondiste «t de Student», has aplicado una distribución pensada para medias a un problema de proporciones. La t no resuelve la asimetría cerca de los extremos. Wilson ajusta el centro y el ancho del intervalo, y por eso evita los límites imposibles del método clásico."
+    }
+  }
+}

@@ -1775,31 +1775,26 @@ export default {
           "exercises": [
             {
               "id": "C2-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Interpretacion correcta del IC 95%:",
                 "en": "Correct interpretation of 95% CI:"
               },
-              "choices": [
-                {
-                  "es": "P(parametro en IC)=95%",
-                  "en": "P(parameter in CI)=95%"
-                },
-                {
-                  "es": "El 95% de los ICs contendria el parametro",
-                  "en": "95% of CIs would contain the parameter"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "El 95% de los ICs.",
-                "en": "95% of CIs."
+                "es": "La probabilidad describe el procedimiento, no este intervalo concreto."
               },
               "solution": {
-                "es": "El 95% de los ICs contendria el parametro.",
-                "en": "95% of CIs would contain the parameter."
+                "es": "La interpretación correcta es que el 95 % de los intervalos construidos con ese procedimiento contienen el parámetro. No es correcto decir que hay un 95 % de probabilidad de que el parámetro esté dentro de este intervalo."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "el 95 % de los intervalos asi construidos contienen el parametro",
+                "el procedimiento acierta el 95 %",
+                "cobertura del 95 %"
+              ],
+              "explain": {
+                "es": "Si respondiste que la probabilidad de que el parámetro esté dentro es del 95 %, has asignado probabilidad a un valor fijo. En la interpretación frecuentista, el parámetro no tiene distribución: lo que varía es el intervalo, según la muestra. La confianza describe la tasa de acierto del procedimiento a largo plazo."
+              }
             },
             {
               "id": "C2-L1-E2",
@@ -1810,12 +1805,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "Fijo.",
-                "en": "Fixed."
+                "es": "Su valor no cambia al repetir el estudio."
               },
               "solution": {
-                "es": "Falso: el parametro es fijo.",
-                "en": "False: parameter is fixed."
+                "es": "Falso: el parámetro es fijo, no aleatorio. Lo que varía de una muestra a otra es el estadístico y, con él, el intervalo que se construye a su alrededor."
               },
               "xp": 10,
               "choices": [
@@ -1827,35 +1820,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has trasladado la aleatoriedad del estimador al parámetro. La media poblacional es un número concreto, aunque desconocido; la media muestral cambia. Esa asimetría es la que hace necesario el intervalo: la incertidumbre está en la estimación, no en el valor real."
+              }
             },
             {
               "id": "C2-L1-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Nivel de confianza tipico:",
                 "en": "Typical confidence level:"
               },
-              "choices": [
-                {
-                  "es": "50%",
-                  "en": "50%"
-                },
-                {
-                  "es": "95%",
-                  "en": "95%"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "95%.",
-                "en": "95%."
+                "es": "Es el nivel convencional en la mayoría de los informes."
               },
               "solution": {
-                "es": "95%.",
-                "en": "95%."
+                "es": "El nivel de confianza típico es el 95 %, que corresponde a un factor de 1,96 en la distribución normal. Niveles más altos producen intervalos más anchos."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "95%",
+                "95 %",
+                "0,95"
+              ],
+              "explain": {
+                "es": "Si respondiste 50 %, has descrito una apuesta sin utilidad práctica. El 95 % es una convención que equilibra confianza y precisión: subir al 99 % ensancha el intervalo y exige más muestra para el mismo margen. Su valor es histórico y práctico, no una ley matemática."
+              }
             }
           ]
         },
@@ -1939,31 +1930,26 @@ export default {
           "exercises": [
             {
               "id": "C2-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Si sigma es desconocida, se usa:",
                 "en": "If sigma is unknown, use:"
               },
-              "choices": [
-                {
-                  "es": "z",
-                  "en": "z"
-                },
-                {
-                  "es": "t de Student",
-                  "en": "Student t"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "t.",
-                "en": "t."
+                "es": "Al estimar la desviación aparece una incertidumbre adicional."
               },
               "solution": {
-                "es": "t de Student.",
-                "en": "Student t."
+                "es": "Si la desviación poblacional es desconocida se usa la t de Student, que tiene colas más gruesas para compensar la estimación de sigma con los mismos datos."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "t de student",
+                "t",
+                "la t"
+              ],
+              "explain": {
+                "es": "Si respondiste «z», has supuesto conocida una desviación que en la práctica se estima. La t añade la incertidumbre de esa estimación, y su efecto es mayor con muestras pequeñas. Con n grande ambas coinciden, y por eso la diferencia pasa desapercibida en muchos informes."
+              }
             },
             {
               "id": "C2-L2-E2",
@@ -1974,12 +1960,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "La corrección pierde importancia al crecer la muestra."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: con n grande, la t de Student se aproxima a la normal estándar, porque la estimación de la desviación se vuelve muy precisa. La diferencia entre ambas es despreciable a partir de unos cien casos."
               },
               "xp": 10,
               "choices": [
@@ -1991,7 +1975,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que la t tiene colas más gruesas precisamente porque sigma se estima. Al aumentar n, esa estimación mejora y las colas se acercan a las de la normal. La convergencia es gradual: con 10 casos la diferencia importa, con 100 apenas."
+              }
             },
             {
               "id": "C2-L2-E3",
@@ -2003,12 +1990,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "2x3.",
-                "en": "2x3."
+                "es": "Multiplica el factor por el error estándar."
               },
               "solution": {
-                "es": "6.",
-                "en": "6."
+                "es": "El margen de error es 2 por 3, es decir, 6. Ese valor se suma y se resta a la estimación para construir el intervalo."
               },
               "xp": 10,
               "choices": [
@@ -2028,7 +2013,10 @@ export default {
                   "es": "12",
                   "en": "12"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 1,5, has dividido en lugar de multiplicar. El margen es el producto del factor de cobertura por el error estándar: el factor depende del nivel de confianza y el error estándar de la muestra. Separar ambos componentes ayuda a interpretar de dónde viene el ancho del intervalo."
+              }
             }
           ]
         },
@@ -2113,12 +2101,10 @@ export default {
               "answer": 3,
               "tol": 0.001,
               "hint": {
-                "es": "sqrt(0.25/100).",
-                "en": "sqrt(0.25/100)."
+                "es": "Multiplica p por uno menos p y divide entre n."
               },
               "solution": {
-                "es": "0.05.",
-                "en": "0.05."
+                "es": "El error estándar es la raíz de 0,25 dividido entre 100, es decir, 0,05. Corresponde al caso de máxima varianza, con p igual a 0,5."
               },
               "xp": 10,
               "choices": [
@@ -2138,7 +2124,10 @@ export default {
                   "es": "0.05",
                   "en": "0.05"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,005, has olvidado la raíz. La varianza de la proporción es p por uno menos p entre n, y el error estándar es su raíz. Con p igual a 0,5 y cien casos, el margen al 95 % ronda los diez puntos porcentuales."
+              }
             },
             {
               "id": "C2-L3-E2",
@@ -2149,12 +2138,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "La aproximación exige suficientes éxitos y suficientes fracasos esperados."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: si n por p hat es menor que 5, la aproximación normal no es válida y conviene usar un método exacto o la corrección de Wilson. La distribución es demasiado asimétrica y discreta."
               },
               "xp": 10,
               "choices": [
@@ -2166,35 +2153,32 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has aplicado una regla sin comprobar su condición. La normal supone simetría, y con pocos éxitos esperados la distribución se concentra cerca de cero. En esos casos el intervalo de Wald puede dar límites imposibles, como proporciones negativas."
+              }
             },
             {
               "id": "C2-L3-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para proporciones extremas se usa:",
                 "en": "For extreme proportions use:"
               },
-              "choices": [
-                {
-                  "es": "t de Student",
-                  "en": "Student t"
-                },
-                {
-                  "es": "Correccion de Wilson",
-                  "en": "Wilson correction"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Wilson.",
-                "en": "Wilson."
+                "es": "Es un intervalo que respeta los límites cero y uno."
               },
               "solution": {
-                "es": "Correccion de Wilson.",
-                "en": "Wilson correction."
+                "es": "Para proporciones extremas se usa la corrección de Wilson, que respeta los límites entre cero y uno y mantiene una cobertura adecuada. También es válida la solución exacta de Clopper-Pearson."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "correccion de wilson",
+                "wilson"
+              ],
+              "explain": {
+                "es": "Si respondiste «t de Student», has aplicado una distribución pensada para medias a un problema de proporciones. La t no resuelve la asimetría cerca de los extremos. Wilson ajusta el centro y el ancho del intervalo, y por eso evita los límites imposibles del método clásico."
+              }
             }
           ]
         }
@@ -2285,59 +2269,48 @@ export default {
           "exercises": [
             {
               "id": "C3-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "H0 siempre contiene:",
                 "en": "H0 always contains:"
               },
-              "choices": [
-                {
-                  "es": "Desigualdad",
-                  "en": "Inequality"
-                },
-                {
-                  "es": "Igualdad",
-                  "en": "Equality"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Igualdad.",
-                "en": "Equality."
+                "es": "Es el punto de referencia que permite calcular la distribución."
               },
               "solution": {
-                "es": "Igualdad.",
-                "en": "Equality."
+                "es": "La hipótesis nula siempre contiene una igualdad, como mu igual a 10 o pi igual a 0,5. Sin un valor concreto no se puede calcular la probabilidad de los datos bajo esa hipótesis."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "igualdad",
+                "la igualdad"
+              ],
+              "explain": {
+                "es": "Si respondiste «desigualdad», has confundido la nula con la alternativa. La nula se plantea como igualdad porque el cálculo del valor p necesita un valor de referencia. En un contraste unilateral, la nula se escribe como menor o igual, pero se evalúa en el punto de igualdad."
+              }
             },
             {
               "id": "C3-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Si queremos probar diferente de, la prueba es:",
                 "en": "If we want to prove different from, the test is:"
               },
-              "choices": [
-                {
-                  "es": "Unilateral derecha",
-                  "en": "Right-tailed"
-                },
-                {
-                  "es": "Bilateral",
-                  "en": "Two-tailed"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Bilateral.",
-                "en": "Two-tailed."
+                "es": "Interesan las dos direcciones del efecto."
               },
               "solution": {
-                "es": "Bilateral.",
-                "en": "Two-tailed."
+                "es": "Si se quiere probar que el parámetro es distinto, el contraste es bilateral, porque la alternativa incluye valores mayores y menores. Ese contraste reparte el nivel de significación entre las dos colas."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "bilateral",
+                "de dos colas",
+                "a dos colas"
+              ],
+              "explain": {
+                "es": "Si respondiste «unilateral derecha», has descartado la posibilidad de un efecto en la dirección contraria. Unilateral solo se justifica si esa dirección no aporta información y se decidió antes de ver los datos. Cambiar de bilateral a unilateral tras observar el resultado duplica la evidencia de forma artificial."
+              }
             },
             {
               "id": "C3-L1-E3",
@@ -2348,12 +2321,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Elegirlas después convierte el contraste en una búsqueda."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: las hipótesis se eligen antes de ver los datos, para que el valor p conserve su significado. Formularlas después de observar el resultado invalida la interpretación."
               },
               "xp": 10,
               "choices": [
@@ -2365,7 +2336,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene pensar en el efecto: si se elige la dirección tras ver los datos, el contraste deja de ser una prueba y se convierte en una descripción disfrazada. El preregistro y el plan de análisis existen precisamente para fijar la pregunta antes de mirar."
+              }
             }
           ]
         },
@@ -2459,14 +2433,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "p <= alpha -> rechaza.",
-                "en": "p <= alpha -> reject."
+                "es": "Compara el valor p con el nivel fijado."
               },
               "solution": {
-                "es": "Rechazar H0.",
-                "en": "Reject H0."
+                "es": "Con p igual a 0,03 y alfa 0,05 se rechaza la hipótesis nula, porque el valor p es menor que el nivel. El resultado se declara estadísticamente significativo."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «no rechazar», has invertido la comparación. La regla es rechazar cuando el valor p es pequeño, no cuando es grande. Aun así, rechazar no dice que la hipótesis alternativa sea cierta: dice que los datos son poco compatibles con la nula."
+              }
             },
             {
               "id": "C3-L2-E2",
@@ -2487,14 +2462,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "p > alpha -> no rechaza.",
-                "en": "p > alpha -> do not reject."
+                "es": "Un valor p alto indica compatibilidad con la nula."
               },
               "solution": {
-                "es": "No rechazar H0.",
-                "en": "Do not reject H0."
+                "es": "Con p igual a 0,20 y alfa 0,05 no se rechaza la hipótesis nula, porque el valor p supera el nivel. Eso no demuestra que la nula sea cierta: solo indica que no hay evidencia suficiente contra ella."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «rechazar», has aplicado la regla al revés. Un valor p alto significa que el resultado observado es frecuente bajo la nula, no que la nula esté demostrada. La diferencia entre «no rechazar» y «aceptar» es una de las distinciones más importantes del contraste."
+              }
             },
             {
               "id": "C3-L2-E3",
@@ -2505,12 +2481,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Es la probabilidad de los datos bajo la nula, no al contrario."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: el valor p no es la probabilidad de que la hipótesis nula sea cierta, sino la probabilidad de observar un resultado tan o más extremo si la nula fuera cierta. La dirección de la condicional importa."
               },
               "xp": 10,
               "choices": [
@@ -2522,7 +2496,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has invertido la condicional. El valor p se calcula suponiendo la nula y mirando los datos; no al revés. Para obtener la probabilidad de la hipótesis haría falta una probabilidad previa, que el contraste frecuentista no incluye."
+              }
             }
           ]
         },
@@ -2599,87 +2576,69 @@ export default {
           "exercises": [
             {
               "id": "C3-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Error tipo I es:",
                 "en": "Type I error is:"
               },
-              "choices": [
-                {
-                  "es": "Falso negativo",
-                  "en": "False negative"
-                },
-                {
-                  "es": "Falso positivo",
-                  "en": "False positive"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Falso positivo.",
-                "en": "False positive."
+                "es": "Se rechaza algo que era cierto."
               },
               "solution": {
-                "es": "Falso positivo.",
-                "en": "False positive."
+                "es": "El error de tipo I es el falso positivo: rechazar la hipótesis nula cuando en realidad es cierta. Su probabilidad es alfa, el nivel de significación."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "falso positivo",
+                "positivo falso"
+              ],
+              "explain": {
+                "es": "Si respondiste «falso negativo», has confundido los dos errores. El tipo I declara un efecto que no existe; el tipo II no detecta uno que sí existe. La regla mnemotécnica del juicio ayuda: condenar a un inocente es tipo I, absolver a un culpable es tipo II."
+              }
             },
             {
               "id": "C3-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Error tipo II es:",
                 "en": "Type II error is:"
               },
-              "choices": [
-                {
-                  "es": "Falso positivo",
-                  "en": "False positive"
-                },
-                {
-                  "es": "Falso negativo",
-                  "en": "False negative"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Falso negativo.",
-                "en": "False negative."
+                "es": "No se detecta un efecto que existe."
               },
               "solution": {
-                "es": "Falso negativo.",
-                "en": "False negative."
+                "es": "El error de tipo II es el falso negativo: no rechazar la hipótesis nula cuando en realidad es falsa. Su probabilidad es beta, y la potencia es su complemento."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "falso negativo",
+                "negativo falso"
+              ],
+              "explain": {
+                "es": "Si respondiste «falso positivo», has invertido la clasificación. El tipo II describe la ceguera de la prueba ante un efecto real, y depende del tamaño de muestra y del efecto verdadero. Un estudio con poca potencia comete este error con frecuencia sin saberlo."
+              }
             },
             {
               "id": "C3-L3-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La potencia es:",
                 "en": "Power is:"
               },
-              "choices": [
-                {
-                  "es": "alpha",
-                  "en": "alpha"
-                },
-                {
-                  "es": "1-beta",
-                  "en": "1-beta"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "1-beta.",
-                "en": "1-beta."
+                "es": "Es la probabilidad de detectar un efecto cuando existe."
               },
               "solution": {
-                "es": "1-beta.",
-                "en": "1-beta."
+                "es": "La potencia es 1 menos beta: la probabilidad de rechazar la nula cuando es falsa, es decir, de detectar un efecto real. Depende del tamaño del efecto, del tamaño de muestra y del nivel alfa."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "1-beta",
+                "uno menos beta"
+              ],
+              "explain": {
+                "es": "Si respondiste alfa, has nombrado la probabilidad del error contrario. Alfa controla los falsos positivos; la potencia controla los verdaderos positivos. Confundirlas lleva a exigir más rigor bajando alfa sin aumentar la muestra, lo que reduce la capacidad de detectar efectos reales."
+              }
             }
           ]
         }
@@ -2844,12 +2803,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "(105-100)/(10/5).",
-                "en": "(105-100)/(10/5)."
+                "es": "Resta el valor nulo y divide por el error estándar."
               },
               "solution": {
-                "es": "2,5.",
-                "en": "2.5."
+                "es": "El error estándar es 10 entre 5, es decir, 2; la diferencia es 5, y el cociente da 2,5. El valor está dos desviaciones y media por encima del valor nulo."
               },
               "xp": 10,
               "choices": [
@@ -2869,43 +2826,33 @@ export default {
                   "es": "5",
                   "en": "5"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,5, has dividido por sigma en lugar de por el error estándar. La estandarización usa sigma entre raíz de n, porque la media tiene menos variabilidad que una observación individual. Ese detalle cambia el resultado por un factor de raíz de n."
+              }
             },
             {
               "id": "C4-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La prueba z requiere:",
                 "en": "z-test requires:"
               },
-              "choices": [
-                {
-                  "es": "σ desconocida",
-                  "en": "σ unknown"
-                },
-                {
-                  "es": "σ conocida",
-                  "en": "σ known"
-                },
-                {
-                  "es": "n pequeño",
-                  "en": "Small n"
-                },
-                {
-                  "es": "Datos no normales",
-                  "en": "Non-normal data"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "σ conocida.",
-                "en": "σ known."
+                "es": "La prueba z supone que la desviación poblacional no se estima."
               },
               "solution": {
-                "es": "σ conocida.",
-                "en": "σ known."
+                "es": "La prueba z requiere que la desviación poblacional sea conocida, además de independencia y normalidad o muestra grande. Si sigma se estima con s, la prueba correcta es la t."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "s conocida",
+                "sigma conocida",
+                "desviacion conocida"
+              ],
+              "explain": {
+                "es": "Si respondiste «s desconocida», has invertido la condición. La z se usa cuando no hay que estimar la dispersión, por ejemplo en procesos calibrados. Cuando se estima, aparece una fuente adicional de incertidumbre y la distribución cambia a t. Ese requisito es el que separa el caso didáctico del análisis habitual."
+              }
             },
             {
               "id": "C4-L1-E3",
@@ -2916,12 +2863,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No: usa t.",
-                "en": "No: use t."
+                "es": "Estimar la desviación añade incertidumbre."
               },
               "solution": {
-                "es": "Falso: usa t.",
-                "en": "False: use t."
+                "es": "Falso: si la desviación es desconocida se usa la prueba t, no la z. La t tiene colas más gruesas para compensar la estimación de sigma con los mismos datos."
               },
               "xp": 10,
               "choices": [
@@ -2933,43 +2878,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has aplicado la prueba del caso ideal a una situación real. Usar z con s produce valores p demasiado pequeños, sobre todo con muestras pequeñas, y aumenta los falsos positivos. La corrección existe porque la incertidumbre se suma."
+              }
             },
             {
               "id": "C4-L1-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El estadístico z mide:",
                 "en": "z statistic measures:"
               },
-              "choices": [
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "Cuántas SE está x̄ de μ0",
-                  "en": "How many SE x̄ is from μ0"
-                },
-                {
-                  "es": "La varianza",
-                  "en": "Variance"
-                },
-                {
-                  "es": "El p-valor",
-                  "en": "p-value"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "SE.",
-                "en": "SE."
+                "es": "Mide la separación en unidades de error estándar."
               },
               "solution": {
-                "es": "Cuántas SE está x̄ de μ0.",
-                "en": "How many SE x̄ is from μ0."
+                "es": "El estadístico z mide cuántos errores estándar separan la media observada del valor nulo. Su valor absoluto indica la distancia y su signo, la dirección."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "cuantas se esta x barra de mu0",
+                "cuantas desviaciones estandar",
+                "distancia en errores estandar"
+              ],
+              "explain": {
+                "es": "Si respondiste «la media», has descrito la estimación, no la medida de discrepancia. La media tiene unidades del problema; z es adimensional y por eso permite comparar problemas de escalas distintas. Esa normalización es lo que hace posible usar una sola tabla."
+              }
             },
             {
               "id": "C4-L1-E5",
@@ -2980,12 +2915,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "El teorema central del límite permite la aproximación con muestras grandes."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: con n grande, la prueba z es válida aunque los datos no sean normales, porque la media muestral se aproxima a la normal por el teorema central del límite."
               },
               "xp": 10,
               "choices": [
@@ -2997,7 +2930,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», has exigido normalidad de los datos cuando el supuesto se refiere a la media. Con muestras grandes, la aproximación funciona para distribuciones razonables. El límite aparece con colas muy pesadas o con datos dependientes, donde ninguna tabla salva el análisis."
+              }
             }
           ]
         },
@@ -3155,12 +3091,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "(102-100)/(4/4).",
-                "en": "(102-100)/(4/4)."
+                "es": "Divide la diferencia por s entre raíz de n."
               },
               "solution": {
-                "es": "2·4/4 = 2.",
-                "en": "2·4/4 = 2."
+                "es": "El error estándar es 4 entre 4, es decir, 1; la diferencia es 2, y el estadístico resulta 2. Con 15 grados de libertad, el valor p bilateral ronda 0,06."
               },
               "xp": 10,
               "choices": [
@@ -3180,7 +3114,10 @@ export default {
                   "es": "1",
                   "en": "1"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,5, has dividido por s sin tener en cuenta la raíz de n. El error estándar de la media es s entre raíz de 16, que es 4. Ese paso es el que convierte la diferencia en unidades comparables con la distribución de referencia."
+              }
             },
             {
               "id": "C4-L2-E2",
@@ -3192,12 +3129,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "n-1.",
-                "en": "n-1."
+                "es": "Se estima la media y por eso se pierde una pieza de información."
               },
               "solution": {
-                "es": "19.",
-                "en": "19."
+                "es": "Con 20 observaciones, los grados de libertad son 19, porque se estima un parámetro con los mismos datos. El resultado se busca en la tabla t con ese valor."
               },
               "xp": 10,
               "choices": [
@@ -3217,43 +3152,33 @@ export default {
                   "es": "20",
                   "en": "20"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 20, has usado el tamaño de muestra como grados de libertad. La estimación de la media consume una pieza de información, y esa es la razón del menos uno. El error cambia el valor crítico y, con él, la decisión en los casos límite."
+              }
             },
             {
               "id": "C4-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La prueba t se usa cuando:",
                 "en": "t-test is used when:"
               },
-              "choices": [
-                {
-                  "es": "σ conocida",
-                  "en": "σ known"
-                },
-                {
-                  "es": "σ desconocida",
-                  "en": "σ unknown"
-                },
-                {
-                  "es": "n=1",
-                  "en": "n=1"
-                },
-                {
-                  "es": "Datos categóricos",
-                  "en": "Categorical data"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "σ desconocida.",
-                "en": "σ unknown."
+                "es": "La t corrige la incertidumbre de estimar la dispersión."
               },
               "solution": {
-                "es": "σ desconocida.",
-                "en": "σ unknown."
+                "es": "La prueba t se usa cuando la desviación poblacional es desconocida y se estima con la muestra. Es el caso habitual en la práctica, por eso la t es la prueba estándar para medias."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "s desconocida",
+                "sigma desconocida",
+                "desviacion desconocida"
+              ],
+              "explain": {
+                "es": "Si respondiste «s conocida», has descrito cuándo se usa z. La distinción no es formal: con muestras pequeñas, usar la distribución equivocada cambia el valor p de forma visible. La t existe precisamente para el caso en que la dispersión se estima."
+              }
             },
             {
               "id": "C4-L2-E4",
@@ -3264,12 +3189,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "La corrección pierde peso al crecer la muestra."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: con n grande, la t de Student se aproxima a la normal estándar porque la estimación de la desviación se vuelve precisa. La diferencia es despreciable a partir de unos cien casos."
               },
               "xp": 10,
               "choices": [
@@ -3281,43 +3204,32 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene pensar en el origen de la t: sus colas más gruesas compensan la incertidumbre de estimar sigma. Al aumentar la muestra, esa incertidumbre disminuye y la distribución converge. Por eso los paquetes modernos usan t siempre: con n grande no cuesta nada."
+              }
             },
             {
               "id": "C4-L2-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Grados de libertad para prueba t de una muestra:",
                 "en": "Degrees of freedom for one-sample t:"
               },
-              "choices": [
-                {
-                  "es": "n",
-                  "en": "n"
-                },
-                {
-                  "es": "n-1",
-                  "en": "n-1"
-                },
-                {
-                  "es": "n-2",
-                  "en": "n-2"
-                },
-                {
-                  "es": "n+1",
-                  "en": "n+1"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "n-1.",
-                "en": "n-1."
+                "es": "Se estima un solo parámetro con los datos."
               },
               "solution": {
-                "es": "n-1.",
-                "en": "n-1."
+                "es": "Los grados de libertad son n menos uno, porque se estima la media con la misma muestra. En una prueba de dos muestras con varianzas iguales serían n1 más n2 menos dos."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "n-1",
+                "n menos 1"
+              ],
+              "explain": {
+                "es": "Si respondiste n, has ignorado la estimación de la media. Cada parámetro estimado consume un grado de libertad, y esa pérdida se refleja en la distribución de referencia. Confundir el divisor cambia el valor crítico y puede alterar la conclusión en el límite."
+              }
             }
           ]
         },
@@ -3485,50 +3397,37 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Welch.",
-                "en": "Welch."
+                "es": "La versión robusta no supone varianzas iguales."
               },
               "solution": {
-                "es": "Welch.",
-                "en": "Welch."
+                "es": "Si las varianzas son distintas conviene la corrección de Welch, que estima cada varianza por separado y ajusta los grados de libertad. Es la opción recomendada por defecto en la práctica."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «pooled», has supuesto igualdad de varianzas, precisamente la condición que falla. Esa suposición infla o desinfla el error estándar según los tamaños, y puede cambiar la decisión. Welch evita el problema con un coste mínimo de potencia cuando la suposición era cierta."
+              }
             },
             {
               "id": "C4-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "gl para pooled (varianzas iguales):",
                 "en": "df for pooled (equal variances):"
               },
-              "choices": [
-                {
-                  "es": "n1+n2",
-                  "en": "n1+n2"
-                },
-                {
-                  "es": "n1+n2-1",
-                  "en": "n1+n2-1"
-                },
-                {
-                  "es": "n1+n2-2",
-                  "en": "n1+n2-2"
-                },
-                {
-                  "es": "n1-n2",
-                  "en": "n1-n2"
-                }
-              ],
-              "answer": 2,
               "hint": {
-                "es": "n1+n2-2.",
-                "en": "n1+n2-2."
+                "es": "Se estiman dos medias y una varianza común."
               },
               "solution": {
-                "es": "n1+n2-2.",
-                "en": "n1+n2-2."
+                "es": "Con varianzas iguales, los grados de libertad son n1 más n2 menos dos, porque se estiman dos medias a partir de los mismos datos y se combina una varianza común."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "n1+n2-2",
+                "n1 mas n2 menos 2"
+              ],
+              "explain": {
+                "es": "Si respondiste n1 más n2, has olvidado las dos medias estimadas. Cada media consume un grado de libertad, y la varianza común se calcula con los residuales de ambas. Ese reparto explica por qué el divisor es la suma menos dos y no menos uno."
+              }
             },
             {
               "id": "C4-L3-E3",
@@ -3539,12 +3438,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "La suposición de igualdad rara vez se cumple exactamente."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: en la práctica se prefiere Welch porque no exige igualdad de varianzas y apenas pierde potencia cuando la suposición se cumple. Es la opción robusta y recomendada."
               },
               "xp": 10,
               "choices": [
@@ -3556,7 +3453,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene pensar en el coste del error: suponer varianzas iguales cuando no lo son produce valores p engañosos, sobre todo con grupos de distinto tamaño. Welch elimina esa dependencia con una corrección de grados de libertad. Con grupos desiguales, el riesgo de la suposición crece."
+              }
             },
             {
               "id": "C4-L3-E4",
@@ -3585,14 +3485,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Dos grupos independientes.",
-                "en": "Two independent groups."
+                "es": "Se comparan dos grupos distintos con una misma variable."
               },
               "solution": {
-                "es": "Dos grupos independientes.",
-                "en": "Two independent groups."
+                "es": "La prueba t de dos muestras compara las medias de dos grupos independientes. La hipótesis nula es que ambas medias poblacionales son iguales."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «una muestra con un valor», has descrito la prueba de una muestra. La de dos muestras estima una diferencia y evalúa si es compatible con cero. La distinción importa porque el error estándar se construye combinando la variabilidad de ambos grupos."
+              }
             },
             {
               "id": "C4-L3-E5",
@@ -3603,12 +3504,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Cada unidad pertenece a un solo grupo."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los grupos deben ser independientes, es decir, cada unidad pertenece a uno solo y no hay emparejamiento ni medidas repetidas. Si hay dependencia, la prueba correcta es la pareada."
               },
               "xp": 10,
               "choices": [
@@ -3620,7 +3519,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene imaginar el caso de medir a la misma persona antes y después: los datos están correlacionados y tratarlos como independientes infla el error estándar. La independencia no se comprueba con una fórmula: se garantiza con el diseño."
+              }
             }
           ]
         },
@@ -3788,50 +3690,38 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Emparejados.",
-                "en": "Paired."
+                "es": "La misma unidad se mide dos veces o se compara con su par."
               },
               "solution": {
-                "es": "Datos emparejados.",
-                "en": "Paired data."
+                "es": "La prueba pareada se usa con datos emparejados: la misma unidad medida dos veces, o pares formados por características similares. Se analiza la diferencia dentro de cada par."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «dos grupos independientes», has descrito la prueba de dos muestras. La pareada gana potencia porque elimina la variabilidad entre unidades y se concentra en el cambio. Elegir mal el diseño desperdicia información y puede ocultar un efecto real."
+              }
             },
             {
               "id": "C4-L4-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La prueba pareada analiza:",
                 "en": "Paired test analyzes:"
               },
-              "choices": [
-                {
-                  "es": "Los grupos originales",
-                  "en": "Original groups"
-                },
-                {
-                  "es": "Las diferencias",
-                  "en": "Differences"
-                },
-                {
-                  "es": "Las medias",
-                  "en": "Means"
-                },
-                {
-                  "es": "Las varianzas",
-                  "en": "Variances"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Diferencias.",
-                "en": "Differences."
+                "es": "Es una prueba t de una muestra sobre los cambios."
               },
               "solution": {
-                "es": "Las diferencias.",
-                "en": "Differences."
+                "es": "La prueba pareada analiza las diferencias dentro de cada par, no los dos grupos por separado. Se reduce a una prueba t de una muestra sobre esos cambios."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "las diferencias",
+                "las diferencias dentro de cada par",
+                "la diferencia"
+              ],
+              "explain": {
+                "es": "Si respondiste «los grupos originales», has ignorado la estructura del diseño. Al restar dentro del par, las diferencias individuales se cancelan y la variabilidad relevante es la del cambio. Esa reducción es la que hace la prueba más potente. La unidad de análisis deja de ser la persona y pasa a ser el cambio."
+              }
             },
             {
               "id": "C4-L4-E3",
@@ -3842,12 +3732,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Eliminar la variabilidad entre sujetos aumenta la señal."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la prueba pareada es más potente que la de dos muestras independientes cuando existe emparejamiento, porque la variabilidad entre unidades se cancela al restar."
               },
               "xp": 10,
               "choices": [
@@ -3859,43 +3747,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene comparar los errores estándar: el de la diferencia pareada depende de la correlación entre medidas, y esa correlación reduce la varianza. Si las medidas no están correlacionadas, la ganancia desaparece y la prueba pareada no aporta nada."
+              }
             },
             {
               "id": "C4-L4-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "gl para prueba pareada (n pares):",
                 "en": "df for paired test (n pairs):"
               },
-              "choices": [
-                {
-                  "es": "n",
-                  "en": "n"
-                },
-                {
-                  "es": "n-1",
-                  "en": "n-1"
-                },
-                {
-                  "es": "n-2",
-                  "en": "n-2"
-                },
-                {
-                  "es": "2n-1",
-                  "en": "2n-1"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "n-1.",
-                "en": "n-1."
+                "es": "Cada par aporta una diferencia y se estima su media."
               },
               "solution": {
-                "es": "n-1.",
-                "en": "n-1."
+                "es": "Con n pares, los grados de libertad son n menos uno, porque se analiza una sola serie de diferencias y se estima su media."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "n-1",
+                "n menos 1",
+                "numero de pares menos 1"
+              ],
+              "explain": {
+                "es": "Si respondiste 2n menos uno, has contado dos observaciones por par. La prueba trabaja sobre una diferencia por par, así que el tamaño relevante es el número de pares. Ese detalle cambia los valores críticos y el ancho del intervalo."
+              }
             },
             {
               "id": "C4-L4-E5",
@@ -3906,12 +3784,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "La dependencia entre medidas invalida el error estándar."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: usar la prueba de dos muestras independientes con datos pareados es un error, porque ignora la correlación y calcula un error estándar demasiado grande, lo que reduce la potencia."
               },
               "xp": 10,
               "choices": [
@@ -3923,7 +3799,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver el efecto: la prueba independiente trata las mediciones como si vinieran de grupos distintos, perdiendo la información del emparejamiento. El resultado es un intervalo más ancho y una mayor probabilidad de no detectar un efecto que existe."
+              }
             }
           ]
         },
@@ -4074,12 +3953,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "4/2.",
-                "en": "4/2."
+                "es": "Divide la diferencia entre la desviación combinada."
               },
               "solution": {
-                "es": "2 (grande).",
-                "en": "2 (large)."
+                "es": "La d de Cohen es 4 entre 2, es decir, 2, un efecto muy grande. La medida estandariza la diferencia para compararla entre escalas distintas."
               },
               "xp": 10,
               "choices": [
@@ -4099,79 +3976,54 @@ export default {
                   "es": "3",
                   "en": "3"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 2 pero dudaste de su interpretación, el valor es correcto y corresponde a dos desviaciones de diferencia, un efecto poco frecuente en ciencias sociales. La d no tiene unidades y por eso permite comparar intervenciones medidas con instrumentos distintos."
+              }
             },
             {
               "id": "C4-L5-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "d ≈ 0,2 es:",
                 "en": "d ≈ 0.2 is:"
               },
-              "choices": [
-                {
-                  "es": "Grande",
-                  "en": "Large"
-                },
-                {
-                  "es": "Mediano",
-                  "en": "Medium"
-                },
-                {
-                  "es": "Pequeño",
-                  "en": "Small"
-                },
-                {
-                  "es": "Nulo",
-                  "en": "Null"
-                }
-              ],
-              "answer": 2,
               "hint": {
-                "es": "Pequeño.",
-                "en": "Small."
+                "es": "Está en el extremo bajo de la escala convencional."
               },
               "solution": {
-                "es": "Pequeño.",
-                "en": "Small."
+                "es": "Una d de 0,2 se considera un efecto pequeño según las convenciones habituales. Explica una parte modesta de la variabilidad y puede ser relevante solo si el coste de la intervención es bajo."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "pequeno",
+                "efecto pequeno"
+              ],
+              "explain": {
+                "es": "Si respondiste «mediano», has sobreestimado su magnitud. Las convenciones sitúan 0,2 como pequeño, 0,5 como mediano y 0,8 como grande, aunque dependen del campo. En educación, efectos de 0,2 pueden ser relevantes a gran escala; en otras áreas son triviales."
+              }
             },
             {
               "id": "C4-L5-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "d ≈ 0,8 es:",
                 "en": "d ≈ 0.8 is:"
               },
-              "choices": [
-                {
-                  "es": "Pequeño",
-                  "en": "Small"
-                },
-                {
-                  "es": "Mediano",
-                  "en": "Medium"
-                },
-                {
-                  "es": "Grande",
-                  "en": "Large"
-                },
-                {
-                  "es": "Nulo",
-                  "en": "Null"
-                }
-              ],
-              "answer": 2,
               "hint": {
-                "es": "Grande.",
-                "en": "Large."
+                "es": "Está en el extremo alto de la escala convencional."
               },
               "solution": {
-                "es": "Grande.",
-                "en": "Large."
+                "es": "Una d de 0,8 se considera un efecto grande. Implica que el grupo tratado está casi una desviación por encima del grupo de comparación."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "grande",
+                "efecto grande"
+              ],
+              "explain": {
+                "es": "Si respondiste «mediano», has quedado corto según la convención de Cohen. El valor 0,8 marca el umbral de los efectos grandes, aunque la etiqueta no dice si el efecto importa en un contexto concreto. La magnitud y el coste son los que deciden."
+              }
             },
             {
               "id": "C4-L5-E4",
@@ -4182,12 +4034,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "La significación depende del tamaño de muestra, no de la magnitud."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: un valor p pequeño no garantiza un efecto importante, porque con muestras grandes hasta diferencias triviales resultan significativas. El tamaño del efecto es el que informa de la magnitud."
               },
               "xp": 10,
               "choices": [
@@ -4199,43 +4049,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido detectabilidad con relevancia. El valor p responde a si el efecto es compatible con el azar; la d responde a cuánto cambia. Reportar ambos es lo que permite decidir si merece la pena intervenir. Con diez mil casos, una diferencia de décimas puede tener un p minúsculo."
+              }
             },
             {
               "id": "C4-L5-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El tamaño del efecto complementa:",
                 "en": "Effect size complements:"
               },
-              "choices": [
-                {
-                  "es": "El p-valor",
-                  "en": "The p-value"
-                },
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "La varianza",
-                  "en": "Variance"
-                },
-                {
-                  "es": "La moda",
-                  "en": "The mode"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "El p-valor.",
-                "en": "The p-value."
+                "es": "Aporta la magnitud que la significación no da."
               },
               "solution": {
-                "es": "El p-valor.",
-                "en": "The p-value."
+                "es": "El tamaño del efecto complementa al valor p, porque añade la magnitud y permite valorar la relevancia práctica. El valor p solo indica compatibilidad con la hipótesis nula."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "el p-valor",
+                "el valor p",
+                "p-valor"
+              ],
+              "explain": {
+                "es": "Si respondiste «la media», has elegido un resumen descriptivo que no resuelve la comparación entre grupos. El tamaño del efecto estandariza la diferencia y la hace comparable entre estudios. Su combinación con el intervalo es la práctica recomendada en los informes modernos."
+              }
             }
           ]
         }

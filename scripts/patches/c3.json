@@ -1,0 +1,59 @@
+{
+  "items": {
+    "C3-L1-E1": {
+      "type": "short",
+      "answers": ["igualdad", "la igualdad"],
+      "hint": "Es el punto de referencia que permite calcular la distribución.",
+      "solution": "La hipótesis nula siempre contiene una igualdad, como mu igual a 10 o pi igual a 0,5. Sin un valor concreto no se puede calcular la probabilidad de los datos bajo esa hipótesis.",
+      "explain": "Si respondiste «desigualdad», has confundido la nula con la alternativa. La nula se plantea como igualdad porque el cálculo del valor p necesita un valor de referencia. En un contraste unilateral, la nula se escribe como menor o igual, pero se evalúa en el punto de igualdad."
+    },
+    "C3-L1-E2": {
+      "type": "short",
+      "answers": ["bilateral", "de dos colas", "a dos colas"],
+      "hint": "Interesan las dos direcciones del efecto.",
+      "solution": "Si se quiere probar que el parámetro es distinto, el contraste es bilateral, porque la alternativa incluye valores mayores y menores. Ese contraste reparte el nivel de significación entre las dos colas.",
+      "explain": "Si respondiste «unilateral derecha», has descartado la posibilidad de un efecto en la dirección contraria. Unilateral solo se justifica si esa dirección no aporta información y se decidió antes de ver los datos. Cambiar de bilateral a unilateral tras observar el resultado duplica la evidencia de forma artificial."
+    },
+    "C3-L1-E3": {
+      "hint": "Elegirlas después convierte el contraste en una búsqueda.",
+      "solution": "Verdadero: las hipótesis se eligen antes de ver los datos, para que el valor p conserve su significado. Formularlas después de observar el resultado invalida la interpretación.",
+      "explain": "Si respondiste «falso», conviene pensar en el efecto: si se elige la dirección tras ver los datos, el contraste deja de ser una prueba y se convierte en una descripción disfrazada. El preregistro y el plan de análisis existen precisamente para fijar la pregunta antes de mirar."
+    },
+    "C3-L2-E1": {
+      "hint": "Compara el valor p con el nivel fijado.",
+      "solution": "Con p igual a 0,03 y alfa 0,05 se rechaza la hipótesis nula, porque el valor p es menor que el nivel. El resultado se declara estadísticamente significativo.",
+      "explain": "Si respondiste «no rechazar», has invertido la comparación. La regla es rechazar cuando el valor p es pequeño, no cuando es grande. Aun así, rechazar no dice que la hipótesis alternativa sea cierta: dice que los datos son poco compatibles con la nula."
+    },
+    "C3-L2-E2": {
+      "hint": "Un valor p alto indica compatibilidad con la nula.",
+      "solution": "Con p igual a 0,20 y alfa 0,05 no se rechaza la hipótesis nula, porque el valor p supera el nivel. Eso no demuestra que la nula sea cierta: solo indica que no hay evidencia suficiente contra ella.",
+      "explain": "Si respondiste «rechazar», has aplicado la regla al revés. Un valor p alto significa que el resultado observado es frecuente bajo la nula, no que la nula esté demostrada. La diferencia entre «no rechazar» y «aceptar» es una de las distinciones más importantes del contraste."
+    },
+    "C3-L2-E3": {
+      "hint": "Es la probabilidad de los datos bajo la nula, no al contrario.",
+      "solution": "Falso: el valor p no es la probabilidad de que la hipótesis nula sea cierta, sino la probabilidad de observar un resultado tan o más extremo si la nula fuera cierta. La dirección de la condicional importa.",
+      "explain": "Si respondiste «verdadero», has invertido la condicional. El valor p se calcula suponiendo la nula y mirando los datos; no al revés. Para obtener la probabilidad de la hipótesis haría falta una probabilidad previa, que el contraste frecuentista no incluye."
+    },
+    "C3-L3-E1": {
+      "type": "short",
+      "answers": ["falso positivo", "positivo falso"],
+      "hint": "Se rechaza algo que era cierto.",
+      "solution": "El error de tipo I es el falso positivo: rechazar la hipótesis nula cuando en realidad es cierta. Su probabilidad es alfa, el nivel de significación.",
+      "explain": "Si respondiste «falso negativo», has confundido los dos errores. El tipo I declara un efecto que no existe; el tipo II no detecta uno que sí existe. La regla mnemotécnica del juicio ayuda: condenar a un inocente es tipo I, absolver a un culpable es tipo II."
+    },
+    "C3-L3-E2": {
+      "type": "short",
+      "answers": ["falso negativo", "negativo falso"],
+      "hint": "No se detecta un efecto que existe.",
+      "solution": "El error de tipo II es el falso negativo: no rechazar la hipótesis nula cuando en realidad es falsa. Su probabilidad es beta, y la potencia es su complemento.",
+      "explain": "Si respondiste «falso positivo», has invertido la clasificación. El tipo II describe la ceguera de la prueba ante un efecto real, y depende del tamaño de muestra y del efecto verdadero. Un estudio con poca potencia comete este error con frecuencia sin saberlo."
+    },
+    "C3-L3-E3": {
+      "type": "short",
+      "answers": ["1-beta", "uno menos beta"],
+      "hint": "Es la probabilidad de detectar un efecto cuando existe.",
+      "solution": "La potencia es 1 menos beta: la probabilidad de rechazar la nula cuando es falsa, es decir, de detectar un efecto real. Depende del tamaño del efecto, del tamaño de muestra y del nivel alfa.",
+      "explain": "Si respondiste alfa, has nombrado la probabilidad del error contrario. Alfa controla los falsos positivos; la potencia controla los verdaderos positivos. Confundirlas lleva a exigir más rigor bajando alfa sin aumentar la muestra, lo que reduce la capacidad de detectar efectos reales."
+    }
+  }
+}

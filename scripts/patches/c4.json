@@ -1,0 +1,149 @@
+{
+  "items": {
+    "C4-L1-E1": {
+      "hint": "Resta el valor nulo y divide por el error estándar.",
+      "solution": "El error estándar es 10 entre 5, es decir, 2; la diferencia es 5, y el cociente da 2,5. El valor está dos desviaciones y media por encima del valor nulo.",
+      "explain": "Si respondiste 0,5, has dividido por sigma en lugar de por el error estándar. La estandarización usa sigma entre raíz de n, porque la media tiene menos variabilidad que una observación individual. Ese detalle cambia el resultado por un factor de raíz de n."
+    },
+    "C4-L1-E2": {
+      "type": "short",
+      "answers": ["s conocida", "sigma conocida", "desviacion conocida"],
+      "hint": "La prueba z supone que la desviación poblacional no se estima.",
+      "solution": "La prueba z requiere que la desviación poblacional sea conocida, además de independencia y normalidad o muestra grande. Si sigma se estima con s, la prueba correcta es la t.",
+      "explain": "Si respondiste «s desconocida», has invertido la condición. La z se usa cuando no hay que estimar la dispersión, por ejemplo en procesos calibrados. Cuando se estima, aparece una fuente adicional de incertidumbre y la distribución cambia a t."
+    },
+    "C4-L1-E3": {
+      "hint": "Estimar la desviación añade incertidumbre.",
+      "solution": "Falso: si la desviación es desconocida se usa la prueba t, no la z. La t tiene colas más gruesas para compensar la estimación de sigma con los mismos datos.",
+      "explain": "Si respondiste «verdadero», has aplicado la prueba del caso ideal a una situación real. Usar z con s produce valores p demasiado pequeños, sobre todo con muestras pequeñas, y aumenta los falsos positivos. La corrección existe porque la incertidumbre se suma."
+    },
+    "C4-L1-E4": {
+      "type": "short",
+      "answers": ["cuantas se esta x barra de mu0", "cuantas desviaciones estandar", "distancia en errores estandar"],
+      "hint": "Mide la separación en unidades de error estándar.",
+      "solution": "El estadístico z mide cuántos errores estándar separan la media observada del valor nulo. Su valor absoluto indica la distancia y su signo, la dirección.",
+      "explain": "Si respondiste «la media», has descrito la estimación, no la medida de discrepancia. La media tiene unidades del problema; z es adimensional y por eso permite comparar problemas de escalas distintas. Esa normalización es lo que hace posible usar una sola tabla."
+    },
+    "C4-L1-E5": {
+      "hint": "El teorema central del límite permite la aproximación con muestras grandes.",
+      "solution": "Verdadero: con n grande, la prueba z es válida aunque los datos no sean normales, porque la media muestral se aproxima a la normal por el teorema central del límite.",
+      "explain": "Si respondiste «falso», has exigido normalidad de los datos cuando el supuesto se refiere a la media. Con muestras grandes, la aproximación funciona para distribuciones razonables. El límite aparece con colas muy pesadas o con datos dependientes, donde ninguna tabla salva el análisis."
+    },
+    "C4-L2-E1": {
+      "hint": "Divide la diferencia por s entre raíz de n.",
+      "solution": "El error estándar es 4 entre 4, es decir, 1; la diferencia es 2, y el estadístico resulta 2. Con 15 grados de libertad, el valor p bilateral ronda 0,06.",
+      "explain": "Si respondiste 0,5, has dividido por s sin tener en cuenta la raíz de n. El error estándar de la media es s entre raíz de 16, que es 4. Ese paso es el que convierte la diferencia en unidades comparables con la distribución de referencia."
+    },
+    "C4-L2-E2": {
+      "hint": "Se estima la media y por eso se pierde una pieza de información.",
+      "solution": "Con 20 observaciones, los grados de libertad son 19, porque se estima un parámetro con los mismos datos. El resultado se busca en la tabla t con ese valor.",
+      "explain": "Si respondiste 20, has usado el tamaño de muestra como grados de libertad. La estimación de la media consume una pieza de información, y esa es la razón del menos uno. El error cambia el valor crítico y, con él, la decisión en los casos límite."
+    },
+    "C4-L2-E3": {
+      "type": "short",
+      "answers": ["s desconocida", "sigma desconocida", "desviacion desconocida"],
+      "hint": "La t corrige la incertidumbre de estimar la dispersión.",
+      "solution": "La prueba t se usa cuando la desviación poblacional es desconocida y se estima con la muestra. Es el caso habitual en la práctica, por eso la t es la prueba estándar para medias.",
+      "explain": "Si respondiste «s conocida», has descrito cuándo se usa z. La distinción no es formal: con muestras pequeñas, usar la distribución equivocada cambia el valor p de forma visible. La t existe precisamente para el caso en que la dispersión se estima."
+    },
+    "C4-L2-E4": {
+      "hint": "La corrección pierde peso al crecer la muestra.",
+      "solution": "Verdadero: con n grande, la t de Student se aproxima a la normal estándar porque la estimación de la desviación se vuelve precisa. La diferencia es despreciable a partir de unos cien casos.",
+      "explain": "Si respondiste «falso», conviene pensar en el origen de la t: sus colas más gruesas compensan la incertidumbre de estimar sigma. Al aumentar la muestra, esa incertidumbre disminuye y la distribución converge. Por eso los paquetes modernos usan t siempre: con n grande no cuesta nada."
+    },
+    "C4-L2-E5": {
+      "type": "short",
+      "answers": ["n-1", "n menos 1"],
+      "hint": "Se estima un solo parámetro con los datos.",
+      "solution": "Los grados de libertad son n menos uno, porque se estima la media con la misma muestra. En una prueba de dos muestras con varianzas iguales serían n1 más n2 menos dos.",
+      "explain": "Si respondiste n, has ignorado la estimación de la media. Cada parámetro estimado consume un grado de libertad, y esa pérdida se refleja en la distribución de referencia. Confundir el divisor cambia el valor crítico y puede alterar la conclusión en el límite."
+    },
+    "C4-L3-E1": {
+      "hint": "La versión robusta no supone varianzas iguales.",
+      "solution": "Si las varianzas son distintas conviene la corrección de Welch, que estima cada varianza por separado y ajusta los grados de libertad. Es la opción recomendada por defecto en la práctica.",
+      "explain": "Si respondiste «pooled», has supuesto igualdad de varianzas, precisamente la condición que falla. Esa suposición infla o desinfla el error estándar según los tamaños, y puede cambiar la decisión. Welch evita el problema con un coste mínimo de potencia cuando la suposición era cierta."
+    },
+    "C4-L3-E2": {
+      "type": "short",
+      "answers": ["n1+n2-2", "n1 mas n2 menos 2"],
+      "hint": "Se estiman dos medias y una varianza común.",
+      "solution": "Con varianzas iguales, los grados de libertad son n1 más n2 menos dos, porque se estiman dos medias a partir de los mismos datos y se combina una varianza común.",
+      "explain": "Si respondiste n1 más n2, has olvidado las dos medias estimadas. Cada media consume un grado de libertad, y la varianza común se calcula con los residuales de ambas. Ese reparto explica por qué el divisor es la suma menos dos y no menos uno."
+    },
+    "C4-L3-E3": {
+      "hint": "La suposición de igualdad rara vez se cumple exactamente.",
+      "solution": "Verdadero: en la práctica se prefiere Welch porque no exige igualdad de varianzas y apenas pierde potencia cuando la suposición se cumple. Es la opción robusta y recomendada.",
+      "explain": "Si respondiste «falso», conviene pensar en el coste del error: suponer varianzas iguales cuando no lo son produce valores p engañosos, sobre todo con grupos de distinto tamaño. Welch elimina esa dependencia con una corrección de grados de libertad."
+    },
+    "C4-L3-E4": {
+      "hint": "Se comparan dos grupos distintos con una misma variable.",
+      "solution": "La prueba t de dos muestras compara las medias de dos grupos independientes. La hipótesis nula es que ambas medias poblacionales son iguales.",
+      "explain": "Si respondiste «una muestra con un valor», has descrito la prueba de una muestra. La de dos muestras estima una diferencia y evalúa si es compatible con cero. La distinción importa porque el error estándar se construye combinando la variabilidad de ambos grupos."
+    },
+    "C4-L3-E5": {
+      "hint": "Cada unidad pertenece a un solo grupo.",
+      "solution": "Verdadero: los grupos deben ser independientes, es decir, cada unidad pertenece a uno solo y no hay emparejamiento ni medidas repetidas. Si hay dependencia, la prueba correcta es la pareada.",
+      "explain": "Si respondiste «falso», conviene imaginar el caso de medir a la misma persona antes y después: los datos están correlacionados y tratarlos como independientes infla el error estándar. La independencia no se comprueba con una fórmula: se garantiza con el diseño."
+    },
+    "C4-L4-E1": {
+      "hint": "La misma unidad se mide dos veces o se compara con su par.",
+      "solution": "La prueba pareada se usa con datos emparejados: la misma unidad medida dos veces, o pares formados por características similares. Se analiza la diferencia dentro de cada par.",
+      "explain": "Si respondiste «dos grupos independientes», has descrito la prueba de dos muestras. La pareada gana potencia porque elimina la variabilidad entre unidades y se concentra en el cambio. Elegir mal el diseño desperdicia información y puede ocultar un efecto real."
+    },
+    "C4-L4-E2": {
+      "type": "short",
+      "answers": ["las diferencias", "las diferencias dentro de cada par", "la diferencia"],
+      "hint": "Es una prueba t de una muestra sobre los cambios.",
+      "solution": "La prueba pareada analiza las diferencias dentro de cada par, no los dos grupos por separado. Se reduce a una prueba t de una muestra sobre esos cambios.",
+      "explain": "Si respondiste «los grupos originales», has ignorado la estructura del diseño. Al restar dentro del par, las diferencias individuales se cancelan y la variabilidad relevante es la del cambio. Esa reducción es la que hace la prueba más potente."
+    },
+    "C4-L4-E3": {
+      "hint": "Eliminar la variabilidad entre sujetos aumenta la señal.",
+      "solution": "Verdadero: la prueba pareada es más potente que la de dos muestras independientes cuando existe emparejamiento, porque la variabilidad entre unidades se cancela al restar.",
+      "explain": "Si respondiste «falso», conviene comparar los errores estándar: el de la diferencia pareada depende de la correlación entre medidas, y esa correlación reduce la varianza. Si las medidas no están correlacionadas, la ganancia desaparece y la prueba pareada no aporta nada."
+    },
+    "C4-L4-E4": {
+      "type": "short",
+      "answers": ["n-1", "n menos 1", "numero de pares menos 1"],
+      "hint": "Cada par aporta una diferencia y se estima su media.",
+      "solution": "Con n pares, los grados de libertad son n menos uno, porque se analiza una sola serie de diferencias y se estima su media.",
+      "explain": "Si respondiste 2n menos uno, has contado dos observaciones por par. La prueba trabaja sobre una diferencia por par, así que el tamaño relevante es el número de pares. Ese detalle cambia los valores críticos y el ancho del intervalo."
+    },
+    "C4-L4-E5": {
+      "hint": "La dependencia entre medidas invalida el error estándar.",
+      "solution": "Verdadero: usar la prueba de dos muestras independientes con datos pareados es un error, porque ignora la correlación y calcula un error estándar demasiado grande, lo que reduce la potencia.",
+      "explain": "Si respondiste «falso», conviene ver el efecto: la prueba independiente trata las mediciones como si vinieran de grupos distintos, perdiendo la información del emparejamiento. El resultado es un intervalo más ancho y una mayor probabilidad de no detectar un efecto que existe."
+    },
+    "C4-L5-E1": {
+      "hint": "Divide la diferencia entre la desviación combinada.",
+      "solution": "La d de Cohen es 4 entre 2, es decir, 2, un efecto muy grande. La medida estandariza la diferencia para compararla entre escalas distintas.",
+      "explain": "Si respondiste 2 pero dudaste de su interpretación, el valor es correcto y corresponde a dos desviaciones de diferencia, un efecto poco frecuente en ciencias sociales. La d no tiene unidades y por eso permite comparar intervenciones medidas con instrumentos distintos."
+    },
+    "C4-L5-E2": {
+      "type": "short",
+      "answers": ["pequeno", "efecto pequeno"],
+      "hint": "Está en el extremo bajo de la escala convencional.",
+      "solution": "Una d de 0,2 se considera un efecto pequeño según las convenciones habituales. Explica una parte modesta de la variabilidad y puede ser relevante solo si el coste de la intervención es bajo.",
+      "explain": "Si respondiste «mediano», has sobreestimado su magnitud. Las convenciones sitúan 0,2 como pequeño, 0,5 como mediano y 0,8 como grande, aunque dependen del campo. En educación, efectos de 0,2 pueden ser relevantes a gran escala; en otras áreas son triviales."
+    },
+    "C4-L5-E3": {
+      "type": "short",
+      "answers": ["grande", "efecto grande"],
+      "hint": "Está en el extremo alto de la escala convencional.",
+      "solution": "Una d de 0,8 se considera un efecto grande. Implica que el grupo tratado está casi una desviación por encima del grupo de comparación.",
+      "explain": "Si respondiste «mediano», has quedado corto según la convención de Cohen. El valor 0,8 marca el umbral de los efectos grandes, aunque la etiqueta no dice si el efecto importa en un contexto concreto. La magnitud y el coste son los que deciden."
+    },
+    "C4-L5-E4": {
+      "hint": "La significación depende del tamaño de muestra, no de la magnitud.",
+      "solution": "Falso: un valor p pequeño no garantiza un efecto importante, porque con muestras grandes hasta diferencias triviales resultan significativas. El tamaño del efecto es el que informa de la magnitud.",
+      "explain": "Si respondiste «verdadero», has confundido detectabilidad con relevancia. El valor p responde a si el efecto es compatible con el azar; la d responde a cuánto cambia. Reportar ambos es lo que permite decidir si merece la pena intervenir."
+    },
+    "C4-L5-E5": {
+      "type": "short",
+      "answers": ["el p-valor", "el valor p", "p-valor"],
+      "hint": "Aporta la magnitud que la significación no da.",
+      "solution": "El tamaño del efecto complementa al valor p, porque añade la magnitud y permite valorar la relevancia práctica. El valor p solo indica compatibilidad con la hipótesis nula.",
+      "explain": "Si respondiste «la media», has elegido un resumen descriptivo que no resuelve la comparación entre grupos. El tamaño del efecto estandariza la diferencia y la hace comparable entre estudios. Su combinación con el intervalo es la práctica recomendada en los informes modernos."
+    }
+  }
+}
