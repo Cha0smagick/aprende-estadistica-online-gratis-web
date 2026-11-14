@@ -5405,59 +5405,49 @@ export default {
           "exercises": [
             {
               "id": "B9-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El anclaje es:",
                 "en": "Anchoring is:"
               },
-              "choices": [
-                {
-                  "es": "Decidir por lo que recuerdas",
-                  "en": "Deciding by what you remember"
-                },
-                {
-                  "es": "El primer numero ancla la percepcion",
-                  "en": "The first number anchors perception"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Primer numero.",
-                "en": "First number."
+                "es": "El primer dato condiciona las estimaciones siguientes."
               },
               "solution": {
-                "es": "El primer numero ancla la percepcion.",
-                "en": "The first number anchors perception."
+                "es": "El anclaje es el efecto por el que el primer número que se menciona condiciona las estimaciones posteriores, aunque sea arbitrario. Un precio inicial alto hace que el descuento parezca mayor."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "el primer numero ancla la percepcion",
+                "el primer numero",
+                "anclaje"
+              ],
+              "explain": {
+                "es": "Si respondiste «decidir por lo que recuerdas», has descrito la disponibilidad, que es otro sesgo. El anclaje no depende de la memoria, sino de un valor de referencia que se toma como punto de partida y que arrastra la estimación. Su efecto se demuestra pidiendo estimaciones tras mostrar un número aleatorio."
+              }
             },
             {
               "id": "B9-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La aversion a la perdida significa:",
                 "en": "Loss aversion means:"
               },
-              "choices": [
-                {
-                  "es": "Ganar duele",
-                  "en": "Winning hurts"
-                },
-                {
-                  "es": "Perder duele mas que ganar",
-                  "en": "Losing hurts more than winning"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Perder.",
-                "en": "Losing."
+                "es": "La misma cantidad pesa más cuando se pierde."
               },
               "solution": {
-                "es": "Perder duele mas que ganar.",
-                "en": "Losing hurts more than winning."
+                "es": "La aversión a la pérdida significa que perder una cantidad duele más de lo que satisface ganar la misma cantidad. Esa asimetría explica conductas que la teoría clásica no predice."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "perder duele mas que ganar",
+                "perder duele mas",
+                "la aversion a la perdida"
+              ],
+              "explain": {
+                "es": "Si respondiste «ganar duele», has invertido el sesgo. En términos empíricos, una pérdida de cien euros pesa aproximadamente el doble que una ganancia de cien. Esa asimetría está detrás del efecto de dotación y de la reticencia a vender con pérdidas."
+              }
             },
             {
               "id": "B9-L1-E3",
@@ -5468,12 +5458,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Los sesgos describen atajos mentales, no defectos individuales."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los sesgos cognitivos son universales, porque provienen de atajos mentales compartidos. Afectan a expertos y a principiantes, aunque la formación permite reconocerlos."
               },
               "xp": 10,
               "choices": [
@@ -5485,7 +5473,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que los estudios clásicos se replicaron en culturas y profesiones distintas. La universalidad no significa que todos cedan igual en toda situación, sino que el mecanismo está presente. Reconocerlo es el primer paso para diseñar decisiones más robustas."
+              }
             }
           ]
         },
@@ -5554,59 +5545,49 @@ export default {
           "exercises": [
             {
               "id": "B9-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Un nudge:",
                 "en": "A nudge:"
               },
-              "choices": [
-                {
-                  "es": "Prohibe opciones",
-                  "en": "Forbids options"
-                },
-                {
-                  "es": "Altera comportamiento sin prohibir",
-                  "en": "Alters behavior without forbidding"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Sin prohibir.",
-                "en": "Without forbidding."
+                "es": "Cambia la opción por defecto, no la libertad de elegir."
               },
               "solution": {
-                "es": "Altera comportamiento sin prohibir opciones.",
-                "en": "Alters behavior without forbidding options."
+                "es": "Un nudge altera el comportamiento sin prohibir opciones ni cambiar incentivos económicos. Un ejemplo es la opción por defecto en un formulario."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "altera comportamiento sin prohibir",
+                "altera el comportamiento sin prohibir",
+                "sin prohibir"
+              ],
+              "explain": {
+                "es": "Si respondiste «prohíbe opciones», has descrito una norma, no un empujón. El nudge mantiene todas las alternativas disponibles y modifica el contexto de la elección. Esa diferencia es la que permite aplicar estas técnicas sin restringir la libertad individual. Ese detalle es el que separa la economia del comportamiento de la regulacion clasica."
+              }
             },
             {
               "id": "B9-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para medir un nudge se usa:",
                 "en": "To measure a nudge use:"
               },
-              "choices": [
-                {
-                  "es": "Solo la media",
-                  "en": "Only the mean"
-                },
-                {
-                  "es": "Experimento A/B + prueba de proporciones",
-                  "en": "A/B experiment + proportion test"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "A/B + proporciones.",
-                "en": "A/B + proportions."
+                "es": "Hay que comparar dos grupos con y sin el empujón."
               },
               "solution": {
-                "es": "Experimento A/B + prueba de proporciones.",
-                "en": "A/B experiment + proportion test."
+                "es": "Para medir un nudge se usa un experimento A/B con prueba de proporciones, porque se comparan dos grupos asignados al azar y se evalúa si la diferencia observada es compatible con el azar."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "experimento a/b + prueba de proporciones",
+                "experimento a/b",
+                "experimento aleatorizado"
+              ],
+              "explain": {
+                "es": "Si respondiste «solo la media», has elegido un resumen sin comparación. Un cambio de comportamiento necesita un grupo de control: sin él, no se sabe si la diferencia se debe al empujón o al contexto. El experimento aleatorizado es lo que permite atribuir el efecto."
+              }
             },
             {
               "id": "B9-L2-E3",
@@ -5617,12 +5598,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Mantener las opciones es parte de la definición."
               },
               "solution": {
-                "es": "Falso: no cambian incentivos.",
-                "en": "False: they do not change incentives."
+                "es": "Falso: los nudges no cambian incentivos económicos, solo la presentación de las opciones. Si cambian precios, multas o recompensas, ya no son empujones, son incentivos."
               },
               "xp": 10,
               "choices": [
@@ -5634,7 +5613,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido un cambio de contexto con un cambio de costes. La distinción importa para evaluar la ética de la intervención: un nudge preserva la libertad de elegir, un incentivo modifica el coste de las alternativas. Confundirlos oculta la diferencia entre persuadir y condicionar."
+              }
             }
           ]
         },
@@ -5719,12 +5701,10 @@ export default {
               "answer": 0,
               "tol": 0.001,
               "hint": {
-                "es": "1 bit.",
-                "en": "1 bit."
+                "es": "Una moneda justa aporta un bit por lanzamiento."
               },
               "solution": {
-                "es": "1 bit.",
-                "en": "1 bit."
+                "es": "La entropía de una moneda justa es 1 bit, porque hay dos resultados equiprobables y cada lanzamiento resuelve una decisión binaria."
               },
               "xp": 10,
               "choices": [
@@ -5744,7 +5724,10 @@ export default {
                   "es": "2",
                   "en": "2"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,5, has dado la probabilidad de cara. La entropía mide información esperada, no probabilidad de un resultado. Con dos opciones igual de probables, hacen falta exactamente dos valores para describir el resultado, y eso equivale a un bit."
+              }
             },
             {
               "id": "B9-L3-E2",
@@ -5756,12 +5739,10 @@ export default {
               "answer": 3,
               "tol": 0.001,
               "hint": {
-                "es": "0.",
-                "en": "0."
+                "es": "Si el resultado es seguro, no hay información que obtener."
               },
               "solution": {
-                "es": "0 bits.",
-                "en": "0 bits."
+                "es": "La entropía es 0 bits cuando la probabilidad es 1, porque el resultado es seguro y no aporta información. La certeza no reduce incertidumbre: la elimina."
               },
               "xp": 10,
               "choices": [
@@ -5781,7 +5762,10 @@ export default {
                   "es": "0",
                   "en": "0"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 1, has aplicado el caso de la moneda justa. La entropía mide sorpresa esperada: si se sabe qué va a pasar, no hay sorpresa posible. Por eso una distribución degenerada tiene entropía nula, y ese caso extremo ayuda a entender la escala de la medida."
+              }
             },
             {
               "id": "B9-L3-E3",
@@ -5792,12 +5776,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "La incertidumbre se maximiza cuando todas las opciones son igual de probables."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la entropía es máxima cuando todos los eventos son equiprobables, porque cualquier sesgo hacia una opción reduce la incertidumbre y, con ella, la información esperada."
               },
               "xp": 10,
               "choices": [
@@ -5809,7 +5791,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene probar con una moneda cargada: si sale cara el 90 % de las veces, el resultado es más predecible y la entropía baja. El máximo se alcanza con probabilidades iguales, y esa propiedad es la que se usa para construir índices de diversidad y de pureza."
+              }
             }
           ]
         },
@@ -5886,31 +5871,26 @@ export default {
           "exercises": [
             {
               "id": "B9-L4-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Aprender es:",
                 "en": "Learning is:"
               },
-              "choices": [
-                {
-                  "es": "Aumentar entropia",
-                  "en": "Increasing entropy"
-                },
-                {
-                  "es": "Reducir entropia",
-                  "en": "Reducing entropy"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Reducir.",
-                "en": "Reduce."
+                "es": "Aprender es pasar de la duda a una predicción más ajustada."
               },
               "solution": {
-                "es": "Reducir entropia (incertidumbre).",
-                "en": "Reducing entropy (uncertainty)."
+                "es": "Aprender es reducir la entropía: pasar de una distribución incierta a otra que concentra la probabilidad en los resultados correctos. El modelo mejora cuando su incertidumbre sobre la realidad disminuye."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "reducir entropia",
+                "reducir la entropia",
+                "reducir"
+              ],
+              "explain": {
+                "es": "Si respondiste «aumentar entropía», has invertido el objetivo. Un modelo entrenado que sigue igual de incierto que al principio no ha aprendido nada. La reducción de entropía se mide con la pérdida y se comprueba con la mejora en datos nuevos, no solo en los de entrenamiento."
+              }
             },
             {
               "id": "B9-L4-E2",
@@ -5931,14 +5911,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Reducir entropia.",
-                "en": "Reduce entropy."
+                "es": "Buscan la división que deja los grupos más puros."
               },
               "solution": {
-                "es": "Elegir la variable con mayor ganancia de informacion.",
-                "en": "Choose the variable with highest information gain."
+                "es": "Los árboles de decisión usan la entropía para elegir la variable que más la reduce en cada división. Buscan particiones que separen los grupos en categorías más homogéneas."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «calcular la media», has aplicado una medida de tendencia central a un problema de clasificación. La ganancia de información mide cuánto baja la entropía tras dividir, y el árbol elige la variable con mayor ganancia. Esa lógica explica por qué los árboles prefieren variables con categorías bien separadas."
+              }
             },
             {
               "id": "B9-L4-E3",
@@ -5949,12 +5930,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Compara la distribución que predice el modelo con la observada."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la cross-entropy loss mide la diferencia entre la distribución predicha y la real. Cuanto más se aleja la predicción de lo observado, mayor es la pérdida."
               },
               "xp": 10,
               "choices": [
@@ -5966,7 +5945,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver su forma: la pérdida penaliza con fuerza asignar probabilidad baja al resultado que ocurrió. Esa penalización logarítmica es la razón por la que los modelos de clasificación aprenden a evitar predicciones confiadas y equivocadas. Se usa en regresión logística y en redes neuronales."
+              }
             }
           ]
         }
