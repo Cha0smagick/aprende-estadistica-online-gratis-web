@@ -4174,12 +4174,10 @@ export default {
               "answer": 1,
               "tol": 0.01,
               "hint": {
-                "es": "(0.06-0.05)/sqrt(0.05x0.95/200).",
-                "en": "(0.06-0.05)/sqrt(0.05x0.95/200)."
+                "es": "Resta la proporción nula y divide por el error estándar bajo esa nula."
               },
               "solution": {
-                "es": "0.648.",
-                "en": "0.648."
+                "es": "El error estándar es la raíz de 0,05 por 0,95 entre 200, aproximadamente 0,0154; la diferencia es 0,01 y el cociente ronda 0,65. El resultado es muy compatible con la proporción nula."
               },
               "xp": 10,
               "choices": [
@@ -4199,35 +4197,33 @@ export default {
                   "es": "1.296",
                   "en": "1.296"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,01, has dado la diferencia sin estandarizar. La prueba divide por la variabilidad esperada bajo la nula, y esa división es la que permite comparar con una distribución conocida. Sin ella, el número depende de la escala y no se puede interpretar."
+              }
             },
             {
               "id": "C5-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El denominador de la prueba z para proporcion usa:",
                 "en": "Denominator of z-test for proportion uses:"
               },
-              "choices": [
-                {
-                  "es": "phat",
-                  "en": "phat"
-                },
-                {
-                  "es": "p0",
-                  "en": "p0"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "p0.",
-                "en": "p0."
+                "es": "Se calcula bajo la hipótesis, no con lo observado."
               },
               "solution": {
-                "es": "p0.",
-                "en": "p0."
+                "es": "El denominador de la prueba z para una proporción usa p0, la proporción nula, porque el estadístico se calcula suponiendo que esa hipótesis es cierta. El intervalo usa la observada."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "p0",
+                "la proporcion nula",
+                "proporcion nula"
+              ],
+              "explain": {
+                "es": "Si respondiste p hat, has usado la fórmula del intervalo. La diferencia es sutil pero decisiva: la prueba evalúa una hipótesis concreta y calcula la varianza bajo ella; el intervalo describe la incertidumbre sin suponer un valor. Confundirlos cambia el estadístico y el valor p."
+              }
             },
             {
               "id": "C5-L1-E3",
@@ -4238,12 +4234,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "La aproximación normal exige suficientes éxitos y fracasos esperados."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la condición de que n por p0 sea al menos 5, y lo mismo para los fracasos, debe cumplirse para que la aproximación normal sea fiable. Si falla, se usa la prueba exacta."
               },
               "xp": 10,
               "choices": [
@@ -4255,7 +4249,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver por qué: con pocos éxitos esperados, la distribución de la proporción es discreta y asimétrica, y la campana no la representa. Aplicar la fórmula en ese caso produce valores p incorrectos, sobre todo en las colas."
+              }
             }
           ]
         },
@@ -4332,59 +4329,48 @@ export default {
           "exercises": [
             {
               "id": "C5-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La proporcion agrupada se calcula como:",
                 "en": "Pooled proportion is computed as:"
               },
-              "choices": [
-                {
-                  "es": "(x1+x2)/(n1+n2)",
-                  "en": "(x1+x2)/(n1+n2)"
-                },
-                {
-                  "es": "(phat1+phat2)/2",
-                  "en": "(phat1+phat2)/2"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "(x1+x2)/(n1+n2).",
-                "en": "(x1+x2)/(n1+n2)."
+                "es": "Bajo la nula, ambas proporciones son iguales y se combinan."
               },
               "solution": {
-                "es": "(x1+x2)/(n1+n2).",
-                "en": "(x1+x2)/(n1+n2)."
+                "es": "La proporción agrupada se calcula sumando los éxitos y dividiendo entre la suma de tamaños. Esa combinación estima la proporción común que supone la hipótesis nula."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "(x1+x2)/(n1+n2)",
+                "suma de exitos entre suma de tamanos"
+              ],
+              "explain": {
+                "es": "Si respondiste promediando las dos proporciones, has ignorado los tamaños. Promediar sin ponderar da el mismo peso a un grupo de 20 y a uno de 2.000, lo que distorsiona la estimación común. La suma de recuentos respeta automáticamente el peso de cada grupo."
+              }
             },
             {
               "id": "C5-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El denominador usa:",
                 "en": "The denominator uses:"
               },
-              "choices": [
-                {
-                  "es": "phat1 y phat2 separadas",
-                  "en": "phat1 and phat2 separately"
-                },
-                {
-                  "es": "La proporcion agrupada",
-                  "en": "Pooled proportion"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Agrupada.",
-                "en": "Pooled."
+                "es": "Es la estimación común bajo la hipótesis de igualdad."
               },
               "solution": {
-                "es": "La proporcion agrupada.",
-                "en": "Pooled proportion."
+                "es": "El denominador de la prueba de dos proporciones usa la proporción agrupada, porque bajo la nula ambas son iguales y se estima un único valor común. El intervalo, en cambio, usa las proporciones separadas."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "la proporcion agrupada",
+                "la agrupada",
+                "proporcion agrupada"
+              ],
+              "explain": {
+                "es": "Si respondiste que usa las proporciones separadas, has descrito el intervalo de la diferencia. La prueba parte de la suposición de igualdad y por eso combina los datos para estimar la varianza. Esa coherencia entre hipótesis y cálculo es la que da validez al valor p."
+              }
             },
             {
               "id": "C5-L2-E3",
@@ -4395,12 +4381,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "La nula afirma que ambas proporciones son iguales."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la prueba z para dos proporciones compara p1 y p2 bajo la hipótesis de que son iguales. El estadístico mide cuántos errores estándar separan las proporciones observadas."
               },
               "xp": 10,
               "choices": [
@@ -4412,7 +4396,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar el planteamiento: la nula es la igualdad de proporciones, y la alternativa es que difieran. El contraste no compara con un valor externo, sino que evalúa si la diferencia observada es compatible con el azar del muestreo."
+              }
             }
           ]
         }
@@ -4511,12 +4498,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "(15-10)^2/10.",
-                "en": "(15-10)^2/10."
+                "es": "Eleva la diferencia al cuadrado y divide por lo esperado."
               },
               "solution": {
-                "es": "2.5.",
-                "en": "2.5."
+                "es": "La diferencia es 5, su cuadrado 25, y dividido entre 10 da 2,5. Ese valor es el aporte de esa categoría al estadístico chi-cuadrado."
               },
               "xp": 10,
               "choices": [
@@ -4536,35 +4521,33 @@ export default {
                   "es": "3.5",
                   "en": "3.5"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,5, has dividido antes de elevar. El estadístico pondera las discrepancias por lo esperado porque una diferencia de 5 sobre 10 es grave, mientras la misma sobre 1.000 sería irrelevante. El cuadrado evita que las desviaciones positivas y negativas se cancelen."
+              }
             },
             {
               "id": "C6-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "gl para bondad de ajuste con k categorias:",
                 "en": "df for goodness of fit with k categories:"
               },
-              "choices": [
-                {
-                  "es": "k",
-                  "en": "k"
-                },
-                {
-                  "es": "k-1",
-                  "en": "k-1"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "k-1.",
-                "en": "k-1."
+                "es": "Fijado el total, una categoría queda determinada."
               },
               "solution": {
-                "es": "k-1.",
-                "en": "k-1."
+                "es": "Los grados de libertad para bondad de ajuste con k categorías son k menos uno, porque el total está fijado y la última frecuencia queda determinada por las demás."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "k-1",
+                "k menos 1",
+                "categorias menos 1"
+              ],
+              "explain": {
+                "es": "Si respondiste k, has contado una categoría de más. Con el total conocido, conocer k menos una frecuencias determina la restante. Ese razonamiento explica también por qué se restan los parámetros estimados cuando la nula no fija todas las proporciones."
+              }
             },
             {
               "id": "C6-L1-E3",
@@ -4575,12 +4558,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "La aproximación chi-cuadrado exige frecuencias esperadas suficientes."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la condición de que cada frecuencia esperada sea al menos 5 debe cumplirse para que la aproximación chi-cuadrado sea válida. Si falla, conviene agrupar categorías o usar una prueba exacta."
               },
               "xp": 10,
               "choices": [
@@ -4592,7 +4573,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver qué ocurre con celdas pequeñas: el estadístico se vuelve discreto y su distribución se aleja de la teórica. El resultado es un valor p poco fiable, a menudo demasiado grande o demasiado pequeño según el caso."
+              }
             }
           ]
         },
@@ -4676,59 +4660,48 @@ export default {
           "exercises": [
             {
               "id": "C6-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "gl para tabla 2x3:",
                 "en": "df for 2x3 table:"
               },
-              "choices": [
-                {
-                  "es": "2",
-                  "en": "2"
-                },
-                {
-                  "es": "3",
-                  "en": "3"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "(2-1)(3-1)=2.",
-                "en": "(2-1)(3-1)=2."
+                "es": "Resta uno a cada dimensión y multiplica."
               },
               "solution": {
-                "es": "(2-1)(3-1) = 2.",
-                "en": "(2-1)(3-1) = 2."
+                "es": "Para una tabla de 2 por 3, los grados de libertad son (2−1)(3−1)=2. Fijados los márgenes, dos celdas determinan el resto de la tabla."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "2",
+                "(2-1)(3-1)=2"
+              ],
+              "explain": {
+                "es": "Si respondiste 3, has restado solo a una dimensión. La regla del producto refleja que cada fila y cada columna imponen una restricción sobre los totales. Ese cálculo determina la distribución de referencia y, con ella, el valor crítico. Cada celda adicional que se fija reduce en uno la libertad del resto de la tabla."
+              }
             },
             {
               "id": "C6-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "H0 en la prueba de independencia:",
                 "en": "H0 in independence test:"
               },
-              "choices": [
-                {
-                  "es": "Las variables estan asociadas",
-                  "en": "Variables are associated"
-                },
-                {
-                  "es": "Las variables son independientes",
-                  "en": "Variables are independent"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Independencia.",
-                "en": "Independence."
+                "es": "La nula siempre afirma ausencia de relación."
               },
               "solution": {
-                "es": "Las variables son independientes.",
-                "en": "Variables are independent."
+                "es": "En la prueba de independencia, la hipótesis nula afirma que las variables son independientes, es decir, que la distribución de una no cambia según la categoría de la otra."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "las variables son independientes",
+                "independencia",
+                "no estan asociadas"
+              ],
+              "explain": {
+                "es": "Si respondiste «las variables están asociadas», has puesto la hipótesis de interés en la nula. El contraste busca evidencia contra la independencia, no a favor de ella. Rechazar indica asociación; no rechazar solo indica que no hay evidencia suficiente para afirmarla."
+              }
             },
             {
               "id": "C6-L2-E3",
@@ -4739,12 +4712,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Cada celda recibe la parte proporcional a sus márgenes."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la frecuencia esperada de una celda es el producto de su total de fila por su total de columna, dividido entre el total general. Esa fórmula es la traducción aritmética de la independencia."
               },
               "xp": 10,
               "choices": [
@@ -4756,7 +4727,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene comprobar con un ejemplo: si una fila tiene el 40 % de los casos y una columna el 25 %, bajo independencia la celda debe tener el 10 % del total. La fórmula reproduce exactamente esa proporción y por eso se usa como referencia."
+              }
             }
           ]
         }

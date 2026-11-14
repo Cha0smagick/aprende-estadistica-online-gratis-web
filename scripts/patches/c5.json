@@ -1,0 +1,40 @@
+{
+  "items": {
+    "C5-L1-E1": {
+      "hint": "Resta la proporción nula y divide por el error estándar bajo esa nula.",
+      "solution": "El error estándar es la raíz de 0,05 por 0,95 entre 200, aproximadamente 0,0154; la diferencia es 0,01 y el cociente ronda 0,65. El resultado es muy compatible con la proporción nula.",
+      "explain": "Si respondiste 0,01, has dado la diferencia sin estandarizar. La prueba divide por la variabilidad esperada bajo la nula, y esa división es la que permite comparar con una distribución conocida. Sin ella, el número depende de la escala y no se puede interpretar."
+    },
+    "C5-L1-E2": {
+      "type": "short",
+      "answers": ["p0", "la proporcion nula", "proporcion nula"],
+      "hint": "Se calcula bajo la hipótesis, no con lo observado.",
+      "solution": "El denominador de la prueba z para una proporción usa p0, la proporción nula, porque el estadístico se calcula suponiendo que esa hipótesis es cierta. El intervalo usa la observada.",
+      "explain": "Si respondiste p hat, has usado la fórmula del intervalo. La diferencia es sutil pero decisiva: la prueba evalúa una hipótesis concreta y calcula la varianza bajo ella; el intervalo describe la incertidumbre sin suponer un valor. Confundirlos cambia el estadístico y el valor p."
+    },
+    "C5-L1-E3": {
+      "hint": "La aproximación normal exige suficientes éxitos y fracasos esperados.",
+      "solution": "Verdadero: la condición de que n por p0 sea al menos 5, y lo mismo para los fracasos, debe cumplirse para que la aproximación normal sea fiable. Si falla, se usa la prueba exacta.",
+      "explain": "Si respondiste «falso», conviene ver por qué: con pocos éxitos esperados, la distribución de la proporción es discreta y asimétrica, y la campana no la representa. Aplicar la fórmula en ese caso produce valores p incorrectos, sobre todo en las colas."
+    },
+    "C5-L2-E1": {
+      "type": "short",
+      "answers": ["(x1+x2)/(n1+n2)", "suma de exitos entre suma de tamanos"],
+      "hint": "Bajo la nula, ambas proporciones son iguales y se combinan.",
+      "solution": "La proporción agrupada se calcula sumando los éxitos y dividiendo entre la suma de tamaños. Esa combinación estima la proporción común que supone la hipótesis nula.",
+      "explain": "Si respondiste promediando las dos proporciones, has ignorado los tamaños. Promediar sin ponderar da el mismo peso a un grupo de 20 y a uno de 2.000, lo que distorsiona la estimación común. La suma de recuentos respeta automáticamente el peso de cada grupo."
+    },
+    "C5-L2-E2": {
+      "type": "short",
+      "answers": ["la proporcion agrupada", "la agrupada", "proporcion agrupada"],
+      "hint": "Es la estimación común bajo la hipótesis de igualdad.",
+      "solution": "El denominador de la prueba de dos proporciones usa la proporción agrupada, porque bajo la nula ambas son iguales y se estima un único valor común. El intervalo, en cambio, usa las proporciones separadas.",
+      "explain": "Si respondiste que usa las proporciones separadas, has descrito el intervalo de la diferencia. La prueba parte de la suposición de igualdad y por eso combina los datos para estimar la varianza. Esa coherencia entre hipótesis y cálculo es la que da validez al valor p."
+    },
+    "C5-L2-E3": {
+      "hint": "La nula afirma que ambas proporciones son iguales.",
+      "solution": "Verdadero: la prueba z para dos proporciones compara p1 y p2 bajo la hipótesis de que son iguales. El estadístico mide cuántos errores estándar separan las proporciones observadas.",
+      "explain": "Si respondiste «falso», conviene recordar el planteamiento: la nula es la igualdad de proporciones, y la alternativa es que difieran. El contraste no compara con un valor externo, sino que evalúa si la diferencia observada es compatible con el azar del muestreo."
+    }
+  }
+}

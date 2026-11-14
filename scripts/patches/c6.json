@@ -1,0 +1,40 @@
+{
+  "items": {
+    "C6-L1-E1": {
+      "hint": "Eleva la diferencia al cuadrado y divide por lo esperado.",
+      "solution": "La diferencia es 5, su cuadrado 25, y dividido entre 10 da 2,5. Ese valor es el aporte de esa categoría al estadístico chi-cuadrado.",
+      "explain": "Si respondiste 0,5, has dividido antes de elevar. El estadístico pondera las discrepancias por lo esperado porque una diferencia de 5 sobre 10 es grave, mientras la misma sobre 1.000 sería irrelevante. El cuadrado evita que las desviaciones positivas y negativas se cancelen."
+    },
+    "C6-L1-E2": {
+      "type": "short",
+      "answers": ["k-1", "k menos 1", "categorias menos 1"],
+      "hint": "Fijado el total, una categoría queda determinada.",
+      "solution": "Los grados de libertad para bondad de ajuste con k categorías son k menos uno, porque el total está fijado y la última frecuencia queda determinada por las demás.",
+      "explain": "Si respondiste k, has contado una categoría de más. Con el total conocido, conocer k menos una frecuencias determina la restante. Ese razonamiento explica también por qué se restan los parámetros estimados cuando la nula no fija todas las proporciones."
+    },
+    "C6-L1-E3": {
+      "hint": "La aproximación chi-cuadrado exige frecuencias esperadas suficientes.",
+      "solution": "Verdadero: la condición de que cada frecuencia esperada sea al menos 5 debe cumplirse para que la aproximación chi-cuadrado sea válida. Si falla, conviene agrupar categorías o usar una prueba exacta.",
+      "explain": "Si respondiste «falso», conviene ver qué ocurre con celdas pequeñas: el estadístico se vuelve discreto y su distribución se aleja de la teórica. El resultado es un valor p poco fiable, a menudo demasiado grande o demasiado pequeño según el caso."
+    },
+    "C6-L2-E1": {
+      "type": "short",
+      "answers": ["2", "(2-1)(3-1)=2"],
+      "hint": "Resta uno a cada dimensión y multiplica.",
+      "solution": "Para una tabla de 2 por 3, los grados de libertad son (2−1)(3−1)=2. Fijados los márgenes, dos celdas determinan el resto de la tabla.",
+      "explain": "Si respondiste 3, has restado solo a una dimensión. La regla del producto refleja que cada fila y cada columna imponen una restricción sobre los totales. Ese cálculo determina la distribución de referencia y, con ella, el valor crítico."
+    },
+    "C6-L2-E2": {
+      "type": "short",
+      "answers": ["las variables son independientes", "independencia", "no estan asociadas"],
+      "hint": "La nula siempre afirma ausencia de relación.",
+      "solution": "En la prueba de independencia, la hipótesis nula afirma que las variables son independientes, es decir, que la distribución de una no cambia según la categoría de la otra.",
+      "explain": "Si respondiste «las variables están asociadas», has puesto la hipótesis de interés en la nula. El contraste busca evidencia contra la independencia, no a favor de ella. Rechazar indica asociación; no rechazar solo indica que no hay evidencia suficiente para afirmarla."
+    },
+    "C6-L2-E3": {
+      "hint": "Cada celda recibe la parte proporcional a sus márgenes.",
+      "solution": "Verdadero: la frecuencia esperada de una celda es el producto de su total de fila por su total de columna, dividido entre el total general. Esa fórmula es la traducción aritmética de la independencia.",
+      "explain": "Si respondiste «falso», conviene comprobar con un ejemplo: si una fila tiene el 40 % de los casos y una columna el 25 %, bajo independencia la celda debe tener el 10 % del total. La fórmula reproduce exactamente esa proporción y por eso se usa como referencia."
+    }
+  }
+}
