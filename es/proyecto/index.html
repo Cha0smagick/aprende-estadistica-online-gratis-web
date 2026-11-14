@@ -55,6 +55,12 @@
     <p>Puntúa tu entrega con honestidad. Esta nota se guarda en tu progreso y es la que habilita el diploma junto con el examen.</p>
     <div id="rubric-form"></div>
     <p id="project-status" class="score-line"></p>
+  <section class="block" id="entrega">
+    <h2>5. Tu entrega</h2>
+    <p>Escribe el contenido de las cinco secciones. El botón genera un archivo Markdown con tu texto y tu autoevaluación: eso es lo que se entrega en un foro, en un repositorio o a tu profesor.</p>
+    <div id="delivery-form"></div>
+    <p><button class="btn btn-primary" id="download-project" type="button">Descargar entrega (.md)</button></p>
+    <p class="muted">La autoevaluación no sustituye a una revisión externa: sirve para que llegues a la revisión con el trabajo hecho.</p>
   </section>
 </main>
 <footer class="site-foot"><p>Jackpot Estadístico</p><p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz (<a href="https://www.linkedin.com/in/alejandroquinteroruiz/" target="_blank" rel="noopener">LinkedIn</a>).</p></footer>
@@ -71,7 +77,20 @@
   ];
   const form=document.getElementById("rubric-form");
   const status=document.getElementById("project-status");
+  const delivery=document.getElementById("delivery-form");
   const saved=window.Progress.projectInfo();
+
+  const SECTIONS=[
+    {id:"pregunta", title:"Pregunta y decisión", hint:"Qué quieres saber y qué decisión cambiaría según el resultado."},
+    {id:"datos", title:"Datos", hint:"Fuente, periodo, unidad de análisis, tamaño y limitaciones."},
+    {id:"descriptivo", title:"Análisis descriptivo", hint:"Dos gráficos y un resumen numérico."},
+    {id:"inferencia", title:"Inferencia", hint:"Intervalo o contraste, con supuestos comprobados."},
+    {id:"conclusion", title:"Conclusión y límites", hint:"Qué se puede afirmar y qué no."}
+  ];
+  delivery.innerHTML=SECTIONS.map(s=>`
+    <label for="sec-${s.id}" style="display:block;margin:14px 0 4px;font-weight:600">${s.title}</label>
+    <textarea id="sec-${s.id}" data-sec="${s.id}" rows="4" placeholder="${s.hint}"
+      style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);font:inherit">${saved&&saved.texts&&saved.texts[s.id]?saved.texts[s.id].replace(/</g,"&lt;"):""}</textarea>`).join("");
   form.innerHTML=CRITERIA.map(c=>`
     <div class="mastery-row">
       <span class="mastery-name" style="min-width:180px">${c.label}</span>
@@ -83,9 +102,11 @@
   function read(){
     const scores={};
     form.querySelectorAll("select[data-crit]").forEach(s=>scores[s.dataset.crit]=Number(s.value));
+    const texts={};
+    delivery.querySelectorAll("textarea[data-sec]").forEach(t=>texts[t.dataset.sec]=t.value.trim());
     const total=Object.values(scores).reduce((a,b)=>a+b,0);
     const zero=Object.values(scores).some(v=>v===0);
-    return {scores,total,passed: total>=10 && !zero};
+    return {scores,texts,total,passed: total>=10 && !zero};
   }
   function paint(){
     const r=read();
@@ -93,12 +114,30 @@
     status.textContent=(p?`Guardado: ${p.total}/12 · ${p.passed?"aprobado":"no aprobado"}. `:"")+
       `Ahora: ${r.total}/12 · ${r.passed?"cumple":"no cumple"} el mínimo.`;
   }
+  function markdown(r){
+    const date=new Date().toISOString().slice(0,10);
+    const rows=CRITERIA.map(c=>`| ${c.label} | ${r.scores[c.id]}/3 |`).join("\n");
+    const body=SECTIONS.map(s=>`## ${s.title}\n\n${r.texts[s.id]||"_(sin contenido)_"}`).join("\n\n");
+    return `# Proyecto final — Jackpot Estadístico\n\nFecha: ${date}\n\n${body}\n\n## Autoevaluación\n\n| Criterio | Nota |\n|---|---|\n${rows}\n| **Total** | **${r.total}/12** |\n\nResultado: ${r.passed?"cumple el mínimo (10/12 y ningún criterio en 0)":"no cumple el mínimo"}.\n`;
+  }
   form.querySelector("#save-project").addEventListener("click",()=>{
     const r=read();
-    window.Progress.saveProject({scores:r.scores,total:r.total,passed:r.passed,at:Date.now()});
+    window.Progress.saveProject({scores:r.scores,texts:r.texts,total:r.total,passed:r.passed,at:Date.now()});
     if(r.passed && window.Game) window.Game.unlock("proyecto");
     paint();
   });
+  document.getElementById("download-project").addEventListener("click",()=>{
+    const r=read();
+    window.Progress.saveProject({scores:r.scores,texts:r.texts,total:r.total,passed:r.passed,at:Date.now()});
+    paint();
+    const blob=new Blob([markdown(r)],{type:"text/markdown;charset=utf-8"});
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download="proyecto-final.md";
+    document.body.appendChild(a); a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },1000);
+  });
+  window.__entrega=()=>markdown(read());
   paint();
 })();
 </script>

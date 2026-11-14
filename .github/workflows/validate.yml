@@ -20,3 +20,11 @@ jobs:
       # bloqueante desde 481/481 con feedback (2026-11-14): explica, solución y sin pistas que filtren
       - run: node scripts/validate-feedback.mjs --strict
       - run: node scripts/audit-exercises.mjs
+      # prosa: 0 artefactos de chatbot, 0 muletillas de énfasis, 0 vocabulario de folleto
+      - run: node scripts/lint-prose.mjs --strict
+      # relleno: ninguna lección puede tener líneas-fragmento de relleno
+      - run: node scripts/lint-filler.mjs --strict
+      # cada deep dive tiene que hablar de la lección que le asigna data/
+      - run: node scripts/check-alignment.mjs
+      - run: node scripts/generate.mjs
+      - run: node scripts/check-a11y.mjs

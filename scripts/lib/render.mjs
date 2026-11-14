@@ -252,6 +252,9 @@ function tableCells(line){
 }
 function mdDeep(src){
   if(!src) return "";
+  const used=new Set();
+  // ids únicos por lección: dos encabezados con el mismo título rompen los anclajes
+  const uid=(s)=>{ const base=slugify(s)||"sec"; let id=base, n=2; while(used.has(id)) id=base+"-"+(n++); used.add(id); return id; };
   const lines=String(src).replace(/\r\n/g,"\n").split("\n");
   const out=[]; let i=0;
   while(i<lines.length){
@@ -267,7 +270,7 @@ function mdDeep(src){
     const h=/^(#{2,4})\s+(.*)$/.exec(line);
     if(h){
       const lvl=h[1].length;
-      out.push(`<h${lvl} id="${slugify(h[2])}">${mdInline(h[2])}</h${lvl}>`);
+      out.push(`<h${lvl} id="${uid(h[2])}">${mdInline(h[2])}</h${lvl}>`);
       i++; continue;
     }
     if(/^(-{3,}|\*{3,})$/.test(line)){ out.push("<hr>"); i++; continue; }
