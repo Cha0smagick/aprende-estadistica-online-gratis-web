@@ -100,3 +100,16 @@ Las explicaciones escritas «a ojo» salen de ~35 palabras. Regla fija: cuatro f
 
 - Etapa 1: `validate.mjs` y `validate-content.mjs --all` en verde; el motor renderiza `short`, muestra explicación y calcula maestría; F0 convertido al 100 % con explicación y solución largas.
 - Fase completa: ≥50 % de los 481 en producción, 100 % con `explain` y `solution` ≥60, 0 pistas que filtran, examen final por curso.
+
+## Validación E2E del examen (2026-11-14)
+
+BrowserOS neo no estaba disponible en la sesión, así que se validó con Chrome headless contra un servidor local (`scripts/serve-site.mjs`) y una página harness temporal:
+
+- Panel de dominio: 7 filas (una por módulo de Descriptiva).
+- Botón «Empezar examen final» → 20 preguntas renderizadas.
+- 20/20 correctas → `Resultado: 100% · aprobado`; el botón pasa a «Repetir examen».
+- 20/20 incorrectas → `Resultado: 0% · no alcanza el 80 %`.
+- **Frontera del umbral**: 16/20 → `80% · aprobado`; 15/20 → `75% · no alcanza el 80 %`.
+- El contador «Respondidas N/20» avanza con cada respuesta.
+
+Sin probar: persistencia del panel entre sesiones y confeti al aprobar con clics humanos.
