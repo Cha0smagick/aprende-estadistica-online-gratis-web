@@ -65,6 +65,8 @@
             const ok=m.value>=PASS;
             status.innerHTML=`${window.t("examResult")}: <b>${pct}%</b> · `+
               (ok?window.t("examPassed"):window.t("examFailed"));
+            if(window.Progress && window.Progress.recordExam) window.Progress.recordExam(course.id||course.slug, pct, ok);
+            if(ok && window.Game) { window.Game.unlock("examen"); if(pct===100) window.Game.unlock("examen-perfecto"); }
             btn.disabled=false;
             btn.textContent=window.t("retryExam");
             if(ok && window.Game) window.Game.confetti();

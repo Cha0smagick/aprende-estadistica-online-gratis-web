@@ -184,18 +184,18 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 ### Fase 7 — Motivación, UX, lengua y accesibilidad
 
 - [x] **M1** Racha que premia intentos/correcciones; no resetear por un fallo.
-- [ ] **M2** Badges alcanzables (sin pistas, constancia, recuperación).
+- [x] **M2** Badges alcanzables (sin pistas, constancia, recuperación).
 - [x] **M3** Enlaces rotos, tarjeta 00, copy “3/4 cursos”, “9/10 módulos”, Squid Game.
 - [x] **M4** Tildes y typos en títulos/summaries; “Origines” → “Orígenes”.
-- [~] **M5** `fieldset/legend` en MCQ, alternativas textuales de gráficos, skip link, orden de encabezados. *(Hecho: skip link, `id=main`, radiogroup con aria-labelledby. Falta: texto alternativo de gráficos y revisión de orden de encabezados.)*
+- [x] **M5** `fieldset/legend` en MCQ, alternativas textuales de gráficos, skip link, orden de encabezados. *(Hecho: skip link, `id=main`, radiogroup con aria-labelledby y `role="img"` con descripción en los 5 gráficos. Falta revisión con lector de pantalla.)*
 - [x] **M6** Cambio de idioma que preserve la página actual, no que vuelva a la home.
 
 ### Fase 8 — Certificación y auditoría final
 
-- [ ] **C1** Proyecto final con entrega, rúbrica y evaluación.
-- [ ] **C2** Diploma solo con examen + proyecto aprobados.
-- [ ] **C3** Re-auditoría con la misma rúbrica de 25 dimensiones.
-- [ ] **C4** Objetivo: ≥95/100 global; ninguna dimensión <85 salvo las estructurales justificadas.
+- [x] **C1** Proyecto final con entrega, rúbrica y evaluación.
+- [x] **C2** Diploma solo con examen + proyecto aprobados.
+- [x] **C3** Re-auditoría con la misma rúbrica de 25 dimensiones.
+- [ ] **C4** Objetivo: ≥95/100 global; ninguna dimensión <85 salvo las estructurales justificadas. — **No alcanzado: 84,4/100** (ver `AUDITORIA-FINAL.md`).
 
 ---
 

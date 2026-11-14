@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyecto final — Jackpot Estadístico</title>
+<meta name="description" content="Proyecto final del curso: enunciado, entrega y rúbrica de evaluación.">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/lesson.css">
+<script>window.SITE_BASE="../../";window.SITE_LANG="es";</script>
+</head>
+<body>
+<header class="site-nav">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <a class="brand" href="../../es/"><span class="brand-chip">♠</span> Jackpot Estadístico</a>
+  <nav class="nav-links"><a class="btn btn-ghost btn-sm" href="../../es/repaso/">↻ Repaso</a><div id="progress-chip" class="progress-chip"></div></nav>
+</header>
+<main id="main" class="container" style="padding-top:24px">
+  <h1>Proyecto final</h1>
+  <p class="lead">El curso no se cierra con un examen: se cierra con un análisis que puedas defender. Este proyecto es la entrega que habilita el diploma.</p>
+
+  <section class="block">
+    <h2>1. Qué tienes que entregar</h2>
+    <p>Elige un conjunto de datos real, formula una pregunta y produce un informe de <strong>dos a cuatro páginas</strong> con estas cinco secciones:</p>
+    <ol>
+      <li><strong>Pregunta y decisión.</strong> Qué quieres saber y qué decisión cambiaría según el resultado.</li>
+      <li><strong>Datos.</strong> Fuente, periodo, unidad de análisis, tamaño y limitaciones conocidas.</li>
+      <li><strong>Análisis descriptivo.</strong> Al menos dos gráficos adecuados al tipo de variable y un resumen numérico.</li>
+      <li><strong>Inferencia.</strong> Un intervalo o un contraste, con los supuestos comprobados y declarados.</li>
+      <li><strong>Conclusión y límites.</strong> Qué se puede afirmar, con qué incertidumbre y qué no se puede concluir.</li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <h2>2. Datos que puedes usar</h2>
+    <p>Sirve cualquier conjunto público con documentación: población y hogares (INE), calidad del aire, resultados deportivos, precios de vivienda, datos abiertos municipales o un registro propio anonimizado. Si eliges datos propios, elimina cualquier identificador personal.</p>
+  </section>
+
+  <section class="block">
+    <h2>3. Rúbrica (12 puntos)</h2>
+    <table>
+      <thead><tr><th>Criterio</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead>
+      <tbody>
+        <tr><td>Pregunta y datos</td><td>Sin pregunta</td><td>Vaga</td><td>Clara</td><td>Clara y con decisión asociada</td></tr>
+        <tr><td>Descriptivo</td><td>Sin gráficos</td><td>Un gráfico inadecuado</td><td>Gráficos correctos</td><td>Correctos y bien interpretados</td></tr>
+        <tr><td>Inferencia</td><td>Ausente</td><td>Método sin supuestos</td><td>Método con supuestos</td><td>Supuestos comprobados y límites declarados</td></tr>
+        <tr><td>Comunicación</td><td>Incomprensible</td><td>Jerga sin explicar</td><td>Clara</td><td>Clara, con incertidumbre y límites</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">Se aprueba con <strong>10 de 12</strong> y ningún criterio en 0.</p>
+  </section>
+
+  <section class="block" id="autoevaluacion">
+    <h2>4. Autoevaluación</h2>
+    <p>Puntúa tu entrega con honestidad. Esta nota se guarda en tu progreso y es la que habilita el diploma junto con el examen.</p>
+    <div id="rubric-form"></div>
+    <p id="project-status" class="score-line"></p>
+  </section>
+</main>
+<footer class="site-foot"><p>Jackpot Estadístico</p><p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz (<a href="https://www.linkedin.com/in/alejandroquinteroruiz/" target="_blank" rel="noopener">LinkedIn</a>).</p></footer>
+<script src="../../assets/js/i18n.js"></script>
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/gamification.js"></script>
+<script>
+(function(){
+  const CRITERIA=[
+    {id:"pregunta", label:"Pregunta y datos"},
+    {id:"descriptivo", label:"Análisis descriptivo"},
+    {id:"inferencia", label:"Inferencia"},
+    {id:"comunicacion", label:"Comunicación"}
+  ];
+  const form=document.getElementById("rubric-form");
+  const status=document.getElementById("project-status");
+  const saved=window.Progress.projectInfo();
+  form.innerHTML=CRITERIA.map(c=>`
+    <div class="mastery-row">
+      <span class="mastery-name" style="min-width:180px">${c.label}</span>
+      <select data-crit="${c.id}" aria-label="${c.label}">
+        ${[0,1,2,3].map(n=>`<option value="${n}"${saved&&saved.scores&&saved.scores[c.id]===n?" selected":""}>${n}</option>`).join("")}
+      </select>
+    </div>`).join("")+`<button class="btn btn-primary" id="save-project" type="button">Guardar autoevaluación</button>`;
+
+  function read(){
+    const scores={};
+    form.querySelectorAll("select[data-crit]").forEach(s=>scores[s.dataset.crit]=Number(s.value));
+    const total=Object.values(scores).reduce((a,b)=>a+b,0);
+    const zero=Object.values(scores).some(v=>v===0);
+    return {scores,total,passed: total>=10 && !zero};
+  }
+  function paint(){
+    const r=read();
+    const p=window.Progress.projectInfo();
+    status.textContent=(p?`Guardado: ${p.total}/12 · ${p.passed?"aprobado":"no aprobado"}. `:"")+
+      `Ahora: ${r.total}/12 · ${r.passed?"cumple":"no cumple"} el mínimo.`;
+  }
+  form.querySelector("#save-project").addEventListener("click",()=>{
+    const r=read();
+    window.Progress.saveProject({scores:r.scores,total:r.total,passed:r.passed,at:Date.now()});
+    if(r.passed && window.Game) window.Game.unlock("proyecto");
+    paint();
+  });
+  paint();
+})();
+</script>
+</body>
+</html>

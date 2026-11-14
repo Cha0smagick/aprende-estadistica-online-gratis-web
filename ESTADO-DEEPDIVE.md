@@ -34,8 +34,8 @@
 1. Contenido cerrado: 115/115 deep dives, validador bloqueante en CI.
 2. **Fase 5 — evaluación y feedback: completa (E1–E6)**. 481/481 con explicación y solución; 241 en formato producción; 0 pistas; maestría ≥80 %; panel de dominio y examen final por curso. `--strict` bloqueante en CI.
 3. **Fase 6 — retención y metacognición: completa (R1–R4)**. Repaso con IDs resolubles, intercalado con rotación y variedad de tipo, panel de dominio por módulo y diario de errores en `/repaso/`.
-4. **Fase 7 — casi completa**. M1 (racha que resta uno en vez de reiniciar), M3 (0 enlaces internos rotos), M4 («Orígenes» y tildes) y M6 (traductor en línea) hechos; M5 parcial (skip link y radiogroup sí; falta texto alternativo de gráficos); M2 pendiente (badges nuevos).
-5. Fase 8 — certificación y auditoría final (rúbrica ≥95/100): sin empezar.
+4. **Fase 7 — completa**. M1–M6 hechos: racha que resta uno, 16 logros con referencias culturales, 0 enlaces internos rotos, «Orígenes» corregido, skip link + radiogroup + texto alternativo en los 5 gráficos, traductor en línea.
+5. **Fase 8 — C1–C3 hechas; C4 no alcanzado**. Proyecto con rúbrica y autoevaluación, diploma condicionado a curso + examen + proyecto, auditoría final con **84,4/100**. Detalle y brechas en `AUDITORIA-FINAL.md`.
 
 ## Comando de validación
 

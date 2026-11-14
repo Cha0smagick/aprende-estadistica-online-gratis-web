@@ -136,7 +136,7 @@
           const doneBtn=document.getElementById("btn-complete");
           if(m.value>=0.8 && window.Progress && !window.Progress.isCompleted(L.id)){
             window.Progress.completeLesson(L.id);
-            window.Game.badgeCheck({});
+            window.Game.badgeCheck({ mastery:m.value });
             if(doneBtn){ doneBtn.textContent="✓ "+window.t("done"); doneBtn.disabled=true; }
             if(exBox){ const p=document.createElement("p"); p.className="score-line mastery-ok"; p.textContent=`${window.t("masteryReached")}: ${pct}%`; exBox.appendChild(p); }
             refreshChip();

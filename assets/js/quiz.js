@@ -109,6 +109,8 @@
           if(btnCheck.disabled) return;
           const ans=collectAnswer();
           const ok=isCorrect(ans);
+          const prevAttempt=window.Progress && window.Progress.attemptInfo ? window.Progress.attemptInfo(q.id) : null;
+          const recovered=!!(ok && prevAttempt && prevAttempt.first===false);
           if(state[i].firstOk===null){
             state[i].firstOk=ok;
             if(window.Progress && window.Progress.recordAttempt) window.Progress.recordAttempt(q.id, ok, true);
@@ -132,7 +134,8 @@
             window.Progress.markSrs(q.id, prev<1?1 : prev<3?3 : prev<7?7 : 21);
             window.Game.badgeCheck({
               perfect: results.correct===results.total && results.total>0 && results.wrong===0 && !usedHelp,
-              noHints: !usedHelp
+              noHints: !usedHelp,
+              recovered
             });
             updateScore();
           } else {

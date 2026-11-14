@@ -1,5 +1,7 @@
 /* Tiny SVG chart helpers. No dependencies. */
 window.Charts = {
+  // Texto alternativo: los gráficos son SVG y necesitan descripción para lectores de pantalla
+  a11y(s, text){ s.setAttribute("role","img"); s.setAttribute("aria-label", text); const ti=document.createElementNS("http://www.w3.org/2000/svg","title"); ti.textContent=text; s.appendChild(ti); return s; },
   svg(w,h){ const s=document.createElementNS("http://www.w3.org/2000/svg","svg"); s.setAttribute("viewBox",`0 0 ${w} ${h}`); s.setAttribute("width","100%"); s.setAttribute("height","auto"); s.classList.add("chart"); s.style.maxWidth=w+"px"; return s; },
   txt(s,x,y,t,opts={}){ const e=document.createElementNS("http://www.w3.org/2000/svg","text"); e.setAttribute("x",x); e.setAttribute("y",y); e.textContent=t; if(opts.anchor) e.setAttribute("text-anchor",opts.anchor); if(opts.size) e.setAttribute("font-size",opts.size); if(opts.fill) e.setAttribute("fill",opts.fill); if(opts.weight) e.setAttribute("font-weight",opts.weight); return e; },
   line(s,x1,y1,x2,y2,cls="axis",color){ const e=document.createElementNS("http://www.w3.org/2000/svg","line"); e.setAttribute("x1",x1);e.setAttribute("y1",y1);e.setAttribute("x2",x2);e.setAttribute("y2",y2); e.setAttribute("class",cls); if(color) e.setAttribute("stroke",color); s.appendChild(e); },
@@ -9,6 +11,9 @@ window.Charts = {
   barChart(container,data,{w=520,h=260,pad=30}={}){
     const s=this.svg(w,h); const max=Math.max(...data.map(d=>d.v),0.001); const bw=(w-2*pad)/data.length;
     data.forEach((d,i)=>{ const bh=(d.v/max)*(h-2*pad); this.rect(s,pad+i*bw+2,h-pad-bh,bw-4,bh,"bar",d.fill); s.appendChild(this.txt(s,pad+i*bw+bw/2,h-pad+14,d.label,{anchor:"middle",size:9})); });
+    const top=data.slice().sort((a,b)=>b.v-a.v)[0];
+    const list=data.map(d=>d.label+" "+d.v).join(", ");
+    this.a11y(s, "Gráfico de barras con "+data.length+" categorías: "+list+". La mayor es "+top.label+" con "+top.v+".");
     this.line(s,pad,h-pad,w-pad,h-pad); container.appendChild(s);
   },
   normalCurve(container,{mean=0,sd=1,w=560,h=280,pad=24, shade=true}={}){
@@ -52,6 +57,7 @@ window.Charts = {
     });
     // title
     s.appendChild(this.txt(s,w/2,14,"Distribución Normal N(μ,σ²)",{anchor:"middle",size:12,fill:"#e6e9ef",weight:"bold"}));
+    this.a11y(s, "Curva normal con media "+mean+" y desviación "+sd+". La zona sombreada entre una desviación por debajo y por encima de la media cubre aproximadamente el 68 % del área.");
     container.appendChild(s);
   },
   scatter(container,pts,{w=420,h=320,pad=30}={}){
@@ -65,6 +71,7 @@ window.Charts = {
       this.circle(s,px,py,4,"point","#60a5fa");
     });
     this.line(s,pad,h-pad,w-pad,h-pad); this.line(s,pad,pad,pad,h-pad);
+    this.a11y(s, "Diagrama de dispersión con "+pts.length+" puntos. La variable X va de "+xmin+" a "+xmax+" y la variable Y de "+ymin+" a "+ymax+".");
     container.appendChild(s);
   },
   regressionLine(container,pts,{w=420,h=320,pad=30}={}){
@@ -92,6 +99,7 @@ window.Charts = {
     this.line(s,px0,py0,px1,py1,"curve","#ffb703");
     this.line(s,pad,h-pad,w-pad,h-pad); this.line(s,pad,pad,pad,h-pad);
     const Syy=pts.reduce((a,p)=>a+(p.y-my)*(p.y-my),0); const r=(den&&Syy)?num/Math.sqrt(den*Syy):0;
+    this.a11y(s, "Regresión lineal con "+pts.length+" puntos: recta y = "+b0.toFixed(2)+" + "+b1.toFixed(2)+"x, correlación r = "+r.toFixed(3)+". La línea roja vertical muestra el residuo de cada punto.");
     container.appendChild(s);
     const info=document.createElement("p"); info.className="score-line"; info.innerHTML=`ŷ = ${b0.toFixed(2)} + ${b1.toFixed(2)}x · r = ${r.toFixed(3)} · r² = ${(r*r).toFixed(3)}`;
     container.appendChild(info);
@@ -112,6 +120,9 @@ window.Charts = {
       // count label on top of bar
       if(c>0) s.appendChild(this.txt(s,pad+i*barw+barw/2,h-pad-bh-4,String(c),{anchor:"middle",size:10,fill:"#e6e9ef",weight:"bold"}));
     });
-    this.line(s,pad,h-pad,w-pad,h-pad); container.appendChild(s);
+    this.line(s,pad,h-pad,w-pad,h-pad);
+    const maxCount=Math.max(...counts), maxBin=counts.indexOf(maxCount);
+    this.a11y(s, "Histograma de "+data.length+" datos en "+bins+" intervalos, de "+min.toFixed(2)+" a "+max.toFixed(2)+". El intervalo con más casos es el "+(maxBin+1)+", con "+maxCount+" observaciones.");
+    container.appendChild(s);
   }
 };

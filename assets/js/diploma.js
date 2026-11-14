@@ -80,15 +80,30 @@
       generate({title:"MEGADIPLOMA ESTADÍSTICO", subtitle:`${courses.length} cursos completados · De cero a hero`, stats:`${courses.length} cursos · ${Object.keys(g.completed).length} lecciones · ${g.xp} XP · Nivel ${g.level}`, filename:"megadiploma.pdf"});
     },
     checkAndOffer(courses){
+      const P=window.Progress;
+      const examOk=(id)=> !P.examInfo || (P.examInfo(id)||{}).passed===true;
+      const projOk=()=> !P.projectInfo || (P.projectInfo()||{}).passed===true;
       for(const c of courses){
-        if(isComplete(c) && !window.Progress.get().diplomas?.includes(c.id)){
-          const g=window.Progress.get();
+        if(!isComplete(c)) continue;
+        const missing=[];
+        if(!examOk(c.id)) missing.push("el examen final");
+        if(!projOk()) missing.push("el proyecto final");
+        if(missing.length){
+          const banner=document.getElementById("diploma-banner");
+          if(banner){
+            banner.style.display="block";
+            banner.innerHTML=`<div class="level-banner">Curso completado. Para el diploma falta ${missing.join(" y ")}. <a href="${window.SITE_BASE}es/proyecto/">Ver el proyecto</a></div>`;
+          }
+          continue;
+        }
+        if(!P.get().diplomas?.includes(c.id)){
+          const g=P.get();
           if(!g.diplomas) g.diplomas=[];
-          if(!g.diplomas.includes(c.id)){ g.diplomas.push(c.id); window.Progress.save(); }
+          if(!g.diplomas.includes(c.id)){ g.diplomas.push(c.id); P.save(); }
           setTimeout(()=>{ if(confirm((window.SITE_LANG==="en"?"You completed a course! Download your PDF diploma?":"¡Completaste un curso! ¿Descargar tu diploma en PDF?"))){ this.courseDiploma(c); } }, 800);
         }
       }
-      if(allCoursesComplete(courses) && !window.Progress.get().diplomas?.includes("mega")){
+      if(allCoursesComplete(courses) && courses.every(c=>examOk(c.id)) && projOk() && !window.Progress.get().diplomas?.includes("mega")){
         const g=window.Progress.get();
         if(!g.diplomas) g.diplomas=[];
         if(!g.diplomas.includes("mega")){ g.diplomas.push("mega"); window.Progress.save(); }

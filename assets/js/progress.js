@@ -27,6 +27,12 @@
     // diario de errores (fase 6, R4): últimos 50 fallos, sin duplicados
     recordError(id){ S.errors=S.errors||[]; S.errors=S.errors.filter(e=>e!==id); S.errors.unshift(id); S.errors=S.errors.slice(0,50); save(S); },
     errorLog(){ return S.errors||[]; },
+    // resultados de examen por curso (fase 8, C2)
+    recordExam(courseId,pct,passed){ S.exams=S.exams||{}; const prev=S.exams[courseId]; if(!prev||pct>prev.pct) S.exams[courseId]={pct,passed,at:Date.now()}; else if(passed&&!prev.passed) S.exams[courseId]={pct,passed:true,at:Date.now()}; save(S); },
+    examInfo(courseId){ return (S.exams||{})[courseId]||null; },
+    // proyecto final (fase 8, C1)
+    saveProject(obj){ S.project=obj; save(S); },
+    projectInfo(){ return S.project||null; },
     // maestría: aciertos al primer intento sobre el total de ejercicios dados
     mastery(ids){ if(!ids||!ids.length) return 0; const hit=ids.filter(id=>{ const a=S.answers[id]; return a && a.first===true; }).length; return hit/ids.length; },
     dueSrs(){ const today=localDate(new Date()); return Object.keys(S.srs).filter(k=>{ if(k.endsWith("-rev")) return false; const v=S.srs[k]; return (typeof v==="string"?v:v.due)<=today; }); },
