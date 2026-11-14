@@ -1,0 +1,114 @@
+{
+  "items": {
+    "C0-L1-E1": {
+      "type": "short",
+      "answers": ["un censo", "censo"],
+      "hint": "Se mide a todas las unidades, sin excepción.",
+      "solution": "Observar a toda la población es un censo. Su ventaja es que elimina el error de muestreo; su coste es alto y sigue expuesto a errores de medición, cobertura y registro.",
+      "explain": "Si respondiste «una muestra», has descrito una parte. El censo mide a todas las unidades de la población y por eso no tiene error de muestreo. Aun así, no es perfecto: un censo mal ejecutado puede subcontar grupos y producir un sesgo mayor que el de una buena muestra."
+    },
+    "C0-L1-E2": {
+      "type": "short",
+      "answers": ["un subconjunto", "subconjunto", "una parte de la poblacion"],
+      "hint": "Se observa una parte para inferir sobre el todo.",
+      "solution": "Una muestra es un subconjunto de la población que se observa para estimar características del conjunto completo. Su calidad depende del procedimiento de selección más que de su tamaño.",
+      "explain": "Si respondiste «toda la población», has descrito el censo. La muestra es la parte que se mide; la población, el todo sobre el que se concluye. Confundirlas lleva a presentar un dato muestral como si describiera a todo el colectivo, sin margen de error."
+    },
+    "C0-L1-E3": {
+      "hint": "Un censo también puede ejecutarse mal.",
+      "solution": "Falso: el censo no siempre es mejor que la muestra. Un censo con subconteo, definiciones ambiguas o errores de registro puede ser peor que una muestra bien diseñada.",
+      "explain": "Si respondiste «verdadero», has confundido exhaustividad con exactitud. El censo elimina el error de muestreo, pero conserva los errores de medición y cobertura. Además, su coste y su lentitud pueden hacer que llegue tarde a la decisión, mientras una muestra responde a tiempo."
+    },
+    "C0-L1-E4": {
+      "hint": "Lo que se quiere conocer es una propiedad del conjunto completo.",
+      "solution": "La inferencia estadística estima parámetros poblacionales a partir de estadísticos muestrales, añadiendo un margen que cuantifica la incertidumbre del muestreo.",
+      "explain": "Si respondiste «estadísticos», has descrito lo que se calcula, no lo que se estima. El estadístico es el medio; el parámetro poblacional es el objetivo. La inferencia recorre ese camino con el error estándar y los intervalos de confianza como herramientas."
+    },
+    "C0-L1-E5": {
+      "hint": "Medir una parte deja siempre un margen de duda.",
+      "solution": "Verdadero: la muestra introduce incertidumbre porque no se mide a toda la población, y esa incertidumbre se cuantifica con el margen de error. El censo, en cambio, no tiene error de muestreo.",
+      "explain": "Si respondiste «falso», conviene recordar que dos muestras del mismo tamaño producen resultados distintos. Esa variabilidad es la incertidumbre que la inferencia mide. Reconocerla no debilita la conclusión: la hace utilizable, porque declara cuánto puede desviarse."
+    },
+    "C0-L2-E1": {
+      "hint": "Un error sistemático no se compensa promediando.",
+      "solution": "Un sesgo sistemático no desaparece con una muestra grande: se reproduce con más precisión. Solo se corrige cambiando el diseño o ajustando el análisis.",
+      "explain": "Si respondiste que desaparece con n grande, has confundido sesgo con variabilidad. El tamaño reduce el error aleatorio, pero desplaza el resultado en la misma dirección con más seguridad. Una encuesta voluntaria de un millón de personas sigue describiendo a los voluntarios."
+    },
+    "C0-L2-E2": {
+      "type": "short",
+      "answers": ["superviviente", "sesgo de superviviente", "supervivencia"],
+      "hint": "Solo se observa a quienes superaron un filtro.",
+      "solution": "Estudiar solo a los que sobrevivieron es sesgo de superviviente: los casos que no superaron el filtro no aparecen y la conclusión describe únicamente a los que quedaron.",
+      "explain": "Si respondiste «selección», estás cerca: el de superviviente es un caso particular de selección. La diferencia está en que el filtro es explícito y elimina a los fracasos. El ejemplo clásico es el blindaje de los aviones: los impactos que importaban eran los de los aviones que no volvieron."
+    },
+    "C0-L2-E3": {
+      "hint": "El marco excluye a quienes no tienen ese medio.",
+      "solution": "Encuestar solo por teléfono fijo sufre de sesgo de selección, porque el marco excluye a quienes solo usan móvil, un grupo con características distintas al resto.",
+      "explain": "Si respondiste «error de cálculo», el problema no está en la aritmética sino en quién puede entrar en la muestra. El marco define la población accesible, y si excluye sistemáticamente a un grupo, el resultado se desplaza. Ningún aumento de tamaño corrige esa exclusión."
+    },
+    "C0-L2-E4": {
+      "hint": "La memoria filtra lo que conviene recordar.",
+      "solution": "Verdadero: el sesgo de recuerdo afecta especialmente a temas sensibles, donde las personas olvidan o ajustan lo que declaran. Ese ajuste desplaza las estimaciones en la dirección socialmente aceptable.",
+      "explain": "Si respondiste «falso», conviene pensar en preguntas sobre consumo de alcohol, ejercicio o ingresos: las respuestas tienden a acercarse a lo deseable. El problema no es la sinceridad, sino el funcionamiento de la memoria y la presión social. Se mitiga con registros, ventanas cortas y anonimato."
+    },
+    "C0-L2-E5": {
+      "hint": "Cada unidad debe tener una probabilidad conocida de entrar.",
+      "solution": "Para reducir el sesgo de selección se usa muestreo aleatorio, porque asigna a cada unidad una probabilidad conocida de ser elegida y evita que el mecanismo de selección se relacione con la variable de interés.",
+      "explain": "Si respondiste «más preguntas», has añadido información sin corregir la composición. El sesgo se combate en la selección, no en el cuestionario. Aumentar el tamaño de una muestra sesgada solo reproduce el sesgo con más precisión."
+    },
+    "C0-L3-E1": {
+      "type": "short",
+      "answers": ["estratificado", "muestreo estratificado"],
+      "hint": "Divide en grupos homogéneos y muestrea dentro de todos.",
+      "solution": "El muestreo que divide la población en estratos y toma muestra de cada uno es el estratificado. Mejora la precisión cuando los grupos son homogéneos por dentro y distintos entre sí.",
+      "explain": "Si respondiste «conglomerados», has elegido el método que selecciona grupos enteros. El estratificado muestrea dentro de todos los estratos y por eso garantiza representación de cada grupo; el de conglomerados selecciona solo algunos grupos y mide a todos sus miembros."
+    },
+    "C0-L3-E2": {
+      "type": "short",
+      "answers": ["conglomerados", "por conglomerados", "muestreo por conglomerados"],
+      "hint": "Se eligen grupos completos, como colegios o barrios.",
+      "solution": "El muestreo que elige grupos enteros es el de conglomerados. Abarata el trabajo de campo porque concentra las mediciones, a cambio de perder precisión por la correlación dentro de cada grupo.",
+      "explain": "Si respondiste «estratificado», has confundido dos métodos que dividen la población. La diferencia es qué se muestrea: el estratificado toma unidades dentro de cada estrato; el de conglomerados elige algunos grupos y mide a todos sus miembros. El efecto de diseño mide la pérdida de precisión del segundo."
+    },
+    "C0-L3-E3": {
+      "hint": "Se eligen las unidades disponibles, no al azar.",
+      "solution": "Falso: el muestreo por conveniencia no es aleatorio, porque selecciona las unidades disponibles o voluntarias. Por eso no permite calcular márgenes de error válidos.",
+      "explain": "Si respondiste «verdadero», has confundido comodidad con aleatoriedad. La aleatoriedad exige un procedimiento con probabilidades conocidas; la conveniencia elige lo que está a mano. Sirve para pilotos y exploración, pero no para estimar parámetros poblacionales."
+    },
+    "C0-L3-E4": {
+      "hint": "El intervalo de selección puede coincidir con un ciclo de la lista.",
+      "solution": "El muestreo sistemático puede fallar si la lista tiene un patrón periódico, porque el intervalo de selección puede alinearse con el ciclo y elegir siempre el mismo tipo de unidad.",
+      "explain": "Si respondiste «nombres», el orden alfabético no genera periodicidad relevante. El riesgo aparece cuando la lista sigue un ciclo, como turnos que se repiten cada tres filas. En ese caso, el sistema selecciona siempre el mismo turno y la muestra deja de representar el conjunto."
+    },
+    "C0-L3-E5": {
+      "hint": "Garantiza el procedimiento, no el resultado perfecto.",
+      "solution": "El muestreo aleatorio simple garantiza que cada individuo tenga la misma probabilidad de ser elegido, no que la muestra sea perfectamente representativa. La representatividad es probable, no segura.",
+      "explain": "Si respondiste «representatividad perfecta», has convertido una garantía probabilística en una certeza. Incluso con sorteo, una muestra concreta puede desviarse por azar. Lo que el método asegura es el procedimiento, y de él se derivan los márgenes de error conocidos."
+    },
+    "C0-L4-E1": {
+      "hint": "Eleva al cuadrado el cociente entre z por sigma y el margen.",
+      "solution": "El tamaño necesario es 96,04, que se redondea a 97 personas. Se obtiene elevando al cuadrado 1,96 por 10 dividido entre 2.",
+      "explain": "Si respondiste 9,8, has dejado el cociente sin elevar. La fórmula del tamaño incluye un cuadrado porque la precisión crece con la raíz del tamaño: para reducir el margen a la mitad hace falta cuatro veces más muestra. Olvidar el cuadrado subestima el tamaño de forma sistemática."
+    },
+    "C0-L4-E2": {
+      "hint": "Aplica la fórmula de proporción con p igual a medio.",
+      "solution": "El tamaño necesario es 384,16, que se redondea a 385 personas. Corresponde al caso de máxima varianza, con p igual a 0,5 y un margen de 0,05 al 95 %.",
+      "explain": "Si respondiste 96, has usado la fórmula de la media. Para proporciones, la varianza se calcula con p por uno menos p, y su máximo está en 0,5. Ese caso conservador garantiza el tamaño suficiente para cualquier proporción real, a costa de encuestar algo más si el valor verdadero está en los extremos."
+    },
+    "C0-L4-E3": {
+      "hint": "El margen aparece al cuadrado en el denominador.",
+      "solution": "Si el margen de error se reduce a la mitad, el tamaño se cuadruplica, porque la relación entre ambos es inversamente cuadrática. Duplicar la muestra solo reduce el error en un factor raíz de dos.",
+      "explain": "Si respondiste «se duplica», has supuesto una relación lineal. La precisión es cara: cada punto de margen adicional cuesta cuatro veces más muestra. Esa relación explica por qué las encuestas serias se quedan en márgenes de dos o tres puntos y no persiguen precisión decimal."
+    },
+    "C0-L4-E4": {
+      "hint": "Es el valor que maximiza la varianza de una proporción.",
+      "solution": "Verdadero: si no se conoce la proporción se usa 0,5, porque maximiza p por uno menos p y garantiza un tamaño suficiente para cualquier valor real.",
+      "explain": "Si respondiste «falso», conviene ver el razonamiento conservador: con p igual a 0,5 el tamaño calculado es el mayor posible. Si luego la proporción real es 0,1, se habrá encuestado de más, pero nunca de menos. Esa es la lógica que hace que las encuestas de opinión usen medio punto."
+    },
+    "C0-L4-E5": {
+      "hint": "El margen está en el denominador de la fórmula.",
+      "solution": "El tamaño de muestra crece con el cuadrado de la precisión, es decir, con el inverso del margen al cuadrado. Cuanto menor es el margen exigido, mayor es la muestra necesaria.",
+      "explain": "Si respondiste «el margen de error», has invertido la relación. El tamaño no crece con el margen sino con su inverso al cuadrado: exigir más precisión encarece el estudio de forma cuadrática. Esa es la razón económica por la que no se persigue precisión infinita."
+    }
+  }
+}

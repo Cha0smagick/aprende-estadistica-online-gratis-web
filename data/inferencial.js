@@ -163,75 +163,48 @@ export default {
           "exercises": [
             {
               "id": "C0-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Observar a toda la población es:",
                 "en": "Observing the whole population is:"
               },
-              "choices": [
-                {
-                  "es": "Una muestra",
-                  "en": "A sample"
-                },
-                {
-                  "es": "Un censo",
-                  "en": "A census"
-                },
-                {
-                  "es": "Un parámetro",
-                  "en": "A parameter"
-                },
-                {
-                  "es": "Un estadístico",
-                  "en": "A statistic"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Censo.",
-                "en": "Census."
+                "es": "Se mide a todas las unidades, sin excepción."
               },
               "solution": {
-                "es": "Un censo.",
-                "en": "A census."
+                "es": "Observar a toda la población es un censo. Su ventaja es que elimina el error de muestreo; su coste es alto y sigue expuesto a errores de medición, cobertura y registro."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "un censo",
+                "censo"
+              ],
+              "explain": {
+                "es": "Si respondiste «una muestra», has descrito una parte. El censo mide a todas las unidades de la población y por eso no tiene error de muestreo. Aun así, no es perfecto: un censo mal ejecutado puede subcontar grupos y producir un sesgo mayor que el de una buena muestra."
+              }
             },
             {
               "id": "C0-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Una muestra es:",
                 "en": "A sample is:"
               },
-              "choices": [
-                {
-                  "es": "Toda la población",
-                  "en": "Whole population"
-                },
-                {
-                  "es": "Un subconjunto",
-                  "en": "A subset"
-                },
-                {
-                  "es": "Un parámetro",
-                  "en": "A parameter"
-                },
-                {
-                  "es": "Un test",
-                  "en": "A test"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Subconjunto.",
-                "en": "Subset."
+                "es": "Se observa una parte para inferir sobre el todo."
               },
               "solution": {
-                "es": "Un subconjunto.",
-                "en": "A subset."
+                "es": "Una muestra es un subconjunto de la población que se observa para estimar características del conjunto completo. Su calidad depende del procedimiento de selección más que de su tamaño."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "un subconjunto",
+                "subconjunto",
+                "una parte de la poblacion"
+              ],
+              "explain": {
+                "es": "Si respondiste «toda la población», has descrito el censo. La muestra es la parte que se mide; la población, el todo sobre el que se concluye. Confundirlas lleva a presentar un dato muestral como si describiera a todo el colectivo, sin margen de error."
+              }
             },
             {
               "id": "C0-L1-E3",
@@ -242,12 +215,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Un censo también puede ejecutarse mal."
               },
               "solution": {
-                "es": "Falso: un censo mal ejecutado puede ser peor.",
-                "en": "False: a poorly executed census can be worse."
+                "es": "Falso: el censo no siempre es mejor que la muestra. Un censo con subconteo, definiciones ambiguas o errores de registro puede ser peor que una muestra bien diseñada."
               },
               "xp": 10,
               "choices": [
@@ -259,7 +230,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido exhaustividad con exactitud. El censo elimina el error de muestreo, pero conserva los errores de medición y cobertura. Además, su coste y su lentitud pueden hacer que llegue tarde a la decisión, mientras una muestra responde a tiempo."
+              }
             },
             {
               "id": "C0-L1-E4",
@@ -288,14 +262,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Parámetros.",
-                "en": "Parameters."
+                "es": "Lo que se quiere conocer es una propiedad del conjunto completo."
               },
               "solution": {
-                "es": "Parámetros poblacionales.",
-                "en": "Population parameters."
+                "es": "La inferencia estadística estima parámetros poblacionales a partir de estadísticos muestrales, añadiendo un margen que cuantifica la incertidumbre del muestreo."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «estadísticos», has descrito lo que se calcula, no lo que se estima. El estadístico es el medio; el parámetro poblacional es el objetivo. La inferencia recorre ese camino con el error estándar y los intervalos de confianza como herramientas."
+              }
             },
             {
               "id": "C0-L1-E5",
@@ -306,12 +281,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Medir una parte deja siempre un margen de duda."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la muestra introduce incertidumbre porque no se mide a toda la población, y esa incertidumbre se cuantifica con el margen de error. El censo, en cambio, no tiene error de muestreo."
               },
               "xp": 10,
               "choices": [
@@ -323,7 +296,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que dos muestras del mismo tamaño producen resultados distintos. Esa variabilidad es la incertidumbre que la inferencia mide. Reconocerla no debilita la conclusión: la hace utilizable, porque declara cuánto puede desviarse. Esa incertidumbre es la que convierte un dato en una estimación con margen."
+              }
             }
           ]
         },
@@ -483,50 +459,38 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Sistemático.",
-                "en": "Systematic."
+                "es": "Un error sistemático no se compensa promediando."
               },
               "solution": {
-                "es": "No desaparece con n grande.",
-                "en": "Doesn't disappear with large n."
+                "es": "Un sesgo sistemático no desaparece con una muestra grande: se reproduce con más precisión. Solo se corrige cambiando el diseño o ajustando el análisis."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste que desaparece con n grande, has confundido sesgo con variabilidad. El tamaño reduce el error aleatorio, pero desplaza el resultado en la misma dirección con más seguridad. Una encuesta voluntaria de un millón de personas sigue describiendo a los voluntarios."
+              }
             },
             {
               "id": "C0-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Estudiar solo a los que sobrevivieron es sesgo de:",
                 "en": "Studying only survivors is bias of:"
               },
-              "choices": [
-                {
-                  "es": "Selección",
-                  "en": "Selection"
-                },
-                {
-                  "es": "No respuesta",
-                  "en": "Non-response"
-                },
-                {
-                  "es": "Superviviente",
-                  "en": "Survivorship"
-                },
-                {
-                  "es": "Recuerdo",
-                  "en": "Recall"
-                }
-              ],
-              "answer": 2,
               "hint": {
-                "es": "Superviviente.",
-                "en": "Survivorship."
+                "es": "Solo se observa a quienes superaron un filtro."
               },
               "solution": {
-                "es": "Superviviente.",
-                "en": "Survivorship."
+                "es": "Estudiar solo a los que sobrevivieron es sesgo de superviviente: los casos que no superaron el filtro no aparecen y la conclusión describe únicamente a los que quedaron."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "superviviente",
+                "sesgo de superviviente",
+                "supervivencia"
+              ],
+              "explain": {
+                "es": "Si respondiste «selección», estás cerca: el de superviviente es un caso particular de selección. La diferencia está en que el filtro es explícito y elimina a los fracasos. El ejemplo clásico es el blindaje de los aviones: los impactos que importaban eran los de los aviones que no volvieron."
+              }
             },
             {
               "id": "C0-L2-E3",
@@ -555,14 +519,15 @@ export default {
               ],
               "answer": 0,
               "hint": {
-                "es": "Selección.",
-                "en": "Selection."
+                "es": "El marco excluye a quienes no tienen ese medio."
               },
               "solution": {
-                "es": "Sesgo de selección.",
-                "en": "Selection bias."
+                "es": "Encuestar solo por teléfono fijo sufre de sesgo de selección, porque el marco excluye a quienes solo usan móvil, un grupo con características distintas al resto."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «error de cálculo», el problema no está en la aritmética sino en quién puede entrar en la muestra. El marco define la población accesible, y si excluye sistemáticamente a un grupo, el resultado se desplaza. Ningún aumento de tamaño corrige esa exclusión."
+              }
             },
             {
               "id": "C0-L2-E4",
@@ -573,12 +538,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "La memoria filtra lo que conviene recordar."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: el sesgo de recuerdo afecta especialmente a temas sensibles, donde las personas olvidan o ajustan lo que declaran. Ese ajuste desplaza las estimaciones en la dirección socialmente aceptable."
               },
               "xp": 10,
               "choices": [
@@ -590,7 +553,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene pensar en preguntas sobre consumo de alcohol, ejercicio o ingresos: las respuestas tienden a acercarse a lo deseable. El problema no es la sinceridad, sino el funcionamiento de la memoria y la presión social. Se mitiga con registros, ventanas cortas y anonimato."
+              }
             },
             {
               "id": "C0-L2-E5",
@@ -619,14 +585,15 @@ export default {
               ],
               "answer": 0,
               "hint": {
-                "es": "Aleatorio.",
-                "en": "Random."
+                "es": "Cada unidad debe tener una probabilidad conocida de entrar."
               },
               "solution": {
-                "es": "Muestreo aleatorio.",
-                "en": "Random sampling."
+                "es": "Para reducir el sesgo de selección se usa muestreo aleatorio, porque asigna a cada unidad una probabilidad conocida de ser elegida y evita que el mecanismo de selección se relacione con la variable de interés."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «más preguntas», has añadido información sin corregir la composición. El sesgo se combate en la selección, no en el cuestionario. Aumentar el tamaño de una muestra sesgada solo reproduce el sesgo con más precisión. La aleatoriedad es la condición que permite generalizar, no el volumen de casos."
+              }
             }
           ]
         },
@@ -761,75 +728,48 @@ export default {
           "exercises": [
             {
               "id": "C0-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Muestreo que divide la población en estratos:",
                 "en": "Sampling that divides population into strata:"
               },
-              "choices": [
-                {
-                  "es": "Conglomerados",
-                  "en": "Cluster"
-                },
-                {
-                  "es": "Estratificado",
-                  "en": "Stratified"
-                },
-                {
-                  "es": "Sistemático",
-                  "en": "Systematic"
-                },
-                {
-                  "es": "Conveniencia",
-                  "en": "Convenience"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Estratificado.",
-                "en": "Stratified."
+                "es": "Divide en grupos homogéneos y muestrea dentro de todos."
               },
               "solution": {
-                "es": "Estratificado.",
-                "en": "Stratified."
+                "es": "El muestreo que divide la población en estratos y toma muestra de cada uno es el estratificado. Mejora la precisión cuando los grupos son homogéneos por dentro y distintos entre sí."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "estratificado",
+                "muestreo estratificado"
+              ],
+              "explain": {
+                "es": "Si respondiste «conglomerados», has elegido el método que selecciona grupos enteros. El estratificado muestrea dentro de todos los estratos y por eso garantiza representación de cada grupo; el de conglomerados selecciona solo algunos grupos y mide a todos sus miembros."
+              }
             },
             {
               "id": "C0-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Muestreo que elige grupos enteros:",
                 "en": "Sampling that picks whole groups:"
               },
-              "choices": [
-                {
-                  "es": "Estratificado",
-                  "en": "Stratified"
-                },
-                {
-                  "es": "Conglomerados",
-                  "en": "Cluster"
-                },
-                {
-                  "es": "Sistemático",
-                  "en": "Systematic"
-                },
-                {
-                  "es": "Aleatorio simple",
-                  "en": "Simple random"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Conglomerados.",
-                "en": "Cluster."
+                "es": "Se eligen grupos completos, como colegios o barrios."
               },
               "solution": {
-                "es": "Conglomerados.",
-                "en": "Cluster."
+                "es": "El muestreo que elige grupos enteros es el de conglomerados. Abarata el trabajo de campo porque concentra las mediciones, a cambio de perder precisión por la correlación dentro de cada grupo."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "conglomerados",
+                "por conglomerados",
+                "muestreo por conglomerados"
+              ],
+              "explain": {
+                "es": "Si respondiste «estratificado», has confundido dos métodos que dividen la población. La diferencia es qué se muestrea: el estratificado toma unidades dentro de cada estrato; el de conglomerados elige algunos grupos y mide a todos sus miembros. El efecto de diseño mide la pérdida de precisión del segundo."
+              }
             },
             {
               "id": "C0-L3-E3",
@@ -840,12 +780,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Se eligen las unidades disponibles, no al azar."
               },
               "solution": {
-                "es": "Falso.",
-                "en": "False."
+                "es": "Falso: el muestreo por conveniencia no es aleatorio, porque selecciona las unidades disponibles o voluntarias. Por eso no permite calcular márgenes de error válidos."
               },
               "xp": 10,
               "choices": [
@@ -857,7 +795,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido comodidad con aleatoriedad. La aleatoriedad exige un procedimiento con probabilidades conocidas; la conveniencia elige lo que está a mano. Sirve para pilotos y exploración, pero no para estimar parámetros poblacionales. Llamar muestra a una selección de conveniencia es uno de los errores más frecuentes en los informes."
+              }
             },
             {
               "id": "C0-L3-E4",
@@ -886,14 +827,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Periodicidad.",
-                "en": "Periodicity."
+                "es": "El intervalo de selección puede coincidir con un ciclo de la lista."
               },
               "solution": {
-                "es": "Patrón periódico.",
-                "en": "Periodic pattern."
+                "es": "El muestreo sistemático puede fallar si la lista tiene un patrón periódico, porque el intervalo de selección puede alinearse con el ciclo y elegir siempre el mismo tipo de unidad."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «nombres», el orden alfabético no genera periodicidad relevante. El riesgo aparece cuando la lista sigue un ciclo, como turnos que se repiten cada tres filas. En ese caso, el sistema selecciona siempre el mismo turno y la muestra deja de representar el conjunto."
+              }
             },
             {
               "id": "C0-L3-E5",
@@ -922,14 +864,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Igual probabilidad.",
-                "en": "Equal probability."
+                "es": "Garantiza el procedimiento, no el resultado perfecto."
               },
               "solution": {
-                "es": "Igual probabilidad.",
-                "en": "Equal probability."
+                "es": "El muestreo aleatorio simple garantiza que cada individuo tenga la misma probabilidad de ser elegido, no que la muestra sea perfectamente representativa. La representatividad es probable, no segura."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «representatividad perfecta», has convertido una garantía probabilística en una certeza. Incluso con sorteo, una muestra concreta puede desviarse por azar. Lo que el método asegura es el procedimiento, y de él se derivan los márgenes de error conocidos."
+              }
             }
           ]
         },
@@ -1089,12 +1032,10 @@ export default {
               "answer": 2,
               "tol": 0.5,
               "hint": {
-                "es": "(1,96·10/2)².",
-                "en": "(1.96·10/2)²."
+                "es": "Eleva al cuadrado el cociente entre z por sigma y el margen."
               },
               "solution": {
-                "es": "≈ 96,04 → 97 personas.",
-                "en": "≈ 96.04 → 97 people."
+                "es": "El tamaño necesario es 96,04, que se redondea a 97 personas. Se obtiene elevando al cuadrado 1,96 por 10 dividido entre 2."
               },
               "xp": 10,
               "choices": [
@@ -1114,7 +1055,10 @@ export default {
                   "es": "95.04",
                   "en": "95.04"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 9,8, has dejado el cociente sin elevar. La fórmula del tamaño incluye un cuadrado porque la precisión crece con la raíz del tamaño: para reducir el margen a la mitad hace falta cuatro veces más muestra. Olvidar el cuadrado subestima el tamaño de forma sistemática."
+              }
             },
             {
               "id": "C0-L4-E2",
@@ -1126,12 +1070,10 @@ export default {
               "answer": 2,
               "tol": 1,
               "hint": {
-                "es": "1,96²·0,25/0,05².",
-                "en": "1.96²·0.25/0.05²."
+                "es": "Aplica la fórmula de proporción con p igual a medio."
               },
               "solution": {
-                "es": "≈ 384,16 → 385 personas.",
-                "en": "≈ 384.16 → 385 people."
+                "es": "El tamaño necesario es 384,16, que se redondea a 385 personas. Corresponde al caso de máxima varianza, con p igual a 0,5 y un margen de 0,05 al 95 %."
               },
               "xp": 10,
               "choices": [
@@ -1151,7 +1093,10 @@ export default {
                   "es": "385.16",
                   "en": "385.16"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 96, has usado la fórmula de la media. Para proporciones, la varianza se calcula con p por uno menos p, y su máximo está en 0,5. Ese caso conservador garantiza el tamaño suficiente para cualquier proporción real, a costa de encuestar algo más si el valor verdadero está en los extremos."
+              }
             },
             {
               "id": "C0-L4-E3",
@@ -1180,14 +1125,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Cuadrado.",
-                "en": "Square."
+                "es": "El margen aparece al cuadrado en el denominador."
               },
               "solution": {
-                "es": "Se cuadruplica.",
-                "en": "Quadruples."
+                "es": "Si el margen de error se reduce a la mitad, el tamaño se cuadruplica, porque la relación entre ambos es inversamente cuadrática. Duplicar la muestra solo reduce el error en un factor raíz de dos."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «se duplica», has supuesto una relación lineal. La precisión es cara: cada punto de margen adicional cuesta cuatro veces más muestra. Esa relación explica por qué las encuestas serias se quedan en márgenes de dos o tres puntos y no persiguen precisión decimal."
+              }
             },
             {
               "id": "C0-L4-E4",
@@ -1198,12 +1144,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Es el valor que maximiza la varianza de una proporción."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: si no se conoce la proporción se usa 0,5, porque maximiza p por uno menos p y garantiza un tamaño suficiente para cualquier valor real."
               },
               "xp": 10,
               "choices": [
@@ -1215,7 +1159,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver el razonamiento conservador: con p igual a 0,5 el tamaño calculado es el mayor posible. Si luego la proporción real es 0,1, se habrá encuestado de más, pero nunca de menos. Esa es la lógica que hace que las encuestas de opinión usen medio punto."
+              }
             },
             {
               "id": "C0-L4-E5",
@@ -1244,14 +1191,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Cuadrado de precisión.",
-                "en": "Square of precision."
+                "es": "El margen está en el denominador de la fórmula."
               },
               "solution": {
-                "es": "El cuadrado de la precisión.",
-                "en": "Square of precision."
+                "es": "El tamaño de muestra crece con el cuadrado de la precisión, es decir, con el inverso del margen al cuadrado. Cuanto menor es el margen exigido, mayor es la muestra necesaria."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «el margen de error», has invertido la relación. El tamaño no crece con el margen sino con su inverso al cuadrado: exigir más precisión encarece el estudio de forma cuadrática. Esa es la razón económica por la que no se persigue precisión infinita."
+              }
             }
           ]
         }
