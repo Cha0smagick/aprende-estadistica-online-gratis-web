@@ -99,3 +99,10 @@
 .breadcrumb a{color:var(--muted)}
 .next-lesson{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);margin-top:18px}
 .next-lesson a{font-weight:700}
+
+/* Fase 5: panel de dominio */
+.mastery-row{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:.9rem}
+.mastery-name{min-width:44px;font-weight:600}
+.mastery-bar{flex:1;height:10px;background:var(--panel-2);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.mastery-bar>span{display:block;height:100%;background:var(--ok)}
+.mastery-pct{min-width:44px;text-align:right;font-variant-numeric:tabular-nums}

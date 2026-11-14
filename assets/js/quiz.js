@@ -86,7 +86,8 @@
         const btnHint=el("button",{class:"btn btn-ghost btn-sm"},[window.t("hint")]);
         const btnSol=el("button",{class:"btn btn-ghost btn-sm"},[window.t("solution")]);
         btnHint.disabled=true; btnSol.disabled=true; // ayuda solo tras intentarlo
-        actions.appendChild(btnCheck); actions.appendChild(btnHint); actions.appendChild(btnSol);
+        actions.appendChild(btnCheck);
+        if(!opts.exam){ actions.appendChild(btnHint); actions.appendChild(btnSol); }
         item.appendChild(actions);
         container.appendChild(item);
 
@@ -143,6 +144,7 @@
           }
           updateMastery();
           const m=mastery();
+          if(opts.onProgress) opts.onProgress(m.seen, m.total);
           if(m.seen===m.total && opts.onFinish) opts.onFinish(m);
           renderMath(fb);
         });

@@ -15,6 +15,9 @@ window.I18N = {
     reducedMotion:"Animaciones reducidas",
     mastery:"Maestría", whyWrong:"Por qué", shortPlaceholder:"Escribe la respuesta",
     masteryReached:"Maestría alcanzada",
+    masteryPanel:"Tu dominio por módulo", startExam:"Empezar examen final",
+    examProgress:"Respondidas", examResult:"Resultado", examPassed:"aprobado",
+    examFailed:"no alcanza el 80 %", retryExam:"Repetir examen",
   },
   en: {
     check:"Check", hint:"Hint", solution:"Show solution", next:"Next",
@@ -31,6 +34,9 @@ window.I18N = {
     reducedMotion:"Reduced motion",
     mastery:"Mastery", whyWrong:"Why", shortPlaceholder:"Type your answer",
     masteryReached:"Mastery reached",
+    masteryPanel:"Your mastery by module", startExam:"Start final exam",
+    examProgress:"Answered", examResult:"Result", examPassed:"passed",
+    examFailed:"below 80%", retryExam:"Retry exam",
   }
 };
 window.t = (key) => (window.I18N[window.SITE_LANG]||window.I18N.es)[key] || key;

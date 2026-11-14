@@ -65,7 +65,9 @@ Hallazgo importante: el sitio consume **`data/<curso>.js` (bundle)**, no los arc
 
 Pendiente (etapas 2-3): 451 ejercicios por convertir, 451 sin `explain`, 451 con solución corta, 20 pistas que filtran, examen final por curso.
 
-> **Actualización 2026-11-14:** etapas 2 y 3 cerradas para E1–E3. 481/481 con `explain` y solución, 241 en producción, 0 pistas. `--strict` bloqueante en CI. Quedan E5 (panel de maestría) y E6 (examen final por curso).
+> **Actualización 2026-11-14:** etapas 2 y 3 cerradas para E1–E3. 481/481 con `explain` y solución, 241 en producción, 0 pistas. `--strict` bloqueante en CI.
+>
+> **Cierre E5–E6 (2026-11-14):** `assets/js/exam.js` añade panel de dominio por módulo y examen final por curso (20 preguntas sin pistas, aprobado con ≥80 %). `render.mjs` incluye ambos en cada página de curso. Fase 5 completa.
 
 ## Progreso etapa 2 (2026-11-10)
 

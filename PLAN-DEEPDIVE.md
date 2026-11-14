@@ -167,12 +167,12 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 
 ### Fase 5 — Evaluación y feedback (transversal)
 
-- [ ] **E1** Convertir ≥50% de los 481 ejercicios a producción: numérico, ordenar, respuesta corta, interpretar output.
-- [ ] **E2** Añadir explicación del error a cada ejercicio (mín. 40 palabras) y solución razonada (mín. 60).
-- [ ] **E3** Eliminar pistas que contienen la respuesta; sustituir por pistas graduadas.
-- [ ] **E4** Marcador vivo, reintento, registro de primer intento vs intento final.
-- [ ] **E5** Umbral de maestría por lección (≥80%) para marcar “completada”.
-- [ ] **E6** Examen final por curso y banco de preguntas.
+- [x] **E1** Convertir ≥50% de los 481 ejercicios a producción: numérico, ordenar, respuesta corta, interpretar output.
+- [x] **E2** Añadir explicación del error a cada ejercicio (mín. 40 palabras) y solución razonada (mín. 60).
+- [x] **E3** Eliminar pistas que contienen la respuesta; sustituir por pistas graduadas.
+- [x] **E4** Marcador vivo, reintento, registro de primer intento vs intento final.
+- [x] **E5** Umbral de maestría por lección (≥80%) para marcar “completada”.
+- [x] **E6** Examen final por curso y banco de preguntas.
 
 ### Fase 6 — Retención y metacognición
 
@@ -310,7 +310,7 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 
 **Fase 5 — E1, E2 y E3 completadas al 100 %.** Los cuatro cursos tienen explicación del error, solución razonada y ninguna pista que filtre la respuesta; `validate-feedback.mjs --strict` es bloqueante en CI.
 
-Pendiente de la fase: **E5** (umbral de maestría, ya operativo en el motor y pendiente de panel) y **E6** (examen final por curso y banco de preguntas).
+**Fase 5 completa.** E1–E6 cerradas: 481/481 con explicación y solución, 241 en producción (50,1 %), 0 pistas que filtran, maestría ≥80 %, panel de dominio y examen final por curso (20 preguntas, aprobado al 80 %). `validate-feedback.mjs --strict` es bloqueante en CI.
 
 Motor: tipo `short`, explicación al fallar, registro de primer intento y maestría ≥80 % para completar la lección. Herramientas: `audit-exercises.mjs`, `validate-feedback.mjs` (informativo; `--strict` para el final), `apply-feedback.mjs` + `append-explain.mjs` con parches en `scripts/patches/`, y `sync-module.mjs`.
 

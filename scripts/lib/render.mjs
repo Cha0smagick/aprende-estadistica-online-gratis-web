@@ -185,10 +185,27 @@ ${nav({lang,base,courseTitle:t(course.title,lang)})}
   <p>${esc(desc)}</p>
   <div id="diploma-banner" style="display:none;margin:14px 0"></div>
   ${modulesHtml}
+  <section class="block" id="dominio"><div id="mastery-panel"></div></section>
+  <section class="block" id="examen">
+    <h2>${lang==="es"?"Examen final":"Final exam"}</h2>
+    <p>${lang==="es"
+      ? "20 preguntas al azar del curso. Se aprueba con el 80 % de aciertos al primer intento."
+      : "20 random questions from the course. Pass with 80% correct on first attempt."}</p>
+    <div id="exam-box"></div>
+  </section>
 </main>
 ${footer({lang,base:b})}
 <script>window.COURSE_DATA=${embedCourse};</script>
 <script src="${b}assets/js/lesson-engine.js"></script>
+<script src="${b}assets/js/exam.js"></script>
+<script>
+(function(){
+  if(window.Exam && window.COURSE_DATA){
+    window.Exam.panel(document.getElementById("mastery-panel"), window.COURSE_DATA);
+    window.Exam.mount(document.getElementById("exam-box"), window.COURSE_DATA);
+  }
+})();
+</script>
 <script src="${b}assets/js/diploma.js"></script>
 <script>
 (function(){
