@@ -12,7 +12,7 @@
 | 1 | Exactitud estadística | 90 | 3 errores corregidos (A3 H≤G≤A, A4-L5-E4, A6-L4-E4). Texto nuevo revisado aritméticamente al convertir. Sin revisión externa. |
 | 2 | Cobertura | 92 | 115/115 lecciones con deep dive del tema correcto: se detectaron y corrigieron dos lecciones de A6 que mostraban contenido de otro módulo (Spearman enseñaba curtosis; «Ajuste a ojo» era una copia de causalidad). Módulo de datos con 4 conjuntos, diccionario y 7 ejercicios. |
 | 3 | Profundidad | 95 | ≥2.500 palabras por lección, validado por script. |
-| 4 | Ejemplos | 90 | 3+ ejemplos por lección; las cuatro lecciones de A6 usan los CSV del curso con números verificados (covarianza 186,62, r 0,252, recta 58,48 + 0,895·edad). |
+| 4 | Ejemplos | 90 | 3+ ejemplos por lección; las seis lecciones de A6 usan los CSV del curso con números verificados (covarianza 186,62; r 0,252 y ρ 0,246; recta 58,48 + 0,895·edad; SSE 2,819 y residuo típico 0,84). |
 | 5 | Datos/herramientas | 78 | `/es/datos/`: 4 CSV descargables (120/300/225/400 filas), diccionario de variables, 7 ejercicios con respuesta calculada sobre los datos y guía de R/Python/Excel. Snippet de Python ejecutado contra el CSV; R sin verificar (no hay R instalado). |
 | 6 | Resultados/prerrequisitos | 92 | Cada lección abre con objetivos y prerrequisitos explícitos. |
 | 7 | Secuencia | 90 | Orden A0→A6, B0→B9, C0→C9, F0→F1 con dependencias declaradas. |
