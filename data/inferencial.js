@@ -237,30 +237,11 @@ export default {
             },
             {
               "id": "C0-L1-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La inferencia estadística estima:",
                 "en": "Statistical inference estimates:"
               },
-              "choices": [
-                {
-                  "es": "Estadísticos",
-                  "en": "Statistics"
-                },
-                {
-                  "es": "Parámetros poblacionales",
-                  "en": "Population parameters"
-                },
-                {
-                  "es": "Muestras",
-                  "en": "Samples"
-                },
-                {
-                  "es": "Censos",
-                  "en": "Censuses"
-                }
-              ],
-              "answer": 1,
               "hint": {
                 "es": "Lo que se quiere conocer es una propiedad del conjunto completo."
               },
@@ -270,7 +251,11 @@ export default {
               "xp": 10,
               "explain": {
                 "es": "Si respondiste «estadísticos», has descrito lo que se calcula, no lo que se estima. El estadístico es el medio; el parámetro poblacional es el objetivo. La inferencia recorre ese camino con el error estándar y los intervalos de confianza como herramientas."
-              }
+              },
+              "answers": [
+                "parametros poblacionales",
+                "los parametros poblacionales"
+              ]
             },
             {
               "id": "C0-L1-E5",
@@ -4887,75 +4872,49 @@ export default {
           "exercises": [
             {
               "id": "C7-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "ANOVA se usa para comparar:",
                 "en": "ANOVA is used to compare:"
               },
-              "choices": [
-                {
-                  "es": "2 grupos",
-                  "en": "2 groups"
-                },
-                {
-                  "es": "3 o más grupos",
-                  "en": "3 or more groups"
-                },
-                {
-                  "es": "Una muestra con un valor",
-                  "en": "One sample with a value"
-                },
-                {
-                  "es": "Proporciones",
-                  "en": "Proportions"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "3 o más.",
-                "en": "3 or more."
+                "es": "Con dos grupos basta una prueba t."
               },
               "solution": {
-                "es": "3 o más grupos.",
-                "en": "3 or more groups."
+                "es": "La ANOVA se usa para comparar las medias de tres o más grupos, porque una sola prueba global evita la acumulación de errores de las comparaciones por pares."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "3 o mas grupos",
+                "tres o mas grupos",
+                "varios grupos"
+              ],
+              "explain": {
+                "es": "Si respondiste «2 grupos», has elegido la herramienta más simple: con dos grupos, la prueba t y la ANOVA son equivalentes. La ventaja aparece con tres o más, cuando comparar por pares multiplica la probabilidad de al menos un falso positivo."
+              }
             },
             {
               "id": "C7-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "H0 en ANOVA:",
                 "en": "H0 in ANOVA:"
               },
-              "choices": [
-                {
-                  "es": "Al menos una media difiere",
-                  "en": "At least one mean differs"
-                },
-                {
-                  "es": "Todas las medias son iguales",
-                  "en": "All means are equal"
-                },
-                {
-                  "es": "Las varianzas son iguales",
-                  "en": "Variances are equal"
-                },
-                {
-                  "es": "Las medias son distintas",
-                  "en": "Means are different"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Todas iguales.",
-                "en": "All equal."
+                "es": "La nula siempre afirma ausencia de diferencia global."
               },
               "solution": {
-                "es": "Todas las medias son iguales.",
-                "en": "All means are equal."
+                "es": "La hipótesis nula de la ANOVA afirma que todas las medias poblacionales son iguales. La alternativa sostiene que al menos una difiere, sin especificar cuál."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "todas las medias son iguales",
+                "las medias son iguales",
+                "igualdad de medias"
+              ],
+              "explain": {
+                "es": "Si respondiste «al menos una media difiere», has descrito la alternativa. La nula es la igualdad global, y se pone a prueba porque permite calcular una distribución de referencia. El rechazo no identifica el grupo responsable: para eso hacen falta comparaciones posteriores."
+              }
             },
             {
               "id": "C7-L1-E3",
@@ -4966,12 +4925,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Cada prueba adicional es otra oportunidad de falso positivo."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: hacer múltiples pruebas t sobre los mismos datos infla el error de tipo I, porque cada contraste añade una oportunidad de rechazar por azar. La ANOVA evita esa acumulación con una sola prueba global."
               },
               "xp": 10,
               "choices": [
@@ -4983,7 +4940,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene calcularlo: con cuatro grupos hay seis comparaciones y, si todas las medias fueran iguales, la probabilidad de al menos un falso positivo al 5 % supera el 26 %. Ese efecto es la razón por la que la secuencia correcta es ANOVA primero y post-hoc después."
+              }
             },
             {
               "id": "C7-L1-E4",
@@ -5012,50 +4972,37 @@ export default {
               ],
               "answer": 2,
               "hint": {
-                "es": "F.",
-                "en": "F."
+                "es": "Es el cociente de dos varianzas."
               },
               "solution": {
-                "es": "F de Fisher.",
-                "en": "Fisher's F."
+                "es": "La ANOVA usa el estadístico F, que es el cociente entre la variabilidad de las medias de grupo y la variabilidad dentro de los grupos. Su distribución depende de dos juegos de grados de libertad."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste t, has pensado en la comparación de dos grupos. El estadístico F generaliza esa idea: en lugar de comparar medias por pares, compara la varianza entre grupos con la varianza interna. Su valor esperado bajo la nula es aproximadamente uno."
+              }
             },
             {
               "id": "C7-L1-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "ANOVA compara:",
                 "en": "ANOVA compares:"
               },
-              "choices": [
-                {
-                  "es": "Varianzas",
-                  "en": "Variances"
-                },
-                {
-                  "es": "Medias",
-                  "en": "Means"
-                },
-                {
-                  "es": "Proporciones",
-                  "en": "Proportions"
-                },
-                {
-                  "es": "Correlaciones",
-                  "en": "Correlations"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Medias.",
-                "en": "Means."
+                "es": "La varianza es el medio, no el objeto de comparación."
               },
               "solution": {
-                "es": "Medias de los grupos.",
-                "en": "Group means."
+                "es": "La ANOVA compara medias, aunque lo haga analizando varianzas. Descompone la variabilidad total para decidir si las diferencias entre medias son mayores de lo que el azar explicaría."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "medias",
+                "las medias"
+              ],
+              "explain": {
+                "es": "Si respondiste «varianzas», has confundido el instrumento con el objetivo. La prueba se llama análisis de la varianza porque usa la descomposición de la variabilidad, pero la pregunta es sobre las medias. Esa confusión es frecuente por el nombre y conviene deshacerla."
+              }
             }
           ]
         },
@@ -5206,75 +5153,49 @@ export default {
           "exercises": [
             {
               "id": "C7-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "F = MS_entre /",
                 "en": "F = MS_between /"
               },
-              "choices": [
-                {
-                  "es": "MS_dentro",
-                  "en": "MS_within"
-                },
-                {
-                  "es": "n",
-                  "en": "n"
-                },
-                {
-                  "es": "k",
-                  "en": "k"
-                },
-                {
-                  "es": "α",
-                  "en": "α"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "MS_dentro.",
-                "en": "MS_within."
+                "es": "La señal se divide por el ruido interno."
               },
               "solution": {
-                "es": "MS_dentro.",
-                "en": "MS_within."
+                "es": "El estadístico F es la media cuadrática entre grupos dividida por la media cuadrática dentro de los grupos. Ese cociente compara la señal con el ruido."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "ms dentro",
+                "ms_within",
+                "media cuadratica dentro"
+              ],
+              "explain": {
+                "es": "Si respondiste n o k, has puesto en el denominador un tamaño en lugar de una varianza. La F es un cociente de dos estimaciones de varianza, y por eso su valor de referencia es uno. Cualquier otra cantidad en el denominador rompe la interpretación."
+              }
             },
             {
               "id": "C7-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Si F ≈ 1:",
                 "en": "If F ≈ 1:"
               },
-              "choices": [
-                {
-                  "es": "Hay diferencias",
-                  "en": "There are differences"
-                },
-                {
-                  "es": "No hay diferencias",
-                  "en": "No differences"
-                },
-                {
-                  "es": "Error",
-                  "en": "Error"
-                },
-                {
-                  "es": "No se puede saber",
-                  "en": "Cannot know"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "No hay diferencias.",
-                "en": "No differences."
+                "es": "Señal y ruido son del mismo tamaño."
               },
               "solution": {
-                "es": "No hay diferencias significativas.",
-                "en": "No significant differences."
+                "es": "Si F es aproximadamente uno, no hay evidencia de diferencias entre las medias, porque la variabilidad entre grupos es similar a la variabilidad interna."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "no hay diferencias",
+                "no hay evidencia de diferencias",
+                "compatible con la igualdad"
+              ],
+              "explain": {
+                "es": "Si respondiste «hay diferencias», has invertido la lectura. Un cociente cercano a uno indica que la separación de las medias es la esperable por azar. Valores muy superiores a uno son los que sugieren que la señal supera al ruido."
+              }
             },
             {
               "id": "C7-L2-E3",
@@ -5286,12 +5207,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "k-1.",
-                "en": "k-1."
+                "es": "Se estima una media por grupo menos la global."
               },
               "solution": {
-                "es": "3.",
-                "en": "3."
+                "es": "Con cuatro grupos, los grados de libertad del numerador son 3, porque se calculan cuatro medias y una media global. El resultado es k menos uno."
               },
               "xp": 10,
               "choices": [
@@ -5311,7 +5230,10 @@ export default {
                   "es": "6",
                   "en": "6"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 4, has usado el número de grupos sin restar la media global. Los grados de libertad reflejan cuánta información independiente queda tras estimar los parámetros. Ese valor determina la distribución F y, con ella, el valor crítico. Ese número también se llama grados de libertad del numerador."
+              }
             },
             {
               "id": "C7-L2-E4",
@@ -5323,12 +5245,10 @@ export default {
               "answer": 0,
               "tol": 0.001,
               "hint": {
-                "es": "N-k.",
-                "en": "N-k."
+                "es": "Cada grupo consume un grado de libertad."
               },
               "solution": {
-                "es": "27.",
-                "en": "27."
+                "es": "Con 30 observaciones y 3 grupos, los grados de libertad del denominador son 27, es decir, N menos k. Esa cifra mide la información disponible para estimar la variabilidad interna."
               },
               "xp": 10,
               "choices": [
@@ -5348,43 +5268,33 @@ export default {
                   "es": "54",
                   "en": "54"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 29, has restado solo uno. El denominador de la ANOVA estima la variabilidad dentro de cada grupo, y cada grupo requiere su propia media. Por eso se restan tantos grados como grupos, no solo uno. Con grupos muy desiguales, ese reparto cambia y conviene revisarlo."
+              }
             },
             {
               "id": "C7-L2-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "F mide:",
                 "en": "F measures:"
               },
-              "choices": [
-                {
-                  "es": "Variabilidad entre grupos / dentro de grupos",
-                  "en": "Between-group / within-group variability"
-                },
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "La mediana",
-                  "en": "The median"
-                },
-                {
-                  "es": "La correlación",
-                  "en": "Correlation"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "Entre/dentro.",
-                "en": "Between/within."
+                "es": "Es un cociente de dos varianzas."
               },
               "solution": {
-                "es": "Variabilidad entre grupos / dentro de grupos.",
-                "en": "Between-group / within-group variability."
+                "es": "El estadístico F mide la variabilidad entre grupos dividida por la variabilidad dentro de los grupos. Si el cociente es grande, las medias se separan más de lo que el azar explicaría."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "variabilidad entre grupos / dentro de grupos",
+                "cociente de varianzas",
+                "entre y dentro"
+              ],
+              "explain": {
+                "es": "Si respondiste «la media», has descrito lo que se compara, no la medida. F no es una media: es un cociente adimensional de dos varianzas. Esa forma permite comparar problemas con escalas distintas y explica por qué su valor de referencia es uno."
+              }
             }
           ]
         },
@@ -5519,147 +5429,93 @@ export default {
           "exercises": [
             {
               "id": "C7-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "ANOVA asume:",
                 "en": "ANOVA assumes:"
               },
-              "choices": [
-                {
-                  "es": "Solo normalidad",
-                  "en": "Only normality"
-                },
-                {
-                  "es": "Independencia, normalidad y homocedasticidad",
-                  "en": "Independence, normality and homoscedasticity"
-                },
-                {
-                  "es": "Solo independencia",
-                  "en": "Only independence"
-                },
-                {
-                  "es": "Solo homocedasticidad",
-                  "en": "Only homoscedasticity"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Los tres.",
-                "en": "All three."
+                "es": "Son tres: diseño, forma y varianza."
               },
               "solution": {
-                "es": "Independencia, normalidad y homocedasticidad.",
-                "en": "Independence, normality and homoscedasticity."
+                "es": "La ANOVA asume independencia de las observaciones, normalidad de los residuos y homocedasticidad, es decir, varianzas similares entre grupos."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "independencia, normalidad y homocedasticidad",
+                "los tres supuestos",
+                "independencia normalidad homocedasticidad"
+              ],
+              "explain": {
+                "es": "Si respondiste «solo normalidad», has olvidado dos supuestos. La independencia se garantiza con el diseño y es el más crítico; la homocedasticidad tiene correcciones como Welch; la normalidad importa sobre todo con muestras pequeñas. Ordenar esa jerarquía evita dedicar esfuerzo a lo secundario."
+              }
             },
             {
               "id": "C7-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Si las varianzas son distintas, usa:",
                 "en": "If variances differ, use:"
               },
-              "choices": [
-                {
-                  "es": "ANOVA estándar",
-                  "en": "Standard ANOVA"
-                },
-                {
-                  "es": "ANOVA de Welch",
-                  "en": "Welch ANOVA"
-                },
-                {
-                  "es": "t de Student",
-                  "en": "Student's t"
-                },
-                {
-                  "es": "Chi-cuadrada",
-                  "en": "Chi-square"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Welch.",
-                "en": "Welch."
+                "es": "Es la versión que no supone varianzas iguales."
               },
               "solution": {
-                "es": "ANOVA de Welch.",
-                "en": "Welch ANOVA."
+                "es": "Si las varianzas son distintas se usa la ANOVA de Welch, que estima cada varianza por separado y ajusta los grados de libertad. Es la opción robusta por defecto."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "anova de welch",
+                "welch"
+              ],
+              "explain": {
+                "es": "Si respondiste «ANOVA estándar», has aplicado una prueba cuya suposición acaba de fallar. Con varianzas desiguales, el denominador común no representa bien a todos los grupos y el valor p puede ser engañoso. Welch corrige ese problema con un coste mínimo de potencia."
+              }
             },
             {
               "id": "C7-L3-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para verificar homocedasticidad se usa:",
                 "en": "To check homoscedasticity use:"
               },
-              "choices": [
-                {
-                  "es": "Shapiro-Wilk",
-                  "en": "Shapiro-Wilk"
-                },
-                {
-                  "es": "Test de Levene",
-                  "en": "Levene's test"
-                },
-                {
-                  "es": "t de Student",
-                  "en": "Student's t"
-                },
-                {
-                  "es": "ANOVA",
-                  "en": "ANOVA"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Levene.",
-                "en": "Levene."
+                "es": "Es robusta frente a la falta de normalidad."
               },
               "solution": {
-                "es": "Test de Levene (o Bartlett).",
-                "en": "Levene's test (or Bartlett)."
+                "es": "Para verificar la homocedasticidad se usa la prueba de Levene, que contrasta la igualdad de varianzas y es robusta frente a desviaciones de la normalidad. Bartlett es más potente pero exige normalidad."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "levene",
+                "prueba de levene",
+                "test de levene"
+              ],
+              "explain": {
+                "es": "Si respondiste Shapiro-Wilk, has comprobado normalidad, no varianzas. Ambas pruebas se usan en el diagnóstico, pero responden a preguntas distintas. Elegir la equivocada deja sin comprobar el supuesto que realmente amenaza la validez de la ANOVA. Si Levene da un valor p bajo, la igualdad de varianzas queda en duda."
+              }
             },
             {
               "id": "C7-L3-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Si los datos no son normales, alternativa no paramétrica:",
                 "en": "If data aren't normal, non-parametric alternative:"
               },
-              "choices": [
-                {
-                  "es": "ANOVA de Welch",
-                  "en": "Welch ANOVA"
-                },
-                {
-                  "es": "Kruskal-Wallis",
-                  "en": "Kruskal-Wallis"
-                },
-                {
-                  "es": "t de Student",
-                  "en": "Student's t"
-                },
-                {
-                  "es": "Chi-cuadrada",
-                  "en": "Chi-square"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Kruskal-Wallis.",
-                "en": "Kruskal-Wallis."
+                "es": "Compara rangos en lugar de medias."
               },
               "solution": {
-                "es": "Kruskal-Wallis.",
-                "en": "Kruskal-Wallis."
+                "es": "Si los datos no son normales, la alternativa no paramétrica a la ANOVA es la prueba de Kruskal-Wallis, que compara rangos y no supone una forma concreta de la distribución."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "kruskal-wallis",
+                "kruskal wallis"
+              ],
+              "explain": {
+                "es": "Si respondiste «ANOVA estándar», has insistido en un supuesto que falla. Kruskal-Wallis responde a una pregunta parecida, sobre la tendencia central, usando posiciones en lugar de valores. Su interpretación es menos directa: no compara medias exactas, sino distribuciones. Con grupos pequeños y distribuciones muy distintas, su potencia baja."
+              }
             },
             {
               "id": "C7-L3-E5",
@@ -5670,12 +5526,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí (con n grande).",
-                "en": "Yes (with large n)."
+                "es": "La normalidad de los residuos, no de los datos, es lo que se supone."
               },
               "solution": {
-                "es": "Verdadero (con n grande por grupo).",
-                "en": "True (with large n per group)."
+                "es": "Verdadero: la ANOVA es razonablemente robusta a violaciones leves de normalidad, sobre todo con grupos equilibrados y tamaños moderados. El problema aparece con muestras pequeñas y valores extremos."
               },
               "xp": 10,
               "choices": [
@@ -5687,7 +5541,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que el teorema central del límite también actúa sobre las medias de grupo. Con tamaños razonables, la distribución de F se aproxima a la teórica aunque los datos no sean perfectamente normales. La homocedasticidad y la independencia son más críticas."
+              }
             }
           ]
         },
@@ -5830,111 +5687,72 @@ export default {
           "exercises": [
             {
               "id": "C7-L4-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Post-hoc se hace si:",
                 "en": "Post-hoc is done if:"
               },
-              "choices": [
-                {
-                  "es": "ANOVA no es significativa",
-                  "en": "ANOVA not significant"
-                },
-                {
-                  "es": "ANOVA es significativa",
-                  "en": "ANOVA significant"
-                },
-                {
-                  "es": "Siempre",
-                  "en": "Always"
-                },
-                {
-                  "es": "Nunca",
-                  "en": "Never"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Significativa.",
-                "en": "Significant."
+                "es": "Solo tiene sentido buscar diferencias si la prueba global las detectó."
               },
               "solution": {
-                "es": "ANOVA es significativa.",
-                "en": "ANOVA significant."
+                "es": "El análisis post-hoc se hace si la ANOVA es significativa, porque solo entonces tiene sentido investigar qué grupos difieren. Si la prueba global no rechaza, las comparaciones por pares carecen de justificación."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "anova es significativa",
+                "si la anova es significativa",
+                "hay rechazo"
+              ],
+              "explain": {
+                "es": "Si respondiste «si la ANOVA no es significativa», has invertido la secuencia. Comparar pares sin un rechazo previo multiplica los falsos positivos y convierte el análisis en una búsqueda. La secuencia correcta protege la interpretación global. Hacerlo antes convierte el análisis en una búsqueda de diferencias."
+              }
             },
             {
               "id": "C7-L4-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Tukey HSD se usa para:",
                 "en": "Tukey HSD is used for:"
               },
-              "choices": [
-                {
-                  "es": "Comparar con un control",
-                  "en": "Compare with a control"
-                },
-                {
-                  "es": "Comparaciones por pares",
-                  "en": "Pairwise comparisons"
-                },
-                {
-                  "es": "Datos no paramétricos",
-                  "en": "Non-parametric data"
-                },
-                {
-                  "es": "Varianzas",
-                  "en": "Variances"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Pares.",
-                "en": "Pairs."
+                "es": "Controla el error de la familia completa."
               },
               "solution": {
-                "es": "Comparaciones por pares.",
-                "en": "Pairwise comparisons."
+                "es": "Tukey HSD se usa para comparar todos los pares de grupos manteniendo el error de la familia bajo control. Es menos conservador que Bonferroni en ese escenario."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "comparar todos los pares",
+                "todos los pares",
+                "comparaciones por pares"
+              ],
+              "explain": {
+                "es": "Si respondiste «comparar con un control», has descrito Dunnett. La diferencia importa: Tukey diseña el conjunto de comparaciones entre todos los pares, mientras Dunnett solo compara cada grupo con una referencia. Elegir el método cambia la potencia del análisis. El método devuelve intervalos simultáneos, no comparaciones aisladas."
+              }
             },
             {
               "id": "C7-L4-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Bonferroni corrige por:",
                 "en": "Bonferroni corrects for:"
               },
-              "choices": [
-                {
-                  "es": "Varianza",
-                  "en": "Variance"
-                },
-                {
-                  "es": "Múltiples comparaciones",
-                  "en": "Multiple comparisons"
-                },
-                {
-                  "es": "Normalidad",
-                  "en": "Normality"
-                },
-                {
-                  "es": "Independencia",
-                  "en": "Independence"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Múltiples comparaciones.",
-                "en": "Multiple comparisons."
+                "es": "Cada contraste adicional infla el error global."
               },
               "solution": {
-                "es": "Múltiples comparaciones.",
-                "en": "Multiple comparisons."
+                "es": "Bonferroni corrige por múltiples comparaciones dividiendo el nivel de significación entre el número de contrastes. Es sencillo y conservador."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "multiples comparaciones",
+                "las comparaciones multiples",
+                "multiplicidad"
+              ],
+              "explain": {
+                "es": "Si respondiste «la varianza», has buscado una corrección estadística donde hay una corrección de nivel. Bonferroni no cambia las varianzas ni los datos: cambia el umbral con el que se declara significación. Su coste es la pérdida de potencia cuando hay muchas comparaciones."
+              }
             },
             {
               "id": "C7-L4-E4",
@@ -5946,12 +5764,10 @@ export default {
               "answer": 0,
               "tol": 0.0001,
               "hint": {
-                "es": "0,05/4.",
-                "en": "0.05/4."
+                "es": "Divide el nivel entre el número de comparaciones."
               },
               "solution": {
-                "es": "0,0125.",
-                "en": "0.0125."
+                "es": "0,05 entre 4 es 0,0125, así que cada comparación se evalúa con ese nivel ajustado. El resultado es más exigente que el 5 % original."
               },
               "xp": 10,
               "choices": [
@@ -5971,7 +5787,10 @@ export default {
                   "es": "1.0125",
                   "en": "1.0125"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,2, has invertido el cociente. Bonferroni reparte el presupuesto de error entre las comparaciones, de modo que el nivel por contraste baja al aumentar el número. Ese reparto garantiza que el error global no supere el nivel original."
+              }
             },
             {
               "id": "C7-L4-E5",
@@ -5982,12 +5801,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Cada prueba extra añade una oportunidad de rechazo falso."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: hacer pruebas t sin corrección infla el error de tipo I cuando se comparan varios grupos. La corrección de Bonferroni o el uso de Tukey mantienen el error global bajo control."
               },
               "xp": 10,
               "choices": [
@@ -5999,7 +5816,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene cuantificarlo: con cinco comparaciones al 5 %, la probabilidad de al menos un falso positivo supera el 22 % si todas las hipótesis son nulas. El resultado global deja de tener el nivel que aparenta, y por eso el ajuste no es opcional."
+              }
             }
           ]
         }
@@ -6171,12 +5991,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "3/1.",
-                "en": "3/1."
+                "es": "Divide la pendiente entre su error estándar."
               },
               "solution": {
-                "es": "3.",
-                "en": "3."
+                "es": "El estadístico es 3 entre 1, es decir, 3. Con los grados de libertad del modelo, ese valor se compara con la distribución t para obtener el valor p."
               },
               "xp": 10,
               "choices": [
@@ -6196,7 +6014,10 @@ export default {
                   "es": "6",
                   "en": "6"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,33, has invertido el cociente. El contraste de la pendiente estandariza la estimación por su error, igual que en una prueba de medias. Un valor de 3 indica que la pendiente está tres errores estándar lejos de cero, lo que sugiere una relación clara."
+              }
             },
             {
               "id": "C8-L1-E2",
@@ -6208,12 +6029,10 @@ export default {
               "answer": 1,
               "tol": 0.001,
               "hint": {
-                "es": "n-2.",
-                "en": "n-2."
+                "es": "Se estiman dos parámetros con los mismos datos."
               },
               "solution": {
-                "es": "13.",
-                "en": "13."
+                "es": "Con 15 observaciones, los grados de libertad son 13, porque se estiman el intercepto y la pendiente. Cada parámetro consume una pieza de información."
               },
               "xp": 10,
               "choices": [
@@ -6233,43 +6052,33 @@ export default {
                   "es": "14",
                   "en": "14"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 14, has restado solo uno. En una regresión simple se estiman dos parámetros, así que la pérdida es de dos grados. Ese valor determina el valor crítico y el ancho del intervalo de la pendiente. Esa pérdida explica por qué el intervalo es más ancho con muestras pequeñas."
+              }
             },
             {
               "id": "C8-L1-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "H0 para la pendiente es:",
                 "en": "H0 for slope is:"
               },
-              "choices": [
-                {
-                  "es": "β1 > 0",
-                  "en": "β1 > 0"
-                },
-                {
-                  "es": "β1 < 0",
-                  "en": "β1 < 0"
-                },
-                {
-                  "es": "β1 = 0",
-                  "en": "β1 = 0"
-                },
-                {
-                  "es": "β1 ≠ 0",
-                  "en": "β1 ≠ 0"
-                }
-              ],
-              "answer": 2,
               "hint": {
-                "es": "β1 = 0.",
-                "en": "β1 = 0."
+                "es": "La nula afirma ausencia de relación lineal."
               },
               "solution": {
-                "es": "β1 = 0.",
-                "en": "β1 = 0."
+                "es": "La hipótesis nula para la pendiente es que vale cero, es decir, que no hay relación lineal entre el predictor y la respuesta. La alternativa es que sea distinta de cero o mayor o menor, según el planteamiento."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "b1 = 0",
+                "la pendiente es 0",
+                "pendiente cero"
+              ],
+              "explain": {
+                "es": "Si respondiste una desigualdad, has descrito la alternativa. La nula siempre contiene la igualdad porque permite calcular la distribución del estadístico bajo un valor concreto. Con pendiente cero, el predictor no aporta información lineal sobre la respuesta. Cualquier otro valor nulo convertiría el contraste en un problema distinto."
+              }
             },
             {
               "id": "C8-L1-E4",
@@ -6280,12 +6089,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "El intervalo contiene los valores compatibles con los datos."
               },
               "solution": {
-                "es": "Falso: no significativa.",
-                "en": "False: not significant."
+                "es": "Falso: si el intervalo de la pendiente incluye cero, la pendiente no es significativa al nivel usado, porque cero es un valor compatible con los datos. La significación exige que todo el intervalo quede de un lado."
               },
               "xp": 10,
               "choices": [
@@ -6297,43 +6104,32 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has invertido la equivalencia entre intervalo y contraste. Un intervalo que cruza el cero indica que la evidencia no descarta la ausencia de relación lineal. La misma información aparece en el valor p: sería mayor que el nivel."
+              }
             },
             {
               "id": "C8-L1-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "gl para inferencia en regresión:",
                 "en": "df for regression inference:"
               },
-              "choices": [
-                {
-                  "es": "n",
-                  "en": "n"
-                },
-                {
-                  "es": "n-1",
-                  "en": "n-1"
-                },
-                {
-                  "es": "n-2",
-                  "en": "n-2"
-                },
-                {
-                  "es": "n-3",
-                  "en": "n-3"
-                }
-              ],
-              "answer": 2,
               "hint": {
-                "es": "n-2.",
-                "en": "n-2."
+                "es": "Dos parámetros estimados."
               },
               "solution": {
-                "es": "n-2.",
-                "en": "n-2."
+                "es": "Los grados de libertad para la inferencia en una regresión simple son n menos dos, porque se estiman intercepto y pendiente. En una regresión múltiple se resta uno más por cada predictor adicional."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "n-2",
+                "n menos 2"
+              ],
+              "explain": {
+                "es": "Si respondiste n, has ignorado los parámetros estimados. Cada coeficiente consume un grado de libertad, y ese consumo se refleja en la distribución t del modelo. Confundirlo cambia el valor crítico y puede alterar la conclusión en los casos límite."
+              }
             }
           ]
         },
@@ -6476,111 +6272,72 @@ export default {
           "exercises": [
             {
               "id": "C8-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El intervalo de predicción es para:",
                 "en": "Prediction interval is for:"
               },
-              "choices": [
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "Un individuo",
-                  "en": "An individual"
-                },
-                {
-                  "es": "La varianza",
-                  "en": "Variance"
-                },
-                {
-                  "es": "La correlación",
-                  "en": "Correlation"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Individuo.",
-                "en": "Individual."
+                "es": "Incluye la variabilidad del caso, no solo la de la recta."
               },
               "solution": {
-                "es": "Un individuo.",
-                "en": "An individual."
+                "es": "El intervalo de predicción es para un individuo: estima el rango de valores de una nueva observación. El intervalo de confianza, en cambio, es para la media de la respuesta en ese valor del predictor."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "un individuo",
+                "una observacion individual",
+                "un valor individual"
+              ],
+              "explain": {
+                "es": "Si respondiste «la media», has descrito el intervalo de confianza. La diferencia práctica es grande: el de predicción es siempre más ancho porque añade la variabilidad del propio caso. Confundirlos promete una precisión que el modelo no tiene para predecir individuos."
+              }
             },
             {
               "id": "C8-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El intervalo de predicción es más ancho que el IC porque:",
                 "en": "Prediction interval is wider than CI because:"
               },
-              "choices": [
-                {
-                  "es": "Incluye variabilidad individual",
-                  "en": "Includes individual variability"
-                },
-                {
-                  "es": "Usa z en vez de t",
-                  "en": "Uses z instead of t"
-                },
-                {
-                  "es": "Es para la media",
-                  "en": "It's for the mean"
-                },
-                {
-                  "es": "No hay diferencia",
-                  "en": "No difference"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "Variabilidad individual.",
-                "en": "Individual variability."
+                "es": "Además de la incertidumbre de la recta, hay dispersión de los casos."
               },
               "solution": {
-                "es": "Incluye la variabilidad individual (residuo).",
-                "en": "Includes individual variability (residual)."
+                "es": "El intervalo de predicción es más ancho que el de confianza porque incluye la variabilidad individual alrededor de la recta, además de la incertidumbre sobre la posición de la recta."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "incluye variabilidad individual",
+                "la variabilidad del individuo",
+                "variabilidad individual"
+              ],
+              "explain": {
+                "es": "Si respondiste que usa z en lugar de t, has buscado una diferencia de distribución donde hay una diferencia de fuentes de error. La recta se conoce con cierta precisión, pero cada observación se desvía de ella. Esa segunda fuente es la que ensancha el intervalo de predicción."
+              }
             },
             {
               "id": "C8-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El IC para la media es para:",
                 "en": "CI for mean is for:"
               },
-              "choices": [
-                {
-                  "es": "Un individuo",
-                  "en": "An individual"
-                },
-                {
-                  "es": "La media de todos los Y con ese X",
-                  "en": "Mean of all Y with that X"
-                },
-                {
-                  "es": "La varianza",
-                  "en": "Variance"
-                },
-                {
-                  "es": "La correlación",
-                  "en": "Correlation"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "La media.",
-                "en": "The mean."
+                "es": "No describe un caso, sino el promedio en ese valor del predictor."
               },
               "solution": {
-                "es": "La media de todos los Y con ese X.",
-                "en": "Mean of all Y with that X."
+                "es": "El intervalo de confianza para la media describe el rango de valores plausibles para la respuesta media cuando el predictor toma un valor concreto. No describe a un individuo."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "la media de todos los casos con ese x",
+                "la media",
+                "la respuesta media"
+              ],
+              "explain": {
+                "es": "Si respondiste «un individuo», has confundido los dos intervalos. El de confianza se estrecha con más datos y se centra en el valor esperado; el de predicción mantiene un ancho mínimo por la dispersión residual. Usar el primero para predecir casos produce promesas incumplidas."
+              }
             },
             {
               "id": "C8-L2-E4",
@@ -6591,12 +6348,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "El de predicción añade un término dentro de la raíz."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: el intervalo de predicción es siempre más ancho que el de confianza, porque su error incluye el término de variabilidad individual además de la incertidumbre de la recta."
               },
               "xp": 10,
               "choices": [
@@ -6608,43 +6363,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene comparar las fórmulas: la del intervalo de predicción añade un uno dentro de la raíz. Ese término nunca desaparece, ni siquiera con muestras enormes. Por eso la predicción de individuos tiene un límite de precisión que no depende del tamaño."
+              }
             },
             {
               "id": "C8-L2-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Para predecir un valor individual, se usa:",
                 "en": "To predict an individual value, use:"
               },
-              "choices": [
-                {
-                  "es": "IC para la media",
-                  "en": "CI for mean"
-                },
-                {
-                  "es": "Intervalo de predicción",
-                  "en": "Prediction interval"
-                },
-                {
-                  "es": "IC para la pendiente",
-                  "en": "CI for slope"
-                },
-                {
-                  "es": "IC para el intercepto",
-                  "en": "CI for intercept"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Intervalo de predicción.",
-                "en": "Prediction interval."
+                "es": "Se quiere cubrir una observación futura, no un promedio."
               },
               "solution": {
-                "es": "Intervalo de predicción.",
-                "en": "Prediction interval."
+                "es": "Para predecir un valor individual se usa el intervalo de predicción, que incluye la variabilidad del caso. El intervalo de confianza solo cubre la media esperada."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "intervalo de prediccion",
+                "prediccion",
+                "el de prediccion"
+              ],
+              "explain": {
+                "es": "Si respondiste «el intervalo de confianza», has prometido una precisión excesiva. El de confianza se refiere al promedio y es más estrecho; usarlo para un caso concreto subestima la incertidumbre. En previsiones operativas, esa diferencia se traduce en roturas de stock o excesos."
+              }
             }
           ]
         },
@@ -6779,111 +6524,71 @@ export default {
           "exercises": [
             {
               "id": "C8-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "LINE significa:",
                 "en": "LINE stands for:"
               },
-              "choices": [
-                {
-                  "es": "Linealidad, Independencia, Normalidad, Equal variance",
-                  "en": "Linearity, Independence, Normality, Equal variance"
-                },
-                {
-                  "es": "Log, Integral, Normal, Error",
-                  "en": "Log, Integral, Normal, Error"
-                },
-                {
-                  "es": "Linear, Inverse, Nonlinear, Exponential",
-                  "en": "Linear, Inverse, Nonlinear, Exponential"
-                },
-                {
-                  "es": "Límite, Integral, Número, Estimador",
-                  "en": "Limit, Integral, Number, Estimator"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "L, I, N, E.",
-                "en": "L, I, N, E."
+                "es": "Es un acrónimo en inglés de cuatro supuestos."
               },
               "solution": {
-                "es": "Linealidad, Independencia, Normalidad, Equal variance.",
-                "en": "Linearity, Independence, Normality, Equal variance."
+                "es": "LINE resume los cuatro supuestos de la regresión lineal: linealidad, independencia de los errores, normalidad de los residuos y varianza constante, es decir, homocedasticidad."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "linealidad independencia normalidad varianza igual",
+                "linealidad, independencia, normalidad, varianza constante"
+              ],
+              "explain": {
+                "es": "Si respondiste otra combinación, has olvidado alguno de los cuatro. El acrónimo es una ayuda mnemotécnica, no una teoría: cada supuesto se comprueba con un gráfico distinto. La independencia se garantiza con el diseño; los otros tres se diagnostican con residuos."
+              }
             },
             {
               "id": "C8-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La homocedasticidad se verifica con:",
                 "en": "Homoscedasticity is checked with:"
               },
-              "choices": [
-                {
-                  "es": "Q-Q plot",
-                  "en": "Q-Q plot"
-                },
-                {
-                  "es": "Residuos vs ajustados",
-                  "en": "Residuals vs fitted"
-                },
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "La correlación",
-                  "en": "Correlation"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Residuos vs ajustados.",
-                "en": "Residuals vs fitted."
+                "es": "Se busca un patrón de embudo."
               },
               "solution": {
-                "es": "Gráfico de residuos vs ajustados.",
-                "en": "Residual vs fitted plot."
+                "es": "La homocedasticidad se verifica con un gráfico de residuos frente a valores ajustados, buscando un patrón de embudo o de dispersión cambiante. Las pruebas formales complementan la inspección visual."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "residuos vs ajustados",
+                "grafico de residuos",
+                "residuos frente a ajustados"
+              ],
+              "explain": {
+                "es": "Si respondiste «Q-Q plot», has comprobado normalidad. El gráfico de cuantiles evalúa la forma de los residuos, no su dispersión. Confundir ambos diagnósticos lleva a transformar datos por el motivo equivocado o a ignorar una heterocedasticidad evidente. Si el embudo aparece, la varianza no es constante y hay que corregir."
+              }
             },
             {
               "id": "C8-L3-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La normalidad de residuos se verifica con:",
                 "en": "Residual normality is checked with:"
               },
-              "choices": [
-                {
-                  "es": "Residuos vs ajustados",
-                  "en": "Residuals vs fitted"
-                },
-                {
-                  "es": "Q-Q plot",
-                  "en": "Q-Q plot"
-                },
-                {
-                  "es": "La media",
-                  "en": "The mean"
-                },
-                {
-                  "es": "La varianza",
-                  "en": "Variance"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Q-Q plot.",
-                "en": "Q-Q plot."
+                "es": "Compara los cuantiles de los residuos con los de una normal."
               },
               "solution": {
-                "es": "Q-Q plot.",
-                "en": "Q-Q plot."
+                "es": "La normalidad de los residuos se verifica con un gráfico Q-Q, que compara los cuantiles observados con los esperados de una normal. Una desviación sistemática en los extremos indica colas distintas."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "q-q plot",
+                "grafico q-q",
+                "cuantiles"
+              ],
+              "explain": {
+                "es": "Si respondiste «residuos vs ajustados», has evaluado linealidad y varianza, no forma. El Q-Q responde a otra pregunta: si la distribución de los errores se parece a una campana. Con muestras grandes, las pruebas formales detectan desviaciones triviales, así que el gráfico informa mejor."
+              }
             },
             {
               "id": "C8-L3-E4",
@@ -6894,12 +6599,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "La dispersión crece con el valor ajustado."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: si los residuos forman un embudo, hay heterocedasticidad, porque la varianza del error cambia con el nivel de la respuesta. Eso invalida los errores estándar calculados con varianza constante."
               },
               "xp": 10,
               "choices": [
@@ -6911,7 +6614,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene ver el efecto: los intervalos serán demasiado estrechos en una zona y demasiado anchos en otra. La solución es transformar la respuesta, usar errores robustos o modelar la varianza. Ignorar el patrón produce conclusiones con precisión falsa."
+              }
             },
             {
               "id": "C8-L3-E5",
@@ -6940,14 +6646,15 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Transformar.",
-                "en": "Transform."
+                "es": "Hay alternativas antes de descartar el análisis."
               },
               "solution": {
-                "es": "Transformar variables (log, sqrt).",
-                "en": "Transform variables (log, sqrt)."
+                "es": "Si se violan los supuestos se puede transformar la variable, usar errores estándar robustos, añadir términos al modelo o cambiar de enfoque. Lo que no es aceptable es ignorarlos sin declararlo."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste «ignorarlos», has elegido la opción que produce conclusiones frágiles. Cada violación tiene su remedio: la no linealidad pide un término adicional, la heterocedasticidad pide errores robustos, la dependencia pide un modelo distinto. Lo importante es que la corrección responda al diagnóstico."
+              }
             }
           ]
         },
@@ -7122,50 +6829,38 @@ export default {
               ],
               "answer": 1,
               "hint": {
-                "es": "Ceteris paribus.",
-                "en": "Ceteris paribus."
+                "es": "Se mantienen constantes las demás variables del modelo."
               },
               "solution": {
-                "es": "El efecto manteniendo las demás constantes.",
-                "en": "Effect holding others constant."
+                "es": "En una regresión múltiple, cada coeficiente mide el cambio en la respuesta por unidad de su predictor, manteniendo las demás variables constantes. Esa es la interpretación condicional."
               },
-              "xp": 10
+              "xp": 10,
+              "explain": {
+                "es": "Si respondiste que mide el efecto total, has ignorado la condición. El coeficiente compara unidades que comparten el resto de variables, y esa comparación puede corresponder a pocos casos. Su lectura correcta exige declarar qué se mantiene fijo y comprobar que existen casos con esas características."
+              }
             },
             {
               "id": "C8-L4-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "R² ajustado se usa para:",
                 "en": "Adjusted R² is used for:"
               },
-              "choices": [
-                {
-                  "es": "Comparar modelos con distinto nº de predictores",
-                  "en": "Compare models with different number of predictors"
-                },
-                {
-                  "es": "Calcular la pendiente",
-                  "en": "Compute slope"
-                },
-                {
-                  "es": "Calcular el intercepto",
-                  "en": "Compute intercept"
-                },
-                {
-                  "es": "Calcular residuos",
-                  "en": "Compute residuals"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "Comparar modelos.",
-                "en": "Compare models."
+                "es": "El R² bruto siempre sube al añadir variables."
               },
               "solution": {
-                "es": "Comparar modelos con distinto nº de predictores.",
-                "en": "Compare models with different number of predictors."
+                "es": "El coeficiente de determinación ajustado se usa para comparar modelos con distinto número de predictores, porque penaliza la inclusión de variables que no aportan información suficiente."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "comparar modelos con distinto numero de predictores",
+                "comparar modelos",
+                "penalizar predictores"
+              ],
+              "explain": {
+                "es": "Si respondiste que sirve para calcular la pendiente, has confundido una medida de ajuste con un parámetro. El ajustado corrige el optimismo del bruto, que crece al añadir variables aunque sean ruido. Por eso es el criterio habitual al comparar modelos anidados."
+              }
             },
             {
               "id": "C8-L4-E3",
@@ -7176,12 +6871,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Dos predictores casi redundantes reparten su efecto."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la multicolinealidad hace los coeficientes inestables, porque el modelo no puede separar el efecto de predictores muy correlacionados. Los errores estándar crecen y los signos pueden cambiar."
               },
               "xp": 10,
               "choices": [
@@ -7193,43 +6886,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene imaginar dos variables casi idénticas: el modelo reparte su efecto de forma arbitraria y pequeños cambios en los datos alteran los coeficientes. La predicción puede seguir siendo buena, pero la interpretación individual deja de ser fiable."
+              }
             },
             {
               "id": "C8-L4-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La multicolinealidad ocurre cuando:",
                 "en": "Multicollinearity occurs when:"
               },
-              "choices": [
-                {
-                  "es": "Los predictores son independientes",
-                  "en": "Predictors are independent"
-                },
-                {
-                  "es": "Los predictores están muy correlacionados",
-                  "en": "Predictors are highly correlated"
-                },
-                {
-                  "es": "Hay pocos datos",
-                  "en": "Few data"
-                },
-                {
-                  "es": "Hay muchos datos",
-                  "en": "Many data"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Correlacionados.",
-                "en": "Correlated."
+                "es": "Dos variables aportan casi la misma información."
               },
               "solution": {
-                "es": "Los predictores están muy correlacionados.",
-                "en": "Predictors are highly correlated."
+                "es": "La multicolinealidad ocurre cuando los predictores están muy correlacionados entre sí, de modo que aportan información redundante y el modelo no puede separar sus efectos."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "los predictores estan muy correlacionados",
+                "predictores correlacionados",
+                "alta correlacion entre predictores"
+              ],
+              "explain": {
+                "es": "Si respondiste que los predictores son independientes, has descrito la situación ideal. La multicolinealidad es lo contrario: solapamiento. Se detecta con factores de inflación de la varianza y se corrige eliminando variables, combinándolas o usando regularización. El factor de inflación de la varianza cuantifica ese solapamiento."
+              }
             },
             {
               "id": "C8-L4-E5",
@@ -7240,12 +6923,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "El bruto no descuenta los predictores inútiles."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: el coeficiente de determinación ajustado penaliza por el número de predictores, de modo que solo sube si la nueva variable aporta más de lo que cuesta en complejidad."
               },
               "xp": 10,
               "choices": [
@@ -7257,7 +6938,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que el bruto nunca baja al añadir variables, aunque sean ruido puro. El ajustado introduce una corrección por grados de libertad y por eso puede disminuir. Esa propiedad lo hace útil para elegir entre modelos de distinto tamaño."
+              }
             }
           ]
         }
@@ -7406,75 +7090,48 @@ export default {
           "exercises": [
             {
               "id": "C9-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Primer paso del análisis:",
                 "en": "First step of analysis:"
               },
-              "choices": [
-                {
-                  "es": "Inferir",
-                  "en": "Infer"
-                },
-                {
-                  "es": "Entender el problema",
-                  "en": "Understand the problem"
-                },
-                {
-                  "es": "Comunicar",
-                  "en": "Communicate"
-                },
-                {
-                  "es": "Modelar",
-                  "en": "Model"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Entender.",
-                "en": "Understand."
+                "es": "Sin pregunta clara, cualquier cálculo es una conjetura."
               },
               "solution": {
-                "es": "Entender el problema.",
-                "en": "Understand the problem."
+                "es": "El primer paso del análisis es entender el problema y formular la pregunta. Sin ella, la elección de datos y de método queda sin criterio."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "entender el problema",
+                "entender el problema y la pregunta"
+              ],
+              "explain": {
+                "es": "Si respondiste «inferir», has empezado por el final. La inferencia responde a una pregunta, y si esa pregunta no está definida, el resultado puede ser impecable e inútil. La primera conversación de un proyecto debería ser sobre la decisión, no sobre los datos."
+              }
             },
             {
               "id": "C9-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Antes de inferir se verifica:",
                 "en": "Before inferring, verify:"
               },
-              "choices": [
-                {
-                  "es": "La conclusión",
-                  "en": "The conclusion"
-                },
-                {
-                  "es": "Los supuestos",
-                  "en": "Assumptions"
-                },
-                {
-                  "es": "El gráfico",
-                  "en": "The graph"
-                },
-                {
-                  "es": "El tamaño de muestra",
-                  "en": "Sample size"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Supuestos.",
-                "en": "Assumptions."
+                "es": "Cada método tiene condiciones que deben cumplirse."
               },
               "solution": {
-                "es": "Los supuestos del método.",
-                "en": "Method assumptions."
+                "es": "Antes de inferir se verifican los supuestos del método: independencia, normalidad, homocedasticidad o el tamaño de muestra, según el caso. Si no se cumplen, la conclusión pierde validez."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "los supuestos",
+                "supuestos",
+                "los supuestos del modelo"
+              ],
+              "explain": {
+                "es": "Si respondiste «la conclusión», has invertido el orden. Verificar la conclusión es imposible: aún no existe. Los supuestos son lo que se puede comprobar antes de calcular y lo que determina si el resultado significa algo. Saltarse ese paso es la causa más común de conclusiones precisas y falsas."
+              }
             },
             {
               "id": "C9-L1-E3",
@@ -7485,12 +7142,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "Es donde aparecen los valores atípicos y los cambios de definición."
               },
               "solution": {
-                "es": "Falso: es esencial.",
-                "en": "False: essential."
+                "es": "Falso: la exploración de datos no es opcional. Es donde se detectan valores atípicos, definiciones inconsistentes y problemas de calidad que condicionan todo el análisis posterior."
               },
               "xp": 10,
               "choices": [
@@ -7502,79 +7157,54 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», conviene recordar que los datos casi nunca llegan limpios. La exploración revela duplicados, faltantes y cambios de criterio que ninguna prueba detecta por sí sola. Omitirla es la forma más rápida de analizar con precisión el problema equivocado."
+              }
             },
             {
               "id": "C9-L1-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La estadística es:",
                 "en": "Statistics is:"
               },
-              "choices": [
-                {
-                  "es": "Una receta",
-                  "en": "A recipe"
-                },
-                {
-                  "es": "Razonamiento con datos",
-                  "en": "Reasoning with data"
-                },
-                {
-                  "es": "Solo cálculo",
-                  "en": "Just calculation"
-                },
-                {
-                  "es": "Solo gráficos",
-                  "en": "Just graphs"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Razonamiento.",
-                "en": "Reasoning."
+                "es": "No es una secuencia fija de pasos."
               },
               "solution": {
-                "es": "Razonamiento con datos.",
-                "en": "Reasoning with data."
+                "es": "La estadística es razonamiento con datos: un conjunto de criterios para describir, inferir y decidir bajo incertidumbre. No es una receta, porque cada problema exige elegir el método y justificarlo."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "razonamiento con datos",
+                "razonamiento"
+              ],
+              "explain": {
+                "es": "Si respondiste «una receta», has confundido el conjunto de herramientas con su uso. Aplicar fórmulas en orden produce resultados, pero no necesariamente respuestas. La diferencia entre ambos enfoques aparece cuando los datos no encajan en el supuesto o la pregunta cambia a mitad del proyecto."
+              }
             },
             {
               "id": "C9-L1-E5",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Último paso del análisis:",
                 "en": "Last step of analysis:"
               },
-              "choices": [
-                {
-                  "es": "Inferir",
-                  "en": "Infer"
-                },
-                {
-                  "es": "Modelar",
-                  "en": "Model"
-                },
-                {
-                  "es": "Comunicar",
-                  "en": "Communicate"
-                },
-                {
-                  "es": "Limpiar",
-                  "en": "Clean"
-                }
-              ],
-              "answer": 2,
               "hint": {
-                "es": "Comunicar.",
-                "en": "Communicate."
+                "es": "Un análisis que nadie entiende no cambia decisiones."
               },
               "solution": {
-                "es": "Comunicar.",
-                "en": "Communicate."
+                "es": "El último paso del análisis es comunicar: presentar el resultado, su incertidumbre y sus límites en un lenguaje que permita decidir. Sin ese paso, el trabajo técnico no influye."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "comunicar",
+                "comunicar los resultados"
+              ],
+              "explain": {
+                "es": "Si respondiste «inferir», has terminado antes de tiempo. La inferencia produce el resultado, pero la comunicación lo hace utilizable. Un informe claro con un resultado modesto vale más que un análisis brillante que nadie comprende, y esa es una lección práctica que se aprende tarde."
+              }
             }
           ]
         },
@@ -7709,75 +7339,49 @@ export default {
           "exercises": [
             {
               "id": "C9-L2-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Primer paso del proyecto:",
                 "en": "First step of the project:"
               },
-              "choices": [
-                {
-                  "es": "Inferir",
-                  "en": "Infer"
-                },
-                {
-                  "es": "Elegir dataset y pregunta",
-                  "en": "Choose dataset and question"
-                },
-                {
-                  "es": "Comunicar",
-                  "en": "Communicate"
-                },
-                {
-                  "es": "Modelar",
-                  "en": "Model"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Dataset y pregunta.",
-                "en": "Dataset and question."
+                "es": "Antes de calcular hay que decidir qué se quiere saber y con qué datos."
               },
               "solution": {
-                "es": "Elegir dataset y formular pregunta.",
-                "en": "Choose dataset and formulate question."
+                "es": "El primer paso del proyecto es elegir el conjunto de datos y la pregunta que se quiere responder. Ambos van juntos: una pregunta sin datos accesibles es un deseo, y unos datos sin pregunta son una exploración sin rumbo."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "elegir dataset y pregunta",
+                "elegir el dataset y la pregunta",
+                "definir la pregunta"
+              ],
+              "explain": {
+                "es": "Si respondiste «inferir», has empezado por la técnica. La elección de datos y pregunta determina qué métodos tienen sentido y qué conclusiones son posibles. Cambiar esa elección a mitad del proyecto suele obligar a repetir buena parte del trabajo. Esa doble elección inicial ahorra rehacer el trabajo después."
+              }
             },
             {
               "id": "C9-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Un resultado completo incluye:",
                 "en": "A complete result includes:"
               },
-              "choices": [
-                {
-                  "es": "Solo p-valor",
-                  "en": "Only p-value"
-                },
-                {
-                  "es": "Solo IC",
-                  "en": "Only CI"
-                },
-                {
-                  "es": "p-valor, IC y tamaño del efecto",
-                  "en": "p-value, CI and effect size"
-                },
-                {
-                  "es": "Solo la media",
-                  "en": "Only the mean"
-                }
-              ],
-              "answer": 2,
               "hint": {
-                "es": "Los tres.",
-                "en": "All three."
+                "es": "El valor central solo no informa de la precisión."
               },
               "solution": {
-                "es": "p-valor, IC y tamaño del efecto.",
-                "en": "p-value, CI and effect size."
+                "es": "Un resultado completo incluye la estimación, su intervalo y una declaración de límites. El valor central sin margen oculta la incertidumbre y el alcance del estudio."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "estimacion e intervalo",
+                "estimacion, intervalo y limites",
+                "efecto e intervalo"
+              ],
+              "explain": {
+                "es": "Si respondiste «solo el p-valor», has dejado fuera la magnitud y la precisión. El p-valor responde a una pregunta binaria que rara vez coincide con la decisión. La estimación con su intervalo permite calcular escenarios y discutir el resultado con quien decide."
+              }
             },
             {
               "id": "C9-L2-E3",
@@ -7788,12 +7392,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Un gráfico puede engañar con datos verdaderos."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los gráficos deben ser claros y no engañosos, con ejes etiquetados, escalas declaradas y un periodo completo. Un gráfico correcto permite reconstruir la magnitud que representa."
               },
               "xp": 10,
               "choices": [
@@ -7805,43 +7407,33 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que el engaño visual no requiere datos falsos: basta truncar un eje o elegir un periodo. La claridad no es estética, es una condición de validez comunicativa. Un gráfico que impide reconstruir la cifra no informa, persuade."
+              }
             },
             {
               "id": "C9-L2-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Las conclusiones deben estar en:",
                 "en": "Conclusions should be in:"
               },
-              "choices": [
-                {
-                  "es": "Jerga técnica",
-                  "en": "Technical jargon"
-                },
-                {
-                  "es": "Lenguaje llano",
-                  "en": "Plain language"
-                },
-                {
-                  "es": "Solo números",
-                  "en": "Numbers only"
-                },
-                {
-                  "es": "Solo gráficos",
-                  "en": "Graphs only"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Lenguaje llano.",
-                "en": "Plain language."
+                "es": "Quien decide no tiene por qué conocer la jerga."
               },
               "solution": {
-                "es": "Lenguaje llano.",
-                "en": "Plain language."
+                "es": "Las conclusiones deben estar en lenguaje llano, sin jerga innecesaria, para que quien decide pueda entenderlas y usarlas. La precisión técnica se conserva en el cuerpo del informe."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "lenguaje llano",
+                "lenguaje claro",
+                "lenguaje sencillo"
+              ],
+              "explain": {
+                "es": "Si respondiste «jerga técnica», has escrito para colegas y no para el destinatario. Un informe útil distingue entre el detalle metodológico y la conclusión operativa. La jerga tiene su lugar, pero si la conclusión la necesita para entenderse, probablemente no está bien formulada."
+              }
             },
             {
               "id": "C9-L2-E5",
@@ -7852,12 +7444,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Un resultado sin diagnóstico es una promesa sin garantía."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: los supuestos deben verificarse y declararse, porque determinan si el método es aplicable y si las conclusiones son defendibles. Omitir la verificación convierte el resultado en una afirmación sin respaldo."
               },
               "xp": 10,
               "choices": [
@@ -7869,7 +7459,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene pensar en un contraste aplicado a datos dependientes: el valor p es incorrecto aunque el cálculo sea impecable. La verificación de supuestos es parte del análisis, no un apéndice. Declararla permite al lector juzgar el alcance."
+              }
             }
           ]
         },
@@ -8004,75 +7597,48 @@ export default {
           "exercises": [
             {
               "id": "C9-L3-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Los tres cursos son:",
                 "en": "The three courses are:"
               },
-              "choices": [
-                {
-                  "es": "Descriptiva, Probabilidad, Inferencial",
-                  "en": "Descriptive, Probability, Inferential"
-                },
-                {
-                  "es": "Solo Inferencial",
-                  "en": "Only Inferential"
-                },
-                {
-                  "es": "Solo Descriptiva",
-                  "en": "Only Descriptive"
-                },
-                {
-                  "es": "Solo Probabilidad",
-                  "en": "Only Probability"
-                }
-              ],
-              "answer": 0,
               "hint": {
-                "es": "Los tres.",
-                "en": "All three."
+                "es": "Describir, modelar el azar y concluir."
               },
               "solution": {
-                "es": "Descriptiva, Probabilidad y Estadística, Inferencial.",
-                "en": "Descriptive, Probability and Statistics, Inferential."
+                "es": "Los tres cursos son descriptiva, probabilidad e inferencial: describir los datos, modelar el azar y concluir sobre poblaciones con margen de error. Cada uno se apoya en el anterior."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "descriptiva, probabilidad, inferencial",
+                "descriptiva probabilidad inferencial"
+              ],
+              "explain": {
+                "es": "Si olvidaste uno, conviene repasar el mapa: sin descriptiva no se entiende qué se mide; sin probabilidad no hay modelo para la incertidumbre; sin inferencia no se puede generalizar. La secuencia no es arbitraria, y saltarse un eslabón se nota en los siguientes."
+              }
             },
             {
               "id": "C9-L3-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El siguiente paso es:",
                 "en": "Next step is:"
               },
-              "choices": [
-                {
-                  "es": "Dejar de aprender",
-                  "en": "Stop learning"
-                },
-                {
-                  "es": "Aplicar a un dataset real",
-                  "en": "Apply to a real dataset"
-                },
-                {
-                  "es": "Solo leer libros",
-                  "en": "Only read books"
-                },
-                {
-                  "es": "Olvidar todo",
-                  "en": "Forget everything"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Aplicar.",
-                "en": "Apply."
+                "es": "El conocimiento se consolida cuando se usa."
               },
               "solution": {
-                "es": "Aplicar a un dataset real.",
-                "en": "Apply to a real dataset."
+                "es": "El siguiente paso es aplicar lo aprendido a un conjunto de datos real, con una pregunta concreta y una decisión detrás. Ese proyecto consolida las competencias mejor que cualquier curso adicional."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "aplicar a un dataset real",
+                "aplicar a datos reales",
+                "practicar con datos reales"
+              ],
+              "explain": {
+                "es": "Si respondiste «dejar de aprender», has confundido terminar un curso con dominar la disciplina. La estadística se aprende resolviendo problemas con datos imperfectos, no repitiendo ejercicios. Un proyecto pequeño con revisión enseña más que diez unidades nuevas. Y ese proyecto debería incluir una revisión de alguien con más experiencia."
+              }
             },
             {
               "id": "C9-L3-E3",
@@ -8083,12 +7649,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Nadie aprende a analizar solo leyendo."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: la estadística se aprende haciendo, porque cada conjunto de datos plantea problemas que ningún ejemplo resuelve por anticipado. La práctica con revisión es lo que convierte el conocimiento en criterio."
               },
               "xp": 10,
               "choices": [
@@ -8100,43 +7664,32 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar que los conceptos se olvidan rápido si no se aplican. La práctica produce errores, y los errores corregidos producen aprendizaje. Esa es la razón por la que el curso insiste en proyectos y no solo en ejercicios."
+              }
             },
             {
               "id": "C9-L3-E4",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "La estadística es:",
                 "en": "Statistics is:"
               },
-              "choices": [
-                {
-                  "es": "Una receta",
-                  "en": "A recipe"
-                },
-                {
-                  "es": "Razonamiento con datos",
-                  "en": "Reasoning with data"
-                },
-                {
-                  "es": "Solo cálculo",
-                  "en": "Just calculation"
-                },
-                {
-                  "es": "Solo gráficos",
-                  "en": "Just graphs"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Razonamiento.",
-                "en": "Reasoning."
+                "es": "Es la misma idea del primer módulo."
               },
               "solution": {
-                "es": "Razonamiento con datos.",
-                "en": "Reasoning with data."
+                "es": "La estadística es razonamiento con datos, no una receta. Las herramientas cambian, pero el criterio para elegirlas y para interpretar sus resultados es lo que se ha entrenado durante el curso."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "razonamiento con datos",
+                "razonamiento"
+              ],
+              "explain": {
+                "es": "Si respondiste «una receta», has llegado al final con la idea del principio sin revisar. La diferencia es práctica: una receta se aplica igual siempre; el razonamiento decide qué hacer cuando los datos no encajan en el supuesto o la pregunta cambia. Ese criterio es el verdadero resultado del curso."
+              }
             },
             {
               "id": "C9-L3-E5",
@@ -8147,12 +7700,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Sí.",
-                "en": "Yes."
+                "es": "Has recorrido los tres cursos y sus módulos."
               },
               "solution": {
-                "es": "Verdadero. ¡Felicitaciones!",
-                "en": "True. Congratulations!"
+                "es": "Verdadero: has completado el recorrido de cero a un nivel funcional. El certificado acredita el itinerario, no la maestría: esa se construye aplicando lo aprendido con revisión y con errores corregidos."
               },
               "xp": 10,
               "jackpot": true,
@@ -8165,7 +7716,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si dudaste, conviene distinguir acreditación de competencia. Has visto los conceptos, has resuelto ejercicios y has recorrido los tres cursos. Lo que falta no es otro temario, sino práctica sostenida en problemas reales, que es lo que convierte el recorrido en oficio."
+              }
             }
           ]
         }

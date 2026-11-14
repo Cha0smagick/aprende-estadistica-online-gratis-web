@@ -1,0 +1,99 @@
+{
+  "items": {
+    "C9-L1-E1": {
+      "type": "short",
+      "answers": ["entender el problema", "entender el problema y la pregunta"],
+      "hint": "Sin pregunta clara, cualquier cálculo es una conjetura.",
+      "solution": "El primer paso del análisis es entender el problema y formular la pregunta. Sin ella, la elección de datos y de método queda sin criterio.",
+      "explain": "Si respondiste «inferir», has empezado por el final. La inferencia responde a una pregunta, y si esa pregunta no está definida, el resultado puede ser impecable e inútil. La primera conversación de un proyecto debería ser sobre la decisión, no sobre los datos."
+    },
+    "C9-L1-E2": {
+      "type": "short",
+      "answers": ["los supuestos", "supuestos", "los supuestos del modelo"],
+      "hint": "Cada método tiene condiciones que deben cumplirse.",
+      "solution": "Antes de inferir se verifican los supuestos del método: independencia, normalidad, homocedasticidad o el tamaño de muestra, según el caso. Si no se cumplen, la conclusión pierde validez.",
+      "explain": "Si respondiste «la conclusión», has invertido el orden. Verificar la conclusión es imposible: aún no existe. Los supuestos son lo que se puede comprobar antes de calcular y lo que determina si el resultado significa algo. Saltarse ese paso es la causa más común de conclusiones precisas y falsas."
+    },
+    "C9-L1-E3": {
+      "hint": "Es donde aparecen los valores atípicos y los cambios de definición.",
+      "solution": "Falso: la exploración de datos no es opcional. Es donde se detectan valores atípicos, definiciones inconsistentes y problemas de calidad que condicionan todo el análisis posterior.",
+      "explain": "Si respondiste «verdadero», conviene recordar que los datos casi nunca llegan limpios. La exploración revela duplicados, faltantes y cambios de criterio que ninguna prueba detecta por sí sola. Omitirla es la forma más rápida de analizar con precisión el problema equivocado."
+    },
+    "C9-L1-E4": {
+      "type": "short",
+      "answers": ["razonamiento con datos", "razonamiento"],
+      "hint": "No es una secuencia fija de pasos.",
+      "solution": "La estadística es razonamiento con datos: un conjunto de criterios para describir, inferir y decidir bajo incertidumbre. No es una receta, porque cada problema exige elegir el método y justificarlo.",
+      "explain": "Si respondiste «una receta», has confundido el conjunto de herramientas con su uso. Aplicar fórmulas en orden produce resultados, pero no necesariamente respuestas. La diferencia entre ambos enfoques aparece cuando los datos no encajan en el supuesto o la pregunta cambia a mitad del proyecto."
+    },
+    "C9-L1-E5": {
+      "type": "short",
+      "answers": ["comunicar", "comunicar los resultados"],
+      "hint": "Un análisis que nadie entiende no cambia decisiones.",
+      "solution": "El último paso del análisis es comunicar: presentar el resultado, su incertidumbre y sus límites en un lenguaje que permita decidir. Sin ese paso, el trabajo técnico no influye.",
+      "explain": "Si respondiste «inferir», has terminado antes de tiempo. La inferencia produce el resultado, pero la comunicación lo hace utilizable. Un informe claro con un resultado modesto vale más que un análisis brillante que nadie comprende, y esa es una lección práctica que se aprende tarde."
+    },
+    "C9-L2-E1": {
+      "type": "short",
+      "answers": ["elegir dataset y pregunta", "elegir el dataset y la pregunta", "definir la pregunta"],
+      "hint": "Antes de calcular hay que decidir qué se quiere saber y con qué datos.",
+      "solution": "El primer paso del proyecto es elegir el conjunto de datos y la pregunta que se quiere responder. Ambos van juntos: una pregunta sin datos accesibles es un deseo, y unos datos sin pregunta son una exploración sin rumbo.",
+      "explain": "Si respondiste «inferir», has empezado por la técnica. La elección de datos y pregunta determina qué métodos tienen sentido y qué conclusiones son posibles. Cambiar esa elección a mitad del proyecto suele obligar a repetir buena parte del trabajo."
+    },
+    "C9-L2-E2": {
+      "type": "short",
+      "answers": ["estimacion e intervalo", "estimacion, intervalo y limites", "efecto e intervalo"],
+      "hint": "El valor central solo no informa de la precisión.",
+      "solution": "Un resultado completo incluye la estimación, su intervalo y una declaración de límites. El valor central sin margen oculta la incertidumbre y el alcance del estudio.",
+      "explain": "Si respondiste «solo el p-valor», has dejado fuera la magnitud y la precisión. El p-valor responde a una pregunta binaria que rara vez coincide con la decisión. La estimación con su intervalo permite calcular escenarios y discutir el resultado con quien decide."
+    },
+    "C9-L2-E3": {
+      "hint": "Un gráfico puede engañar con datos verdaderos.",
+      "solution": "Verdadero: los gráficos deben ser claros y no engañosos, con ejes etiquetados, escalas declaradas y un periodo completo. Un gráfico correcto permite reconstruir la magnitud que representa.",
+      "explain": "Si respondiste «falso», conviene recordar que el engaño visual no requiere datos falsos: basta truncar un eje o elegir un periodo. La claridad no es estética, es una condición de validez comunicativa. Un gráfico que impide reconstruir la cifra no informa, persuade."
+    },
+    "C9-L2-E4": {
+      "type": "short",
+      "answers": ["lenguaje llano", "lenguaje claro", "lenguaje sencillo"],
+      "hint": "Quien decide no tiene por qué conocer la jerga.",
+      "solution": "Las conclusiones deben estar en lenguaje llano, sin jerga innecesaria, para que quien decide pueda entenderlas y usarlas. La precisión técnica se conserva en el cuerpo del informe.",
+      "explain": "Si respondiste «jerga técnica», has escrito para colegas y no para el destinatario. Un informe útil distingue entre el detalle metodológico y la conclusión operativa. La jerga tiene su lugar, pero si la conclusión la necesita para entenderse, probablemente no está bien formulada."
+    },
+    "C9-L2-E5": {
+      "hint": "Un resultado sin diagnóstico es una promesa sin garantía.",
+      "solution": "Verdadero: los supuestos deben verificarse y declararse, porque determinan si el método es aplicable y si las conclusiones son defendibles. Omitir la verificación convierte el resultado en una afirmación sin respaldo.",
+      "explain": "Si respondiste «falso», conviene pensar en un contraste aplicado a datos dependientes: el valor p es incorrecto aunque el cálculo sea impecable. La verificación de supuestos es parte del análisis, no un apéndice. Declararla permite al lector juzgar el alcance."
+    },
+    "C9-L3-E1": {
+      "type": "short",
+      "answers": ["descriptiva, probabilidad, inferencial", "descriptiva probabilidad inferencial"],
+      "hint": "Describir, modelar el azar y concluir.",
+      "solution": "Los tres cursos son descriptiva, probabilidad e inferencial: describir los datos, modelar el azar y concluir sobre poblaciones con margen de error. Cada uno se apoya en el anterior.",
+      "explain": "Si olvidaste uno, conviene repasar el mapa: sin descriptiva no se entiende qué se mide; sin probabilidad no hay modelo para la incertidumbre; sin inferencia no se puede generalizar. La secuencia no es arbitraria, y saltarse un eslabón se nota en los siguientes."
+    },
+    "C9-L3-E2": {
+      "type": "short",
+      "answers": ["aplicar a un dataset real", "aplicar a datos reales", "practicar con datos reales"],
+      "hint": "El conocimiento se consolida cuando se usa.",
+      "solution": "El siguiente paso es aplicar lo aprendido a un conjunto de datos real, con una pregunta concreta y una decisión detrás. Ese proyecto consolida las competencias mejor que cualquier curso adicional.",
+      "explain": "Si respondiste «dejar de aprender», has confundido terminar un curso con dominar la disciplina. La estadística se aprende resolviendo problemas con datos imperfectos, no repitiendo ejercicios. Un proyecto pequeño con revisión enseña más que diez unidades nuevas."
+    },
+    "C9-L3-E3": {
+      "hint": "Nadie aprende a analizar solo leyendo.",
+      "solution": "Verdadero: la estadística se aprende haciendo, porque cada conjunto de datos plantea problemas que ningún ejemplo resuelve por anticipado. La práctica con revisión es lo que convierte el conocimiento en criterio.",
+      "explain": "Si respondiste «falso», conviene recordar que los conceptos se olvidan rápido si no se aplican. La práctica produce errores, y los errores corregidos producen aprendizaje. Esa es la razón por la que el curso insiste en proyectos y no solo en ejercicios."
+    },
+    "C9-L3-E4": {
+      "type": "short",
+      "answers": ["razonamiento con datos", "razonamiento"],
+      "hint": "Es la misma idea del primer módulo.",
+      "solution": "La estadística es razonamiento con datos, no una receta. Las herramientas cambian, pero el criterio para elegirlas y para interpretar sus resultados es lo que se ha entrenado durante el curso.",
+      "explain": "Si respondiste «una receta», has llegado al final con la idea del principio sin revisar. La diferencia es práctica: una receta se aplica igual siempre; el razonamiento decide qué hacer cuando los datos no encajan en el supuesto o la pregunta cambia. Ese criterio es el verdadero resultado del curso."
+    },
+    "C9-L3-E5": {
+      "hint": "Has recorrido los tres cursos y sus módulos.",
+      "solution": "Verdadero: has completado el recorrido de cero a un nivel funcional. El certificado acredita el itinerario, no la maestría: esa se construye aplicando lo aprendido con revisión y con errores corregidos.",
+      "explain": "Si dudaste, conviene distinguir acreditación de competencia. Has visto los conceptos, has resuelto ejercicios y has recorrido los tres cursos. Lo que falta no es otro temario, sino práctica sostenida en problemas reales, que es lo que convierte el recorrido en oficio."
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "items": {
+    "C8-L1-E1": {
+      "hint": "Divide la pendiente entre su error estándar.",
+      "solution": "El estadístico es 3 entre 1, es decir, 3. Con los grados de libertad del modelo, ese valor se compara con la distribución t para obtener el valor p.",
+      "explain": "Si respondiste 0,33, has invertido el cociente. El contraste de la pendiente estandariza la estimación por su error, igual que en una prueba de medias. Un valor de 3 indica que la pendiente está tres errores estándar lejos de cero, lo que sugiere una relación clara."
+    },
+    "C8-L1-E2": {
+      "hint": "Se estiman dos parámetros con los mismos datos.",
+      "solution": "Con 15 observaciones, los grados de libertad son 13, porque se estiman el intercepto y la pendiente. Cada parámetro consume una pieza de información.",
+      "explain": "Si respondiste 14, has restado solo uno. En una regresión simple se estiman dos parámetros, así que la pérdida es de dos grados. Ese valor determina el valor crítico y el ancho del intervalo de la pendiente."
+    },
+    "C8-L1-E3": {
+      "type": "short",
+      "answers": ["b1 = 0", "la pendiente es 0", "pendiente cero"],
+      "hint": "La nula afirma ausencia de relación lineal.",
+      "solution": "La hipótesis nula para la pendiente es que vale cero, es decir, que no hay relación lineal entre el predictor y la respuesta. La alternativa es que sea distinta de cero o mayor o menor, según el planteamiento.",
+      "explain": "Si respondiste una desigualdad, has descrito la alternativa. La nula siempre contiene la igualdad porque permite calcular la distribución del estadístico bajo un valor concreto. Con pendiente cero, el predictor no aporta información lineal sobre la respuesta."
+    },
+    "C8-L1-E4": {
+      "hint": "El intervalo contiene los valores compatibles con los datos.",
+      "solution": "Falso: si el intervalo de la pendiente incluye cero, la pendiente no es significativa al nivel usado, porque cero es un valor compatible con los datos. La significación exige que todo el intervalo quede de un lado.",
+      "explain": "Si respondiste «verdadero», has invertido la equivalencia entre intervalo y contraste. Un intervalo que cruza el cero indica que la evidencia no descarta la ausencia de relación lineal. La misma información aparece en el valor p: sería mayor que el nivel."
+    },
+    "C8-L1-E5": {
+      "type": "short",
+      "answers": ["n-2", "n menos 2"],
+      "hint": "Dos parámetros estimados.",
+      "solution": "Los grados de libertad para la inferencia en una regresión simple son n menos dos, porque se estiman intercepto y pendiente. En una regresión múltiple se resta uno más por cada predictor adicional.",
+      "explain": "Si respondiste n, has ignorado los parámetros estimados. Cada coeficiente consume un grado de libertad, y ese consumo se refleja en la distribución t del modelo. Confundirlo cambia el valor crítico y puede alterar la conclusión en los casos límite."
+    },
+    "C8-L2-E1": {
+      "type": "short",
+      "answers": ["un individuo", "una observacion individual", "un valor individual"],
+      "hint": "Incluye la variabilidad del caso, no solo la de la recta.",
+      "solution": "El intervalo de predicción es para un individuo: estima el rango de valores de una nueva observación. El intervalo de confianza, en cambio, es para la media de la respuesta en ese valor del predictor.",
+      "explain": "Si respondiste «la media», has descrito el intervalo de confianza. La diferencia práctica es grande: el de predicción es siempre más ancho porque añade la variabilidad del propio caso. Confundirlos promete una precisión que el modelo no tiene para predecir individuos."
+    },
+    "C8-L2-E2": {
+      "type": "short",
+      "answers": ["incluye variabilidad individual", "la variabilidad del individuo", "variabilidad individual"],
+      "hint": "Además de la incertidumbre de la recta, hay dispersión de los casos.",
+      "solution": "El intervalo de predicción es más ancho que el de confianza porque incluye la variabilidad individual alrededor de la recta, además de la incertidumbre sobre la posición de la recta.",
+      "explain": "Si respondiste que usa z en lugar de t, has buscado una diferencia de distribución donde hay una diferencia de fuentes de error. La recta se conoce con cierta precisión, pero cada observación se desvía de ella. Esa segunda fuente es la que ensancha el intervalo de predicción."
+    },
+    "C8-L2-E3": {
+      "type": "short",
+      "answers": ["la media de todos los casos con ese x", "la media", "la respuesta media"],
+      "hint": "No describe un caso, sino el promedio en ese valor del predictor.",
+      "solution": "El intervalo de confianza para la media describe el rango de valores plausibles para la respuesta media cuando el predictor toma un valor concreto. No describe a un individuo.",
+      "explain": "Si respondiste «un individuo», has confundido los dos intervalos. El de confianza se estrecha con más datos y se centra en el valor esperado; el de predicción mantiene un ancho mínimo por la dispersión residual. Usar el primero para predecir casos produce promesas incumplidas."
+    },
+    "C8-L2-E4": {
+      "hint": "El de predicción añade un término dentro de la raíz.",
+      "solution": "Verdadero: el intervalo de predicción es siempre más ancho que el de confianza, porque su error incluye el término de variabilidad individual además de la incertidumbre de la recta.",
+      "explain": "Si respondiste «falso», conviene comparar las fórmulas: la del intervalo de predicción añade un uno dentro de la raíz. Ese término nunca desaparece, ni siquiera con muestras enormes. Por eso la predicción de individuos tiene un límite de precisión que no depende del tamaño."
+    },
+    "C8-L2-E5": {
+      "type": "short",
+      "answers": ["intervalo de prediccion", "prediccion", "el de prediccion"],
+      "hint": "Se quiere cubrir una observación futura, no un promedio.",
+      "solution": "Para predecir un valor individual se usa el intervalo de predicción, que incluye la variabilidad del caso. El intervalo de confianza solo cubre la media esperada.",
+      "explain": "Si respondiste «el intervalo de confianza», has prometido una precisión excesiva. El de confianza se refiere al promedio y es más estrecho; usarlo para un caso concreto subestima la incertidumbre. En previsiones operativas, esa diferencia se traduce en roturas de stock o excesos."
+    },
+    "C8-L3-E1": {
+      "type": "short",
+      "answers": ["linealidad independencia normalidad varianza igual", "linealidad, independencia, normalidad, varianza constante"],
+      "hint": "Es un acrónimo en inglés de cuatro supuestos.",
+      "solution": "LINE resume los cuatro supuestos de la regresión lineal: linealidad, independencia de los errores, normalidad de los residuos y varianza constante, es decir, homocedasticidad.",
+      "explain": "Si respondiste otra combinación, has olvidado alguno de los cuatro. El acrónimo es una ayuda mnemotécnica, no una teoría: cada supuesto se comprueba con un gráfico distinto. La independencia se garantiza con el diseño; los otros tres se diagnostican con residuos."
+    },
+    "C8-L3-E2": {
+      "type": "short",
+      "answers": ["residuos vs ajustados", "grafico de residuos", "residuos frente a ajustados"],
+      "hint": "Se busca un patrón de embudo.",
+      "solution": "La homocedasticidad se verifica con un gráfico de residuos frente a valores ajustados, buscando un patrón de embudo o de dispersión cambiante. Las pruebas formales complementan la inspección visual.",
+      "explain": "Si respondiste «Q-Q plot», has comprobado normalidad. El gráfico de cuantiles evalúa la forma de los residuos, no su dispersión. Confundir ambos diagnósticos lleva a transformar datos por el motivo equivocado o a ignorar una heterocedasticidad evidente."
+    },
+    "C8-L3-E3": {
+      "type": "short",
+      "answers": ["q-q plot", "grafico q-q", "cuantiles"],
+      "hint": "Compara los cuantiles de los residuos con los de una normal.",
+      "solution": "La normalidad de los residuos se verifica con un gráfico Q-Q, que compara los cuantiles observados con los esperados de una normal. Una desviación sistemática en los extremos indica colas distintas.",
+      "explain": "Si respondiste «residuos vs ajustados», has evaluado linealidad y varianza, no forma. El Q-Q responde a otra pregunta: si la distribución de los errores se parece a una campana. Con muestras grandes, las pruebas formales detectan desviaciones triviales, así que el gráfico informa mejor."
+    },
+    "C8-L3-E4": {
+      "hint": "La dispersión crece con el valor ajustado.",
+      "solution": "Verdadero: si los residuos forman un embudo, hay heterocedasticidad, porque la varianza del error cambia con el nivel de la respuesta. Eso invalida los errores estándar calculados con varianza constante.",
+      "explain": "Si respondiste «falso», conviene ver el efecto: los intervalos serán demasiado estrechos en una zona y demasiado anchos en otra. La solución es transformar la respuesta, usar errores robustos o modelar la varianza. Ignorar el patrón produce conclusiones con precisión falsa."
+    },
+    "C8-L3-E5": {
+      "hint": "Hay alternativas antes de descartar el análisis.",
+      "solution": "Si se violan los supuestos se puede transformar la variable, usar errores estándar robustos, añadir términos al modelo o cambiar de enfoque. Lo que no es aceptable es ignorarlos sin declararlo.",
+      "explain": "Si respondiste «ignorarlos», has elegido la opción que produce conclusiones frágiles. Cada violación tiene su remedio: la no linealidad pide un término adicional, la heterocedasticidad pide errores robustos, la dependencia pide un modelo distinto. Lo importante es que la corrección responda al diagnóstico."
+    },
+    "C8-L4-E1": {
+      "hint": "Se mantienen constantes las demás variables del modelo.",
+      "solution": "En una regresión múltiple, cada coeficiente mide el cambio en la respuesta por unidad de su predictor, manteniendo las demás variables constantes. Esa es la interpretación condicional.",
+      "explain": "Si respondiste que mide el efecto total, has ignorado la condición. El coeficiente compara unidades que comparten el resto de variables, y esa comparación puede corresponder a pocos casos. Su lectura correcta exige declarar qué se mantiene fijo y comprobar que existen casos con esas características."
+    },
+    "C8-L4-E2": {
+      "type": "short",
+      "answers": ["comparar modelos con distinto numero de predictores", "comparar modelos", "penalizar predictores"],
+      "hint": "El R² bruto siempre sube al añadir variables.",
+      "solution": "El coeficiente de determinación ajustado se usa para comparar modelos con distinto número de predictores, porque penaliza la inclusión de variables que no aportan información suficiente.",
+      "explain": "Si respondiste que sirve para calcular la pendiente, has confundido una medida de ajuste con un parámetro. El ajustado corrige el optimismo del bruto, que crece al añadir variables aunque sean ruido. Por eso es el criterio habitual al comparar modelos anidados."
+    },
+    "C8-L4-E3": {
+      "hint": "Dos predictores casi redundantes reparten su efecto.",
+      "solution": "Verdadero: la multicolinealidad hace los coeficientes inestables, porque el modelo no puede separar el efecto de predictores muy correlacionados. Los errores estándar crecen y los signos pueden cambiar.",
+      "explain": "Si respondiste «falso», conviene imaginar dos variables casi idénticas: el modelo reparte su efecto de forma arbitraria y pequeños cambios en los datos alteran los coeficientes. La predicción puede seguir siendo buena, pero la interpretación individual deja de ser fiable."
+    },
+    "C8-L4-E4": {
+      "type": "short",
+      "answers": ["los predictores estan muy correlacionados", "predictores correlacionados", "alta correlacion entre predictores"],
+      "hint": "Dos variables aportan casi la misma información.",
+      "solution": "La multicolinealidad ocurre cuando los predictores están muy correlacionados entre sí, de modo que aportan información redundante y el modelo no puede separar sus efectos.",
+      "explain": "Si respondiste que los predictores son independientes, has descrito la situación ideal. La multicolinealidad es lo contrario: solapamiento. Se detecta con factores de inflación de la varianza y se corrige eliminando variables, combinándolas o usando regularización."
+    },
+    "C8-L4-E5": {
+      "hint": "El bruto no descuenta los predictores inútiles.",
+      "solution": "Verdadero: el coeficiente de determinación ajustado penaliza por el número de predictores, de modo que solo sube si la nueva variable aporta más de lo que cuesta en complejidad.",
+      "explain": "Si respondiste «falso», conviene recordar que el bruto nunca baja al añadir variables, aunque sean ruido puro. El ajustado introduce una corrección por grados de libertad y por eso puede disminuir. Esa propiedad lo hace útil para elegir entre modelos de distinto tamaño."
+    }
+  }
+}

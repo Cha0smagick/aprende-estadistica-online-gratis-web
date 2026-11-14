@@ -63,7 +63,9 @@ Hecho:
 
 Hallazgo importante: el sitio consume **`data/<curso>.js` (bundle)**, no los archivos de `data/<curso>/`. Los módulos son fuentes y pueden divergir. Se añadió `scripts/sync-module.mjs <curso> <archivo> <ID>` para sincronizar ejercicios; todo cambio de contenido debe pasar por ahí.
 
-Pendiente (etapas 2–3): 451 ejercicios por convertir, 451 sin `explain`, 451 con solución corta, 20 pistas que filtran, examen final por curso.
+Pendiente (etapas 2-3): 451 ejercicios por convertir, 451 sin `explain`, 451 con solución corta, 20 pistas que filtran, examen final por curso.
+
+> **Actualización 2026-11-14:** etapas 2 y 3 cerradas para E1–E3. 481/481 con `explain` y solución, 241 en producción, 0 pistas. `--strict` bloqueante en CI. Quedan E5 (panel de maestría) y E6 (examen final por curso).
 
 ## Progreso etapa 2 (2026-11-10)
 

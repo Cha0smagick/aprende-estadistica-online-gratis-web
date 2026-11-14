@@ -1,0 +1,14 @@
+{
+  "items": {
+    "C0-L1-E4": {
+      "hint": "Lo que se quiere conocer es una propiedad del conjunto completo.",
+      "solution": "La inferencia estadística estima parámetros poblacionales a partir de estadísticos muestrales, añadiendo un margen que cuantifica la incertidumbre del muestreo.",
+      "explain": "Si respondiste «estadísticos», has descrito lo que se calcula, no lo que se estima. El estadístico es el medio; el parámetro poblacional es el objetivo. La inferencia recorre ese camino con el error estándar y los intervalos de confianza como herramientas.",
+      "type": "short",
+      "answers": [
+        "parametros poblacionales",
+        "los parametros poblacionales"
+      ]
+    }
+  }
+}

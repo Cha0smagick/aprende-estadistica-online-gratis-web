@@ -1,0 +1,130 @@
+{
+  "items": {
+    "C7-L1-E1": {
+      "type": "short",
+      "answers": ["3 o mas grupos", "tres o mas grupos", "varios grupos"],
+      "hint": "Con dos grupos basta una prueba t.",
+      "solution": "La ANOVA se usa para comparar las medias de tres o más grupos, porque una sola prueba global evita la acumulación de errores de las comparaciones por pares.",
+      "explain": "Si respondiste «2 grupos», has elegido la herramienta más simple: con dos grupos, la prueba t y la ANOVA son equivalentes. La ventaja aparece con tres o más, cuando comparar por pares multiplica la probabilidad de al menos un falso positivo."
+    },
+    "C7-L1-E2": {
+      "type": "short",
+      "answers": ["todas las medias son iguales", "las medias son iguales", "igualdad de medias"],
+      "hint": "La nula siempre afirma ausencia de diferencia global.",
+      "solution": "La hipótesis nula de la ANOVA afirma que todas las medias poblacionales son iguales. La alternativa sostiene que al menos una difiere, sin especificar cuál.",
+      "explain": "Si respondiste «al menos una media difiere», has descrito la alternativa. La nula es la igualdad global, y se pone a prueba porque permite calcular una distribución de referencia. El rechazo no identifica el grupo responsable: para eso hacen falta comparaciones posteriores."
+    },
+    "C7-L1-E3": {
+      "hint": "Cada prueba adicional es otra oportunidad de falso positivo.",
+      "solution": "Verdadero: hacer múltiples pruebas t sobre los mismos datos infla el error de tipo I, porque cada contraste añade una oportunidad de rechazar por azar. La ANOVA evita esa acumulación con una sola prueba global.",
+      "explain": "Si respondiste «falso», conviene calcularlo: con cuatro grupos hay seis comparaciones y, si todas las medias fueran iguales, la probabilidad de al menos un falso positivo al 5 % supera el 26 %. Ese efecto es la razón por la que la secuencia correcta es ANOVA primero y post-hoc después."
+    },
+    "C7-L1-E4": {
+      "hint": "Es el cociente de dos varianzas.",
+      "solution": "La ANOVA usa el estadístico F, que es el cociente entre la variabilidad de las medias de grupo y la variabilidad dentro de los grupos. Su distribución depende de dos juegos de grados de libertad.",
+      "explain": "Si respondiste t, has pensado en la comparación de dos grupos. El estadístico F generaliza esa idea: en lugar de comparar medias por pares, compara la varianza entre grupos con la varianza interna. Su valor esperado bajo la nula es aproximadamente uno."
+    },
+    "C7-L1-E5": {
+      "type": "short",
+      "answers": ["medias", "las medias"],
+      "hint": "La varianza es el medio, no el objeto de comparación.",
+      "solution": "La ANOVA compara medias, aunque lo haga analizando varianzas. Descompone la variabilidad total para decidir si las diferencias entre medias son mayores de lo que el azar explicaría.",
+      "explain": "Si respondiste «varianzas», has confundido el instrumento con el objetivo. La prueba se llama análisis de la varianza porque usa la descomposición de la variabilidad, pero la pregunta es sobre las medias. Esa confusión es frecuente por el nombre y conviene deshacerla."
+    },
+    "C7-L2-E1": {
+      "type": "short",
+      "answers": ["ms dentro", "ms_within", "media cuadratica dentro"],
+      "hint": "La señal se divide por el ruido interno.",
+      "solution": "El estadístico F es la media cuadrática entre grupos dividida por la media cuadrática dentro de los grupos. Ese cociente compara la señal con el ruido.",
+      "explain": "Si respondiste n o k, has puesto en el denominador un tamaño en lugar de una varianza. La F es un cociente de dos estimaciones de varianza, y por eso su valor de referencia es uno. Cualquier otra cantidad en el denominador rompe la interpretación."
+    },
+    "C7-L2-E2": {
+      "type": "short",
+      "answers": ["no hay diferencias", "no hay evidencia de diferencias", "compatible con la igualdad"],
+      "hint": "Señal y ruido son del mismo tamaño.",
+      "solution": "Si F es aproximadamente uno, no hay evidencia de diferencias entre las medias, porque la variabilidad entre grupos es similar a la variabilidad interna.",
+      "explain": "Si respondiste «hay diferencias», has invertido la lectura. Un cociente cercano a uno indica que la separación de las medias es la esperable por azar. Valores muy superiores a uno son los que sugieren que la señal supera al ruido."
+    },
+    "C7-L2-E3": {
+      "hint": "Se estima una media por grupo menos la global.",
+      "solution": "Con cuatro grupos, los grados de libertad del numerador son 3, porque se calculan cuatro medias y una media global. El resultado es k menos uno.",
+      "explain": "Si respondiste 4, has usado el número de grupos sin restar la media global. Los grados de libertad reflejan cuánta información independiente queda tras estimar los parámetros. Ese valor determina la distribución F y, con ella, el valor crítico."
+    },
+    "C7-L2-E4": {
+      "hint": "Cada grupo consume un grado de libertad.",
+      "solution": "Con 30 observaciones y 3 grupos, los grados de libertad del denominador son 27, es decir, N menos k. Esa cifra mide la información disponible para estimar la variabilidad interna.",
+      "explain": "Si respondiste 29, has restado solo uno. El denominador de la ANOVA estima la variabilidad dentro de cada grupo, y cada grupo requiere su propia media. Por eso se restan tantos grados como grupos, no solo uno."
+    },
+    "C7-L2-E5": {
+      "type": "short",
+      "answers": ["variabilidad entre grupos / dentro de grupos", "cociente de varianzas", "entre y dentro"],
+      "hint": "Es un cociente de dos varianzas.",
+      "solution": "El estadístico F mide la variabilidad entre grupos dividida por la variabilidad dentro de los grupos. Si el cociente es grande, las medias se separan más de lo que el azar explicaría.",
+      "explain": "Si respondiste «la media», has descrito lo que se compara, no la medida. F no es una media: es un cociente adimensional de dos varianzas. Esa forma permite comparar problemas con escalas distintas y explica por qué su valor de referencia es uno."
+    },
+    "C7-L3-E1": {
+      "type": "short",
+      "answers": ["independencia, normalidad y homocedasticidad", "los tres supuestos", "independencia normalidad homocedasticidad"],
+      "hint": "Son tres: diseño, forma y varianza.",
+      "solution": "La ANOVA asume independencia de las observaciones, normalidad de los residuos y homocedasticidad, es decir, varianzas similares entre grupos.",
+      "explain": "Si respondiste «solo normalidad», has olvidado dos supuestos. La independencia se garantiza con el diseño y es el más crítico; la homocedasticidad tiene correcciones como Welch; la normalidad importa sobre todo con muestras pequeñas. Ordenar esa jerarquía evita dedicar esfuerzo a lo secundario."
+    },
+    "C7-L3-E2": {
+      "type": "short",
+      "answers": ["anova de welch", "welch"],
+      "hint": "Es la versión que no supone varianzas iguales.",
+      "solution": "Si las varianzas son distintas se usa la ANOVA de Welch, que estima cada varianza por separado y ajusta los grados de libertad. Es la opción robusta por defecto.",
+      "explain": "Si respondiste «ANOVA estándar», has aplicado una prueba cuya suposición acaba de fallar. Con varianzas desiguales, el denominador común no representa bien a todos los grupos y el valor p puede ser engañoso. Welch corrige ese problema con un coste mínimo de potencia."
+    },
+    "C7-L3-E3": {
+      "type": "short",
+      "answers": ["levene", "prueba de levene", "test de levene"],
+      "hint": "Es robusta frente a la falta de normalidad.",
+      "solution": "Para verificar la homocedasticidad se usa la prueba de Levene, que contrasta la igualdad de varianzas y es robusta frente a desviaciones de la normalidad. Bartlett es más potente pero exige normalidad.",
+      "explain": "Si respondiste Shapiro-Wilk, has comprobado normalidad, no varianzas. Ambas pruebas se usan en el diagnóstico, pero responden a preguntas distintas. Elegir la equivocada deja sin comprobar el supuesto que realmente amenaza la validez de la ANOVA."
+    },
+    "C7-L3-E4": {
+      "type": "short",
+      "answers": ["kruskal-wallis", "kruskal wallis"],
+      "hint": "Compara rangos en lugar de medias.",
+      "solution": "Si los datos no son normales, la alternativa no paramétrica a la ANOVA es la prueba de Kruskal-Wallis, que compara rangos y no supone una forma concreta de la distribución.",
+      "explain": "Si respondiste «ANOVA estándar», has insistido en un supuesto que falla. Kruskal-Wallis responde a una pregunta parecida, sobre la tendencia central, usando posiciones en lugar de valores. Su interpretación es menos directa: no compara medias exactas, sino distribuciones."
+    },
+    "C7-L3-E5": {
+      "hint": "La normalidad de los residuos, no de los datos, es lo que se supone.",
+      "solution": "Verdadero: la ANOVA es razonablemente robusta a violaciones leves de normalidad, sobre todo con grupos equilibrados y tamaños moderados. El problema aparece con muestras pequeñas y valores extremos.",
+      "explain": "Si respondiste «falso», conviene recordar que el teorema central del límite también actúa sobre las medias de grupo. Con tamaños razonables, la distribución de F se aproxima a la teórica aunque los datos no sean perfectamente normales. La homocedasticidad y la independencia son más críticas."
+    },
+    "C7-L4-E1": {
+      "type": "short",
+      "answers": ["anova es significativa", "si la anova es significativa", "hay rechazo"],
+      "hint": "Solo tiene sentido buscar diferencias si la prueba global las detectó.",
+      "solution": "El análisis post-hoc se hace si la ANOVA es significativa, porque solo entonces tiene sentido investigar qué grupos difieren. Si la prueba global no rechaza, las comparaciones por pares carecen de justificación.",
+      "explain": "Si respondiste «si la ANOVA no es significativa», has invertido la secuencia. Comparar pares sin un rechazo previo multiplica los falsos positivos y convierte el análisis en una búsqueda. La secuencia correcta protege la interpretación global."
+    },
+    "C7-L4-E2": {
+      "type": "short",
+      "answers": ["comparar todos los pares", "todos los pares", "comparaciones por pares"],
+      "hint": "Controla el error de la familia completa.",
+      "solution": "Tukey HSD se usa para comparar todos los pares de grupos manteniendo el error de la familia bajo control. Es menos conservador que Bonferroni en ese escenario.",
+      "explain": "Si respondiste «comparar con un control», has descrito Dunnett. La diferencia importa: Tukey diseña el conjunto de comparaciones entre todos los pares, mientras Dunnett solo compara cada grupo con una referencia. Elegir el método cambia la potencia del análisis."
+    },
+    "C7-L4-E3": {
+      "type": "short",
+      "answers": ["multiples comparaciones", "las comparaciones multiples", "multiplicidad"],
+      "hint": "Cada contraste adicional infla el error global.",
+      "solution": "Bonferroni corrige por múltiples comparaciones dividiendo el nivel de significación entre el número de contrastes. Es sencillo y conservador.",
+      "explain": "Si respondiste «la varianza», has buscado una corrección estadística donde hay una corrección de nivel. Bonferroni no cambia las varianzas ni los datos: cambia el umbral con el que se declara significación. Su coste es la pérdida de potencia cuando hay muchas comparaciones."
+    },
+    "C7-L4-E4": {
+      "hint": "Divide el nivel entre el número de comparaciones.",
+      "solution": "0,05 entre 4 es 0,0125, así que cada comparación se evalúa con ese nivel ajustado. El resultado es más exigente que el 5 % original.",
+      "explain": "Si respondiste 0,2, has invertido el cociente. Bonferroni reparte el presupuesto de error entre las comparaciones, de modo que el nivel por contraste baja al aumentar el número. Ese reparto garantiza que el error global no supere el nivel original."
+    },
+    "C7-L4-E5": {
+      "hint": "Cada prueba extra añade una oportunidad de rechazo falso.",
+      "solution": "Verdadero: hacer pruebas t sin corrección infla el error de tipo I cuando se comparan varios grupos. La corrección de Bonferroni o el uso de Tukey mantienen el error global bajo control.",
+      "explain": "Si respondiste «falso», conviene cuantificarlo: con cinco comparaciones al 5 %, la probabilidad de al menos un falso positivo supera el 22 % si todas las hipótesis son nulas. El resultado global deja de tener el nivel que aparenta, y por eso el ajuste no es opcional."
+    }
+  }
+}

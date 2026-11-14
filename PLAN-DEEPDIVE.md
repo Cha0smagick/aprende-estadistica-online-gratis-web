@@ -303,12 +303,14 @@ Cada módulo es un lote: ES → validar → generate → spot-check → commit �
 
 | Ítem | Antes | Ahora | Objetivo |
 |---|---:|---:|---:|
-| Ejercicios en formato producción | 0 | 206 | ≥241 |
-| Con `explain` ≥40 palabras | 0 | 426 | 481 |
-| Con solución ≥60 caracteres | 1 | 426 | 481 |
-| Pistas que filtran la respuesta | 20 | 4 | 0 |
+| Ejercicios en formato producción | 0 | 241 | ≥241 |
+| Con `explain` ≥40 palabras | 0 | 481 | 481 |
+| Con solución ≥60 caracteres | 1 | 481 | 481 |
+| Pistas que filtran la respuesta | 20 | 0 | 0 |
 
-**Fundamentos, Descriptiva y Probabilidad cerrados** (342/342; 0 pistas). **Inferencial: C0–C6 cerrados** (97/139). Quedan C7–C9 (42 ejercicios).
+**Fase 5 — E1, E2 y E3 completadas al 100 %.** Los cuatro cursos tienen explicación del error, solución razonada y ninguna pista que filtre la respuesta; `validate-feedback.mjs --strict` es bloqueante en CI.
+
+Pendiente de la fase: **E5** (umbral de maestría, ya operativo en el motor y pendiente de panel) y **E6** (examen final por curso y banco de preguntas).
 
 Motor: tipo `short`, explicación al fallar, registro de primer intento y maestría ≥80 % para completar la lección. Herramientas: `audit-exercises.mjs`, `validate-feedback.mjs` (informativo; `--strict` para el final), `apply-feedback.mjs` + `append-explain.mjs` con parches en `scripts/patches/`, y `sync-module.mjs`.
 

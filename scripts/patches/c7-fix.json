@@ -1,0 +1,10 @@
+{
+  "items": {
+    "C7-L2-E3": "Ese número también se llama grados de libertad del numerador.",
+    "C7-L2-E4": "Con grupos muy desiguales, ese reparto cambia y conviene revisarlo.",
+    "C7-L3-E3": "Si Levene da un valor p bajo, la igualdad de varianzas queda en duda.",
+    "C7-L3-E4": "Con grupos pequeños y distribuciones muy distintas, su potencia baja.",
+    "C7-L4-E1": "Hacerlo antes convierte el análisis en una búsqueda de diferencias.",
+    "C7-L4-E2": "El método devuelve intervalos simultáneos, no comparaciones aisladas."
+  }
+}

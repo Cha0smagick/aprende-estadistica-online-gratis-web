@@ -1,0 +1,8 @@
+{
+  "items": {
+    "C8-L1-E2": "Esa pérdida explica por qué el intervalo es más ancho con muestras pequeñas.",
+    "C8-L1-E3": "Cualquier otro valor nulo convertiría el contraste en un problema distinto.",
+    "C8-L3-E2": "Si el embudo aparece, la varianza no es constante y hay que corregir.",
+    "C8-L4-E4": "El factor de inflación de la varianza cuantifica ese solapamiento."
+  }
+}
