@@ -144,6 +144,18 @@ stats.ttest_ind(d.loc[d.abandono==1,"gasto_anual"],
     <p class="muted">Error típico: la tabla dinámica cuenta en vez de promediar si la columna tiene celdas vacías o texto; revisa el tipo de resumen en «Valores».</p>
 
     <p>Si trabajas en R o Python, guarda el script junto al CSV: el análisis tiene que poder repetirse con los mismos datos y dar el mismo resultado.</p>
+  <section class="block" id="reales">
+    <h2>6. Datos reales</h2>
+    <p>Los cuatro CSV de arriba son simulados. Para el proyecto final conviene un conjunto real: mismas columnas, mismos métodos, pero con las limitaciones que trae el mundo.</p>
+    <table>
+      <thead><tr><th>Fuente</th><th>Qué hay</th><th>Cómo se descarga</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.ine.es/" target="_blank" rel="noopener">INE</a></td><td>Población, hogares, empleo, precios, por municipio y año</td><td>Abre una tabla → «Descargar» → CSV; guarda también la nota metodológica</td></tr>
+        <tr><td><a href="https://ec.europa.eu/eurostat/" target="_blank" rel="noopener">Eurostat</a></td><td>Series comparables entre países de la UE</td><td>«Download» → TSV/CSV, o la API de datos</td></tr>
+        <tr><td><a href="https://data.worldbank.org/" target="_blank" rel="noopener">Banco Mundial</a></td><td>Indicadores por país y año, series largas</td><td>«Download» → CSV, o API por indicador</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">Cita siempre fuente, periodo, unidad de análisis y fecha de descarga. Si los datos son de personas, elimina cualquier identificador antes de publicarlos.</p>
   </section>
 </main>
 <footer class="site-foot"><p>Jackpot Estadístico</p><p class="fineprint">Curso diseñado por el Prof. Alejandro Quintero Ruiz (<a href="https://www.linkedin.com/in/alejandroquinteroruiz/" target="_blank" rel="noopener">LinkedIn</a>).</p></footer>

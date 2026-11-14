@@ -32,20 +32,20 @@
 | 21 | Idioma | 85 | Español claro + traductor en línea que conserva la página. |
 | 22 | Motivación | 85 | 16 logros con referencias culturales, racha que resta en vez de reiniciar. |
 | 23 | Técnica | 92 | 4 validadores + CI bloqueante + chequeo de enlaces y de páginas. |
-| 24 | Datos reales | 60 | Hay 4 conjuntos documentados y reproducibles, pero son **simulados** (semilla fija). Sirven para practicar el método; no sustituyen a un dataset real citado. |
+| 24 | Datos reales | 68 | Los 4 conjuntos son **simulados** (semilla fija, reproducibles) y la página remite a tres fuentes reales verificadas (INE, Eurostat, Banco Mundial) con el método de descarga. Los ejercicios siguen sin usar datos reales. |
 | 25 | Proyecto final | 75 | Existe enunciado, rúbrica y autoevaluación; no hay entrega ni revisión. |
 
-**Media:** 2163 / 25 = **86,5 / 100**. (La primera pasada decía 84,4; recalculada desde la tabla daba 84,1. Queda corregido: la media se calcula desde las notas de la tabla, no a ojo.)
+**Media:** 2171 / 25 = **86,8 / 100**. (La primera pasada decía 84,4; recalculada desde la tabla daba 84,1. Queda corregido: la media se calcula desde las notas de la tabla, no a ojo.)
 
 ## Veredicto
 
-- **C3:** hecha, con resultado **no alcanzado**: la media queda en 86,5 y seis dimensiones bajan de 85 (datos reales 60, proyecto 75, datos/herramientas 78, accesibilidad 80, certificación 80, lengua 82).
+- **C3:** hecha, con resultado **no alcanzado**: la media queda en 86,8 y seis dimensiones bajan de 85 (datos reales 68, proyecto 75, datos/herramientas 78, accesibilidad 80, certificación 80, lengua 82).
 - **C4 (≥95):** **no se cumple.** Subió por el módulo de datos, pero los tres bloques que faltan no se resuelven con código: datos reales citados, entrega real del proyecto con revisión, y auditoría lingüística y de accesibilidad con criterio externo.
 
 ## Qué haría falta para llegar a 95
 
 1. ~~Un módulo de datos: 3–5 datasets descargables con diccionario y ejercicios guiados.~~ Hecho: `/es/datos/` con 4 CSV, diccionario, 7 ejercicios y guía de herramientas.
-2. Sustituir o acompañar los datos simulados con un dataset real citado (INE, datos abiertos) y su diccionario.
+2. Sustituir o acompañar los datos simulados con un dataset real citado (INE, Eurostat) y su diccionario.
 3. Entrega real del proyecto (formulario o repositorio) con revisión por rúbrica.
 4. Auditoría de texto con `qa/ai-writing-auditor` sobre los 115 deep dives y las 481 explicaciones.
 5. Prueba de accesibilidad con lector de pantalla y navegación solo con teclado.
