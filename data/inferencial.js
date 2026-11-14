@@ -1290,59 +1290,47 @@ export default {
           "exercises": [
             {
               "id": "C1-L1-E1",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "mu es:",
                 "en": "mu is:"
               },
-              "choices": [
-                {
-                  "es": "Un estadistico",
-                  "en": "A statistic"
-                },
-                {
-                  "es": "Un parametro",
-                  "en": "A parameter"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Parametro.",
-                "en": "Parameter."
+                "es": "Describe la población y suele ser desconocido."
               },
               "solution": {
-                "es": "Un parametro.",
-                "en": "A parameter."
+                "es": "Mu es un parámetro: describe la media de la población, es fijo y generalmente desconocido. Se estima con la media muestral y se simboliza con letra griega por convención."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "un parametro",
+                "parametro"
+              ],
+              "explain": {
+                "es": "Si respondiste «un estadístico», has confundido el valor que se quiere conocer con el que se calcula. El parámetro no cambia al repetir el estudio; el estadístico sí, porque depende de la muestra elegida. La notación griega frente a la latina refleja esa diferencia."
+              }
             },
             {
               "id": "C1-L1-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "xbar es:",
                 "en": "xbar is:"
               },
-              "choices": [
-                {
-                  "es": "Un parametro",
-                  "en": "A parameter"
-                },
-                {
-                  "es": "Un estadistico",
-                  "en": "A statistic"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Estadistico.",
-                "en": "Statistic."
+                "es": "Se calcula con los datos de la muestra y cambia entre muestras."
               },
               "solution": {
-                "es": "Un estadistico.",
-                "en": "A statistic."
+                "es": "x barra es un estadístico: se calcula con los datos de la muestra y varía de una muestra a otra. Su distribución tiene media mu y error estándar sigma entre raíz de n."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "un estadistico",
+                "estadistico"
+              ],
+              "explain": {
+                "es": "Si respondiste «un parámetro», has invertido los términos. El estadístico es lo que se observa y el parámetro lo que se estima. Esa asimetría es la base de la inferencia: se usa una cantidad conocida y variable para aproximar otra fija y desconocida."
+              }
             },
             {
               "id": "C1-L1-E3",
@@ -1353,12 +1341,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Repetir el estudio no cambia la media real de la población."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: el parámetro es fijo, no aleatorio. Su valor no cambia al repetir el estudio; lo que cambia es el estadístico calculado en cada muestra."
               },
               "xp": 10,
               "choices": [
@@ -1370,7 +1356,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene separar dos fuentes de variación. La población tiene un valor real que no se mueve; las muestras producen estimaciones distintas. Confundir ambos niveles lleva a creer que el parámetro fluctúa, cuando lo que fluctúa es la estimación."
+              }
             }
           ]
         },
@@ -1454,12 +1443,10 @@ export default {
               },
               "answer": 1,
               "hint": {
-                "es": "No.",
-                "en": "No."
+                "es": "El teorema habla de la distribución de la media, no de la forma de los datos."
               },
               "solution": {
-                "es": "Falso: vale para cualquier distribucion.",
-                "en": "False: holds for any distribution."
+                "es": "Falso: el teorema central del límite no requiere que los datos sean normales, solo que la muestra sea suficientemente grande y las observaciones independientes con varianza finita."
               },
               "xp": 10,
               "choices": [
@@ -1471,63 +1458,55 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «verdadero», has confundido el objeto del teorema. Lo que se vuelve aproximadamente normal es la distribución de la media, no la de los datos originales. Esa propiedad es la que permite aplicar fórmulas normales a variables tan poco normales como los ingresos o los tiempos de espera."
+              }
             },
             {
               "id": "C1-L2-E2",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "Regla practica para el TCL:",
                 "en": "Rule of thumb for CLT:"
               },
-              "choices": [
-                {
-                  "es": "n >= 5",
-                  "en": "n >= 5"
-                },
-                {
-                  "es": "n >= 30",
-                  "en": "n >= 30"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "n >= 30.",
-                "en": "n >= 30."
+                "es": "Es una convención práctica para distribuciones moderadamente asimétricas."
               },
               "solution": {
-                "es": "n >= 30.",
-                "en": "n >= 30."
+                "es": "La regla práctica habitual es n mayor o igual que 30, aunque la cifra depende de la asimetría de los datos. Con distribuciones muy sesgadas pueden hacer falta cientos de observaciones."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "n >= 30",
+                "n mayor o igual que 30",
+                "30"
+              ],
+              "explain": {
+                "es": "Si respondiste 5, has generalizado demasiado. La regla de 30 es una orientación para casos moderados, no una ley universal. Lo importante es entender que la aproximación mejora con el tamaño y que la forma de los datos determina cuánto se necesita en cada caso."
+              }
             },
             {
               "id": "C1-L2-E3",
-              "type": "mcq",
+              "type": "short",
               "prompt": {
                 "es": "El TCL dice que la media muestral es aproximadamente:",
                 "en": "CLT says sample mean is approximately:"
               },
-              "choices": [
-                {
-                  "es": "Uniforme",
-                  "en": "Uniform"
-                },
-                {
-                  "es": "Normal",
-                  "en": "Normal"
-                }
-              ],
-              "answer": 1,
               "hint": {
-                "es": "Normal.",
-                "en": "Normal."
+                "es": "Es la forma de la campana, con media mu y error estándar sigma sobre raíz de n."
               },
               "solution": {
-                "es": "Normal.",
-                "en": "Normal."
+                "es": "El teorema central del límite dice que la media muestral es aproximadamente normal, con media igual a mu y desviación igual a sigma dividido entre la raíz de n."
               },
-              "xp": 10
+              "xp": 10,
+              "answers": [
+                "normal",
+                "aproximadamente normal"
+              ],
+              "explain": {
+                "es": "Si respondiste «uniforme», has confundido la distribución de los datos con la del estadístico. La media de muchas observaciones se concentra alrededor del valor real y adopta forma de campana, sea cual sea la forma de partida. Ese resultado es la base de los intervalos y los contrastes."
+              }
             }
           ]
         },
@@ -1612,12 +1591,10 @@ export default {
               "answer": 2,
               "tol": 0.001,
               "hint": {
-                "es": "8/sqrt(16).",
-                "en": "8/sqrt(16)."
+                "es": "Divide sigma entre la raíz del tamaño."
               },
               "solution": {
-                "es": "2.",
-                "en": "2."
+                "es": "El error estándar es 8 dividido entre 4, es decir, 2. La raíz de 16 es 4 y el cociente da 2."
               },
               "xp": 10,
               "choices": [
@@ -1637,7 +1614,10 @@ export default {
                   "es": "4",
                   "en": "4"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,5, has dividido entre 16 en lugar de entre su raíz. El error estándar baja con la raíz del tamaño, no linealmente: para reducirlo a la mitad hay que cuadruplicar la muestra. Esa relación explica el coste creciente de la precisión."
+              }
             },
             {
               "id": "C1-L3-E2",
@@ -1649,12 +1629,10 @@ export default {
               "answer": 0,
               "tol": 0.001,
               "hint": {
-                "es": "12/6.",
-                "en": "12/6."
+                "es": "La raíz de 36 es 6."
               },
               "solution": {
-                "es": "2.",
-                "en": "2."
+                "es": "El error estándar es 12 dividido entre 6, es decir, 2. Con 36 observaciones, el error se reduce a la sexta parte de la desviación original."
               },
               "xp": 10,
               "choices": [
@@ -1674,7 +1652,10 @@ export default {
                   "es": "1",
                   "en": "1"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste 0,33, has dividido entre 36. El error estándar usa la raíz del tamaño porque la varianza de la media es sigma al cuadrado entre n. Confundir el divisor cambia el resultado por un factor de seis en este caso."
+              }
             },
             {
               "id": "C1-L3-E3",
@@ -1685,12 +1666,10 @@ export default {
               },
               "answer": 0,
               "hint": {
-                "es": "Si.",
-                "en": "Yes."
+                "es": "Más datos implican un promedio más estable."
               },
               "solution": {
-                "es": "Verdadero.",
-                "en": "True."
+                "es": "Verdadero: a mayor n, menor error estándar, porque la media se vuelve más estable al promediar más observaciones. La reducción sigue la raíz del tamaño."
               },
               "xp": 10,
               "choices": [
@@ -1702,7 +1681,10 @@ export default {
                   "es": "Falso",
                   "en": "False"
                 }
-              ]
+              ],
+              "explain": {
+                "es": "Si respondiste «falso», conviene recordar la fórmula: el error estándar es sigma entre raíz de n. Al crecer n, el denominador crece y el error baja. Esa mejora es real pero decreciente, y no corrige el sesgo de una muestra mal seleccionada."
+              }
             }
           ]
         }

@@ -1,0 +1,57 @@
+{
+  "items": {
+    "C1-L1-E1": {
+      "type": "short",
+      "answers": ["un parametro", "parametro"],
+      "hint": "Describe la población y suele ser desconocido.",
+      "solution": "Mu es un parámetro: describe la media de la población, es fijo y generalmente desconocido. Se estima con la media muestral y se simboliza con letra griega por convención.",
+      "explain": "Si respondiste «un estadístico», has confundido el valor que se quiere conocer con el que se calcula. El parámetro no cambia al repetir el estudio; el estadístico sí, porque depende de la muestra elegida. La notación griega frente a la latina refleja esa diferencia."
+    },
+    "C1-L1-E2": {
+      "type": "short",
+      "answers": ["un estadistico", "estadistico"],
+      "hint": "Se calcula con los datos de la muestra y cambia entre muestras.",
+      "solution": "x barra es un estadístico: se calcula con los datos de la muestra y varía de una muestra a otra. Su distribución tiene media mu y error estándar sigma entre raíz de n.",
+      "explain": "Si respondiste «un parámetro», has invertido los términos. El estadístico es lo que se observa y el parámetro lo que se estima. Esa asimetría es la base de la inferencia: se usa una cantidad conocida y variable para aproximar otra fija y desconocida."
+    },
+    "C1-L1-E3": {
+      "hint": "Repetir el estudio no cambia la media real de la población.",
+      "solution": "Verdadero: el parámetro es fijo, no aleatorio. Su valor no cambia al repetir el estudio; lo que cambia es el estadístico calculado en cada muestra.",
+      "explain": "Si respondiste «falso», conviene separar dos fuentes de variación. La población tiene un valor real que no se mueve; las muestras producen estimaciones distintas. Confundir ambos niveles lleva a creer que el parámetro fluctúa, cuando lo que fluctúa es la estimación."
+    },
+    "C1-L2-E1": {
+      "hint": "El teorema habla de la distribución de la media, no de la forma de los datos.",
+      "solution": "Falso: el teorema central del límite no requiere que los datos sean normales, solo que la muestra sea suficientemente grande y las observaciones independientes con varianza finita.",
+      "explain": "Si respondiste «verdadero», has confundido el objeto del teorema. Lo que se vuelve aproximadamente normal es la distribución de la media, no la de los datos originales. Esa propiedad es la que permite aplicar fórmulas normales a variables tan poco normales como los ingresos o los tiempos de espera."
+    },
+    "C1-L2-E2": {
+      "type": "short",
+      "answers": ["n >= 30", "n mayor o igual que 30", "30"],
+      "hint": "Es una convención práctica para distribuciones moderadamente asimétricas.",
+      "solution": "La regla práctica habitual es n mayor o igual que 30, aunque la cifra depende de la asimetría de los datos. Con distribuciones muy sesgadas pueden hacer falta cientos de observaciones.",
+      "explain": "Si respondiste 5, has generalizado demasiado. La regla de 30 es una orientación para casos moderados, no una ley universal. Lo importante es entender que la aproximación mejora con el tamaño y que la forma de los datos determina cuánto se necesita en cada caso."
+    },
+    "C1-L2-E3": {
+      "type": "short",
+      "answers": ["normal", "aproximadamente normal"],
+      "hint": "Es la forma de la campana, con media mu y error estándar sigma sobre raíz de n.",
+      "solution": "El teorema central del límite dice que la media muestral es aproximadamente normal, con media igual a mu y desviación igual a sigma dividido entre la raíz de n.",
+      "explain": "Si respondiste «uniforme», has confundido la distribución de los datos con la del estadístico. La media de muchas observaciones se concentra alrededor del valor real y adopta forma de campana, sea cual sea la forma de partida. Ese resultado es la base de los intervalos y los contrastes."
+    },
+    "C1-L3-E1": {
+      "hint": "Divide sigma entre la raíz del tamaño.",
+      "solution": "El error estándar es 8 dividido entre 4, es decir, 2. La raíz de 16 es 4 y el cociente da 2.",
+      "explain": "Si respondiste 0,5, has dividido entre 16 en lugar de entre su raíz. El error estándar baja con la raíz del tamaño, no linealmente: para reducirlo a la mitad hay que cuadruplicar la muestra. Esa relación explica el coste creciente de la precisión."
+    },
+    "C1-L3-E2": {
+      "hint": "La raíz de 36 es 6.",
+      "solution": "El error estándar es 12 dividido entre 6, es decir, 2. Con 36 observaciones, el error se reduce a la sexta parte de la desviación original.",
+      "explain": "Si respondiste 0,33, has dividido entre 36. El error estándar usa la raíz del tamaño porque la varianza de la media es sigma al cuadrado entre n. Confundir el divisor cambia el resultado por un factor de seis en este caso."
+    },
+    "C1-L3-E3": {
+      "hint": "Más datos implican un promedio más estable.",
+      "solution": "Verdadero: a mayor n, menor error estándar, porque la media se vuelve más estable al promediar más observaciones. La reducción sigue la raíz del tamaño.",
+      "explain": "Si respondiste «falso», conviene recordar la fórmula: el error estándar es sigma entre raíz de n. Al crecer n, el denominador crece y el error baja. Esa mejora es real pero decreciente, y no corrige el sesgo de una muestra mal seleccionada."
+    }
+  }
+}
